@@ -4,15 +4,16 @@
   <!-- Core Rechner -->
   <url>
     <loc>https://mbcapitalstrategies.com/tools/dividendenrechner.html</loc>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-05-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
