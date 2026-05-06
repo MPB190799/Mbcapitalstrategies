@@ -144,6 +144,22 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {"@type":"SiteNavigationElement","name":"Shipping Aktien","url":"https://mbcapitalstrategies.com/shipping-aktien/","description":"Tanker, LNG-Carrier, Bulker — Dividenden-Analysen aus dem Shipping-Sektor"},
+      {"@type":"SiteNavigationElement","name":"Mining Aktien","url":"https://mbcapitalstrategies.com/mining-aktien/","description":"Gold, Kupfer, Kohle, Uran — Hard-Asset-Mining mit Dividenden"},
+      {"@type":"SiteNavigationElement","name":"Upstream Aktien","url":"https://mbcapitalstrategies.com/upstream-aktien/","description":"Öl- und Gas-Produzenten mit hoher Dividendenrendite"},
+      {"@type":"SiteNavigationElement","name":"Pipelines / Midstream","url":"https://mbcapitalstrategies.com/midstream/","description":"MLPs, Take-or-Pay-Pipelines, infrastrukturelle Cashflows"},
+      {"@type":"SiteNavigationElement","name":"Depot-Strategie","url":"https://mbcapitalstrategies.com/depot-strategie/","description":"Echtes Privatanleger-Depot mit Live-Tracking via Parqet"},
+      {"@type":"SiteNavigationElement","name":"Hard Asset Guide","url":"https://mbcapitalstrategies.com/hard-asset-guide/","description":"Einführung in Hard-Asset-Investing für Cashflow-Anleger"},
+      {"@type":"SiteNavigationElement","name":"Finanzrechner","url":"https://mbcapitalstrategies.com/rechner/","description":"Acht kostenlose Dividenden- und Cashflow-Rechner"},
+      {"@type":"SiteNavigationElement","name":"Blog & Analysen","url":"https://mbcapitalstrategies.com/blog/","description":"Aktuelle Analysen zu Hard-Asset-Aktien und Dividendenstrategie"},
+      {"@type":"SiteNavigationElement","name":"Glossar","url":"https://mbcapitalstrategies.com/glossar/","description":"196 Fachbegriffe rund um Dividenden, Cashflow und Hard Assets"}
+    ]
+  }
+  </script>
 
 <style>
 .tool-card:hover{border-color:var(--accent)!important;transform:translateY(-2px)}
@@ -523,39 +539,79 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 <main id="main">
 
-<!-- ══════════ HERO ══════════ -->
-<section class="hero">
-  <div class="hero-bars" id="hero-bars" aria-hidden="true"></div>
+<!-- ══════════ HERO (v3.1 — Editorial Issue) ══════════ -->
+<style>
+.hero-trust{display:flex;gap:32px;margin:36px 0 32px;padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.hero-trust .trust-item{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;min-width:120px}
+.hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
+.hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
+.hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.btn-link{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-muted);position:relative;padding:6px 0;transition:color var(--t-fast)}
+.btn-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;opacity:.3;transition:opacity var(--t-fast)}
+.btn-link:hover{color:var(--accent)}
+.btn-link:hover::after{opacity:.8}
+.hero-meta-card{display:flex;flex-direction:column;gap:2px;text-align:center;margin-top:14px}
+.hero-meta-name{font-family:var(--serif);font-size:18px;color:var(--fg);font-style:italic}
+.hero-meta-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim)}
+.hero-issue{display:inline-flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+.hero-issue .issue-rule{flex:0 0 32px;height:1px;background:var(--accent);align-self:center}
+.hero-issue .issue-no{color:var(--fg-muted);letter-spacing:.18em}
+.hero-rule{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong) 20%,var(--border-strong) 80%,transparent);margin:64px 0 0}
+@media (max-width:760px){
+  .hero-trust{gap:18px;margin:28px 0;padding:18px 0}
+  .hero-trust .trust-item{min-width:90px}
+  .hero-ctas{gap:18px}
+}
+</style>
+<section class="hero" id="hero">
   <div class="wrap hero-inner">
-    <div>
-      <div class="hero-eyebrow-row">
-        <span class="eyebrow">Kuratierte Analysen · Seit 2022</span>
+    <div class="hero-content">
+      <div class="hero-issue">
+        <span class="issue-rule"></span>
+        <span class="issue-no">Ausgabe №47</span>
+        <span>Mai 2026</span>
       </div>
       <h1 class="display hero-title">
         <span class="w1">Dividenden aus</span>
-        <span class="w2">Hard Assets.</span>
+        <span class="w2"><em>Hard Assets.</em></span>
       </h1>
       <p class="lede hero-sub">
-        Meine unabhängigen Analysen zu Cashflow aus Energie, Schifffahrt, Bergbau &amp; Pipelines — persönliche Einschätzung, keine Anlageberatung.
+        Unabhängige Analysen zu Cashflow aus Schifffahrt, Bergbau, Energie und Pipelines —
+        aus einem realen Privatanleger-Depot. <strong style="color:var(--fg)">Keine Anlageberatung.</strong>
       </p>
+
+      <div class="hero-trust" role="list" aria-label="Plattform-Kennzahlen">
+        <div class="trust-item" role="listitem">
+          <span class="trust-num">89</span>
+          <span class="trust-lab">Aktien-<br>analysen</span>
+        </div>
+        <div class="trust-item" role="listitem">
+          <span class="trust-num">8</span>
+          <span class="trust-lab">kostenlose<br>Rechner</span>
+        </div>
+        <div class="trust-item" role="listitem">
+          <span class="trust-num">196</span>
+          <span class="trust-lab">Glossar-<br>Einträge</span>
+        </div>
+      </div>
+
       <div class="hero-ctas">
-        <a href="/depot-strategie/" class="btn">Mein Depot ansehen →</a>
-        <a href="/hard-asset-guide/" class="btn btn-ghost">Hard Asset Guide</a>
+        <a href="#newsletter" class="btn">Sonntags-Newsletter abonnieren →</a>
+        <a href="/blog/" class="btn-link">aktuelle analysen ↗</a>
       </div>
     </div>
-    <div class="hero-right">
+
+    <aside class="hero-right" aria-label="Autor">
       <div class="hero-persona">
         <div class="hero-avatar">
           <picture>
             <source srcset="/marco.webp" type="image/webp">
-            <img src="/marco.jpg" alt="Marco Bozem" width="168" height="168" fetchpriority="high">
+            <img src="/marco.jpg" alt="Marco Bozem — Gründer MB Capital Strategies" width="168" height="168" fetchpriority="high">
           </picture>
         </div>
-        <div class="hero-logo">
-          <picture>
-            <source srcset="/Logo.webp" type="image/webp">
-            <img src="/Logo.png" alt="MB Capital Strategies Logo" width="128" height="128" loading="lazy" decoding="async">
-          </picture>
+        <div class="hero-meta-card">
+          <span class="hero-meta-name">Marco Bozem</span>
+          <span class="hero-meta-role">Unabhängiger Investor · Laufach, DE</span>
         </div>
       </div>
       <div class="hero-badge">
@@ -565,12 +621,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         </div>
         <div class="hero-badge-sub">persönliche Strategie · keine Anlageberatung</div>
       </div>
-    </div>
+    </aside>
   </div>
-  <div class="hero-meta">
-    <span><span class="hero-meta-dot"></span>Live · MB Capital Strategies</span>
-    <span>Hard Assets · Dividenden · Cashflow</span>
-  </div>
+  <div class="wrap"><div class="hero-rule"></div></div>
 </section>
 
 <!-- ══════════ MARQUEE ══════════ -->
@@ -891,6 +944,11 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         <h2 class="display contact-title" style="margin-top:24px">Jeden Sonntag.
 In deinem <em>Posteingang.</em></h2>
         <p class="contact-body">Wochenrückblick auf die wichtigsten Entwicklungen in Shipping, Mining, Energie und Pipelines — plus meine persönliche Einschätzung direkt aus dem Depot. Kostenlos, kein Clickbait, jederzeit abbestellbar.</p>
+        <ul style="list-style:none;margin:24px 0 16px;padding:0;display:flex;flex-direction:column;gap:10px">
+          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">01</span><span>Was diese Woche im Tanker-, LNG- oder Mining-Cycle wirklich relevant war.</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">02</span><span>Welche Kennzahlen ich im Q-Reporting beobachte — und warum.</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">03</span><span>Käufe und Verkäufe aus dem realen Depot — ehrlich, mit Begründung.</span></li>
+        </ul>
         <dl class="contact-info">
           <div class="contact-info-row"><dt>Versand</dt><dd>Sonntags · 09:00 CET</dd></div>
           <div class="contact-info-row"><dt>Format</dt><dd>Text-E-Mail · 4 Minuten Lesezeit</dd></div>
@@ -908,7 +966,7 @@ In deinem <em>Posteingang.</em></h2>
         </label>
         <input type="hidden" name="email_address_check" value="">
         <input type="hidden" name="locale" value="de">
-        <button type="submit" class="btn" style="justify-self:start">Eintragen →</button>
+        <button type="submit" class="btn" style="justify-self:start">Sonntag-Brief abonnieren →</button>
         <p style="color:var(--fg-dim);font-size:12px;margin-top:4px;font-family:var(--mono);letter-spacing:.08em">Oder: <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--accent)">YouTube-Kanal abonnieren</a></p>
       </form>
     </div>
