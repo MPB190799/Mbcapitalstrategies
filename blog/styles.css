@@ -2150,3 +2150,33 @@ button:focus-visible,
   a { color: #000 !important; text-decoration: underline; }
   a::after { content: ' (' attr(href) ')'; font-size: 0.8em; color: #666; }
 }
+
+/* === Mobile tap-target hardening (WCAG 2.5.5 / Google MFI ≥ 44×44 px) === */
+@media (hover: none) and (pointer: coarse) {
+  .nav-links a,
+  .nav-links .dropdown-btn,
+  .footer-links a,
+  .breadcrumbs a,
+  nav a,
+  footer a,
+  button,
+  .btn,
+  .btn-link,
+  .lang-flag,
+  .theme-btn,
+  [role="button"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding-block: 6px;
+  }
+  /* Preserve inline links inside body copy */
+  article p a,
+  .blog-post-content p a,
+  p > a,
+  .glossar-link {
+    min-height: auto;
+    display: inline;
+    padding-block: 0;
+  }
+}
