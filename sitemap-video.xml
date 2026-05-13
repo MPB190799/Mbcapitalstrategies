@@ -1205,4 +1205,28 @@
     </video:video>
   </url>
 
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/wochenrueckblick-kw19-2026.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Mmdlhudobww/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>164 EUR Sonderdividende: INSW + Dorian LPG | Wochenrueckblick KW19 2026</video:title>
+      <video:description>Wochenrueckblick KW19 2026: INSW $4,55 + Dorian LPG $1,00 Sonderdividende, Realty Income 113. Hike-Streak, Arbor Realty kuerzt, Trump 25% EU-Auto-Zoll, Iran-Talks crashen Brent von $105 auf $101.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/Mmdlhudobww</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=Mmdlhudobww</video:content_loc>
+      <video:publication_date>2026-05-09T12:00:00+02:00</video:publication_date>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/blog/depot-update-april-2026.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/nrth4RR-czA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>358 EUR Dividenden, 78 Eingaenge: Mein KOMPLETTES Depot ungefiltert | Depot-Update April 2026</video:title>
+      <video:description>Depot-Update April 2026: 358,28 EUR Dividenden in 30 Tagen, 78 Eingaenge, 276 Positionen. Top-Performer Canacol +256%, Mara +45%, Vale Indonesia +28%. Neue Kaeufe: Volkswagen, Novo Nordisk, Central Asia Metals.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/nrth4RR-czA</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=nrth4RR-czA</video:content_loc>
+      <video:publication_date>2026-05-07T12:00:00+02:00</video:publication_date>
+    </video:video>
+  </url>
+
 </urlset>
