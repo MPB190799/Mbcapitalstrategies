@@ -21,8 +21,8 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://www.youtube.com">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500;600&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <title>MB Capital Strategies | Dividenden aus Hard Assets</title>
   <meta name="description" content="MB Capital Strategies: Dividenden-Analysen zu Energie, Shipping, Mining & Pipelines. Kostenlose Rechner, Depot-Einblicke & Cashflow-Strategien. Jetzt entdecken!">
@@ -189,16 +189,16 @@
    ═══════════════════════════════════════════ */
 :root{
   --bg:#0c0b09;--surface:#151310;--surface-2:#1d1a15;
-  --border:rgba(212,178,106,.14);--border-strong:rgba(212,178,106,.32);
+  --border:rgba(212,175,55,.14);--border-strong:rgba(212,175,55,.32);
   --fg:#f1ecdf;--fg-muted:#a39885;--fg-dim:#746b5d;
-  --accent:#c9a15a;--accent-bright:#e7c684;--accent-deep:#8a6a30;
-  --gold:#c9a15a;--gold-bright:#e7c684;
+  --accent:#d4af37;--accent-bright:#e0bd55;--accent-deep:#b8941e;
+  --gold:#d4af37;--gold-bright:#e0bd55;--gold-dark:#b8941e;
   --text:#f1ecdf;--text-2:#a39885;--text-3:#746b5d;
   --danger:#b85b4a;
   --maxw:1320px;--pad:clamp(20px,4vw,56px);
   --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
-  --sans:"Inter Tight","Inter",-apple-system,system-ui,sans-serif;
-  --mono:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
+  --sans:"Outfit","Inter Tight","Inter",-apple-system,system-ui,sans-serif;
+  --mono:"IBM Plex Mono","JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
   --t-fast:220ms cubic-bezier(.2,.6,.2,1);
   --t-med:480ms cubic-bezier(.2,.6,.2,1);
   --t-slow:900ms cubic-bezier(.2,.6,.2,1);
@@ -206,10 +206,10 @@
 }
 [data-theme="light"]{
   --bg:#eae6dd;--surface:#f1ede3;--surface-2:#e1dccf;
-  --border:rgba(28,28,28,.10);--border-strong:rgba(28,28,28,.22);
+  --border:rgba(184,148,30,.18);--border-strong:rgba(184,148,30,.34);
   --fg:#1a1916;--fg-muted:#5a5449;--fg-dim:#8a8276;
-  --accent:#a67c3a;--accent-bright:#c69a52;--accent-deep:#6b4e23;
-  --gold:#a67c3a;--gold-bright:#c69a52;
+  --accent:#b8941e;--accent-bright:#d4af37;--accent-deep:#8a6a14;
+  --gold:#b8941e;--gold-bright:#d4af37;--gold-dark:#8a6a14;
   --text:#1a1916;--text-2:#5a5449;--text-3:#8a8276;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -236,7 +236,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
 .header.is-scrolled{background:color-mix(in oklab,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--border)}
 .logo{display:flex;align-items:center;gap:14px}
-.logo-mark{width:36px;height:36px;border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:20px;letter-spacing:-.03em;position:relative;flex-shrink:0;font-style:italic}
+.logo-mark{width:clamp(32px,5vw,40px);height:clamp(32px,5vw,40px);border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);letter-spacing:-.03em;position:relative;flex-shrink:0;font-style:italic}
 .logo-mark::before{content:"";position:absolute;inset:3px;border:1px solid var(--accent);opacity:.35}
 .logo-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.01em;color:var(--fg);line-height:1}
 .logo-name em{font-style:italic;color:var(--accent);font-weight:400}
@@ -295,8 +295,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 .hero-right{position:relative;display:flex;flex-direction:column;gap:36px;align-items:center;max-width:420px;margin-left:auto}
 .hero-persona{display:flex;align-items:center;gap:28px;justify-content:center;width:100%}
-.hero-avatar{position:relative;width:168px;height:168px;border-radius:50%;flex-shrink:0}
-.hero-avatar::before{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(212,178,106,.55);box-shadow:0 0 0 1px rgba(212,178,106,.12),0 0 50px -10px rgba(212,178,106,.45)}
+.hero-avatar{position:relative;width:clamp(120px,20vw,168px);height:clamp(120px,20vw,168px);border-radius:50%;flex-shrink:0}
+.hero-avatar::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid transparent;background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-bright),var(--gold-dark)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:avatarSpin 8s linear infinite;box-shadow:0 0 0 1px rgba(212,175,55,.12),0 0 50px -10px rgba(212,175,55,.5)}
+@keyframes avatarSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.hero-avatar::before{animation:none}}
 .hero-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 28%}
 .hero-logo{width:128px;height:128px;flex-shrink:0;display:grid;place-items:center}
 .hero-logo img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 4px 24px rgba(212,178,106,.15))}
@@ -442,7 +444,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .footer-aff{margin-top:14px;font-size:11px;color:var(--fg-dim);text-align:center;font-family:var(--mono);letter-spacing:.06em}
 
 /* Scroll progress */
-.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:100;transition:width 80ms linear;width:0}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-bright));z-index:100;transition:width 80ms linear;width:0;box-shadow:0 0 12px rgba(212,175,55,.4)}
 
 /* Responsive */
 @media (max-width:1024px){
