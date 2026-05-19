@@ -15,8 +15,51 @@ Allow: /
 Allow: /*.css
 Allow: /*.js
 
+# --- AI-Crawler explizit erlauben (Citation in AIO, ChatGPT, Claude, Perplexity, Bing-Chat)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
 # --- IndexNow API Key (Bing, Yandex, automatische Indexierung)
 # https://mbcapitalstrategies.com/1353804911fc41b4802b780e8fca77b5.txt
+
+# --- LLM Discovery
+# https://mbcapitalstrategies.com/llms.txt
 
 # --- MASTER SITEMAP INDEX
 Sitemap: https://mbcapitalstrategies.com/sitemap.xml
@@ -31,4 +74,3 @@ Sitemap: https://mbcapitalstrategies.com/sitemap-investing.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-kategorien.xml
 Sitemap: https://mbcapitalstrategies.com/glossar-sitemap.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-video.xml
-
