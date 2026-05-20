@@ -11,8 +11,26 @@
   if (!document.querySelector('link[href*="Outfit"]')) {
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Serif+Display&display=swap';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Serif+Display&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap';
     document.head.appendChild(fontLink);
+  }
+
+  /* ── Premium Polish: subtle gold corner glow on every sub-page ── */
+  if (!document.documentElement.hasAttribute('data-luxe-v3') && !document.getElementById('mbcs-premium-polish')) {
+    var style = document.createElement('style');
+    style.id = 'mbcs-premium-polish';
+    style.textContent = ''
+      + '.mbcs-corner-glow{position:fixed;pointer-events:none;z-index:1;opacity:.55;will-change:transform}'
+      + '.mbcs-corner-glow.top-right{top:-160px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,rgba(212,175,55,.18),rgba(212,175,55,0) 65%);filter:blur(8px)}'
+      + '.mbcs-corner-glow.bottom-left{bottom:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,.12),rgba(212,175,55,0) 60%);filter:blur(10px);animation:mbcsAuroraDrift 22s ease-in-out infinite alternate}'
+      + '@keyframes mbcsAuroraDrift{0%{transform:translate(0,0)}100%{transform:translate(80px,-60px)}}'
+      + '@media(prefers-reduced-motion:reduce){.mbcs-corner-glow{animation:none}}';
+    document.head.appendChild(style);
+    document.addEventListener('DOMContentLoaded', function(){
+      var a = document.createElement('div'); a.className = 'mbcs-corner-glow top-right';
+      var b = document.createElement('div'); b.className = 'mbcs-corner-glow bottom-left';
+      document.body.appendChild(a); document.body.appendChild(b);
+    });
   }
 
   /* ── Google Consent Mode v2 Defaults (MUST be set before GA4 loads) ── */
