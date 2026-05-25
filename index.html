@@ -577,9 +577,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 }
 .compass-backdrop .compass-img{
   width:100%;height:100%;display:block;
-  animation:compassImgSpin 110s linear infinite;
   transform-origin:50% 50%;
-  will-change:transform,opacity;
+  will-change:opacity;
 }
 .compass-backdrop::before{
   content:"";position:absolute;inset:-6%;border-radius:50%;
@@ -589,7 +588,6 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   pointer-events:none;z-index:-1;
 }
 @keyframes compassGlow{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
-@keyframes compassImgSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
 /* Apply scroll-linked transform via JS via wrapper */
 .compass-backdrop{transition:opacity .35s linear}
@@ -1181,7 +1179,7 @@ In deinem <em>Posteingang.</em></h2>
 </footer>
 
 <script src="/assets/js/nav.js?v=luxe3" defer></script>
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
 <script>
 (() => {
   // Scroll progress + header blur
