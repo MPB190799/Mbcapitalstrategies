@@ -181,6 +181,14 @@
             '<a href="/blog/">Blog</a>' +
             '<a href="/investing-analysen.html">Investing.com</a>' +
             '<a href="/rechner/" class="nav-highlight">Rechner</a>' +
+            '<div class="dropdown">' +
+              '<button class="dropdown-btn" aria-haspopup="true">Newsletter &#x25be;</button>' +
+              '<div class="dropdown-content">' +
+                '<a href="/insider/">📬 Kostenloser Wochen-Insider</a>' +
+                '<a href="/newsletter/" style="color:#d4af37;font-weight:500;">✦ Premium Earnings · 5 €</a>' +
+              '</div>' +
+            '</div>' +
+            '<a href="/newsletter/" class="nav-highlight" style="border-color:#d4af37;color:#d4af37;">Premium 5€ ✦</a>' +
             '<a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener" class="nav-highlight" style="border-color:rgba(255,255,255,0.25);color:#f5f6fa;">🌐 English</a>' +
           '</div>' +
           '<button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">' +
@@ -197,6 +205,9 @@
           '<a href="/investing-analysen.html">🔗 Investing.com</a>' +
           '<a href="/toolbox.html">🧰 Toolbox</a>' +
           '<a href="/glossar/">📗 Glossar</a>' +
+          '<div class="mob-label">Newsletter</div>' +
+          '<a href="/insider/">📬 Kostenloser Wochen-Insider</a>' +
+          '<a href="/newsletter/" style="color:#d4af37;font-weight:500;">✦ Premium Earnings · 5 €</a>' +
           '<div class="mob-label">Themen</div>' +
           '<a href="/shipping-aktien/">🚢 Shipping Aktien</a>' +
           '<a href="/midstream/">🛢️ Midstream / Pipelines</a>' +
