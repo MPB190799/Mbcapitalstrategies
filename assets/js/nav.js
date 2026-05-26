@@ -26,9 +26,10 @@
       + '@keyframes mbcsAuroraDrift{0%{transform:translate(0,0)}100%{transform:translate(80px,-60px)}}'
       + '.mbcs-mini-compass{position:fixed;right:24px;bottom:24px;width:64px;height:64px;z-index:2;opacity:.18;pointer-events:none;transition:opacity .4s ease}'
       + '.mbcs-mini-compass:hover{opacity:.42}'
-      + '.mbcs-mini-compass svg{width:100%;height:100%}'
+      + '.mbcs-mini-compass svg{width:100%;height:100%;animation:mbcsCompassSpin 90s linear infinite}'
+      + '@keyframes mbcsCompassSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}'
       + '@media(max-width:640px){.mbcs-mini-compass{display:none}}'
-      + '@media(prefers-reduced-motion:reduce){.mbcs-corner-glow{animation:none}}';
+      + '@media(prefers-reduced-motion:reduce){.mbcs-corner-glow,.mbcs-mini-compass svg{animation:none}}';
     document.head.appendChild(style);
     document.addEventListener('DOMContentLoaded', function(){
       var a = document.createElement('div'); a.className = 'mbcs-corner-glow top-right';
