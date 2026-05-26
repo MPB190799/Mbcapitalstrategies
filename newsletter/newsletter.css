@@ -35,6 +35,48 @@ a:hover { color: var(--gold); }
 img { max-width: 100%; height: auto; }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 740px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Mission Section */
+.mission-section {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 72px 0 80px;
+}
+.mission-section h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin: 8px 0 24px;
+  max-width: 680px;
+}
+.mission-lead {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--text-2);
+  margin: 0 0 20px;
+}
+.mission-text {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-2);
+  margin: 0 0 16px;
+}
+.mission-text strong { color: var(--gold); font-weight: 600; }
+.mission-signature {
+  margin-top: 28px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+@media (max-width: 720px) {
+  .mission-section { padding: 56px 0 64px; }
+  .mission-section h2 { font-size: 24px; }
+  .mission-lead { font-size: 17px; }
+}
 
 /* ── Header */
 .site-header {
@@ -199,6 +241,63 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
 .sector-icon { font-size: 28px; color: var(--gold); display: block; margin-bottom: 12px; }
 .sector-card h3 { margin: 0 0 8px; }
 .sector-card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* ── Section subheading inside a section (e.g. Aktien-Coverage) */
+.section-subhead {
+  margin-top: 56px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+}
+
+/* ── Aktien-Coverage Listing per Sektor (SEO-Juice) */
+.sector-coverage {
+  margin: 14px 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+.sector-coverage summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 20px;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(212,175,55,0.04);
+  border-left: 3px solid var(--gold);
+  transition: background-color .15s ease;
+}
+.sector-coverage summary::-webkit-details-marker { display: none; }
+.sector-coverage summary::before {
+  content: "▸ ";
+  color: var(--gold);
+  display: inline-block;
+  transition: transform .15s ease;
+}
+.sector-coverage[open] summary::before { content: "▾ "; }
+.sector-coverage summary:hover { background: rgba(212,175,55,0.10); }
+.sector-coverage .tickers {
+  padding: 18px 22px 22px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.sector-coverage .tickers strong {
+  color: var(--text);
+  display: inline-block;
+  margin-right: 4px;
+}
+.sector-coverage .tickers em {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--gold);
+  font-style: italic;
+}
 
 /* ── Offer cards */
 .offer-grid {
