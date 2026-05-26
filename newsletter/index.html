@@ -319,53 +319,62 @@
       ab — nicht nur Marcos Holdings. Wenn ein Quartalsbericht erscheint, bekommst du
       die Analyse direkt in den Posteingang.
     </p>
-    <div class="sector-grid">
-      <div class="sector-card">
+    <p class="lead" style="color:var(--gold,#d4af37);font-weight:500"><strong>Klick auf einen Sektor</strong>, um ihn auszuwählen — dein Sektor wird beim Stripe-Checkout automatisch übergeben.</p>
+    <div class="sector-grid" role="radiogroup" aria-label="Sektor wählen">
+      <div class="sector-card" data-sector="shipping" data-sector-label="Shipping" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⚓</span>
         <h3>Shipping</h3>
         <p>Tankers, Bulker, LNG-Carrier. Ratenzyklik &amp; Geopolitik.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="mining" data-sector-label="Mining" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⛏</span>
         <h3>Mining</h3>
         <p>Gold, Kupfer, Industriemetalle. Capex-Disziplin &amp; Royalties.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="oelgas" data-sector-label="Öl &amp; Gas" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">🛢</span>
         <h3>Öl &amp; Gas</h3>
         <p>Integrated Majors, E&amp;P, Refiner. Cashflow &amp; Buybacks.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="pipelines" data-sector-label="Pipelines" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⊟</span>
         <h3>Pipelines &amp; Midstream</h3>
         <p>Stabile Cashflows, Tarifstrukturen, Volumina.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="reits" data-sector-label="REITs &amp; BDCs" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⌂</span>
         <h3>REITs &amp; BDCs</h3>
         <p>Dividenden-Backbone, Zinssensitivität, FFO.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="pharma" data-sector-label="Pharma" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">✚</span>
         <h3>Pharma</h3>
         <p>Patent-Pipeline, Cashflow-Generatoren, Übernahmen.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="chemie" data-sector-label="Chemie" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⚗</span>
         <h3>Chemie &amp; Industriegase</h3>
         <p>BASF, Linde, Air Liquide. Spezialitäten, Düngemittel, Margenzyklen.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="stahl" data-sector-label="Stahl" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⚙</span>
         <h3>Stahl &amp; Industriemetalle</h3>
         <p>Salzgitter, ThyssenKrupp, Nucor, Aurubis. Kapazitäten, China-Exporte.</p>
       </div>
-      <div class="sector-card">
+      <div class="sector-card" data-sector="versorger" data-sector-label="Versorger" role="radio" tabindex="0" aria-checked="false">
         <span class="sector-icon">⚡</span>
         <h3>Versorger / Utilities</h3>
         <p>E.ON, RWE, NextEra, Iberdrola. Regulierung, Renewables-Ausbau.</p>
       </div>
     </div>
+    <p id="sector-selected-line" class="lead" style="margin-top:18px;text-align:center;font-style:italic;color:var(--text-secondary,#9aa6c0);min-height:1.5em"></p>
+    <style>
+      .sector-card{cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease}
+      .sector-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,.5)}
+      .sector-card:focus{outline:2px solid #d4af37;outline-offset:2px}
+      .sector-card.is-selected{border-color:#d4af37 !important;background:rgba(212,175,55,.08);box-shadow:0 0 0 2px rgba(212,175,55,.25),0 8px 24px -8px rgba(212,175,55,.35)}
+      .sector-card.is-selected h3{color:#d4af37}
+    </style>
 
     <h3 class="section-subhead" id="aktien-coverage">Welche Aktien werden konkret analysiert?</h3>
     <p class="lead">
@@ -525,7 +534,7 @@
       Jeden Sonntag der Wochenüberblick mit Sektor-Rotation, Portfolio-Ampel und Marcos
       Thesen. Keine Kreditkarte, jederzeit per Klick abbestellbar.
     </p>
-    <form class="signup-form" action="https://sibforms.com/serve/MUIFAJ...placeholder..." method="POST">
+    <form class="signup-form" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" method="POST" data-type="subscription">
       <input type="email" name="email" placeholder="deine@email.de" required>
       <label class="checkbox">
         <input type="checkbox" required>
@@ -612,7 +621,7 @@
     <p>
       <a href="/impressum/">Impressum</a> ·
       <a href="/datenschutz/">Datenschutz</a> ·
-      <a href="https://billing.stripe.com/p/login/...placeholder...">Abo verwalten</a>
+      <a href="mailto:mbcapitalstrategies@gmail.com?subject=Abo%20verwalten&body=Bitte%20sende%20mir%20den%20Stripe-Customer-Portal-Link%20zum%20Verwalten%20meines%20Abos.">Abo verwalten</a>
     </p>
   </div>
 </footer>
@@ -657,6 +666,60 @@
       if (typeof gtag === 'undefined') return;
       gtag('event', 'internal_cta_click', { label: label, page_path: '/newsletter/' });
     }
+  })();
+
+  // === Sector Selection (Section §03) ===
+  // User clicks sector tile -> visually selected, label stored, Stripe CTA
+  // gets ?client_reference_id=sector_<key> appended so the webhook can route
+  // to the correct Brevo Premium list segment.
+  (function() {
+    var STORE_KEY = 'mb_selected_sector';
+    var SECTOR_BASE = 'https://buy.stripe.com/9B68wPaLSgEy9eH4sA1sQ00';
+    var sectorBtn = document.getElementById('cta-stripe-sector');
+    var selectedLine = document.getElementById('sector-selected-line');
+    var sectorCards = document.querySelectorAll('.sector-card[data-sector]');
+
+    function applySelection(key, label) {
+      sectorCards.forEach(function(c) {
+        var match = c.getAttribute('data-sector') === key;
+        c.classList.toggle('is-selected', match);
+        c.setAttribute('aria-checked', match ? 'true' : 'false');
+      });
+      if (sectorBtn) {
+        sectorBtn.href = key
+          ? (SECTOR_BASE + '?client_reference_id=sector_' + encodeURIComponent(key))
+          : SECTOR_BASE;
+        sectorBtn.textContent = key
+          ? ('\u20AC5 / Monat starten \u2014 ' + label)
+          : '\u20AC5 / Monat starten';
+      }
+      if (selectedLine) {
+        selectedLine.innerHTML = key
+          ? ('Gew\u00e4hlter Sektor: <strong style="color:#d4af37">' + label + '</strong> \u00b7 wird beim Checkout \u00fcbergeben')
+          : '';
+      }
+      if (key) {
+        try { localStorage.setItem(STORE_KEY, JSON.stringify({ key: key, label: label })); } catch(e) {}
+      }
+    }
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
+      if (saved && saved.key) applySelection(saved.key, saved.label);
+    } catch(e) {}
+    sectorCards.forEach(function(card) {
+      function pick() {
+        var key = card.getAttribute('data-sector');
+        var label = (card.getAttribute('data-sector-label') || card.querySelector('h3').textContent).replace(/&amp;/g, '&');
+        applySelection(key, label);
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'sector_selected', { sector: key, page_path: '/newsletter/' });
+        }
+      }
+      card.addEventListener('click', pick);
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); }
+      });
+    });
   })();
 </script>
 
