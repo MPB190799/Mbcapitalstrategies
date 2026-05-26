@@ -200,6 +200,63 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
 .sector-card h3 { margin: 0 0 8px; }
 .sector-card p { margin: 0; color: var(--muted); font-size: 13px; }
 
+/* ── Section subheading inside a section (e.g. Aktien-Coverage) */
+.section-subhead {
+  margin-top: 56px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+}
+
+/* ── Aktien-Coverage Listing per Sektor (SEO-Juice) */
+.sector-coverage {
+  margin: 14px 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+.sector-coverage summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 20px;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(212,175,55,0.04);
+  border-left: 3px solid var(--gold);
+  transition: background-color .15s ease;
+}
+.sector-coverage summary::-webkit-details-marker { display: none; }
+.sector-coverage summary::before {
+  content: "▸ ";
+  color: var(--gold);
+  display: inline-block;
+  transition: transform .15s ease;
+}
+.sector-coverage[open] summary::before { content: "▾ "; }
+.sector-coverage summary:hover { background: rgba(212,175,55,0.10); }
+.sector-coverage .tickers {
+  padding: 18px 22px 22px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.sector-coverage .tickers strong {
+  color: var(--text);
+  display: inline-block;
+  margin-right: 4px;
+}
+.sector-coverage .tickers em {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--gold);
+  font-style: italic;
+}
+
 /* ── Offer cards */
 .offer-grid {
   display: grid;
