@@ -326,6 +326,7 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   position: relative;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   padding: 10px 12px;
   background: var(--bg-2);
@@ -344,7 +345,17 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   height: 14px;
   flex-shrink: 0;
 }
-.picker-chip span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.picker-chip span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1 1 auto; }
+.picker-chip em {
+  font-size: 10px;
+  color: var(--muted);
+  font-style: normal;
+  letter-spacing: 0.5px;
+  width: 100%;
+  margin-top: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.picker-chip.selected em { color: var(--gold); }
 .picker-chip.selected {
   border-color: var(--gold);
   background: rgba(212,175,55,0.1);
