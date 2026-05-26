@@ -72,6 +72,18 @@
 }
 </script>
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J1NWEPPKNE', {
+    page_title: 'Insider Landingpage - Free Wochen-Newsletter',
+    page_path: '/insider/'
+  });
+</script>
+
 <link rel="stylesheet" href="insider.css">
 <style>
 /* Insider-spezifische Anpassungen */
@@ -329,6 +341,34 @@
 
 <script>
   document.getElementById("copy-year").textContent = new Date().getFullYear();
+
+  // GA4 Conversion Tracking — Insider Free-Signup
+  (function() {
+    var form = document.querySelector('form.signup-form-large');
+    if (form && typeof gtag !== 'undefined') {
+      form.addEventListener('submit', function() {
+        gtag('event', 'insider_signup_submit', {
+          newsletter: 'mb_capital_insider_free',
+          page_path: '/insider/'
+        });
+        // GA4 Standard generate_lead event
+        gtag('event', 'generate_lead', {
+          currency: 'EUR',
+          value: 0,
+          lead_type: 'free_newsletter'
+        });
+      });
+    }
+    // Track upsell-card click to Premium
+    var upsell = document.querySelector('.upsell-card a[href="/newsletter/"]');
+    if (upsell) {
+      upsell.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'insider_to_premium_click', { source: 'upsell_card' });
+        }
+      });
+    }
+  })();
 </script>
 
 </body>

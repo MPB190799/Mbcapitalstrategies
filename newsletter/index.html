@@ -121,6 +121,18 @@
 }
 </script>
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J1NWEPPKNE', {
+    page_title: 'Newsletter Landingpage - Premium',
+    page_path: '/newsletter/'
+  });
+</script>
+
 <link rel="stylesheet" href="newsletter.css">
 </head>
 <body>
@@ -327,7 +339,7 @@
           <li>✓ 8-Quartals-Trend &amp; Sektor-Peer-Vergleich</li>
           <li>✓ Sektor frei wählbar im Checkout</li>
         </ul>
-        <a id="cta-stripe-sector" href="https://buy.stripe.com/9B68wPaLSgEy9eH4sA1sQ00" class="btn btn-gold btn-block" data-stripe-link>€5 / Monat starten</a>
+        <a id="cta-stripe-sector" href="https://buy.stripe.com/test_14A28qeUi7zkgJb9PDaMU04" class="btn btn-gold btn-block" data-stripe-link>€5 / Monat starten</a>
       </article>
 
       <article id="angebot-goody" class="offer-card offer-goody">
@@ -342,7 +354,7 @@
           <li>✓ Optionale Opt-Outs für einzelne Sektoren</li>
           <li>✓ Alle Earnings-Mails (Sektor-Analyse inklusive)</li>
         </ul>
-        <a id="cta-stripe-goody" href="https://buy.stripe.com/6oU28rbPWdsmez11go1sQ01" class="btn btn-gold btn-block" data-stripe-link>€8 / Monat starten</a>
+        <a id="cta-stripe-goody" href="https://buy.stripe.com/test_8x26oG6nM5rc50t1j7aMU05" class="btn btn-gold btn-block" data-stripe-link>€8 / Monat starten</a>
       </article>
 
     </div>
@@ -446,6 +458,45 @@
 
 <script>
   document.getElementById("copy-year").textContent = new Date().getFullYear();
+
+  // GA4 Conversion Tracking — Stripe CTA Clicks
+  (function() {
+    var sector = document.getElementById('cta-stripe-sector');
+    var goody  = document.getElementById('cta-stripe-goody');
+    function trackClick(tier, price) {
+      if (typeof gtag === 'undefined') return;
+      gtag('event', 'stripe_checkout_click', {
+        tier: tier,
+        price_eur: price,
+        currency: 'EUR',
+        page_path: '/newsletter/'
+      });
+      // GA4 Standard E-Commerce Begin-Checkout event
+      gtag('event', 'begin_checkout', {
+        currency: 'EUR',
+        value: price,
+        items: [{
+          item_id: tier === 'sector' ? 'mb_earnings_sektor' : 'mb_earnings_goody',
+          item_name: tier === 'sector' ? 'MB Earnings Insider - Sektor' : 'MB Earnings Insider - Marcos Auswahl',
+          price: price,
+          quantity: 1
+        }]
+      });
+    }
+    if (sector) sector.addEventListener('click', function() { trackClick('sector', 5); });
+    if (goody)  goody.addEventListener('click', function() { trackClick('goody',  8); });
+    // Also track CTA clicks in the comparison table
+    document.querySelectorAll('a[href="#angebot-sektor"]').forEach(function(el){
+      el.addEventListener('click', function() { trackInternalCTA('table_sector_link'); });
+    });
+    document.querySelectorAll('a[href="#angebot-goody"]').forEach(function(el){
+      el.addEventListener('click', function() { trackInternalCTA('table_goody_link'); });
+    });
+    function trackInternalCTA(label) {
+      if (typeof gtag === 'undefined') return;
+      gtag('event', 'internal_cta_click', { label: label, page_path: '/newsletter/' });
+    }
+  })();
 </script>
 
 </body>
