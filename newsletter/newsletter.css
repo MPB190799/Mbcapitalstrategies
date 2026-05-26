@@ -1,0 +1,309 @@
+/* MB Capital Strategies — Newsletter Landing
+   Visuelle Tokens orientiert an mbcapitalstrategies.com:
+   dunkler Hintergrund, gold-akzentuierte Linien (#D4AF37), monochrom + ein Akzent,
+   §-nummerierte Sektionen, IBM Plex Mono für Zahlen/Kicker.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg:        #080810;
+  --bg-2:     #0f0f1a;
+  --bg-3:     #15152a;
+  --line:     #1e1e35;
+  --text:     #f0f4ff;
+  --text-2:   #c8cfe0;
+  --muted:    #6b7a99;
+  --gold:     #D4AF37;
+  --gold-dim: rgba(212,175,55,0.15);
+  --green:    #22c55e;
+  --red:      #ef4444;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--text); text-decoration: none; transition: color .15s ease; }
+a:hover { color: var(--gold); }
+img { max-width: 100%; height: auto; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(8,8,16,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .5px; }
+.brand-icon { color: var(--gold); font-size: 22px; }
+.brand-name { font-size: 14px; }
+.site-nav { display: flex; gap: 22px; font-size: 14px; }
+.site-nav a { color: var(--text-2); }
+.site-nav a.active { color: var(--gold); }
+
+/* ── Hero */
+.hero {
+  padding: 96px 0 64px;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.06) 0%, transparent 60%);
+}
+.kicker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px; letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.lead {
+  font-size: 18px;
+  color: var(--text-2);
+  max-width: 640px;
+  margin: 0 0 32px;
+}
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 22px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: .5px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .15s ease;
+  text-decoration: none;
+}
+.btn-gold {
+  background: var(--gold);
+  color: #0a0a14;
+  border-color: var(--gold);
+}
+.btn-gold:hover { background: #e0c44a; border-color: #e0c44a; color: #0a0a14; }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn-block { display: block; width: 100%; text-align: center; }
+.btn-small { padding: 8px 14px; font-size: 12px; }
+
+/* ── Sections */
+.section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+.section-alt { background: var(--bg-2); }
+h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
+
+/* ── Compare table */
+.compare-table-wrapper { overflow-x: auto; margin-top: 32px; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 720px;
+}
+.compare-table th,
+.compare-table td {
+  padding: 16px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-2);
+}
+.compare-table thead th {
+  background: var(--bg-2);
+  text-align: center;
+  vertical-align: middle;
+  padding: 24px 16px;
+  border-bottom: 2px solid var(--gold);
+}
+.compare-table thead th:first-child { background: transparent; border-bottom: none; }
+.compare-table tbody th {
+  text-align: left;
+  background: var(--bg-2);
+  color: var(--gold);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  width: 22%;
+}
+.tier-label { display: block; font-weight: 700; font-size: 16px; color: var(--text); }
+.tier-price { display: block; margin-top: 6px; color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+.tier-trial { display: block; margin-top: 4px; color: var(--text-2); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.compare-table .col-goody.highlight {
+  background: linear-gradient(180deg, rgba(212,175,55,0.08) 0%, var(--bg-2) 100%);
+}
+.badge-recommend {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--gold);
+  color: #0a0a14;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 99px;
+  margin-bottom: 10px;
+}
+.row-cta td { text-align: center; padding: 24px 12px; }
+
+.note {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Sector cards */
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.sector-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.sector-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.sector-icon { font-size: 28px; color: var(--gold); display: block; margin-bottom: 12px; }
+.sector-card h3 { margin: 0 0 8px; }
+.sector-card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+/* ── Offer cards */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+.offer-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 32px 28px;
+  position: relative;
+}
+.offer-card.offer-goody {
+  background: linear-gradient(180deg, rgba(212,175,55,0.08) 0%, var(--bg-2) 60%);
+  border-color: var(--gold);
+}
+.offer-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--line);
+  color: var(--text-2);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 99px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.offer-tag-gold { background: var(--gold); color: #0a0a14; font-weight: 700; }
+.offer-card h3 { font-size: 24px; margin: 16px 0 4px; }
+.offer-price { font-size: 40px; font-weight: 800; margin: 8px 0; color: var(--gold); font-family: 'IBM Plex Mono', monospace; }
+.offer-price small { font-size: 14px; color: var(--muted); font-weight: 400; margin-left: 4px; }
+.offer-trial { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-2); margin: -4px 0 16px; }
+.offer-features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.offer-features li { padding: 4px 0; }
+
+/* ── Signup form */
+.signup-form { max-width: 480px; margin-top: 32px; }
+.signup-form input[type="email"] {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.signup-form input[type="email"]:focus { outline: none; border-color: var(--gold); }
+.checkbox { display: flex; gap: 10px; font-size: 13px; color: var(--text-2); margin-bottom: 16px; }
+.checkbox a { color: var(--gold); text-decoration: underline; }
+
+/* ── FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  padding-right: 32px;
+  color: var(--text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0; top: -2px;
+  font-size: 24px;
+  color: var(--gold);
+  font-weight: 300;
+  transition: transform .15s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin: 12px 0 0; color: var(--text-2); font-size: 15px; line-height: 1.7; }
+
+/* ── Footer */
+.site-footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-inner a { color: var(--muted); }
+.footer-inner a:hover { color: var(--gold); }
+
+/* ── Responsive */
+@media (max-width: 720px) {
+  .site-nav { display: none; }
+  .compare-table { font-size: 13px; }
+  .hero { padding: 64px 0 48px; }
+  .section { padding: 56px 0; }
+}

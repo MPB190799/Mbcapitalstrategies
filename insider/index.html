@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MB Capital Insider – Kostenloser Wochen-Newsletter für Dividenden &amp; Hard Assets</title>
+<meta name="description" content="Jeden Sonntag der Wochenrückblick: KPI-Dashboard, Sektor-Rotation, Portfolio-Ampel und Marcos Thesen. Kostenlos, keine Kreditkarte, jederzeit abbestellbar.">
+<meta name="keywords" content="Wochenrückblick Aktien, Dividenden Newsletter kostenlos, Hard Assets Newsletter, Sektor-Rotation, Portfolio Ampel, Marktbericht Deutsch">
+<link rel="canonical" href="https://mbcapitalstrategies.com/insider/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Marco Bozem">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mbcapitalstrategies.com/insider/">
+<meta property="og:title" content="MB Capital Insider – Kostenloser Wochen-Newsletter">
+<meta property="og:description" content="Jeden Sonntag der Wochenrückblick: KPI-Dashboard, Sektor-Rotation, Portfolio-Ampel. Kostenlos.">
+<meta property="og:site_name" content="MB Capital Strategies">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MB Capital Insider – Kostenloser Wochen-Newsletter">
+<meta name="twitter:description" content="Hard Assets, Dividenden, Marktüberblick. Jeden Sonntag kostenlos.">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mbcapitalstrategies.com/#org",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategies.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mbcapitalstrategies.com/ueber/#marco",
+      "name": "Marco Bozem",
+      "jobTitle": "Privatanleger &amp; Newsletter-Autor",
+      "url": "https://mbcapitalstrategies.com/ueber/",
+      "worksFor": {"@id": "https://mbcapitalstrategies.com/#org"}
+    },
+    {
+      "@type": "Service",
+      "name": "MB Capital Insider – kostenloser Wochen-Newsletter",
+      "provider": {"@id": "https://mbcapitalstrategies.com/#org"},
+      "serviceType": "Newsletter",
+      "description": "Wöchentlicher kostenloser Marktüberblick für deutsche Privatanleger mit Fokus Dividenden und Hard Assets. KPI-Dashboard, Sektor-Rotation, Portfolio-Ampel und Marcos Thesen — jeden Sonntag in der Inbox.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Was kostet der Newsletter?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Komplett kostenlos. Keine Kreditkarte, keine versteckten Kosten. Finanziert über Werbung und Affiliate-Links."}},
+        {"@type": "Question", "name": "Wann kommt die Mail?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Jeden Sonntagmorgen — pünktlich zum Wochenausklang, damit du gut informiert in die neue Börsenwoche startest."}},
+        {"@type": "Question", "name": "Wie melde ich mich ab?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Jede E-Mail hat einen Abmelde-Link im Footer. Ein Klick und du bist raus. Kein Drama, kein Stress."}},
+        {"@type": "Question", "name": "Was unterscheidet diesen Newsletter von Bloomberg/Handelsblatt?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Fokus auf deutsche Privatanleger mit Dividenden- und Hard-Asset-Schwerpunkt. Kein Trader-Jargon, keine 'Geheim-Tipps' — ehrliche Einordnung. Was Bloomberg im Englischen für 2.000 € macht, gibt's hier für umsonst auf Deutsch."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="stylesheet" href="insider.css">
+<style>
+/* Insider-spezifische Anpassungen */
+.insider-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.feature-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px 20px;
+  transition: border-color .15s ease;
+}
+.feature-card:hover { border-color: var(--gold); }
+.feature-icon { font-size: 32px; color: var(--gold); display: block; margin-bottom: 12px; }
+.feature-card h3 { margin: 0 0 8px; font-size: 16px; }
+.feature-card p { margin: 0; color: var(--text-2); font-size: 13px; line-height: 1.6; }
+
+.mail-preview-section { background: var(--bg-2); padding: 80px 0; }
+.preview-box {
+  max-width: 720px;
+  margin: 32px auto 0;
+  background: var(--bg);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+.preview-headline {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.preview-content { color: var(--text-2); font-size: 14px; line-height: 1.7; }
+.preview-content strong { color: var(--text); }
+
+.signup-form-large {
+  max-width: 480px;
+  margin: 32px auto 0;
+  text-align: center;
+}
+.signup-form-large input[type="email"] {
+  width: 100%;
+  padding: 18px 22px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 17px;
+  font-family: inherit;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.signup-form-large input[type="email"]:focus { outline: none; border-color: var(--gold); }
+.signup-form-large .btn { width: 100%; padding: 18px 22px; font-size: 16px; }
+.signup-form-large .checkbox { justify-content: center; }
+
+.upsell-card {
+  background: linear-gradient(135deg, rgba(212,175,55,0.08) 0%, var(--bg-2) 100%);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 32px 28px;
+  text-align: center;
+  margin-top: 24px;
+}
+.upsell-card h3 { margin: 0 0 12px; color: var(--gold); }
+.upsell-card p { margin: 0 0 20px; color: var(--text-2); font-size: 15px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand">
+      <span class="brand-icon">⊛</span>
+      <span class="brand-name">MB&nbsp;Capital&nbsp;Strategies</span>
+    </a>
+    <nav class="site-nav">
+      <a href="/depot-strategie/">Depot</a>
+      <a href="/sektoren/">Sektoren</a>
+      <a href="/insider/" class="active">Insider</a>
+      <a href="/newsletter/">Premium</a>
+      <a href="/podcast/">Podcast</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <p class="kicker">§01 · Wöchentlich · Kostenlos</p>
+    <h1>Sonntags<br>besser informiert<br>in die Woche.</h1>
+    <p class="lead">
+      Der <strong>MB Capital Insider</strong> ist mein kostenloser Wochenrückblick.
+      Jeden Sonntagmorgen: Marktüberblick, Sektor-Rotation, Portfolio-Ampel — und meine drei Thesen für die kommende Börsenwoche.
+      Kein Hype, keine Geheim-Tipps. Ehrliche Einordnung für deutsche Privatanleger.
+    </p>
+    <div class="hero-cta">
+      <a href="#anmelden" class="btn btn-gold">Kostenlos abonnieren</a>
+      <a href="#was-drin" class="btn btn-ghost">Was steckt drin?</a>
+    </div>
+  </div>
+</section>
+
+<section id="was-drin" class="section">
+  <div class="container">
+    <p class="kicker">§02 · Inhalt</p>
+    <h2>Was du jeden Sonntag bekommst</h2>
+    <div class="insider-features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">📊</span>
+        <h3>KPI-Dashboard</h3>
+        <p>Brent, Gold, VIX, Fear &amp; Greed, 10Y-Treasury, S&amp;P 500, DAX, US-Dollar — auf einen Blick und mit Wochenveränderung.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔁</span>
+        <h3>Sektor-Rotation</h3>
+        <p>Welche Sektoren waren auf der Gewinner-, welche auf der Verlierer-Seite? Mit 1-Wochen-, 1-Monats- und 3-Monats-Perspektive.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🚦</span>
+        <h3>Portfolio-Ampel</h3>
+        <p>5 Signale (VIX, Fear &amp; Greed, Zinsen, Yield-Kurve, USD) ergeben ein einfaches Grün/Gelb/Rot — bist du gerade offensiv oder defensiv positioniert?</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💡</span>
+        <h3>Marcos Wochen-Thesen</h3>
+        <p>Die drei Top-Themen der Woche aus Sicht des Dividenden- und Hard-Asset-Investors. Eingeordnet, nicht aufgebauscht.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⚓</span>
+        <h3>Sektor-Storys</h3>
+        <p>Shipping, Energy, Mining, Pipelines, REITs, Deutsche Industrie, China &amp; Tech — kurz und konkret, was wichtig war.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📰</span>
+        <h3>Kurz notiert</h3>
+        <p>Die wichtigsten News aus Geopolitik, Märkten, Rohstoffen und Schifffahrt — kuratiert und auf den Punkt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mail-preview-section">
+  <div class="container">
+    <p class="kicker">§03 · So sieht's aus</p>
+    <h2 style="text-align:center;">Ein echter Ausschnitt aus dem Wochen-Insider</h2>
+    <div class="preview-box">
+      <p class="preview-headline">MB Capital Strategies · Wochenrückblick · KW 21 / 2026</p>
+      <p class="preview-content">
+        <strong>Hallo zusammen,</strong><br><br>
+        die abgelaufene Woche war von drei Themen geprägt: <strong>steigender Goldpreis</strong> (FCF-Rückenwind für die Mining-Schwergewichte Newmont und Barrick), <strong>schwächerer US-Dollar</strong> (positiv für unsere internationalen Dividenden-Werte) und der <strong>überraschend starke Frachtraten-Anstieg</strong> bei den Tankern.<br><br>
+        Im KPI-Dashboard sticht heraus: <strong>VIX bei 14,2 (-8,1 % WoW)</strong> — die Märkte schlafen wieder, was historisch oft eine Vorlauf-Indikation auf höhere Volatilität ist. Fear &amp; Greed Index bei 72 — &bdquo;Greed&ldquo;. Vorsicht bei Neueinstiegen.<br><br>
+        <strong>Sektor-Rotation:</strong> Pipelines &amp; Midstream +3,2 % WoW (Williams-Quartalszahlen treiben), Mining +2,8 %, Shipping +5,1 %. China &amp; Tech leicht im Minus.<br><br>
+        <strong>Portfolio-Ampel: 🟢 Offensiv</strong> — Yield-Kurve normalisiert, USD schwach, Fear &amp; Greed im Greed-Bereich. Aber Volumen reduzieren, nicht erhöhen.
+      </p>
+    </div>
+    <p style="text-align:center; margin-top:16px; color:var(--muted); font-size:13px; font-style:italic;">
+      Echter Ausschnitt aus KW 21 — komplette Mail hat 8 Sektionen, ~6 Min Lesezeit.
+    </p>
+  </div>
+</section>
+
+<section id="anmelden" class="section">
+  <div class="container">
+    <p class="kicker">§04 · Anmeldung</p>
+    <h2 style="text-align:center;">Kostenlos abonnieren</h2>
+    <p class="lead" style="text-align:center; margin-left:auto; margin-right:auto;">
+      Keine Kreditkarte. Keine versteckten Kosten. Jederzeit per Klick abbestellbar.<br>
+      Du bekommst deine erste Mail diesen Sonntag.
+    </p>
+    <form class="signup-form-large" action="https://sibforms.com/serve/MUIFAJ...placeholder..." method="POST">
+      <input type="email" name="email" placeholder="deine@email.de" required>
+      <label class="checkbox">
+        <input type="checkbox" required>
+        <span>Ich akzeptiere die <a href="/datenschutz/">Datenschutzerklärung</a> und möchte den MB Capital Insider erhalten.</span>
+      </label>
+      <button type="submit" class="btn btn-gold btn-block">Jetzt kostenlos anmelden</button>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <p class="kicker">§05 · Häufige Fragen</p>
+    <h2>FAQ</h2>
+
+    <details class="faq-item" open>
+      <summary>Was kostet der Newsletter?</summary>
+      <p>Komplett kostenlos. Keine Kreditkarte, keine versteckten Kosten. Finanziert über Werbung und Affiliate-Links.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Wann kommt die Mail?</summary>
+      <p>Jeden Sonntagmorgen — pünktlich zum Wochenausklang, damit du gut informiert in die neue Börsenwoche startest.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Wie melde ich mich ab?</summary>
+      <p>Jede E-Mail hat einen Abmelde-Link im Footer. Ein Klick und du bist raus. Kein Drama, kein Stress.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Was unterscheidet diesen Newsletter von Bloomberg / Handelsblatt?</summary>
+      <p>Fokus auf <strong>deutsche Privatanleger</strong> mit <strong>Dividenden- und Hard-Asset-Schwerpunkt</strong>. Kein Trader-Jargon, keine "Geheim-Tipps" — ehrliche Einordnung. Was Bloomberg im Englischen für 2.000 € macht, gibt's hier für umsonst auf Deutsch.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Wer schreibt das?</summary>
+      <p>Ich, Marco Bozem — privater Investor mit Schwerpunkt Dividenden + Hard Assets. Mein Depot ist öffentlich (<a href="/depot-strategie/" style="color:var(--gold);">depot-strategie</a>), ich rede über Aktien, die ich selbst halte. Transparenz ist mir wichtiger als jeder Click-Bait.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Gibt's auch was Vertieftes für ernsthafte Investoren?</summary>
+      <p>Ja — der <strong>MB Earnings Insider</strong> ab 5 €/Monat. Da bekommst du zu jedem wichtigen Quartalsbericht aus deinen Sektoren eine 5-Minuten-Tiefenanalyse. <a href="/newsletter/" style="color:var(--gold);">Mehr dazu →</a></p>
+    </details>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="upsell-card">
+      <h3>📊 Brauchst du mehr Tiefe?</h3>
+      <p>
+        Der kostenlose Insider gibt dir den Marktüberblick. Wenn du zu einzelnen Aktien Quartalsberichte detailliert
+        verstehen willst — Charts, KPIs, CEO-Quotes, Investitionen, Risiken &amp; Chancen — dann gibt es den
+        <strong>MB Earnings Insider</strong>: pro Sektor 5 €/Monat, 30 Tage gratis testen.
+      </p>
+      <a href="/newsletter/" class="btn btn-gold">Premium-Newsletter ansehen →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="copy-year"></span> MB Capital Strategies · Marco Bozem</p>
+    <p>
+      <a href="/impressum/">Impressum</a> ·
+      <a href="/datenschutz/">Datenschutz</a> ·
+      <a href="/newsletter/">Premium-Newsletter</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("copy-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
