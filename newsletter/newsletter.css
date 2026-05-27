@@ -314,14 +314,26 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   font-weight: 600;
   text-align: center;
 }
+/* The picker lives INSIDE the narrow Sektor offer-card.
+   Container queries would be ideal — fall back to fixed 3 cols which
+   fits comfortably even at the smallest card width (~280px). */
 .sector-picker-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
   margin-bottom: 28px;
 }
-@media (min-width: 540px) { .sector-picker-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 900px) { .sector-picker-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 540px) { .sector-picker-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* On wide screens, keep at 3 because the card itself is only ~330px */
+@supports (container-type: inline-size) {
+  .offer-picker { container-type: inline-size; }
+  @container (min-width: 480px) {
+    .sector-picker-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @container (min-width: 720px) {
+    .sector-picker-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  }
+}
 
 .picker-chip {
   position: relative;
@@ -331,7 +343,7 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   justify-content: flex-start;
   text-align: center;
   gap: 6px;
-  padding: 16px 8px 14px;
+  padding: 14px 6px 12px;
   background: var(--bg-2);
   border: 1.5px solid var(--line);
   border-radius: 12px;
@@ -340,7 +352,8 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   color: var(--text-2);
   transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
   user-select: none;
-  min-height: 110px;
+  min-height: 104px;
+  min-width: 0; /* allow grid item to shrink — fixes overflow on narrow cards */
 }
 .picker-chip::before {
   content: "";
@@ -379,12 +392,16 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
 .picker-chip span > b {
   display: block;
   font-family: 'Outfit', system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.25;
+  line-height: 1.2;
   margin-top: 4px;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 .picker-chip em {
   position: relative;
