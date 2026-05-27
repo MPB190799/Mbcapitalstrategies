@@ -328,10 +328,10 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
-  gap: 4px;
-  padding: 14px 8px 12px;
+  gap: 6px;
+  padding: 16px 8px 14px;
   background: var(--bg-2);
   border: 1.5px solid var(--line);
   border-radius: 12px;
@@ -340,14 +340,14 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   color: var(--text-2);
   transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
   user-select: none;
-  min-height: 96px;
-  overflow: hidden;
+  min-height: 110px;
 }
 .picker-chip::before {
   content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.18), transparent 70%);
+  border-radius: inherit;
   opacity: 0;
   transition: opacity .25s ease;
   pointer-events: none;
@@ -363,24 +363,28 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   opacity: 0;
   pointer-events: none;
 }
+/* Emoji icon — full-size, own line, NEVER clipped */
 .picker-chip span {
   position: relative;
-  font-size: 15px;
+  display: block;
+  width: 100%;
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: 0;
+  /* Render emoji on supported platforms */
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", system-ui, sans-serif;
+}
+/* The text label after the emoji uses a different font + size */
+.picker-chip span > b {
+  display: block;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-/* The icon is the first character of the span — make it big */
-.picker-chip span::first-letter {
-  font-size: 26px;
-  line-height: 1;
-  display: block;
-  margin-bottom: 2px;
+  line-height: 1.25;
+  margin-top: 4px;
+  letter-spacing: 0.005em;
 }
 .picker-chip em {
   position: relative;
@@ -390,6 +394,7 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   letter-spacing: 0.4px;
   font-family: 'IBM Plex Mono', monospace;
   line-height: 1.2;
+  margin-top: auto;
 }
 .picker-chip.selected {
   border-color: var(--gold);
@@ -398,7 +403,7 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
   transform: translateY(-2px);
 }
 .picker-chip.selected::before { opacity: 1; }
-.picker-chip.selected span { color: var(--gold); }
+.picker-chip.selected span > b { color: var(--gold); }
 .picker-chip.selected em { color: var(--gold); opacity: 0.85; }
 /* Selection-order badge in top-right corner */
 .picker-chip.selected::after {
