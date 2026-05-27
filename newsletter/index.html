@@ -553,21 +553,21 @@
 
           <div class="picker-summary">
             <div class="picker-count">
+              <strong>Deine Auswahl</strong>
               <span id="picker-count-text">Noch keine Sektoren gewählt</span>
             </div>
             <div class="picker-total">
-              <span id="picker-total-display">—</span>
-              <span class="picker-total-suffix">€ / Monat</span>
+              <span id="picker-total-display">—</span><span class="picker-total-suffix">€ / Monat</span>
             </div>
           </div>
 
           <label class="picker-promo">
-            <span>Promo-Code (optional):</span>
+            <span>Promo-Code (optional)</span>
             <input type="text" id="picker-promo-input" placeholder="z.B. INSIDER1" autocomplete="off" maxlength="30">
           </label>
 
           <button id="picker-checkout-btn" class="btn btn-gold btn-block" disabled type="button">
-            Sektor wählen → Checkout starten
+            Sektor wählen, um fortzufahren
           </button>
           <p id="picker-error" class="picker-error" style="display:none;"></p>
         </div>
@@ -768,7 +768,7 @@
       if (n === 0) {
         countText.textContent = 'Noch keine Sektoren gewählt';
         totalDisplay.textContent = '—';
-        btn.textContent = 'Sektor wählen → Checkout starten';
+        btn.textContent = 'Sektor wählen, um fortzufahren';
         btn.disabled = true;
       } else {
         countText.textContent = n + ' Sektor' + (n !== 1 ? 'en' : '') + ' gewählt';
