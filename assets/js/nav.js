@@ -140,7 +140,7 @@
       '<nav class="nav" id="main-nav">' +
         '<div class="nav-inner">' +
           '<a href="/" class="nav-brand">' +
-            '<img src="/Logo.png" alt="MB Capital Strategies" width="44" height="44">' +
+            '<picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.png" alt="MB Capital Strategies" width="44" height="44" loading="eager"></picture>' +
             '<span>MB Capital Strategies</span>' +
           '</a>' +
           '<div class="nav-links">' +
