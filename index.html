@@ -745,7 +745,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   </aside>
 
   <div class="compass-backdrop" id="compass-backdrop" aria-hidden="true">
-    <img class="compass-img" src="/assets/compass-vintage.png" alt="" width="1024" height="1024" loading="eager" decoding="async">
+    <picture>
+      <source srcset="/assets/compass-vintage.webp" type="image/webp">
+      <img class="compass-img" src="/assets/compass-vintage.png" alt="" width="1024" height="1024" loading="eager" decoding="async">
+    </picture>
   </div>
 
   <!-- Clickable sector cardinals — overlay on the hero (above scrim + compass) -->
