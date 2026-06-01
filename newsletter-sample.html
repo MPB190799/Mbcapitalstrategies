@@ -695,16 +695,17 @@
       </div><!-- .nl-wrapper -->
 
       <!-- CTA-BLOCK -->
-      <!-- MARCO-TODO: Brevo-Embed-URL aus Brevo-Dashboard eintragen (Audience > Forms > Embed-Code).
-           BREVO_LIST_ID_PREMIUM = 4. Dann form action + input name="EMAIL" aktivieren. -->
+      <!-- Brevo-Form (Marcos echte Homepage-Form, Liste „MB Capital Insider", Double-Opt-In). Lead-Magnet:
+           gratis eintragen → später Upsell auf Premium-Tiers (5 €/8 €). -->
       <div class="cta-premium" id="newsletter-anmelden">
-        <h2>Jede Woche freitags: Dein Shipping-Digest</h2>
-        <p>CMB.Tech, TORM, BW LPG und alle weiteren Sektoren (Energie, Mining, REITs) — mit Makro-Dashboard, Sektorrotation und Dividenden-Watchlist. Kein Hype, keine Empfehlungen, nur Zahlen mit Einordnung.</p>
+        <h2>Jede Woche freitags: Dein Sektor-Digest — kostenlos starten</h2>
+        <p>CMB.Tech, TORM, BW LPG und alle weiteren Sektoren (Energie, Mining, REITs) — mit Makro-Dashboard, Sektorrotation und Dividenden-Watchlist. Kein Hype, keine Empfehlungen, nur Zahlen mit Einordnung. <strong>Gratis eintragen, jederzeit auf Premium upgraden.</strong></p>
         <form
-          action="https://my.brevo.com/users/subscribe/js_id/BREVO_FORM_ID_PREMIUM/list/4"
+          action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw=="
           method="POST"
           target="_blank"
           class="cta-form"
+          data-type="subscription"
         >
           <input
             type="email"
@@ -714,7 +715,11 @@
             class="cta-input"
             aria-label="E-Mail-Adresse"
           >
-          <button type="submit" class="cta-btn">Jetzt abonnieren</button>
+          <label style="display:block;font-size:0.8rem;color:#c8cfe0;margin:8px 0;text-align:left">
+            <input type="checkbox" name="OPT_IN" value="1" required style="margin-right:6px;vertical-align:middle">
+            Ja, ich möchte den kostenlosen Sektor-Digest per E-Mail erhalten (Double-Opt-In, jederzeit abbestellbar).
+          </label>
+          <button type="submit" class="cta-btn">Kostenlos eintragen</button>
         </form>
         <p class="cta-legal">Keine Anlageberatung. Double-Opt-In. Abmeldung jederzeit per Klick. Datenschutz gemäß DSGVO.</p>
       </div>
