@@ -2,20 +2,365 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=https://mbcapitalstrategies.com/">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://mbcapitalstrategies.com/">
-  <title>MB Capital Newsletter — Wochenrückblick Hard Assets</title>
-  <meta property="og:title" content="MB Capital Newsletter — Wochenrückblick Hard Assets">
-  <meta property="og:description" content="Dividenden-Investing in Hard Assets: Mining, Shipping, Pipeline & Upstream. Analysen, Rechner & Strategien von Marco Bozem.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0f1115">
+
+  <title>MB Capital Insider Newsletter — Wochenrückblick Shipping, Mining, Dividenden</title>
+  <meta name="description" content="Kostenloser Wochenrückblick von Marco Bozem: Hard Assets, Shipping, Mining & Dividenden — mit YOC ≥8% Aktien PDF. Jeden Sonntag. DSGVO-konform.">
+  <meta name="author" content="Marco Bozem">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/newsletter.html">
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/newsletter.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/newsletter.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/newsletter.html">
+
+  <meta property="og:title" content="MB Capital Insider Newsletter — Wochenrückblick Hard Assets">
+  <meta property="og:description" content="Kostenloser Wochenrückblick: Shipping, Mining, Dividenden von Marco Bozem. Gratis PDF: Top 10 YOC ≥8% Aktien.">
   <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/newsletter.html">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MB Capital Newsletter — Wochenrückblick Hard Assets">
-  <meta name="twitter:description" content="Dividenden-Investing in Hard Assets: Mining, Shipping, Pipeline & Upstream. Analysen, Rechner & Strategien von Marco Bozem.">
-  <meta name="twitter:image" content="https://mbcapitalstrategies.com/Logo.png">
+  <meta name="twitter:title" content="MB Capital Insider Newsletter — Wochenrückblick Hard Assets">
+  <meta name="twitter:description" content="Kostenloser Wochenrückblick: Shipping, Mining, Dividenden. Gratis PDF: Top 10 YOC ≥8% Aktien.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+
+  <link rel="stylesheet" href="/blog/styles.css?v=3">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J1NWEPPKNE');
+  </script>
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "MB Capital Insider Newsletter",
+    "description": "Kostenloser Wochenrückblick von Marco Bozem: Hard Assets, Shipping, Mining & Dividenden mit YOC-Analyse. DSGVO-konformer Newsletter.",
+    "url": "https://mbcapitalstrategies.com/newsletter.html",
+    "inLanguage": "de",
+    "author": {
+      "@type": "Person",
+      "name": "Marco Bozem",
+      "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+      "sameAs": [
+        "https://www.linkedin.com/in/marco-bozem-182173295",
+        "https://www.youtube.com/@mbcapitalstrategies",
+        "https://www.wikidata.org/wiki/Q138571853"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategies.com"
+    }
+  }
+  </script>
+
+  <style>
+    .newsletter-hero {
+      background: linear-gradient(135deg, #0f1115 0%, #1a1a2e 50%, #0f1115 100%);
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+      padding: 60px 20px 50px;
+      text-align: center;
+    }
+    .newsletter-hero h1 {
+      color: #f5f6fa;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+    .newsletter-hero h1 span { color: #d4af37; }
+    .newsletter-hero p {
+      color: #9aa6c0;
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    .benefit-card {
+      background: #151821;
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: left;
+    }
+    .benefit-card .icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .benefit-card h3 { color: #d4af37; font-size: 0.95rem; margin: 0 0 8px; }
+    .benefit-card p { color: #7a8499; font-size: 0.85rem; margin: 0; line-height: 1.5; }
+    .signup-box {
+      background: #0f0f1a;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-left: 4px solid #d4af37;
+      border-radius: 8px;
+      padding: 36px 32px;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    .signup-box h2 { color: #d4af37; font-size: 1.3rem; margin: 0 0 10px; }
+    .signup-box p.sub { color: #9aa6c0; font-size: 0.9rem; margin: 0 0 20px; line-height: 1.5; }
+    .form-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .form-row input[type="email"] {
+      flex: 1; min-width: 200px;
+      padding: 12px 14px;
+      border: 1px solid rgba(212,175,55,0.35);
+      background: #080810;
+      color: #f0f4ff;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .form-row button {
+      padding: 12px 24px;
+      background: #d4af37;
+      color: #000;
+      border: 0;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .form-row button:hover { background: #e5c347; }
+    .form-check {
+      display: flex; align-items: flex-start; gap: 8px;
+      margin-bottom: 10px;
+    }
+    .form-check input { margin-top: 3px; accent-color: #d4af37; }
+    .form-check label { color: #5a6480; font-size: 0.77rem; line-height: 1.4; }
+    .form-check label a { color: #d4af37; text-decoration: none; }
+    .fine-print { color: #4a5468; font-size: 0.72rem; margin: 8px 0 0; }
+    .msg-area { font-size: 0.82rem; margin: 8px 0 0; min-height: 20px; }
+    .sample-preview {
+      background: #151821;
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 10px;
+      padding: 24px 28px;
+      max-width: 700px;
+      margin: 40px auto;
+    }
+    .sample-preview h3 { color: #d4af37; font-size: 1rem; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .sample-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 12px 0; }
+    .sample-item:last-child { border-bottom: 0; }
+    .sample-item strong { color: #f0f4ff; font-size: 0.92rem; }
+    .sample-item p { color: #7a8499; font-size: 0.83rem; margin: 4px 0 0; }
+    .social-proof {
+      text-align: center;
+      padding: 30px 20px;
+      color: #5a6480;
+      font-size: 0.85rem;
+    }
+    .social-proof strong { color: #d4af37; }
+  </style>
 </head>
+
 <body>
-  <p>Diese Seite wurde verschoben. <a href="/">Klicke hier, falls du nicht automatisch weitergeleitet wirst.</a></p>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.png" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <a href="/blog/">Blog</a>
+    <a href="/toolbox.html">Toolbox</a>
+    <a href="/glossar/">Glossar</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="newsletter-hero">
+  <div style="max-width:700px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;">Kostenloser Newsletter</p>
+    <h1>Jeden Sonntag: <span>Wochenrückblick Hard Assets</span> direkt ins Postfach</h1>
+    <p>Shipping, Mining, Energie, REITs — Marcos wöchentliche Markt-Einschätzung mit YOC-Analyse, Dividenden-Signalen & ehrlichem Depot-Kommentar. Keine Anlageberatung, nur echte Analyse.</p>
+    <div style="display:inline-flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
+      <span style="color:#9aa6c0;font-size:0.82rem;">✔ Keine Spam</span>
+      <span style="color:#9aa6c0;font-size:0.82rem;">✔ Abmeldung jederzeit</span>
+      <span style="color:#9aa6c0;font-size:0.82rem;">✔ DSGVO Double-Opt-In</span>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding:0 20px 60px;">
+
+  <!-- GRATIS PDF HIGHLIGHT -->
+  <div style="background:linear-gradient(90deg,#1a1a2e,#1f1a10);border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;max-width:700px;margin:32px auto 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="font-size:2rem;">📊</div>
+    <div>
+      <p style="color:#d4af37;font-weight:700;margin:0 0 4px;font-size:1rem;">Gratis beim Anmelden: Top 10 YOC &ge;8 % Aktien — PDF</p>
+      <p style="color:#9aa6c0;margin:0;font-size:0.85rem;">Marcos persönliche Hard-Asset-Auswahl: Shipping, Energie, Mining &amp; REITs mit YOC-Berechnung + Payout-Check. Quartalsweise aktualisiert.</p>
+    </div>
+  </div>
+
+  <!-- BENEFITS GRID -->
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="icon">🚢</div>
+      <h3>Shipping & Tanker</h3>
+      <p>Aktuelle Frachtraten, Dividenden-Signale, Fleet-Developments — von TORM bis CMB.Tech.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">⛏️</div>
+      <h3>Mining & Rohstoffe</h3>
+      <p>Kupfer, Gold, Eisenerz — mit Bezug zu Marcos Top-Positionen und YOC-Entwicklung.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">💰</div>
+      <h3>Dividenden-Analyse</h3>
+      <p>YOC ≥8 % Signale, Payout-Ratio-Check, Ausschüttungshistorie — ehrlich und ohne Hype.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="icon">🛢️</div>
+      <h3>Energie & Pipelines</h3>
+      <p>LNG, Upstream, Midstream — Sektorreport mit Einzeltiteln und Makro-Einordnung.</p>
+    </div>
+  </div>
+
+  <!-- SIGNUP BOX -->
+  <div class="signup-box">
+    <h2>📬 MB Capital Insider abonnieren</h2>
+    <p class="sub">Jeden Sonntag — kostenlos — direkt aus Marcos Depot. Kein KI-Brei, nur eigene Analyse.</p>
+    <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription">
+      <div class="form-row">
+        <input type="email" name="EMAIL" placeholder="deine@email.de" required aria-label="E-Mail-Adresse">
+        <button type="submit">PDF + Newsletter holen &rarr;</button>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" id="optin" name="OPT_IN" value="1" required>
+        <label for="optin">Ich akzeptiere die <a href="/datenschutz.html">Datenschutzerklärung</a> und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich. (Double-Opt-In: Bestätigungs-E-Mail folgt)</label>
+      </div>
+      <input type="hidden" name="email_address_check" value="">
+      <input type="hidden" name="locale" value="de">
+      <p class="fine-print">Keine Anlageberatung. DSGVO-konform. Datenspeicherung via Brevo (EU).</p>
+    </form>
+  </div>
+
+  <!-- SAMPLE PREVIEW -->
+  <div class="sample-preview">
+    <h3>Was erwartet dich jede Woche?</h3>
+    <div class="sample-item">
+      <strong>1. Shipping-Radar</strong>
+      <p>VLCC-Spotrate, Tanker-Frachtraten, Hormuz/Panama-Kanal-Status, Dividenden-Ankündigungen aus Marcos Portfolio.</p>
+    </div>
+    <div class="sample-item">
+      <strong>2. Mining & Rohstoff-Update</strong>
+      <p>Kupfer, Gold, Eisenerz-Preise mit YOC-Auswirkung auf Top-Positionen. BHP, Vale, Thungela — was ist passiert?</p>
+    </div>
+    <div class="sample-item">
+      <strong>3. Dividenden-Signal der Woche</strong>
+      <p>Ein Titel mit YOC ≥8 % — ausführlich geprüft auf Payout-Ratio, Cashflow-Deckung, Risiko-Flags.</p>
+    </div>
+    <div class="sample-item">
+      <strong>4. Marcos ehrlicher Kommentar</strong>
+      <p>Was hat sich in der Woche verändert? Was halte ich, was trenne ich? Direkt, ohne Schönrednerei.</p>
+    </div>
+    <div class="sample-item">
+      <strong>5. Gratis-PDF Update</strong>
+      <p>Quartalsweise: aktualisierte Top-10-YOC-Liste mit Kursen, Renditen und Einschätzung.</p>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROOF -->
+  <div class="social-proof">
+    <p>Marco Bozem ist unabhängiger Investor mit Fokus auf <strong>Hard Assets &amp; Dividenden</strong>.<br>
+    Shipping, Mining, Energie, REITs — transparente Analyse ohne Interessenkonflikt.</p>
+    <p style="margin-top:8px;">
+      <a href="/ueber-marco-bozem/" style="color:#d4af37;text-decoration:none;">Über Marco Bozem →</a>
+      &nbsp;·&nbsp;
+      <a href="/blog/" style="color:#d4af37;text-decoration:none;">Alle Analysen lesen →</a>
+    </p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <p style="color:#3a4255;font-size:0.72rem;text-align:center;max-width:600px;margin:0 auto 40px;">
+    Kein Newsletter-Inhalt stellt eine Anlageberatung oder Empfehlung dar. Alle Inhalte dienen ausschließlich der Information und persönlichen Meinungsbildung. Jede Investition birgt Risiken. Bitte eigene Due Diligence durchführen.
+  </p>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content &amp; Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/newsletter.html" target="_blank" rel="noopener">English Newsletter</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+
+<script src="/assets/js/nav.js" defer></script>
+<script>
+if(document.querySelector('form[action*="sibforms.com"]')){
+  var s=document.createElement('script');
+  s.defer=true;
+  s.src='https://sibforms.com/forms/end-form/build/main.js';
+  document.head.appendChild(s);
+}
+</script>
 </body>
 </html>
