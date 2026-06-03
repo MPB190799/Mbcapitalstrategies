@@ -117,7 +117,7 @@
     <h2>Beispiel-Quartalsbericht</h2>
     <p class="lead" style="margin:0 auto 18px;max-width:640px;">Genau dieses Format landet am Earnings-Tag in deinem Postfach — hier ein echtes Muster (Shipping &amp; Mining), Zahlen eingeordnet statt nur aufgelistet.</p>
     <a href="/newsletter-sample.html" style="display:block;max-width:680px;margin:0 auto;border:1px solid var(--gold);border-radius:10px;overflow:hidden;max-height:520px;position:relative;text-decoration:none;">
-      <img src="/assets/MB-Earnings-Insider-Beispiel.png" alt="Beispiel-Quartalsbericht — MB Earnings Insider" loading="lazy" style="width:100%;display:block;">
+      <picture><source srcset="/assets/MB-Earnings-Insider-Beispiel.webp" type="image/webp"><img src="/assets/MB-Earnings-Insider-Beispiel.png" alt="Beispiel-Quartalsbericht — MB Earnings Insider" loading="lazy" style="width:100%;display:block;"></picture>
       <span style="position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(transparent,#0d0d0d 85%);color:var(--gold);font-weight:700;">Ganzes Beispiel ansehen &rarr;</span>
     </a>
     <div style="margin-top:20px;">
@@ -549,11 +549,8 @@
         <input type="checkbox" id="mb-free-optin" required style="margin-top:3px;accent-color:#D4AF37;">
         <span>Ich akzeptiere die <a href="/datenschutz.html" style="color:#D4AF37;">Datenschutzerklärung</a> und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich.</span>
       </label>
-      <div style="margin-bottom:14px;padding:10px 14px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:4px;font-size:0.85rem;color:#c8cfe0;">
-        <strong style="color:#D4AF37;">Gratis dazu:</strong> Marcos Depot-Juwelen — 7 Hard-Asset-Werte, die er selbst h&auml;lt (und warum).
-      </div>
       <p id="mb-free-msg" style="font-size:0.85rem;margin:0 0 10px;display:none;"></p>
-      <button type="button" onclick="mbFreeSubscribe()" class="btn btn-ghost btn-block">Kostenlos anmelden + PDF holen &rarr;</button>
+      <button type="button" onclick="mbFreeSubscribe()" class="btn btn-ghost btn-block">Kostenlos abonnieren &rarr;</button>
       <p style="font-size:0.75rem;color:#6b7a99;margin-top:8px;">Keine Anlageberatung. Double-Opt-In. Datenschutz gemäß DSGVO.</p>
     </div>
     <script>
@@ -583,7 +580,7 @@
             msg.style.display="block";
             if(d.ok){
               msg.style.color="#22c55e";
-              msg.innerHTML=(d.msg||"Fast geschafft! Bitte bestätige deine E-Mail (Double-Opt-In).")+'<br><span style="display:inline-block;margin-top:8px;">📗 <strong>Dein Gratis-PDF:</strong> <a href="/assets/Marcos-Depot-Juwelen.pdf" target="_blank" rel="noopener" style="color:#D4AF37;text-decoration:underline;">Marcos Depot-Juwelen herunterladen &rarr;</a></span>';
+              msg.textContent=d.msg||"Fast geschafft! Bitte bestätige deine E-Mail (Double-Opt-In).";
               if(el)el.value="";
               if(cb)cb.checked=false;
             } else {
