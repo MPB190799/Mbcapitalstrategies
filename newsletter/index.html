@@ -517,15 +517,62 @@
       Jeden Sonntag der Wochenüberblick mit Sektor-Rotation, Portfolio-Ampel und Marcos
       Thesen. Keine Kreditkarte, jederzeit per Klick abbestellbar.
     </p>
-    <form class="signup-form" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" method="POST">
-      <input type="email" name="email" placeholder="deine@email.de" required>
-      <label class="checkbox">
-        <input type="checkbox" required>
-        <span>Ich akzeptiere die <a href="/datenschutz.html">Datenschutzerklärung</a>.</span>
+    <div class="signup-form" id="mb-free-newsletter-form">
+      <input type="email" id="mb-free-email" placeholder="deine@email.de" required autocomplete="email"
+        style="width:100%;padding:12px 14px;border:1px solid #D4AF37;background:#080810;color:#f0f4ff;border-radius:4px;font-size:1rem;box-sizing:border-box;margin-bottom:10px;">
+      <label class="checkbox" style="display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;cursor:pointer;">
+        <input type="checkbox" id="mb-free-optin" required style="margin-top:3px;accent-color:#D4AF37;">
+        <span>Ich akzeptiere die <a href="/datenschutz.html" style="color:#D4AF37;">Datenschutzerklärung</a> und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich.</span>
       </label>
-      <button type="submit" class="btn btn-ghost btn-block">Anmelden</button>
-    </form>
-    <p class="note">Hinweis: Tausche die Form-Action gegen den echten Brevo-DOI-Form-Link aus.</p>
+      <div style="margin-bottom:14px;padding:10px 14px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:4px;font-size:0.85rem;color:#c8cfe0;">
+        <strong style="color:#D4AF37;">Gratis dazu:</strong> Top 10 YOC &ge;8% Aktien PDF — quartalsweise aktualisiert.
+      </div>
+      <p id="mb-free-msg" style="font-size:0.85rem;margin:0 0 10px;display:none;"></p>
+      <button type="button" onclick="mbFreeSubscribe()" class="btn btn-ghost btn-block">Kostenlos anmelden + PDF holen &rarr;</button>
+      <p style="font-size:0.75rem;color:#6b7a99;margin-top:8px;">Keine Anlageberatung. Double-Opt-In. Datenschutz gemäß DSGVO.</p>
+    </div>
+    <script>
+    (function(){
+      window.mbFreeSubscribe = function(){
+        var el = document.getElementById("mb-free-email");
+        var cb = document.getElementById("mb-free-optin");
+        var msg = document.getElementById("mb-free-msg");
+        var email = el ? el.value.trim() : "";
+        if(!email || !email.includes("@")){
+          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte eine gültige E-Mail-Adresse eingeben.";}
+          return;
+        }
+        if(!cb || !cb.checked){
+          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte die Datenschutzerklärung akzeptieren.";}
+          return;
+        }
+        if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung läuft...";}
+        fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({email:email})
+        })
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(msg){
+            msg.style.display="block";
+            if(d.ok){
+              msg.style.color="#22c55e";
+              msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestätigen (Double-Opt-In).";
+              if(el)el.value="";
+              if(cb)cb.checked=false;
+            } else {
+              msg.style.color="#ef4444";
+              msg.textContent=d.msg||"Fehler beim Anmelden. Bitte nochmal versuchen.";
+            }
+          }
+        })
+        .catch(function(){
+          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Bitte später nochmal versuchen.";}
+        });
+      };
+    })();
+    </script>
   </div>
 </section>
 
