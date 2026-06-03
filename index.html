@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="dark" data-luxe-v3="1">
 <head>
-<!-- LCP-Fix: Kritische Fonts preloaden -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<!-- Fonts werden als kombinierter non-blocking Request weiter unten geladen -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="msvalidate.01" content="E450D869E83A84CC75BF896F78D3CCFF" />
@@ -24,7 +22,9 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://www.youtube.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- LCP-Fix: Alle Fonts non-blocking laden (kein render-blocking) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
 
   <title>MB Capital Strategies — Hard Assets & Dividenden</title>
   <meta name="description" content="MB Capital Strategies: Dividendenaktien-Analysen — Shipping, Mining, Energie, REITs. YOC ≥8% Aktien, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
