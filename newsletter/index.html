@@ -16,8 +16,8 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mbcapitalstrategies.com/newsletter">
-<meta property="og:title" content="Aktien-Newsletter ab 5 €/Monat – 9 Sektoren Quartalsbericht-Analysen | MB Capital Strategies">
-<meta property="og:description" content="Quartalsbericht-Analysen für 9 Sektoren — Shipping, Mining, Pharma, Chemie u.a. — direkt am Earnings-Tag. Ab 5 €/Monat, 30 Tage gratis.">
+<meta property="og:title" content="Aktien-Newsletter ab 5 €/Monat – 10 Sektoren Quartalsbericht-Analysen | MB Capital Strategies">
+<meta property="og:description" content="Quartalsbericht-Analysen für 10 Sektoren — Shipping, Mining, Pharma, Chemie, Agrar u.a. — direkt am Earnings-Tag. Ab 5 €/Monat, 30 Tage gratis.">
 <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-newsletter.jpg">
 <meta property="og:site_name" content="MB Capital Strategies">
 <meta property="og:locale" content="de_DE">
@@ -94,7 +94,7 @@
     <p class="kicker">§01 · Premium Aktien-Newsletter</p>
     <h1>Aktien-Newsletter mit Quartalsbericht-Analysen.<br><span style="color:var(--gold); font-weight:600;">10 Sektoren · ab 5 € · 30 Tage gratis.</span></h1>
     <p class="lead">
-      Jede wichtige Quartalsbericht-Veröffentlichung deiner Sektoren in 5 Minuten erklärt — Shipping, Mining, Öl &amp; Gas, Pipelines, REITs &amp; BDCs, Pharma, Chemie, Stahl, Versorger.
+      Jede wichtige Quartalsbericht-Veröffentlichung deiner Sektoren in 5 Minuten erklärt — Shipping, Mining, Öl &amp; Gas, Pipelines, REITs &amp; BDCs, Pharma, Chemie, Stahl, Versorger, Agrar &amp; Food.
       Strukturierte Analyse mit Charts, KPIs, Investitionen, Dividenden-Coverage und Sektor-Peer-Vergleich.
       Speziell für deutsche Privatanleger mit Hard-Asset-Fokus.
     </p>
@@ -236,8 +236,8 @@
         <tr>
           <th>Kündigung</th>
           <td>Per Klick im Newsletter</td>
-          <td>Jederzeit zum Monatsende, kein Stress</td>
-          <td>Jederzeit zum Monatsende, kein Stress</td>
+          <td>Jederzeit kündbar — Zugang bis Ende des bezahlten Zeitraums</td>
+          <td>Jederzeit kündbar — Zugang bis Ende des bezahlten Zeitraums</td>
         </tr>
         <tr class="row-cta">
           <th></th>
@@ -251,7 +251,7 @@
 
     <p class="note">
       <strong>Beide Premium-Abos: 30 Tage gratis testen.</strong> Erst danach wird gebucht.
-      Jederzeit zum Monatsende kündbar — alles bequem über das Stripe Customer Portal.
+      Jederzeit kündbar — dein Zugang läuft bis zum Ende des bereits bezahlten Zeitraums, danach keine Abbuchung mehr. Alles bequem über das Stripe Customer Portal.
     </p>
   </div>
 </section>
@@ -483,6 +483,11 @@
             <input type="text" id="picker-promo-input" placeholder="z.B. INSIDER1" autocomplete="off" maxlength="30">
           </label>
 
+          <label class="picker-consent" style="display:flex;gap:8px;align-items:flex-start;margin:10px 0 4px;font-size:12px;color:var(--text-2);line-height:1.5;cursor:pointer;">
+            <input type="checkbox" id="picker-consent" style="margin-top:3px;accent-color:var(--gold);">
+            <span>Ich stimme ausdrücklich zu, dass die Leistung sofort beginnt, und mir ist bekannt, dass mein <a href="/widerrufsbelehrung.html" target="_blank" rel="noopener" style="color:var(--gold);">Widerrufsrecht</a> mit Beginn der Ausführung erlischt. Es gelten die <a href="/agb.html" target="_blank" rel="noopener" style="color:var(--gold);">AGB</a>.</span>
+          </label>
+
           <button id="picker-checkout-btn" class="btn btn-gold btn-block" disabled type="button">
             Sektor wählen, um fortzufahren
           </button>
@@ -496,13 +501,18 @@
         <p class="offer-price">€8<small> / Monat</small></p>
         <p class="offer-trial">30 Tage gratis testen</p>
         <ul class="offer-features">
-          <li>✓ Marcos Portfolio + persönliche Watchlist (~170 Aktien)</li>
-          <li>✓ Sektorübergreifend — auch Deutsche Industrie, China &amp; Tech, Konsumgüter</li>
+          <li>✓ Marcos Portfolio + persönliche Watchlist (~227 Werte)</li>
+          <li>✓ Sektorübergreifend — quer durch alle 10 Hard-Asset- &amp; Dividenden-Sektoren, nach Marcos Auswahl</li>
           <li>✓ Identische Earnings-Analyse wie das Sektor-Abo, nur über alle Sektoren</li>
           <li>✓ Optionale Opt-Outs für einzelne Sektoren</li>
           <li>✓ Effektivpreis pro Mail meist günstiger als das Sektor-Abo</li>
         </ul>
+        <label class="goody-consent" style="display:flex;gap:8px;align-items:flex-start;margin:8px 0;font-size:12px;color:var(--text-2);line-height:1.5;cursor:pointer;text-align:left;">
+          <input type="checkbox" id="goody-consent" style="margin-top:3px;accent-color:var(--gold);">
+          <span>Ich stimme ausdrücklich zu, dass die Leistung sofort beginnt, und mir ist bekannt, dass mein <a href="/widerrufsbelehrung.html" target="_blank" rel="noopener" style="color:var(--gold);">Widerrufsrecht</a> mit Beginn erlischt. Es gelten die <a href="/agb.html" target="_blank" rel="noopener" style="color:var(--gold);">AGB</a>.</span>
+        </label>
         <a id="cta-stripe-goody" href="https://buy.stripe.com/6oU28rbPWdsmez11go1sQ01" class="btn btn-gold btn-block" data-stripe-link>€8 / Monat starten</a>
+        <p id="goody-error" class="picker-error" style="display:none;margin-top:8px;"></p>
       </article>
 
     </div>
@@ -558,7 +568,7 @@
             msg.style.display="block";
             if(d.ok){
               msg.style.color="#22c55e";
-              msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestätigen (Double-Opt-In).";
+              msg.innerHTML=(d.msg||"Fast geschafft! Bitte bestätige deine E-Mail (Double-Opt-In).")+'<br><span style="display:inline-block;margin-top:8px;">📗 <strong>Dein Gratis-PDF:</strong> <a href="/assets/Marcos-Depot-Juwelen.pdf" target="_blank" rel="noopener" style="color:#D4AF37;text-decoration:underline;">Marcos Depot-Juwelen herunterladen &rarr;</a></span>';
               if(el)el.value="";
               if(cb)cb.checked=false;
             } else {
@@ -586,7 +596,8 @@
       <p>
         Du startest sofort mit vollem Zugriff. In den ersten 30 Tagen bucht Stripe nichts ab.
         Kündigst du vor Ablauf, ist es komplett kostenlos. Danach erfolgt die monatliche
-        Abbuchung automatisch — jederzeit zum Monatsende kündbar.
+        Abbuchung automatisch — jederzeit kündbar, dein Zugang läuft dann bis zum Ende des
+        bereits bezahlten Zeitraums (keine Mindestlaufzeit, kein Knebel).
       </p>
     </details>
 
@@ -602,7 +613,7 @@
       <summary>Was unterscheidet das €8-Abo vom €5-Sektor-Abo?</summary>
       <p>
         Das €8-Abo ist <strong>Marcos persönliche Aktien-Auswahl</strong> (Portfolio + Watchlist), sektorübergreifend.
-        Du bekommst jeden Earnings-Bericht aus seinen ~170 Hard-Asset- und Dividenden-Positionen — quer durch alle Sektoren.
+        Du bekommst jeden Earnings-Bericht aus seinen ~227 Hard-Asset- und Dividenden-Positionen — quer durch alle Sektoren.
         Das €5-Abo fokussiert auf einen einzelnen Sektor mit dem kompletten Branchen-Universum.
         Beide Abos liefern dieselbe Analyse-Tiefe (Charts, KPIs, CEO-Quotes, Risiken, Chancen, neutrale Einordnung).
       </p>
@@ -618,8 +629,8 @@
     <details class="faq-item">
       <summary>Goody-Abo: kann ich einzelne Sektoren ausblenden?</summary>
       <p>
-        Ja. Beim Checkout (oder später im Customer Portal) kannst du z. B. „China &amp; Tech"
-        ausblenden, wenn dich die Marco-Picks dort nicht interessieren.
+        Ja. Beim Checkout (oder später im Customer Portal) kannst du einzelne Sektoren
+        ausblenden — z. B. „Stahl" oder „Versorger" —, wenn dich Marcos Picks dort nicht interessieren.
       </p>
     </details>
 
@@ -628,7 +639,9 @@
       <p>
         In jeder Premium-Mail steht unten ein „Abo verwalten / kündigen"-Link. Klick führt
         direkt zum Stripe Customer Portal — dort siehst du dein Abo, kannst mit einem Klick
-        kündigen (zum Monatsende, keine Restlaufzeit-Falle), und es ist sofort bestätigt.
+        kündigen. Dein Zugang läuft bis zum Ende deines bereits bezahlten Zeitraums (z. B. Kauf
+        am 25. → Zugang bis 25. des Folgemonats), danach keine Abbuchung mehr — keine
+        Restlaufzeit-Falle, keine Mindestlaufzeit. Sofort bestätigt.
         Keine Email an Support, keine Hotline, kein Termin nötig. Komplett Self-Service,
         wie's sein muss.
       </p>
@@ -651,6 +664,8 @@
     <p>
       <a href="/impressum.html">Impressum</a> ·
       <a href="/datenschutz.html">Datenschutz</a> ·
+      <a href="/agb.html">AGB</a> ·
+      <a href="/widerrufsbelehrung.html">Widerruf</a> ·
       <a href="https://billing.stripe.com/p/login/9B68wPaLSgEy9eH4sA1sQ00">Abo verwalten</a>
     </p>
   </div>
@@ -710,6 +725,7 @@
     var totalDisplay = document.getElementById('picker-total-display');
     var promoInput   = document.getElementById('picker-promo-input');
     var errorEl      = document.getElementById('picker-error');
+    var consentEl    = document.getElementById('picker-consent');
 
     if (!btn || !checkboxes.length) return;
 
@@ -737,8 +753,13 @@
       } else {
         countText.textContent = n + ' Sektor' + (n !== 1 ? 'en' : '') + ' gewählt';
         totalDisplay.textContent = price;
-        btn.textContent = 'Mit ' + price + ' €/Monat starten →';
-        btn.disabled = false;
+        if (consentEl && !consentEl.checked) {
+          btn.textContent = 'Zustimmung bestätigen, um fortzufahren';
+          btn.disabled = true;
+        } else {
+          btn.textContent = 'Mit ' + price + ' €/Monat starten →';
+          btn.disabled = false;
+        }
       }
       // Update chip styling
       document.querySelectorAll('.picker-chip').forEach(function(label) {
@@ -763,6 +784,11 @@
     async function startCheckout() {
       var sectors = getSelectedSectors();
       if (sectors.length === 0) return;
+      if (consentEl && !consentEl.checked) {
+        errorEl.textContent = 'Bitte bestätige die Zustimmung zum sofortigen Leistungsbeginn (siehe Widerrufsbelehrung).';
+        errorEl.style.display = 'block';
+        return;
+      }
       var price = calcPrice(sectors.length);
       var promo = (promoInput && promoInput.value || '').trim().toUpperCase();
 
@@ -814,6 +840,7 @@
       updateUI();
       trackSectorEvent('sector_selected', getSelectedSectors(), calcPrice(getSelectedSectors().length));
     }); });
+    if (consentEl) consentEl.addEventListener('change', updateUI);
     btn.addEventListener('click', startCheckout);
 
     // Goody Card → use Worker as well (consistent flow + metadata)
@@ -822,6 +849,13 @@
       goodyBtn.addEventListener('click', async function(e) {
         // Only intercept if Worker endpoint is reachable; fall back to direct payment link
         e.preventDefault();
+        var gc = document.getElementById('goody-consent');
+        var ge = document.getElementById('goody-error');
+        if (gc && !gc.checked) {
+          if (ge) { ge.textContent = 'Bitte bestätige die Zustimmung zum sofortigen Leistungsbeginn (siehe Widerrufsbelehrung).'; ge.style.display = 'block'; }
+          return;
+        }
+        if (ge) ge.style.display = 'none';
         try {
           var resp = await fetch(WORKER_ENDPOINT, {
             method: 'POST',
