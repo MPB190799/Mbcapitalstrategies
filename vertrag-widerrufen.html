@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vertrag widerrufen | MB Capital Strategies</title>
+<meta name="description" content="Widerrufsbutton gemäß § 356a BGB — widerrufe deinen Vertrag über den Premium-Newsletter MB Earnings Insider in zwei Schritten.">
+<meta name="robots" content="noindex, follow">
+<style>
+  body{background:#0d0d0d;color:#cfd6e6;font-family:system-ui,Arial,sans-serif;line-height:1.7;margin:0}
+  .container{max-width:620px;margin:0 auto;padding:28px 20px 64px}
+  .brand{color:#d4af37;text-decoration:none;font-weight:600}
+  h1{color:#d4af37;font-size:1.6rem;margin:24px 0 6px}
+  a{color:#d4af37}
+  label{display:block;margin:14px 0 4px;font-size:.92rem;color:#e8ecf5}
+  input{width:100%;padding:11px 13px;border:1px solid #d4af37;background:#080810;color:#f0f4ff;border-radius:5px;font-size:1rem;box-sizing:border-box}
+  .req{color:#d4af37}
+  .btn{display:inline-block;width:100%;margin-top:18px;padding:13px;border:0;border-radius:6px;background:#d4af37;color:#0d0d0d;font-weight:700;font-size:1rem;cursor:pointer}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .msg{margin-top:14px;padding:12px 14px;border-radius:6px;font-size:.92rem;display:none}
+  .info{border:1px solid #333;background:#141414;border-radius:8px;padding:14px 18px;margin:16px 0;font-size:.9rem;color:#aab2c5}
+  footer{border-top:1px solid #222;margin-top:40px;padding-top:16px;font-size:.82rem;color:#9aa3b8}
+  footer a{color:#d4af37;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <p><a href="/" class="brand">⊛ MB Capital Strategies</a></p>
+  <h1>Vertrag widerrufen</h1>
+  <p>Hier kannst du deinen Vertrag über den kostenpflichtigen Premium-Newsletter
+  <strong>„MB Earnings Insider"</strong> innerhalb der 14-tägigen Widerrufsfrist widerrufen
+  (§ 355 BGB). Fülle die Felder aus und klicke auf <em>„Widerruf bestätigen"</em> — du erhältst
+  sofort eine Eingangsbestätigung per E-Mail.</p>
+
+  <div class="info">
+    Details zu deinem Recht findest du in der
+    <a href="/widerrufsbelehrung.html" target="_blank" rel="noopener">Widerrufsbelehrung</a>.
+    Den freien Wochen-Newsletter kannst du einfach über den Abmeldelink in jeder E-Mail beenden —
+    dafür brauchst du dieses Formular nicht.
+  </div>
+
+  <form id="widerruf-form" autocomplete="on">
+    <label for="w-name">Name <span class="req">*</span></label>
+    <input type="text" id="w-name" name="name" required autocomplete="name" placeholder="Vor- und Nachname">
+
+    <label for="w-contract">Vertrags- / Bestellnummer <small>(falls vorhanden)</small></label>
+    <input type="text" id="w-contract" name="contract" autocomplete="off" placeholder="z. B. aus deiner Bestätigungsmail">
+
+    <label for="w-email">E-Mail-Adresse deines Abos <span class="req">*</span></label>
+    <input type="email" id="w-email" name="email" required autocomplete="email" placeholder="deine@email.de">
+
+    <button type="button" id="w-submit" class="btn">Widerruf bestätigen</button>
+    <p id="w-msg" class="msg"></p>
+  </form>
+
+  <footer>
+    © MB Capital Strategies · Marco Bozem ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="/agb.html">AGB</a> ·
+    <a href="/widerrufsbelehrung.html">Widerrufsbelehrung</a>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var WORKER = "https://mb-stripe-to-brevo.mbcapitalstrategies.workers.dev/widerruf";
+  var btn = document.getElementById("w-submit");
+  var msg = document.getElementById("w-msg");
+  function show(text, ok){
+    msg.style.display="block";
+    msg.style.background = ok ? "rgba(34,197,94,0.12)" : "rgba(239,68,68,0.12)";
+    msg.style.color = ok ? "#22c55e" : "#ef4444";
+    msg.innerHTML = text;
+  }
+  btn.addEventListener("click", function(){
+    var name = document.getElementById("w-name").value.trim();
+    var contract = document.getElementById("w-contract").value.trim();
+    var email = document.getElementById("w-email").value.trim();
+    if(!name || !email || email.indexOf("@")<0){
+      show("Bitte Name und eine gültige E-Mail-Adresse angeben.", false);
+      return;
+    }
+    btn.disabled = true; btn.textContent = "Sende...";
+    fetch(WORKER, {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({name:name, contract:contract, email:email})
+    })
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok, d:d}; }); })
+    .then(function(res){
+      if(res.ok && res.d.ok){
+        show("✓ Dein Widerruf ist eingegangen. Du bekommst gleich eine Bestätigung per E-Mail. Bereits geleistete Zahlungen werden gemäß den gesetzlichen Vorgaben erstattet.", true);
+        document.getElementById("widerruf-form").reset();
+      } else {
+        show((res.d && res.d.error) || "Es ist ein Fehler aufgetreten. Bitte schreib an mbcapitalstrategies@gmail.com.", false);
+        btn.disabled=false; btn.textContent="Widerruf bestätigen";
+      }
+    })
+    .catch(function(){
+      show("Verbindungsfehler. Bitte später erneut versuchen oder an mbcapitalstrategies@gmail.com schreiben.", false);
+      btn.disabled=false; btn.textContent="Widerruf bestätigen";
+    });
+  });
+})();
+</script>
+</body>
+</html>
