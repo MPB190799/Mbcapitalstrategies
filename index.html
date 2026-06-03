@@ -1115,24 +1115,40 @@ In deinem <em>Posteingang.</em></h2>
           <div class="contact-info-row"><dt>Frequenz</dt><dd>Eine Ausgabe pro Woche, niemals mehr</dd></div>
         </dl>
       </div>
-      <form class="form" method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription">
+      <div class="form" id="mb-contact-form-de">
         <div class="field">
           <label>E-Mail</label>
-          <input type="email" name="EMAIL" placeholder="deine@email.de" required>
+          <input type="email" id="mb-contact-email-de" placeholder="deine@email.de" required autocomplete="email">
         </div>
         <label class="field-check">
-          <input type="checkbox" name="OPT_IN" value="1" required>
+          <input type="checkbox" id="mb-contact-optin-de" required>
           <span>Ich akzeptiere die <a href="/datenschutz.html">Datenschutzerklärung</a> und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich.</span>
         </label>
-        <input type="hidden" name="email_address_check" value="">
-        <input type="hidden" name="locale" value="de">
         <div style="margin:16px 0 12px;padding:12px 16px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:4px;">
           <span style="color:#D4AF37;font-size:0.78rem;font-weight:700;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;">Gratis dazu:</span>
           <span style="color:#c8cfe0;font-size:0.87rem;margin-left:8px;">Top 10 YOC &ge;8% Aktien PDF — Marcos Hard-Asset-Auswahl, quartalsweise aktualisiert</span>
         </div>
-        <button type="submit" class="btn" style="justify-self:start">Sonntag-Brief + PDF holen →</button>
+        <p id="mb-contact-msg-de" style="font-size:0.82rem;margin:0 0 10px;display:none;"></p>
+        <button type="button" onclick="mbContactSubscribeDe()" class="btn" style="justify-self:start">Sonntag-Brief + PDF holen →</button>
         <p style="color:var(--fg-dim);font-size:12px;margin-top:4px;font-family:var(--mono);letter-spacing:.08em">Oder: <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--accent)">YouTube-Kanal abonnieren</a></p>
-      </form>
+      </div>
+<script>
+(function(){
+  window.mbContactSubscribeDe=function(){
+    var el=document.getElementById("mb-contact-email-de"),
+        cb=document.getElementById("mb-contact-optin-de"),
+        msg=document.getElementById("mb-contact-msg-de");
+    var email=el?el.value.trim():"";
+    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte gueltige E-Mail eingeben.";}return;}
+    if(!cb||!cb.checked){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte Datenschutz akzeptieren.";}return;}
+    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}
+    fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json();})
+    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen (Double-Opt-In).";if(el)el.value="";if(cb)cb.checked=false;}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}}
+    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Spaeter nochmal versuchen.";}});
+  };
+})();
+</script>
     </div>
   </div>
 </section>
