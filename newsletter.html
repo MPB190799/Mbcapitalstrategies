@@ -76,6 +76,79 @@
   </script>
 
   <style>
+    .premium-teaser {
+      background: linear-gradient(135deg, #1a0d00 0%, #1a1a0a 100%);
+      border: 2px solid rgba(212,175,55,0.5);
+      border-radius: 12px;
+      padding: 40px 32px;
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .premium-teaser .pt-badge {
+      display: inline-block;
+      background: #d4af37;
+      color: #000;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .premium-teaser h2 {
+      color: #d4af37;
+      font-size: 1.4rem;
+      margin: 0 0 12px;
+      font-weight: 800;
+    }
+    .premium-teaser p {
+      color: #9aa6c0;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 0 0 20px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .premium-teaser .pt-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      justify-content: center;
+      margin: 0 0 24px;
+    }
+    .premium-teaser .pt-feature {
+      color: #c8b560;
+      font-size: 0.83rem;
+    }
+    .premium-teaser .pt-feature::before { content: "✦ "; color: #d4af37; }
+    .pt-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #d4af37;
+      margin: 0 0 4px;
+    }
+    .pt-price span { font-size: 1rem; color: #888; font-weight: 400; }
+    .pt-trial { color: #6a8060; font-size: 0.8rem; margin: 0 0 20px; }
+    .pt-btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #000;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .pt-btn:hover { background: #e5c347; }
+    .pt-fine { color: #3a4255; font-size: 0.72rem; margin: 12px 0 0; }
+    @media (max-width: 600px) {
+      .premium-teaser { padding: 28px 20px; }
+    }
+
     .newsletter-hero {
       background: linear-gradient(135deg, #0f1115 0%, #1a1a2e 50%, #0f1115 100%);
       border-bottom: 1px solid rgba(212,175,55,0.2);
@@ -302,6 +375,23 @@
       &nbsp;·&nbsp;
       <a href="/blog/" style="color:#d4af37;text-decoration:none;">Alle Analysen lesen →</a>
     </p>
+  </div>
+
+  <!-- PREMIUM TEASER -->
+  <div class="premium-teaser" id="angebote">
+    <div class="pt-badge">Premium</div>
+    <h2>MB Earnings Insider — tiefer einsteigen</h2>
+    <p>Der kostenlose Wochenrückblick gibt den Überblick. Der <strong style="color:#d4af37;">MB Earnings Insider</strong> geht tiefer: Quartalsberichte deiner Sektoren kompakt erklärt — Shipping, Mining, Energie, REITs, Pipelines. EPS, TCE-Raten, Dividenden-Ankündigungen — bevor du es anderswo siehst.</p>
+    <div class="pt-features">
+      <span class="pt-feature">Quartalsbericht-Analyse jede Earnings-Season</span>
+      <span class="pt-feature">Shipping: CMBT, TRMD, FLNG, SFL, DHT</span>
+      <span class="pt-feature">Mining, REITs, Energie — vollständig abgedeckt</span>
+      <span class="pt-feature">30 Tage gratis, 1-Klick-Cancel</span>
+    </div>
+    <div class="pt-price">ab 5 € <span>/ Monat</span></div>
+    <div class="pt-trial">30 Tage kostenlos testen · danach monatlich kündbar</div>
+    <a href="/newsletter/" class="pt-btn">Jetzt 30 Tage gratis testen →</a>
+    <p class="pt-fine">Keine Anlageberatung. Kündigung jederzeit per Mail oder Abo-Portal. Abrechnung erst nach Ablauf der Testphase.</p>
   </div>
 
   <!-- DISCLAIMER -->
