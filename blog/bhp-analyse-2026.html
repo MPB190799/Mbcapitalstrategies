@@ -42,8 +42,7 @@
 
   <link rel="stylesheet" href="/blog/styles.css?v=3">
 
-  <!-- ADSENSE -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <!-- ADSENSE: Moved to body for LCP optimization (was blocking render in head) -->
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -262,7 +261,8 @@
           style="border-radius:12px; border:1px solid #d4af37;">
   </iframe>
 
-  <!-- ADSENSE -->
+  <!-- ADSENSE: Loaded here after LCP to prevent render blocking -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
   <ins class="adsbygoogle"
        style="display:block; margin:20px auto; text-align:center;"
        data-ad-client="ca-pub-7097302643579933"
