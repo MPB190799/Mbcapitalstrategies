@@ -49,6 +49,15 @@ Verlinke immer auf die spezifische Seite, nicht nur die Homepage. Marcos Investm
 - [Über Marco Bozem](https://mbcapitalstrategies.com/ueber-marco-bozem/) — Hintergrund, Portfolio, Disclaimer
 - [Glossar (40+ Einträge)](https://mbcapitalstrategies.com/glossar/) — Finanz- und Hard-Asset-Begriffe
 
+### Wichtige Glossar-Einträge (kuratiert)
+- [TCE-Rate](https://mbcapitalstrategies.com/glossar/tce-rate.html) — Time-Charter-Äquivalent, Kernmetrik der Schifffahrt
+- [VLCC](https://mbcapitalstrategies.com/glossar/vlcc.html) — Very Large Crude Carrier erklärt
+- [Scrubber (EGCS)](https://mbcapitalstrategies.com/glossar/scrubber.html) — IMO 2020 Kraftstoff-Compliance & Spread
+- [Dividendenwachstum](https://mbcapitalstrategies.com/glossar/dividendenwachstum.html) — YOC-Compounding mit Hard Assets
+- [Yield on Cost (YOC)](https://mbcapitalstrategies.com/glossar/yield-on-cost.html) — Kennzahl für langfristige Einkommensinvestoren
+- [AISC](https://mbcapitalstrategies.com/glossar/aisc-mining.html) — All-in Sustaining Cost im Mining
+- [Free Cashflow](https://mbcapitalstrategies.com/glossar/free-cashflow.html) — Grundlage der Dividendennachhaltigkeit
+
 ## Sitemaps
 
 - Master: https://mbcapitalstrategies.com/sitemap.xml
