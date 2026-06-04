@@ -1388,8 +1388,8 @@ In deinem <em>Posteingang.</em></h2>
   });
 })();
 </script>
-<!-- MB Capital Insider — Sticky Newsletter Bar v2.2 (body-padding + CTA copy, 2026-06-02) -->
-<div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;">
+<!-- MB Capital Insider — Sticky Newsletter Bar v2.3 (scroll-trigger CLS-fix, 2026-06-04) -->
+<div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:none;">
   <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
     <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">&#x1F4E9; MB Capital Insider &mdash; jeden Sonntag, gratis:</span>
     <div style="display:flex;gap:6px;flex:1;min-width:240px;max-width:420px;" id="mb-sticky-form">
@@ -1426,24 +1426,20 @@ In deinem <em>Posteingang.</em></h2>
   if(localStorage.getItem("mbctadismissed")){
     bar.style.display = 'none';
   } else {
-    // Push cookie banner above sticky CTA so they don't stack invisibly
-    document.addEventListener('DOMContentLoaded', function(){
+    // Show only after user scrolls 400px — prevents CLS on load and stacking with cookie modal
+    var shown = false;
+    function mbStickyShow(){
+      if(shown) return;
+      shown = true;
+      bar.style.display = 'block';
       mbStickySetBodyPad();
       var cb = document.getElementById('cookie-banner');
-      if(cb && bar && bar.style.display !== 'none'){
-        cb.style.bottom = bar.offsetHeight + 'px';
-      }
-    });
-    // Also handle after fonts/images load (height may change)
-    window.addEventListener('load', function(){
-      mbStickySetBodyPad();
-      var cb = document.getElementById('cookie-banner');
-      if(cb && bar && bar.style.display !== 'none'){
-        cb.style.bottom = bar.offsetHeight + 'px';
-      }
-    });
+      if(cb) cb.style.bottom = bar.offsetHeight + 'px';
+    }
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 400) mbStickyShow();
+    }, {passive:true});
     window.addEventListener('resize', mbStickySetBodyPad);
-    mbStickySetBodyPad();
   }
 
   var ENDPOINT="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
