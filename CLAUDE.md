@@ -533,6 +533,11 @@ When adding new financial terms, add them to `terms.json` and regenerate the sit
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
+  <!-- AUSNAHME (Marco 05.06.2026): AdSense-Tag NICHT auf reine Conversion-/Funnel-Seiten
+       OHNE Ad-Slots setzen — konkret newsletter-sample.html + newsletter.html. Der Tag
+       zeigt dort keine Werbung (keine <ins class="adsbygoogle">), löst aber Googles
+       EU-Pflicht-CMP (IAB TCF, „210 Partner") aus → schadet der Premium-Conversion.
+       Beim AdSense-Code-Sweep diese beiden Seiten überspringen. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://mbcapitalstrategies.com/blog/[slug].html">
   <title>[Company] – [Subtitle] | MB Capital Strategies</title>
