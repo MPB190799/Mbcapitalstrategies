@@ -538,6 +538,11 @@ When adding new financial terms, add them to `terms.json` and regenerate the sit
        zeigt dort keine Werbung (keine <ins class="adsbygoogle">), löst aber Googles
        EU-Pflicht-CMP (IAB TCF, „210 Partner") aus → schadet der Premium-Conversion.
        Beim AdSense-Code-Sweep diese beiden Seiten überspringen. -->
+  <!-- MUSTER-PDF (assets/MB-Earnings-Insider-Beispiel.pdf): NIE durch simples Rendern der
+       Live-Seite erzeugen — dann brennen Cookie-Consent-Wand + Anmelde-Leiste mit ein
+       (nicht klickbar, kaputt; passiert 03.06.). Sauber neu bauen mit:
+       node /home/mbcap/mb-evolution/scripts/build-newsletter-sample-pdf.js
+       (blockt Consent-/Ad-Skripte, skippt Cookie-Banner, blendet Nav/Footer/Anmelde-Leiste aus). -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://mbcapitalstrategies.com/blog/[slug].html">
   <title>[Company] – [Subtitle] | MB Capital Strategies</title>
