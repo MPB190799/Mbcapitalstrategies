@@ -342,6 +342,22 @@
     <button class="btn-calc" onclick="calculate()">Dividende berechnen →</button>
 
     <div class="result-box" id="results"></div>
+
+    <!-- Newsletter CTA — erscheint nach Berechnung -->
+    <div id="div-nl-cta" style="margin-top:1.2rem;padding:16px 18px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:6px;display:none;">
+      <p style="margin:0 0 6px;font-size:0.85rem;color:#D4AF37;font-weight:700;">Aktien mit YOC &ge;8% jeden Sonntag</p>
+      <p style="margin:0 0 10px;font-size:0.82rem;color:#bbb;">Marcos Sonntag-Brief: Shipping, Mining, Energie — konkrete Depot-Positionen + Dividenden-News, kein Spam.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <input id="div-nl-email" type="email" placeholder="deine@email.de"
+               style="padding:9px 12px;border:1px solid #444;background:#0a0a14;color:#fff;flex:1;min-width:180px;border-radius:4px;font-size:0.85rem;">
+        <button onclick="divNlSubscribe()"
+                style="padding:9px 18px;background:#D4AF37;color:#000;border:0;font-weight:700;cursor:pointer;border-radius:4px;font-size:0.85rem;white-space:nowrap;">
+          Anmelden
+        </button>
+      </div>
+      <p id="div-nl-msg" style="color:#aaa;font-size:0.75rem;margin:6px 0 0;min-height:1em;"></p>
+      <p style="color:#666;font-size:0.72rem;margin:3px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform.</p>
+    </div>
   </div>
   <!-- AFFILIATE PARQET -->
   <div class="affiliate-banner">
@@ -1432,6 +1448,32 @@ function toggleFaq(el) {
 }
 
 document.addEventListener("keydown", e => { if (e.key === "Enter") calculate(); });
+
+// Newsletter CTA nach Berechnung anzeigen
+(function() {
+  var orig = window.calculate;
+  window.calculate = function() {
+    orig.apply(this, arguments);
+    var cta = document.getElementById('div-nl-cta');
+    if (cta && !localStorage.getItem('div_nl_subscribed')) {
+      setTimeout(function(){ cta.style.display = 'block'; }, 400);
+    }
+  };
+})();
+
+function divNlSubscribe() {
+  var email = (document.getElementById('div-nl-email') || {}).value || '';
+  var msg = document.getElementById('div-nl-msg');
+  if (!email || !email.includes('@')) { if (msg) msg.textContent = 'Bitte gültige E-Mail eingeben.'; return; }
+  if (msg) msg.textContent = '...';
+  fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',
+    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) })
+    .then(function(r) {
+      if (msg) msg.textContent = r.ok ? 'Danke! Bitte E-Mail bestätigen.' : 'Fehler — bitte auf mbcapitalstrategies.com/newsletter.html anmelden.';
+      if (r.ok) { localStorage.setItem('div_nl_subscribed', '1'); var b = document.getElementById('div-nl-cta').querySelector('button'); if (b) b.disabled = true; }
+    })
+    .catch(function() { if (msg) msg.textContent = 'Verbindungsfehler — bitte direkt anmelden.'; });
+}
 </script>
 
 <section style="margin-top:40px;padding-top:24px;border-top:1px solid #1e1e35">
