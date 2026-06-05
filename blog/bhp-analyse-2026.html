@@ -14,9 +14,10 @@
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<!-- LCP-Fix: Kritische Fonts preloaden (Batch 63 - LCP war 19s) -->
+<!-- LCP-Fix: Kritische Fonts preloaden (Batch 63 - LCP war 19s, Batch 119 CSS-Preload) -->
+<link rel="preload" as="style" href="/blog/styles.css?v=3" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<noscript><link rel="stylesheet" href="/blog/styles.css?v=3"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
 
   <title>BHP Aktie 2026: Kupfer-Boom, 5,5% Dividende & Risiken</title>
   <meta name="description" content="BHP Aktie 2026: 5,5% Dividende, Kupfer-Boom & $12 Mrd Schulden — kaufen? Marcos Analyse mit FCF, Bewertung & Risiken. Keine Anlageberatung.">
@@ -39,8 +40,7 @@
   <meta name="twitter:description" content="BHP Aktie 2026: 5,5% Dividende, Kupfer-Boom & $12 Mrd Schulden — kaufen? Marcos Analyse mit FCF, Bewertung & Risiken. Keine Anlageberatung.">
   <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-mining.jpg">
   <meta name="twitter:creator" content="@MBCapitalStrat">
-
-  <link rel="stylesheet" href="/blog/styles.css?v=3">
+  <!-- styles.css loaded non-blocking via preload onload above (LCP-Fix Batch 119) -->
 
   <!-- ADSENSE: Moved to body for LCP optimization (was blocking render in head) -->
   <script type="application/ld+json">
@@ -111,14 +111,11 @@
 
     footer.footer { max-width: 900px; margin: 40px auto; text-align: center; padding-bottom: 40px; }
     footer.footer a { color: #d4af37; }
-  
-<style>
-.related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;}
-.related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;}
-.related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
-.related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s;}
-.related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06);}
-</style>
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s;}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06);}
 </style>
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
@@ -649,7 +646,7 @@ window.mbMidSubscribe=function(){
       "https://www.wikidata.org/wiki/Q138571853"
     ]
   },
-  "dateModified": "2026-06-03",
+  "dateModified": "2026-06-05",
   "image": {
     "@type": "ImageObject",
     "url": "https://mbcapitalstrategies.com/marco.jpg",
