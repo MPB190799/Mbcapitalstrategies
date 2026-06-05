@@ -650,6 +650,23 @@
         </div>
       </div>
       <p id="res-text" style="margin-top:1rem; font-size:0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1rem;"></p>
+
+      <!-- INLINE NEWSLETTER CTA — contextual, nach Ergebnis -->
+      <div id="yoc-nl-cta" style="margin-top:1.2rem;padding:16px 18px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:6px;display:none;">
+        <p style="color:#D4AF37;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;font-family:Montserrat,sans-serif;">Sonntag-Brief — kostenlos</p>
+        <p style="color:#c8cfe0;font-size:0.85rem;margin:0 0 12px;font-family:Montserrat,sans-serif;">Welche Aktien haben aktuell YOC <strong style="color:#D4AF37;">≥ 8%</strong>? Jeden Sonntag: Marcos Depot-Update mit den wichtigsten News zu Shipping, Mining &amp; Dividenden.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <input id="yoc-nl-email" type="email" placeholder="deine@email.de"
+            style="flex:1;min-width:180px;padding:10px 12px;border:1px solid rgba(212,175,55,0.35);background:#0a0a14;color:#fff;border-radius:4px;font-size:0.85rem;font-family:Montserrat,sans-serif;">
+          <button onclick="yocNlSubscribe()" style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-family:Montserrat,sans-serif;white-space:nowrap;font-size:0.85rem;">
+            Anmelden
+          </button>
+        </div>
+        <p id="yoc-nl-msg" style="color:#9aa6c0;font-size:0.73rem;margin:6px 0 0;min-height:1em;font-family:Montserrat,sans-serif;"></p>
+        <p style="color:#666;font-size:0.70rem;margin:4px 0 0;font-family:Montserrat,sans-serif;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform.</p>
+      </div>
+      <!-- /INLINE NEWSLETTER CTA -->
+
     </div>
   </div>
 
@@ -1216,6 +1233,32 @@
     const box = document.getElementById('result');
     box.classList.add('show');
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // Kontextueller Newsletter-CTA: zeigen sobald Ergebnis da
+    var nlCta = document.getElementById('yoc-nl-cta');
+    if (nlCta && !localStorage.getItem('yoc_nl_subscribed')) {
+      nlCta.style.display = 'block';
+    }
+  }
+
+  function yocNlSubscribe() {
+    var email = (document.getElementById('yoc-nl-email') || {}).value || '';
+    var msg = document.getElementById('yoc-nl-msg');
+    if (!email || !email.includes('@')) { if (msg) msg.textContent = 'Bitte gueltige E-Mail eingeben.'; return; }
+    if (msg) msg.textContent = '...';
+    fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',
+      {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email: email})})
+      .then(function(r) {
+        if (r.ok) {
+          if (msg) msg.textContent = 'Danke! Bitte kurz die Bestaetigung per E-Mail pruefen.';
+          localStorage.setItem('yoc_nl_subscribed', '1');
+          var btn = document.getElementById('yoc-nl-cta').querySelector('button');
+          if (btn) btn.disabled = true;
+        } else {
+          if (msg) msg.textContent = 'Fehler — bitte direkt auf mbcapitalstrategies.com/newsletter.html anmelden.';
+        }
+      })
+      .catch(function() { if (msg) msg.textContent = 'Verbindungsfehler. Bitte direkt anmelden.'; });
   }
 
   function toggleFaq(el) {
