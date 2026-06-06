@@ -377,6 +377,21 @@
     <div class="result-area" id="resultArea">
       <div class="kpi-grid" id="kpiGrid"></div>
       <div class="breakdown" id="breakdownSection"></div>
+      <!-- INLINE NEWSLETTER CTA — kontextuell nach Ergebnis -->
+      <div id="snowball-nl-cta" style="margin:1.2rem 0 0;padding:16px 18px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:6px;display:none;">
+        <p style="color:#D4AF37;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;font-family:Montserrat,sans-serif;">Sonntag-Brief — kostenlos</p>
+        <p style="color:#c8cfe0;font-size:0.85rem;margin:0 0 12px;font-family:Montserrat,sans-serif;">Dividenden-Snowball in der Theorie — welche Aktien liefern ihn <strong style="color:#D4AF37;">gerade wirklich</strong>? Marcos Depot-Update mit Shipping, Mining &amp; Dividenden — jeden Sonntag.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <input id="snowball-nl-email" type="email" placeholder="deine@email.de"
+            style="flex:1;min-width:180px;padding:10px 12px;border:1px solid rgba(212,175,55,0.35);background:#0a0a14;color:#fff;border-radius:4px;font-size:0.85rem;font-family:Montserrat,sans-serif;">
+          <button onclick="snowballNlSubscribe()" style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-family:Montserrat,sans-serif;white-space:nowrap;font-size:0.85rem;">
+            Anmelden
+          </button>
+        </div>
+        <p id="snowball-nl-msg" style="color:#9aa6c0;font-size:0.73rem;margin:6px 0 0;min-height:1em;font-family:Montserrat,sans-serif;"></p>
+        <p style="color:#666;font-size:0.70rem;margin:4px 0 0;font-family:Montserrat,sans-serif;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform.</p>
+      </div>
+      <!-- /INLINE NEWSLETTER CTA -->
       <div class="table-section">
         <div class="table-header">
           <span>Jahrestabelle</span>
@@ -795,6 +810,32 @@ function runSnowball() {
   area.scrollIntoView({ behavior: "smooth", block: "nearest" });
   document.getElementById("tableWrap").style.display = "block";
   tableVisible = true;
+
+  // Kontextueller Newsletter-CTA nach Ergebnis
+  var nlCta = document.getElementById("snowball-nl-cta");
+  if (nlCta && !localStorage.getItem("yoc_nl_subscribed")) {
+    setTimeout(function() { nlCta.style.display = "block"; }, 400);
+  }
+}
+
+function snowballNlSubscribe() {
+  var email = (document.getElementById("snowball-nl-email") || {}).value || "";
+  var msg = document.getElementById("snowball-nl-msg");
+  if (!email || !email.includes("@")) { if (msg) msg.textContent = "Bitte gueltige E-Mail eingeben."; return; }
+  if (msg) msg.textContent = "...";
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",
+    {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({email: email})})
+    .then(function(r) {
+      if (r.ok) {
+        if (msg) msg.textContent = "Danke! Bitte kurz die Bestaetigung per E-Mail pruefen.";
+        localStorage.setItem("yoc_nl_subscribed", "1");
+        var btn = document.getElementById("snowball-nl-cta").querySelector("button");
+        if (btn) btn.disabled = true;
+      } else {
+        if (msg) msg.textContent = "Fehler — bitte direkt auf mbcapitalstrategies.com/newsletter.html anmelden.";
+      }
+    })
+    .catch(function() { if (msg) msg.textContent = "Verbindungsfehler. Bitte direkt anmelden."; });
 }
 
 function toggleFaq(el) {

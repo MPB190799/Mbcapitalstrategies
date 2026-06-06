@@ -330,6 +330,22 @@
     <button class="btn-calc" onclick="calcGrowth()">Dividendenwachstum berechnen →</button>
 
     <div class="result-box" id="results"></div>
+
+    <!-- INLINE NEWSLETTER CTA — kontextuell nach Ergebnis -->
+    <div id="wachstum-nl-cta" style="margin-top:1.2rem;padding:16px 18px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:6px;display:none;">
+      <p style="color:#D4AF37;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;">Sonntag-Brief — kostenlos</p>
+      <p style="color:#c8cfe0;font-size:0.85rem;margin:0 0 12px;">Welche Aktien steigern die Dividende <strong style="color:#D4AF37;">Jahr für Jahr</strong>? Marcos Top-Picks aus Shipping, Mining &amp; REITs — jeden Sonntag kostenlos.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+        <input id="wachstum-nl-email" type="email" placeholder="deine@email.de"
+          style="flex:1;min-width:180px;padding:10px 12px;border:1px solid rgba(212,175,55,0.35);background:#0a0a14;color:#fff;border-radius:4px;font-size:0.85rem;">
+        <button onclick="wachstumNlSubscribe()" style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;white-space:nowrap;font-size:0.85rem;">
+          Anmelden
+        </button>
+      </div>
+      <p id="wachstum-nl-msg" style="color:#9aa6c0;font-size:0.73rem;margin:6px 0 0;min-height:1em;"></p>
+      <p style="color:#666;font-size:0.70rem;margin:4px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform.</p>
+    </div>
+    <!-- /INLINE NEWSLETTER CTA -->
   </div>
   <!-- AFFILIATE -->
   <div class="affiliate-banner">
@@ -785,6 +801,32 @@ function calcGrowth() {
   `;
   box.classList.add("show");
   box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+  // Kontextueller Newsletter-CTA nach Ergebnis
+  var nlCta = document.getElementById("wachstum-nl-cta");
+  if (nlCta && !localStorage.getItem("yoc_nl_subscribed")) {
+    setTimeout(function() { nlCta.style.display = "block"; }, 400);
+  }
+}
+
+function wachstumNlSubscribe() {
+  var email = (document.getElementById("wachstum-nl-email") || {}).value || "";
+  var msg = document.getElementById("wachstum-nl-msg");
+  if (!email || !email.includes("@")) { if (msg) msg.textContent = "Bitte gueltige E-Mail eingeben."; return; }
+  if (msg) msg.textContent = "...";
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",
+    {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({email: email})})
+    .then(function(r) {
+      if (r.ok) {
+        if (msg) msg.textContent = "Danke! Bitte kurz die Bestaetigung per E-Mail pruefen.";
+        localStorage.setItem("yoc_nl_subscribed", "1");
+        var btn = document.getElementById("wachstum-nl-cta").querySelector("button");
+        if (btn) btn.disabled = true;
+      } else {
+        if (msg) msg.textContent = "Fehler — bitte direkt auf mbcapitalstrategies.com/newsletter.html anmelden.";
+      }
+    })
+    .catch(function() { if (msg) msg.textContent = "Verbindungsfehler. Bitte direkt anmelden."; });
 }
 
 function toggleFaq(el) {
