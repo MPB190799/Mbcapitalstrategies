@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#0c0b09">
 
   <meta name="google-adsense-account" content="ca-pub-7097302643579933">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <!-- AdSense geladen nach LCP, damit Google Funding Choices CMP nicht den Hero blockiert (CWV LCP-Fix) -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1455,5 +1455,7 @@ In deinem <em>Posteingang.</em></h2>
   };
 })();
 </script>
+<!-- AdSense nach LCP geladen — verhindert dass Google Funding Choices CMP Hero-Render blockiert -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 </body>
 </html>
