@@ -1467,7 +1467,7 @@ function divNlSubscribe() {
   if (!email || !email.includes('@')) { if (msg) msg.textContent = 'Bitte gültige E-Mail eingeben.'; return; }
   if (msg) msg.textContent = '...';
   fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',
-    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) })
+    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: 'tools-dividendenrechner' }) })
     .then(function(r) {
       if (msg) msg.textContent = r.ok ? 'Danke! Bitte E-Mail bestätigen.' : 'Fehler — bitte auf mbcapitalstrategies.com/newsletter.html anmelden.';
       if (r.ok) { localStorage.setItem('div_nl_subscribed', '1'); var b = document.getElementById('div-nl-cta').querySelector('button'); if (b) b.disabled = true; }

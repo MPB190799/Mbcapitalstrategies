@@ -851,7 +851,7 @@ function snowballYocNlSubscribe() {
   if (!email || !email.includes('@')) { if (msg) msg.textContent = 'Bitte gueltige E-Mail eingeben.'; return; }
   if (msg) msg.textContent = '...';
   fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',
-    {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email: email})})
+    {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email: email, source: 'tools-snowball-yoc-pro'})})
     .then(function(r) {
       if (r.ok) {
         if (msg) msg.textContent = 'Danke! Bitte kurz die Bestaetigung per E-Mail pruefen.';
