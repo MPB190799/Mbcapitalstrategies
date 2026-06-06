@@ -281,12 +281,40 @@
           <p><strong>Keine Anlageberatung.</strong> Alle Inhalte dienen ausschließlich der Information und Unterhaltung. Eigenverantwortlich handeln. Vergangenheitswerte sind keine Garantie für zukünftige Ergebnisse.</p>
         </div>
 
-        <!-- Newsletter CTA -->
-        <div style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:24px;margin:32px 0;text-align:center;">
-          <p style="color:#D4AF37;font-weight:700;font-size:1.05rem;margin:0 0 8px;">Shipping-Dividenden wöchentlich im Überblick</p>
-          <p style="color:#c8cfe0;font-size:0.9rem;margin:0 0 16px;">CMB.Tech, TORM, FLEX LNG — Marcos Wochenbrief mit Dividendenankündigungen, Raten-Update und Depoteinblick. Jeden Sonntag. Kostenlos.</p>
-          <a href="/newsletter.html" style="display:inline-block;background:#D4AF37;color:#050508;font-weight:700;padding:10px 28px;border-radius:4px;text-decoration:none;font-size:0.95rem;">Zum Newsletter →</a>
+        <!-- Newsletter CTA — CF-Worker Inline-Form (sa-run-11, 06.06.2026) -->
+        <div id="cmbt-nl-cta" style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:24px;margin:32px 0;text-align:center;">
+          <p style="color:#D4AF37;font-weight:700;font-size:1.05rem;margin:0 0 8px;">CMB.Tech zahlt Dividende jedes Quartal — mehr im Sonntag-Brief</p>
+          <p style="color:#c8cfe0;font-size:0.9rem;margin:0 0 16px;">CMB.Tech, TORM, FLEX LNG — Dividendenankündigungen, TCE-Raten-Update und Depoteinblick jeden Sonntag. Kostenlos.</p>
+          <div id="cmbt-nl-form" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+            <input type="email" id="cmbt-nl-email" placeholder="deine@email.de" style="padding:10px 14px;border-radius:4px;border:1px solid rgba(212,175,55,0.4);background:#0d1117;color:#f5f6fa;font-size:0.9rem;width:220px;">
+            <button onclick="cmbtNlSubmit()" style="background:#D4AF37;color:#050508;font-weight:700;padding:10px 22px;border-radius:4px;border:none;cursor:pointer;font-size:0.9rem;">Anmelden →</button>
+          </div>
+          <p id="cmbt-nl-msg" style="color:#9aa6c0;font-size:0.78rem;margin:10px 0 0;display:none;"></p>
+          <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Kein Spam. Abmeldung jederzeit. <a href="/datenschutz.html" style="color:#D4AF37;">Datenschutz</a></p>
         </div>
+        <script>
+        (function(){
+          if(localStorage.getItem('yoc_nl_subscribed')){
+            var el=document.getElementById('cmbt-nl-cta');
+            if(el) el.style.display='none';
+          }
+        })();
+        function cmbtNlSubmit(){
+          var email=document.getElementById('cmbt-nl-email').value.trim();
+          var msg=document.getElementById('cmbt-nl-msg');
+          if(!email||!email.includes('@')){msg.textContent='Bitte gültige E-Mail eingeben.';msg.style.display='block';return;}
+          fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{
+            method:'POST',headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({email:email,source:'blog-cmbt-ex-div-jun26'})
+          }).then(function(r){
+            if(r.ok){
+              msg.textContent='Danke! Bestätigungs-E-Mail unterwegs.';msg.style.color='#D4AF37';msg.style.display='block';
+              document.getElementById('cmbt-nl-form').style.display='none';
+              localStorage.setItem('yoc_nl_subscribed','1');
+            } else {msg.textContent='Fehler. Bitte versuche es erneut.';msg.style.display='block';}
+          }).catch(function(){msg.textContent='Netzwerkfehler. Bitte erneut versuchen.';msg.style.display='block';});
+        }
+        </script>
 
         <div class="article-sources">
           <h4>Quellen</h4>

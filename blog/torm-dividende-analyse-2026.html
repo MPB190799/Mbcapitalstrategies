@@ -292,12 +292,40 @@
       <p>Für die Steuerplanung und den Liquiditätsfluss ist solch ein Cluster relevant: Wer alle drei hält, muss im Juni für ausreichend Kontostand sorgen und kann die Dividenden direkt für Reinvestitionen oder laufende Kosten nutzen. Der <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">YOC-Rechner</a> hilft dabei, die tatsächliche Rendite auf den Einstandskurs zu berechnen.</p>
       <p>Details zum Cluster: <a href="/blog/shipping-dividenden-doppelzahltag-juni-2026.html" style="color:#D4AF37;">Shipping-Doppelzahltag 11. Juni 2026 — TORM, FLEX LNG &amp; CMB.Tech</a>.</p>
 
-      <!-- Newsletter CTA -->
-      <div style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:24px;margin:32px 0;text-align:center;">
-        <p style="color:#D4AF37;font-weight:700;font-size:1.05rem;margin:0 0 8px;">TORM, CMB.Tech, FLEX LNG — wöchentlich im Überblick</p>
+      <!-- Newsletter CTA — CF-Worker Inline-Form (sa-run-11, 06.06.2026) -->
+      <div id="torm-nl-cta" style="background:#1a1f2b;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:24px;margin:32px 0;text-align:center;">
+        <p style="color:#D4AF37;font-weight:700;font-size:1.05rem;margin:0 0 8px;">TORM zahlt $0,70 — welche Tanker zahlen YOC &ge;8%?</p>
         <p style="color:#c8cfe0;font-size:0.9rem;margin:0 0 16px;">Marcos Wochenbrief: Dividendenankündigungen, TCE-Raten-Update, neue Positionen (nur Prozent). Jeden Sonntag. Kostenlos.</p>
-        <a href="/newsletter.html" style="display:inline-block;background:#D4AF37;color:#050508;font-weight:700;padding:10px 28px;border-radius:4px;text-decoration:none;font-size:0.95rem;">Newsletter abonnieren →</a>
+        <div id="torm-nl-form" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+          <input type="email" id="torm-nl-email" placeholder="deine@email.de" style="padding:10px 14px;border-radius:4px;border:1px solid rgba(212,175,55,0.4);background:#0d1117;color:#f5f6fa;font-size:0.9rem;width:220px;">
+          <button onclick="tormNlSubmit()" style="background:#D4AF37;color:#050508;font-weight:700;padding:10px 22px;border-radius:4px;border:none;cursor:pointer;font-size:0.9rem;">Anmelden →</button>
+        </div>
+        <p id="torm-nl-msg" style="color:#9aa6c0;font-size:0.78rem;margin:10px 0 0;display:none;"></p>
+        <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Kein Spam. Abmeldung jederzeit. <a href="/datenschutz.html" style="color:#D4AF37;">Datenschutz</a></p>
       </div>
+      <script>
+      (function(){
+        if(localStorage.getItem('yoc_nl_subscribed')){
+          var el=document.getElementById('torm-nl-cta');
+          if(el) el.style.display='none';
+        }
+      })();
+      function tormNlSubmit(){
+        var email=document.getElementById('torm-nl-email').value.trim();
+        var msg=document.getElementById('torm-nl-msg');
+        if(!email||!email.includes('@')){msg.textContent='Bitte gültige E-Mail eingeben.';msg.style.display='block';return;}
+        fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{
+          method:'POST',headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({email:email,source:'blog-torm-div-26'})
+        }).then(function(r){
+          if(r.ok){
+            msg.textContent='Danke! Bestätigungs-E-Mail unterwegs.';msg.style.color='#D4AF37';msg.style.display='block';
+            document.getElementById('torm-nl-form').style.display='none';
+            localStorage.setItem('yoc_nl_subscribed','1');
+          } else {msg.textContent='Fehler. Bitte versuche es erneut.';msg.style.display='block';}
+        }).catch(function(){msg.textContent='Netzwerkfehler. Bitte erneut versuchen.';msg.style.display='block';});
+      }
+      </script>
 
       <p style="background:rgba(212,175,55,0.07);border-left:3px solid #D4AF37;padding:12px 16px;border-radius:4px;font-size:0.88rem;color:#cfd6e6;margin:24px 0;"><em>Hinweis: Keine Anlageberatung. Marco Bozem ist Privatinvestor ohne §32-KWG-Lizenz. TORM ist in Marcos Depot. Alle Angaben ohne Gewähr. Eigene Einschätzung, kein Kaufempfehlung.</em></p>
 
