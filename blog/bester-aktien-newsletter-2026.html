@@ -220,11 +220,43 @@ tr:hover td{background:#1a1d27}
 
 <p>Der MB Capital Strategies Wochenrückblick deckt diesen Bereich regelmäßig ab — auf Deutsch, ohne Marketing-Sprech, mit echten Zahlen. Das ist das, was ich mir selbst von anderen Newslettern gewünscht hätte, bevor ich angefangen habe, in diesem Sektor zu investieren.</p>
 
-<div class="cta-box">
-<h3 style="color:#D4AF37;margin:0 0 12px;font-size:1.2rem">MB Capital Strategies Wochenrückblick</h3>
-<p style="margin:0 0 16px;color:#ccc">Dividenden, Shipping, Mining & Hard Assets — sonntags, kompakt, ohne Spam. Kostenlos testen.</p>
-<a href="../newsletter.html" style="display:inline-block;background:#D4AF37;color:#0a0e14;font-weight:700;padding:12px 28px;border-radius:6px;text-decoration:none;font-size:0.95rem">Jetzt kostenlos abonnieren</a>
+<!-- DUAL CTA: Free + Premium — Newsletter-Vergleich-Seite (high-intent traffic) -->
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin:32px 0;">
+
+  <!-- Free: Wochenrückblick -->
+  <div style="flex:1;min-width:240px;background:#0f0f1a;border:1px solid #1e1e35;border-radius:6px;padding:20px 22px;">
+    <p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.95rem;">Wochenrückblick (kostenlos)</p>
+    <p style="color:#c8cfe0;font-size:0.83rem;line-height:1.5;margin:0 0 12px;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, gratis, abmeldbar.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <input id="nl-cta-email-nlseite" type="email" placeholder="deine@email.de" required
+             style="padding:10px;border:1px solid #444;background:#0a0a14;color:#fff;flex:1;min-width:160px;font-size:0.83rem;">
+      <button onclick="mbCtaNlSubs()" style="padding:10px 18px;background:#D4AF37;color:#000;border:0;font-weight:700;cursor:pointer;font-size:0.83rem;white-space:nowrap;">Anmelden</button>
+    </div>
+    <p id="nl-cta-msg-nlseite" style="color:#aaa;font-size:0.73rem;margin:6px 0 0;min-height:1em;"></p>
+    <p style="color:#666;font-size:0.72rem;margin:4px 0 0;">Keine Anlageberatung. Double-Opt-In. Abmeldung jederzeit.</p>
+  </div>
+
+  <!-- Premium: MB Earnings Insider -->
+  <div style="flex:1;min-width:240px;background:#0a0a14;border:1px solid #D4AF37;border-radius:6px;padding:20px 22px;">
+    <p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.95rem;">MB Earnings Insider (ab 5 €/Monat)</p>
+    <p style="color:#c8cfe0;font-size:0.83rem;line-height:1.5;margin:0 0 12px;">Quartalsanalysen direkt am Earnings-Tag: Dividenden-Sicherheits-Check, DCF-Einordnung, klare Kauf-/Halte-These. Nur für Depot-Werte aus Shipping, Mining &amp; Energie.</p>
+    <a href="../newsletter/" style="display:inline-block;background:#D4AF37;color:#000;font-weight:700;padding:10px 18px;text-decoration:none;border-radius:4px;font-size:0.83rem;">Mehr erfahren &rarr;</a>
+  </div>
 </div>
+<script>
+function mbCtaNlSubs(){
+  var email=(document.getElementById('nl-cta-email-nlseite')||{}).value||'';
+  var msg=document.getElementById('nl-cta-msg-nlseite');
+  if(!email||!email.includes('@')){if(msg)msg.textContent='Bitte gültige E-Mail eingeben.';return;}
+  if(msg)msg.textContent='...';
+  var guard=localStorage.getItem('yoc_nl_subscribed');
+  if(guard){if(msg)msg.textContent='Du bist bereits eingetragen.';return;}
+  fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',
+    {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'blog-bester-aktien-newsletter'})})
+    .then(function(r){if(r.ok){if(msg)msg.textContent='Danke! Bitte kurz die Bestätigungs-E-Mail checken.';localStorage.setItem('yoc_nl_subscribed','1');}else{if(msg)msg.textContent='Fehler — bitte auf mbcapitalstrategies.com/newsletter.html versuchen.';}})
+    .catch(function(){if(msg)msg.textContent='Verbindungsfehler. Bitte direkt auf /newsletter.html anmelden.';});
+}
+</script>
 
 <h2>Fazit: Welcher Aktien-Newsletter lohnt sich?</h2>
 <p>Die ehrliche Antwort: Das kommt drauf an. Wer in DAX und S&P 500-ETFs investiert und einfach informiert bleiben will, ist mit kostenlosen Generalisten-Newslettern gut bedient. Wer aktiv in Einzelaktien aus Hard-Asset-Sektoren investiert oder investieren will, braucht etwas Spezialisierteres.</p>
