@@ -666,7 +666,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 @media (max-width:1024px){
   .compass-backdrop{width:min(140vw,900px);opacity:.32;transform:translate(-50%,-2%)}
   .compass-cardinals{font-size:9.5px}
-  .compass-cardinals a{padding:8px 10px}
+  .compass-cardinals a{padding:11px 12px;min-height:44px;box-sizing:border-box}
   .compass-cardinals a b{font-size:14px}
   .hero-signature-pill{right:24px;bottom:24px}
 }
@@ -676,13 +676,16 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .hero-ctas{gap:18px}
   .compass-backdrop{width:130vw;opacity:.22}
   .compass-cardinals a small{display:none}
-  .compass-cardinals a{padding:6px 8px}
+  /* Touch-target min 44px — was 6px 8px (~23px) which caused tap failures on mobile */
+  .compass-cardinals a{padding:13px 10px;min-height:44px;box-sizing:border-box}
   .compass-cardinals a b{font-size:11px}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
   /* Mobile newsletter form: stacked layout — prevents awkward mid-wrap on 375px */
   .hero-inline-cta>div{flex-direction:column;align-items:stretch}
   .hero-inline-cta input[type="email"]{flex:none;width:100%;box-sizing:border-box}
-  .hero-inline-cta button{width:100%;justify-content:center}
+  /* Touch-target min 44px for newsletter subscribe button */
+  .hero-inline-cta button{width:100%;justify-content:center;min-height:44px;padding-top:13px;padding-bottom:13px}
+  .hero-inline-cta input[type="email"]{min-height:44px;padding-top:13px;padding-bottom:13px}
 }
 </style>
 <section class="hero" id="hero">
@@ -722,9 +725,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
           <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
             <input type="email" id="hero-email-de" placeholder="deine@email.de" required
               autocomplete="email"
-              style="padding:10px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;flex:1 1 180px;font-family:var(--mono);">
+              style="padding:13px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 180px;font-family:var(--mono);box-sizing:border-box;">
             <button onclick="mbHeroSubscribeDe()" data-cta="hero-de-index"
-              style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Sonntag-Brief gratis abonnieren →</button>
+              style="padding:13px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Sonntag-Brief gratis abonnieren →</button>
           </div>
           <p id="hero-msg-de" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:var(--mono);"></p>
           <p style="font-size:0.7rem;color:var(--fg-dim);margin:4px 0 0;font-family:var(--mono);">Gratis · Wöchentlicher Newsletter · Abmeldung jederzeit · DSGVO</p>
