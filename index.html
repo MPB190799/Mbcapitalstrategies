@@ -249,7 +249,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .lang-flag:hover{color:var(--accent);border-color:var(--accent)}
 .theme-btn{width:34px;height:34px;border:1px solid var(--border-strong);border-radius:999px;display:grid;place-items:center;color:var(--fg-muted);transition:all var(--t-fast);flex-shrink:0}
 .theme-btn:hover{color:var(--accent);border-color:var(--accent)}
-.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;border:1px solid var(--border-strong);border-radius:999px;cursor:pointer;padding:0;flex-shrink:0}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;border:1px solid var(--border-strong);border-radius:999px;cursor:pointer;padding:0;flex-shrink:0}
 .nav-hamburger span{display:block;width:16px;height:1px;background:var(--accent);transition:.3s}
 .nav-mobile{display:none;position:fixed;top:76px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:20px var(--pad) 32px;z-index:49;max-height:calc(100vh - 76px);overflow-y:auto}
 .nav-mobile.open{display:block}
@@ -688,6 +688,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .hero-inline-cta input[type="email"]{min-height:44px;padding-top:13px;padding-bottom:13px}
   /* Touch-target min 44px for secondary text-link CTA — was ~23px tap area, failed on mobile */
   .btn-link{display:inline-flex;align-items:center;min-height:44px;padding-top:0;padding-bottom:0}
+  /* Touch-target min 44px for theme toggle button on mobile — was 34px */
+  .theme-btn{width:44px;height:44px}
 }
 </style>
 <section class="hero" id="hero">
@@ -1397,18 +1399,18 @@ In deinem <em>Posteingang.</em></h2>
   });
 })();
 </script>
-<!-- MB Capital Insider — Sticky Newsletter Bar v2.3 (scroll-trigger CLS-fix, 2026-06-04) -->
+<!-- MB Capital Insider — Sticky Newsletter Bar v2.4 (touch-target 44px fix, 2026-06-07) -->
 <div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:none;">
   <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
-    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">&#x1F4E9; MB Capital Insider &mdash; jeden Sonntag, gratis:</span>
+    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">MB Capital Insider &mdash; jeden Sonntag, gratis:</span>
     <div style="display:flex;gap:6px;flex:1;min-width:240px;max-width:420px;" id="mb-sticky-form">
       <input type="email" id="mb-sticky-email" placeholder="deine@email.de" required
-        style="flex:1;padding:7px 10px;border:1px solid #D4AF37;background:#080810;color:#f0f4ff;border-radius:4px;font-size:0.8rem;min-width:0;">
+        style="flex:1;padding:7px 10px;border:1px solid #D4AF37;background:#080810;color:#f0f4ff;border-radius:4px;font-size:0.8rem;min-width:0;min-height:44px;box-sizing:border-box;">
       <button onclick="mbStickySubscribe()" data-cta="sticky-de-index"
-        style="padding:7px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;">Gratis abonnieren &rarr;</button>
+        style="padding:7px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;min-height:44px;box-sizing:border-box;">Gratis abonnieren &rarr;</button>
     </div>
     <span id="mb-sticky-msg" style="font-size:0.75rem;display:none;"></span>
-    <button onclick="mbStickyDismiss()" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Schliessen">&times;</button>
+    <button onclick="mbStickyDismiss()" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;" aria-label="Schliessen">&times;</button>
   </div>
 </div>
 <script>
