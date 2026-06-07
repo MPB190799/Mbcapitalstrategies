@@ -137,7 +137,10 @@
 </script>
 
   <!-- Styles: UNVERÄNDERT -->
-    <link rel="stylesheet" href="/blog/styles.css?v=3">
+    <!-- Critical inline CSS for LCP text render (Batch 137) -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container,main.container,.container{max-width:960px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.css?v=3" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.css?v=3"></noscript>
 
   <style>
     body { background:#0f1115; color:#f5f6fa; font-family:'Montserrat',sans-serif; margin:0; }
@@ -359,7 +362,7 @@
     </div>
 
     <div class="hero-img">
-      <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.jpg'" loading="lazy" alt="Marco Bozem – Hard Assets & Dividenden Investor">
+      <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" loading="lazy" alt="Marco Bozem – Hard Assets & Dividenden Investor">
       <p style="font-size:0.85em; color:#9aa6c0;">Investor · Hard Assets · Dividenden</p>
     </div>
   </section>
