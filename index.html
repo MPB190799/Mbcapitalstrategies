@@ -679,6 +679,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .compass-cardinals a{padding:6px 8px}
   .compass-cardinals a b{font-size:11px}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
+  /* Mobile newsletter form: stacked layout — prevents awkward mid-wrap on 375px */
+  .hero-inline-cta>div{flex-direction:column;align-items:stretch}
+  .hero-inline-cta input[type="email"]{flex:none;width:100%;box-sizing:border-box}
+  .hero-inline-cta button{width:100%;justify-content:center}
 }
 </style>
 <section class="hero" id="hero">
