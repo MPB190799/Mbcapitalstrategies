@@ -690,6 +690,13 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .btn-link{display:inline-flex;align-items:center;min-height:44px;padding-top:0;padding-bottom:0}
   /* Touch-target min 44px for theme toggle button on mobile — was 34px */
   .theme-btn{width:44px;height:44px}
+  /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
+     desktop scrim (.92) causes an almost-black hero. Lighten to a gentle top/bottom fade only,
+     keeping text readable without a dark overlay blocking content. CRO-P0 fix. */
+  .hero::before{
+    background:
+      linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
+  }
 }
 </style>
 <section class="hero" id="hero">
