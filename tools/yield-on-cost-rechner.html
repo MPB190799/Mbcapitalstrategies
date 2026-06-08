@@ -654,10 +654,10 @@
       </div>
       <p id="res-text" style="margin-top:1rem; font-size:0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1rem;"></p>
 
-      <!-- INLINE NEWSLETTER CTA — contextual, nach Ergebnis -->
+      <!-- INLINE NEWSLETTER CTA — contextual, nach Ergebnis, result-personalisiert 08.06.2026 -->
       <div id="yoc-nl-cta" style="margin-top:1.2rem;padding:16px 18px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:6px;display:none;">
         <p style="color:#D4AF37;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px;font-family:Montserrat,sans-serif;">Sonntag-Brief — kostenlos</p>
-        <p style="color:#c8cfe0;font-size:0.85rem;margin:0 0 12px;font-family:Montserrat,sans-serif;">Welche Aktien haben aktuell YOC <strong style="color:#D4AF37;">≥ 8%</strong>? Jeden Sonntag: Marcos Depot-Update mit den wichtigsten News zu Shipping, Mining &amp; Dividenden.</p>
+        <p id="yoc-nl-cta-text" style="color:#c8cfe0;font-size:0.85rem;margin:0 0 12px;font-family:Montserrat,sans-serif;">Welche Aktien haben aktuell YOC <strong style="color:#D4AF37;">≥ 8%</strong>? Jeden Sonntag: Marcos Depot-Update mit den wichtigsten News zu Shipping, Mining &amp; Dividenden.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
           <input id="yoc-nl-email" type="email" placeholder="deine@email.de"
             style="flex:1;min-width:180px;padding:10px 12px;border:1px solid rgba(212,175,55,0.35);background:#0a0a14;color:#fff;border-radius:4px;font-size:0.85rem;font-family:Montserrat,sans-serif;">
@@ -1237,9 +1237,17 @@
     box.classList.add('show');
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-    // Kontextueller Newsletter-CTA: zeigen sobald Ergebnis da
+    // Kontextueller Newsletter-CTA: zeigen sobald Ergebnis da + result-personalisierter Text
     var nlCta = document.getElementById('yoc-nl-cta');
     if (nlCta && !localStorage.getItem('yoc_nl_subscribed')) {
+      var ctaTxt = document.getElementById('yoc-nl-cta-text');
+      if (ctaTxt) {
+        if (yoc < 8) {
+          ctaTxt.innerHTML = 'Dein YOC liegt bei <strong style="color:#D4AF37;">' + yoc.toFixed(1) + ' %</strong>. Welche Aktien schaffen dir ≥ 8 %? Jeden Sonntag: Marcos Wochenrückblick mit Shipping, Mining &amp; Dividenden-News — kostenlos.';
+        } else {
+          ctaTxt.innerHTML = 'Starker YOC von <strong style="color:#D4AF37;">' + yoc.toFixed(1) + ' %</strong>! Auf welche Aktien setzt Marco für YOC ≥ 8 %? Jeden Sonntag: der Wochenrückblick mit Depot-News, Dividenden-Zahlen &amp; Markteinordnung — kostenlos.';
+        }
+      }
       nlCta.style.display = 'block';
     }
   }
