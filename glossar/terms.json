@@ -30,5 +30,8 @@
   "K-1": "mlp",
   "Nettoverschuldung": "nettoverschuldung",
   "Kurs-Gewinn-Verhältnis": "kgv",
-  "Kurs-Gewinn-Verhaeltnis": "kgv"
+  "Kurs-Gewinn-Verhaeltnis": "kgv",
+  "EBIT": "ebit",
+  "Operatives Ergebnis": "ebit",
+  "EBIT-Marge": "ebit"
 }
