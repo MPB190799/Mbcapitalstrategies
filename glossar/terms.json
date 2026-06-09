@@ -33,5 +33,8 @@
   "Kurs-Gewinn-Verhaeltnis": "kgv",
   "EBIT": "ebit",
   "Operatives Ergebnis": "ebit",
-  "EBIT-Marge": "ebit"
+  "EBIT-Marge": "ebit",
+  "Buchwert je Aktie": "buchwert-je-aktie",
+  "Buchwert": "buchwert-je-aktie",
+  "Book Value Per Share": "buchwert-je-aktie"
 }
