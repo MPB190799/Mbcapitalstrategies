@@ -227,6 +227,35 @@
   <p style="margin:0;font-size:0.9rem;color:#aaa;">Übersicht: Die besten Shipping-Aktien 2026 mit 8-15% Dividendenrendite:</p>
   <p style="margin:6px 0 0;"><a href="/shipping/" style="color:#D4AF37;font-weight:700;text-decoration:none;">→ Shipping-Aktien Guide: TORM, CMB.Tech, FLEX LNG</a></p>
 </div>
+
+<!-- Free Newsletter CTA — growth-funnel-agent 10.06.2026 -->
+<div style="background:rgba(212,175,55,0.07);border-top:1px solid rgba(212,175,55,0.18);padding:28px 20px;margin:24px 0;text-align:center;">
+  <div style="max-width:500px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;">Sonntag-Brief</p>
+    <h3 style="color:#f5f6fa;font-size:1.1rem;font-weight:700;margin:0 0 8px;">Shipping-Dividenden & Ex-Dates — jeden Sonntag eingeordnet</h3>
+    <p style="color:#9aa6c0;font-size:0.87rem;margin:0 0 16px;">Marcos wöchentlicher Marktüberblick: Dividenden-Zahltage, Charter-Raten, Sektor-News. Kein Spam, abmeldbar.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
+      <input type="email" id="ship-ex-nl-email" placeholder="deine@email.de" required
+        style="flex:1;min-width:200px;max-width:260px;padding:10px 14px;border-radius:6px;border:1px solid rgba(212,175,55,0.35);background:#151821;color:#f5f6fa;font-size:0.88rem;">
+      <button onclick="mbShipExSubscribe()"
+        style="padding:10px 20px;background:#d4af37;color:#0f1115;font-weight:700;border:none;border-radius:6px;cursor:pointer;font-size:0.88rem;white-space:nowrap;">Anmelden</button>
+    </div>
+    <p id="ship-ex-nl-msg" style="color:#9aa6c0;font-size:0.75rem;min-height:1em;margin:4px 0;"></p>
+    <p style="color:#5a6480;font-size:0.72rem;margin:0;">Keine Anlageberatung. DSGVO-konform. Double-Opt-In.</p>
+  </div>
+</div>
+<script>(function(){if(window._mbShipExDef)return;window._mbShipExDef=true;window.mbShipExSubscribe=function(){var e=document.getElementById('ship-ex-nl-email'),m=document.getElementById('ship-ex-nl-msg'),email=e?e.value.trim():'';if(!email||!email.includes('@')){if(m)m.textContent='Bitte eine gültige E-Mail eingeben.';return;}if(m)m.textContent='Wird angemeldet...';fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'blog-ship-ex-jun26'})}).then(function(r){return r.json();}).then(function(d){if(m)m.textContent=d.ok?'Fast geschafft! Bitte E-Mail bestätigen.':'Fehler — bitte direkt auf /newsletter.html anmelden.';}).catch(function(){if(m)m.textContent='Verbindungsfehler.';});};})();</script>
+
+<!-- Premium CTA — MB Earnings Insider (growth-funnel-agent 10.06.2026) -->
+<div style="background:linear-gradient(135deg,#0d0d1a,#1a1225);border:1px solid rgba(212,175,55,0.35);border-left:4px solid #D4AF37;border-radius:8px;padding:24px 28px;margin:16px 0 32px;">
+  <p style="color:#D4AF37;font-size:0.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px;">MB Capital Earnings-Insider</p>
+  <h3 style="color:#f5f6fa;font-size:1.05rem;font-weight:700;margin:0 0 10px;">Dividenden-Sicherheit & FCF-Coverage: TORM, FLNG, CMBT</h3>
+  <p style="color:#9aa6c0;font-size:0.87rem;line-height:1.6;margin:0 0 16px;">Wer mehr will als Kurs + Ex-Date: Dividenden-Nachhaltigkeits-Check, Payout-Coverage, klare Kauf-/Halte-These direkt am Zahltag. Ab 5&nbsp;€/Monat.</p>
+  <a href="/newsletter/?utm_source=blog&amp;utm_medium=cta&amp;utm_campaign=ship-ex-date-jun26"
+     style="display:inline-block;padding:10px 22px;background:#D4AF37;color:#000;font-weight:700;border-radius:4px;text-decoration:none;font-size:0.88rem;">Earnings-Insider testen &#8594;</a>
+  <p style="color:#555;font-size:0.72rem;margin:10px 0 0;">Ab 5 €/Monat · Keine Anlageberatung · Abmeldung jederzeit</p>
+</div>
+
 </article>
     </section>
   </main>

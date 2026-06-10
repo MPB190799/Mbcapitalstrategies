@@ -310,6 +310,24 @@
 
       </div>
     
+<!-- Free Newsletter CTA — growth-funnel-agent 10.06.2026 -->
+<div style="background:rgba(212,175,55,0.07);border-top:1px solid rgba(212,175,55,0.18);padding:28px 20px;margin:24px 0;text-align:center;">
+  <div style="max-width:500px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;">Sonntag-Brief</p>
+    <h3 style="color:#f5f6fa;font-size:1.1rem;font-weight:700;margin:0 0 8px;">Ex-Date-Mechanik & Shipping-Dividenden — jeden Sonntag erklärt</h3>
+    <p style="color:#9aa6c0;font-size:0.87rem;margin:0 0 16px;">Marcos wöchentlicher Marktüberblick: Dividenden-Zahltage, Kursmechanik, Sektor-News. Kein Spam, abmeldbar.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:8px;">
+      <input type="email" id="exdate-nl-email" placeholder="deine@email.de" required
+        style="flex:1;min-width:200px;max-width:260px;padding:10px 14px;border-radius:6px;border:1px solid rgba(212,175,55,0.35);background:#151821;color:#f5f6fa;font-size:0.88rem;">
+      <button onclick="mbExDateSubscribe()"
+        style="padding:10px 20px;background:#d4af37;color:#0f1115;font-weight:700;border:none;border-radius:6px;cursor:pointer;font-size:0.88rem;white-space:nowrap;">Anmelden</button>
+    </div>
+    <p id="exdate-nl-msg" style="color:#9aa6c0;font-size:0.75rem;min-height:1em;margin:4px 0;"></p>
+    <p style="color:#5a6480;font-size:0.72rem;margin:0;">Keine Anlageberatung. DSGVO-konform. Double-Opt-In.</p>
+  </div>
+</div>
+<script>(function(){if(window._mbExDateDef)return;window._mbExDateDef=true;window.mbExDateSubscribe=function(){var e=document.getElementById('exdate-nl-email'),m=document.getElementById('exdate-nl-msg'),email=e?e.value.trim():'';if(!email||!email.includes('@')){if(m)m.textContent='Bitte eine gültige E-Mail eingeben.';return;}if(m)m.textContent='Wird angemeldet...';fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'blog-exdate-mech-jun26'})}).then(function(r){return r.json();}).then(function(d){if(m)m.textContent=d.ok?'Fast geschafft! Bitte E-Mail bestätigen.':'Fehler — bitte direkt auf /newsletter.html anmelden.';}).catch(function(){if(m)m.textContent='Verbindungsfehler.';});};})();</script>
+
         <!-- Premium CTA — MB Earnings Insider (growth-funnel-run26, 07.06.2026) -->
         <div style="background:#0a0a14;border:1px solid #D4AF37;border-radius:8px;padding:20px 24px;margin:24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
           <div style="flex:1;min-width:220px;">
