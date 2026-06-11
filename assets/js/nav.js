@@ -8,10 +8,17 @@
   'use strict';
 
   /* ── Non-blocking Font Loading ── */
-  if (!document.querySelector('link[href*="Outfit"]')) {
+  /* Guard: skip if page already has Outfit loaded or preloaded (blog pages do this inline).
+     Prevents duplicate 4-family font bundle (was causing +2-4s LCP on blog pages). */
+  var hasOutfit = document.querySelector('link[href*="Outfit"]') ||
+                  document.querySelector('link[href*="outfit"]') ||
+                  document.querySelector('link[rel="preload"][as="style"][href*="Outfit"]') ||
+                  document.querySelector('link[rel="preload"][as="font"][href*="outfit"]');
+  if (!hasOutfit) {
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Serif+Display&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap';
+    /* Slim bundle: only Outfit + IBM Plex Mono — DM Serif/Cormorant removed (unused on blog/landing pages, added ~800ms font-parse overhead). */
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap';
     document.head.appendChild(fontLink);
   }
 
@@ -66,14 +73,18 @@
   });
 
   // ── Google Analytics 4 (loaded AFTER consent defaults are set) ──
-  (function() {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE';
-    document.head.appendChild(s);
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-J1NWEPPKNE', { anonymize_ip: true });
-  })();
+  // Guard: skip if page already has a GTM/GA4 script tag (blog pages load it in <head>).
+  // Prevents double GA4 initialisation and duplicate HTTP request on blog pages.
+  if (!document.querySelector('script[src*="googletagmanager.com/gtag"]')) {
+    (function() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE';
+      document.head.appendChild(s);
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-J1NWEPPKNE', { anonymize_ip: true });
+    })();
+  }
 
   /* ── Boot ── */
   /* Pages marked with data-luxe-v3="1" on <html> manage their own nav,
