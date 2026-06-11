@@ -299,16 +299,15 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
     📌 <strong>Kurzfassung:</strong> Extrem stabiler Cashflow, Top-Dividendenhistorie, aber mit Zyklik & Projekt-Risiken.
   </div>
 
-  <!-- VIDEO -->
+  <!-- VIDEO — YouTube Lite Facade (LCP-Fix: kein YouTube-JS beim Seitenload) -->
   <h2>🎬 Videoanalyse: BHP 2025</h2>
   <p>Hier findest du meine komplette Videoanalyse zu BHP:</p>
 
-  <iframe width="100%" height="380"
-          src="https://www.youtube.com/embed/jhJB7qIfN3k"
-          title="BHP Analyse 2025"
-          loading="lazy"
-          style="border-radius:12px; border:1px solid #d4af37;">
-  </iframe>
+  <div class="yt-lite" data-id="jhJB7qIfN3k" data-title="BHP Aktie Analyse 2025 — Dividende, Kupfer &amp; Cashflow" role="button" tabindex="0" aria-label="Video abspielen: BHP Aktie Analyse 2025">
+    <img class="yt-thumb" src="https://img.youtube.com/vi/jhJB7qIfN3k/hqdefault.jpg" alt="BHP Aktie Analyse 2025 Thumbnail" width="480" height="360" loading="lazy" decoding="async">
+    <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="yt-label">BHP Aktie Analyse 2025 — Dividende, Kupfer &amp; Cashflow</div>
+  </div>
 
   <!-- ADSENSE: Loaded here after LCP to prevent render blocking -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
@@ -741,5 +740,27 @@ window.mbMidSubscribe=function(){
 
 <script src="/assets/js/glossar-linking.js" defer></script>
 <script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<!-- YouTube Lite Facade Init (web-design-agent 2026-06-11) -->
+<script>
+(function(){
+  function initYtLite(el){
+    el.addEventListener('click',function activate(){
+      el.removeEventListener('click',activate);
+      var id=el.dataset.id;
+      if(!id)return;
+      var iframe=document.createElement('iframe');
+      iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+      iframe.title=el.dataset.title||'YouTube Video';
+      iframe.allow='autoplay;encrypted-media;picture-in-picture';
+      iframe.allowFullscreen=true;
+      el.innerHTML='';
+      el.appendChild(iframe);
+      el.style.cursor='default';
+    });
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){el.click();}});
+  }
+  document.querySelectorAll('.yt-lite[data-id]').forEach(initYtLite);
+})();
+</script>
 </body>
 </html>
