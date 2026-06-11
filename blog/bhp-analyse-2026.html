@@ -34,6 +34,12 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 .breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
 .breadcrumbs a{color:var(--text-muted);text-decoration:none}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+/* Critical: yt-lite container sizing — prevents CLS when styles.css loads async */
+.yt-lite{position:relative;width:100%;padding-bottom:56.25%;border-radius:12px;border:1px solid var(--gold);overflow:hidden;cursor:pointer;background:#000;margin:12px 0}
+.yt-lite img.yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yt-lite .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.yt-lite .yt-play svg{width:28px;height:28px;fill:#fff}
+.yt-lite .yt-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.8rem;padding:18px 14px 10px;font-family:inherit}
 </style>
 <!-- Preload LCP image: YT thumbnail above-fold (web-design-agent 2026-06-11) -->
 <link rel="preload" as="image" href="https://img.youtube.com/vi/jhJB7qIfN3k/hqdefault.jpg" fetchpriority="high">
@@ -461,11 +467,6 @@ window.mbMidSubscribe=function(){
   <!-- PLAYLIST -->
   <h2>🎥 Mining-Playlist – komplette Serie</h2>
   <p>Alle Minen-Analysen in einer Playlist:</p><iframe loading="lazy" width="100%" height="380" src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9dei7BFRgzB7nRBy4ZYCAl6Q" title="Mining Playlist" allowfullscreen style="border-radius:12px;border:1px solid #d4af37;"></iframe>
-    <div class="yt-label">Mining Playlist</div>
-</div> width="480" height="360" loading="lazy" decoding="async">
-    <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-    <div class="yt-label">Mining Playlist</div>
-</div>
 
 
   <!-- CTA BOX -->
