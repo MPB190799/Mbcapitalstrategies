@@ -3,6 +3,8 @@ Disallow: /admin/
 Disallow: /draft/
 Disallow: /tmp/
 Disallow: /private/
+Allow: /earnings-archive/DEMO_FRO_2026Q1.html
+Allow: /earnings-archive/DEMO_NEM_2026Q1.html
 Disallow: /earnings-archive/
 
 # Bilder-URLs aus GSC-Index ausschließen (werden als Content-Seiten indexiert)
