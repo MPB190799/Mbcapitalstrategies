@@ -16,8 +16,7 @@
 
 <meta name="theme-color" content="#050508">
 
-    <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <!-- AdSense geladen NACH LCP — verhindert CMP-Block auf Hero (CWV LCP-Fix) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://pagead2.googlesyndication.com">
@@ -958,6 +957,9 @@
   }};
 }})();
 </script>
+
+<!-- AdSense nach LCP geladen — verhindert dass Google Funding Choices CMP Hero-Render blockiert -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
 </body>
 </html>
