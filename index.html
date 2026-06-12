@@ -586,11 +586,11 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 /* ═══ COMPASS BACKDROP — Real vintage brass photograph, centered ═══ */
 .compass-backdrop{
   position:absolute;
-  top:51%;left:50%;
-  width:min(92vh,920px);
+  top:52%;left:50%;
+  width:min(104vh,1060px);
   aspect-ratio:1/1;
-  /* leicht in 3D gekippt — schräger Blick statt frontal, dezent geneigt (Marco 12.06.) */
-  transform:translate(-50%,-50%) perspective(1700px) rotateX(var(--tilt,30deg)) rotate(var(--scroll-rot));
+  /* in 3D gekippt — schräger Blick statt frontal (Marco 12.06., verstärkt) */
+  transform:translate(-50%,-50%) perspective(1700px) rotateX(var(--tilt,42deg)) rotate(var(--scroll-rot));
   transform-style:preserve-3d;
   z-index:0;
   --scroll-rot:0deg;
