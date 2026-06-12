@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8" />
+  <!-- Favicon / Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#050508">
+
+  <!-- AdSense geladen NACH LCP — verhindert CMP-Block auf Hero (CWV LCP-Fix) -->
+  <!-- adsbygoogle.js wird unten im body geladen, nicht im head -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/marktupdates/">
+    <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/marktupdates/">
+    <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/marktupdates/">
+
+  <title>Marktupdates & Wochenrückblicke 2026 | MB Capital Strategies</title>
+  <meta name="description" content="Marktupdates von MB Capital Strategies: Wochenrückblicke, Marktberichte, Depot-Updates & Finanzfeuer-Talk — Hard Assets, Dividenden & Rohstoffe, direkt aus dem Depot." />
+
+  <meta property="og:title" content="Marktupdates & Wochenrückblicke 2026 | MB Capital Strategies">
+  <meta property="og:description" content="Marktupdates von MB Capital Strategies: Wochenrückblicke, Marktberichte, Depot-Updates & Finanzfeuer-Talk — Hard Assets, Dividenden & Rohstoffe, direkt aus dem Depot.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/marktupdates/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marktupdates & Wochenrückblicke 2026 | MB Capital Strategies">
+  <meta name="twitter:description" content="Marktupdates von MB Capital Strategies: Wochenrückblicke, Marktberichte, Depot-Updates & Finanzfeuer-Talk — Hard Assets, Dividenden & Rohstoffe, direkt aus dem Depot.">
+  <meta name="author" content="Marco Bozem">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://mbcapitalstrategies.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Marktupdates", "item": "https://mbcapitalstrategies.com/marktupdates/"}
+  ]
+}
+</script>
+<!-- Critical inline CSS for LCP text render (Batch 137) -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container,main.container,.container{max-width:960px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.css?v=3" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.css?v=3"></noscript>
+<style>
+    :root{
+      --gold:#d4af37;
+      --gold-strong:#e0bd55;
+      --bg:#0f1115;
+      --bg-soft:#151821;
+      --text:#f5f6fa;
+      --text-2:#9aa6c0;
+    }
+
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+      background:#0f1115 url('/background.webp') no-repeat center top;
+      background-size:cover;
+      background-attachment:scroll;
+    }
+
+    .page-wrapper{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px 70px;
+    }
+
+    header.header{
+      background:var(--bg-soft);
+      border-bottom:1px solid rgba(212,175,55,.28);
+      padding:16px 12px;
+      position:sticky;
+      top:0;
+      z-index:30;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:22px;
+    }
+    header.header a{
+      color:var(--gold);
+      text-decoration:none;
+      font-weight:600;
+      font-size:1em;
+    }
+    header.header a:hover{ text-decoration:underline; }
+
+    .dropdown{ position:relative; }
+    .dropdown-btn{
+      background:none; border:none;
+      color:var(--gold);
+      font-weight:600; cursor:pointer;
+      padding:6px 10px; font-size:1em;
+    }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      background:var(--bg);
+      min-width:230px;
+      border:1px solid rgba(212,175,55,.25);
+      border-radius:14px;
+      box-shadow:0 8px 22px rgba(0,0,0,.45);
+      padding:10px 0;
+      top:36px; left:0;
+      z-index:1000;
+    }
+    .dropdown-content a{
+      display:block;
+      padding:10px 16px;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .dropdown-content a:hover{
+      background:#1d2330;
+      color:var(--gold);
+    }
+    .dropdown-content hr{
+      border:0;
+      height:1px;
+      background:rgba(212,175,55,.18);
+      margin:8px 12px;
+    }
+    @media(min-width:700px){
+      .dropdown:hover .dropdown-content{ display:block; }
+    }
+    @media(max-width:699px){
+      .dropdown.open .dropdown-content{ display:block; }
+    }
+
+    .hero{
+      text-align:left;
+      padding:70px 10px 10px;
+      max-width:980px;
+      margin:0 auto;
+    }
+    .kicker{
+      color:var(--gold);
+      font-weight:700;
+      letter-spacing:.3px;
+      margin-bottom:10px;
+    }
+    h1{
+      color:var(--gold);
+      font-size:2.4em;
+      margin:0 0 12px;
+    }
+    .lead{
+      color:#cfd6e6;
+      font-size:1.12em;
+      line-height:1.6;
+      margin:0 0 18px;
+      max-width:900px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#000;
+      font-weight:700;
+      text-decoration:none;
+      font-size:1.02em;
+      box-shadow:0 0 14px rgba(212,175,55,0.6);
+      transition:0.25s;
+    }
+    .btn:hover{
+      background:var(--gold-strong);
+      box-shadow:0 0 18px rgba(212,175,55,0.9);
+      transform:translateY(-2px);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--gold);
+      border:1px solid rgba(212,175,55,.55);
+      box-shadow:none;
+    }
+    .btn-secondary:hover{
+      background:#141823;
+      transform:translateY(-2px);
+      box-shadow:0 0 18px rgba(212,175,55,0.25);
+    }
+
+    .section{
+      max-width:980px;
+      margin:40px auto;
+      padding:0 10px;
+    }
+    h2{
+      color:var(--gold);
+      font-size:1.7em;
+      margin:0 0 12px;
+    }
+    h3{
+      color:#f2d78a;
+      margin:18px 0 8px;
+    }
+    p{
+      color:#cfd6e6;
+      line-height:1.65;
+      margin:10px 0;
+    }
+    ul{
+      color:#cfd6e6;
+      line-height:1.7;
+      margin:10px 0 10px 18px;
+    }
+
+    .card{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 10px 26px rgba(0,0,0,.28);
+      margin-top:18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+    }
+
+    .embed{
+      margin-top:18px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,.22);
+      background:#0d0f13;
+      box-shadow:0 10px 26px rgba(0,0,0,.28);
+    }
+    .embed iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+    }
+
+    .mini-note{
+      color:var(--text-2);
+      font-size:0.95em;
+      margin-top:6px;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(212,175,55,.18);
+      margin:26px 0;
+    }
+
+    details{
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:14px;
+      padding:12px 14px;
+      margin:12px 0;
+    }
+    summary{
+      color:var(--gold);
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      margin-top:80px;
+      text-align:center;
+      padding:45px 15px;
+      color:#9aa6c0;
+      font-size:0.9rem;
+      background:#0d0f13;
+      border-top:1px solid rgba(212,175,55,0.25);
+    }
+    footer a{ color:var(--gold); text-decoration:none; margin:0 10px; }
+    footer a:hover{ text-decoration:underline; }
+    .analyse-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+      gap:12px;
+      margin-top:18px;
+    }
+    .analyse-link{
+      display:block;
+      background:rgba(21,24,33,.92);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:12px;
+      padding:14px 16px;
+      text-decoration:none;
+      transition:border-color .2s,background .2s;
+    }
+    .analyse-link:hover{ border-color:var(--gold); background:rgba(21,24,33,1); }
+    .analyse-link .al-name{ color:var(--gold); font-weight:700; font-size:.93em; }
+    .analyse-link .al-desc{ color:#9aa6c0; font-size:.8em; margin-top:4px; line-height:1.4; }
+  </style>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+    gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Themen ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>
+          <a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividenden-Journey</a>
+          <a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing & Zyklen</a>
+          <hr>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime / Shipping</a>
+          <a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/investing-analysen.html">Investing.com</a>
+
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream / Pipelines</a>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+    <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/investing-analysen.html">🔗 Investing.com</a>
+
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <section class="hero">
+    <div class="kicker">📰 Themen-Hub · MB Capital Strategies</div>
+    <h1>Marktupdates &amp; Wochenrückblicke</h1>
+    <p class="lead">
+      Hier laufen alle laufenden Updates zusammen: <strong>Wochenrückblicke</strong>, <strong>Marktberichte</strong>,
+      meine <strong>Depot-Updates</strong> und der <strong>Finanzfeuer-Talk</strong>. Markt-Einschätzung zu Shipping,
+      Mining, Energie &amp; Dividenden — ehrlich, mit Zahlen und direkt aus dem Depot.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="/newsletter/">📬 Wochenrückblick abonnieren</a>
+      <a class="btn btn-secondary" href="/depot-strategie/">🎯 Depot-Strategie</a>
+      <a class="btn btn-secondary" href="/podcast/">🎙️ Podcast</a>
+    </div>
+    <p class="mini-note">Marktinterpretation &amp; persönliche Einschätzung – keine Anlageberatung.</p>
+  </section>
+
+<!-- ===================== TOP AD ===================== -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <section class="section">
+    <h2>🗓️ Wochenrückblicke</h2>
+    <p>Jede Woche die wichtigsten Bewegungen in Shipping, Mining &amp; Energie kompakt eingeordnet:</p>
+    <div class="card">
+      <ul style="line-height:1.9;margin:6px 0 0 18px;">
+        <li><a href="/blog/wochenrueckblick-kw23-2026.html" style="color:var(--gold);">Wochenrückblick KW23 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw22-2026.html" style="color:var(--gold);">Wochenrückblick KW22 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw21-2026.html" style="color:var(--gold);">Wochenrückblick KW21 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw19-2026.html" style="color:var(--gold);">Wochenrückblick KW19 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw18-2026.html" style="color:var(--gold);">Wochenrückblick KW18 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw17-2026.html" style="color:var(--gold);">Wochenrückblick KW17 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw16-2026.html" style="color:var(--gold);">Wochenrückblick KW16 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw15-2026.html" style="color:var(--gold);">Wochenrückblick KW15 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw14-2026.html" style="color:var(--gold);">Wochenrückblick KW14 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw13-2026.html" style="color:var(--gold);">Wochenrückblick KW13 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw12-2026.html" style="color:var(--gold);">Wochenrückblick KW12 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw11-2026.html" style="color:var(--gold);">Wochenrückblick KW11 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw10-2026.html" style="color:var(--gold);">Wochenrückblick KW10 2026</a></li>
+        <li><a href="/blog/wochenrueckblick-kw09-2026.html" style="color:var(--gold);">Wochenrückblick KW9 2026</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>📊 Marktberichte &amp; Markt-News</h2>
+    <div class="card">
+      <ul style="line-height:1.9;margin:6px 0 0 18px;">
+        <li><a href="/blog/markt-news-container-kupfer-februar-2026.html" style="color:var(--gold);">Markt-News: Container &amp; Kupfer (Feb 2026)</a></li>
+        <li><a href="/blog/markt-news-cpi-devon-ctra-februar-2026.html" style="color:var(--gold);">Markt-News: CPI, Devon &amp; Coterra (Feb 2026)</a></li>
+        <li><a href="/blog/marktbericht-kw05-2026.html" style="color:var(--gold);">Marktbericht KW5 2026</a></li>
+        <li><a href="/blog/marktbericht-kw07-2026.html" style="color:var(--gold);">Marktbericht KW7 2026</a></li>
+        <li><a href="/blog/marktbericht-kw08-2026.html" style="color:var(--gold);">Marktbericht KW8 2026</a></li>
+      </ul>
+    </div>
+  </section>
+
+<!-- ===================== MID AD ===================== -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="1212067635"
+     data-ad-format="in-article"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <section class="section">
+    <h2>💼 Depot-Updates</h2>
+    <p>Wie sich mein Hard-Asset-Dividendendepot Monat für Monat entwickelt (nur %, keine Summen):</p>
+    <div class="card">
+      <ul style="line-height:1.9;margin:6px 0 0 18px;">
+        <li><a href="/blog/depot-update-april-2026.html" style="color:var(--gold);">Depot-Update April 2026</a></li>
+        <li><a href="/blog/depot-update-august-2025.html" style="color:var(--gold);">Depot-Update August 2025</a></li>
+        <li><a href="/blog/depot-update-dezember-2025.html" style="color:var(--gold);">Depot-Update Dezember 2025</a></li>
+        <li><a href="/blog/depot-update-februar-2026.html" style="color:var(--gold);">Depot-Update Februar 2026</a></li>
+        <li><a href="/blog/depot-update-januar-2026.html" style="color:var(--gold);">Depot-Update Januar 2026</a></li>
+        <li><a href="/blog/depot-update-juli-2025.html" style="color:var(--gold);">Depot-Update Juli 2025</a></li>
+        <li><a href="/blog/depot-update-maerz-2026.html" style="color:var(--gold);">Depot-Update März 2026</a></li>
+        <li><a href="/blog/depot-update-november-2025.html" style="color:var(--gold);">Depot-Update November 2025</a></li>
+        <li><a href="/blog/depot-update-oktober-2025.html" style="color:var(--gold);">Depot-Update Oktober 2025</a></li>
+        <li><a href="/blog/depot-update-september-2025.html" style="color:var(--gold);">Depot-Update September 2025</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🔥 Finanzfeuer-Talk</h2>
+    <div class="card">
+      <ul style="line-height:1.9;margin:6px 0 0 18px;">
+        <li><a href="/blog/finanzfeuer-talk-2-dividenden-vs-growth.html" style="color:var(--gold);">Finanzfeuer Talk #2 – Dividenden vs. Growth</a></li>
+        <li><a href="/blog/finanzfeuer-talk-3-januar-2026.html" style="color:var(--gold);">Finanzfeuer Talk #3 – Januar 2026</a></li>
+        <li><a href="/blog/finanzfeuer-talk-4-hard-assets-vs-tech.html" style="color:var(--gold);">Finanzfeuer Talk #4 – Hard Assets vs. Tech</a></li>
+        <li><a href="/blog/finanzfeuer-talk-april-2026.html" style="color:var(--gold);">Finanzfeuer Talk – April 2026</a></li>
+        <li><a href="/blog/finanzfeuer-talk-maerz-2026.html" style="color:var(--gold);">Finanzfeuer Talk – März 2026</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🧭 Persönliches &amp; Strategie</h2>
+    <div class="card">
+      <ul style="line-height:1.9;margin:6px 0 0 18px;">
+        <li><a href="/blog/36-aktien-nachkaufen-watchlist-2026.html" style="color:var(--gold);">36 Aktien auf der Nachkauf-Watchlist 2026</a></li>
+        <li><a href="/blog/krypto-depot-2025.html" style="color:var(--gold);">Mein Krypto-Depot 2025</a></li>
+        <li><a href="/blog/mein-weg-zur-finanziellen-freiheit.html" style="color:var(--gold);">Mein Weg zur finanziellen Freiheit</a></li>
+        <li><a href="/blog/meine-toolbox-broker-tools-plattformen-2025.html" style="color:var(--gold);">Meine Toolbox: Broker, Tools & Plattformen 2025</a></li>
+        <li><a href="/blog/parqet-wrapped-2025.html" style="color:var(--gold);">Parqet Wrapped 2025 – mein Depot-Jahr</a></li>
+        <li><a href="/blog/wise-airalo-vietnam-erfahrungen.html" style="color:var(--gold);">Wise & Airalo in Vietnam – Reise-Erfahrungen</a></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.js" defer></script>
+
+<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<!-- MB Capital Insider — Sticky Newsletter Bar v2.2 (sector-inject, 2026-06-02) -->
+<div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;">
+  <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
+    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">&#x1F4CA; Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos:</span>
+    <div style="display:flex;gap:6px;flex:1;min-width:240px;max-width:420px;" id="mb-sticky-form">
+      <input type="email" id="mb-sticky-email" placeholder="deine@email.de" required
+        style="flex:1;padding:7px 10px;border:1px solid #D4AF37;background:#080810;color:#f0f4ff;border-radius:4px;font-size:0.8rem;min-width:0;">
+      <button onclick="mbStickySubscribe()" data-cta="sticky-de-mining"
+        style="padding:7px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;">PDF sichern &rarr;</button>
+    </div>
+    <span id="mb-sticky-msg" style="font-size:0.75rem;display:none;"></span>
+    <button onclick="mbStickyDismiss()" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Schliessen">&times;</button>
+  </div>
+</div>
+<script>
+(function(){{
+  var bar = document.getElementById('mb-sticky-cta');
+
+  function mbStickySetBodyPad(){{
+    if(!bar || bar.style.display === 'none') {{
+      document.body.style.paddingBottom = '';
+    }} else {{
+      document.body.style.paddingBottom = bar.offsetHeight + 'px';
+    }}
+  }}
+
+  window.mbStickyDismiss = function(){{
+    bar.style.display = 'none';
+    localStorage.setItem('mbctadismissed','1');
+    document.body.style.paddingBottom = '';
+    var cb = document.getElementById('cookie-banner');
+    if(cb) cb.style.bottom = '0';
+  }};
+
+  if(localStorage.getItem("mbctadismissed")){{
+    bar.style.display = 'none';
+  }} else {{
+    document.addEventListener('DOMContentLoaded', function(){{
+      mbStickySetBodyPad();
+      var cb = document.getElementById('cookie-banner');
+      if(cb && bar && bar.style.display !== 'none'){{
+        cb.style.bottom = bar.offsetHeight + 'px';
+      }}
+    }});
+    window.addEventListener('load', function(){{
+      mbStickySetBodyPad();
+      var cb = document.getElementById('cookie-banner');
+      if(cb && bar && bar.style.display !== 'none'){{
+        cb.style.bottom = bar.offsetHeight + 'px';
+      }}
+    }});
+    window.addEventListener('resize', mbStickySetBodyPad);
+    mbStickySetBodyPad();
+  }}
+
+  var ENDPOINT="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
+  window.mbStickySubscribe=function(){{
+    var el=document.getElementById("mb-sticky-email"),msg=document.getElementById("mb-sticky-msg");
+    var email=el?el.value.trim():"";
+    if(!email||!email.includes("@")){{if(msg){{msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte gueltige E-Mail eingeben.";}}return;}}
+    if(msg){{msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}}
+    fetch(ENDPOINT,{{method:"POST",headers:{{"Content-Type":"application/json"}},body:JSON.stringify({{email:email}})}})
+    .then(function(r){{return r.json();}})
+    .then(function(d){{if(msg){{msg.style.display="block";if(d.ok){{msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}}else{{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}}}}
+    ).catch(function(){{if(msg){{msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Spaeter nochmal versuchen.";}}}}); 
+  }};
+}})();
+</script>
+
+<!-- AdSense nach LCP geladen — verhindert dass Google Funding Choices CMP Hero-Render blockiert -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+</body>
+</html>

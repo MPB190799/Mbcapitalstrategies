@@ -20,6 +20,20 @@
     <priority>0.95</priority>
   </url>
 
+  <url>
+    <loc>https://mbcapitalstrategies.com/energie-aktien/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategies.com/marktupdates/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
   <!-- Supporting Category / Hub -->
   <url>
     <loc>https://mbcapitalstrategies.com/kategorien/high-yield-aktien.html</loc>
