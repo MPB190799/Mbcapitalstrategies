@@ -268,18 +268,23 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 /* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
-.hero-inner{position:relative;z-index:2;display:block;max-width:880px}
-.hero-eyebrow-row{display:flex;align-items:center;gap:24px;margin-bottom:32px}
+.hero-inner{position:relative;z-index:2;display:block;max-width:1080px;margin:0 auto;width:100%}
+/* Zentrierte Hero-Komposition — Kompass dreht erkennbar DAHINTER (12.06.2026, Marco) */
+.hero-content{text-align:center;max-width:880px;margin:0 auto}
+.hero-issue{justify-content:center}
+.hero-eyebrow-row{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:32px}
 .hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:40px;line-height:.98}
 .hero-title .w1{display:block}
 .hero-title .w2{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
-.hero-sub{max-width:48ch;margin-bottom:48px}
-.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-sub{max-width:48ch;margin-bottom:48px;margin-left:auto;margin-right:auto}
+.hero-trust{justify-content:center}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.hero-inline-cta{text-align:left}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
 .hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
 
-.hero-bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(5,1fr);gap:8px;padding:80px var(--pad);z-index:0;pointer-events:none;mask-image:radial-gradient(ellipse at 75% 50%,#000 10%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 75% 50%,#000 10%,transparent 75%)}
+.hero-bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(5,1fr);gap:8px;padding:80px var(--pad);z-index:0;pointer-events:none;mask-image:radial-gradient(ellipse at 50% 50%,#000 10%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 10%,transparent 78%)}
 .hbar{background:linear-gradient(135deg,var(--accent-deep),var(--accent),var(--accent-deep));border-radius:2px;height:100%;width:100%;opacity:0;animation:barIn 1.4s var(--t-med) both,float 6s ease-in-out infinite;transform-origin:center;filter:blur(.2px)}
 .hbar-d1{--o:.04}
 .hbar-d2{--o:.08}
@@ -310,16 +315,16 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 /* Philosophy */
 .philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:60px}
-.pillar{background:var(--bg);padding:36px 32px;transition:background var(--t-fast)}
-.pillar:hover{background:var(--surface)}
+.pillar{background:var(--bg);padding:36px 32px;transition:background var(--t-fast),box-shadow var(--t-fast)}
+.pillar:hover{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent)}
 .pillar-k{font-family:var(--mono);color:var(--accent);font-size:11px;letter-spacing:.2em;margin-bottom:18px}
 .pillar-t{font-family:var(--serif);font-size:28px;line-height:1.15;margin-bottom:14px;letter-spacing:-.01em}
 .pillar-d{font-size:14px;color:var(--fg-muted);line-height:1.6}
 
 /* Assets */
 .assets-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.asset{background:var(--bg);padding:44px 40px;display:grid;grid-template-columns:1fr 200px;gap:30px;align-items:center;transition:background var(--t-fast);position:relative;overflow:hidden;min-height:240px}
-.asset:hover{background:var(--surface)}
+.asset{background:var(--bg);padding:44px 40px;display:grid;grid-template-columns:1fr 200px;gap:30px;align-items:center;transition:background var(--t-fast),box-shadow var(--t-fast);position:relative;overflow:hidden;min-height:240px}
+.asset:hover{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent)}
 .asset-name{font-family:var(--serif);font-size:40px;line-height:1;margin-bottom:10px;letter-spacing:-.015em}
 .asset-name em{font-style:italic;color:var(--accent)}
 .asset-sub{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
@@ -581,15 +586,15 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 /* ═══ COMPASS BACKDROP — Real vintage brass photograph, centered ═══ */
 .compass-backdrop{
   position:absolute;
-  top:54%;left:58%;
-  width:min(62vh,680px);
+  top:50%;left:50%;
+  width:min(78vh,780px);
   aspect-ratio:1/1;
   transform:translate(-50%,-50%) rotate(var(--scroll-rot));
   z-index:0;
   --scroll-rot:0deg;
   --scroll-fade:1;
   will-change:transform,opacity;
-  filter:drop-shadow(0 40px 80px rgba(0,0,0,.7)) drop-shadow(0 0 80px rgba(212,175,55,.18));
+  filter:drop-shadow(0 40px 80px rgba(0,0,0,.7)) drop-shadow(0 0 80px rgba(212,175,55,.22));
 }
 .compass-backdrop .compass-img{
   width:100%;height:100%;display:block;
@@ -614,8 +619,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 /* Readability scrim — strong vignette on left so headline reads cleanly over the compass */
 .hero::before{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  /* Zentrierter Lesbarkeits-Schleier: Mitte gedimmt (Text lesbar), Kompass-Ring & Nadel
+     rundherum klar erkennbar — er dreht sichtbar hinter dem Text */
   background:
-    radial-gradient(ellipse 50% 60% at 22% 50%,rgba(12,11,9,.92),rgba(12,11,9,.4) 50%,rgba(12,11,9,0) 75%),
+    radial-gradient(ellipse 46% 44% at 50% 50%,rgba(12,11,9,.84),rgba(12,11,9,.38) 55%,rgba(12,11,9,0) 80%),
     linear-gradient(180deg,rgba(12,11,9,.55) 0%,transparent 18%,transparent 78%,var(--bg) 100%);
 }
 
