@@ -24,6 +24,8 @@
   <link rel="dns-prefetch" href="https://www.youtube.com">
 <!-- LCP-Fix: Alle Fonts non-blocking laden (kein render-blocking) -->
 <!-- LCP-Fix: Cormorant Garamond auf 3 Varianten reduziert (vorher 8) — spart ~180ms font-load -->
+<!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direkt vorabrufen — eliminiert 1 Netzwerk-Runde (CSS→woff2) im kritischen Pfad (~100-200ms) -->
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <!-- LCP-Fix: Kompass-Bild (Hero-Hintergrund) frühzeitig laden — verhindert Late-Discovery-Verzögerung -->
   <link rel="preload" as="image" href="/assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
