@@ -580,7 +580,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   top:54%;left:58%;
   width:min(62vh,680px);
   aspect-ratio:1/1;
-  transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%) rotate(var(--scroll-rot));
   z-index:0;
   --scroll-rot:0deg;
   --scroll-fade:1;
@@ -589,7 +589,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 }
 .compass-backdrop .compass-img{
   width:100%;height:100%;display:block;
-  animation:compassImgSpin 180s linear infinite;
+  animation:compassImgSpin 70s linear infinite;
   transform-origin:50% 50%;
   will-change:transform,opacity;
 }
@@ -1239,9 +1239,11 @@ In deinem <em>Posteingang.</em></h2>
         <div class="footer-col-t">Sektoren</div>
         <ul class="footer-col-list">
           <li><a href="/shipping/">Schifffahrt-Aktien</a></li>
+          <li><a href="/energie-aktien/">Energie &amp; Upstream</a></li>
           <li><a href="/midstream/">Midstream / Pipelines</a></li>
           <li><a href="/mining-aktien/">Bergbau-Aktien</a></li>
           <li><a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a></li>
+          <li><a href="/marktupdates/">Marktupdates &amp; Depot</a></li>
           <li><a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a></li>
         </ul>
       </div>
@@ -1317,7 +1319,7 @@ In deinem <em>Posteingang.</em></h2>
   }, { threshold: 0.4 });
   document.querySelectorAll('[data-count]').forEach(c => cio.observe(c));
 
-  // Scroll-linked compass: opacity fade as user scrolls past hero
+  // Scroll-linked compass: fades AND rotates as user scrolls past hero (feels alive)
   const compassBackdrop = document.getElementById('compass-backdrop');
   if (compassBackdrop && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     compassBackdrop.setAttribute('data-scroll','1');
@@ -1329,6 +1331,8 @@ In deinem <em>Posteingang.</em></h2>
       const t = Math.min(1, sc / heroH);
       const fade = 1 - t * 0.85;
       compassBackdrop.style.setProperty('--scroll-fade', fade.toFixed(3));
+      // Kompass dreht beim Scrollen aktiv mit (bis 90°) — komponiert mit der Dauerrotation des Bildes
+      compassBackdrop.style.setProperty('--scroll-rot', (t * 90).toFixed(2) + 'deg');
       scrollRaf = 0;
     };
     window.addEventListener('scroll', () => {
