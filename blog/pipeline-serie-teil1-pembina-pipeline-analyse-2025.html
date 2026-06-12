@@ -14,6 +14,12 @@
   
 <!-- LCP-Critical-CSS: Inline Above-the-Fold styles (web-design-agent batch-167, LCP fix) -->
 <style>
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+
 :root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -512,6 +518,19 @@ window.mbMidSubscribe=function(){
 
     
 <!-- Interner CTA: YOC-Rechner -->
+<div class="related-articles">
+  <h3>Verwandte Analysen – Midstream – Pipelines</h3>
+  <ul>
+    <li><a href="/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html">Teil 2: TC Energy – Gas-Pipeline & Dividende</a></li>
+    <li><a href="/blog/pipeline-serie-teil3-enbridge-analyse-2025.html">Teil 3: Enbridge – Nordamerikas Pipeline-Riese</a></li>
+    <li><a href="/blog/pipeline-serie-finale-vergleich-2025.html">Pipeline-Serie Finale – der große Vergleich</a></li>
+    <li><a href="/blog/oneok.html">ONEOK – US-Gas-Midstream im Check</a></li>
+    <li><a href="/blog/kinder-morgan-analyse-2025.html">Kinder Morgan – US-Gas-Infrastruktur & Yield</a></li>
+    <li><a href="/energie-aktien/">Energie-Aktien – alle Analysen</a></li>
+    <li><a href="/glossar/midstream.html">Glossar: Midstream einfach erklärt</a></li>
+  </ul>
+</div>
+
 <div class="cta-box" style="border-left:4px solid #d4af37;margin:28px 0;">
   <h3 style="margin:0 0 8px;color:#d4af37;">🧮 Deine persönliche <a href="/glossar/dividendenrendite.html" style="color:#D4AF37;">Dividendenrendite</a> berechnen</h3>
   <p style="margin:0 0 12px;color:#cfd6e6;">Wie stark arbeitet dein eingesetztes Kapital wirklich? Der <strong>Yield-on-Cost-Rechner</strong> zeigt dir deine persönliche Rendite auf den Einstandskurs – kostenlos & sofort.</p>

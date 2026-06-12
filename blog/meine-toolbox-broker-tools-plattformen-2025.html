@@ -150,7 +150,13 @@
 </script>
 
   <!-- Critical inline CSS for LCP text render (Batch 137) -->
-<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<style>
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
 <link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
 
@@ -1337,6 +1343,18 @@ footer a:hover{text-decoration:underline;}
   </ul>
   
 <!-- Interner CTA: YOC-Rechner -->
+<div class="related-articles">
+  <h3>Verwandte Analysen – Tools & Strategie</h3>
+  <ul>
+    <li><a href="/blog/parqet-wrapped-2025.html">Parqet Wrapped 2025 – mein Depot-Jahr</a></li>
+    <li><a href="/blog/36-aktien-nachkaufen-watchlist-2026.html">36 Aktien auf der Nachkauf-Watchlist 2026</a></li>
+    <li><a href="/blog/dividendenaktien-5-stabil-2025.html">5 stabile Dividendenaktien</a></li>
+    <li><a href="/blog/mein-weg-zur-finanziellen-freiheit.html">Mein Weg zur finanziellen Freiheit</a></li>
+    <li><a href="/dividendenstrategie/">Dividendenstrategie – Cashflow-Fokus</a></li>
+    <li><a href="/glossar/yield-on-cost.html">Glossar: Yield on Cost erklärt</a></li>
+  </ul>
+</div>
+
 <div class="cta-box" style="border-left:4px solid #d4af37;margin:28px 0;">
   <h3 style="margin:0 0 8px;color:#d4af37;">🧮 Deine persönliche Dividendenrendite berechnen</h3>
   <p style="margin:0 0 12px;color:#cfd6e6;">Wie stark arbeitet dein eingesetztes Kapital wirklich? Der <strong>Yield-on-Cost-Rechner</strong> zeigt dir deine persönliche Rendite auf den Einstandskurs – kostenlos & sofort.</p>
