@@ -418,7 +418,7 @@ The site uses a **sitemap index** pattern (`sitemap.xml` → 8 sub-sitemaps):
 | `sitemap-main.xml` | 18 | Core pages (hub pages, legal, about) |
 | `sitemap-blog.xml` | 65 | Blog articles (all sectors) |
 | `sitemap-tools.xml` | 9 | Calculator tools |
-| `sitemap-video.xml` | 20 | YouTube video embeds with full video schema |
+| `sitemap-video.xml` | 20 | YouTube video embeds with full video schema — **KANONISCHE Video-Sitemap** (in robots.txt + sitemap.xml-Index). `video-sitemap.xml` ist eine DEPRECATED Dublette (101/102 URLs identisch, nur via GSC-Direktsubmit referenziert) — NICHT neu anlegen/resubmitten; in GSC entfernen, dann Datei löschen (Reihenfolge wegen 404). |
 | `sitemap-kategorien.xml` | 10 | Category hub pages |
 | `sitemap-bestenlisten.xml` | 3 | Annual best-of lists (2026 editions only) |
 | `sitemap-investing.xml` | 1 | Investing.com analyses hub |
