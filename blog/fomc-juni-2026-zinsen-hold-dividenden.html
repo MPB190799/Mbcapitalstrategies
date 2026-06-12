@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <title>FOMC Juni 2026: Zinsen Hold — Was bedeutet das für Dividendenaktien?</title>
+  <meta name="description" content="FOMC 16.-17. Juni 2026: Fed hält bei 3,50–3,75%, CPI 4,2%. Warum Hard-Asset-Dividenden (Shipping, Mining) weniger zinssensitiv sind als REITs — mein Take.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Marco Bozem">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/fomc-juni-2026-zinsen-hold-dividenden.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/fomc-juni-2026-zinsen-hold-dividenden.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/fomc-june-2026-rates-hold-hard-asset-dividends.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/fomc-juni-2026-zinsen-hold-dividenden.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FOMC Juni 2026: Zinsen Hold — Was bedeutet das für Dividendenaktien?">
+  <meta property="og:description" content="FOMC 16.-17. Juni 2026: Fed hält bei 3,50–3,75%, CPI 4,2%. Warum Hard-Asset-Dividenden (Shipping, Mining) weniger zinssensitiv sind als REITs — mein Take.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/fomc-juni-2026-zinsen-hold-dividenden.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FOMC Juni 2026: Zinsen Hold — Was bedeutet das für Dividendenaktien?">
+  <meta name="twitter:description" content="Fed hält bei 3,50–3,75%, CPI 4,2% — warum Shipping & Mining trotzdem attraktiv bleiben. Mein Take zum FOMC Juni 2026.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Critical inline CSS -->
+<style>
+body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}
+section.container{max-width:900px;margin:0 auto;padding:20px 16px}
+</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <!-- ADSENSE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <!-- SEO SCHEMA — BlogPosting -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "FOMC Juni 2026: Zinsen Hold — Was bedeutet das für Dividendenaktien?",
+  "description": "FOMC 16.-17. Juni 2026: Fed hält bei 3,50–3,75%, CPI 4,2%. Warum Hard-Asset-Dividenden (Shipping, Mining, Energie) weniger zinssensitiv sind als REITs.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    }
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/fomc-juni-2026-zinsen-hold-dividenden.html",
+  "datePublished": "2026-06-12",
+  "dateModified": "2026-06-12",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "Makro & Zinsen",
+  "wordCount": 1100,
+  "keywords": ["FOMC 2026", "Zinsentscheid Juni 2026", "Federal Reserve", "Dividendenaktien Zinsen", "Hard Assets Zinsen", "Shipping Dividende", "REITs Zinsen", "MB Capital Strategies"]
+}
+</script>
+
+  <!-- SEO SCHEMA — BreadcrumbList -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://mbcapitalstrategies.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mbcapitalstrategies.com/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "FOMC Juni 2026: Zinsen Hold — Dividendenaktien", "item": "https://mbcapitalstrategies.com/blog/fomc-juni-2026-zinsen-hold-dividenden.html"}
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA — FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wird die Fed beim FOMC-Treffen im Juni 2026 die Zinsen senken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein — der Markt preist mit 98,3% Wahrscheinlichkeit (CME FedWatch) eine Zinspause ein. Der aktuelle Fed Funds Rate liegt bei 3,50–3,75%, die Inflation (CPI) bei 4,2% YoY. Solange die Inflation nicht deutlich unter 3% sinkt, bleibt die Fed auf Hold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum sind Shipping-Dividenden weniger zinssensitiv als REIT-Dividenden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "REITs finanzieren sich über Fremdkapital und refinanzieren regelmäßig — steigende Zinsen erhöhen direkt ihre Kapitalkosten. Shipping-Unternehmen generieren ihren Cashflow aus Frachtraten, nicht aus Zinsdifferenzen. Solange die Frachtraten stabil oder steigend sind, sind Dividenden wie bei FLEX LNG oder CMB.Tech weitgehend unabhängig vom Fed-Zinsniveau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann senkt die Fed die Zinsen wieder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Median der Fed-Projektionen sieht nur noch eine einzige Zinssenkung für 2026 vor — stark revidiert gegenüber den ursprünglichen Erwartungen von mehreren Cuts. Bei CPI 4,2% hat die Fed keinen Spielraum für aggressive Lockerungen. Eine erste Senkung ist realistisch frühestens Q4 2026, wenn die Inflation deutlich nachgibt."
+      }
+    }
+  ]
+}
+</script>
+
+  <!-- GA4 DE -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .investing-link-box{background:linear-gradient(135deg,#151821,#1a1f2b);padding:22px 26px;border-radius:12px;border:2px solid rgba(212,175,55,.5);margin:30px 0;text-align:center}
+    .investing-link-box p{margin:8px 0 14px;color:#9aa6c0;font-size:.95rem}
+    .investing-link-box a.inv-btn{display:inline-block;padding:12px 22px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;font-size:1rem}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .autor-box{background:#0f1420;border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:22px 26px;margin:40px 0;display:flex;gap:18px;align-items:flex-start}
+    .autor-box img{width:64px;height:64px;border-radius:50%;border:2px solid #d4af37;flex-shrink:0}
+    .autor-box .autor-info h4{color:#d4af37;margin:0 0 6px;font-size:1rem}
+    .autor-box .autor-info p{color:#9aa6c0;font-size:.88rem;margin:0;line-height:1.5}
+    .disclaimer{background:#0f1115;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:16px;font-size:.8rem;color:#6b7a99;margin:40px 0;line-height:1.5}
+    .tag-label{display:inline-block;padding:3px 8px;border-radius:4px;font-size:.75rem;font-weight:700;margin-right:6px;letter-spacing:.04em}
+    .tag-fakt{background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.3)}
+    .tag-these{background:rgba(212,175,55,.12);color:#d4af37;border:1px solid rgba(212,175,55,.3)}
+    .tag-watch{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+    .adsense-slot{margin:32px 0;text-align:center;min-height:90px}
+  </style>
+
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Themen ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream / Pipelines</a>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>FOMC Juni 2026: Zinsen Hold — Dividendenaktien</span>
+</nav>
+
+<main class="container">
+
+  <article>
+
+    <header style="padding:40px 0 24px">
+      <div style="margin-bottom:12px">
+        <span style="color:#9aa6c0;font-size:.85rem">12. Juni 2026 · Marco Bozem · Makro &amp; Zinsen</span>
+      </div>
+      <h1>FOMC Juni 2026: Zinsen bleiben bei 3,50–3,75% — was bedeutet das für mein Depot?</h1>
+      <p style="font-size:1.1rem;color:#c8cfe0;line-height:1.7;margin:0 0 24px">
+        16.–17. Juni 2026: Die Fed trifft sich. Die Markterwartung ist klar — 98,3% Hold-Wahrscheinlichkeit laut CME FedWatch. Kein großer Überraschungsmoment also. Aber der Zinsausblick für den Rest des Jahres hat sich massiv verändert. Und das trifft manche meiner Positionen anders als andere.
+      </p>
+    </header>
+
+    <!-- ADSENSE SLOT 1 — nach Intro -->
+    <div class="adsense-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7097302643579933"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section>
+      <h2>⚡ Die nackten Fakten zum FOMC Juni 2026</h2>
+
+      <div class="info-box">
+        <strong>FAKT:</strong> Der aktuelle Fed Funds Rate liegt bei 3,50–3,75% (Quelle: FRED, Stand 10.06.2026). Der US CPI für Mai 2026 liegt bei 4,2% YoY (Quelle: IndexBox.io FOMC Preview 2026-06). Die Markterwartung für eine Zinspause beim Treffen am 16.–17. Juni liegt bei 98,3% (CME FedWatch).
+      </div>
+
+      <p>
+        Das ist der Kernbefund, von dem aus alles andere abgeleitet wird. Real-Zinsen von rund <strong>-0,7%</strong> — also Leitzins minus CPI — befinden sich im negativen Bereich. Das klingt locker, ist aber im historischen Vergleich für eine Phase mit 4,2% Inflation eigentlich noch zu wenig Restriktion.
+      </p>
+
+      <p>
+        <span class="tag-fakt">FAKT</span> Fed-Chef Kevin Warsh hat sich seit seinem Amtsantritt als hawkish positioniert. Keine Signale Richtung Lockerung, solange die Inflation nicht klar unter 3% fällt. Die Median-Projektion des FOMC (dot plot) zeigt nur noch <strong>eine einzige Zinssenkung für 2026</strong> — zu Jahresbeginn hatte der Markt noch drei bis vier Cuts erwartet. Diese Neukalibrierung ist der eigentliche Story, nicht der Hold im Juni.
+      </p>
+
+      <table class="metrics-table">
+        <tr><td>Fed Funds Rate (aktuell)</td><td><strong>3,50–3,75%</strong></td></tr>
+        <tr><td>US CPI Mai 2026</td><td><strong>4,2% YoY</strong></td></tr>
+        <tr><td>Hold-Wahrscheinlichkeit Juni</td><td><strong>98,3%</strong> (CME FedWatch)</td></tr>
+        <tr><td>Median FOMC-Projektion Cuts 2026</td><td><strong>1 Senkung</strong></td></tr>
+        <tr><td>Fed-Chef-Tonalität</td><td><strong>Hawkish</strong></td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🏦 Was das für REITs bedeutet — und warum ich da vorsichtig bin</h2>
+
+      <p>
+        REITs haben ein strukturelles Problem in einem Umfeld mit hohen Zinsen: Ihr Geschäftsmodell basiert auf Fremdkapital. Ein REIT kauft Immobilien, finanziert sie zu einem großen Teil mit Schulden, und verdient an der Spanne zwischen Mietrendite und Kapitalkosten. Wenn die Refinanzierungskosten steigen oder hoch bleiben, sinkt diese Spanne — direkt.
+      </p>
+
+      <p>
+        <span class="tag-fakt">FAKT</span> Realty Income (O) hat eine Dividendenrendite von aktuell rund 5,6% (Stand: Q2 2026). Bei einem Zins von 3,75% für US-Treasuries wird die Risikoprämie gegenüber risikofreien Anleihen für viele institutionelle Investoren dünn. Das drückt auf die Bewertung — nicht auf den Cashflow selbst, aber auf den Aktienkurs.
+      </p>
+
+      <p>
+        <span class="tag-these">MEINE THESE</span> REITs wie Realty Income oder Medical Properties Trust (MPW) sind klassische Zins-Plays. Solange der Markt keine mehrfachen Cuts einpreist, bleibt Gegenwind durch Bewertungsdruck. Das bedeutet nicht, dass die Dividenden unsicher sind — aber das Aufwärtspotenzial im Kurs ist begrenzt, bis die Fed tatsächlich lockert.
+      </p>
+
+      <p>
+        Ähnliches gilt für Infrastruktur-Positionen wie <strong>TC Energy (TRP)</strong> oder <strong>National Grid (NGG)</strong>: Beide haben erhebliche Schulden und verdienen in regulierten Märkten. Die Cashflows sind stabil, aber die Bewertungsmultiplikatoren bleiben unter Druck. Ich halte diese Positionen — aber ich baue sie in diesem Zinsumfeld nicht aggressiv aus.
+      </p>
+    </section>
+
+    <!-- ADSENSE SLOT 2 — nach 50% -->
+    <div class="adsense-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7097302643579933"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section>
+      <h2>🚢 Der kontraintuitive Vorteil: Shipping & Mining bei hohen Zinsen</h2>
+
+      <p>
+        Hier wird es interessant — und das ist der Punkt, den viele Zinsdiskussionen komplett ignorieren.
+      </p>
+
+      <p>
+        <span class="tag-these">MEINE THESE</span> Hard-Asset-Dividenden aus Shipping und Mining sind strukturell <em>nicht</em> zinssensitiv wie REITs. Der Unterschied liegt im Cashflow-Modell. Ein Tanker oder ein Bulk-Carrier verdient sein Geld aus Frachtraten, nicht aus Zinsdifferenzen. Wenn LNG-Nachfrage aus Asien steigt, steigt die Rate — unabhängig davon, was Jerome Powell oder Kevin Warsh gerade sagt.
+      </p>
+
+      <p>
+        Konkret: <strong>CMB.Tech</strong>, <strong>FLEX LNG</strong>, <strong>TORM</strong> oder <strong>Dorian LPG</strong> — diese Unternehmen generieren ihren freien Cashflow aus dem operativen Geschäft. Frachtraten, Auslastung, Vertragslaufzeiten. Das sind die Treiber, nicht der Fed Funds Rate. Klar, höhere Zinsen erhöhen auch deren Refinanzierungskosten, wenn Schulden fällig werden. Aber viele Shipping-Unternehmen arbeiten mit deutlich weniger Leverage als REITs — und einige haben sogar Netto-Cash-Positionen.
+      </p>
+
+      <p>
+        <span class="tag-fakt">FAKT</span> Das Shipping-Segment macht den Kern meines Depots aus — CMB.Tech ist mit ca. 3,7% die größte öffentliche Position (Parqet, Trade Republic + Scalable Capital, Stand Mai 2026). Diese Positionierung ist bewusst: Ich will Dividendenerträge, die von makroökonomischen Zinszyklen entkoppelt sind.
+      </p>
+
+      <p>
+        Das Gleiche gilt für Mining. <strong>Thungela Resources</strong> zahlt Dividende aus Kohle-Cashflows, nicht aus fremdfinanzierten Immobilienbeständen. Wenn der Kohlepreis fällt, leidet die Dividende — aber nicht wegen der Fed. Und Ressourcen-Superzyklus-Argumente sprechen eher für strukturell höhere Rohstoffpreise über dieses Jahrzehnt, nicht dagegen.
+      </p>
+
+      <div class="info-box">
+        <strong>Kernunterschied:</strong> REIT-Dividenden hängen an der Zinsstrukturkurve. Shipping/Mining-Dividenden hängen an Frachtraten, Rohstoffpreisen und globaler Nachfrage. Beides hat Risiken — aber es sind <em>andere</em> Risiken. Und in einem Hoch-Zins-Umfeld wie 2026 haben Hard Assets strukturell den besseren Stand.
+      </div>
+    </section>
+
+    <section>
+      <h2>📊 Was ich konkret beobachte — und was ich tue</h2>
+
+      <p>
+        Zinssensitive Positionen (REITs, Pipelines) lasse ich aktuell bei Kursrückgängen liegen, statt aggressiv nachzukaufen. Der Bewertungsdruck bleibt, solange die Fed nicht signalisiert, dass mehrere Cuts kommen. Einer reicht nicht.
+      </p>
+
+      <p>
+        Beim Hard-Asset-Block — Shipping, Mining, Energie-Royalties — sehe ich das anders. Hier würde ich Schwäche eher als Nachkauf-Gelegenheit sehen, weil der Zinskanal weniger relevant ist. Die Frage ist: Wie entwickeln sich Frachtraten, LNG-Nachfrage, Kohlemarkt? Das sind die Variablen, die ich beobachte.
+      </p>
+
+      <p>
+        <span class="tag-watch">WATCH</span> Das Risiko für mein Depot im aktuellen Umfeld ist nicht direkt der Leitzins — es ist ein echter Nachfrageeinbruch. Wenn die US-Wirtschaft in eine Rezession abgleitet (aktuell kein Basisfall, aber möglich bei anhaltend hohen Zinsen), würden Frachtraten leiden. Das wäre ein Risiko, das direkt auf Shipping-Cashflows durchschlägt. Den Zins selbst fürchte ich weniger als einen echten Wirtschaftsabschwung.
+      </p>
+
+      <p>
+        Für den FOMC-Entscheid am 17. Juni erwarte ich: Hold, hawkish Statement, keine neuen Signale zu Cuts. Der Markt hat das schon eingepreist. Was ihn überraschen könnte: Ein deutlich softerer Ton — oder das Gegenteil, ein harter Hinweis, dass 2026 gar keine Senkung kommt. Beides würde Volatilität erzeugen, die ich nutzen will.
+      </p>
+
+      <div class="investing-link-box">
+        <strong style="color:#d4af37;font-size:1rem">Fundamentaldaten mit InvestingPro analysieren</strong>
+        <p>Ich arbeite meine Fundamentalanalysen mit InvestingPro — Fair Value, Financial Health Score, Cashflow-Historien. Über meinen Link gibt es 15% Rabatt on top, auch auf laufende Aktionen.</p>
+        <a href="https://investing-referral.com/mbcapital2" rel="noopener noreferrer" class="inv-btn">15% Rabatt sichern*</a>
+        <p style="font-size:.75rem;color:#6b7a99;margin:10px 0 0">*Affiliate-Link — Provision ohne Mehrkosten für dich.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>❓ FAQ: FOMC Juni 2026 — häufige Fragen</h2>
+
+      <p><strong>Wird die Fed beim FOMC-Treffen im Juni 2026 die Zinsen senken?</strong><br>
+      Nein. Der Markt preist mit 98,3% Wahrscheinlichkeit eine Zinspause ein. Der CPI liegt bei 4,2% — zu hoch für Lockerungen.</p>
+
+      <p><strong>Warum sind Shipping-Dividenden weniger zinssensitiv als REIT-Dividenden?</strong><br>
+      REITs refinanzieren Schulden — höhere Zinsen erhöhen direkt ihre Kapitalkosten. Shipping-Cashflows kommen aus Frachtraten, die von globaler Nachfrage getrieben werden, nicht vom Leitzins.</p>
+
+      <p><strong>Wann senkt die Fed die Zinsen wieder?</strong><br>
+      Die Median-Projektion des FOMC sieht nur noch eine Senkung für 2026 vor. Frühestens Q4 2026, wenn die Inflation klar unter 3% fällt.</p>
+    </section>
+
+    <!-- Related articles -->
+    <div class="related-articles">
+      <h3>Weitere Artikel</h3>
+      <ul>
+        <li><a href="/blog/flex-lng-analyse-2026.html">📊 FLEX LNG Analyse 2026 — LNG-Dividende aus Norwegen</a></li>
+        <li><a href="/dividenden-strategie/">💰 Dividenden-Strategie — Hard Assets &amp; Cashflow</a></li>
+        <li><a href="/shipping/">🚢 Shipping-Aktien Guide — Tanker, LNG, Bulk</a></li>
+        <li><a href="/hard-asset-guide/">🌋 Hard Asset Guide — Rohstoffe, Mining, Energie</a></li>
+      </ul>
+    </div>
+
+    <!-- ADSENSE SLOT 3 — vor Footer -->
+    <div class="adsense-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7097302643579933"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Autorenbox E-E-A-T -->
+    <div class="autor-box">
+      <img src="/marco.webp" alt="Marco Bozem — MB Capital Strategies" width="64" height="64" loading="lazy">
+      <div class="autor-info">
+        <h4>Marco Bozem</h4>
+        <p>Unabhängiger Investor mit Fokus auf Hard Assets, Dividendenaktien und Cashflow-getriebene Strategien. Shipping, Mining, Energie und Pipelines. Investiere seit Jahren in reale Werte — keine Anlageberatung, nur mein persönlicher Blick auf die Märkte. <a href="/ueber-marco-bozem/" style="color:#d4af37">Mehr über Marco →</a></p>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> Dieser Artikel stellt keine Anlageberatung dar. Alle genannten Positionen und Einschätzungen sind die persönliche Meinung des Autors und dienen ausschließlich zu Informationszwecken. Investitionen in Aktien und andere Wertpapiere sind mit Risiken verbunden — bis hin zum Totalverlust. Jeder Anleger trägt die Verantwortung für seine eigenen Entscheidungen. Vergangene Wertentwicklungen sind kein verlässlicher Indikator für zukünftige Ergebnisse. Affiliate-Links sind als solche gekennzeichnet.
+    </div>
+
+  </article>
+
+</main>
+
+<footer style="background:#050508;border-top:1px solid rgba(212,175,55,.1);padding:30px 24px;text-align:center;color:#6b7a99;font-size:.85rem">
+  <p>&copy; 2026 MB Capital Strategies · <a href="/impressum.html" style="color:#d4af37">Impressum</a> · <a href="/datenschutz.html" style="color:#d4af37">Datenschutz</a> · <a href="/blog/" style="color:#d4af37">Blog</a></p>
+  <p style="margin:8px 0 0;font-size:.78rem">Kein Finanzberater. Keine Anlageberatung. Nur meine persönliche Meinung als Investor.</p>
+</footer>
+
+<script>
+  // Mobile Nav Toggle
+  const btn = document.getElementById('navHamburger');
+  const mob = document.getElementById('navMobile');
+  if(btn && mob){
+    btn.addEventListener('click', () => {
+      const open = mob.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+
+</body>
+</html>
