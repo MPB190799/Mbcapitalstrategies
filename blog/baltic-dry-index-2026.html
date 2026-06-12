@@ -485,7 +485,8 @@ window.mbMidSubscribe=function(){
   </div>
 </footer>
 
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 
 <footer style="margin-top:48px;padding:24px 16px;border-top:1px solid #222;background:#0d0d0d;text-align:center;font-size:.82rem;color:#9aa3b8;font-family:system-ui,Arial,sans-serif;">
   &copy; MB Capital Strategies &middot; Marco Bozem &middot;

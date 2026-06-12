@@ -31,7 +31,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>Coterra Energy 2026: 4% Dividende + $2,5B Buyback</title>
   <meta name="description" content="Coterra Energy CTRA 2026: 4% Dividende, $2,5B Buyback, Permian + Marcellus-Dual-Basin. Starker FCF-Yield + Gas-Rückenwind. Kaufurteil.">
@@ -678,7 +678,8 @@ Coterra ist einer der größten US-Erdgasproduzenten – und das positioniert da
 </footer>
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <!-- YouTube Lite Facade Init (web-design-agent batch-167) -->
 <script>
 (function(){

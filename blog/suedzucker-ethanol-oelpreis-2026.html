@@ -25,7 +25,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>Südzucker 2026: +6% durch Ölpreis-Ethanol-Effekt — Analyse</title>
   <meta name="description" content="Südzucker profitiert vom Ölpreis-Anstieg über den Ethanol-Effekt. CropEnergies, 0,8x Buchwert, Barclays-Upgrade. Analyse der versteckten Verbindung.">
@@ -206,7 +206,8 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
     </form>
   </div>
 </div>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <!-- ======================== END NEWSLETTER ======================== -->
 </section>
 

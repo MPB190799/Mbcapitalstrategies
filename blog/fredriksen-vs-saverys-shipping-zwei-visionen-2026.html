@@ -29,7 +29,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+  <!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://mbcapitalstrategies.com/blog/fredriksen-vs-saverys-shipping-zwei-visionen-2026.html" />
@@ -496,7 +496,8 @@ window.mbMidSubscribe=function(){
     </form>
   </div>
 </div>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <!-- ======================== END NEWSLETTER ======================== -->
 <footer>
     <p>© 2026 MB Capital Strategies · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a> · <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a> · <a href="https://mbcapitalstrategiesgloabal.com/blog/fredriksen-vs-saverys-shipping-two-visions-2026.html">English version</a></p>

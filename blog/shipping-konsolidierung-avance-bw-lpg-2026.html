@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#0f1115">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>Shipping-Aktien: Avance, BW LPG + CMB.Tech Übernahmen 2026</title>
   <meta name="description" content="Shipping-Konsolidierung 2026: Avance Gas + BW LPG + CMB.Tech + Golden Ocean im Übernahme-Karussell. Synergien, Dividenden-Auswirkungen &amp; Bewertung....">
@@ -585,7 +585,8 @@ Der strukturelle Effekt von Konsolidierung in zyklischen Industrien ist gut doku
 </footer>
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

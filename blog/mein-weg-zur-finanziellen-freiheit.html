@@ -303,7 +303,8 @@ window.mbMidSubscribe=function(){
     </form>
   </div>
 </div>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <!-- ======================== END NEWSLETTER ======================== -->
 </section>
 <footer class="site-footer"><div class="footer-inner"><div class="footer-col"><h4>MB Capital Strategies</h4><a href="/">Startseite</a><a href="/blog/">Blog</a><a href="/depot-strategie/">Depot-Strategie</a></div><div class="footer-col"><h4>Sektoren</h4><a href="/mining-aktien/">Mining</a><a href="/shipping/">Shipping</a><a href="/midstream/">Midstream</a></div><div class="footer-col"><h4>Tools</h4><a href="/rechner/">Rechner</a><a href="/glossar/">Glossar</a><a href="/podcast/">Podcast</a></div><div class="footer-col"><h4>Rechtliches</h4><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a></div></div><div class="footer-bottom"><span>&copy; 2026 MB Capital Strategies</span></div>

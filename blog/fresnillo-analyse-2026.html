@@ -31,7 +31,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>Fresnillo 2026: Lohnt sich der Silber-Cashflow?</title>
   <meta name="description" content="Fresnillo FRES 2026: Weltgrößter Primär-Silberproduzent mit Gold-Cashflow, 5%+ Dividende & AISC 14 USD/oz. Mein Urteil: Kauffall im Rohstoff-Superzyklus?">
@@ -643,7 +643,8 @@ Cashflows, Bilanz, Dividenden & faire Werte.
 <script src="/assets/js/nav.js" defer></script>
 
 <script src="/assets/js/glossar-linking.js" defer></script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

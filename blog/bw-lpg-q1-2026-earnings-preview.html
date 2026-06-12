@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#0f1115">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>BW LPG Q1 2026: Ergebnis-Check Dividende & TCE</title>
   <meta name="description" content="BW LPG Q1 2026: VLGC-Raten stark, Hormuz-Prämie bleibt — was bedeuten die Zahlen für Dividende & Kurs? Vorab-Analyse mit allen Erwartungen.">
@@ -548,7 +548,8 @@ if(h&&m){h.addEventListener('click',()=>{const e=m.classList.toggle('open');h.se
 document.querySelectorAll('.dropdown-btn').forEach(b=>{b.addEventListener('click',e=>{e.stopPropagation();const p=b.parentElement;document.querySelectorAll('.dropdown.open').forEach(d=>{if(d!==p)d.classList.remove('open');});p.classList.toggle('open');});});
 document.addEventListener('click',()=>document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open')));
 </script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

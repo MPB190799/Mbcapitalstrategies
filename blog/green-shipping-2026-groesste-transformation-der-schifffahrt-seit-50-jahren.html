@@ -33,7 +33,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://mbcapitalstrategies.com/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html" />
@@ -1239,7 +1239,8 @@ window.mbMidSubscribe=function(){
 
   <!-- Auto-Glossar-Verlinkung -->
   <script src="/assets/js/glossar-linking.js" defer></script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 
 <div class="related-articles" style="margin:32px 0;padding:16px 20px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:4px;">
   <p style="margin:0 0 8px;font-size:0.85rem;color:#D4AF37;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Weiterlesen</p>

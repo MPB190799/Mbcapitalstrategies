@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#0f1115">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+  <!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>Sell in May 2026: Gilt das für Dividendenaktien?</title>
   <meta name="description" content="Sell in May 2026: Börsenmythos oder Signal? Daten aus 108 Märkten, 323 Jahren. Für Dividendenaktien gilt die Regel kaum — Marcos Urteil + Handlungsempfehlung.">
@@ -653,6 +653,7 @@ Dieser Artikel dient ausschließlich Informations- und Bildungszwecken. Er stell
 </footer>
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 </body>
 </html>

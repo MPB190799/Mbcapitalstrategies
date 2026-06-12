@@ -13,7 +13,7 @@
   <meta name="theme-color" content="#0f1115">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
 
   <title>Shipping-Aktien 2026: M&amp;A-Welle &amp; Dividenden-Chancen</title>
   <meta name="description" content="Shipping M&amp;A 2026: Hapag/ZIM 4,2 Mrd. $, Hafnia/TORM-Merger, Diana/Genco. Was die Konsolidierungswelle für Tanker- &amp; Bulker-Dividenden bedeutet.">
@@ -744,6 +744,7 @@ mb-newsletter-wrap" style="background:rgba(212,175,55,0.07);border-top:1px solid
 </footer>
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
-<script>if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}</script>
+<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
+document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 </body>
 </html>
