@@ -536,8 +536,6 @@ if(h&&m){h.addEventListener('click',()=>{const e=m.classList.toggle('open');h.se
 document.querySelectorAll('.dropdown-btn').forEach(b=>{b.addEventListener('click',e=>{e.stopPropagation();const p=b.parentElement;document.querySelectorAll('.dropdown.open').forEach(d=>{if(d!==p)d.classList.remove('open');});p.classList.toggle('open');});});
 document.addEventListener('click',()=>document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open')));
 </script>
-<script>/* LCP-Fix 2026-06-12: sibforms DOMContentLoaded guard */
-document.addEventListener('DOMContentLoaded',function(){if(document.querySelector('form[action*="sibforms.com"]')){var s=document.createElement('script');s.defer=true;s.src='https://sibforms.com/forms/end-form/build/main.js';document.head.appendChild(s);}});</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
