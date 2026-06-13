@@ -104,7 +104,29 @@
     }
     setupAuthorBio();
     injectArticleSchema();
-    if (!existingConsent) setupCookieBanner();
+    // CMP-Stacking-Guard (web-design-agent 2026-06-13):
+    // Wenn Google Funding Choices CMP aktiv ist, darf unser Cookie-Banner
+    // NICHT gleichzeitig erscheinen (Doppel-Dialog = UX-Kill).
+    // Strategie: googlefc.callbackQueue erst nach CMP-Abschluss aufrufen.
+    // Fallback: ohne googlefc normaler Start mit 1.8s Delay (verhindert Überlappung).
+    if (!existingConsent) {
+      if (window.googlefc && window.googlefc.callbackQueue) {
+        // Google CMP vorhanden: eigenen Banner erst nach CMP-Entscheidung zeigen
+        window.googlefc.callbackQueue.push({
+          'CONSENT_DATA_READY': function() { setupCookieBanner(); }
+        });
+      } else {
+        // Kein Google CMP → 1.8s Delay damit AdSense-CMP Chance hat zu laden
+        // (AdSense kann CMP async starten, bevor googlefc im DOM ist)
+        setTimeout(function() {
+          // Nochmal prüfen ob zwischenzeitlich ein CMP erschienen ist
+          if (!document.querySelector('.googlefc-dialog, [id^="googlefc"]') &&
+              !localStorage.getItem(CONSENT_KEY)) {
+            setupCookieBanner();
+          }
+        }, 1800);
+      }
+    }
   });
 
   /* ═══════════════════════════════════════════════════════════
