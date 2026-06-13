@@ -128,6 +128,22 @@
         "@type": "Answer",
         "text": "Ein guter Dividendenwachstum-Rechner für deutsche Anleger berücksichtigt: (1) Dividende in EUR, (2) jährliche Wachstumsrate (DGR), (3) Laufzeit in Jahren, (4) optionalen Inflationsabzug für die reale Kaufkraft, (5) YOC-Entwicklung auf den Einstandskurs. Dieser kostenlose Rechner erfüllt alle 5 Punkte ohne Login."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lautet die Compound-Growth-Formel für Dividendenwachstum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Compound-Growth-Formel für Dividendenwachstum: Cashflow(n) = Dividende(0) × (1 + DGR)^n. Beispiel: 3,15 € Dividende heute, 5% DGR, nach 10 Jahren = 3,15 × (1,05)^10 = 5,13 € Jahresdividende. Bei einem Kaufkurs von 50 € entspricht das einem Yield on Cost (YOC) von 10,3%. Die Regel 72 liefert die Faustformel: Verdoppelungszeit (Jahre) = 72 / DGR%. Bei 5% DGR verdoppelt sich der Cashflow also nach ca. 14 Jahren — ohne einen Euro mehr zu investieren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist die Regel 72 beim Dividendenwachstum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Regel 72 beim Dividendenwachstum: Teile 72 durch die jährliche Wachstumsrate (DGR) — das Ergebnis ist die Anzahl der Jahre bis zur Cashflow-Verdopplung. Beispiele: 3% DGR = 24 Jahre; 5% DGR = 14,4 Jahre; 8% DGR = 9 Jahre; 12% DGR = 6 Jahre. Wichtig: Diese Regel gilt für den Cashflow (Dividendeneinkommen), nicht für den Depotwert. Ein Dividendenzahler mit 8% DGR verdoppelt dein Jahreseinkommen nach 9 Jahren — unabhängig vom Aktienkurs."
+      }
     }
   ]
   }
@@ -611,6 +627,52 @@
      data-ad-format="in-article"
      data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+  <!-- H2: COMPOUND GROWTH FORMEL (batch210 — CEO-Pflicht: 57impr/pos15.6, fehlende Section) -->
+  <section class="section" id="compound-growth-formel">
+    <h2>Die <span class="accent">Compound-Growth-Formel</span> für Dividendenwachstum</h2>
+    <p>Die mathematische Basis des Dividendenwachstums ist die <strong>Compound Annual Growth Rate (CAGR)</strong> — auf Deutsch: Jahres-Dividendenwachstumsrate (DGR). Die Formel für den zukünftigen Cashflow:</p>
+
+    <div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:20px 24px;margin:20px 0;font-family:monospace;font-size:1.05rem;color:#D4AF37;text-align:center;">
+      Cashflow<sub>n</sub> = Dividende<sub>0</sub> &times; (1 + DGR)<sup>n</sup>
+    </div>
+
+    <p><strong>Beispiel: Realty Income (O)</strong><br>
+    Aktuelle Jahresdividende: 3,15 USD | DGR historisch: ~3 % | Kaufkurs: 50 USD</p>
+
+    <ul style="line-height:2;color:#cfd6e6;">
+      <li>Jahr 5: 3,15 &times; (1,03)^5 = <strong>3,65 USD</strong> Jahresdividende = YOC 7,3 %</li>
+      <li>Jahr 10: 3,15 &times; (1,03)^10 = <strong>4,23 USD</strong> = YOC 8,5 %</li>
+      <li>Jahr 15: 3,15 &times; (1,03)^15 = <strong>4,90 USD</strong> = YOC 9,8 %</li>
+      <li>Jahr 20: 3,15 &times; (1,03)^20 = <strong>5,68 USD</strong> = YOC 11,4 %</li>
+    </ul>
+
+    <p><strong>Warum ist das so mächtig?</strong> Der Kaufkurs bleibt bei 50 USD fixiert, aber die Dividende wächst jedes Jahr. Nach 20 Jahren zahlst du effektiv über 11 % Rendite auf deinen ursprünglichen Einstandskurs — obwohl die aktuelle Dividendenrendite des Titels vielleicht nur bei 3,5 % liegt. Das nennt man <strong>Yield on Cost (YOC)</strong>.</p>
+
+    <h3 style="color:#D4AF37;margin-top:28px;">Regel 72: Verdoppelungszeit schnell berechnen</h3>
+    <p>Die <strong>Regel 72</strong> ist eine Faustregel zur schnellen Berechnung der Verdoppelungszeit des Cashflows:</p>
+    <div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:16px 20px;margin:16px 0;font-family:monospace;font-size:1.0rem;color:#D4AF37;text-align:center;">
+      Verdoppelungszeit (Jahre) = 72 / DGR in %
+    </div>
+    <ul style="line-height:2;color:#cfd6e6;">
+      <li>3 % DGR: Cashflow verdoppelt sich in <strong>24 Jahren</strong></li>
+      <li>5 % DGR: Verdopplung in <strong>14,4 Jahren</strong></li>
+      <li>8 % DGR: Verdopplung in <strong>9 Jahren</strong></li>
+      <li>12 % DGR: Verdopplung in <strong>6 Jahren</strong></li>
+    </ul>
+
+    <h3 style="color:#D4AF37;margin-top:28px;">Dividendenwachstumsrate (DGR) berechnen</h3>
+    <p>Die Formel für die Wachstumsrate zwischen zwei Zeitpunkten:</p>
+    <div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:16px 20px;margin:16px 0;font-family:monospace;font-size:1.0rem;color:#D4AF37;text-align:center;">
+      DGR (%) = (Dividende<sub>neu</sub> / Dividende<sub>alt</sub> - 1) &times; 100
+    </div>
+    <p><strong>Beispiel:</strong> Enbridge zahlt 2024 jährlich 3,77 CAD statt 3,55 CAD (2023) → DGR = (3,77/3,55 − 1) &times; 100 = <strong>6,2 %</strong>. Über 5 Jahre CAGR: (Div<sub>2024</sub>/Div<sub>2019</sub>)^(1/5) − 1.</p>
+
+    <p style="color:#aab3c7;font-size:0.9rem;margin-top:16px;">Marco Bozem, MB Capital Strategies: "Ich nutze den 5-Jahres-CAGR als primäre DGR-Kennzahl — er glättet Sonderdividenden und zeigt das strukturelle Wachstumstempo. Für Shipping-Aktien ist die DGR weniger relevant: dort zählt der FCF-Yield im Zyklus-Hoch."</p>
+  </section>
+
+  <!-- AdSense in-article nach neuer Section -->
+  <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7097302643579933" data-ad-slot="9873761835"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 
   <!-- FAQ -->
   <section class="section">
