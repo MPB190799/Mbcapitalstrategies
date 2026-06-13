@@ -104,28 +104,54 @@
     }
     setupAuthorBio();
     injectArticleSchema();
-    // CMP-Stacking-Guard (web-design-agent 2026-06-13):
-    // Wenn Google Funding Choices CMP aktiv ist, darf unser Cookie-Banner
-    // NICHT gleichzeitig erscheinen (Doppel-Dialog = UX-Kill).
-    // Strategie: googlefc.callbackQueue erst nach CMP-Abschluss aufrufen.
-    // Fallback: ohne googlefc normaler Start mit 1.8s Delay (verhindert Überlappung).
+    // CMP-Stacking-Guard v2 (web-design-agent 2026-06-13 fix):
+    // Wenn Google Funding Choices CMP aktiv ist (via AdSense async), darf unser
+    // Cookie-Banner NICHT gleichzeitig erscheinen (Doppel-Dialog = UX-Kill + Conversion-Blocker).
+    // Problem v1: window.googlefc war bei DOMContentLoaded noch nicht geladen (AdSense=async).
+    // Fix v2: TCF-API-Polling — wartet bis Google CMP entschieden hat, dann zeige eigenen Banner.
+    // Wenn keine TCF-API innerhalb 3.5s → eigener Banner sicher zeigen.
     if (!existingConsent) {
-      if (window.googlefc && window.googlefc.callbackQueue) {
-        // Google CMP vorhanden: eigenen Banner erst nach CMP-Entscheidung zeigen
-        window.googlefc.callbackQueue.push({
-          'CONSENT_DATA_READY': function() { setupCookieBanner(); }
-        });
-      } else {
-        // Kein Google CMP → 1.8s Delay damit AdSense-CMP Chance hat zu laden
-        // (AdSense kann CMP async starten, bevor googlefc im DOM ist)
-        setTimeout(function() {
-          // Nochmal prüfen ob zwischenzeitlich ein CMP erschienen ist
-          if (!document.querySelector('.googlefc-dialog, [id^="googlefc"]') &&
-              !localStorage.getItem(CONSENT_KEY)) {
-            setupCookieBanner();
-          }
-        }, 1800);
+      var cmpCheckAttempts = 0;
+      var cmpMaxAttempts = 35; // 35 × 100ms = 3.5s Gesamtwartezeit
+      function checkCmpAndMaybeShowBanner() {
+        cmpCheckAttempts++;
+        // Prüfe ob Google CMP aktiv (via googlefc oder __tcfapi)
+        var hasFundingChoices = window.googlefc && window.googlefc.callbackQueue;
+        var hasTcfApi = typeof window.__tcfapi === 'function';
+
+        if (hasFundingChoices) {
+          // Google Funding Choices bereit: eigenen Banner erst nach CMP-Entscheidung
+          window.googlefc.callbackQueue.push({
+            'CONSENT_DATA_READY': function() {
+              if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
+            }
+          });
+          return; // Guard aktiv, kein weiterer Polling nötig
+        }
+
+        if (hasTcfApi) {
+          // TCF-API vorhanden: warte auf Consent-String (CMP läuft)
+          // Zeige eigenen Banner erst wenn TCF-Entscheidung vorliegt
+          window.__tcfapi('addEventListener', 2, function(tcData, success) {
+            if (success && (tcData.eventStatus === 'useractioncomplete' ||
+                            tcData.eventStatus === 'tcloaded')) {
+              if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
+            }
+          });
+          return; // Guard aktiv
+        }
+
+        // Noch nicht geladen und Max-Versuche nicht erreicht: weiter pollen
+        if (cmpCheckAttempts < cmpMaxAttempts) {
+          setTimeout(checkCmpAndMaybeShowBanner, 100);
+          return;
+        }
+
+        // Timeout: kein Google CMP nach 3.5s gefunden → eigenen Banner zeigen
+        if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
       }
+      // Ersten Check nach 200ms starten (gibt AdSense async Zeit zu laden)
+      setTimeout(checkCmpAndMaybeShowBanner, 200);
     }
   });
 
