@@ -104,54 +104,44 @@
     }
     setupAuthorBio();
     injectArticleSchema();
-    // CMP-Stacking-Guard v2 (web-design-agent 2026-06-13 fix):
-    // Wenn Google Funding Choices CMP aktiv ist (via AdSense async), darf unser
-    // Cookie-Banner NICHT gleichzeitig erscheinen (Doppel-Dialog = UX-Kill + Conversion-Blocker).
-    // Problem v1: window.googlefc war bei DOMContentLoaded noch nicht geladen (AdSense=async).
-    // Fix v2: TCF-API-Polling — wartet bis Google CMP entschieden hat, dann zeige eigenen Banner.
-    // Wenn keine TCF-API innerhalb 3.5s → eigener Banner sicher zeigen.
+    // CMP-Stacking-Guard v3 (web-design-agent 2026-06-14 fix):
+    // Wenn AdSense auf der Seite ist, ist Google Funding Choices DER CMP — eigener Banner VERBOTEN.
+    // Problem v2: Selbst wenn googlefc erkannt wurde, erschien eigener Banner NACH CMP (sequentieller Stack).
+    // Fix v3: Wenn adsbygoogle-Tag auf Seite vorhanden → eigenen Banner komplett unterdrücken.
+    //         Google's CMP übernimmt Consent vollständig. Nur auf reinen GA4-Seiten (kein AdSense)
+    //         eigenen leichten Banner zeigen.
     if (!existingConsent) {
-      var cmpCheckAttempts = 0;
-      var cmpMaxAttempts = 35; // 35 × 100ms = 3.5s Gesamtwartezeit
-      function checkCmpAndMaybeShowBanner() {
-        cmpCheckAttempts++;
-        // Prüfe ob Google CMP aktiv (via googlefc oder __tcfapi)
-        var hasFundingChoices = window.googlefc && window.googlefc.callbackQueue;
-        var hasTcfApi = typeof window.__tcfapi === 'function';
+      // AdSense-Erkennung: deterministisch, nicht timing-abhängig
+      var hasAdSense = (typeof window.adsbygoogle !== 'undefined') ||
+                       document.querySelector('ins.adsbygoogle') !== null ||
+                       document.querySelector('script[src*="adsbygoogle.js"]') !== null;
 
-        if (hasFundingChoices) {
-          // Google Funding Choices bereit: eigenen Banner erst nach CMP-Entscheidung
-          window.googlefc.callbackQueue.push({
-            'CONSENT_DATA_READY': function() {
-              if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
-            }
-          });
-          return; // Guard aktiv, kein weiterer Polling nötig
+      if (hasAdSense) {
+        // AdSense vorhanden → Google Funding Choices übernimmt. Eigener Banner suppressed.
+        // GA4 consent mode defaults greifen via gtag('consent','default') im <head>.
+      } else {
+        // Kein AdSense → eigenen leichten Banner nach kurzer Wartezeit zeigen
+        var cmpCheckAttempts = 0;
+        var cmpMaxAttempts = 15; // 15 × 100ms = 1.5s auf reinen GA4-Seiten
+        function checkCmpAndMaybeShowBanner() {
+          cmpCheckAttempts++;
+          if (typeof window.__tcfapi === 'function') {
+            window.__tcfapi('addEventListener', 2, function(tcData, success) {
+              if (success && (tcData.eventStatus === 'useractioncomplete' ||
+                              tcData.eventStatus === 'tcloaded')) {
+                if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
+              }
+            });
+            return;
+          }
+          if (cmpCheckAttempts < cmpMaxAttempts) {
+            setTimeout(checkCmpAndMaybeShowBanner, 100);
+            return;
+          }
+          if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
         }
-
-        if (hasTcfApi) {
-          // TCF-API vorhanden: warte auf Consent-String (CMP läuft)
-          // Zeige eigenen Banner erst wenn TCF-Entscheidung vorliegt
-          window.__tcfapi('addEventListener', 2, function(tcData, success) {
-            if (success && (tcData.eventStatus === 'useractioncomplete' ||
-                            tcData.eventStatus === 'tcloaded')) {
-              if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
-            }
-          });
-          return; // Guard aktiv
-        }
-
-        // Noch nicht geladen und Max-Versuche nicht erreicht: weiter pollen
-        if (cmpCheckAttempts < cmpMaxAttempts) {
-          setTimeout(checkCmpAndMaybeShowBanner, 100);
-          return;
-        }
-
-        // Timeout: kein Google CMP nach 3.5s gefunden → eigenen Banner zeigen
-        if (!localStorage.getItem(CONSENT_KEY)) setupCookieBanner();
+        setTimeout(checkCmpAndMaybeShowBanner, 300);
       }
-      // Ersten Check nach 200ms starten (gibt AdSense async Zeit zu laden)
-      setTimeout(checkCmpAndMaybeShowBanner, 200);
     }
   });
 
