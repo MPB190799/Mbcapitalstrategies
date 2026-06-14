@@ -361,6 +361,39 @@
       </div>
     </aside>
 
+    <!-- CRO 2026-06-14 web-design-agent: Newsletter-CTA vor FOMC-Artikel-Ende — Leser, die bis hierhin kommen, sind exakt die Zielgruppe für wöchentliche Hard-Asset-Updates -->
+    <div class="mb-newsletter-cta" style="background:linear-gradient(135deg,#0c0e16 0%,#0f1120 100%);padding:32px 28px;border-radius:10px;border:1px solid rgba(212,175,55,0.28);border-left:4px solid #D4AF37;margin:40px 0 0;font-family:'Outfit',system-ui,sans-serif;">
+      <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="flex:1;min-width:240px;">
+          <p style="margin:0 0 4px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#D4AF37;font-family:'IBM Plex Mono',monospace;">MB Capital Insider · Jeden Sonntag gratis</p>
+          <h3 style="margin:0 0 10px;font-size:1.15rem;font-weight:700;color:#f0f4ff;line-height:1.25;">FOMC-Reaktion, Ex-Dates &amp; Depot-Updates — direkt am Sonntag</h3>
+          <p style="margin:0 0 18px;color:#9aa0b8;font-size:0.9rem;line-height:1.55;">Welche Shipping-, REIT- und Pipeline-Werte nach dem FOMC-Entscheid (Mi 17.06.) wirklich interessant werden — in meinem wöchentlichen Sonntags-Brief. Kein Hype, kein Spam.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+            <input type="email" id="mb-fomc-email" placeholder="deine@email.de" required autocomplete="email"
+              style="padding:12px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 180px;font-family:'IBM Plex Mono',monospace;box-sizing:border-box;">
+            <button onclick="mbFomcSubscribe()" data-cta="fomc-de-2026"
+              style="padding:12px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;">Sonntag-Brief abonnieren →</button>
+          </div>
+          <p id="mb-fomc-msg" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:'IBM Plex Mono',monospace;"></p>
+          <p style="font-size:0.72rem;color:#6b7a99;margin:6px 0 0;">Kein Spam · DOI-bestätigt · Abmeldung jederzeit · DSGVO-konform</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    (function(){
+      window.mbFomcSubscribe=function(){
+        var el=document.getElementById("mb-fomc-email"),msg=document.getElementById("mb-fomc-msg");
+        var email=el?el.value.trim():"";
+        if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte gültige E-Mail eingeben.";}return;}
+        if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}
+        fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+        .then(function(r){return r.json();})
+        .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestätigen (Double-Opt-In).";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}
+        ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler.";}});
+      };
+    })();
+    </script>
+
   </article>
 </main>
 
