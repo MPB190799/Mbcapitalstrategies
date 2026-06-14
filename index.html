@@ -758,9 +758,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
       <div class="hero-ctas">
         <div class="hero-inline-cta" id="hero-inline-cta-de">
+          <!-- CRO 2026-06-14 web-design-agent: Label + aria-label für Accessibility + Browser-Autocomplete-Qualität -->
+          <label for="hero-email-de" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;opacity:.9;">Newsletter · jeden Sonntag · gratis</label>
           <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
             <input type="email" id="hero-email-de" placeholder="deine@email.de" required
               autocomplete="email"
+              aria-label="E-Mail-Adresse für den kostenlosen Sonntags-Newsletter eingeben"
               style="padding:13px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 180px;font-family:var(--mono);box-sizing:border-box;">
             <button onclick="mbHeroSubscribeDe()" data-cta="hero-de-index"
               style="padding:13px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Sonntag-Brief gratis abonnieren →</button>
@@ -1459,6 +1462,7 @@ In deinem <em>Posteingang.</em></h2>
     <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">MB Capital Insider &mdash; jeden Sonntag, gratis:</span>
     <div style="display:flex;gap:6px;flex:1;min-width:240px;max-width:420px;" id="mb-sticky-form">
       <input type="email" id="mb-sticky-email" placeholder="deine@email.de" required
+        aria-label="E-Mail-Adresse für den kostenlosen Sonntags-Newsletter eingeben"
         style="flex:1;padding:7px 10px;border:1px solid #D4AF37;background:#080810;color:#f0f4ff;border-radius:4px;font-size:0.8rem;min-width:0;min-height:44px;box-sizing:border-box;">
       <button onclick="mbStickySubscribe()" data-cta="sticky-de-index"
         style="padding:7px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;min-height:44px;box-sizing:border-box;">Gratis abonnieren &rarr;</button>
