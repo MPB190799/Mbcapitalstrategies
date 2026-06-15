@@ -17,7 +17,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+  <!-- LCP-Fix 2026-06-15 web-design-agent: preconnect→dns-prefetch — preconnect löste sofort TCP/TLS-Handshake aus und beschleunigte CMP-Trigger (EU-User sahen CMP-Modal VOR Hero). dns-prefetch reicht für AdSense (Script async am Seitenende). -->
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
