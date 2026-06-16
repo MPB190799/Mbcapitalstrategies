@@ -1108,12 +1108,27 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <h2 class="display section-title">Aktuelle <em>Analysen.</em></h2>
     </div>
     <div class="insights-list reveal">
-      <a class="insight" href="/blog/fomc-juni-2026-hard-assets-zinsen.html">
+      <!-- CRO 2026-06-16 web-design-agent: FOMC timely-highlight — Zinsentscheidung morgen 17. Juni. Border+Badge self-expire nach 2026-06-18T00:00:00Z. -->
+      <a class="insight" id="fomc-insight-de" href="/blog/fomc-juni-2026-hard-assets-zinsen.html" style="border-left:3px solid #60a5fa;padding-left:20px;background:rgba(96,165,250,0.04);">
         <span class="insight-date">2026-06</span>
-        <span class="insight-tag">FOMC · 17. Juni</span>
+        <span class="insight-tag" id="fomc-tag-de" style="color:#60a5fa;">FOMC · Morgen</span>
         <span class="insight-title">FOMC 17. Juni 2026 — Was die Zinsentscheidung für Shipping, REITs und Pipelines bedeutet</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-arrow" id="fomc-arrow-de" style="color:#60a5fa;">→</span>
       </a>
+      <script>
+      /* Self-expire: FOMC-Hervorhebung nach Entscheidungstag entfernen */
+      (function(){
+        var expiry = new Date('2026-06-18T00:00:00Z');
+        if(new Date() > expiry){
+          var el = document.getElementById('fomc-insight-de');
+          var tag = document.getElementById('fomc-tag-de');
+          var arrow = document.getElementById('fomc-arrow-de');
+          if(el){ el.style.borderLeft=''; el.style.paddingLeft=''; el.style.background=''; }
+          if(tag){ tag.style.color=''; tag.textContent='FOMC · 17. Juni'; }
+          if(arrow){ arrow.style.color=''; }
+        }
+      })();
+      </script>
       <!-- CRO 2026-06-15 web-design-agent: Hormuz Breaking-Highlight — Tanker +24% Event-Tag. Self-expire UTC 2026-06-17T23:59:59Z. -->
       <a class="insight" id="hormuz-insight-de" href="/blog/hormuz-tankerrate-anstieg-shipping-aktien-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
         <span class="insight-date">2026-06</span>
