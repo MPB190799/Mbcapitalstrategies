@@ -480,5 +480,46 @@
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie berechnet man die Dividendenrendite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividendenrendite = Jährliche Dividende je Aktie / Aktueller Kurs × 100. Beispiel: Aktie kostet 20€, zahlt 1,50€ Dividende → 7,5% Rendite. Unterscheide Forward Yield (erwartete künftige Dividende) und Trailing Yield (letzte gezahlte Dividende)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann ist eine hohe Dividendenrendite eine Warnung (Yield Trap)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Rendite über 10–12% deutet oft auf eine 'Yield Trap' hin: Der Kurs ist wegen Problemen gefallen, nicht weil die Dividende hoch ist. Prüfe immer: FCF-Coverage-Ratio ≥ 1,0x, Payout-Ratio unter 80% (außer REITs), stabile oder wachsende Dividendenhistorie der letzten 3 Jahre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Brutto- und Netto-Dividendenrendite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Brutto-Rendite: Dividende ohne Abzüge. Netto-Rendite für deutsche Investoren: minus Quellensteuer (variiert nach Land: USA 15%, Australien 15%, Norwegen 15% via DBA), minus deutsche Abgeltungssteuer (25% + 5,5% Soli). Effektiv erhältst du bei 7% Brutto oft nur 5,2–5,8% netto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist Forward vs. Trailing Dividendenrendite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trailing Yield nutzt die letzte tatsächlich gezahlte Dividende. Forward Yield nutzt die erwartete nächste Dividende. Bei zyklischen Unternehmen (Shipping, Mining) können beide stark divergieren — TORM zahlt nach Quartals-Gewinn unterschiedliche Beträge. Marco bevorzugt Forward Yield mit konservativem Abschlag."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>

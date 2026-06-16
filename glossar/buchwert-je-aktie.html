@@ -431,5 +431,38 @@
 <script src="/assets/js/nav.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist der Buchwert je Aktie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buchwert je Aktie = Eigenkapital / Ausstehende Aktien. Das Eigenkapital ergibt sich aus Bilanzsumme minus Schulden. Es zeigt den bilanziellen 'Substanzwert' einer Aktie — was nach hypothetischer Liquidierung des Unternehmens je Aktie verbliebe. Relevant für Mining, REITs, Shipping-NAV-Analysen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist das Kurs-Buchwert-Verhältnis (KBV)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KBV = Aktienkurs / Buchwert je Aktie. KBV < 1,0 bedeutet: Aktie wird unter Substanzwert gehandelt (potentiell günstig oder struktureller Verfall). Bei REITs nutzt man NAV statt Buchwert. Bei Shipping-Unternehmen: Preis-zu-NAV-Verhältnis (Fleet-Wert) ist aussagekräftiger als KBV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann ist der Buchwert für Dividendenanalyse relevant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buchwert ist besonders relevant bei: BDCs (NAV-Prämie/-Rabatt zeigt Markteinschätzung), REITs (NAVPS als Fair-Value-Anker), Banken (Bilanzqualität), Mining (Buchwert der Reserven). Für Industrieunternehmen mit intangiblen Assets (Marken, Software) ist KBV weniger aussagekräftig."
+      }
+    }
+  ]
+}
+</script>
 </body>
 </html>
