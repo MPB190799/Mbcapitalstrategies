@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+  <title>FOMC Nachbericht Juni 2026: Dot-Plot warnt vor Zinserhöhung</title>
+  <meta name="description" content="FOMC 17.06.2026: Dot-Plot auf 3,8%, 9/18 Mitglieder wollen Erhöhung. Was das für Shipping, Mining und REITs bedeutet.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Marco Bozem">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/fomc-juni-2026-nach-entscheid-hard-assets.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/fomc-juni-2026-nach-entscheid-hard-assets.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/fomc-june-2026-hawkish-aftermath-hard-assets.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/fomc-juni-2026-nach-entscheid-hard-assets.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FOMC Nachbericht Juni 2026: Dot-Plot warnt vor Zinserhöhung">
+  <meta property="og:description" content="FOMC 17.06.2026: Dot-Plot auf 3,8%, 9/18 Mitglieder wollen Erhöhung. Was das für Shipping, Mining und REITs bedeutet.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/fomc-juni-2026-nach-entscheid-hard-assets.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FOMC Nachbericht Juni 2026: Dot-Plot warnt vor Zinserhöhung">
+  <meta name="twitter:description" content="Dot-Plot auf 3,8%, 9/18 Mitglieder wollen Zinserhöhung — was das für Hard Assets, Shipping und REITs bedeutet.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Critical inline CSS -->
+<style>
+body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}
+section.container{max-width:900px;margin:0 auto;padding:20px 16px}
+</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <!-- ADSENSE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <!-- GA4 DE -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7RMFMX5G3F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-7RMFMX5G3F');
+</script>
+
+  <!-- SEO SCHEMA — BlogPosting -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Nach dem FOMC-Entscheid: Der Dot-Plot sendet eine Warnung — was Anleger in Hard Assets wissen müssen",
+  "description": "Nach dem FOMC-Entscheid 17.06.2026: Dot-Plot verschob sich auf 3,8% Median, 9 von 18 Mitgliedern erwarten Zinserhöhung vor Dezember. Was das konkret für Shipping, Mining und REITs bedeutet.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    }
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/fomc-juni-2026-nach-entscheid-hard-assets.html",
+  "datePublished": "2026-06-18",
+  "dateModified": "2026-06-18",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "Makro & Zinsen",
+  "wordCount": 950,
+  "keywords": [
+    "FOMC Nachbericht Juni 2026",
+    "Dot-Plot Zinserhöhung",
+    "Fed Warsh hawkish",
+    "Hard Assets Zinsen 2026",
+    "Shipping Dividende Zinsen",
+    "REITs Zinsdruck",
+    "Hormuz Shipping 2026",
+    "MB Capital Strategies"
+  ]
+}</script>
+
+  <!-- SEO SCHEMA — BreadcrumbList -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "FOMC Nachbericht Juni 2026: Dot-Plot warnt",
+      "item": "https://mbcapitalstrategies.com/blog/fomc-juni-2026-nach-entscheid-hard-assets.html"
+    }
+  ]
+}</script>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .investing-link-box{background:linear-gradient(135deg,#151821,#1a1f2b);padding:22px 26px;border-radius:12px;border:2px solid rgba(212,175,55,.5);margin:30px 0;text-align:center}
+    .investing-link-box p{margin:8px 0 14px;color:#9aa6c0;font-size:.95rem}
+    .investing-link-box a.inv-btn{display:inline-block;padding:12px 22px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;font-size:1rem}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600;width:55%}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .autor-box{background:#0f1420;border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:22px 26px;margin:40px 0;display:flex;gap:18px;align-items:flex-start}
+    .autor-box img{width:64px;height:64px;border-radius:50%;border:2px solid #d4af37;flex-shrink:0}
+    .autor-box .autor-info h4{color:#d4af37;margin:0 0 6px;font-size:1rem}
+    .autor-box .autor-info p{color:#9aa6c0;font-size:.88rem;margin:0;line-height:1.5}
+    .disclaimer{background:#0f1115;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:16px;font-size:.8rem;color:#6b7a99;margin:40px 0;line-height:1.5}
+    .tag-label{display:inline-block;padding:3px 8px;border-radius:4px;font-size:.75rem;font-weight:700;margin-right:6px;letter-spacing:.04em}
+    .tag-fakt{background:rgba(96,165,250,.15);color:#60a5fa;border:1px solid rgba(96,165,250,.3)}
+    .tag-these{background:rgba(212,175,55,.12);color:#d4af37;border:1px solid rgba(212,175,55,.3)}
+    .tag-watch{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+    .adsense-slot{margin:32px 0;text-align:center;min-height:90px}
+  </style>
+
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Themen &#9662;</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">Shipping</a>
+          <a href="/midstream/">Pipelines / Midstream</a>
+          <a href="/mining-aktien/">Mining Aktien</a>
+          <a href="/upstream-aktien/">Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">Shipping</a>
+    <a href="/midstream/">Midstream / Pipelines</a>
+    <a href="/mining-aktien/">Mining Aktien</a>
+    <a href="/upstream-aktien/">Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">Blog</a>
+    <a href="/toolbox.html">Toolbox</a>
+    <a href="/glossar/">Glossar</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>FOMC Nachbericht Juni 2026: Dot-Plot warnt</span>
+</nav>
+
+<main class="container">
+
+  <article>
+
+    <header style="padding:40px 0 24px">
+      <div style="margin-bottom:12px">
+        <span style="color:#9aa6c0;font-size:.85rem">18. Juni 2026 · Marco Bozem · Makro &amp; Zinsen</span>
+      </div>
+      <h1>Nach dem FOMC-Entscheid: Der Dot-Plot sendet eine Warnung — was Anleger in Hard Assets wissen müssen</h1>
+
+      <!-- AEO: Answer-First Block -->
+      <div class="answer-first" style="background:linear-gradient(135deg,#0d1127 0%,#0a1020 100%);border:1px solid #D4AF37;border-left:4px solid #D4AF37;border-radius:8px;padding:20px 24px;margin:24px 0;position:relative;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <span style="color:#D4AF37;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">Kurze Antwort</span>
+        </div>
+        <p style="color:#e8eaf0;font-size:1rem;line-height:1.65;margin:0;">FOMC 17. Juni 2026: Fed hielt einstimmig bei 3,50&ndash;3,75%. Der Dot-Plot zeigt jetzt einen Median von 3,8% statt 3,4% im März &mdash; 9 von 18 Mitgliedern erwarten mindestens eine Zinserhöhung vor Jahresende. Zinssenkungsbias ist gestrichen. Für Hard Assets (Shipping, Mining) ist das kein Fundamentalproblem. Für REITs ist es echter Gegenwind.</p>
+      </div>
+
+      <p style="font-size:1.1rem;color:#c8cfe0;line-height:1.7;margin:0 0 24px">
+        Der Entscheid kam am 17. Juni 2026 &mdash; und er war in seiner Mechanik keine Überraschung. Die Fed hielt. Das wusste jeder. Was der Markt aber nicht vollständig eingepreist hatte: Der Dot-Plot hat sich gedreht. Von einer Senkungsperspektive zur echten Erhöhungswarnung. Das ist die Story, nicht das Hold.
+      </p>
+    </header>
+
+    <!-- ADSENSE SLOT 1 — nach Intro -->
+    <div class="adsense-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7097302643579933"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section>
+      <h2>Was der Dot-Plot nach dem 17. Juni wirklich sagt</h2>
+
+      <div class="info-box">
+        <strong>FAKT (Quellen: CNBC 17.06.2026, Sherwood News 17.06.2026, TradingKey 17.06.2026):</strong> Fed hält einstimmig bei 3,50&ndash;3,75%. Dot-Plot: Median-Jahresprognose jetzt 3,8% (von 3,4% im März 2026). 9 von 18 FOMC-Mitgliedern erwarten mindestens eine Zinserhöhung vor Dezember 2026. PCE-Inflationsprognose der Fed: 3,6% (von 2,7% im März).
+      </div>
+
+      <p>
+        Stellen wir das kurz in Kontext. Im März lag der Median-Dot noch bei 3,4% &mdash; das Marktnarrativ war: zwei, vielleicht drei Senkungen bis Jahresende. Jetzt liegt der Median bei 3,8%, und die Fed hebt ihre eigene Inflationsprognose von 2,7% auf 3,6% an. Das ist kein marginales Update. Das ist eine strukturelle Neubewertung des Inflationspfads.
+      </p>
+
+      <p>
+        <span class="tag-fakt">FAKT</span> Chair Kevin Warsh veröffentlichte nach dem Entscheid ein Statement mit 130 Wörtern &mdash; verglichen mit 341 Wörtern im April. Kein Forward Guidance mehr. Das ist bewusste Kommunikationspolitik: Keine Vorab-Bindung, keine Verpflichtung auf einen Pfad. Die Fed hält sich alle Optionen offen, und das schließt Erhöhungen ausdrücklich ein.
+      </p>
+
+      <table class="metrics-table">
+        <tr><td>Fed Funds Rate (Entscheid 17.06.2026)</td><td><strong>3,50&ndash;3,75%</strong></td></tr>
+        <tr><td>Dot-Plot Median-Prognose 2026</td><td><strong>3,8%</strong> (vs. 3,4% im März)</td></tr>
+        <tr><td>FOMC-Mitglieder mit Erhöhungserwartung</td><td><strong>9 von 18</strong></td></tr>
+        <tr><td>PCE-Inflationsprognose Fed 2026</td><td><strong>3,6%</strong> (vs. 2,7% im März)</td></tr>
+        <tr><td>Wörter im Statement (Warsh, Juni)</td><td><strong>130</strong> (vs. 341 im April)</td></tr>
+      </table>
+
+      <p>
+        <span class="tag-these">MEINE THESE</span> Der Markt hat den Hold eingepreist, nicht den Dot-Plot-Shift. Der Unterschied: Ein Hold mit Senkungsperspektive ist positiv für zinssensitive Assets. Ein Hold mit Erhöhungsperspektive ist das Gegenteil. Genau da befinden wir uns gerade.
+      </p>
+    </section>
+
+    <!-- ADSENSE SLOT 2 — nach 50% -->
+    <div class="adsense-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7097302643579933"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <section>
+      <h2>Hormuz und Dot-Plot: dieselbe Wurzel, zwei verschiedene Auswirkungen</h2>
+
+      <p>
+        Es gibt eine Verbindung zwischen der hawkishen Fed und der Hormuz-Krise, die ich für entscheidend halte &mdash; und die in den meisten Nachberichten fehlt.
+      </p>
+
+      <p>
+        <span class="tag-fakt">FAKT</span> Die Straße von Hormuz ist seit über 110 Tagen faktisch blockiert. Normal durchfahren täglich rund 94 Schiffe die Meerenge &mdash; aktuell sind es nahezu null. Das zwingt Tanker und Bulk Carrier auf Umwege: Kap der Guten Hoffnung statt Hormuz, 10&ndash;14 zusätzliche Seetage pro Reise.
+      </p>
+
+      <p>
+        Was das mit der Fed zu tun hat? Öl und Energie, die nicht durch Hormuz fließen, treiben die Energiepreise und damit die PCE-Inflation genau in die Höhe, die Warsh zur verschärften Prognose (3,6%) zwingt. Die Hormuz-Krise ist einer der strukturellen Inflationstreiber, die die Fed hawkish hält.
+      </p>
+
+      <p>
+        Und gleichzeitig ist dieselbe Krise ein fundamentaler Treiber für Shipping-Cashflows. Längere Reisewege bedeuten mehr benötigte Tonnage für dieselbe Ladungsmenge. Tanker, die früher sechs Tage von Basra nach Rotterdam brauchten, brauchen jetzt drei Wochen. Das erhöht die effektive Flottenauslastung &mdash; und damit die Frachtraten.
+      </p>
+
+      <div class="info-box">
+        <strong>Kernpunkt:</strong> Was die Fed hawkish hält (Hormuz-bedingter Energiepreisdruck), treibt gleichzeitig die Charterraten für Tanker und Bulk Carrier. Für Shipping-Investoren sind das zwei Seiten derselben Medaille &mdash; der Zinskanal ist das Problem, der Frachtmarkt ist die Chance.
+      </div>
+    </section>
+
+    <section>
+      <h2>Konkret: Was das für Shipping, Mining und REITs bedeutet</h2>
+
+      <p>
+        Jetzt wird es praktisch. Drei Assetklassen, drei völlig unterschiedliche Reaktionsmuster auf den Dot-Plot-Shift.
+      </p>
+
+      <p>
+        <strong>Shipping:</strong> <span class="tag-these">MEINE THESE</span> Ein zinsbedingter Kursrückgang bei Shipping-Titeln ist kein Fundamentalproblem &mdash; er ist ein Einstiegssignal. CMB.Tech, <a href="/blog/flex-lng-q1-2026-analyse-dividende.html" style="color:#d4af37">FLEX LNG</a>, TORM, Dorian LPG generieren ihren freien Cashflow aus Frachtraten, nicht aus Zinsdifferenzen. Wenn die Kurse wegen "hawkisher Fed" fallen, obwohl die Charterraten stabil oder steigend sind, entsteht ein Bewertungsfenster. Ich schaue mir diese Dips aktiv an.
+      </p>
+
+      <p>
+        <strong>Mining:</strong> Ähnliche Logik. Thungela Resources zahlt Dividende aus Kohle-Cashflows. Anglo American aus Kupfer und Eisenerz. Was den Rohstoffpreis treibt, ist Industrienachfrage aus China und Indien &mdash; nicht der US-Leitzins. <span class="tag-fakt">FAKT</span> Ein hawkisher Dot-Plot kann kurzfristig Dollarsignale senden, die Rohstoffe belasten (USD-Stärke drückt Rohstoffpreise in Dollar). Das ist ein reales, aber oft temporäres Risiko.
+      </p>
+
+      <p>
+        <strong>REITs:</strong> Hier ist das Bild eindeutiger &mdash; und ungünstiger. <span class="tag-watch">WATCH</span> Wenn 9 von 18 Fed-Mitgliedern Erhöhungen wollen, bleibt die Benchmark-Rate hoch. REITs refinanzieren Schulden in diesem Umfeld zu steigenden Kosten. Die Spanne zwischen Mietrendite und Kapitalkosten schrumpft. Realty Income, Medical Properties Trust &mdash; bei diesen Titeln sehe ich kurzfristig keinen Katalysator für eine Bewertungsexpansion. Ich halte, aber ich kaufe in diesem Umfeld nicht nach.
+      </p>
+
+      <div class="investing-link-box">
+        <strong style="color:#d4af37;font-size:1rem">Fundamentaldaten mit InvestingPro analysieren</strong>
+        <p>Ich arbeite meine Fundamentalanalysen mit InvestingPro &mdash; Fair Value, Financial Health Score, Cashflow-Historien. Über meinen Link gibt es 15% Rabatt on top, auch auf laufende Aktionen.</p>
+        <a href="https://investing-referral.com/mbcapital2" rel="noopener noreferrer" class="inv-btn">15% Rabatt sichern*</a>
+        <p style="font-size:.75rem;color:#6b7a99;margin:10px 0 0">*Affiliate-Link &mdash; Provision ohne Mehrkosten für dich.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Was ich jetzt konkret mache</h2>
+
+      <p>
+        Der FOMC-Nachbericht ändert meine Grundaufstellung nicht. Shipping bleibt der Kern meines Depots &mdash; CMB.Tech ist mit ca. 3,7% die größte öffentliche Position (Trade Republic + Scalable Capital, Stand Mai 2026). Gefolgt von Dorian LPG, Thungela, TORM und FLEX LNG.
+      </p>
+
+      <p>
+        Was sich verändert: Mein Blick auf zinssensitive Positionen wird wachsamer. Solange der Dot-Plot auf 3,8% zeigt und fast die Hälfte der FOMC-Mitglieder Erhöhungen will, ist der Bewertungsdruck bei Infrastruktur- und REIT-Titeln nicht weg. Ich nutze das für keine aggressiven Zukäufe in diesen Segmenten.
+      </p>
+
+      <p>
+        <span class="tag-watch">WATCH</span> Das eigentliche Risikoszenario für mein Depot ist nicht die Fed &mdash; es ist ein globaler Nachfrageeinbruch. Wenn die US-Wirtschaft bei anhaltend hohen Zinsen abgleitet, leiden Frachtraten direkt. Das ist mein eigentlicher Risikomonitor: PMI-Daten, chinesische Importzahlen, Baltic Dry Index. Nicht der Leitzins allein.
+      </p>
+    </section>
+
+    <section>
+      <h2>FAQ: FOMC Nachbericht Juni 2026</h2>
+
+      <p><strong>Was hat sich beim FOMC-Entscheid vom 17. Juni 2026 wirklich verändert?</strong><br>
+      Der Zins blieb bei 3,50&ndash;3,75%, aber der Dot-Plot verschob sich erheblich: Median-Prognose von 3,4% auf 3,8%, PCE-Inflationsprognose von 2,7% auf 3,6%. Der Zinssenkungsbias ist gestrichen &mdash; 9 von 18 Mitgliedern erwarten jetzt Erhöhungen vor Dezember 2026.</p>
+
+      <p><strong>Warum ist ein hawkisher Dot-Plot ein Einstiegssignal für Shipping-Aktien?</strong><br>
+      Shipping-Cashflows kommen aus Frachtraten, nicht aus Zinsdifferenzen. Wenn Kurse wegen "hawkisher Fed" fallen, obwohl der Frachtmarkt durch die Hormuz-Krise strukturell gestützt wird, entsteht ein Bewertungsfenster. Die Zinspolitik ist für Tanker kein Fundamentaltreiber &mdash; der Umweg ums Kap der Guten Hoffnung ist es.</p>
+
+      <p><strong>Was bedeutet der neue Dot-Plot für REIT-Investoren?</strong><br>
+      REITs refinanzieren Schulden in einem Umfeld mit potenziell steigenden Zinsen zu erhöhten Kosten. Die Spanne zwischen Mietrendite und Kapitalkosten schrumpft. Solange der Dot-Plot keine klare Senkungsperspektive signalisiert, bleibt der Bewertungsdruck bei REITs bestehen.</p>
+
+      <p><strong>Hat die Hormuz-Krise einen direkten Zusammenhang mit der hawkishen Fed?</strong><br>
+      Ja. Hormuz-bedingte Energiepreisanstiege tragen zur erhöhten PCE-Inflationsprognose der Fed bei (3,6% statt 2,7%). Dieselbe Krise treibt aber auch die Charterraten für Tanker durch Umwegfahrten. Der Inflationstreiber für die Fed ist der Cashflow-Treiber für Shipping.</p>
+    </section>
+
+    <!-- Related articles -->
+    <div class="related-articles">
+      <h3>Weitere Analysen</h3>
+      <ul>
+        <li><a href="/blog/fomc-juni-2026-zinsen-hold-dividenden.html">FOMC Juni 2026: Fed hält &mdash; Gut für Hard-Asset-Dividenden?</a></li>
+        <li><a href="/blog/fomc-juni-2026-hard-assets-zinsen.html">FOMC Juni 2026: Was der Zinsentscheid für Hard Assets bedeutet</a></li>
+        <li><a href="/blog/hormuz-tankerrate-anstieg-shipping-aktien-2026.html">Hormuz-Schock 2026: Tankerraten &amp; Shipping-Aktien</a></li>
+        <li><a href="/shipping/">Shipping-Aktien Guide &mdash; Tanker, LNG, Bulk</a></li>
+        <li><a href="/hard-asset-guide/">Hard Asset Guide &mdash; Rohstoffe, Mining, Energie</a></li>
+        <li><a href="/tools/dividendenrechner.html">Dividendenrechner &mdash; Rendite &amp; Cashflow berechnen</a></li>
+      </ul>
+    </div>
+
+    <!-- ADSENSE SLOT 3 — vor Footer -->
+    <div class="adsense-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7097302643579933"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Autorenbox E-E-A-T -->
+    <div class="autor-box">
+      <img src="/marco.webp" alt="Marco Bozem &mdash; MB Capital Strategies" width="64" height="64" loading="lazy">
+      <div class="autor-info">
+        <h4>Marco Bozem</h4>
+        <p>Unabhängiger Investor mit Fokus auf Hard Assets, Dividendenaktien und Cashflow-getriebene Strategien. Shipping, Mining, Energie und Pipelines. Investiere seit Jahren in reale Werte &mdash; keine Anlageberatung, nur mein persönlicher Blick auf die Märkte. <a href="/ueber-marco-bozem/" style="color:#d4af37">Mehr über Marco &rarr;</a></p>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> Dieser Artikel stellt keine Anlageberatung dar. Alle genannten Positionen und Einschätzungen sind die persönliche Meinung des Autors und dienen ausschließlich zu Informationszwecken. Investitionen in Aktien und andere Wertpapiere sind mit Risiken verbunden &mdash; bis hin zum Totalverlust. Jeder Anleger trägt die Verantwortung für seine eigenen Entscheidungen. Vergangene Wertentwicklungen sind kein verlässlicher Indikator für zukünftige Ergebnisse. Affiliate-Links sind als solche gekennzeichnet.
+    </div>
+
+  </article>
+
+  <!-- DUAL CTA: Free + Premium -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin:32px 24px;">
+    <div style="flex:1;min-width:240px;background:#0f0f1a;border:1px solid #1e1e35;border-radius:6px;padding:20px 22px;">
+      <p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.95rem;">Wochenrückblick (kostenlos)</p>
+      <p style="color:#c8cfe0;font-size:0.83rem;line-height:1.5;margin:0 0 12px;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, gratis, abmeldbar.</p>
+      <a href="https://mbcapitalstrategies.com/newsletter.html" style="display:inline-block;background:#1e1e35;color:#D4AF37;font-weight:700;padding:9px 18px;text-decoration:none;border-radius:4px;font-size:0.85rem;border:1px solid #D4AF37;">Kostenlos anmelden &rarr;</a>
+    </div>
+    <div style="flex:1;min-width:240px;background:#0a0a14;border:1px solid #D4AF37;border-radius:6px;padding:20px 22px;">
+      <p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.95rem;">MB Earnings Insider (ab 5 &euro;/Monat)</p>
+      <p style="color:#c8cfe0;font-size:0.83rem;line-height:1.5;margin:0 0 12px;">FOMC-Einordnung + Dividenden-Nachhaltigkeit TORM/FLNG mit DCF-Einordnung und klarer These &mdash; nur im Premium-Newsletter.</p>
+      <a href="https://mbcapitalstrategies.com/newsletter/" style="display:inline-block;background:#D4AF37;color:#000;font-weight:700;padding:9px 18px;text-decoration:none;border-radius:4px;font-size:0.85rem;">Mehr erfahren &rarr;</a>
+    </div>
+  </div>
+
+  <p style="margin:16px 0;font-size:0.9rem;color:#c8cfe0;">Verwandte Tools: <a href="/tools/dividenden-wachstumsrechner.html" style="color:#D4AF37;text-decoration:underline;">Dividendenwachstum Rechner</a> | <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;text-decoration:underline;">YOC-Rechner kostenlos</a></p>
+
+</main>
+
+<footer style="background:#050508;border-top:1px solid rgba(212,175,55,.1);padding:30px 24px;text-align:center;color:#6b7a99;font-size:.85rem">
+  <p>&copy; 2026 MB Capital Strategies &middot; <a href="/impressum.html" style="color:#d4af37">Impressum</a> &middot; <a href="/datenschutz.html" style="color:#d4af37">Datenschutz</a> &middot; <a href="/blog/" style="color:#d4af37">Blog</a></p>
+  <p style="margin:8px 0 0;font-size:.78rem">Kein Finanzberater. Keine Anlageberatung. Nur meine persönliche Meinung als Investor.</p>
+</footer>
+
+<script>
+  const btn = document.getElementById('navHamburger');
+  const mob = document.getElementById('navMobile');
+  if(btn && mob){
+    btn.addEventListener('click', () => {
+      const open = mob.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was hat sich beim FOMC-Entscheid vom 17. Juni 2026 wirklich verändert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Zins blieb bei 3,50-3,75%, aber der Dot-Plot verschob sich erheblich: Median-Prognose von 3,4% auf 3,8%, PCE-Inflationsprognose von 2,7% auf 3,6%. Der Zinssenkungsbias ist gestrichen — 9 von 18 Mitgliedern erwarten jetzt Erhöhungen vor Dezember 2026. (Quellen: CNBC, Sherwood News, TradingKey, 17.06.2026)"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist ein hawkisher Dot-Plot ein Einstiegssignal für Shipping-Aktien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shipping-Cashflows kommen aus Frachtraten, nicht aus Zinsdifferenzen. Wenn Kurse wegen hawkisher Fed fallen, obwohl der Frachtmarkt durch die Hormuz-Krise (Tag 110+, nahezu 0 Schiffe statt normalerweise 94/Tag) strukturell gestützt wird, entsteht ein Bewertungsfenster. Die Zinspolitik ist für Tanker kein Fundamentaltreiber — der Umweg ums Kap der Guten Hoffnung ist es."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet der neue Dot-Plot für REIT-Investoren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "REITs refinanzieren Schulden in einem Umfeld mit potenziell steigenden Zinsen zu erhöhten Kosten. Die Spanne zwischen Mietrendite und Kapitalkosten schrumpft. Solange der Dot-Plot (Median 3,8%) keine klare Senkungsperspektive signalisiert, bleibt der Bewertungsdruck bei REITs bestehen — auch wenn die Dividenden selbst nicht unmittelbar gefährdet sind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hat die Hormuz-Krise einen direkten Zusammenhang mit der hawkishen Fed-Politik?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Die Hormuz-Krise (Tag 110+, ~0 Schiffe vs. normalerweise 94/Tag) treibt Energiepreise, die zur erhöhten PCE-Inflationsprognose der Fed von 3,6% (statt 2,7% im März) beitragen. Dieselbe Krise treibt aber auch die Charterraten für Tanker durch Umwegfahrten. Der Inflationstreiber für die Fed ist gleichzeitig der Cashflow-Treiber für Shipping-Aktien."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
