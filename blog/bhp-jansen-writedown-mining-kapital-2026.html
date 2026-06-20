@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Core Web Vitals: Font preload for LCP improvement -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+<!-- Full stylesheet non-blocking -->
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+
+  <title>BHP Jansen Writedown $2,3 Mrd. — Mining-Kapital-Signal</title>
+  <meta name="description" content="BHP schreibt $2,3 Mrd. auf Jansen Stage 2 ab. Was bedeutet das für Mining-Investoren und welche Aktien profitieren davon? Mein Sektor-Take.">
+  <meta name="author" content="Marco Bozem">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BHP Jansen Writedown $2,3 Mrd. — Mining-Kapital-Signal">
+  <meta property="og:description" content="BHP schreibt $2,3 Mrd. auf Jansen Stage 2 ab. Was bedeutet das für Mining-Investoren und welche Aktien profitieren davon? Mein Sektor-Take.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-mining.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BHP Jansen Writedown $2,3 Mrd. — Mining-Kapital-Signal">
+  <meta name="twitter:description" content="BHP schreibt $2,3 Mrd. auf Jansen Stage 2 ab. Was bedeutet das für Mining-Investoren und welche Aktien profitieren davon? Mein Sektor-Take.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-mining.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    gtag('config', 'G-J1NWEPPKNE');
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://mbcapitalstrategies.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Mining Aktien",
+        "item": "https://mbcapitalstrategies.com/mining-aktien-superzyklus"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "BHP Jansen Writedown 2026",
+        "item": "https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "BHP Jansen Writedown $2,3 Mrd. — Mining-Kapital-Signal",
+    "description": "BHP schreibt $2,3 Mrd. auf Jansen Stage 2 ab. Kosten stiegen von $4,9 auf $6,9 Mrd. (+41%). Was das für Mining-Kapitalallokation und hartgesottene Produzenten bedeutet.",
+    "image": "https://mbcapitalstrategies.com/assets/og-mining.jpg",
+    "datePublished": "2026-06-20",
+    "dateModified": "2026-06-20",
+    "author": {
+      "@type": "Person",
+      "name": "Marco Bozem",
+      "url": "https://mbcapitalstrategies.com/ueber-mich"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategies.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mbcapitalstrategies.com/Logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html"
+    }
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was ist der BHP Jansen Writedown und wie hoch ist er?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BHP hat am 18. Juni 2026 eine Wertberichtigung von $2,3 Milliarden USD auf das Jansen Stage 2 Projekt angekündigt. Die Gesamtkosten für Stage 2 stiegen von ursprünglich $4,9 Mrd. auf $6,9 Mrd. — ein Anstieg von 41%. Stage 2 ist Kalimine in Saskatchewan, Kanada. Quelle: Bloomberg, 18.06.2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann startet BHP Jansen Stage 1 die Produktion?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BHP Jansen Stage 1 soll Mitte 2027 die Produktion aufnehmen. Die Kosten für Stage 1 belaufen sich auf $8,4 Milliarden USD. Quelle: Globe and Mail, 18.06.2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was bedeutet der BHP Jansen Writedown für Mining-Investoren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Writedown ist ein Sektor-Signal: Greenfield-Mega-Projekte kosten systematisch mehr und dauern länger als geplant. Das stärkt die relative Position von Produzenten, die bereits Cashflow generieren — wie Kohle-Produzenten Thungela oder Yancoal. Kapital fließt lieber in laufende Förderbetriebe als in neue Mega-Minen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wann startet Jansen Stage 2 die Produktion nach der Verschiebung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nach der Verschiebung ist der Produktionsstart von Jansen Stage 2 auf das Geschäftsjahr 2031 (GJ2031) verschoben worden. Ursprünglich war GJ2029 geplant — das ist eine Verzögerung von zwei Jahren."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .breadcrumbs { max-width: 900px; margin: 20px auto; font-size: 0.9em; color: #ccc; }
+    .breadcrumbs a { color: #d4af37; text-decoration: none; }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 18px;
+      margin: 12px 0;
+      background: #d4af37;
+      color: #000;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .cta-box {
+      background: #151821;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(212,175,55,.3);
+      margin: 30px 0;
+    }
+
+    .info-box {
+      margin: 20px 0;
+      padding: 14px 18px;
+      border-left: 4px solid #d4af37;
+      background: #1a1f2b;
+      border-radius: 8px;
+    }
+
+    .risk-box {
+      margin: 20px 0;
+      padding: 14px 18px;
+      border-left: 4px solid #ff6b6b;
+      background: #22151a;
+      border-radius: 8px;
+    }
+
+    .key-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.93rem;
+    }
+    .key-data-table th {
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+    .key-data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: #c8cfe0;
+    }
+    .key-data-table tr:last-child td { border-bottom: none; }
+    .highlight-num {
+      color: #d4af37;
+      font-weight: 700;
+    }
+    .red-num {
+      color: #ef4444;
+      font-weight: 700;
+    }
+
+    .author-box {
+      background: #0f1120;
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin: 40px 0;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .author-box-text h4 { color: #d4af37; margin: 0 0 6px; font-size: 1rem; }
+    .author-box-text p { color: #9aa0b8; margin: 0; font-size: 0.88rem; line-height: 1.6; }
+
+    .disclaimer-box {
+      background: #0c0e16;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      color: #6b7a99;
+      margin: 32px 0;
+      line-height: 1.6;
+    }
+
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s;}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06);}
+
+    footer.footer { max-width: 900px; margin: 40px auto; text-align: center; padding-bottom: 40px; font-size: 0.85rem; color: #6b7a99; }
+    footer.footer a { color: #d4af37; }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/Logo.png" alt="MB Capital Strategies Logo" height="36" style="align-self:flex-start;">
+      <span>MB CAPITAL STRATEGIES</span>
+    </a>
+    <div class="nav-links" style="display:flex;gap:24px;font-size:0.88rem;">
+      <a href="/" style="color:#9aa0b8;text-decoration:none;">Home</a>
+      <a href="/mining-aktien-superzyklus" style="color:#9aa0b8;text-decoration:none;">Mining</a>
+      <a href="/blog/index.html" style="color:#d4af37;text-decoration:none;">Blog</a>
+    </div>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+  <a href="/">Home</a> &rsaquo;
+  <a href="/mining-aktien-superzyklus">Mining Aktien</a> &rsaquo;
+  BHP Jansen Writedown 2026
+</div>
+
+<!-- AdSense: Nach Nav, vor Artikel -->
+<div style="text-align:center;margin:16px auto;max-width:728px;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7097302643579933"
+       data-ad-slot="auto"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="container">
+
+  <article>
+    <header style="padding-top:32px;">
+      <p style="color:#d4af37;font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;margin:0 0 10px;">
+        Mining &amp; Hard Assets &mdash; 20. Juni 2026
+      </p>
+      <h1>BHP Jansen Writedown: Was der $2,3-Mrd.-Abschreibung Mining-Investoren lehrt</h1>
+      <p style="color:#9aa0b8;font-size:1.05rem;margin:0 0 24px;max-width:720px;">
+        BHP zieht $2,3 Mrd. aus seiner wichtigsten Wachstums-Wette ab. Kosten explodieren um 41%. Und das Projekt ist noch nicht mal fertig. Was das f&uuml;r den Mining-Sektor bedeutet &mdash; und warum mich das als Produzenten-Investor nicht schreckt, sondern best&auml;tigt.
+      </p>
+      <p style="color:#6b7a99;font-size:0.83rem;margin:0 0 32px;">
+        Von <strong style="color:#c8cfe0;">Marco Bozem</strong> | MB Capital Strategies | 20. Juni 2026 | Lesezeit: ca. 6 Min.
+      </p>
+    </header>
+
+    <!-- Schlüsseldaten-Tabelle -->
+    <table class="key-data-table">
+      <thead>
+        <tr>
+          <th>Kennzahl</th>
+          <th>Wert</th>
+          <th>Quelle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Writedown Jansen Stage 2</td>
+          <td><span class="red-num">$2,3 Mrd. USD</span></td>
+          <td>Bloomberg, 18.06.2026</td>
+        </tr>
+        <tr>
+          <td>Stage 2 Kosten (neu)</td>
+          <td><span class="red-num">$6,9 Mrd.</span> (war: $4,9 Mrd.)</td>
+          <td>Bloomberg, 18.06.2026</td>
+        </tr>
+        <tr>
+          <td>Kostensteigerung Stage 2</td>
+          <td><span class="red-num">+41%</span> vs. urspr&uuml;nglichem Budget</td>
+          <td>Bloomberg, 18.06.2026</td>
+        </tr>
+        <tr>
+          <td>Stage 1 Gesamtkosten</td>
+          <td><span class="highlight-num">$8,4 Mrd.</span></td>
+          <td>Globe and Mail, 18.06.2026</td>
+        </tr>
+        <tr>
+          <td>Stage 1 Produktionsstart</td>
+          <td>Mitte 2027</td>
+          <td>Globe and Mail, 18.06.2026</td>
+        </tr>
+        <tr>
+          <td>Stage 2 Produktionsstart</td>
+          <td>GJ2031 (verschoben von GJ2029)</td>
+          <td>BHP, 18.06.2026</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Intro -->
+    <p>
+      $2,3 Milliarden. Das ist kein kleines Korrekturposten in einer Fu&szlig;note. Das ist der gr&ouml;&szlig;te Einzel-Writedown, den BHP in j&uuml;ngerer Zeit auf ein laufendes Projekt gemeldet hat &mdash; und es trifft ausgerechnet Jansen, die Kalimine in Saskatchewan (Kanada), die BHP selbst als gr&ouml;&szlig;tes Einzelinvestment in seiner Geschichte bezeichnet.
+    </p>
+    <p>
+      FAKT: Am 18. Juni 2026 meldete BHP die Wertberichtigung. Stage 2 kostet nun $6,9 Mrd. statt der urspr&uuml;nglich geplanten $4,9 Mrd. Das ist ein Anstieg von 41%. Gleichzeitig verschiebt sich der Produktionsstart von GJ2029 auf GJ2031 &mdash; zwei Jahre Verz&ouml;gerung.
+    </p>
+    <p>
+      Ich halte keine BHP-Aktien. Aber dieser Writedown interessiert mich trotzdem. Denn er ist kein BHP-Problem &mdash; er ist ein Sektor-Signal.
+    </p>
+
+    <!-- AdSense: Mitte des Artikels -->
+    <div style="text-align:center;margin:32px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7097302643579933"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2>&#128315; Was Jansen ist &mdash; und warum das Projekt so gro&szlig; ist</h2>
+
+    <p>
+      Jansen ist eine Kalimine. Kali ist der Rohstoff, der in D&uuml;ngemittel geht &mdash; konkret Kaliumchlorid (KCl), das weltweit f&uuml;r den Anbau von Weizen, Mais und Reis gebraucht wird. BHP hatte die Jansen-Liegenschaft in Saskatchewan &uuml;ber Jahre entwickelt und mit dem offiziellen Investitionsentscheid 2021 entschieden: "Wir bauen." Jansen Stage 1 sollte f&uuml;r $5,7 Mrd. entstehen. Daraus wurden inzwischen $8,4 Mrd. Stage 2 sollte dr&auml;ngen.
+    </p>
+    <p>
+      FAKT: Jansen Stage 1 Kosten: $8,4 Mrd. Produktionsstart: Mitte 2027. Stage 2 Originalbudget: $4,9 Mrd. &mdash; jetzt $6,9 Mrd. Starttermin: von GJ2029 auf GJ2031 verschoben.
+    </p>
+
+    <div class="info-box">
+      <strong>&#128205; Kontext:</strong> Saskatchewan ist eine der reichhaltigsten Kali-Regionen der Welt. Die Provinz f&ouml;rdert zusammen mit Russland und Belarus einen Gro&szlig;teil des globalen Kali-Angebots. BHP wollte mit Jansen zu einem der gr&ouml;&szlig;ten D&uuml;ngemittel-Produzenten der Welt werden.
+    </div>
+
+    <h2>&#128200; Was der Writedown konkret bedeutet</h2>
+
+    <p>
+      Ein Writedown bedeutet: BHP hat den Buchwert von Stage 2 um $2,3 Mrd. nach unten korrigiert. Das hei&szlig;t, der erwartete zuk&uuml;nftige Cashflow aus Stage 2 rechtfertigt die bisher aktivierten Kosten nicht mehr vollst&auml;ndig. Das sind keine Barmittel die abflie&szlig;en &mdash; das ist eine bilanzielle Korrektur. Aber sie sagt etwas &uuml;ber die Wirtschaftlichkeit.
+    </p>
+    <p>
+      THESE: Wenn ein Projekt das gr&ouml;&szlig;te Einzelinvestment in der Geschichte eines der gr&ouml;&szlig;ten Minenkonzerne der Welt ist &mdash; und selbst dann die Kosten um 41% &uuml;berlaufen &mdash; dann ist das kein Ausrei&szlig;er. Das ist strukturell. Greenfield-Mega-Projekte im Mining laufen systematisch &uuml;ber Budget. Das ist keine Neuigkeit. Aber die Gr&ouml;&szlig;enordnung hier ist bemerkenswert.
+    </p>
+
+    <h2>&#127942; Was das f&uuml;r Mining-Kapitalallokation bedeutet</h2>
+
+    <p>
+      Die wichtigste Lehre aus Jansen f&uuml;r mich als Investor: Es gibt einen massiven Unterschied zwischen Greenfield-Entwickler und laufendem Produzenten.
+    </p>
+    <p>
+      Ein Greenfield-Projekt wie Jansen ist eine Wette. Du weisst nicht genau, was dich Baukosten in f&uuml;nf Jahren kosten. Du weisst nicht, was der Kali-Preis ist, wenn du endlich in die Produktion gehst. Du nimmst eine Schaufel und budgetierst &mdash; und hoffst, dass die Realit&auml;t n&auml;her an Plan als an Worst Case liegt.
+    </p>
+    <p>
+      Bei einem bereits produzierenden Unternehmen ist das anders. Die Grube ist offen. Der Cashflow l&auml;uft. Die Kosten sind bekannt. Das Risikoprofil ist komplett verschieden.
+    </p>
+
+    <div class="info-box">
+      <strong>&#128200; THESE:</strong> Jansen ist ein Lehrbeispiel f&uuml;r "J-Curve Kapitalrisiko" im Mining. Je l&auml;nger und gr&ouml;&szlig;er ein Projekt, desto mehr Time-Value-of-Money frisst die Verz&ouml;gerung, und desto mehr Raum hat die Kostenbasis zu eskalieren. Produzenten mit laufendem Betrieb sitzen bereits auf der rechten Seite dieser Kurve.
+    </div>
+
+    <h2>&#128736; Kapital fl&auml;&szlig;t in Produzenten &mdash; nicht in Baustellen</h2>
+
+    <p>
+      Wenn Mega-Projekte wie Jansen Schlagzeilen machen mit Kosten&uuml;berl&auml;ufen und Verz&ouml;gerungen, dann hat das einen konkreten Effekt auf Kapitalfl&uuml;sse. Institutionelle Investoren justieren: weniger Risikobereitschaft f&uuml;r Greenfield, mehr Interesse an Produzenten mit berechenbarem Cashflow.
+    </p>
+    <p>
+      FAKT: Laut Bloomberg-Daten (historisch) laufen Mining-Gro&szlig;projekte im Schnitt 30-40% &uuml;ber Budget. Jansen Stage 2 mit +41% f&uuml;gt sich exakt in dieses Muster ein. Kein Ausrei&szlig;er &mdash; Norm.
+    </p>
+    <p>
+      Das beeinflusst auch, wie Produzenten bewertet werden. Wer schon Cash generiert, wird in einem Umfeld steigender Kapitalkosten und Projekt-Risiken relativ attraktiver.
+    </p>
+
+    <h2>&#9918; Was ich konkret beobachte: Thungela und Yancoal</h2>
+
+    <p>
+      Ich halte im Mining-Bereich zwei Produzenten-Positionen: <strong>Thungela Resources</strong> (S&uuml;dafrikanischer Kohle-Produzent, JSE) und <strong>Yancoal Australia</strong> (australischer Kohle-Produzent, ASX). Beide produzieren heute. Kein Bau, kein Writedown-Risiko durch laufende Mega-Projekte.
+    </p>
+    <p>
+      THESE: Der Kontrast zu Jansen ist lehrreich. W&auml;hrend BHP $2,3 Mrd. auf ein noch-nicht-produzierendes Projekt abschreibt, fahren bestehende Kohle-Produzenten bereits Cashflows ein. Das ist ein ganz anderes Risikoprofil &mdash; auch wenn die Asset-Klasse Rohstoffe dieselbe ist.
+    </p>
+    <p>
+      Das bedeutet nicht, dass Kohle-Aktien automatisch besser als Kali-Aktien sind. Das bedeutet, dass "laufende Produktion vs. Baustelle" ein zentrales Unterscheidungsmerkmal beim Investieren in Mining ist.
+    </p>
+
+    <div class="risk-box">
+      <strong>&#9888; Risiko-Hinweis:</strong> Produzenten haben ihre eigenen Risiken: Rohstoffpreise, geopolitische Lage, operative Probleme. Thungela und Yancoal sind Kohle-Produzenten in einer Energiewende-Welt. Der Sektor hat eigene Risiken. Keine Anlageberatung &mdash; nur mein pers&ouml;nlicher Denkrahmen.
+    </div>
+
+    <h2>&#127758; Das gr&ouml;&szlig;ere Bild: Mining-Superzyklus und Kapitaldisziplin</h2>
+
+    <p>
+      Jansen steht nicht allein. Wir haben gerade ein Marktumfeld, in dem viele Mining-Konzerne &uuml;berlegen, ob Greenfield-Projekte noch wirtschaftlich sind. Kupfer braucht neue Quellen &mdash; aber neue Kupferminen kosten 10+ Jahre und Milliarden. Lithium-Projekte werden r&uuml;ckgestellt, weil der Preis gef&auml;llt ist. Nickel k&auml;mpft gegen indonesisches Angebot.
+    </p>
+    <p>
+      THESE: Der Mining-Sektor geht durch eine Phase der Kapitaldisziplin. Nicht weil Rohstoffe unattraktiv sind &mdash; sondern weil die Kapitalm&auml;rkte Projekte hart bewerten. Das beg&uuml;nstigt Unternehmen, die bereits in Produktion sind und Cashflow zur&uuml;ckgeben k&ouml;nnen. Greenfield-Entwickler m&uuml;ssen heute jeden Dollar rechtfertigen.
+    </p>
+    <p>
+      Der Jansen-Writedown ist ein Datenpunkt in diesem Muster. BHP ist ein exzellentes Unternehmen mit einer starken Bilanz &mdash; und trotzdem l&auml;uft das Projekt um 41% &uuml;ber Budget. Was sagt das &uuml;ber kleinere Projekte mit weniger Polster?
+    </p>
+
+    <!-- AdSense: Vor Footer -->
+    <div style="text-align:center;margin:32px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7097302643579933"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <h2>&#128270; Mein Fazit</h2>
+
+    <p>
+      Der BHP Jansen Writedown ist kein Weltuntergangs-Signal f&uuml;r Mining. BHP bleibt ein Riese mit einer diversifizierten Basis aus Kupfer, Eisenerz und jetzt Kali. Jansen Stage 1 l&auml;uft Mitte 2027 an &mdash; das Projekt lebt.
+    </p>
+    <p>
+      Aber der Writedown liefert drei klare Lektionen:
+    </p>
+    <ol style="color:#c8cfe0;line-height:2;">
+      <li><strong>Greenfield-Kostens&auml;tze sind keine Garantien.</strong> +41% auf das gr&ouml;&szlig;te Projekt der BHP-Geschichte zeigt: Auch die Besten liegen daneben.</li>
+      <li><strong>Zeitverz&ouml;gerungen fressen Renditen.</strong> Zwei Jahre sp&auml;ter produzieren hei&szlig;t: zwei Jahre weniger Cashflow, zwei Jahre mehr Kapitalkosten.</li>
+      <li><strong>Produzenten vs. Entwickler ist kein kleiner Unterschied.</strong> Wer heute Cash macht, sitzt auf der sicheren Seite des Mining-Zyklus.</li>
+    </ol>
+    <p>
+      F&uuml;r mein Depot bleibt das Prinzip: Hard Assets, laufende Produktion, Cashflow heute. Nicht: "Vielleicht in f&uuml;nf Jahren, wenn alles nach Plan l&auml;uft."
+    </p>
+
+    <!-- CTA Box: InvestingPro -->
+    <div class="cta-box">
+      <p style="color:#d4af37;font-weight:700;margin:0 0 8px;">&#128269; Mining-Daten richtig einsch&auml;tzen</p>
+      <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.93rem;">
+        F&uuml;r Fundamental-Analysen im Mining-Sektor nutze ich InvestingPro. Bilanzen, Fair Value, Cashflow-Historien &mdash; alles an einem Ort. &Uuml;ber meinen Link gibt es <strong>15% Rabatt on top</strong>, auch auf laufende Aktionen.
+      </p>
+      <a href="https://www.investing-referral.com/mbcapital3/" class="cta-btn" rel="noopener noreferrer" target="_blank">
+        &#128269; InvestingPro &mdash; 15% Rabatt (Affiliate*)
+      </a>
+      <p style="color:#6b7a99;font-size:0.78rem;margin:8px 0 0;">*Affiliate-Link &mdash; keine Mehrkosten f&uuml;r dich. Provision hilft, diesen Blog am Laufen zu halten.</p>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="related-articles">
+      <h3>Mehr zu Mining &amp; Hard Assets</h3>
+      <ul>
+        <li><a href="/mining-aktien-superzyklus">&#128202; Mining Superzyklus &mdash; Der komplette Guide</a></li>
+        <li><a href="/blog/thungela-resources-analyse-2026.html">&#9981; Thungela Analyse 2026</a></li>
+        <li><a href="/blog/yancoal-australia-analyse-2026.html">&#9981; Yancoal Australien Analyse 2026</a></li>
+        <li><a href="/blog/bhp-analyse-2026.html">&#9981; BHP Aktie 2026: Vollst&auml;ndige Analyse</a></li>
+        <li><a href="/blog/mining-aktien-ueberblick-2026.html">&#128202; Mining Aktien &Uuml;berblick 2026</a></li>
+        <li><a href="/dividenden-strategie">&#128178; Dividendenstrategie &mdash; Hub</a></li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <section style="margin:40px 0;">
+      <h2>H&auml;ufige Fragen zum BHP Jansen Writedown</h2>
+
+      <details style="border:1px solid rgba(212,175,55,0.2);border-radius:8px;padding:14px 18px;margin:12px 0;">
+        <summary style="color:#d4af37;cursor:pointer;font-weight:700;">Was ist der BHP Jansen Writedown und wie hoch ist er?</summary>
+        <p style="color:#c8cfe0;margin:10px 0 0;">BHP hat am 18. Juni 2026 eine Wertberichtigung von $2,3 Milliarden USD auf das Jansen Stage 2 Projekt angek&uuml;ndigt. Die Gesamtkosten f&uuml;r Stage 2 stiegen von $4,9 Mrd. auf $6,9 Mrd. &mdash; ein Plus von 41%. Quelle: Bloomberg, 18.06.2026.</p>
+      </details>
+
+      <details style="border:1px solid rgba(212,175,55,0.2);border-radius:8px;padding:14px 18px;margin:12px 0;">
+        <summary style="color:#d4af37;cursor:pointer;font-weight:700;">Wann startet BHP Jansen Stage 1 die Produktion?</summary>
+        <p style="color:#c8cfe0;margin:10px 0 0;">Jansen Stage 1 soll Mitte 2027 starten. Gesamtkosten: $8,4 Mrd. Stage 2 ist jetzt auf GJ2031 verschoben (war GJ2029). Quelle: Globe and Mail, 18.06.2026.</p>
+      </details>
+
+      <details style="border:1px solid rgba(212,175,55,0.2);border-radius:8px;padding:14px 18px;margin:12px 0;">
+        <summary style="color:#d4af37;cursor:pointer;font-weight:700;">Warum laufen Mining-Gro&szlig;projekte immer &uuml;ber Budget?</summary>
+        <p style="color:#c8cfe0;margin:10px 0 0;">Gro&szlig;projekte in rohstoffabbauenden Branchen haben strukturell hohe Unsicherheiten: Geologie, Infrastruktur, Rohstoffpreise f&uuml;r Stahl und Beton, Arbeitskr&auml;ftemangel in abgelegenen Regionen. Bloomberg-Daten zeigen historisch +30-40% Budget&uuml;berschreitung als Norm bei Mega-Projekten im Mining.</p>
+      </details>
+
+      <details style="border:1px solid rgba(212,175,55,0.2);border-radius:8px;padding:14px 18px;margin:12px 0;">
+        <summary style="color:#d4af37;cursor:pointer;font-weight:700;">Was bedeutet das f&uuml;r Mining-Aktien wie Thungela oder Yancoal?</summary>
+        <p style="color:#c8cfe0;margin:10px 0 0;">Produzenten die bereits in Betrieb sind, haben kein Greenfield-Kostenrisiko mehr. Der Jansen-Writedown best&auml;tigt das strukturelle Argument: Laufende Produktion mit bekannten Kosten vs. Baustellenrisiko. Das ist kein Freifahrtschein f&uuml;r Produzenten &mdash; die haben eigene Risiken &mdash; aber das Risikoprofil ist ein anderes.</p>
+      </details>
+    </section>
+
+    <!-- Autorenbox -->
+    <div class="author-box">
+      <div class="author-box-text">
+        <h4>Marco Bozem &mdash; MB Capital Strategies</h4>
+        <p>
+          Privatinvestor, Fokus Hard Assets &amp; Dividenden: Shipping, Mining, Energie, Pipelines, REITs. Betreibt MB Capital Strategies als Bildungsplattform f&uuml;r hartgesottene Dividenden-Investoren. Alle Inhalte sind pers&ouml;nliche Meinungen und keine Anlageberatung.
+        </p>
+        <p style="margin-top:8px;">
+          <a href="/ueber-mich" style="color:#d4af37;text-decoration:none;">Mehr &uuml;ber Marco &rarr;</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer-box">
+      <strong>Disclaimer:</strong> Keine Anlageberatung. Alle Inhalte auf MB Capital Strategies dienen ausschlie&szlig;lich der Information und Unterhaltung. Jede Investitionsentscheidung liegt in eigener Verantwortung. Past performance is no guarantee of future results. Der Autor h&auml;lt zum Zeitpunkt der Ver&ouml;ffentlichung keine BHP-Aktien. Thungela und Yancoal werden als Depotpositionen gehalten.
+    </div>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <p>
+    &copy; 2026 MB Capital Strategies &mdash;
+    <a href="/impressum">Impressum</a> &mdash;
+    <a href="/datenschutz">Datenschutz</a> &mdash;
+    <a href="/blog/index.html">Blog</a>
+  </p>
+  <p style="margin-top:8px;">Englische Version: <a href="https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">BHP Jansen Writedown &mdash; EN</a></p>
+</footer>
+
+</body>
+</html>
