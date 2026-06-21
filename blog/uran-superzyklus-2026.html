@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+
+<!-- LCP-Critical-CSS -->
+<style>
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+h2{font-size:clamp(1.25rem,3vw,1.7rem);font-weight:700;color:var(--gold);margin:40px 0 14px;line-height:1.2}
+h3{font-size:1.05rem;font-weight:700;color:#f0f1f5;margin:28px 0 10px}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+.breadcrumbs a:hover{color:var(--gold)}
+.highlight{background:#1a1d23;border-left:4px solid #d4af37;padding:14px 18px;margin:22px 0;border-radius:8px}
+.risk-box{background:#22151a;border-left:4px solid #ff6b6b;padding:14px 18px;margin:22px 0;border-radius:8px;color:#f0f1f5}
+.info-box{background:#1a1f2b;padding:14px 18px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:24px 0}
+.data-card{background:#0c0e16;border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:16px;text-align:center}
+.data-card .val{font-size:1.6rem;font-weight:800;color:#d4af37;line-height:1.1}
+.data-card .lbl{font-size:.78rem;color:#9aa0b8;margin-top:6px}
+.cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0;text-align:center}
+.cta-box p{color:#cfd6e6;margin:0 0 14px;font-size:.95rem}
+.sources-box{background:#1a1d23;border-left:4px solid #d4af37;padding:14px 20px;margin-top:30px;border-radius:8px;font-size:.88em;color:#9aa0b8}
+.sources-box a{color:#d4af37;text-decoration:none}
+.sources-box a:hover{text-decoration:underline}
+.disclaimer{background:#1a1d23;padding:14px 18px;margin-top:40px;border-radius:8px;font-size:.85em;color:#7a8499;line-height:1.6}
+footer{text-align:center;padding:25px;font-size:.9em;color:#9aa6c0;border-top:1px solid rgba(255,255,255,.05);margin-top:60px}
+footer a{color:#d4af37;text-decoration:none}
+footer a:hover{text-decoration:underline}
+nav.nav-links a{color:#cfd6e6;text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:6px;transition:color .2s}
+nav.nav-links a:hover{color:#d4af37}
+.nav-mobile{display:none}
+@media(max-width:768px){nav.nav-links{display:none}.nav-hamburger{display:flex}.nav-mobile{display:none;flex-direction:column;background:rgba(5,5,8,.97);padding:16px 20px;gap:10px}.nav-mobile.open{display:flex}.nav-mobile a{color:#cfd6e6;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}h1{font-size:1.6rem}}
+</style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Uran-Superzyklus 2026: Wenn die Nachfrage verdoppelt — das Angebot aber nicht">
+  <meta property="og:description" content="Uran-Spotpreis ~85 USD/lb, Kazatomprom kürzt 10%, 440 Reaktoren laufen, 70 im Bau. Strukturelles Defizit bis 2040: 130 Mio. lb. Die Zahlen hinter dem Superzyklus.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-mining.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Uran-Superzyklus 2026: Wenn die Nachfrage verdoppelt — das Angebot aber nicht">
+  <meta name="twitter:description" content="Kazatomprom kürzt 10%, 440 Reaktoren aktiv, WNA sieht 150.000 t Bedarf bis 2040. Strukturelles Defizit 31 Mio. lb jetzt, 130 Mio. lb bis 2040.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-mining.jpg">
+  <title>Uran-Superzyklus 2026: Wenn die Nachfrage verdoppelt — das Angebot aber nicht</title>
+  <meta name="description" content="Uran-Spotpreis ~85 USD/lb, Kazatomprom kürzt 10% Produktion, 70 Reaktoren im Bau. WNA: Bedarf steigt auf 150.000 t bis 2040. Das strukturelle Defizit ist real — die Zahlen im Überblick.">
+  <meta name="author" content="Marco Bozem">
+  <meta name="keywords" content="Uran Superzyklus 2026, Uran Spotpreis, Kazatomprom, Kernkraft Renaissance, Uran Aktien, Hard Assets, Nuclear Energy, Uran Nachfrage 2026, MB Capital Strategies">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Uran-Superzyklus 2026: Wenn die Nachfrage verdoppelt — das Angebot aber nicht",
+  "description": "Uran-Spotpreis ~85 USD/lb, Kazatomprom kürzt 10% Produktion, 440 Reaktoren aktiv, 70 im Bau. WNA-Prognose 150.000 t bis 2040. Strukturelles Defizit 31 Mio. lb in 2026, 130 Mio. lb bis 2040.",
+  "url": "https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html",
+  "image": "https://mbcapitalstrategies.com/assets/og-mining.jpg",
+  "datePublished": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "inLanguage": "de",
+  "articleSection": "Hard Assets",
+  "wordCount": 1200,
+  "keywords": ["Uran Superzyklus", "Kazatomprom", "Kernkraft Renaissance", "Uran Spotpreis", "Nuclear Energy", "Hard Assets", "Rohstoffe 2026"]
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mining Aktien",
+      "item": "https://mbcapitalstrategies.com/mining-aktien/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Uran-Superzyklus 2026",
+      "item": "https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html"
+    }
+  ]
+}</script>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/mining-aktien/">Mining Aktien</a>
+    <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+</header>
+<script>
+  document.getElementById('navHamburger').addEventListener('click',function(){
+    var m=document.getElementById('navMobile');
+    var open=m.classList.toggle('open');
+    this.setAttribute('aria-expanded',open);
+  });
+</script>
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Startseite</a> &rsaquo;
+  <a href="/mining-aktien/">Mining Aktien</a> &rsaquo;
+  Uran-Superzyklus 2026
+</div>
+
+<div class="container">
+
+  <!-- EN Language Switch -->
+  <aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">
+    &#127482;&#127480; <strong style="color:#f5f6fa">English version:</strong>
+    <a href="https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Read this analysis in English</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://mbcapitalstrategiesgloabal.com/" style="color:#d4af37">MB Capital Strategies Global</a>
+  </aside>
+
+  <p style="color:#7a8499;font-size:0.82rem;margin:4px 0 16px;">&#128197; 21. Juni 2026 &nbsp;&middot;&nbsp; Marco Bozem</p>
+
+  <!-- AEO Answer-First Block -->
+  <div style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 28px;font-size:.95rem;line-height:1.65;color:#cfd6e6">
+    <strong style="color:#D4AF37">Uran-Superzyklus 2026 — Kurzantwort:</strong><br>
+    Der Uran-Spotpreis liegt bei ~85 USD/lb (Jahreshoch 101,41 USD/lb im Januar). Kazatomprom — weltgrößter Produzent — meldet 2026 eine Produktion von 29.697 t U3O8, das sind 10% weniger als geplant. Gleichzeitig sind 440 Reaktoren weltweit in Betrieb, 70 weitere im Bau. Die WNA prognostiziert einen Bedarf von 150.000+ t bis 2040 — mehr als doppelt so viel wie heute. Das strukturelle Defizit für 2026 liegt bei ~31 Mio. lb. Das ist kein Hype. Das sind Zahlen.
+  </div>
+
+  <h1>Uran-Superzyklus 2026: Wenn die Nachfrage verdoppelt — das Angebot aber nicht</h1>
+
+  <!-- Key Data Grid -->
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="val">~85 USD</div>
+      <div class="lbl">Spotpreis/lb U3O8 (Jun 2026)</div>
+    </div>
+    <div class="data-card">
+      <div class="val">−10 %</div>
+      <div class="lbl">Kazatomprom Produktionskürzung 2026</div>
+    </div>
+    <div class="data-card">
+      <div class="val">440 + 70</div>
+      <div class="lbl">Reaktoren aktiv + im Bau weltweit</div>
+    </div>
+    <div class="data-card">
+      <div class="val">150.000 t</div>
+      <div class="lbl">WNA-Bedarf bis 2040</div>
+    </div>
+    <div class="data-card">
+      <div class="val">31 Mio. lb</div>
+      <div class="lbl">Strukturelles Defizit 2026</div>
+    </div>
+    <div class="data-card">
+      <div class="val">93 USD/lb</div>
+      <div class="lbl">Citigroup-Preisprognose 2026 Schnitt</div>
+    </div>
+  </div>
+
+  <h2>Der Ausgangspunkt: Was gerade passiert</h2>
+
+  <p>
+    Wer sich den Uran-Markt 2026 anschaut, sieht eine klassische Rohstoff-Setup-Situation: Die Nachfrageseite wächst strukturell, die Angebotsseite stagniert — und der Preis ist erst auf dem Weg nach oben, nicht am Ziel.
+  </p>
+
+  <p>
+    <strong>FAKT:</strong> Der Uran-Spotpreis lag im Januar 2026 bei 101,41 USD/lb — dem höchsten Stand seit Jahrzehnten. Seitdem ist er auf ~85 USD/lb zurückgekommen. (Quelle: TradingEconomics, InvestingNews, Juni 2026)
+  </p>
+
+  <p>
+    Das klingt nach Abschwung, ist aber aus meiner Sicht eher eine Konsolidierung. Die fundamentale Geschichte hat sich nicht verändert.
+  </p>
+
+  <div class="highlight">
+    <strong>THESE:</strong> Der Rückgang von 101 auf 85 USD/lb ist keine Trendwende — es ist Verschnaufpause auf einem strukturell angespannten Markt. Solange das Angebotsdefizit wächst und die Reaktor-Pipeline sich füllt, bleibt der Aufwärtsdruck real.
+  </div>
+
+  <h2>Kazatomprom: Der Elefant im Raum kürzt die Produktion</h2>
+
+  <p>
+    Kazatomprom aus Kasachstan ist der weltgrößte Uranproduzent. Wer den Markt versteht, muss zuerst Kasachstan verstehen — denn ein einziges Land hat mehr Marktmacht über Uran als Saudi-Arabien über Öl.
+  </p>
+
+  <p>
+    <strong>FAKT:</strong> Für 2026 meldet Kazatomprom eine Produktion von 29.697 t U3O8 — das sind 10% weniger als die geplanten 32.777 t. (Quelle: World Nuclear News Juni 2026, Enerdata)
+  </p>
+
+  <p>
+    Warum? Schwefelsäure-Engpässe, geologische Herausforderungen in bestimmten Minen, Infrastruktur-Verzögerungen. Kein einmaliges Event — das sind strukturelle Probleme, die sich nicht über Nacht lösen lassen.
+  </p>
+
+  <div class="info-box">
+    <strong>Einordnung:</strong> Stellt euch vor, Saudi-Aramco würde ankündigen, 10% weniger Öl zu fördern als geplant. Was würde mit dem Ölpreis passieren? Genau das Gleiche spielt sich bei Uran gerade ab — nur unter dem Radar der meisten Mainstream-Investoren.
+  </div>
+
+  <h2>Die Nachfrageseite: Kernkraft-Renaissance ist kein Marketingbegriff mehr</h2>
+
+  <p>
+    440 Reaktoren laufen weltweit. 70 weitere sind im Bau. 100 sind in der Planung. (FAKT: WNA via Goldinvest.de, Sprott 2026)
+  </p>
+
+  <p>
+    Wer die Zahlen sieht, versteht: Das ist keine Rückkehr der Kernkraft aus Nostalgie — das ist eine global koordinierte Entscheidung, weil erneuerbare Energien allein den Grundlastbedarf nicht decken.
+  </p>
+
+  <p>
+    Die WNA (World Nuclear Association) hat ihre SMR-Prognose (Small Modular Reactors) zuletzt um +42% angehoben. (FAKT: WNA via Goldinvest.de) SMRs sind die nächste Welle — kompaktere, schneller baubare Reaktoren, die vor allem in Regionen interessant werden, die keine konventionellen Großreaktoren finanzieren können.
+  </p>
+
+  <div class="highlight">
+    <strong>FAKT:</strong> Die WNA prognostiziert im Referenz-Szenario einen Bedarf von 68.920 t (2025) steigend auf 150.000+ t bis 2040. (Quelle: WNA Referenz-Szenario via Sprott)
+  </div>
+
+  <p>
+    Das ist mehr als eine Verdopplung der heutigen Nachfrage. Das ist nicht die Bullcase — das ist das <em>Referenz</em>-Szenario.
+  </p>
+
+  <h2>Das strukturelle Defizit: Kein Übergangsphänomen</h2>
+
+  <p>
+    Hier ist die eigentliche Brisanz: Die Mine, die heute gebaut werden muss, um 2040 zu produzieren, müsste im Idealfall bereits genehmigt sein. Sie ist es in den meisten Fällen nicht.
+  </p>
+
+  <p>
+    <strong>FAKT:</strong> Das strukturelle Angebotsdefizit für 2026 wird auf ~31 Mio. lb geschätzt. Bis 2040 könnte dieses Defizit auf 130 Mio. lb anwachsen. (Quelle: Sprott, DiscoveryAlert.com.au)
+  </p>
+
+  <p>
+    Warum wächst das Defizit, wenn der Preis steigt? Weil Bergbau kein schnelles Spiel ist. Zwischen Explorationserfolg und erstem Produktionstag liegen im Schnitt 10–15 Jahre. Der Preis steigt heute — aber die Kapazitäten, die darauf reagieren, werden frühestens 2032–2035 online gehen.
+  </p>
+
+  <div class="risk-box">
+    <strong>Risiken, die man kennen muss:</strong><br>
+    Kasachstan ist ein Frontier-Markt mit geopolitischen Risiken. Regulatorische Hürden für Reaktorneubauten (gerade in Europa) können die Nachfragedynamik verzögern. Neue Minen in Kanada, Namibia oder Niger brauchen Zeit — und oft politische Stabilität, die nicht garantiert ist. Wer in Uranproduzenten investiert, trägt Länderrisiko, Betriebsrisiko und Preisrisiko. Das muss in die Kalkulation.
+  </div>
+
+  <h2>Was sagen die Analysten?</h2>
+
+  <p>
+    <strong>FAKT:</strong> Die Citigroup prognostiziert für 2026 einen Uran-Spotpreis-Schnitt von 93 USD/lb. (Quelle: Miningscout.de)
+  </p>
+
+  <p>
+    Das wäre gegenüber dem aktuellen Niveau (~85 USD/lb) nochmals ein Aufschlag von ~10%. Für den Gesamtjahresschnitt müsste der Preis in H2 deutlich anziehen.
+  </p>
+
+  <p>
+    <strong>THESE:</strong> Ich halte die Richtung für plausibel, aber Punkt-Prognosen für einen dünn gehandelten physischen Markt wie Uran sind mit Vorsicht zu genießen. Der Markt kann sich schneller bewegen als Analysten-Modelle ahnen — in beide Richtungen.
+  </p>
+
+  <h2>Wie man als Privatanleger an diesem Markt teilnehmen kann</h2>
+
+  <p>
+    Direktes Uran kaufen ist für Privatanleger praktisch nicht möglich — der Markt ist ein Großhandelsmarkt mit langfristigen Lieferverträgen zwischen Produzenten und Versorgungsunternehmen.
+  </p>
+
+  <p>
+    Die gängigen Wege für Privatanleger:
+  </p>
+
+  <ul>
+    <li><strong>Uranproduzenten:</strong> Kazatomprom (KAP), Cameco (CCJ), NexGen Energy, Paladin Energy — direkt an Produktion gebunden, höchste Volatilität</li>
+    <li><strong>Uranium-ETFs:</strong> z.B. Global X Uranium ETF (URA) oder Sprott Uranium Miners ETF (URNM) — Diversifikation über mehrere Produzenten</li>
+    <li><strong>Physisches Uran via ETP:</strong> z.B. Sprott Physical Uranium Trust (U.UN) — bildet den physischen Spotpreis nach</li>
+  </ul>
+
+  <p>
+    Über Broker wie <strong>Trade Republic</strong> oder <strong>Scalable Capital</strong> sind die meisten dieser Instrumente handelbar. Wichtig: Uran-Titel sind volatile Rohstoff-Investments — Positionsgröße entsprechend wählen.
+  </p>
+
+  <div class="cta-box">
+    <p>Mehr zu Rohstoff-Superzyklen und Mining-Aktien mit Dividende auf MB Capital Strategies:</p>
+    <a href="/rohstoff-superzyklus-master.html" style="display:inline-block;padding:12px 22px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;margin:4px">Rohstoff-Superzyklus Master-Guide</a>
+    <a href="/mining-aktien/" style="display:inline-block;padding:12px 22px;background:transparent;color:#d4af37;font-weight:700;border-radius:8px;text-decoration:none;border:1px solid #d4af37;margin:4px">Mining Aktien Übersicht</a>
+  </div>
+
+  <h2>Mein Fazit: Strukturell bull, taktisch geduldig</h2>
+
+  <p>
+    Wenn ich die Datenpunkte nebeneinander lege — Kazatomprom kürzt 10%, 70 Reaktoren im Bau, WNA verdoppelt die Nachfrageprognose bis 2040, strukturelles Defizit wächst — dann ist die Richtung für den Uranmarkt klar.
+  </p>
+
+  <p>
+    Der Preis schwankt kurzfristig. Aber wer in einem Markt investiert, wo das Angebot strukturell nicht mit der Nachfrage wachsen kann, und wo neue Kapazitäten 10–15 Jahre brauchen, der muss einen langen Atem haben.
+  </p>
+
+  <p>
+    <strong>THESE:</strong> Uran ist aus meiner Sicht einer der überzeugendsten strukturellen Commodity-Trades für den Rest der 2020er Jahre. Nicht wegen Hype, sondern wegen Physik — Reaktoren brauchen Brennstoff, Brennstoff ist knapp, und neue Minen entstehen nicht über Nacht.
+  </p>
+
+  <!-- Interne Verlinkungen -->
+  <nav class="related-articles" aria-label="Verwandte Artikel">
+    <h3>Weitere Rohstoff-Analysen</h3>
+    <ul>
+      <li><a href="/blog/rohstoff-superzyklus-2025.html">&#9935; Rohstoff-Superzyklus 2025 — Kupfer, Uran, Öl im Überblick</a></li>
+      <li><a href="/blog/rohstoff-zyklus-kaufzeitpunkt-2026.html">&#9201; Rohstoff-Zyklus: Der richtige Kaufzeitpunkt 2026</a></li>
+      <li><a href="/blog/barrick-gold-analyse-2026.html">&#9885; Barrick Gold Analyse 2026</a></li>
+      <li><a href="/blog/b2gold-analyse-2026.html">&#9885; B2Gold Analyse 2026</a></li>
+      <li><a href="/rohstoff-superzyklus-master.html">&#127755; Rohstoff Superzyklus Master-Guide</a></li>
+    </ul>
+  </nav>
+
+  <!-- Quellen -->
+  <div class="sources-box">
+    <strong>Quellen &amp; Fakten-Basis:</strong><br>
+    Kazatomprom 2026 Produktion: <a href="https://www.world-nuclear-news.org" target="_blank" rel="noopener">World Nuclear News</a> Juni 2026 + Enerdata &nbsp;&middot;&nbsp;
+    Uran-Spotpreis: <a href="https://tradingeconomics.com/commodity/uranium" target="_blank" rel="noopener">TradingEconomics</a> + <a href="https://investingnews.com/uranium-price/" target="_blank" rel="noopener">InvestingNews</a> &nbsp;&middot;&nbsp;
+    Reaktorzahlen + WNA-Nachfrageprognose: <a href="https://world-nuclear.org" target="_blank" rel="noopener">WNA</a> via Goldinvest.de + Sprott 2026 &nbsp;&middot;&nbsp;
+    Strukturelles Defizit: Sprott + <a href="https://discoveryalert.com.au" target="_blank" rel="noopener">DiscoveryAlert.com.au</a> &nbsp;&middot;&nbsp;
+    Citigroup-Prognose: <a href="https://miningscout.de" target="_blank" rel="noopener">Miningscout.de</a>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <strong>Risikohinweis &amp; Disclaimer:</strong> Dieser Artikel dient ausschließlich der Information und stellt keine Anlageberatung dar. Investitionen in Rohstoffe und Bergbauunternehmen sind mit erheblichen Risiken verbunden, einschließlich des vollständigen Kapitalverlustes. Die genannten Zahlen und Prognosen basieren auf öffentlich verfügbaren Quellen (Stand: Juni 2026) und können sich jederzeit ändern. Bitte konsultiere vor Anlageentscheidungen einen unabhängigen Finanzberater. MB Capital Strategies übernimmt keine Haftung für Entscheidungen, die auf Basis dieses Artikels getroffen werden.
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p>&copy; 2026 MB Capital Strategies &middot; <a href="/impressum/">Impressum</a> &middot; <a href="/datenschutz/">Datenschutz</a> &middot; <a href="/blog/">Blog</a></p>
+</footer>
+
+</body>
+</html>
