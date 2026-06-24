@@ -269,6 +269,13 @@
 
 <body>
 
+<!-- InvestingPro Sommer-Sale Top-Bar (default hidden) -->
+<div class="ip-sale" style="display:none;background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff">
+  <strong style="color:#d4af37">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong> &nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;
+  <a href="/investingpro-sommer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px">60 %+15 % sichern →</a>
+  <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px">*Affiliate-Link</span>
+</div>
+
 <!-- ✅ GEÄNDERT: Navigation mit Hubs erweitert -->
 <header class="nav">
   <div class="nav-inner">
@@ -447,14 +454,33 @@
 <h2 class="category-title">📊 Analysen & Daten</h2>
 <section class="grid">
 
-  <div class="card">
+  <div class="card" style="position:relative;overflow:hidden">
+    <!-- Sale-Badge (nur im Juli sichtbar via .ip-sale) -->
+    <div class="ip-sale" style="display:none;position:absolute;top:10px;right:10px;background:#d4af37;color:#050508;font-weight:800;font-size:0.7rem;padding:3px 10px;border-radius:12px;letter-spacing:.04em">SOMMER-SALE</div>
     <h3>InvestingPro</h3>
     <p>Mein Analyse-Tool Nr. 1 – Fair Value, Cashflows, Screener, Earnings.</p>
-    <p class="usp">💛 Vorteil: <strong>15 % Rabatt</strong> über meinen Link.</p>
-    <a class="btn" target="_blank" rel="nofollow sponsored noopener"
-       href="https://www.investing-referral.com/mbcapital3/">
-       15 % Rabatt sichern →
-    </a>
+    <!-- Evergreen (dauerhaft) -->
+    <div class="ip-evergreen">
+      <p class="usp">Vorteil: <strong>15 % Rabatt</strong> über meinen Link.</p>
+      <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+         href="https://www.investing-referral.com/mbcapital3/">
+         15 % Rabatt sichern →
+      </a>
+    </div>
+    <!-- Sale (nur Juli) -->
+    <div class="ip-sale" style="display:none">
+      <p class="usp" style="color:#d4af37"><strong>Sommer-Sale: 60 % + 15 % Rabatt</strong> — günstigster Preis des Jahres.</p>
+      <a class="btn" target="_blank" rel="nofollow sponsored noopener"
+         href="https://www.investing-referral.com/mbcapital3/"
+         style="background:#d4af37;color:#050508;font-weight:700">
+         60 % + 15 % sichern →
+      </a>
+      <p style="font-size:0.75rem;margin-top:6px;color:#8899bb">*Affiliate-Link – Provision ohne Mehrkosten für dich.</p>
+    </div>
+    <!-- Evergreen disclosure -->
+    <div class="ip-evergreen">
+      <p style="font-size:0.75rem;margin-top:8px;color:#8899bb">*Affiliate-Link – Provision ohne Mehrkosten für dich.</p>
+    </div>
   </div>
 
   <div class="card">
@@ -735,7 +761,8 @@
 </footer>
 <script src="/assets/js/nav.min.js" defer></script>
 
-
+<!-- InvestingPro Sale Self-Expiry -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
 
 </body>
 </html>

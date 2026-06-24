@@ -498,6 +498,13 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
+<!-- InvestingPro Sommer-Sale Top-Bar (default hidden, Inline-JS blendet im Juli-Fenster ein) -->
+<div class="ip-sale" style="display:none;background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff;z-index:90;position:relative">
+  <strong style="color:#d4af37">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong> &nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;
+  <a href="/investingpro-sommer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px">60 %+15 % sichern →</a>
+  <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px">*Affiliate-Link</span>
+</div>
+
 <div class="scroll-progress" id="scroll-progress"></div>
 
 <header class="header" id="header">
@@ -1589,6 +1596,8 @@ In deinem <em>Posteingang.</em></h2>
 <!-- AdSense nach LCP geladen — verhindert dass Google Funding Choices CMP Hero-Render blockiert -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
+<!-- InvestingPro Sale Self-Expiry: zeigt .ip-sale im Juli-Fenster, blendet .ip-evergreen aus -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
 
 </body>
 </html>

@@ -166,6 +166,13 @@
 
 <body>
 
+<!-- InvestingPro Sommer-Sale Top-Bar (default hidden) -->
+<div class="ip-sale" style="display:none;background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff">
+  <strong style="color:#d4af37">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong> &nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;
+  <a href="/investingpro-sommer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px">60 %+15 % sichern →</a>
+  <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px">*Affiliate-Link</span>
+</div>
+
 <nav class="nav"></nav>
 
 <main class="container" style="max-width:860px;">
@@ -342,16 +349,31 @@
 <h2 style="color:#d4af37;margin:40px 0 20px;">Meine weiteren Tools – was ich täglich nutze</h2>
 
 <!-- INVESTINGPRO -->
-<div class="broker-card">
+<div class="broker-card" style="position:relative;overflow:hidden">
   <span class="badge">Analyse-Tool Nr. 1</span>
+  <!-- Sale Badge (nur im Juli) -->
+  <div class="ip-sale" style="display:none;position:absolute;top:10px;right:10px;background:#d4af37;color:#050508;font-weight:800;font-size:0.7rem;padding:3px 10px;border-radius:12px">SOMMER-SALE</div>
   <h3>InvestingPro – Fair Value, Cashflows & Screener</h3>
   <p>Bevor ich eine Tanker-Aktie oder einen Goldminer kaufe, prüfe ich drei Dinge in InvestingPro: <strong>Fair Value-Schätzung</strong> (stimmt der Kurs mit dem inneren Wert überein?), <strong>FCF-Wachstum</strong> (liefert das Unternehmen echten Cashflow?) und <strong>Dividenden-Stabilität</strong> (wird die Dividende durch den FCF gedeckt?). Für Shipping-Aktien nutze ich außerdem den integrierten Vergleich mit Peer-Unternehmen.</p>
-  <p>Mit meinem Link bekommst du <strong>15 % Rabatt</strong> auf das InvestingPro-Abo – kein Promo-Code nötig.</p>
-  <a href="https://www.investing-referral.com/mbcapital3/"
-     target="_blank" rel="nofollow sponsored noopener" class="cta-btn-broker">
-    15 % Rabatt sichern →
-  </a>
-  <p class="note-small">⚠️ Enthält Affiliate-Link. Analyse-Tool, kein Broker – kein Investitionsrisiko durch Anmeldung.</p>
+  <!-- Sale-Inhalt (nur Juli) -->
+  <div class="ip-sale" style="display:none">
+    <p style="color:#d4af37;font-weight:700;margin-bottom:8px">Sommer-Sale: 60 % + 15 % Rabatt — günstigster Preis des Jahres. Nur 1.–31. Juli.</p>
+    <a href="https://www.investing-referral.com/mbcapital3/"
+       target="_blank" rel="nofollow sponsored noopener" class="cta-btn-broker"
+       style="background:#d4af37;color:#050508;font-weight:700">
+      60 % + 15 % sichern →
+    </a>
+    <a href="/investingpro-sommer-sale.html" style="display:inline-block;margin-left:10px;color:#d4af37;font-size:0.85rem">Details →</a>
+  </div>
+  <!-- Evergreen-Inhalt -->
+  <div class="ip-evergreen">
+    <p>Mit meinem Link bekommst du <strong>15 % Rabatt</strong> auf das InvestingPro-Abo – kein Promo-Code nötig.</p>
+    <a href="https://www.investing-referral.com/mbcapital3/"
+       target="_blank" rel="nofollow sponsored noopener" class="cta-btn-broker">
+      15 % Rabatt sichern →
+    </a>
+  </div>
+  <p class="note-small">*Affiliate-Link – Provision ohne Mehrkosten für dich. Analyse-Tool, kein Broker.</p>
 </div>
 
 <!-- PARQET -->
@@ -478,7 +500,8 @@
 
 <script src="/assets/js/nav.min.js" defer></script>
 
-
+<!-- InvestingPro Sale Self-Expiry -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
 
 </body>
 </html>
