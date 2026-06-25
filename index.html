@@ -737,11 +737,32 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 <section class="hero" id="hero">
   <div class="wrap hero-inner">
     <div class="hero-content">
-      <div class="hero-issue">
+      <div class="hero-issue" id="hero-issue-de">
         <span class="issue-rule"></span>
-        <span class="issue-no">Ausgabe №49</span>
-        <span>21. Juni 2026</span>
+        <span class="issue-no" id="hero-issue-no">Ausgabe №49</span>
+        <span id="hero-issue-date">21. Juni 2026</span>
       </div>
+      <script>
+      // web-design-agent 2026-06-25: Auto-Ausgabe-Datum — berechnet letzten Sonntag + Nummer
+      // Referenzpunkt: №49 = 2026-06-21 (Sonntag). Kein manueller Update mehr nötig.
+      (function(){
+        var ref=new Date('2026-06-21T00:00:00Z'), refIssue=49;
+        var now=new Date(), day=now.getUTCDay();
+        // Letzter Sonntag = today wenn today=0 (So), sonst today - day Tage zurück
+        var diffToSun=day===0?0:day;
+        var lastSun=new Date(now);
+        lastSun.setUTCDate(now.getUTCDate()-diffToSun);
+        lastSun.setUTCHours(0,0,0,0);
+        var weeksDiff=Math.round((lastSun-ref)/(7*24*3600*1000));
+        var issueNum=refIssue+weeksDiff;
+        var months=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+        var d=lastSun.getUTCDate(), m=months[lastSun.getUTCMonth()], y=lastSun.getUTCFullYear();
+        var noEl=document.getElementById('hero-issue-no');
+        var dtEl=document.getElementById('hero-issue-date');
+        if(noEl && issueNum>0) noEl.textContent='Ausgabe №'+issueNum;
+        if(dtEl) dtEl.textContent=d+'. '+m+' '+y;
+      })();
+      </script>
       <h1 class="display hero-title">
         <span class="w1">Dividenden aus</span>
         <span class="w2"><em>Hard Assets.</em></span>
