@@ -791,18 +791,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         <div class="hero-inline-cta" id="hero-inline-cta-de">
           <!-- CRO 2026-06-15 web-design-agent: Nutzen-Micro-Copy ergänzt — konkretes Versprechen statt reines DSGVO-Label -->
           <label for="hero-email-de" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;opacity:.9;">Newsletter · jeden Sonntag · gratis</label>
-          <!-- CRO 2026-06-20 web-design-agent: BHP Jansen-Writedown $2,3 Mrd Mining-Sektor-Signal — Mining-Hook ergänzt (today-strategy 20.06.). Hormuz-Hook bleibt sekundär. Self-expire: revert to generic after 2026-06-28. -->
-          <p style="font-size:0.8rem;color:var(--fg-muted,#c8cfe0);margin:0 0 8px;font-family:var(--sans,Outfit,system-ui);line-height:1.45;max-width:38ch;">Mining-Sektor, Tanker-Raten &amp; Dividenden-Checks — jede Woche kompakt von Marco. Keine Anlageberatung.</p>
-          <script>
-          // Self-expire: BHP mining hook → revert to generic after 2026-06-28
-          (function(){
-            var d=new Date(), exp=new Date('2026-06-28');
-            if(d>exp){
-              var el=document.currentScript.previousElementSibling;
-              if(el) el.textContent='Tanker-Raten, Dividenden-Checks & Markt-Lage — jede Woche kompakt von Marco. Keine Anlageberatung.';
-            }
-          })();
-          </script>
+          <!-- CRO 2026-06-26 web-design-agent: BHP mining hook expired 2026-06-28 → evergreen text.
+               Self-expire JS removed (was changing p.textContent; now static = no JS execution overhead). -->
+          <p style="font-size:0.8rem;color:var(--fg-muted,#c8cfe0);margin:0 0 8px;font-family:var(--sans,Outfit,system-ui);line-height:1.45;max-width:38ch;">Tanker-Raten, Dividenden-Checks &amp; Markt-Lage — jede Woche kompakt von Marco. Keine Anlageberatung.</p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
             <input type="email" id="hero-email-de" placeholder="deine@email.de" required
               autocomplete="email"
@@ -1153,24 +1144,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Aktualisiert: <time datetime="2026-06-25">25. Juni 2026</time></p>
     </div>
     <div class="insights-list reveal">
-      <!-- CRO 2026-06-20 web-design-agent: BHP Jansen-Writedown Sektor-Signal — Mining-Hook (today-strategy 20.06.). Self-expire: remove highlight after 2026-06-27. -->
-      <!-- CRO-FIX 2026-06-20 web-design-agent: link corrected /mining-aktien/ → /blog/bhp-jansen-writedown-mining-kapital-2026.html. Hub was wrong destination; dedicated Jansen article exists + matches teaser exactly. -->
-      <a class="insight" href="/blog/bhp-jansen-writedown-mining-kapital-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);" id="bhp-mining-signal-20">
+      <!-- CRO 2026-06-26 web-design-agent: BHP mining highlight expired 2026-06-27 → hardened to plain insight entry.
+           Self-expire JS removed (was stripping border/padding/bg on the link element; now static). -->
+      <a class="insight" href="/blog/bhp-jansen-writedown-mining-kapital-2026.html">
         <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Mining · Aktuell</span>
+        <span class="insight-tag">Mining</span>
         <span class="insight-title">BHP schreibt $2,3 Mrd ab — was bedeutet das für Mining-Dividenden?</span>
         <span class="insight-arrow">→</span>
       </a>
-      <script>
-      // Self-expire: remove BHP mining highlight after 2026-06-27
-      (function(){
-        var d=new Date(), exp=new Date('2026-06-27');
-        if(d>exp){
-          var el=document.getElementById('bhp-mining-signal-20');
-          if(el){el.style.borderLeft='';el.style.paddingLeft='';el.style.background='';}
-        }
-      })();
-      </script>
       <!-- CRO 2026-06-19 web-design-agent: FOMC expired highlight removed from static HTML (expired 2026-06-18). Self-expire scripts cleaned. Plain insight entry. -->
       <a class="insight" href="/blog/fomc-juni-2026-hard-assets-zinsen.html">
         <span class="insight-date">2026-06</span>
