@@ -716,6 +716,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .compass-cardinals a b{font-size:11px}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
   /* Mobile newsletter form: stacked layout — prevents awkward mid-wrap on 375px */
+  /* CRO 2026-06-26 web-design-agent: hero-inline-cta needs width:100% so the form fills the
+     full hero width on 375px — without it, the outer flex item auto-sizes to content width
+     and the button+input appear narrower than the viewport, reducing tap area and visual weight */
+  .hero-inline-cta{width:100%}
   .hero-inline-cta>div{flex-direction:column;align-items:stretch}
   .hero-inline-cta input[type="email"]{flex:none;width:100%;box-sizing:border-box}
   /* Touch-target min 44px for newsletter subscribe button */
