@@ -553,6 +553,33 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 <p class="seo-internal-link" style="margin:1em 0"><a href="/mining-aktien/">Mining-Aktien Übersicht: BHP, Rio Tinto, Glencore &amp; Co →</a></p>
 <p class="seo-internal-link" style="margin:1em 0"><a href="/shipping/">Shipping-Aktien: Tanker &amp; LNG-Dividenden 2026 →</a></p>
 <p><strong>Tipp:</strong> Berechne deine Dividendenrendite mit dem <a href="/tools/dividendenrechner.html">Kostenlosen Dividendenrechner</a> — inkl. YOC & Reinvest-Effekt.</p>
+<!-- Newsletter CTA — growth-funnel-agent 2026-06-26 -->
+<div style="background:#0f0f1a;border:1px solid rgba(212,175,55,.4);border-radius:8px;padding:22px 24px;margin:32px 0;">
+  <p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.95rem;">Wochenrückblick Hard Assets (kostenlos)</p>
+  <p style="color:#c8cfe0;font-size:0.83rem;line-height:1.5;margin:0 0 14px;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, gratis, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px;">
+    <input type="email" id="mb-nl-bhpjansenwri" placeholder="deine@email.de" required
+      style="padding:10px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.86rem;">
+    <button onclick="mbInlineSubscribe('mb-nl-bhpjansenwri','mb-nl-msg-bhpjansenwri')" data-cta="blog-inline"
+      style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.86rem;white-space:nowrap;">Anmelden</button>
+  </div>
+  <p id="mb-nl-msg-bhpjansenwri" style="color:#6b7a99;font-size:0.75rem;margin:4px 0 0;display:none;min-height:1em;"></p>
+  <p style="color:#555e7a;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO. Double-Opt-In.</p>
+</div>
+<script>
+(function(){
+  if(window.__mbNLInited)return;window.__mbNLInited=true;
+  window.mbInlineSubscribe=function(eId,mId){
+    var el=document.getElementById(eId),msg=document.getElementById(mId);
+    var email=el?el.value.trim():"";
+    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Wird angemeldet...";}
+    fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json();})
+    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler.";}}})    .catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler.";}});
+  };
+})();
+</script>
 </article>
 </div>
 
