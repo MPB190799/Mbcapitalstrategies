@@ -277,6 +277,38 @@ function mbCtaNlSubs(){
 <h3>Was bedeutet "Börsenbrief" vs. "Newsletter"?</h3>
 <p>Im deutschsprachigen Raum bezeichnet "Börsenbrief" traditionell einen kostenpflichtigen Dienst mit konkreten Kauf-/Verkaufsempfehlungen (oft BaFin-reguliert oder mit klarem Disclaimer). "Newsletter" ist breiter — kann kostenlos oder bezahlt sein, reicht von reinen Nachrichten-Updates bis zu tiefgehenden Analysen. Wichtig: Jeder Dienst, der konkrete Kaufempfehlungen ausspricht, bewegt sich rechtlich in der Anlageberatung — prüfen Sie das Impressum und den Disclaimer sorgfältig.</p>
 
+<!-- CRO 2026-06-26 web-design-agent: Newsletter-Signup-CTA eingefügt — Seite zieht "bester Aktien Newsletter" Traffic, hatte aber nur einen Link statt eines echten Forms. Direkter Signup erhöht Conversion vs. Click-Through-Verlust. -->
+<div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.35);border-radius:12px;padding:28px 30px;margin:36px 0;text-align:center;">
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#d4af37;margin:0 0 10px;">Newsletter · jeden Sonntag · gratis</p>
+  <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;color:#f1ecdf;margin:0 0 10px;font-weight:400;letter-spacing:-.01em;">Tanker-Raten, Dividenden-Checks &amp; Markt-Lage</h3>
+  <p style="font-size:0.85rem;color:#a39885;margin:0 0 20px;line-height:1.5;max-width:40ch;margin-left:auto;margin-right:auto;">Jede Woche kompakt von Marco — aus einem echten Privatanleger-Depot. Keine Anlageberatung.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:10px;">
+    <input type="email" id="blog-nl-email-best" placeholder="deine@email.de" autocomplete="email"
+      aria-label="E-Mail für den kostenlosen Sonntags-Newsletter"
+      style="padding:12px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 200px;font-family:'IBM Plex Mono',monospace;box-sizing:border-box;max-width:280px;">
+    <button onclick="mbSubscribeBlock('blog-nl-email-best','blog-nl-msg-best')"
+      style="padding:12px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;">Sonntag-Brief gratis →</button>
+  </div>
+  <p id="blog-nl-msg-best" style="font-size:0.75rem;margin:4px 0 0;display:none;font-family:'IBM Plex Mono',monospace;"></p>
+  <p style="font-size:0.72rem;color:#746b5d;margin:8px 0 0;font-family:'IBM Plex Mono',monospace;">Kein Spam · DOI-bestätigt · Abmeldung jederzeit · DSGVO-konform · <a href="/newsletter-sample.html" style="color:#d4af37;">Beispiel ansehen →</a></p>
+</div>
+<script>
+(function(){
+  if(typeof mbSubscribeBlock==='undefined'){
+    window.mbSubscribeBlock=function(inputId,msgId){
+      var el=document.getElementById(inputId),msg=document.getElementById(msgId);
+      var email=el?el.value.trim():'';
+      if(!email||!email.includes('@')){if(msg){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Bitte gültige E-Mail eingeben.';}return;}
+      if(msg){msg.style.display='block';msg.style.color='#D4AF37';msg.textContent='Anmeldung...';}
+      fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json();})
+      .then(function(d){if(msg){msg.style.display='block';if(d.ok){msg.style.color='#22c55e';msg.textContent=d.msg||'Fast geschafft! Bitte E-Mail bestätigen.';if(el)el.value='';}else{msg.style.color='#ef4444';msg.textContent=d.msg||'Fehler. Nochmal versuchen.';}}}
+      ).catch(function(){if(msg){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Verbindungsfehler.';}});
+    };
+  }
+})();
+</script>
+
 <h2>Weiterführend</h2>
 <ul style="margin:0 0 20px 20px;color:#D4AF37">
 <li><a href="../tools/yield-on-cost-rechner.html">YOC-Rechner: Yield-on-Cost berechnen</a></li>
@@ -290,7 +322,6 @@ function mbCtaNlSubs(){
 <li><a href="../newsletter.html">Jetzt kostenlos anmelden: MB Capital Wochenrückblick →</a></li>
 </ul>
 
-<div 
 <!-- Internal: Free Cashflow Glossar -->
 <div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:12px 16px;margin:16px 0;">
   <p style="margin:0;color:#9aa6c0;font-size:0.85rem;">Begriff: <a href="/glossar/free-cashflow.html" style="color:#D4AF37;font-weight:600;">Free Cashflow (FCF) erklärt — warum er die wichtigste Kennzahl für Dividendeninvestoren ist →</a></p>

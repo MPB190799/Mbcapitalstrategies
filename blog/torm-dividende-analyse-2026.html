@@ -389,6 +389,39 @@
 
 <!-- Verwandte Analysen (batch197) -->
 <p style="margin:16px 0;font-size:0.9rem;color:#c8cfe0;">Verwandte Analysen: <a href="../tools/dividenden-wachstumsrechner.html" style="color:#D4AF37;text-decoration:underline;">Dividendenwachstum Rechner</a> | <a href="../tools/yield-on-cost-rechner.html" style="color:#D4AF37;text-decoration:underline;">YOC-Rechner kostenlos</a> | <a href="/bestenlisten/tankeraktien.html" style="color:#D4AF37;text-decoration:underline;">Tanker-Aktien Überblick</a></p>
+
+<!-- CRO 2026-06-26 web-design-agent: Newsletter-CTA nach Author-Block — TORM ist Top-Depot-Position, hohe Leser-Bindung; CTA nach inhaltlicher Aussage stärker als reine Links -->
+<div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.35);border-radius:12px;padding:24px 28px;margin:32px 0;text-align:center;">
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#d4af37;margin:0 0 8px;">Shipping-Dividenden · jeden Sonntag · gratis</p>
+  <h3 style="font-size:1.4rem;color:#f1ecdf;margin:0 0 8px;font-weight:600;">TORM, Tankerraten &amp; Dividenden-Updates</h3>
+  <p style="font-size:0.85rem;color:#a39885;margin:0 0 18px;line-height:1.5;max-width:42ch;margin-left:auto;margin-right:auto;">Jede Woche Marko-Analyse zu Tanker-Markt, Ex-Dividenden-Terminen &amp; Depot-Updates — direkt ins Postfach. Keine Anlageberatung.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom:8px;">
+    <input type="email" id="blog-nl-email-torm" placeholder="deine@email.de" autocomplete="email"
+      aria-label="E-Mail für den kostenlosen Sonntags-Newsletter"
+      style="padding:12px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 200px;font-family:'IBM Plex Mono',monospace;box-sizing:border-box;max-width:280px;">
+    <button onclick="mbSubscribeBlock('blog-nl-email-torm','blog-nl-msg-torm')"
+      style="padding:12px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;">Sonntag-Brief gratis →</button>
+  </div>
+  <p id="blog-nl-msg-torm" style="font-size:0.75rem;margin:4px 0 0;display:none;font-family:'IBM Plex Mono',monospace;"></p>
+  <p style="font-size:0.72rem;color:#746b5d;margin:6px 0 0;font-family:'IBM Plex Mono',monospace;">Kein Spam · DOI-bestätigt · Abmeldung jederzeit · DSGVO-konform</p>
+</div>
+<script>
+(function(){
+  if(typeof mbSubscribeBlock==='undefined'){
+    window.mbSubscribeBlock=function(inputId,msgId){
+      var el=document.getElementById(inputId),msg=document.getElementById(msgId);
+      var email=el?el.value.trim():'';
+      if(!email||!email.includes('@')){if(msg){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Bitte gültige E-Mail eingeben.';}return;}
+      if(msg){msg.style.display='block';msg.style.color='#D4AF37';msg.textContent='Anmeldung...';}
+      fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json();})
+      .then(function(d){if(msg){msg.style.display='block';if(d.ok){msg.style.color='#22c55e';msg.textContent=d.msg||'Fast geschafft! Bitte E-Mail bestätigen.';if(el)el.value='';}else{msg.style.color='#ef4444';msg.textContent=d.msg||'Fehler. Nochmal versuchen.';}}}
+      ).catch(function(){if(msg){msg.style.display='block';msg.style.color='#ef4444';msg.textContent='Verbindungsfehler.';}});
+    };
+  }
+})();
+</script>
+
 <div class="author-box" style="max-width:860px;margin:40px auto 0;display:flex;align-items:center;gap:16px;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
       <picture>
         <source srcset="/marco.webp" type="image/webp">
