@@ -724,7 +724,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
      and the button+input appear narrower than the viewport, reducing tap area and visual weight */
   .hero-inline-cta{width:100%}
   .hero-inline-cta>div{flex-direction:column;align-items:stretch}
-  .hero-inline-cta input[type="email"]{flex:none;width:100%;box-sizing:border-box}
+  /* BUG-FIX 2026-06-27 web-design-agent: inline-style flex:1 1 180px on input sets flex-basis=180px
+     which becomes HEIGHT in column direction → input rendered 180px tall, CTA below fold.
+     !important overrides inline-style specificity (1000) so the media-query rule wins. */
+  .hero-inline-cta input[type="email"]{flex:none!important;width:100%;box-sizing:border-box;height:auto!important}
   /* Touch-target min 44px for newsletter subscribe button */
   .hero-inline-cta button{width:100%;justify-content:center;min-height:44px;padding-top:13px;padding-bottom:13px}
   .hero-inline-cta input[type="email"]{min-height:44px;padding-top:13px;padding-bottom:13px}
