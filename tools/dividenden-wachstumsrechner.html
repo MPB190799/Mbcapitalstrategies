@@ -951,6 +951,38 @@ document.addEventListener("keydown", e => { if (e.key === "Enter") calcGrowth();
   </div>
 </footer>
 <script src="/assets/js/nav.min.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was zeigt ein Dividendenwachstumsrechner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Dividendenwachstumsrechner projiziert, wie sich deine Dividendenzahlungen mit der Zeit entwickeln — bei konstantem Dividendenwachstum und Reinvestition (DRIP). Eingabe: Startinvestition, aktuelle Rendite, jährliches Dividendenwachstum, Anlagezeitraum. Ergebnis: Jahres-Dividende in 5, 10, 20 Jahren + YOC-Entwicklung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welches Dividendenwachstum ist realistisch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3–7% jährliches Dividendenwachstum gilt als nachhaltig für etablierte Dividendenzahler. Realty Income steigert seit 30 Jahren ~5% jährlich, Kinder Morgan ~3%, Texas Instruments ~10%. Shipping-Aktien (TORM, FLEX LNG) haben variables Dividendenwachstum ohne feste Steigerungsrate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie berechne ich den YOC nach 10 Jahren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YOC nach 10 Jahren = Anfangs-YOC × (1 + Dividendenwachstum)^10. Bei 5% YOC und 7% jährlichem Wachstum: 5% × 1,07^10 = 9,8% YOC nach 10 Jahren. Das bedeutet: dein Original-Investment wirft dann 9,8% ab — ohne weitere Investition. Dieser Zinseszinseffekt ist der Kern der Dividenden-Wachstumsstrategie."
+      }
+    }
+  ]
+}
+</script>
 
 
 
