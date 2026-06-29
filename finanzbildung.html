@@ -259,7 +259,7 @@ body{background:var(--fb-bg);}
     <span class="fb-eyebrow">Für Unternehmen · Mitarbeiter-Benefit</span>
     <h1>Geben Sie Ihrem Team einen Benefit <span class="fb-accent">der wirklich zählt.</span></h1>
     <p class="fb-sub">Ein kompakter Finanzbildungs-Workshop für Ihre Mitarbeitenden — unabhängig, ohne Produktverkauf, ohne Interessenkonflikt. Wissen, das ein Leben lang bleibt.</p>
-    <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20Finanzbildungs-Workshop%20als%20Mitarbeiter-Benefit.%0A%0AUnternehmen%3A%0AAnzahl%20Mitarbeitende%20(ca.)%3A%0AWunschzeitraum%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
+    <a href="#kontakt" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
     <span class="fb-cta-note">Antwort meist innerhalb von 24 Stunden · Unverbindlich</span>
     <div class="fb-hero-meta">
       <span><i></i> Reine Bildung, keine Anlageberatung</span>
@@ -497,7 +497,7 @@ body{background:var(--fb-bg);}
           <li>Pauschal fürs ganze Team, gestaffelt nach Größe (nicht pro Person)</li>
           <li>Offene Q&amp;A inklusive</li>
         </ul>
-        <a href="mailto:mbcapitalstrategies@gmail.com?subject=Anfrage%20Impuls-Workshop%20(Finanzbildung%20f%C3%BCr%20Unternehmen)" class="fb-btn">Impuls-Workshop anfragen</a>
+        <a href="#kontakt" class="fb-btn">Impuls-Workshop anfragen</a>
       </div>
 
     </div>
@@ -559,13 +559,77 @@ body{background:var(--fb-bg);}
   </div>
 </section>
 
-<!-- ===== FINAL CTA (B2B) ===== -->
+<!-- ===== FINAL CTA + ANFRAGE-FORMULAR (B2B) ===== -->
+<style>
+.fb-form{max-width:560px;margin:0 auto;text-align:left;background:var(--fb-card);border:1px solid var(--fb-gold-border);border-radius:16px;padding:30px 28px;}
+.fb-form .fb-row{margin-bottom:16px;}
+.fb-form label{display:block;font-size:.86rem;color:var(--fb-text);margin-bottom:6px;font-weight:600;}
+.fb-form label .fb-req{color:var(--fb-gold);}
+.fb-form input,.fb-form select,.fb-form textarea{width:100%;box-sizing:border-box;background:var(--fb-bg);border:1px solid var(--fb-line);border-radius:8px;padding:12px 14px;color:var(--fb-text);font-family:inherit;font-size:.96rem;}
+.fb-form input:focus,.fb-form select:focus,.fb-form textarea:focus{outline:none;border-color:var(--fb-gold);}
+.fb-form textarea{resize:vertical;min-height:80px;}
+.fb-form .fb-consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--fb-muted);line-height:1.5;margin:4px 0 18px;}
+.fb-form .fb-consent input{width:auto;margin-top:3px;flex:0 0 auto;}
+.fb-form .fb-consent a{color:var(--fb-gold);}
+.fb-form .fb-btn{width:100%;border:0;cursor:pointer;}
+.fb-form .fb-btn:disabled{opacity:.6;cursor:default;}
+.fb-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.fb-form-msg{max-width:560px;margin:0 auto;border-radius:14px;padding:24px 26px;text-align:center;font-size:1rem;line-height:1.55;}
+.fb-form-ok{display:none;background:var(--fb-green-soft);border:1px solid var(--fb-green);color:var(--fb-text);}
+.fb-form-ok strong{color:var(--fb-green);}
+.fb-form-err{display:none;margin-top:14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.4);color:#ffb4b4;font-size:.9rem;}
+.fb-form-err a{color:var(--fb-gold);}
+</style>
 <section class="fb-section fb-final" id="kontakt">
   <div class="fb-wrap">
     <h2>Jetzt unverbindlich anfragen — für Ihr Unternehmen.</h2>
-    <p>15 Minuten Erstgespräch, kostenlos. Wir klären Bedarf, Format und Preis.</p>
-    <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20Finanzbildungs-Workshop%20als%20Mitarbeiter-Benefit.%0A%0AUnternehmen%3A%0AAnzahl%20Mitarbeitende%20(ca.)%3A%0AWunschzeitraum%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
-    <span class="fb-cta-note">mbcapitalstrategies@gmail.com · Antwort meist innerhalb von 24 Stunden</span>
+    <p>15 Minuten Erstgespräch, kostenlos. Wir klären Bedarf, Teamgröße und Preis. Antwort meist innerhalb von 24 Stunden.</p>
+
+    <form id="fb-anfrage-form" class="fb-form" novalidate>
+      <div class="fb-row">
+        <label for="fb-firma">Unternehmen <span class="fb-req">*</span></label>
+        <input type="text" id="fb-firma" name="Unternehmen" required autocomplete="organization">
+      </div>
+      <div class="fb-row">
+        <label for="fb-name">Ansprechpartner:in <span class="fb-req">*</span></label>
+        <input type="text" id="fb-name" name="Ansprechpartner" required autocomplete="name">
+      </div>
+      <div class="fb-row">
+        <label for="fb-email">E-Mail <span class="fb-req">*</span></label>
+        <input type="email" id="fb-email" name="email" required autocomplete="email">
+      </div>
+      <div class="fb-row">
+        <label for="fb-team">Anzahl Mitarbeitende (ca.)</label>
+        <select id="fb-team" name="Teamgroesse">
+          <option value="">Bitte wählen…</option>
+          <option>1–10</option>
+          <option>11–30</option>
+          <option>31–60</option>
+          <option>61–120</option>
+          <option>über 120</option>
+        </select>
+      </div>
+      <div class="fb-row">
+        <label for="fb-msg">Nachricht / Wunschzeitraum</label>
+        <textarea id="fb-msg" name="Nachricht" placeholder="Optional: Worum geht's, Wunschtermin, Fragen…"></textarea>
+      </div>
+      <div class="fb-hp"><label>Bitte freilassen<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+      <label class="fb-consent">
+        <input type="checkbox" id="fb-consent" required>
+        <span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Details: <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>.</span>
+      </label>
+      <button type="submit" class="fb-btn">Anfrage senden</button>
+    </form>
+
+    <div id="fb-form-err" class="fb-form-msg fb-form-err">
+      Senden hat gerade nicht geklappt. Bitte direkt per E-Mail an
+      <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch">mbcapitalstrategies@gmail.com</a>.
+    </div>
+    <div id="fb-form-ok" class="fb-form-msg fb-form-ok">
+      <strong>Danke!</strong> Ihre Anfrage ist raus. Ich melde mich meist innerhalb von 24 Stunden bei Ihnen.
+    </div>
+
+    <span class="fb-cta-note" style="margin-top:18px;">Lieber direkt schreiben? <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch" style="color:var(--fb-gold);">mbcapitalstrategies@gmail.com</a></span>
   </div>
 </section>
 
@@ -628,5 +692,33 @@ body{background:var(--fb-bg);}
 </footer>
 
 <script src="/assets/js/nav.min.js" defer></script>
+<script>
+(function(){
+  var f=document.getElementById('fb-anfrage-form');
+  if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var hp=f.querySelector('[name="_honey"]');
+    if(hp&&hp.value) return; // Bot
+    if(!f.checkValidity()){ f.reportValidity(); return; }
+    var btn=f.querySelector('button[type="submit"]');
+    var ok=document.getElementById('fb-form-ok');
+    var err=document.getElementById('fb-form-err');
+    err.style.display='none';
+    var fd=new FormData(f), data={};
+    fd.forEach(function(v,k){ if(k!=='_honey') data[k]=v; });
+    data._subject='Workshop-Anfrage (Finanzbildung): '+(data.Unternehmen||'Unternehmen');
+    data._template='table';
+    btn.disabled=true; var orig=btn.textContent; btn.textContent='Wird gesendet…';
+    fetch('https://formsubmit.co/ajax/mbcapitalstrategies@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
+      .then(function(){ f.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); })
+      .catch(function(){ btn.disabled=false; btn.textContent=orig; err.style.display='block'; });
+  });
+})();
+</script>
 </body>
 </html>
