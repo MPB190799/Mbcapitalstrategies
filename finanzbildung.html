@@ -19,7 +19,7 @@
 <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/finanzbildung.html">
 
 <title>Finanzbildung als Mitarbeiter-Benefit — Workshop für Unternehmen | MB Capital Strategies</title>
-<meta name="description" content="Finanzbildungs-Workshop für Ihre Mitarbeitenden: unabhängig, ohne Produktverkauf, ohne Interessenkonflikt. Online oder vor Ort — ein Benefit mit echtem Mehrwert. Kostenloses Erstgespräch für Unternehmen.">
+<meta name="description" content="Online-Finanzbildungs-Workshop für Ihre Mitarbeitenden: unabhängig, ohne Produktverkauf, ohne Interessenkonflikt. Ein Benefit mit echtem Mehrwert — zum Einführungspreis. Kostenloses Erstgespräch für Unternehmen.">
 <meta name="author" content="Marco Bozem">
 
 <meta property="og:title" content="Finanzbildung als Mitarbeiter-Benefit — Workshop für Unternehmen">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Finanzbildung als Mitarbeiter-Benefit — Workshop für Unternehmen">
-<meta name="twitter:description" content="Ein kompakter Finanzbildungs-Workshop für Ihr Team — unabhängig, ohne Produktverkauf. Online oder vor Ort.">
+<meta name="twitter:description" content="Ein kompakter Online-Finanzbildungs-Workshop für Ihr Team — unabhängig, ohne Produktverkauf. Zum Einführungspreis.">
 <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
 
 <!-- Critical inline CSS for LCP text render -->
@@ -59,9 +59,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Finanzbildungs-Workshop für Unternehmen (Mitarbeiter-Benefit)",
+  "serviceType": "Online-Finanzbildungs-Workshop für Unternehmen (Mitarbeiter-Benefit)",
   "name": "Finanzbildung als Mitarbeiter-Benefit",
-  "description": "Kompakter Finanzbildungs-Workshop für die Mitarbeitenden eines Unternehmens — Inflation, Zinsen, ETFs vs. aktive Fonds, Altersvorsorge und erste Schritte zur Geldanlage. Unabhängig, ohne Produktverkauf, reine Bildung (keine Anlageberatung). Online oder vor Ort.",
+  "description": "Kompakter Online-Finanzbildungs-Workshop für die Mitarbeitenden eines Unternehmens — warum die Börse langfristig steigt, keine Panik im Crash, Inflation, ETFs vs. aktive Fonds und erste Schritte zur Geldanlage. Unabhängig, ohne Produktverkauf, reine Bildung (keine Anlageberatung).",
   "provider": {
     "@type": "Person",
     "name": "Marco Bozem",
@@ -70,16 +70,13 @@
   "audience": { "@type": "BusinessAudience", "name": "Unternehmen, HR & Teams" },
   "areaServed": { "@type": "Country", "name": "DE" },
   "availableChannel": [
-    { "@type": "ServiceChannel", "name": "Online (Video-Call)" },
-    { "@type": "ServiceChannel", "name": "Vor Ort im Unternehmen" }
+    { "@type": "ServiceChannel", "name": "Online (Video-Call)" }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Workshop-Pakete für Unternehmen",
+    "name": "Workshop-Angebot für Unternehmen",
     "itemListElement": [
-      { "@type": "Offer", "name": "Kompakt-Workshop (Online, fürs Team, ~90 Min)", "price": "149", "priceCurrency": "EUR", "description": "Pauschalpreis pro Workshop fürs ganze Team (nicht pro Person)" },
-      { "@type": "Offer", "name": "Intensiv-Workshop (Online, 3 Sessions, fürs Team)", "price": "390", "priceCurrency": "EUR", "description": "Pauschalpreis pro Workshop-Reihe fürs ganze Team (nicht pro Person)" },
-      { "@type": "Offer", "name": "Vor-Ort-Workshop (Tages-Workshop, fürs Team)", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "description": "Preis auf Anfrage – je nach Anfahrt, Teamgröße & Umfang" }
+      { "@type": "Offer", "name": "Impuls-Workshop (Online, fürs Team, ~90 Min)", "price": "300", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "description": "Einführungspreis · Pauschalpreis pro Workshop fürs ganze Team (nicht pro Person)" }
     ]
   }
 }
@@ -195,6 +192,8 @@ body{background:var(--fb-bg);}
 
 /* Pricing */
 .fb-price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
+.fb-price-single{display:flex;justify-content:center;}
+.fb-price-single .fb-price{max-width:440px;width:100%;}
 .fb-price{position:relative;background:var(--fb-card);border:1px solid var(--fb-line);border-radius:16px;padding:30px 24px;display:flex;flex-direction:column;}
 .fb-price.fb-featured{border-color:var(--fb-gold);box-shadow:0 0 0 1px var(--fb-gold-border),0 18px 50px rgba(0,0,0,.4);}
 .fb-price .fb-pop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--fb-gold);color:#080810;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;font-family:'IBM Plex Mono',monospace;white-space:nowrap;}
@@ -255,11 +254,11 @@ body{background:var(--fb-bg);}
     <span class="fb-eyebrow">Für Unternehmen · Mitarbeiter-Benefit</span>
     <h1>Geben Sie Ihrem Team einen Benefit <span class="fb-accent">der wirklich zählt.</span></h1>
     <p class="fb-sub">Ein kompakter Finanzbildungs-Workshop für Ihre Mitarbeitenden — unabhängig, ohne Produktverkauf, ohne Interessenkonflikt. Für den Preis eines Teamlunchs.</p>
-    <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20Finanzbildungs-Workshop%20als%20Mitarbeiter-Benefit.%0A%0AUnternehmen%3A%0AAnzahl%20Mitarbeitende%20(ca.)%3A%0AOnline%20oder%20vor%20Ort%3A%0AWunschzeitraum%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
+    <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20Finanzbildungs-Workshop%20als%20Mitarbeiter-Benefit.%0A%0AUnternehmen%3A%0AAnzahl%20Mitarbeitende%20(ca.)%3A%0AWunschzeitraum%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
     <span class="fb-cta-note">Antwort meist innerhalb von 24 Stunden · Unverbindlich</span>
     <div class="fb-hero-meta">
       <span><i></i> Reine Bildung, keine Anlageberatung</span>
-      <span><i></i> Online per Video-Call oder vor Ort in Ihrem Unternehmen</span>
+      <span><i></i> Online per Video-Call — bequem für Ihr ganzes Team</span>
     </div>
   </div>
 </header>
@@ -331,7 +330,7 @@ body{background:var(--fb-bg);}
   <div class="fb-wrap">
     <span class="fb-label">Der Workshop</span>
     <h2>Investieren verstehen — statt Produkte verkauft bekommen</h2>
-    <p class="fb-lead">Kein Verkaufsgespräch, kein Anbieter im Hintergrund. Ich zeige Ihren Mitarbeitenden, wie unabhängiges Investieren funktioniert: die Denkweise, das System und die Werkzeuge — online per Video-Call oder persönlich bei Ihnen vor Ort.</p>
+    <p class="fb-lead">Kein Verkaufsgespräch, kein Anbieter im Hintergrund. Ich zeige Ihren Mitarbeitenden, wie unabhängiges Investieren funktioniert: die Denkweise, das System und die Werkzeuge — kompakt und live online per Video-Call.</p>
     <div class="fb-intro-grid">
       <div class="fb-intro-card">
         <span class="fb-ic">🧭</span>
@@ -355,77 +354,54 @@ body{background:var(--fb-bg);}
 <!-- ===== CURRICULUM ===== -->
 <section class="fb-section" id="curriculum">
   <div class="fb-wrap">
-    <span class="fb-label">Das Curriculum</span>
-    <h2>Zwei Blöcke. 90 Minuten. Vom Fundament bis zum eigenen System.</h2>
-    <p class="fb-lead">Aufeinander aufbauend: Erst verstehen Ihre Mitarbeitenden, wie das System wirklich funktioniert. Dann zeige ich, was jenseits des Mainstreams passiert — und worauf es bei der eigenen Geldanlage ankommt.</p>
+    <span class="fb-label">Der Impuls-Workshop</span>
+    <h2>Ein Impuls. 90 Minuten. Angst raus, Klarheit rein.</h2>
+    <p class="fb-lead">Der perfekte Einstieg fürs Team: leicht verständlich, mit echten Beispielen aus der Geschichte. Ihre Mitarbeitenden verstehen, warum langfristiges Investieren funktioniert — und verlieren die Angst vor dem ersten Schritt.</p>
     <div class="fb-blocks">
 
       <div class="fb-block">
         <div class="fb-block-head">
-          <h3>Block 1 — Basics &amp; System verstehen</h3>
-          <span class="fb-dur">60 Min</span>
+          <h3>Impuls — Basics &amp; Gelassenheit</h3>
+          <span class="fb-dur">90 Min · online</span>
         </div>
         <ul class="fb-modules">
           <li>
-            <span class="fb-num">Modul 1</span>
+            <span class="fb-num">01</span>
+            <div>
+              <span class="fb-mtitle">Warum die Börse langfristig immer gestiegen ist</span>
+              <span class="fb-mdesc">Ein Blick in die Historie — anhand echter Beispiele: Kriege, Crashs, Corona. Der Markt hat sich immer erholt. Was uns das für heute lehrt.</span>
+            </div>
+          </li>
+          <li>
+            <span class="fb-num">02</span>
+            <div>
+              <span class="fb-mtitle">Keine Panik — der teuerste Fehler</span>
+              <span class="fb-mdesc">Warum Verkaufen im Crash am meisten Geld kostet, wie unser Kopf uns austrickst — und wie man ruhig bleibt.</span>
+            </div>
+          </li>
+          <li>
+            <span class="fb-num">03</span>
             <div>
               <span class="fb-mtitle">Inflation &amp; Kaufkraft</span>
               <span class="fb-mdesc">Warum Nichtstun teuer ist: wie Inflation Erspartes still entwertet — und was das real bedeutet.</span>
             </div>
           </li>
           <li>
-            <span class="fb-num">Modul 2</span>
-            <div>
-              <span class="fb-mtitle">Zinsen und ihre Wirkung</span>
-              <span class="fb-mdesc">Wie Zinsen auf Aktien, Anleihen und Preise wirken — der Hebel, der hinter fast allem steckt.</span>
-            </div>
-          </li>
-          <li>
-            <span class="fb-num">Modul 3</span>
+            <span class="fb-num">04</span>
             <div>
               <span class="fb-mtitle">Aktive Fonds vs. ETFs</span>
-              <span class="fb-mdesc">Wer verdient wirklich woran: Kostenrechnung, TER — und warum über 90 % der Fonds den Index langfristig nicht schlagen.</span>
+              <span class="fb-mdesc">Wer verdient wirklich woran: Kosten, TER — und warum über 90 % der Fonds den Index langfristig nicht schlagen.</span>
             </div>
           </li>
           <li>
-            <span class="fb-num">Modul 4</span>
+            <span class="fb-num">05</span>
             <div>
-              <span class="fb-mtitle">Depot &amp; erster Einstieg</span>
-              <span class="fb-mdesc">Praktische erste Schritte: Depot einrichten, Order verstehen, sauber starten.</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="fb-block">
-        <div class="fb-block-head">
-          <h3>Block 2 — Jenseits des Mainstream</h3>
-          <span class="fb-dur">30 Min</span>
-        </div>
-        <ul class="fb-modules">
-          <li>
-            <span class="fb-num">·</span>
-            <div>
-              <span class="fb-mtitle">Dividenden &amp; Cashflow</span>
-              <span class="fb-mdesc">Was echte Rendite bedeutet — und warum laufender Cashflow etwas anderes ist als reine Kursfantasie.</span>
+              <span class="fb-mtitle">Erste konkrete Schritte</span>
+              <span class="fb-mdesc">Praktischer Einstieg: Depot, erste Order, sauber starten — ohne Überforderung.</span>
             </div>
           </li>
           <li>
-            <span class="fb-num">·</span>
-            <div>
-              <span class="fb-mtitle">Sachwerte (Hard Assets)</span>
-              <span class="fb-mdesc">Warum Sachwerte in bestimmten Marktphasen outperformen — und wie man solche Phasen erkennt.</span>
-            </div>
-          </li>
-          <li>
-            <span class="fb-num">·</span>
-            <div>
-              <span class="fb-mtitle">Wie ich selbst investiere</span>
-              <span class="fb-mdesc">Mein Vorgehen — und worauf ich konkret achte, bevor ich eine Position eingehe.</span>
-            </div>
-          </li>
-          <li>
-            <span class="fb-num">·</span>
+            <span class="fb-num">06</span>
             <div>
               <span class="fb-mtitle">Offene Q&amp;A</span>
               <span class="fb-mdesc">Die Fragen Ihrer Mitarbeitenden, ehrliche Antworten — ohne Verkaufsmasche.</span>
@@ -496,86 +472,32 @@ body{background:var(--fb-bg);}
   </div>
 </section>
 
-<!-- ===== FORMAT ===== -->
-<section class="fb-section fb-format" id="format">
-  <div class="fb-wrap">
-    <span class="fb-label">Das Format</span>
-    <h2>Online oder vor Ort — Sie entscheiden</h2>
-    <div class="fb-format-grid">
-      <div class="fb-fmt">
-        <span class="fb-ic">💻</span>
-        <h3>Online</h3>
-        <p>Per Video-Call — ideal für verteilte Teams und Remote-Mitarbeitende. Flexibel terminierbar, Bildschirm teilen inklusive.</p>
-        <ul>
-          <li>Für Ihr ganzes Team oder einzelne Abteilungen</li>
-          <li>Screen-Sharing &amp; Live-Beispiele</li>
-          <li>Aufzeichnung auf Wunsch</li>
-        </ul>
-      </div>
-      <div class="fb-fmt">
-        <span class="fb-ic">📍</span>
-        <h3>Vor Ort</h3>
-        <p>Persönlich in Ihren Räumen — mehr Tiefe, volle Aufmerksamkeit, ein echtes Team-Erlebnis als gemeinsamer Termin.</p>
-        <ul>
-          <li>Workshop in Ihrem Unternehmen</li>
-          <li>Individuell auf Ihr Team zugeschnitten</li>
-          <li>Ort &amp; Termin nach Absprache</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== PREISE ===== -->
 <section class="fb-section" id="preise">
   <div class="fb-wrap">
-    <span class="fb-label">Pakete &amp; Preise</span>
-    <h2>Transparent. Kein Kleingedrucktes.</h2>
-    <p class="fb-lead">Feste Pakete, klare Preise. Welches zu Ihrem Team passt, klären wir unverbindlich im kostenlosen Erstgespräch.</p>
-    <div class="fb-price-grid">
-
-      <div class="fb-price">
-        <h3>Kompakt</h3>
-        <span class="fb-fmt-tag">Online · Gruppen-Workshop · ~90 Min</span>
-        <div class="fb-amount">149 €<small> / Workshop</small></div>
-        <ul>
-          <li>Block 1: Basics &amp; System verstehen</li>
-          <li>Depot-Setup &amp; erste Schritte</li>
-          <li>Pauschal fürs ganze Team (nicht pro Person)</li>
-          <li>Offene Fragen Ihres Teams</li>
-        </ul>
-        <a href="mailto:mbcapitalstrategies@gmail.com?subject=Anfrage%20Kompakt-Workshop%20(Finanzbildung%20f%C3%BCr%20Unternehmen)" class="fb-btn-ghost">Kompakt anfragen</a>
-      </div>
+    <span class="fb-label">Preis</span>
+    <h2>Ein Angebot. Transparent. Kein Kleingedrucktes.</h2>
+    <p class="fb-lead">Wir starten bewusst mit einem einzigen, einfachen Einstieg: dem Impuls-Workshop. Online, fürs ganze Team — zum Einführungspreis.</p>
+    <div class="fb-price-single">
 
       <div class="fb-price fb-featured">
-        <span class="fb-pop">Beliebt</span>
-        <h3>Intensiv</h3>
-        <span class="fb-fmt-tag">Online · Gruppen-Workshop · 3 Sessions</span>
-        <div class="fb-amount">390 €<small> / 3er-Reihe</small></div>
+        <span class="fb-pop">Einführungspreis</span>
+        <h3>Impuls-Workshop</h3>
+        <span class="fb-fmt-tag">Online · Gruppen-Workshop · ~90 Min</span>
+        <div class="fb-amount">300 €<small> / Workshop</small></div>
         <ul>
-          <li>Block 1 + Block 2 komplett</li>
-          <li>Strategie- &amp; Portfolioaufbau</li>
-          <li>Aktien bewerten &amp; Zyklen verstehen</li>
-          <li>Pauschal fürs ganze Team — 3 Termine</li>
+          <li>Warum die Börse langfristig steigt — mit echten Beispielen</li>
+          <li>Keine Panik: der teuerste Anleger-Fehler</li>
+          <li>Inflation, Fonds vs. ETF &amp; erste Schritte</li>
+          <li>Pauschal fürs ganze Team (nicht pro Person)</li>
+          <li>Offene Q&amp;A inklusive</li>
         </ul>
-        <a href="mailto:mbcapitalstrategies@gmail.com?subject=Anfrage%20Intensiv-Workshop%20(Finanzbildung%20f%C3%BCr%20Unternehmen)" class="fb-btn">Intensiv anfragen</a>
-      </div>
-
-      <div class="fb-price">
-        <h3>Vor Ort</h3>
-        <span class="fb-fmt-tag">Persönlich · Tages-Workshop</span>
-        <div class="fb-amount">Auf Anfrage</div>
-        <ul>
-          <li>Ganztägig, persönlich vor Ort</li>
-          <li>Vollständig individuell fürs Team</li>
-          <li>Preis je nach Anfahrt &amp; Umfang</li>
-        </ul>
-        <a href="mailto:mbcapitalstrategies@gmail.com?subject=Anfrage%20Vor-Ort-Workshop%20(Finanzbildung%20f%C3%BCr%20Unternehmen)" class="fb-btn-ghost">Vor Ort anfragen</a>
+        <a href="mailto:mbcapitalstrategies@gmail.com?subject=Anfrage%20Impuls-Workshop%20(Finanzbildung%20f%C3%BCr%20Unternehmen)" class="fb-btn">Impuls-Workshop anfragen</a>
       </div>
 
     </div>
     <div class="fb-lunch">Zum Vergleich: Ein externer Teamlunch kostet ähnlich — und wird einmal gegessen. <strong>Finanzwissen bleibt.</strong></div>
-    <p class="fb-price-note">Online-Preise sind Pauschalpreise pro Workshop fürs ganze Team (nicht pro Person), inkl. ggf. anfallender USt. · Vor-Ort-Workshops auf Anfrage — je nach Anfahrt, Teamgröße &amp; Umfang. Details im Erstgespräch.</p>
+    <p class="fb-price-note">Pauschalpreis pro Workshop fürs ganze Team (nicht pro Person), inkl. ggf. anfallender USt. · Einführungspreis für den Start. Details im kostenlosen Erstgespräch.</p>
   </div>
 </section>
 
@@ -590,8 +512,8 @@ body{background:var(--fb-bg);}
         <p>15 Minuten, kostenlos &amp; unverbindlich. Wir klären Bedarf, Teamgröße und Ziele.</p>
       </div>
       <div class="fb-step">
-        <h3>Format &amp; Paket</h3>
-        <p>Online oder vor Ort, passendes Paket — und ein Termin, der für Ihr Team passt.</p>
+        <h3>Termin fixieren</h3>
+        <p>Wir legen einen Online-Termin fest, der für Ihr Team passt — unkompliziert per Video-Call.</p>
       </div>
       <div class="fb-step">
         <h3>Der Workshop</h3>
@@ -633,7 +555,7 @@ body{background:var(--fb-bg);}
   <div class="fb-wrap">
     <h2>Jetzt unverbindlich anfragen — für Ihr Unternehmen.</h2>
     <p>15 Minuten Erstgespräch, kostenlos. Wir klären Bedarf, Format und Preis.</p>
-    <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20Finanzbildungs-Workshop%20als%20Mitarbeiter-Benefit.%0A%0AUnternehmen%3A%0AAnzahl%20Mitarbeitende%20(ca.)%3A%0AOnline%20oder%20vor%20Ort%3A%0AWunschzeitraum%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
+    <a href="mailto:mbcapitalstrategies@gmail.com?subject=Finanzbildungs-Workshop%20f%C3%BCr%20unser%20Unternehmen%20%E2%80%93%20Erstgespr%C3%A4ch&amp;body=Guten%20Tag%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20einen%20Finanzbildungs-Workshop%20als%20Mitarbeiter-Benefit.%0A%0AUnternehmen%3A%0AAnzahl%20Mitarbeitende%20(ca.)%3A%0AWunschzeitraum%3A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen" class="fb-btn">Kostenloses Erstgespräch für Unternehmen</a>
     <span class="fb-cta-note">mbcapitalstrategies@gmail.com · Antwort meist innerhalb von 24 Stunden</span>
   </div>
 </section>
