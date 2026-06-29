@@ -585,7 +585,11 @@ body{background:var(--fb-bg);}
     <h2>Jetzt unverbindlich anfragen — für Ihr Unternehmen.</h2>
     <p>15 Minuten Erstgespräch, kostenlos. Wir klären Bedarf, Teamgröße und Preis. Antwort meist innerhalb von 24 Stunden.</p>
 
-    <form id="fb-anfrage-form" class="fb-form" novalidate>
+    <form id="fb-anfrage-form" class="fb-form" action="https://formsubmit.co/mbcapitalstrategies@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Neue Workshop-Anfrage (Finanzbildung)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://mbcapitalstrategies.com/finanzbildung.html?sent=1#kontakt">
       <div class="fb-row">
         <label for="fb-firma">Unternehmen <span class="fb-req">*</span></label>
         <input type="text" id="fb-firma" name="Unternehmen" required autocomplete="organization">
@@ -694,30 +698,13 @@ body{background:var(--fb-bg);}
 <script src="/assets/js/nav.min.js" defer></script>
 <script>
 (function(){
-  var f=document.getElementById('fb-anfrage-form');
-  if(!f) return;
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var hp=f.querySelector('[name="_honey"]');
-    if(hp&&hp.value) return; // Bot
-    if(!f.checkValidity()){ f.reportValidity(); return; }
-    var btn=f.querySelector('button[type="submit"]');
+  // Erfolg nach Formsubmit-Redirect (?sent=1): Formular ausblenden, Danke zeigen
+  if(/[?&]sent=1\b/.test(location.search)){
+    var f=document.getElementById('fb-anfrage-form');
     var ok=document.getElementById('fb-form-ok');
-    var err=document.getElementById('fb-form-err');
-    err.style.display='none';
-    var fd=new FormData(f), data={};
-    fd.forEach(function(v,k){ if(k!=='_honey') data[k]=v; });
-    data._subject='Workshop-Anfrage (Finanzbildung): '+(data.Unternehmen||'Unternehmen');
-    data._template='table';
-    btn.disabled=true; var orig=btn.textContent; btn.textContent='Wird gesendet…';
-    fetch('https://formsubmit.co/ajax/mbcapitalstrategies@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(data)
-    }).then(function(r){ if(!r.ok) throw new Error('http'); return r.json(); })
-      .then(function(){ f.style.display='none'; ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); })
-      .catch(function(){ btn.disabled=false; btn.textContent=orig; err.style.display='block'; });
-  });
+    if(f) f.style.display='none';
+    if(ok){ ok.style.display='block'; ok.scrollIntoView({behavior:'smooth',block:'center'}); }
+  }
 })();
 </script>
 </body>
