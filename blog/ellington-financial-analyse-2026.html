@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+  <title>Ellington Financial (EFC): 11,5 % Dividende — mein Take</title>
+  <meta name="description" content="Ellington Financial EFC 2026: 11,5 % Dividende monatlich, ADE deckt 1,41x, Book Value $13,49. Credit-mREIT, Longbridge-Rekord. Marcos ehrliche Einordnung.">
+  <meta name="author" content="Marco Bozem">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/ellington-financial-analysis-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ellington Financial (EFC): 11,5 % Dividende — mein Take">
+  <meta property="og:description" content="Ellington Financial EFC 2026: 11,5 % Dividende monatlich, ADE deckt 1,41x, Book Value $13,49. Credit-mREIT, Longbridge-Rekord. Marcos ehrliche Einordnung.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ellington Financial (EFC): 11,5 % Dividende — mein Take">
+  <meta name="twitter:description" content="Ellington Financial EFC 2026: 11,5 % Dividende monatlich, ADE deckt 1,41x, Book Value $13,49. Credit-mREIT, Longbridge-Rekord. Marcos ehrliche Einordnung.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Critical inline CSS -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+    .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .author-box{background:#0f1220;border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:22px 24px;margin:40px 0;display:flex;gap:18px;align-items:flex-start}
+    .author-box .author-info h4{margin:0 0 6px;color:#d4af37;font-size:1rem}
+    .author-box .author-info p{margin:0;color:#9aa6c0;font-size:.87rem;line-height:1.55}
+  </style>
+
+  <!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+  <!-- SEO SCHEMA: BlogPosting -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ellington Financial (EFC): 11,5 % Dividende — mein Take",
+  "description": "Ellington Financial (EFC) Analyse 2026: monatliche Dividende $0,13, Yield ~11,5 %, ADE $0,55/Q deckt Dividende 1,41x. Credit-mREIT mit Longbridge-Reverse-Mortgage-Segment. Marcos ehrliche Einordnung inkl. Position −4,6 %.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "Mortgage REIT",
+  "wordCount": 1300,
+  "keywords": [
+    "Ellington Financial",
+    "EFC",
+    "Credit mREIT",
+    "monatliche Dividende",
+    "Non-QM Loans",
+    "Longbridge Reverse Mortgage",
+    "Dividendenrendite",
+    "Adjusted Distributable Earnings",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA: BreadcrumbList -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ellington Financial (EFC) Analyse 2026",
+      "item": "https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html"
+    }
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Ellington Financial und einem klassischen Equity-REIT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ellington Financial (EFC) ist kein Equity-REIT der Immobilien besitzt und vermietet. EFC ist ein Credit-mREIT — die Firma investiert in Hypothekenkredite und hypothekenbezogene Wertpapiere: vor allem Non-QM-Wohnkredite (nicht konforme Kredite für Selbstständige oder Käufer mit unkonventionellen Einkommen), Residential Transition Loans, Commercial Mortgage Loans und über die Tochter Longbridge Financial in Reverse-Mortgage-Kredite (US-amerikanische Umkehrhypotheken). Das bedeutet: kein Mieter-Klumpenrisiko, aber volles Kreditausfallrisiko und Zinsänderungsrisiko. Die Rendite ist höher, das Risikoprofil grundlegend anders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die Dividende von Ellington Financial von $0,13 monatlich gedeckt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stand Q1 2026: ja, und mit komfortablem Puffer. Die Adjusted Distributable Earnings (ADE) lagen bei $0,55 je Aktie für das Quartal — die quartalsweise Dividende beträgt $0,39 (3 × $0,13/Monat). Das ergibt eine Deckungsquote von rund 1,41x. Das ist deutlich besser als bei vielen anderen mREITs. Risiko: Die ADE ist keine GAAP-Kennzahl und kann sich bei steigenden Kreditausfällen oder Zinserhöhungen schnell verschlechtern. Keine Anlageberatung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist Longbridge Financial und warum ist das für EFC wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Longbridge Financial ist eine hundertprozentige Tochter von Ellington Financial und einer der größten Anbieter von Reverse Mortgages (Umkehrhypotheken) in den USA. Im ersten Quartal 2026 hat Longbridge $515 Millionen neue Reverse-Mortgage-Kredite originiert — ein Plus von 52 % gegenüber Q1 2025 — und dabei $57,5 Millionen Nettoertrag erwirtschaftet, was das gesamte Jahresergebnis 2025 übertroffen hat. Das Segment ist zum Wachstumstreiber von EFC geworden und diversifiziert das klassische Non-QM-Kreditrisiko erheblich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist das größte Risiko bei Ellington Financial EFC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das größte Risiko ist eine Rezession mit steigenden Kreditausfällen im Non-QM- und Consumer-Loan-Segment. Non-QM-Kreditnehmer haben oft ein höheres Ausfallrisiko als konforme Kreditnehmer — sie haben nicht die FICO-Scores oder Einkommen die für Fannie-Mae/Freddie-Mac qualifizieren. In einer Rezession fallen diese Ausfallraten zuerst. Dazu kommt Leverage: EFC arbeitet mit erheblichem Fremdkapital (Schulden/Eigenkapital rund 9x), was Verluste hebelt. Ein weiteres Risiko ist die starke Aktien-Verwässerung durch Kapitalerhöhungen — 37 % mehr Aktien im Umlauf im Vergleich zum Vorjahr. Kein Equity-REIT-Schutzwall durch Immobilienwerte."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Themen-Menü öffnen">Themen &#9662;</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">Shipping</a>
+          <a href="/midstream/">Pipelines / Midstream</a>
+          <a href="/mining-aktien/">Mining Aktien</a>
+          <a href="/upstream-aktien/">Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/reits/">REITs &amp; Immobilien</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">Shipping Aktien</a>
+    <a href="/mining-aktien/">Mining Aktien</a>
+    <a href="/upstream-aktien/">Upstream Aktien</a>
+    <a href="/reits/">REITs</a>
+    <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">Blog</a>
+    <a href="/toolbox.html">Toolbox</a>
+    <a href="/glossar/">Glossar</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>Ellington Financial (EFC) Analyse 2026</span>
+</nav>
+
+<section class="container">
+
+<!-- AEO Answer-First Block -->
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 24px;">
+  <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">Ellington Financial (EFC) auf einen Blick (Stand 1. Juli 2026):</strong> Credit-mREIT, NYSE: EFC. Kurs $13,61 · 52-Wochen-Spanne $11,28–$14,12 · Marktkapitalisierung ~$1,35 Mrd. Dividende $0,13/Monat = $1,56/Jahr, Rendite ~11,5 % — monatliche Ausschüttung. ADE Q1 2026: $0,55/Aktie, Deckung 1,41x. Book Value (Mai 2026): $13,49/Aktie. Longbridge Reverse Mortgage: Rekordquartal $57,5 Mio. Nettoertrag. Keine Anlageberatung.</p>
+</div>
+
+<h1>Ellington Financial (EFC): 11,5&#160;% Rendite — 8 Aktien im Minus, hier ist mein Take</h1>
+
+<div style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+  <p style="margin:0 0 10px"><strong style="color:#D4AF37">11,5 % Dividendenrendite monatlich — zu schön um wahr zu sein?</strong><br>
+  Ellington Financial zahlt jeden Monat $0,13 je Aktie. Aufs Jahr sind das $1,56 — und beim aktuellen Kurs von $13,61 landet man bei ~11,5 % Rendite. Die Frage ist nicht ob die Zahl stimmt, sondern warum sie so hoch ist. Ich halte 8 Stück bei einem Einstand von ~€12,40 — aktuell −4,6 %. Hier ist was ich weiß, was ich denke, und wo das echte Risiko liegt.</p>
+</div>
+
+<aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">
+  <strong style="color:#f5f6fa">English version:</strong> <a href="https://mbcapitalstrategiesgloabal.com/blog/ellington-financial-analysis-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Read this analysis in English</a> &nbsp;·&nbsp; <a href="https://mbcapitalstrategiesgloabal.com/" style="color:#d4af37" rel="noopener noreferrer">MB Capital Strategies Global</a>
+</aside>
+
+<p style="font-size:.9rem;color:#9aa6c0">
+Veröffentlicht: 01.07.2026 &nbsp;·&nbsp;
+Dieser Beitrag stellt <strong>keine Anlageberatung</strong> dar. Alle Inhalte dienen ausschließlich der Information und persönlichen Einordnung. Ich halte Ellington Financial selbst im Depot (8 Stück, Scalable Capital, −4,6 %) — ich bin also nicht neutral. Interessenkonflikt-Disclosure: als Inhaber profitiere ich von einem Kursanstieg. Keine Kauf- oder Verkaufsempfehlung. Jeder handelt eigenverantwortlich.
+</p>
+
+<!-- TOP AD -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="info-box">
+  Kurzfassung: Ellington Financial (NYSE: EFC) ist ein Credit-mREIT der in Non-QM-Hypothekenkredite, Residential Transition Loans, Commercial Mortgage Loans und über die Tochter Longbridge Financial in Reverse Mortgages investiert. Die Dividende von 11,5&#160;% wird monatlich ausgeschüttet und ist Stand Q1 2026 mit einer Deckungsquote von 1,41x gut abgesichert. Das Risiko liegt nicht in der Dividende — es liegt im Kreditportfolio und im Hebel.
+</div>
+
+<h2>1. Was ist Ellington Financial überhaupt?</h2>
+
+<p>
+Kurz vorab: EFC ist kein normaler REIT. Die Aktie sitzt zwar in der REIT-Kategorie, funktioniert aber komplett anders als ein Realty Income oder ein Stag Industrial. EFC besitzt keine Immobilien. Die Firma ist ein <strong>Credit-mREIT</strong> — ein hypothekenbezogener Investment-Trust, der Kredite und hypothekenbesicherte Wertpapiere kauft, hält und securitisiert.
+</p>
+
+<p>
+Gegründet 2007, verwaltet von Ellington Management Group aus Old Greenwich, Connecticut. Die Management-Gesellschaft ist ein erfahrener Kredit-Spezialist, der seit den 1990ern in strukturierten Kredit-Produkten aktiv ist — das ist wichtig, weil mREITs ohne Top-Management schnell gefährlich werden.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Das Portfolio auf einen Blick (Stand Q1 2026, Quelle: SEC-Filing 10-Q 31.03.2026):</strong>
+  <ul style="margin-top:10px">
+    <li><strong>Non-QM Loans:</strong> Kerngeschäft — Hypotheken für Selbstständige, Käufer mit komplexen Einkünften, die nicht in die Fannie/Freddie-Box passen</li>
+    <li><strong>Residential Transition Loans:</strong> Kurzfristige Fix-and-Flip- und Neubaukredite</li>
+    <li><strong>Commercial Mortgage Loans:</strong> Gewerbeimmobilienkredite</li>
+    <li><strong>Longbridge Reverse Mortgages:</strong> Umkehrhypotheken für US-Senioren (HECM und proprietary)</li>
+    <li><strong>Consumer Loans &amp; ABS:</strong> kleinerer Anteil, Consumer-ABS und CLOs</li>
+    <li><strong>Gesamt-Kreditportfolio:</strong> $4,27 Mrd. (Q1 2026, +4&#160;% vs. Jahresende 2025)</li>
+  </ul>
+</div>
+
+<p>
+Der entscheidende Unterschied zu einem Agency-mREIT wie AGNC: EFC kauft <em>keine</em> Government-backed Mortgage-Securities. Kein Fannie-Mae-Risiko, kein Zinslaufzeit-Hedge-Chaos. Dafür volles Kreditrisiko auf die Einzelkredite.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>Mehr zu REITs:</strong> <a href="/reits/" style="color:#D4AF37;">REIT-Übersicht — alle meine analysierten REITs</a> oder zum Einstieg <a href="/kategorien/high-yield-aktien.html" style="color:#D4AF37;">High-Yield Aktien Guide</a>.</p>
+
+<h2>2. Die Dividende — $0,13 jeden Monat</h2>
+
+<p>
+EFC zahlt monatlich. $0,13 je Aktie, jeden Monat. Annualisiert: $1,56. Beim aktuellen Kurs von $13,61 ergibt das eine Dividendenrendite von <strong>~11,5&#160;%</strong> — verifiziert via FMP API und Businesswire-Meldung vom 8. Juni 2026.
+</p>
+
+<p>
+Nächste geplante Zahlung: Record Date 30. Juni 2026, Zahltag 31. Juli 2026. Die Dividende ist stabil gehalten worden — kein Anzeichen einer Kürzung, aber auch keine Erhöhung seit mehreren Jahren.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Dividende pro Monat</td><td>$0,13</td></tr>
+  <tr><td>Dividende pro Quartal</td><td>$0,39</td></tr>
+  <tr><td>Dividende pro Jahr</td><td>$1,56</td></tr>
+  <tr><td>Dividendenrendite (aktuell)</td><td>~11,5&#160;% (Kurs $13,61)</td></tr>
+  <tr><td>Ausschüttungsfrequenz</td><td>Monatlich</td></tr>
+  <tr><td>Letzter Record Date</td><td>30. Juni 2026</td></tr>
+</table>
+
+<div class="info-box">
+  Mein Take zur monatlichen Dividende: Als Dividenden-Investor schätze ich monatliche Ausschüttungen — der Cashflow-Rhythmus ist gleichmäßiger. Das ist aber kein Qualitätsmerkmal per se. Die Frage ist ob das Geschäftsmodell die Dividende verdient. Die Antwort ist: aktuell ja, und deutlicher als ich erwartet hatte.
+</div>
+
+<!-- MID AD -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1212067635"
+data-ad-format="in-article"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>3. Dividenden-Deckung: ADE vs. Ausschüttung</h2>
+
+<p>
+Bei einem mREIT ist die wichtigste Dividenden-Kennzahl nicht der GAAP-Gewinn, sondern die <strong>ADE — Adjusted Distributable Earnings</strong>. Das ist der bereinigte Cashflow der wirklich für die Ausschüttung zur Verfügung steht, nach Abzug von Buchhaltungs-Effekten wie unrealisierten Wertänderungen im Kreditportfolio.
+</p>
+
+<p>
+Q1 2026 (Quelle: SEC 8-K vom 6. Mai 2026, verifiziert via TipRanks und Investing.com):
+</p>
+
+<table class="metrics-table">
+  <tr><td>ADE Q1 2026 gesamt</td><td>$66,5 Mio.</td></tr>
+  <tr><td>ADE je Aktie (Q1 2026)</td><td>$0,55</td></tr>
+  <tr><td>Dividende je Aktie (Q1 = 3 Monate)</td><td>$0,39</td></tr>
+  <tr><td>Deckungsquote</td><td>1,41x — $0,55 / $0,39</td></tr>
+  <tr><td>Überschuss je Aktie</td><td>$0,16 pro Quartal</td></tr>
+</table>
+
+<p>
+Eine Deckungsquote von 1,41x ist für einen mREIT stark. Viele Peer-mREITs schaffen Deckungsquoten von 1,0x bis 1,1x — also kaum Puffer. Ellington hat damit Stand Q1 2026 deutlich mehr Spielraum als ich erwartet hatte.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Warum war Q1 2026 so stark?</strong>
+  <ul style="margin-top:10px">
+    <li>Longbridge Reverse Mortgage: $57,5 Mio. Nettoertrag (Rekordquartal — mehr als das gesamte Jahresergebnis 2025)</li>
+    <li>Kreditportfolio-Wachstum: +4&#160;% auf $4,27 Mrd.</li>
+    <li>7 Securitization-Transaktionen für $2,8 Mrd. — Rekordquartal</li>
+    <li>Net Income gesamt: $95,5 Mio. = $0,78/Aktie vs. $0,14 im Vorquartal</li>
+    <li>Annualisierte Economic Return: 26&#160;% — inklusive Book-Value-Steigerung und Dividende</li>
+  </ul>
+</div>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>Tool:</strong> <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield-on-Cost-Rechner</a> — berechne deinen persönlichen YOC auf EFC oder andere Dividendenaktien.</p>
+
+<h2>4. Book Value — die echte Bewertungskennzahl</h2>
+
+<p>
+Bei einem mREIT ist der <strong>Book Value per Share</strong> (Buchwert je Aktie) die zentrale Bewertungs-Referenz — das REIT-Äquivalent zum fairen Wert. Wenn der Kurs unter Buchwert liegt, kauft man buchhalterisch mit Abschlag. Über Buchwert: Prämie.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Book Value/Share (31. März 2026)</td><td>$13,56 (Quelle: SEC 8-K)</td></tr>
+  <tr><td>Book Value/Share (31. Mai 2026)</td><td>$13,49 (Quelle: EFC Businesswire 8-K)</td></tr>
+  <tr><td>Aktueller Kurs</td><td>$13,61</td></tr>
+  <tr><td>Kurs / Buchwert</td><td>~1,0x (leicht über Buchwert)</td></tr>
+</table>
+
+<p>
+EFC handelt nahezu exakt auf Buchwert — weder teuer noch billig. Das ist fair. Bei einem Credit-mREIT mit stabilem Kreditportfolio und hoher ADE-Deckung ist ein 1,0x-Multiple angemessen. Für einen Discount auf Buchwert müsste das Kreditportfolio schlechter werden.
+</p>
+
+<p>
+Ein wichtiger Hinweis: Der Buchwert ist nicht starr — er verändert sich mit Marktpreisen der Kredite und Wertpapiere im Portfolio. In einer Rezession können Kreditwerte schnell fallen, was den Book Value reduziert und die Aktie teurer macht als sie aussieht.
+</p>
+
+<h2>5. Longbridge — der Wachstums-Treiber</h2>
+
+<p>
+Das ist der Teil von EFC, der in 2026 die Kurve gezogen hat. <strong>Longbridge Financial</strong> ist eine hundertprozentige EFC-Tochter und einer der größten US-Anbieter von Reverse Mortgages.
+</p>
+
+<p>
+Was ist eine Reverse Mortgage? Ein US-Senior (62+) nimmt eine Hypothek auf das eigene, schuldenfreie oder fast schuldenfreie Haus auf — und bekommt Geld ausgezahlt, anstatt es einzuzahlen. Die Schuld wird erst fällig wenn der Eigentümer stirbt oder das Haus verkauft. Longbridge originiert diese Kredite und verbrieft sie (Securitization).
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Longbridge Q1 2026 — Fakten (Quelle: HousingWire + SEC 8-K):</strong>
+  <ul style="margin-top:10px">
+    <li>Nettoertrag Q1 2026: $57,5 Mio. — <strong>Rekordquartal</strong></li>
+    <li>Neue Originierungen: $515 Mio. (+52&#160;% vs. Q1 2025)</li>
+    <li>Portfolio-Wachstum: +13&#160;% sequenziell auf $695 Mio.</li>
+    <li>Starke Marktanteils-Gewinne bei HECM (Government-backed Reverse Mortgage)</li>
+    <li>Longbridge hat in Q1 2026 mehr verdient als im gesamten Jahr 2025</li>
+  </ul>
+</div>
+
+<p>
+Mein Take: Longbridge ist der Joker in diesem Setup. Wenn die US-Babyboomer in den nächsten 10 Jahren Reverse Mortgages als Liquiditätslösung nutzen — und das Marktpotenzial ist riesig — hat EFC einen strukturellen Wachstums-Motor. Das erklärt, warum ich die Position trotz kurzfristiger -4,6&#160;% halte.
+</p>
+
+<!-- MB Capital Insider Newsletter CTA -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+
+<h2>6. Die ehrlichen Risiken — warum 11,5&#160;% keine Einbahnstraße ist</h2>
+
+<p>
+Wer bei 11,5&#160;% Rendite denkt "zu schön um wahr zu sein" — der hat Recht, das zu fragen. Hier sind die echten Risiken:
+</p>
+
+<div class="risk-box">
+  <strong>⚠️ Kreditausfallrisiko in der Rezession:</strong> Non-QM-Kreditnehmer haben keine Regierungs-Garantie. In einer wirtschaftlichen Abschwächung können Ausfallraten schnell steigen. Longbridge HECM-Kredite sind zwar durch FHA-Insurance abgesichert, proprietary Reverse Mortgages nicht vollständig. Wenn viele Senioren gleichzeitig das Haus verlassen müssen, fallen Immobilienpreise — genau dann ist der Absicherungs-Wert am wenigsten wert.
+</div>
+
+<div class="risk-box">
+  <strong>⚠️ Leverage-Risiko:</strong> EFC arbeitet mit erheblichem Hebel. Das Schulden-zu-Eigenkapital-Verhältnis liegt bei rund 9x (FMP-Daten). Das hebelt Gewinne — aber auch Verluste. In einem Stress-Szenario kann ein Kreditportfolio-Verlust von 5&#160;% das Eigenkapital um fast die Hälfte reduzieren.
+</div>
+
+<div class="risk-box">
+  <strong>⚠️ Verwässerungs-Risiko:</strong> Im Vergleich zum Vorjahr sind rund 37&#160;% mehr EFC-Aktien im Umlauf. Kapitalerhöhungen sind bei wachsenden mREITs üblich — aber sie verwässern bestehende Aktionäre. Wenn das Wachstum nicht proportional schneller läuft, leidet der Book Value per Share.
+</div>
+
+<div class="risk-box">
+  <strong>⚠️ Zinsänderungsrisiko:</strong> EFC hedgt Zinsrisiko über Derivate, ist aber nicht vollständig immunisiert. Überraschende Zinsschritte — in beide Richtungen — können die Net Interest Margin kurzfristig komprimieren. Q1 2026 zeigte mit einer NIM von 1,47&#160;% bereits erste Kompression durch höhere Funding-Kosten.
+</div>
+
+<p>
+Mein Fazit zum Risiko: Das ist kein "risikoloser 11&#160;%-Einnahme-Automat". Das ist ein aktiv gemanagtes Kreditportfolio mit solidem Management, gutem Q1 2026 und echtem strukturellen Wachstumstreiber über Longbridge. Aber die Risiken sind real und müssen bewusst eingegangen werden.
+</p>
+
+<h2>7. Bewertung — Fair Value und Peer-Vergleich</h2>
+
+<p>
+Für Credit-mREITs ist der <strong>Kurs-zu-Buchwert (P/B)</strong> die primäre Bewertungskennzahl. EFC handelt bei ~1,0x — nahezu exakt Buchwert. Das ist angemessen.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Kurs (aktuell)</td><td>$13,61</td></tr>
+  <tr><td>Book Value/Share (Mai 2026)</td><td>$13,49</td></tr>
+  <tr><td>P/B-Ratio</td><td>~1,01x</td></tr>
+  <tr><td>KGV (GAAP EPS 2025: $1,19)</td><td>~11,4x</td></tr>
+  <tr><td>Marktkapitalisierung</td><td>~$1,35 Mrd.</td></tr>
+  <tr><td>52-Wochen-Tief / -Hoch</td><td>$11,28 / $14,12</td></tr>
+  <tr><td>Meine Position (öffentl. Broker)</td><td>8 St @ ~€12,40 · −4,6&#160;%</td></tr>
+</table>
+
+<p>
+Peer-Vergleich mREIT-Universum: AGNC Investment (~13&#160;% Rendite, Agency-fokussiert, NIM-sensitiver) zahlt mehr aber mit Government-backed-Only-Portfolio — weniger Kredit-, aber höheres Zinslaufzeit-Risiko. EFC ist im Credit-Segment, hat diversifiziertere Ertragsquellen durch Longbridge. Das P/B von 1,0x bei EFC ist vergleichbar mit anderen gut-geführten Credit-mREITs.
+</p>
+
+<!-- BOTTOM AD -->
+<ins class="adsbygoogle" style="display:block;margin:28px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="3778191657"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>8. Mein persönlicher Take — warum ich halte</h2>
+
+<p>
+Ich bin mit 8 Stück bei ~€12,40 eingestiegen und liege aktuell −4,6&#160;% im Minus. Das ist keine Katastrophe, aber auch kein Startschuss. Mein Gedanke beim Kauf war einfach: ein gut-geführtes Credit-Haus, monatliche Dividende, Longbridge als Wachstumstreiber, auf oder unter Buchwert kaufen.
+</p>
+
+<p>
+Was mich hält: Q1 2026 hat gezeigt, dass Longbridge tatsächlich funktioniert. $57,5 Mio. Nettoertrag in einem Quartal — das ist kein Zufallstreffer. Die US-Demographiekurve (alternde Babyboomer, Immobilienreichtum, Liquiditätsbedarf) ist ein struktureller Tailwind für Reverse Mortgages der sich erst entfaltet.
+</p>
+
+<p>
+Was ich im Auge behalte: Jede Änderung in der ADE-Entwicklung. Wenn die ADE unter $0,39/Q fällt — also unter die Dividende — werde ich neu bewerten. Dazu kommt die Leverage-Beobachtung: Wenn das Kreditportfolio in einer konjunkturellen Abschwächung anfängt zu straucheln, kann EFC schnell unter Buchwert fallen.
+</p>
+
+<div class="info-box">
+  Position-Fazit (Juli 2026): Halten. Kein Nachkauf bei diesem Kurs-zu-Buchwert. Warten auf ein besseres Einstiegsniveau — idealerweise 0,85–0,90x Buchwert (also ~$11,50–$12,00). Das wäre der sauberere Einstiegspunkt für eine Aufstockung. Keine Anlageberatung — das ist meine persönliche Strategie.
+</div>
+
+<h2>9. Affiliate-Empfehlung: Daten selbst prüfen</h2>
+
+<p>
+Für meine eigene Fundamental-Analyse nutze ich <strong>InvestingPro</strong> — damit ziehe ich Fair-Value-Modelle, Financial-Health-Scores und historische ADE-Verläufe. Wenn du selbst mREITs wie EFC analysieren willst: der Link unten gibt dir 15&#160;% Rabatt on top, auch auf laufende Aktionen.
+</p>
+
+<div class="cta-box">
+  <p style="margin:0 0 14px;color:#c8cfe0;">Fundamental-Daten für deine eigene REIT-Analyse:</p>
+  <a href="https://www.investing-referral.com/mbcapital3/" class="cta-btn" rel="noopener noreferrer" target="_blank">InvestingPro — 15&#160;% Rabatt on top*</a>
+  <p style="margin:12px 0 0;font-size:.8rem;color:#6b7a99;">*Affiliate-Link — Provision ohne Mehrkosten für dich. Keine Anlageberatung.</p>
+</div>
+
+<h2>Fazit: Ellington Financial im Juli 2026</h2>
+
+<p>
+EFC ist kein einfaches Investment. Es ist kein Realty Income mit 50-jähriger Dividenden-Geschichte und Government-backed-Mietern. Es ist ein aktiv gemanagtes Kreditportfolio mit einer monatlichen 11,5&#160;%-Dividende die Stand Q1 2026 sauber durch ADE gedeckt ist.
+</p>
+
+<p>
+Longbridge ist der Teil der mich bei der Stange hält — die demographische Wette auf US-Senioren und Umkehrhypotheken hat gerade ein Rekordquartal geliefert. Wenn das anhält, ist die Bewertung auf Buchwert sehr fair. Wenn Kreditausfälle steigen oder das Macro dreht, kann es schnell unangenehm werden.
+</p>
+
+<p>
+Ich halte. Ich stocke nicht auf bis ich einen deutlicheren Abschlag auf Buchwert sehe. Und ich werde die ADE-Entwicklung in Q2 2026 sehr genau beobachten.
+</p>
+
+<div class="related-articles">
+  <h3>Weitere REIT-Analysen</h3>
+  <ul>
+    <li><a href="/blog/omega-healthcare-analyse-2026.html">&#x2192; Omega Healthcare (OHI) — 5,6&#160;% Rendite, eingefrorene Dividende</a></li>
+    <li><a href="/blog/realty-income-analyse-2026.html">&#x2192; Realty Income (O) — der Dividenden-Klassiker</a></li>
+    <li><a href="/blog/stag-industrial-analyse-2026.html">&#x2192; STAG Industrial — monatliche Dividende, Industrial-REITs</a></li>
+    <li><a href="/blog/mpw-reit-analyse-2026.html">&#x2192; Medical Properties Trust (MPW) — Turnaround oder Value Trap?</a></li>
+    <li><a href="/blog/iipr-innovative-industrial-analyse-2026.html">&#x2192; Innovative Industrial Properties (IIPR) — Cannabis-REIT</a></li>
+    <li><a href="/reits/">&#x2192; Alle REIT-Analysen im Überblick</a></li>
+  </ul>
+</div>
+
+<!-- Author Box -->
+<div class="author-box">
+  <div class="author-info">
+    <h4>Über den Autor: Marco Bozem</h4>
+    <p>Marco Bozem ist unabhängiger Investor mit Fokus auf Hard Assets &amp; Dividenden — Shipping, Mining, Energie, Pipelines und REITs. Er betreibt MB Capital Strategies und teilt seine echten Portfolio-Entscheidungen inkl. Einstand und P&amp;L. Alle Inhalte sind ausschließlich informativ, keine Anlageberatung. <a href="https://mbcapitalstrategies.com/ueber-marco-bozem/" style="color:#d4af37;">Mehr über Marco</a>.</p>
+  </div>
+</div>
+
+<hr style="border:none;border-top:1px solid rgba(212,175,55,0.15);margin:32px 0">
+
+<p style="font-size:.82rem;color:#6b7a99;line-height:1.6;">
+<strong>Disclaimer:</strong> Dieser Artikel stellt keine Anlageberatung dar. Alle Informationen dienen ausschließlich der persönlichen Weiterbildung und Unterhaltung. Marco Bozem hält Ellington Financial (EFC) im eigenen Depot (öffentlicher Broker Scalable Capital, 8 Stück). Interessenkonflikt-Disclosure: Als Aktionär profitiert der Autor von einem Kursanstieg. Jede Investition birgt Verlustrisiken bis zum Totalverlust. Vergangene Wertentwicklungen sind kein Indikator für zukünftige Ergebnisse. Handeln Sie eigenverantwortlich.
+</p>
+
+</section>
+
+<script>
+const ham=document.getElementById('navHamburger'),mob=document.getElementById('navMobile');
+if(ham&&mob){ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o)});}
+</script>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener noreferrer">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+  </div>
+</footer>
+</body>
+</html>

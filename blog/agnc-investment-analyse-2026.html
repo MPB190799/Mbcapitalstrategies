@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0f1115">
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+<title>AGNC Investment 2026: 13% Yield — was die Dividende wirklich kostet</title>
+<meta name="description" content="AGNC Analyse 2026: 13,2% Dividendenrendite klingt verlockend — aber Book Value fiel in Q1 2026 um 5,6%. Was Agency-mREIT-Investoren wirklich wissen müssen.">
+<meta name="author" content="Marco Bozem">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="canonical" href="https://mbcapitalstrategies.com/blog/agnc-investment-analyse-2026.html" />
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/agnc-investment-analyse-2026.html">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/agnc-investment-analysis-2026.html">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/agnc-investment-analyse-2026.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AGNC Investment 2026: 13% Yield — was die Dividende wirklich kostet">
+<meta property="og:description" content="AGNC Analyse 2026: 13,2% Dividendenrendite klingt verlockend — aber Book Value fiel in Q1 2026 um 5,6%. Was Agency-mREIT-Investoren wirklich wissen müssen.">
+<meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+<meta property="og:url" content="https://mbcapitalstrategies.com/blog/agnc-investment-analyse-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="MB Capital Strategies">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AGNC Investment 2026: 13% Yield — was die Dividende wirklich kostet">
+<meta name="twitter:description" content="AGNC Analyse 2026: 13,2% Dividendenrendite klingt verlockend — aber Book Value fiel in Q1 2026 um 5,6%. Was Agency-mREIT-Investoren wirklich wissen müssen.">
+<meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+<meta name="twitter:creator" content="@MBCapitalStrat">
+
+<style>
+  .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+  .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+  .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+  .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+  .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+  .breadcrumbs a{color:#d4af37;text-decoration:none}
+  .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+  .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+  .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+  .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+  .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+  .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+  .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+  .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+  .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+  .warning-box{background:#1f1410;border-left:4px solid #f59e0b;padding:14px 16px;border-radius:8px;margin:22px 0}
+</style>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+<!-- SEO SCHEMA: BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AGNC Investment 2026: 13% Yield — was die Dividende wirklich kostet",
+  "description": "AGNC Investment Analyse 2026: Agency Mortgage-REIT mit 13,2% Dividendenrendite. Book Value Q1 2026: $8,38. Total Return vs. Kursverfall — die ehrliche Einordnung.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/agnc-investment-analyse-2026.html",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "REITs & Dividenden",
+  "keywords": [
+    "AGNC Investment",
+    "Agency Mortgage REIT",
+    "Dividendenrendite 2026",
+    "mREIT Analyse",
+    "monatliche Dividende",
+    "Book Value",
+    "Zinssensitivität",
+    "Dividendenstrategie",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+
+<!-- SEO SCHEMA: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AGNC Investment Analyse 2026",
+      "item": "https://mbcapitalstrategies.com/blog/agnc-investment-analyse-2026.html"
+    }
+  ]
+}
+</script>
+
+<!-- SEO SCHEMA: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist AGNC Investment Corp und wie verdient das Unternehmen Geld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AGNC Investment Corp (NASDAQ: AGNC) ist ein US-amerikanischer Agency Mortgage REIT mit Sitz in Bethesda, Maryland. Das Unternehmen investiert fast ausschließlich in Agency MBS (Mortgage-Backed Securities), also hypothekenbesicherte Wertpapiere, die von US-Behörden wie Fannie Mae, Freddie Mac oder Ginnie Mae garantiert werden. Das Geschäftsmodell: AGNC leiht sich kurzfristig Geld (Repo-Geschäfte, typischerweise über Nacht bis 30 Tage) zu niedrigen Zinsen und kauft damit längerlaufende Agency MBS, die höhere Kupons zahlen. Der Zinsunterschied (Spread) zwischen kurzen Finanzierungskosten und langen MBS-Erträgen ist die Einnahmequelle. Stand Q1 2026 hatte AGNC ein Portfolio von rund 94,7 Mrd. USD, davon 84,4 Mrd. USD in Agency MBS. Der Hebel (Leverage) lag bei 7,4x bezogen auf das Eigenkapital."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist AGNCs Aktienkurs seit dem IPO 2008 so stark gefallen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AGNC wurde im Mai 2008 zum IPO-Preis von ~19,35 USD ausgegeben. Im Juli 2026 notiert die Aktie bei ca. 10,90 USD — ein nominaler Kursverlust von rund 44%. Die Ursache liegt im Geschäftsmodell: Agency mREITs zahlen als REIT mindestens 90% ihres steuerpflichtigen Einkommens aus, finanzieren Dividenden also nicht aus Buchwert-Wachstum, sondern aus dem laufenden Zinsertrag. Wenn die Zinssätze steigen oder die Mortgage-Spreads ausweiten, fallen die Marktwerte der gehaltenen MBS — der Buchwert (Tangible Book Value per Share) sinkt. Seit IPO ist der Kurs gefallen, aber der Total Return inklusive reinvestierter Dividenden betrug laut historischen Daten rund +595% (ca. +11% p.a.). Kernaussage: AGNC ist ein Einkommensinstrument, kein Wachstumsinvestment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie oft hat AGNC die Dividende seit 2008 gekürzt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AGNC hat seine monatliche Dividende seit dem Börsengang 2008 mehrfach reduziert. Zum Höhepunkt zahlte das Unternehmen 2012/2013 bis zu 1,25 USD pro Monat (1,50 USD je Quartal). Danach folgten schrittweise Kürzungen: 2014 auf 0,22 USD/Monat, 2016 auf 0,18 USD, 2020 nochmalige Reduktion auf 0,12 USD/Monat — dieses Niveau hält AGNC seit April 2020 konstant, also über 6 Jahre ohne Kürzung. Stand Juli 2026: $0,12/Monat = $1,44/Jahr. Die Stabilität seit 2020 ist bemerkenswert, aber die Historie zeigt: Bei starkem Zinsanstieg oder Spread-Ausweitung drohen erneute Kürzungen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet der Tangible Book Value bei AGNC und warum ist er so wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Tangible Book Value per Share (TBVPS) ist die zentrale Bewertungskennzahl bei mortgage-REITs wie AGNC. Er entspricht dem Nettovermögen pro Aktie: (Gesamtvermögen minus immaterielle Vermögenswerte minus Verbindlichkeiten) geteilt durch Aktienanzahl. Da AGNC kein klassisches Unternehmen mit Fabrik oder Patenten ist, sondern ein Wertpapierportfolio hält, spiegelt der TBVPS direkt den Marktwert des Portfolios wider. In Q1 2026 fiel der TBVPS von 8,88 USD (Ende 2025) auf 8,38 USD — ein Rückgang von 5,6% in nur einem Quartal. Ursache: Ausweitung der Mortgage Spreads. Zum Vergleich: Die monatliche Dividende von $0,12 beläuft sich auf $0,36 pro Quartal — der Buchwert-Verlust von $0,50 in Q1 übertraf also die gesamte Quartalsausschüttung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist AGNCs 13% Dividende nachhaltig oder droht eine Kürzung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Kernkennzahl für Dividenden-Nachhaltigkeit bei AGNC ist nicht der Gewinn (GAAP), sondern das Net Spread and Dollar Roll Income (NSD-RI). In Q1 2026 erzielte AGNC NSD-RI von 0,42 USD pro Aktie pro Quartal — bei einer Dividende von 0,36 USD/Quartal ergibt das eine Deckungsquote von ca. 1,17x. Das ist solide. Das Problem: Buch-Wert-Erosion bei Spread-Ausweitung reduziert das Eigenkapital — was wiederum den Spielraum für höhere Ausschüttungen begrenzt. Solange die Zinsspreads zwischen Repo-Kosten und MBS-Renditen positiv bleiben und AGNC keinen dramatischen Buchwert-Einbruch erleidet, ist die $0,12/Monat-Dividende in 2026 relativ stabil. Ein neuer Zinsstress wie 2022 könnte aber erneut zu einer Kürzung führen."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+<!-- ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Themen-Menü öffnen">Themen ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">Shipping</a>
+          <a href="/midstream/">Pipelines / Midstream</a>
+          <a href="/mining-aktien/">Mining Aktien</a>
+          <a href="/upstream-aktien/">Upstream Aktien</a>
+          <hr>
+          <a href="/reits/">REITs</a>
+          <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">Shipping Aktien</a>
+    <a href="/midstream/">Midstream / Pipelines</a>
+    <a href="/mining-aktien/">Mining Aktien</a>
+    <a href="/reits/">REITs</a>
+    <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">Blog</a>
+    <a href="/toolbox.html">Toolbox</a>
+    <a href="/glossar/">Glossar</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>AGNC Investment Analyse 2026</span>
+</nav>
+
+<section class="container">
+
+<!-- AEO Answer-First Block -->
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 24px;">
+  <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">AGNC Investment 2026 kurz gefasst:</strong> AGNC ist der größte börsengehandelte Agency Mortgage REIT der USA — kein klassischer REIT, sondern ein gehebelter MBS-Fonds. Die 13,2% Dividendenrendite klingt verlockend, aber der Aktienkurs fiel seit IPO 2008 von ~19 USD auf ~10,90 USD. Total Return inklusive Dividenden: historisch positiv. Der Trick: AGNC ist ein Einkommensinstrument mit systematischer Buchwert-Erosion bei Zinsstress — kein Wachstumsinvestment. Wer das versteht und akzeptiert, findet hier monatlichen Cashflow. Wer Kursgewinne erwartet: falsches Produkt.</p>
+</div>
+
+<h1>AGNC Investment 2026: 13% Yield — was die Dividende wirklich kostet</h1>
+
+<div style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+  <p style="margin:0 0 10px"><strong style="color:#D4AF37">Ist AGNC 2026 eine gute Dividendenaktie?</strong><br>
+  AGNC zahlt seit April 2020 stabil $0,12 pro Monat = $1,44 pro Jahr. Bei einem Kurs von $10,90 ergibt das eine Rendite von 13,2%. Die Deckungsquote (NSD-RI) lag in Q1 2026 bei 1,17x — also solide im positiven Bereich. Das Problem: In Q1 2026 fiel der Tangible Book Value um $0,50 pro Aktie — mehr als eine ganze Quartals-Dividende. Wer nur auf die Yield schaut, ohne die Buch-Wert-Entwicklung zu prüfen, versteht dieses Investment nicht. Keine Anlageberatung.</p>
+</div>
+
+<aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">
+  English version: <strong style="color:#f5f6fa">Read this analysis in English</strong> — <a href="https://mbcapitalstrategiesgloabal.com/blog/agnc-investment-analysis-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">AGNC Investment Analysis 2026 (EN)</a>
+</aside>
+
+<p style="font-size:.9rem;color:#9aa6c0">
+Veröffentlicht: 01.07.2026 &nbsp;·&nbsp; Autor: Marco Bozem &nbsp;·&nbsp;
+Offenlegung: Ich halte 4 Aktien AGNC über Trade Republic (Einstand ~9,09 EUR, +2,3%). Kein Interessenkonflikt im negativen Sinne — ich analysiere diese Position kritisch. Keine Anlageberatung.
+</p>
+
+<!-- AdSense Top -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="warning-box">
+  <strong style="color:#f59e0b;">Skin in the Game — meine Position:</strong> Ich halte AGNC mit 4 Aktien zu einem Einstand von ca. 9,09 EUR (öffentliches Depot, Trade Republic). Aktuell ~+2,3% im Plus — das klingt nach wenig bei 13% Yield, macht aber genau den Punkt dieser Analyse: Die Dividende kauft sich den Kursrückgang. Ich analysiere hier mein eigenes Geld, nicht eine abstrakte Theorie.
+</div>
+
+<h2>1. Was ist AGNC überhaupt? Das Geschäftsmodell einfach erklärt</h2>
+
+<p>
+AGNC Investment Corp (NASDAQ: AGNC) ist <strong>kein Vermieter</strong>. Das ist der erste Irrtum, den viele Anleger begehen, wenn sie "REIT" hören. AGNC besitzt keine Immobilien, keine Wohnungen, keine Bürotürme. AGNC besitzt <strong>Hypothekenpapiere</strong> — genauer gesagt: Agency Mortgage-Backed Securities (Agency MBS).
+</p>
+
+<p>
+Was sind das? MBS sind Bündel aus Hypothekenkrediten amerikanischer Hausbesitzer, die zu handelbaren Wertpapieren verpackt wurden. "Agency" bedeutet: Diese Papiere sind durch die US-Behörden Fannie Mae, Freddie Mac und Ginnie Mae garantiert — es gibt also kein Kreditausfallrisiko. Wenn der Hausbesitzer nicht zahlt, springt die Bundesbehörde ein.
+</p>
+
+<div class="highlight-box">
+<strong style="color:#d4af37;">Das Geschäftsmodell in einem Satz:</strong>
+<p style="margin-top:10px">AGNC leiht sich kurzfristig billiges Geld (Repo-Zinsen, oft über Nacht bis 30 Tage) und kauft damit langfristige Agency MBS, die höhere Zinsen zahlen. Der Unterschied zwischen den kurzen Finanzierungskosten und den langen MBS-Kupons ist der Zinsertrag — daraus wird die Dividende bezahlt.</p>
+</div>
+
+<p>
+Zum Vergleichsrahmen: Stand Q1 2026 hielt AGNC ein Portfolio von <strong>rund 94,7 Mrd. USD</strong>, davon 84,4 Mrd. USD direkt in Agency MBS und 9,5 Mrd. USD in TBA-Forward-Positionen (To-Be-Announced, ein wichtiges Instrument für Agency mREITs). 30-jährige Festzins-MBS machten 94% des Portfolios aus — AGNC ist also ein sehr konzentriertes, klares Wettseinsatz auf Agency MBS-Spreads.
+</p>
+
+<p>
+Das Eigenkapital als Basis dieser Portfoliogröße: ca. 12,4 Mrd. USD per Ende 2025 (Bilanz). Das bedeutet: <strong>Leverage von rund 7,4x</strong> bezogen auf das Tangible Equity per Q1 2026. Für jeden Dollar Eigenkapital hält AGNC 7,40 Dollar in MBS. Das ist eine Hebelmaschine — und genau das erklärt sowohl die hohe Rendite als auch das Risikoprofil.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;">
+<strong>Glossar:</strong> <a href="/glossar/dividendenrendite.html" style="color:#D4AF37;">Dividendenrendite erklärt</a> — Was ist die Dividendenrendite und wann ist eine hohe Rendite ein Warnsignal?
+</p>
+
+<h2>2. Dividende: $0,12/Monat — 6 Jahre stabil, aber was steckt dahinter?</h2>
+
+<p>
+AGNC zahlt seit April 2020 konstant <strong>$0,12 pro Aktie pro Monat</strong>. Das ergibt $1,44 pro Jahr. Bei einem Kurs von $10,90 (Stand Juli 2026) entspricht das einer Dividendenrendite von <strong>13,2%</strong>. Das ist monatlicher Cashflow — für Dividendeninvestoren auf den ersten Blick attraktiv.
+</p>
+
+<p>
+Aber schauen wir uns die Geschichte an. Beim IPO im Mai 2008 zahlte AGNC noch viel mehr — auf dem Hochpunkt 2012/2013 bis zu $1,25 pro Monat. Danach folgte eine lange Reihe von Kürzungen:
+</p>
+
+<ul>
+  <li>2013: $1,25/Monat → Beginn der Kürzungen</li>
+  <li>2014–2016: Schrittweise auf $0,22, dann $0,18/Monat</li>
+  <li>2020 (April): Letzte Kürzung auf $0,12/Monat — seither stabil</li>
+  <li>Juli 2026: Nach wie vor $0,12/Monat, also über 6 Jahre keine Kürzung</li>
+</ul>
+
+<div class="info-box">
+<strong>Die zentrale Frage:</strong> Wie stabil ist diese $0,12/Monat wirklich? Die Antwort liegt nicht im GAAP-Gewinn, sondern im <strong>Net Spread and Dollar Roll Income (NSD-RI)</strong> — das ist die operative Kernkennzahl für Agency mREITs. In Q1 2026 lag das NSD-RI bei <strong>$0,42 pro Aktie für das Quartal</strong>. Bei einer Quartalsdividende von $0,36 (= 3 x $0,12) ergibt das eine Deckungsquote von <strong>1,17x</strong>. Die Dividende ist also durch die Kerneinnahmen gedeckt — das ist positiv.
+</div>
+
+<p>
+Das Problem ist ein anderes: Im gleichen Quartal Q1 2026 fiel der <strong>Tangible Book Value per Share (TBVPS)</strong> von $8,88 auf $8,38 — ein Rückgang von <strong>$0,50 in einem einzigen Quartal</strong>. Das entspricht mehr als einer gesamten Quartalsausschüttung ($0,36). Die wirtschaftliche Gesamtrendite (Economic Return on Tangible Equity) war in Q1 2026 <strong>negativ mit -1,6%</strong>.
+</p>
+
+<p>
+Das ist die Krux der AGNC-Gleichung: Die Dividende kommt, der Buchwert geht. In Perioden stabiler oder fallender Zinsen und enger Mortgage Spreads gewinnt der Buchwert — und man bekommt Dividende obendrauf. In Perioden von Zinsanstieg oder Spread-Ausweitung verliert der Buchwert — und die Dividende leistet dann eine Art Kompensation.
+</p>
+
+<!-- AdSense Mitte -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="1212067635"
+     data-ad-format="in-article"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- Newsletter DE CTA -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenrückblick Hard Assets &amp; Dividenden — kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+
+<h2>3. Buchwert-Erosion — das unterschätzte Risiko bei Agency mREITs</h2>
+
+<p>
+Bei klassischen Aktien schaut man auf Umsatz, EBIT, Bewertung. Bei AGNC ist die entscheidende Kennzahl der <strong>Tangible Book Value per Share (TBVPS)</strong> — weil AGNC kein operatives Unternehmen ist, sondern ein Portfolio aus Finanzinstrumenten hält.
+</p>
+
+<p>
+Was den TBVPS bewegt: Wenn die Zinsen steigen oder die Mortgage-Spreads weiten (d.h. der Risikoaufschlag auf Agency MBS gegenüber US-Treasuries), fällt der Marktwert der gehaltenen MBS. Das schlägt direkt auf den Buchwert durch. AGNC hedgt zwar aggressiv mit Zinsswaps und anderen Derivaten — aber kein Hedging ist perfekt, und Spread-Risiken lassen sich nur begrenzt absichern.
+</p>
+
+<p>
+Die Zahlen für Q1 2026 (Quellen: AGNC IR-Pressemitteilung, SEC 8-K vom April 2026):
+</p>
+
+<table class="metrics-table">
+  <tr><td>Tangible Book Value/Share Q4 2025</td><td>$8,88</td></tr>
+  <tr><td>Tangible Book Value/Share Q1 2026</td><td>$8,38</td></tr>
+  <tr><td>Veränderung Q1 2026</td><td>-$0,50 (-5,6%)</td></tr>
+  <tr><td>Quartals-Dividende (3 × $0,12)</td><td>$0,36/Quartal</td></tr>
+  <tr><td>Economic Return Q1 2026</td><td>-1,6%</td></tr>
+  <tr><td>Net Spread + Dollar Roll Income Q1</td><td>$0,42/Aktie</td></tr>
+  <tr><td>Dividend Coverage Ratio</td><td>~1,17x</td></tr>
+  <tr><td>Portfolio-Größe</td><td>94,7 Mrd. USD</td></tr>
+  <tr><td>Leverage (Q1 2026)</td><td>7,4x tangible equity</td></tr>
+</table>
+
+<p>
+Die Schlussfolgerung ist nüchtern: In einem Quartal mit Spread-Ausweitung hat AGNC mehr Buchwert verloren als die gesamte Dividende eingebracht hat. Das ist kein Ausnahmefall — das ist die strukturelle Mechanik dieses Instruments. In guten Quartalen (enge Spreads, stabile oder sinkende Zinsen) gewinnt der Buchwert — und man hat Dividende obendrauf. In schlechten Quartalen dominiert die Erosion.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;">
+<strong>Tool:</strong> <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield-on-Cost-Rechner</a> — Berechne deine persönliche Rendite auf den Einstandskurs, nicht nur auf den aktuellen Kurs.
+</p>
+
+<h2>4. Total Return vs. Kursverfall — die Wahrheit in Zahlen</h2>
+
+<p>
+AGNC wurde am 15. Mai 2008 zum IPO-Preis von rund $19,35 ausgegeben. Aktuell notiert die Aktie bei $10,90 — das entspricht einem nominalen Kursverlust von etwa <strong>44% seit IPO</strong>.
+</p>
+
+<p>
+Aber das ist nur die halbe Wahrheit. Wer AGNC ausschließlich auf den Kurs bewertet, missversteht das Investment fundamental. In dem Zeitraum hat AGNC monatlich Dividenden ausgeschüttet — und diese Dividenden haben die Kursrückgänge mehr als kompensiert. Historische Total-Return-Daten (inklusive reinvestierter Dividenden) zeigen seit IPO 2008 eine Gesamtrendite von rund <strong>+595% bis +630%</strong>, was einer annualisierten Rendite von ca. <strong>+11% pro Jahr</strong> entspricht.
+</p>
+
+<div class="highlight-box">
+<strong style="color:#d4af37;">Die AGNC-Gleichung für Langfristanleger:</strong>
+<ul style="margin-top:10px">
+  <li><strong>Kurs:</strong> Tendenz nach unten (strukturelle Buchwert-Erosion über Zyklen)</li>
+  <li><strong>Dividenden:</strong> Kompensieren den Kursverlust über Zeit und liefern echten Cashflow</li>
+  <li><strong>Total Return:</strong> Historisch positiv (~11% p.a. seit 2008) — aber nur mit reinvestierten Dividenden</li>
+  <li><strong>Fazit:</strong> Wer Dividenden konsumiert statt reinvestiert, fährt das Kapital schleichend ab</li>
+</ul>
+</div>
+
+<p>
+Das ist das fundamentale Missverständnis rund um Agency mREITs: 13% Yield klingt wie 13% Kapitalwachstum. In Wirklichkeit ist es 13% Kapitalrückzahlung aus dem eigenen Buchwert — gemischt mit echtem Zinsertrag. Der Unterschied ist entscheidend für die Steuerplanung und für die realistische Renditeerwartung.
+</p>
+
+<h2>5. Zinssensitivität — das eigentliche Risiko</h2>
+
+<p>
+AGNC ist das vielleicht zinssensitivste Instrument im REIT-Universum. Drei Risikofaktoren bestimmen die Performance:
+</p>
+
+<div class="risk-box">
+<strong>Risikofaktor 1: Steilheit der Zinskurve</strong><br>
+AGNC verdient an der Differenz zwischen kurzen Repo-Zinsen und langen MBS-Kupons. Wenn die Zinskurve flach oder invers ist (kurzfristige Zinsen nahe an oder über langfristigen Zinsen), schmilzt der Zinsertrag. Das war das Problem 2022/2023: Die Fed erhöhte aggressiv, die kurzen Zinsen schossen hoch — AGNCs Finanzierungskosten explodierten, während die MBS-Kupons langsamer reagierten.
+</div>
+
+<div class="risk-box">
+<strong>Risikofaktor 2: Mortgage Spread-Ausweitung</strong><br>
+Auch wenn kein Kreditausfallrisiko besteht — Agency MBS handeln nicht eins zu eins mit Treasuries. Es gibt einen Risikoaufschlag (Spread), der sich ausweitet, wenn Märkte nervös werden oder wenn die Nachfrage nach MBS sinkt (z.B. wenn die Fed QT betreibt und ihr MBS-Portfolio abbaut). Genau das passierte in Q1 2026: Spread-Ausweitung kostete AGNC -5,6% Buchwert in einem Quartal.
+</div>
+
+<div class="risk-box">
+<strong>Risikofaktor 3: Prepayment-Risiko</strong><br>
+Wenn Zinsen fallen, zahlen Hausbesitzer ihre Hypotheken früher zurück (Refinanzierungswelle). AGNC erhält dann früher Kapital zurück — aber zu einem Zeitpunkt, wo Reinvestitionsmöglichkeiten zu niedrigeren Kupons stehen. Das komprimiert die zukünftigen Erträge. Hedging begrenzt dieses Risiko, eliminiert es aber nicht.
+</div>
+
+<p>
+AGNC begegnet all diesen Risiken mit einem umfangreichen Hedging-Arsenal: Zinsswaps, Swaptions, Treasury-Futures, TBA-Positionen. CEO Peter J. Federico hat mehrfach betont, dass AGNC ein der aktivsten Portfoliomanager im mREIT-Universum ist. Das stimmt — aber kein Hedging eliminiert alle Risiken, und aktives Management kostet (Hedging-Kosten drücken den Zinsertrag).
+</p>
+
+<h2>6. Bewertung: Kurs vs. Book Value</h2>
+
+<p>
+Eine klassische Bewertungsregel für mREITs: Kaufe unter Book Value, verkaufe über Book Value. Das macht intuitiv Sinn — du kaufst einen Wertpapierportfolio, und der Preis dafür sollte ungefähr dem inneren Wert entsprechen.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Ticker</td><td>AGNC (NASDAQ)</td></tr>
+  <tr><td>Kurs (Juli 2026)</td><td>$10,90</td></tr>
+  <tr><td>Tangible Book Value/Share (Q1 2026)</td><td>$8,38</td></tr>
+  <tr><td>Kurs-/Buchwert-Verhältnis (P/TBV)</td><td>~1,30x</td></tr>
+  <tr><td>Dividendenrendite</td><td>13,2% ($1,44/Jahr)</td></tr>
+  <tr><td>Marktkapitalisierung</td><td>ca. 12,5 Mrd. USD</td></tr>
+  <tr><td>52-Wochen-Spanne</td><td>$9,12 – $12,19</td></tr>
+  <tr><td>Beta</td><td>1,31</td></tr>
+  <tr><td>Portfolio-Größe</td><td>94,7 Mrd. USD</td></tr>
+  <tr><td>CEO</td><td>Peter J. Federico</td></tr>
+  <tr><td>Gründung / IPO</td><td>2008, Bethesda MD</td></tr>
+</table>
+
+<p>
+Das P/TBV-Verhältnis von ca. 1,30x ist für AGNC historisch gesehen eher am oberen Ende. Günstigere Einstiegszeitpunkte bei AGNC waren traditionell Phasen, in denen der Kurs nahe am oder unter dem Book Value lag. Das war z.B. Ende 2023 / Anfang 2024 der Fall, als der Kurs unter $9 und zeitweise unter dem Buchwert lag. Wer dann kaufte, hat seither sowohl Buchwert-Erholung als auch Dividenden kassiert.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;">
+<strong>Tool:</strong> <a href="/tools/dividendenrechner.html" style="color:#D4AF37;">Dividendenrechner</a> — Berechne, wie viel monatlicher Cashflow bei verschiedenen AGNC-Positionen entsteht.
+</p>
+
+<h2>7. AGNC in meinem Depot — warum 4 Aktien und nicht mehr?</h2>
+
+<p>
+Ich halte 4 Aktien AGNC mit einem Einstand von ca. 9,09 EUR — das ist eine sehr kleine Beimischung. Aktuell liegt die Position bei etwa +2,3%, was bei einem 13%-Yielder nach sehr wenig klingt. Das ist Absicht.
+</p>
+
+<p>
+Meine Überlegung: AGNC ist für mich ein <strong>Cashflow-Instrument</strong>, kein Depotanker. Die monatliche Dividende ist realer Cashflow, den ich für Nachkäufe in anderen Positionen nutzen kann. Aber ich binde hier nicht großes Kapital, weil ich das Risikoprofil kenne:
+</p>
+
+<ul>
+  <li>Bei einem neuen Zinsanstieg wie 2022 kann der Buchwert schnell um 15–25% einbrechen</li>
+  <li>Die Dividende kann gekürzt werden — das ist historisch passiert (mehrfach)</li>
+  <li>Das Instrument eignet sich nicht als Kernposition in einem auf Kapitalerhalt ausgerichteten Depot</li>
+  <li>Für einen Investor, der auf Shipping-Cashflow (CMB.Tech, TORM, Dorian LPG) und Mining setzt, ist AGNC eine <em>andere</em> Cashflow-Quelle — diversifiziert vom Rohstoffzyklus</li>
+</ul>
+
+<p>
+Der Mehrwert: AGNC korreliert kaum mit Ölpreis, Tankerraten oder Goldpreis. Wenn meine Shipping-Positionen unter Druck stehen (z.B. schwache Tankerraten), läuft AGNC nach eigenem Rhythmus. Das ist echter Diversifikationswert in einem Hard-Asset-fokussierten Depot.
+</p>
+
+<h2>8. Risiken im Überblick</h2>
+
+<div class="risk-box">
+<strong>Zentrale Risiken bei AGNC 2026:</strong>
+<ul>
+  <li><strong>Zinsanstieg / Zinskurven-Verflachung:</strong> Jede deutliche Fed-Erhöhungsrunde komprimiert den Zinsertrag und drückt den MBS-Wert. 2022 war das dramatisch sichtbar</li>
+  <li><strong>Mortgage-Spread-Ausweitung:</strong> Wenn die Fed ihr MBS-Portfolio abbaut (QT) oder wenn Credit Markets nervös werden, weiten sich Agency-Spreads — direkte Buchwert-Erosion</li>
+  <li><strong>Hoher Hebel:</strong> 7,4x Leverage amplifies gains and losses gleichermaßen. In einem Stressszenario kann das Eigenkapital schnell unter Druck geraten</li>
+  <li><strong>Dividenden-Kürzungsrisiko:</strong> Sollte der NSD-RI unter die Dividende fallen, ist eine Kürzung wahrscheinlich — die Geschichte zeigt: AGNC hat es schon mehrfach getan</li>
+  <li><strong>Prepayment-Risiko:</strong> Bei raschen Zinssenkungen → Refinanzierungswelle → Reinvestition zu niedrigeren Kupons</li>
+  <li><strong>Regulatorisches Risiko:</strong> Fannie Mae / Freddie Mac Reform oder Änderungen der REIT-Steuerstruktur würden das Geschäftsmodell fundamental berühren</li>
+</ul>
+</div>
+
+<h2>9. Für wen ist AGNC geeignet — und für wen nicht?</h2>
+
+<div class="info-box">
+<strong>AGNC ist sinnvoll für:</strong>
+<ul>
+  <li>Einkommensinvestoren, die monatlichen Cashflow priorisieren und Kursrückgänge akzeptieren</li>
+  <li>Depot-Beimischungen zur Diversifikation aus Rohstoff-/Zykliker-Portfolios</li>
+  <li>Anleger, die den Zusammenhang zwischen Zinsumfeld, Book Value und Dividende verstehen</li>
+  <li>US-Steuerpflichtige: AGNC zahlt Dividenden als ordinary income, nicht qualified dividends — steuerlich ungünstig, aber US-Investoren können in steuerbegünstigten Konten (IRA, 401k) investieren</li>
+</ul>
+</div>
+
+<div class="risk-box">
+<strong>AGNC ist das falsche Investment für:</strong>
+<ul>
+  <li>Anleger, die Kursgewinne erwarten — der Kurs tendiert über Zyklen nach unten</li>
+  <li>Anleger, die eine sichere, stabile Dividende wie einen Anleihe-Kupon erwarten — die Geschichte zeigt mehrfache Kürzungen</li>
+  <li>Anleger, die eine 13% Rendite mit einem 13% Kapitalwachstum verwechseln</li>
+  <li>Anleger ohne Verständnis für Zinssensitivität, Leverage und Mortgage Spreads</li>
+</ul>
+</div>
+
+<h2>10. Fazit — AGNC 2026: Cashflow-Maschine mit Verfallsdatum auf den Buchwert</h2>
+
+<div class="info-box">
+<strong>Mein ehrliches Urteil:</strong> AGNC ist kein klassisches Dividenden-Investment im Sinne eines Realty Income oder eines Utility-REITs. Es ist eine <strong>geleverte Zinsertrag-Maschine</strong> — mit echter Dividende, aber systematischem Preisverfall des Instruments über Zinsstress-Zyklen. Wer das versteht und akzeptiert, kann AGNC als Teil eines diversifizierten Einkommens-Portfolios sinnvoll einsetzen — mit begrenzter Positionsgröße und klaren Erwartungen.
+
+<p style="margin-top:12px">Die 13% Yield ist real. Aber sie wird partiell aus dem Buchwert "ausgezahlt" — was erklärt, warum der Kurs seit IPO 2008 von ~$19 auf ~$10,90 gefallen ist. Total Return inklusive reinvestierter Dividenden war historisch positiv (~11% p.a.) — aber das erfordert, dass Dividenden konsequent reinvestiert werden, nicht konsumiert. Und es erfordert Geduld durch Buch-Wert-Einbrüche wie Q1 2026 (-5,6%).</p>
+
+<p style="margin-top:8px">Ich halte meine 4 Aktien — small position, monatlicher Cashflow, Diversifikation vom Shipping-Zyklus. Kein Kernbaustein, aber ein nützlicher Baustein.</p>
+</div>
+
+<div class="info-box">
+<strong>Rechtlicher Hinweis:</strong>
+Dieser Artikel dient ausschließlich Informations- und Bildungszwecken.
+Er stellt keine Anlageberatung, Anlageempfehlung oder Aufforderung zum Kauf oder Verkauf von Wertpapieren dar.
+Alle Angaben ohne Gewähr. Ich halte AGNC selbst (4 Aktien, Offenlegung siehe oben). Vergangene Performance ist kein Indikator für zukünftige Ergebnisse.
+</div>
+
+<!-- YOC CTA -->
+<div class="cta-box" style="border-left:4px solid #d4af37;margin:28px 0;">
+  <h3 style="margin:0 0 8px;color:#d4af37;">Deine persönliche Dividendenrendite berechnen</h3>
+  <p style="margin:0 0 12px;color:#cfd6e6;">Wie stark arbeitet dein eingesetztes Kapital wirklich? Der <strong>Yield-on-Cost-Rechner</strong> zeigt dir deine persönliche Rendite auf den Einstandskurs — kostenlos.</p>
+  <a href="/tools/yield-on-cost-rechner.html" style="display:inline-block;background:#d4af37;color:#0f1115;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;">Zum YOC-Rechner &rarr;</a>
+  <a href="/rechner/" style="display:inline-block;margin-left:10px;color:#d4af37;font-weight:600;text-decoration:none;font-size:0.9em;">Alle Rechner &rarr;</a>
+</div>
+
+<!-- InvestingPro Affiliate -->
+<div class="cta-box">
+  <h3 style="color:#d4af37;margin:0 0 10px;">Fundamentaldaten mit InvestingPro analysieren</h3>
+  <p style="color:#cfd6e6;margin:0 0 14px;">
+    Für AGNC, Mortgage-REITs und alle Fixed-Income-Instrumente nutze ich
+    <strong>InvestingPro</strong> — Book Value Trend, Fair Value Modelle, Zins-Sensitivitätsanalyse.
+    Affiliate-Link — ich erhalte eine Provision, für dich kein Aufpreis.
+  </p>
+  <a class="cta-btn" href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="sponsored noopener noreferrer">
+    15% Community-Bonus sichern &rarr;
+  </a>
+</div>
+
+<!-- AdSense vor Footer -->
+<ins class="adsbygoogle" style="display:block;margin:32px 0"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="1212067635"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="related-articles">
+  <h3>Verwandte Analysen — REITs &amp; Dividenden</h3>
+  <ul>
+    <li><a href="/blog/realty-income-analyse-2026.html">Realty Income — 5% monatliche Dividende, NET-Lease-King</a></li>
+    <li><a href="/blog/omega-healthcare-analyse-2026.html">Omega Healthcare — 6% Dividende, Senior Care REITs</a></li>
+    <li><a href="/blog/stag-industrial-analyse-2026.html">STAG Industrial — Industrie-REIT mit monatlicher Dividende</a></li>
+    <li><a href="/blog/mpw-reit-analyse-2026.html">Medical Properties Trust — 10% Yield &amp; Turnaround</a></li>
+    <li><a href="/blog/iipr-innovative-industrial-analyse-2026.html">IIPR — Cannabis-REIT mit 8% Dividende</a></li>
+    <li><a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html">REITs, BDCs &amp; MLPs — Pflicht-Dividenden erklärt</a></li>
+    <li><a href="/reits/">REIT Hub — alle Analysen im Überblick</a></li>
+    <li><a href="/kategorien/high-yield-aktien.html">High-Yield Aktien 2026 — die besten Dividendenzahler</a></li>
+  </ul>
+</div>
+
+<!-- Autorenbox E-E-A-T -->
+<div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;">
+  <img src="/marco.webp" alt="Marco Bozem — MB Capital Strategies" width="72" height="72" loading="lazy" style="border-radius:50%;border:2px solid #d4af37;flex-shrink:0;">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#d4af37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.85rem;color:#9aa6c0;">Unabhängiger Investor, Hard Assets &amp; Dividenden — Shipping, Mining, Energie, REITs</p>
+    <p style="margin:0;font-size:0.88rem;color:#cfd6e6;">Ich investiere mein eigenes Geld in die analysierten Werte und lege offen, was ich halte. Keine Anlageberatung — nur ehrliche Einordnung aus der Praxis eines Privatinvestors.</p>
+    <p style="margin:8px 0 0;font-size:0.83rem;"><a href="/ueber-marco-bozem/" style="color:#d4af37;">Mehr über Marco &rarr;</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener noreferrer" style="color:#d4af37;">YouTube</a> &nbsp;·&nbsp; <a href="https://www.wikidata.org/wiki/Q138571853" target="_blank" rel="noopener noreferrer" style="color:#d4af37;">Wikidata</a></p>
+  </div>
+</div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/reits/">REITs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content &amp; Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener noreferrer">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+<script src="/assets/js/glossar-linking.js" defer></script>
+</body>
+</html>

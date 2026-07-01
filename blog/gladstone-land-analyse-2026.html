@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+  <title>Gladstone Land Analyse 2026 — Ackerland-REIT mit 6,6 % Rendite &amp; −29 % Kurs</title>
+  <meta name="description" content="Gladstone Land (LAND) 2026: 144 Farmen, ~99.000 Acres, 6,6% Dividende monatlich. Warum der Kurs 65% vom ATH entfernt ist — und ob der Sachwert-Discount eine Chance ist.">
+  <meta name="author" content="Marco Bozem">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/gladstone-land-analyse-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/gladstone-land-analyse-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/gladstone-land-analysis-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/gladstone-land-analyse-2026.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gladstone Land Analyse 2026 — Ackerland-REIT mit 6,6 % Rendite &amp; −29 % Kurs">
+  <meta property="og:description" content="Gladstone Land (LAND) 2026: 144 Farmen, ~99.000 Acres, 6,6% Dividende monatlich. Warum der Kurs 65% vom ATH entfernt ist — und ob der Sachwert-Discount eine Chance ist.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/gladstone-land-analyse-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gladstone Land Analyse 2026 — Ackerland-REIT mit 6,6 % Rendite &amp; −29 % Kurs">
+  <meta name="twitter:description" content="Gladstone Land (LAND) 2026: 144 Farmen, ~99.000 Acres, 6,6% Dividende monatlich. Warum der Kurs 65% vom ATH entfernt ist — und ob der Sachwert-Discount eine Chance ist.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <!-- ADSENSE -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <!-- SEO SCHEMA: BlogPosting -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Gladstone Land Analyse 2026 — Ackerland-REIT mit 6,6 % Dividende und −29 % Kurs",
+  "description": "Gladstone Land (LAND) 2026: 144 Farmen, ~99.000 Acres in 14 US-Bundesstaaten, Wasser-Rechte in Kalifornien. Monatliche Dividende $0,0467/Aktie. Ehrliche Analyse inkl. Marcos −29%-Position.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/gladstone-land-analyse-2026.html",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "REITs & Dividenden",
+  "wordCount": 1250,
+  "keywords": [
+    "Gladstone Land Analyse 2026",
+    "LAND REIT",
+    "Farmland REIT",
+    "Ackerland Aktie",
+    "monatliche Dividende",
+    "Dividendenrendite",
+    "Hard Assets",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Gladstone Land Analyse 2026",
+      "item": "https://mbcapitalstrategies.com/blog/gladstone-land-analyse-2026.html"
+    }
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist Gladstone Land und wie verdient das Unternehmen Geld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gladstone Land (NASDAQ: LAND) ist ein börsennotierter Farmland-REIT: Das Unternehmen kauft US-amerikanisches Ackerland und verpachtet es an Landwirte, die dort Obst, Gemüse, Nüsse und Wein anbauen. Das Portfolio besteht aus 144 Farmen mit rund 99.000 Acres in 14 Bundesstaaten. Einnahmen kommen aus fixen Pachtverträgen sowie aus Gewinnbeteiligungen bei Ernte-Erlösen (Participation Rents). Zusätzlich hält das Unternehmen rund 56.000 Acre-feet Wasserrechte in Kalifornien — ein strategischer Vorteil in der wasserarmen Region."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie hoch ist die Gladstone Land Dividende 2026 und wird sie durch AFFO gedeckt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die monatliche Dividende beträgt $0,0467 je Aktie, also $0,5604 pro Jahr. Bei einem Kurs von $8,53 ergibt das eine Dividendenrendite von rund 6,6%. Im Q1 2026 lag der AFFO bei $0,08 pro Aktie — die monatliche Dividende von ca. $0,047 ($0,14 pro Quartal) wird damit durch den AFFO abgedeckt. Allerdings ist diese Deckung in der Vergangenheit wiederholt unter Druck geraten, weshalb die Dividenden-Sicherheit aufmerksam zu beobachten bleibt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist der Kurs von Gladstone Land so stark gefallen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gladstone Land hat seinen Kurs im Vergleich zum Allzeithoch von rund $40 (Anfang 2022) um über 75% eingebüßt. Die Hauptgründe: (1) Steigende Zinsen 2022-2023 haben REITs als Assetklasse unter Druck gesetzt und die Kapitalkosten des Unternehmens erhöht. (2) Das Unternehmen hat teure Vorzugsaktien ausgegeben, die auf die Common-Equity-Rendite drücken. (3) Einige Pächter gerieten in Schwierigkeiten und wurden auf Nonaccrual-Status gesetzt. (4) Der NAV pro Aktie sank auf rund $14,91 (Q4 2024) durch niedrigere Farmland-Bewertungen. Der aktuelle Kurs von $8,53 liegt deutlich unter dem NAV — ein Discount von über 40%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was sind die Wasserrechte von Gladstone Land wert und warum sind sie wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gladstone Land hält rund 56.000 Acre-feet Wasserrechte — das entspricht über 18 Milliarden Gallonen — ausschließlich in Kalifornien. In der wasserarmen San Joaquin Valley und in anderen landwirtschaftlichen Regionen Kaliforniens ist Wasser kein Nebenprodukt, sondern ein eigenständiger Sachwert. Die Wasserrechte sichern die Pachtfähigkeit der Farmen langfristig und machen diese für Pächter unverzichtbar. Konkret: Ohne Wasserversorgung können Pistazien, Mandeln und Blaubeeren nicht angebaut werden — LAND-Farmen mit eigenen Wasserrechten sind strukturell bevorzugt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Gladstone Land und Farmland Partners (FPI)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beide sind US-Farmland-REITs, unterscheiden sich aber deutlich: Gladstone Land fokussiert sich auf Permanent Crops (Pistazien, Mandeln, Blaubeeren, Weintrauben) und spezialisierte Anbauregionen mit hohen Wasseranforderungen — besonders Kalifornien. Farmland Partners besitzt vorwiegend Row-Crop-Land (Mais, Soja, Weizen) im Mittleren Westen, mit niedrigeren Pacht-Werten aber diversifizierterer Pächterstruktur. Gladstone Land zahlt eine höhere Dividendenrendite (~6,6%) und ist stärker auf Hochwertkulturen fokussiert; FPI bietet eine kleinere Ausschüttung (~4,5%) zahlt aber auch Sonderdividenden und hat weniger Kapitalstruktur-Risiko durch Vorzugsaktien."
+      }
+    }
+  ]
+}
+</script>
+
+  <!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Themen-Menü öffnen">Themen &#9662;</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">Shipping</a>
+          <a href="/midstream/">Pipelines / Midstream</a>
+          <a href="/mining-aktien/">Mining Aktien</a>
+          <a href="/upstream-aktien/">Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">Shipping</a>
+    <a href="/midstream/">Midstream / Pipelines</a>
+    <a href="/mining-aktien/">Mining Aktien</a>
+    <a href="/upstream-aktien/">Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">Blog</a>
+    <a href="/toolbox.html">Toolbox</a>
+    <a href="/glossar/">Glossar</a>
+  </nav>
+</header>
+
+<style>
+  .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+  .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+  .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+  .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+  .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+  .breadcrumbs a{color:#d4af37;text-decoration:none}
+  .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+  .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+  .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+  .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+  .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+  .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+  .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+  .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+  .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+  .author-box{background:#0d1018;border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:22px 26px;margin:40px 0;display:flex;gap:18px;align-items:flex-start}
+  .author-box img{width:64px;height:64px;border-radius:50%;border:2px solid #d4af37;flex-shrink:0}
+  .author-box h4{color:#d4af37;margin:0 0 4px;font-size:1rem}
+  .author-box p{color:#9aa0b8;font-size:.85rem;margin:0;line-height:1.6}
+  .disclosure-box{background:#0f1115;border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:.82rem;color:#7a8099;line-height:1.6}
+</style>
+
+<nav class="breadcrumbs">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>Gladstone Land Analyse 2026</span>
+</nav>
+
+<section class="container">
+
+<!-- AEO Answer-First Block -->
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 24px;">
+  <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">Gladstone Land 2026 auf einen Blick:</strong> Gladstone Land (NASDAQ: LAND) ist der einzige US-REIT, der sich ausschlie&szlig;lich auf Ackerland spezialisiert hat — 144 Farmen, rund 99.000 Acres, monatliche Dividende von $0,0467 je Aktie. Der Kurs notiert 2026 bei $8,53 und damit rund 65&nbsp;% unter dem Allzeithoch von ~$40 aus 2022. Der Buchwert (NAV) liegt mit ~$14,91 deutlich &uuml;ber dem Kurs &mdash; ein Discount, den der Markt aus gutem Grund setzt: teure Kapitalstruktur, Zinsdruck, Pächter-Probleme. Marco h&auml;lt 37 St&uuml;ck @ &euro;10,40 Einstand und ist &minus;29,1&nbsp;% im Minus.</p>
+</div>
+
+<h1>Gladstone Land Analyse 2026 — Ackerland-REIT mit 6,6&nbsp;% Rendite und &minus;29&nbsp;% Verlust</h1>
+
+<div style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+  <p style="margin:0 0 10px"><strong style="color:#D4AF37">Ist Gladstone Land 2026 eine gute Dividendenaktie?</strong><br>
+  Gladstone Land bietet eine monatliche Dividende mit aktuell 6,6&nbsp;% Rendite und einen tiefen Discount zum Buchwert. Das klingt attraktiv &mdash; aber die Kapitalstruktur ist teuer, die AFFO-Deckung eng, und steigende Zinsen haben den fairen Wert massiv gedr&uuml;ckt. Wer Ackerland als Sachwert-Anker im Depot will, muss diese Risiken klar einpreisen. Keine Anlageberatung.</p>
+</div>
+
+<aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">
+  English version: <strong style="color:#f5f6fa">Read this analysis in English:</strong> <a href="https://mbcapitalstrategiesgloabal.com/blog/gladstone-land-analysis-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Gladstone Land Analysis 2026</a>
+</aside>
+
+<p style="font-size:.9rem;color:#9aa6c0">
+Ver&ouml;ffentlicht: 01.07.2026 &nbsp;&middot;&nbsp;
+Hinweis: Dieser Beitrag stellt <strong>keine Anlageberatung</strong> dar, sondern dient ausschlie&szlig;lich
+der Information und pers&ouml;nlichen Einordnung. Marco h&auml;lt eine Position in LAND (Interessenkonflikt: siehe unten).
+</p>
+
+<!-- Skin-in-Game Disclosure -->
+<div class="disclosure-box">
+  <strong style="color:#d4af37;">Interessenkonflikt-Hinweis (Pflichtangabe):</strong> Marco h&auml;lt 37 St&uuml;ck Gladstone Land @ &euro;10,40 Einstand &uuml;ber Trade Republic / Scalable Capital (zwei &ouml;ffentliche Broker, keine CapTrader-Position). Aktueller Verlust: &minus;29,1&nbsp;%. Diese Analyse entstand nicht als Kaufempfehlung, sondern als ehrliche Einordnung einer bestehenden Position.
+</div>
+
+<!-- AD TOP -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="info-box">
+  <strong>Kurzfassung:</strong> Gladstone Land ist Amerikas einziger reiner Farmland-REIT an einer gro&szlig;en B&ouml;rse. Das Unternehmen kauft Ackerland und verpachtet es an Landwirte. Die Dividende ist monatlich, der Sachwert-Ankerpunkt ist real &mdash; aber die Kapitalstruktur durch Vorzugsaktien und steigende Zinsen hat den Common-Equity-Anteil massiv gedr&uuml;ckt. Kurs seit ATH: &minus;65&nbsp;%.
+</div>
+
+<p>
+Ackerland ist einer der wenigen echten Sachwerte, die &uuml;ber Jahrzehnte konsistent im Wert gestiegen sind. Jim Rogers hat das immer wieder betont, und die Zahlen geben ihm recht: US-Farmlandwerte haben seit 1990 fast jede Rezession unbeschadet &uuml;berstanden. Gladstone Land (NASDAQ: LAND) ist das einzige b&ouml;rsennotierte Vehikel, das diesen Zugang in REIT-Form bietet &mdash; monatliche Aussch&uuml;ttung inklusive.
+</p>
+
+<p>
+Ich halte 37 St&uuml;ck bei einem Einstand von &euro;10,40 und stehe aktuell &minus;29,1&nbsp;% im Minus. Das ist keine Kleinigkeit. Diese Analyse ist deshalb keine Kaufwerbung, sondern mein ehrlicher Versuch, Position, These und Risiken sauber zu trennen.
+</p>
+
+<p style="margin:8px 0;"><strong>&rarr;</strong> <a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html" style="color:#d4af37;">Zwangsdividenden: REITs, BDCs &amp; MLPs erkl&auml;rt</a></p>
+
+<h2>1. Das Portfolio &mdash; Ackerland als echter Sachwert</h2>
+
+<p>
+Per Q1 2026 umfasst das Gladstone-Land-Portfolio <strong>144 Farmen mit rund 99.000 Acres</strong> in 14 US-Bundesstaaten. Das klingt gestreut, ist aber in der Praxis stark auf wenige Regionen konzentriert &mdash; und das ist auch der Plan.
+</p>
+
+<p>
+<strong>Permanent Crops sind das Kerngesch&auml;ft:</strong> Pistazien, Mandeln, Blaubeeren, Weintrauben, Feigen, Oliven. Diese Kulturen werden einmal gepflanzt und tragen 20 bis 30 Jahre. Der wirtschaftliche Wert dieser Farmen h&auml;ngt nicht vom Wetter des n&auml;chsten Jahres ab, sondern vom langfristigen Ertragspotenzial der Pflanzungen. Das macht sie teurer als Row-Crop-Land (Mais, Soja) &mdash; aber auch stabiler in der Pacht-Einnahme.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Die drei Farmtypen im Portfolio:</strong>
+  <ul style="margin-top:10px">
+    <li><strong>Annual Row Crops:</strong> Beeren, Gem&uuml;se &mdash; j&auml;hrlich geerntet, flexible P&auml;chterstruktur</li>
+    <li><strong>Permanent Crops:</strong> Pistazien, Mandeln, Blaubeeren, Weintrauben &mdash; Hochwertkulturen, h&ouml;here Pachtertr&auml;ge</li>
+    <li><strong>Wasserrechte (Kalifornien):</strong> ~56.000 Acre-feet &mdash; eigenst&auml;ndiger Sachwert, sichert Anbauf&auml;higkeit</li>
+  </ul>
+</div>
+
+<p>
+Der echte USP ist Kalifornien. In einer Region, in der Wasser knapper wird und gleichzeitig die hochwertigsten US-Agrarprodukte entstehen (San Joaquin Valley, Fresno, Kern County), sind Farmen mit eigenem Wasserrecht strukturell bevorzugt. Gladstone Land h&auml;lt ~56.000 Acre-feet Wasserrechte &mdash; &uuml;ber 18 Milliarden Gallonen &mdash; als Teil des Portfolios. Das ist keine Fu&szlig;note: In trockenen Jahren sind das die einzigen Farmen, die wettbewerbsf&auml;hig produzieren k&ouml;nnen.
+</p>
+
+<p>
+Konkret: Zu den gr&ouml;&szlig;ten Einzelpositionen im Portfolio geh&ouml;ren eine Pistazienplantage mit 2.635 Acres (Kern County), eine Blaubeerfarm mit 1.032 Acres (San Joaquin County) und eine weitere Pistazienpflanzung mit 453 Acres in Fresno County. Das ist kein generisches Ackerland &mdash; das sind spezialisierte, kapitalintensive Produktionsstandorte.
+</p>
+
+<!-- AD MID -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1212067635"
+data-ad-format="in-article"
+       data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- Newsletter CTA -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&uuml;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos w&ouml;chentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+
+<h2>2. Dividende &mdash; 6,6&nbsp;% monatlich, aber wie sicher?</h2>
+
+<p>
+Gladstone Land zahlt jeden Monat &mdash; das ist der erste Vorteil. Die aktuelle Aussch&uuml;ttung liegt bei <strong>$0,0467 je Aktie und Monat</strong>, was auf Jahressicht $0,5604 ergibt. Bei einem Kurs von $8,53 (Stand: Quellangabe REIT-Coverage-Batch, 01.07.2026) entspricht das einer Rendite von rund <strong>6,6&nbsp;%</strong>.
+</p>
+
+<p>
+Das Unternehmen hat die Dividende seit dem B&ouml;rsengang 2013 insgesamt 35-mal erh&ouml;ht &mdash; &uuml;ber 39 Quartale hinweg. Das ist beachtlich. Aber der aktuelle Betrag ist seit Monaten eingefroren, und der Payout Ratio auf GAAP-Basis &uuml;bersteigt 100&nbsp;% deutlich, weil das Unternehmen bilanziell Verluste ausweist (durch Abschreibungen und nicht-zahlungswirksame Posten, die bei REITs typisch sind).
+</p>
+
+<p>
+Entscheidend ist der <strong>AFFO (Adjusted Funds from Operations)</strong> &mdash; der REIT-spezifische Cashflow, der nicht-zahlungswirksame Posten herausrechnet. Im Q1 2026 lag der AFFO bei <strong>$0,08 je Aktie</strong> (vs. $0,06 im Vorjahreszeitraum). Die ausgezahlte Quartalsdividende betr&auml;gt rund $0,14 (3 x $0,0467). Damit ist die Dividende in Q1 2026 <em>nicht</em> durch den AFFO gedeckt &mdash; der AFFO war h&ouml;her als in Q4 2025, aber ein Einmaleffekt (Bonus-Zahlung aus der Pistazienernte 2025) hat dieses Quartal beg&uuml;nstigt.
+</p>
+
+<div class="risk-box">
+  <strong>Risiko-Hinweis &mdash; Dividenden-Deckung:</strong> Der AFFO von $0,08/Quartal (Q1 2026) &uuml;bersteigt die Quartalsdividende von ~$0,14 nicht. Wenn die Pistazienernte-Bonus-Zahlungen wegfallen und einzelne Pächter weiter auf Nonaccrual-Status bleiben, wird die Deckung eng. Die Dividende ist nicht per se gef&auml;hrdet, aber sie ist auch nicht mit solider Marge gedeckt. Das ist anders als bei <a href="/blog/realty-income-analyse-2026.html" style="color:#d4af37;">Realty Income</a> oder <a href="/blog/stag-industrial-analyse-2026.html" style="color:#d4af37;">STAG Industrial</a>.
+</div>
+
+<p>
+Ein strukturelles Problem: Gladstone Land hat in den letzten Jahren erhebliche Mengen an <strong>Vorzugsaktien ausgegeben</strong> (Series C, D, E, F). Diese kosten 5&ndash;6&nbsp;% j&auml;hrlich, sind den Common-Equity-Inhabern vorrangig, und ihr Volumen schm&auml;lert direkt das, was f&uuml;r die gew&ouml;hnlichen Aktionäre &uuml;brig bleibt. Das war ein zentraler Kritikpunkt mehrerer Analysten.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>Tool:</strong> <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield on Cost Rechner</a> &mdash; berechne, wie hoch deine pers&ouml;nliche Dividendenrendite auf deinen Einstand ist.</p>
+
+<h2>3. Kennzahlen 2026</h2>
+
+<table class="metrics-table">
+  <tr><td>Ticker</td><td>LAND (NASDAQ)</td></tr>
+  <tr><td>Kurs (01.07.2026, Quellangabe Batch)</td><td>$8,53</td></tr>
+  <tr><td>Dividende monatlich</td><td>$0,0467 je Aktie</td></tr>
+  <tr><td>Dividende j&auml;hrlich</td><td>$0,5604 je Aktie</td></tr>
+  <tr><td>Dividendenrendite</td><td>~6,6&nbsp;%</td></tr>
+  <tr><td>NAV/Aktie (Q4 2024)</td><td>~$14,91</td></tr>
+  <tr><td>Discount zum NAV</td><td>&minus;43&nbsp;% (Kurs vs. NAV)</td></tr>
+  <tr><td>AFFO Q1 2026</td><td>$0,08 je Aktie ($3,1 Mio. gesamt)</td></tr>
+  <tr><td>Gesamtverschuldung (2025)</td><td>~$535,9 Mio.</td></tr>
+  <tr><td>Gesamtverm&ouml;gen</td><td>~$1,2 Mrd.</td></tr>
+  <tr><td>Portfolio</td><td>144 Farmen, ~99.000 Acres, 14 Bundesstaaten</td></tr>
+  <tr><td>Wasserrechte (Kalifornien)</td><td>~56.000 Acre-feet</td></tr>
+  <tr><td>Marcos Position (TR/Scalable)</td><td>37 St. @ &euro;10,40 &middot; &minus;29,1&nbsp;%</td></tr>
+</table>
+
+<p style="font-size:0.8rem;color:#7a8099;margin-top:4px;">Quellen: Gladstone Land Q1 2026 Earnings-Transcript (SEC 8-K, 13.05.2026), Sure Dividend, stockanalysis.com, REIT-Coverage-Batch MB Capital 01.07.2026. NAV Q4 2024.</p>
+
+<h2>4. Warum ist der Kurs so weit gefallen?</h2>
+
+<p>
+Gladstone Land hat von seinem Allzeithoch bei rund $40 (Anfang 2022) bis heute &uuml;ber 75&nbsp;% verloren. Das ist eine Geschichte in drei Akten.
+</p>
+
+<p>
+<strong>Akt 1: Zins-Schock 2022&ndash;2023.</strong> REITs sind zinsempfindlich, weil sie als Anleihesubstitut wahrgenommen werden. Als die Fed die Zinsen von 0&nbsp;% auf 5,25&nbsp;% hob, wurden alle zinsempfindlichen Assets abgestraft. Das galt f&uuml;r Realty Income genauso wie f&uuml;r LAND &mdash; aber LAND hatte ein zus&auml;tzliches Problem: Die eigene Kapitalstruktur war teuer. Vorzugsaktien mit 5&ndash;6&nbsp;% Kosten &uuml;bertrafen pl&ouml;tzlich den risikolosen Zins bei Weitem nicht mehr.
+</p>
+
+<p>
+<strong>Akt 2: P&auml;chter-Probleme.</strong> Einige P&auml;chter, vor allem in der Permanentkultur-Sparte, gerieten nach der COVID-Phase in Schwierigkeiten. Zwei gro&szlig;e P&auml;chter wurden auf Nonaccrual-Status gesetzt &mdash; das hei&szlig;t, die Pachteinnahmen wurden nicht mehr als Erl&ouml;s verbucht. Gleichzeitig ging eine Immobilie in die Eigenbewirtschaftung (&bdquo;direct operations&ldquo;) &uuml;ber. Die Mieteinnahmen sanken um ~$2,4 Mio. im Jahresvergleich (Q1 2026 vs. Q1 2025).
+</p>
+
+<p>
+<strong>Akt 3: NAV-Erosion.</strong> Der NAV pro Aktie fiel von &uuml;ber $20 (2023) auf ~$14,91 (Q4 2024). Ursache: niedrigere Farmland-Bewertungen durch gestiegene Diskonts&auml;tze sowie der Druck auf den Common-Equity-Anteil durch die ausstehenden Vorzugsaktien. Der Markt bewertet LAND heute mit $8,53 &mdash; einem Abschlag von &uuml;ber 40&nbsp;% zum letzten bekannten NAV.
+</p>
+
+<div class="info-box">
+  <strong>These vs. Realit&auml;t:</strong> Die Investitionsthese bei LAND lautet: Ackerland steigt langfristig im Wert, der Bodenwert dient als Sicherheitsanker, und monatliche Dividenden gew&auml;hrleisten laufende Einnahmen. Die Realit&auml;t 2022&ndash;2026: Der Kurs hat die Sachwert-Ankerfunktion des Portfolios komplett ignoriert &mdash; und stattdessen Kapitalkosten, P&auml;chterqualit&auml;t und Zinsabh&auml;ngigkeit eingepreist. Beides ist gleichzeitig wahr.
+</div>
+
+<h2>5. Der externe Manager &mdash; ein strukturelles Risiko</h2>
+
+<p>
+Gladstone Land ist <strong>extern gemanagt</strong> von Gladstone Management Corporation, einer Tochter der Gladstone Companies. Das bedeutet: Das Management-Team ist nicht nur f&uuml;r LAND t&auml;tig, sondern auch f&uuml;r Gladstone Capital (GLAD), Gladstone Investment (GAIN) und Gladstone Commercial (GOOD). Interessenkonflikte sind strukturell nicht ausgeschlossen.
+</p>
+
+<p>
+Die Managementgeb&uuml;hr wird auf das Netto-Buchwert-Eigenkapital der Common-Equity berechnet &mdash; nicht auf das Gesamtverm&ouml;gen. Das schlie&szlig;t Vorzugsaktien aus. Das ist besser als bei vielen anderen extern gemangten REITs. Aber der externe Manager bleibt ein zus&auml;tzliches Geb&uuml;hrenlayer, das bei internem Management nicht anfiele.
+</p>
+
+<p style="margin:8px 0;"><strong>&rarr;</strong> <a href="/blog/omega-healthcare-analyse-2026.html" style="color:#d4af37;">Omega Healthcare Analyse 2026</a> &mdash; der Healthcare-REIT-Vergleich</p>
+
+<!-- AD BOTTOM -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="9876543210"
+data-ad-format="in-article"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>6. Fazit: Hard Asset mit hartem Gegenwind</h2>
+
+<p>
+Gladstone Land ist kein schlechtes Gesch&auml;ftsmodell &mdash; es ist ein gutes Gesch&auml;ftsmodell mit einem schlecht strukturierten Finanzmantel. Das Ackerland-Portfolio in Kalifornien ist real, die Wasserrechte sind real, die Ernteerl&ouml;se aus Pistazien und Mandeln sind real. Aber der Buchwert-Discount signalisiert, dass der Markt den Common-Equity-Inhabern nach Abzug aller Vorzugsanteile und des Managementaufwands weniger vertraut als dem nominalen NAV.
+</p>
+
+<p>
+Meine Position: Ich halte 37 St&uuml;ck und bin &minus;29,1&nbsp;% im Minus. Ich habe nicht nachgekauft &mdash; weil die AFFO-Deckung zu eng ist und der externe Manager-Faktor Unsicherheit bringt. Die Dividende flie&szlig;t weiter monatlich, und solange das Portfolio k&ouml;rperlich intakt bleibt (die Farmen laufen, die Ernte kommt), ist die Position f&uuml;r mich ein langsamer Anker im Dividenden-Depot.
+</p>
+
+<p>
+<strong>Zinssenkungen w&auml;ren der gr&ouml;&szlig;te Katalysator.</strong> Wenn die Fed die Zinsen weiter senkt und der Diskontsatz f&uuml;r Farmland-Bewertungen sinkt, steigt der NAV wieder &mdash; und der Kurs k&ouml;nnte aufholen. Das ist die Wette.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Mein Fazit zu Gladstone Land 2026:</strong>
+  <ul style="margin-top:10px">
+    <li><strong>These:</strong> Ackerland als Sachwert + monatliche Dividende + California-Wasser-USP</li>
+    <li><strong>Problem:</strong> Teure Vorzugsaktien-Kapitalstruktur + externer Manager + P&auml;chterrisiken</li>
+    <li><strong>Kurs-Katalysator:</strong> Zinssenkungen + AFFO-Verbesserung + Farm-Verk&auml;ufe zu NAV</li>
+    <li><strong>Haltung:</strong> Halten, kein Nachkauf &mdash; zu eng an der AFFO-Deckungsgrenze</li>
+  </ul>
+</div>
+
+<!-- InvestingPro CTA -->
+<div style="background:linear-gradient(135deg,#151821,#1a1f2b);padding:22px 26px;border-radius:12px;border:2px solid rgba(212,175,55,.5);margin:30px 0;text-align:center">
+  <strong style="color:#d4af37;font-size:1.05rem;">Gladstone Land fair bewertet?</strong>
+  <p style="margin:8px 0 14px;color:#9aa6c0;font-size:.95rem;">InvestingPro zeigt den fairen Wert, Dividenden-Sicherheits-Score und Analysten-Ziele f&uuml;r LAND &mdash; auf einer Plattform.</p>
+  <a style="display:inline-block;padding:12px 22px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;font-size:1rem" href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="noopener noreferrer">InvestingPro ansehen (Affiliate*) &rarr;</a>
+  <p style="font-size:0.72rem;color:#6b7a99;margin:10px 0 0;">*Affiliate-Link: MB Capital erh&auml;lt eine Provision ohne Mehrkosten f&uuml;r dich. Keine Anlageberatung.</p>
+</div>
+
+<div class="related-articles">
+  <h3>Weitere REIT &amp; Dividenden-Analysen</h3>
+  <ul>
+    <li><a href="/blog/realty-income-analyse-2026.html">Realty Income Analyse 2026 &mdash; monatliche Dividende</a></li>
+    <li><a href="/blog/stag-industrial-analyse-2026.html">STAG Industrial Analyse 2026</a></li>
+    <li><a href="/blog/omega-healthcare-analyse-2026.html">Omega Healthcare Analyse 2026</a></li>
+    <li><a href="/blog/mpw-reit-analyse-2026.html">Medical Properties Trust Analyse 2026</a></li>
+    <li><a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html">Zwangsdividenden: REITs, BDCs &amp; MLPs</a></li>
+    <li><a href="/kategorien/high-yield-aktien.html">High-Yield Aktien 2026 &mdash; Kategorie&uuml;bersicht</a></li>
+  </ul>
+</div>
+
+<p style="margin:8px 0;"><strong>&rarr;</strong> <a href="/glossar/dividendenrendite.html" style="color:#d4af37;">Dividendenrendite erkl&auml;rt</a> &mdash; Was ist die Dividendenrendite? Wann ist sie ein Warnsignal?</p>
+
+<!-- Autorenbox E-E-A-T -->
+<div class="author-box">
+  <img src="/marco.webp" alt="Marco Bozem, MB Capital Strategies" loading="lazy" width="64" height="64">
+  <div>
+    <h4>Marco Bozem</h4>
+    <p>Unabh&auml;ngiger Investor &amp; Gr&uuml;nder MB Capital Strategies. Fokus: Hard Assets, Dividenden, Shipping, Mining &amp; REITs. H&auml;lt eine Position in Gladstone Land (LAND) und legt offen, was er pers&ouml;nlich im Depot hat. Keine Anlageberatung &mdash; nur echte Zahlen und ehrliche Einordnung.</p>
+    <p>Wikidata: <a href="https://www.wikidata.org/wiki/Q138571853" target="_blank" rel="noopener noreferrer" style="color:#d4af37;">Q138571853</a> &middot; <a href="https://www.youtube.com/@MBCapitalStrategies" target="_blank" rel="noopener noreferrer" style="color:#d4af37;">YouTube</a> &middot; <a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" rel="noopener noreferrer" style="color:#d4af37;">LinkedIn</a></p>
+  </div>
+</div>
+
+<!-- Disclaimer -->
+<div style="background:#0a0a10;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px 20px;margin:32px 0;font-size:0.78rem;color:#6b7280;line-height:1.6">
+  <strong style="color:#9aa0b8;">Disclaimer &amp; Risikohinweis:</strong> Dieser Artikel stellt keine Anlageberatung, Verm&ouml;gensverwaltung oder Kaufempfehlung dar. Er dient ausschlie&szlig;lich der Information und gibt die pers&ouml;nliche Meinung des Autors wieder. Jede Investitionsentscheidung liegt in der eigenen Verantwortung des Lesers. Investitionen in Aktien, REITs und verwandte Wertpapiere k&ouml;nnen zum vollst&auml;ndigen Kapitalverlust f&uuml;hren. Vergangene Wertentwicklungen sind kein verl&auml;sslicher Indikator f&uuml;r zuk&uuml;nftige Ergebnisse. Marco Bozem h&auml;lt zum Zeitpunkt der Ver&ouml;ffentlichung eine Position in Gladstone Land (LAND) und hat damit einen Interessenkonflikt im Sinne des WpHG. Keine Gew&auml;hr f&uuml;r Vollst&auml;ndigkeit oder Aktualit&auml;t der Angaben. Stand: 01.07.2026.
+</div>
+
+</section>
+
+<script>
+  var navHamburger = document.getElementById('navHamburger');
+  var navMobile = document.getElementById('navMobile');
+  if (navHamburger && navMobile) {
+    navHamburger.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !expanded);
+      navMobile.style.display = expanded ? 'none' : 'flex';
+    });
+  }
+</script>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener noreferrer">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+  </div>
+</footer>
+</body>
+</html>
