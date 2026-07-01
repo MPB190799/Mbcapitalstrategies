@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+  <title>Baxter Aktie 2026: 55 Jahre Dividende — jetzt nur 1 Cent. Falle?</title>
+  <meta name="description" content="Baxter International (BAX) 2026: 94% Dividendenkürzung nach 55 Jahren. Turnaround-Wette oder Value-Trap? Schuldenabbau, 2026-Guidance und Marcos ehrliche Einordnung — er hält die Aktie selbst (−38%).">
+  <meta name="author" content="Marco Bozem">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/baxter-analyse-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/baxter-analyse-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/baxter-analysis-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/baxter-analyse-2026.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Baxter Aktie 2026: 55 Jahre Dividende — jetzt nur 1 Cent. Falle?">
+  <meta property="og:description" content="Baxter International (BAX): 94% Dividendenkürzung, Net Debt −31%, 2026-Guidance adj. EPS 1,85–2,05 $. Turnaround oder Value-Trap? Marco hält die Aktie selbst und erklärt, warum er noch nicht verkauft hat.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/baxter-analyse-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Baxter Aktie 2026: 55 Jahre Dividende — jetzt nur 1 Cent. Falle?">
+  <meta name="twitter:description" content="Baxter BAX: 94% Dividendenkürzung nach 55 Jahren. Turnaround oder Value-Trap? Marcos ehrlicher Forward-Take — mit eigener Verlustposition −38%.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Critical inline CSS -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+  <!-- SEO SCHEMA: BlogPosting -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Baxter Aktie 2026: 55 Jahre Dividende — jetzt nur 1 Cent. Turnaround oder Value-Trap?",
+  "description": "Baxter International (BAX) 2026: Nach 94% Dividendenkürzung und Vantive-Spinoff — ehrliche Analyse von Geschäftsmodell, Schuldenabbau, 2026-Guidance und Bewertung. Marco hält die Aktie selbst (−38%).",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/baxter-analyse-2026.html",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "Pharma & Healthcare",
+  "wordCount": 1250,
+  "keywords": [
+    "Baxter Aktie",
+    "BAX",
+    "Dividendenkürzung",
+    "Turnaround",
+    "MedTech Aktie",
+    "Dividendenstrategie",
+    "Pharma Aktie",
+    "Value Trap",
+    "Schuldenabbau",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA: BreadcrumbList -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Baxter Aktie Analyse 2026 — Pharma #04",
+      "item": "https://mbcapitalstrategies.com/blog/baxter-analyse-2026.html"
+    }
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Warum hat Baxter die Dividende auf 1 Cent gekürzt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Baxter kürzte die Quartalsdividende von 0,17 $ auf 0,01 $ (−94%), um mehr als 300 Millionen Dollar Cashflow pro Jahr für den beschleunigten Schuldenabbau freizusetzen. Ursache ist die teure Hillrom-Übernahme 2021 (~12 Mrd. $), die die Nettoverschuldung von ~3 Mrd. auf über 15 Mrd. $ trieb. Der symbolische 1-Cent-Betrag hält Baxter formal als Dividendenzahler registriert. Es ist kein Liquiditätsproblem, sondern eine bewusste Sanierungsentscheidung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist Baxter International eine gute Aktie für Dividendeninvestoren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein — als Dividendenwert ist Baxter nach der 94%-Kürzung faktisch tot. Die laufende Rendite liegt bei rund 0,2% (Stand 1. Juli 2026, Kurs ~21,32 $). Wer Baxter heute hält, hält eine Turnaround-Wette: Schulden sinken sichtbar (Net Debt −31% auf 8,04 Mrd. $ in 2025), aber der bereinigte Gewinn fällt 2026 erst noch (Guidance: 1,85–2,05 $ adj. EPS). Kein Kauf für Dividendeninvestoren, sondern nur für Anleger mit klarer Turnaround-These und Geduld über mehrere Jahre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der aktuelle Kurs und das KGV von Baxter (BAX) 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stand 1. Juli 2026: Baxter (NYSE: BAX) notiert bei ca. 21,32 $, 52-Wochen-Spanne 15,73–31,76 $. Marktkapitalisierung ~11,0 Mrd. $. Auf Basis der 2026-Guidance (adj. EPS ~1,95 $ Mitte) liegt das Forward-KGV bei rund 10–11 — das günstigste unter den großen MedTech-Werten. Becton Dickinson handelt bei ~13–14×, Medtronic bei ~15×. Der Abschlag spiegelt den Sanierungsstatus wider, nicht einen Schnäppchen-Rabatt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann könnte Baxter die Dividende wieder erhöhen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine echte Dividendenerhöhung ist frühestens nach 2027–2028 realistisch, wenn der Verschuldungshebel (aktuell ~5× adj. EBITDA) unter das Ziel von 3,5× gefallen ist. Bis dahin fließt der gesamte freie Cashflow plus die 300+ Mio. $/Jahr aus der Dividendenkürzung in den Schuldenabbau. Aktienrückkäufe oder eine spürbar höhere Dividende sind Zukunftsmusik — kein kurzfristiger Katalysator."
+      }
+    }
+  ]
+}
+</script>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+    .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:20px 0}
+    .scenario-card{padding:16px;border-radius:8px;border:1px solid rgba(255,255,255,.1)}
+    .scenario-bull{background:#0e1f14;border-color:#22c55e}
+    .scenario-base{background:#1a1a2e;border-color:#d4af37}
+    .scenario-bear{background:#1f0e0e;border-color:#ef4444}
+  </style>
+
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Themen-Menü öffnen">Themen ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">Shipping</a>
+          <a href="/midstream/">Pipelines / Midstream</a>
+          <a href="/mining-aktien/">Mining Aktien</a>
+          <a href="/upstream-aktien/">Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">Shipping</a>
+    <a href="/midstream/">Midstream / Pipelines</a>
+    <a href="/mining-aktien/">Mining Aktien</a>
+    <a href="/upstream-aktien/">Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">Blog</a>
+    <a href="/toolbox.html">Toolbox</a>
+    <a href="/glossar/">Glossar</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>Baxter Aktie Analyse 2026 — Pharma #04</span>
+</nav>
+
+<section class="container">
+
+<!-- AEO Answer-First Block -->
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 24px;">
+  <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">Baxter Analyse 2026:</strong> Baxter International (NYSE: BAX) hat nach 55 Jahren ununterbrochener Dividende die Quartalszahlung von 0,17 $ auf 1 Cent reduziert — minus 94 %. Kurs Stand 1. Juli 2026: 21,32 $ · 52-Wochen-Spanne 15,73–31,76 $ · Marktkapitalisierung ~11,0 Mrd. $. Als Dividendenwert ist BAX faktisch tot. Was bleibt, ist eine Turnaround-Wette: Schulden sinken (Net Debt −31% auf 8,04 Mrd. $), aber Gewinn fällt 2026 erst noch. Keine Anlageberatung.</p>
+</div>
+
+<h1>Baxter Aktie 2026: 55 Jahre Dividende — jetzt nur 1 Cent. Falle?</h1>
+
+<aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">
+  English version: <strong style="color:#f5f6fa">Read this analysis in English:</strong> <a href="https://mbcapitalstrategiesgloabal.com/blog/baxter-analysis-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Baxter International — 55 Years of Dividends, Now Just 1 Cent</a>
+</aside>
+
+<p style="font-size:.9rem;color:#9aa6c0">
+  Veröffentlicht: 01.07.2026 &nbsp;·&nbsp; Pharma-Reihe #04 &nbsp;·&nbsp;
+  Hinweis: Dieser Beitrag stellt <strong>keine Anlageberatung</strong> dar, sondern dient ausschließlich der Information und persönlichen Einordnung. Ich halte Baxter selbst im Depot — und zwar im Minus. Keine Kauf- oder Verkaufsempfehlung.
+</p>
+
+<!-- ADSENSE TOP -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="info-box">
+  <strong>Kurzfassung:</strong> Fünfundfünfzig Jahre. So lange hat Baxter International ununterbrochen Dividende gezahlt. Jetzt zahlt das Unternehmen noch genau einen Cent im Quartal — minus 94 %. Der Hillrom-Fehler, der Vantive-Verkauf und ein Schuldenberg aus dem Hillrom-Kauf haben Baxter von einem Dividenden-Aristokraten in einen Sanierungsfall verwandelt. Die Frage, die sich jeder Aktionär stellen muss: Turnaround-Wette oder Value-Trap?
+</div>
+
+<p>
+  Ich lege die Karten sofort auf den Tisch, weil ihr wissen sollt, wo ich stehe, bevor ich euch irgendetwas erkläre. Ich halte Baxter International selbst — acht Aktien über Scalable Capital, Einstand im Schnitt bei 30,24 Euro das Stück. Aktuell steht die Position rund 38 Prozent im Minus. Das ist eine Verlustposition, die nie funktioniert hat. Mein Einstand liegt sogar über dem höchsten Kurs der letzten 52 Wochen (52-Wochen-Hoch: 31,76 $). Seit dem Einstieg im August 2023 war die Position keinen einzigen Tag im Plus.
+</p>
+
+<p>
+  Genau deshalb mache ich diese Analyse, und genau deshalb versuche ich keine Schönfärberei. Der <a href="/glossar/dividendenrendite.html" style="color:#d4af37;">Yield on Cost</a> auf meinen Einstand liegt bei rund 0,12 Prozent. Die Jahresdividende beträgt vier Cent. Meine Qualitätsschwelle für Dividendenaktien liegt bei acht Prozent. Baxter ist ein Sechzigstel davon entfernt.
+</p>
+
+<h2>1. Das Geschäftsmodell — was Baxter nach dem Umbau ist</h2>
+
+<p>
+  Baxter wurde 1931 gegründet, hat seinen Sitz bei Chicago und beschäftigt rund 38.000 Mitarbeiter in fast 100 Ländern. Das Unternehmen ist kein klassischer Pharmahersteller, sondern ein Medizintechnik- und Krankenhausversorgungs-Konzern. Die drei Segmente nach dem großen Umbau:
+</p>
+
+<ul>
+  <li><strong>Medical Products &amp; Therapies (MPT):</strong> Infusionslösungen, Infusionssysteme, Klinik-Ernährung, chirurgische Gewebekleber — rund 5,3 Mrd. $ Umsatz, fast die Hälfte des Konzerns.</li>
+  <li><strong>Healthcare Systems &amp; Technologies (HST):</strong> Das Hillrom-Erbe — Klinikbetten, Patienten-Monitoring, vernetzte Klinik-Technik — gut 3,0 Mrd. $.</li>
+  <li><strong>Pharmaceuticals:</strong> Injektabilia, Narkose-Mittel zum Einatmen — knapp 2,5 Mrd. $.</li>
+</ul>
+
+<p>
+  Das Kerngeschäft ist defensiv: Ein Krankenhaus kauft Infusionslösungen, ob die Wirtschaft brummt oder crasht. Das ist nicht zyklisch, das ist Grundversorgung. Die Kehrseite: Grundversorgung bedeutet dünne Margen, langsames Wachstum und harter Preisdruck. Baxter verkauft Massenware, bei der jeder Cent zählt.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Ticker</td><td>NYSE: BAX</td></tr>
+  <tr><td>ISIN</td><td>US0718131099</td></tr>
+  <tr><td>Kurs (Stand 1. Juli 2026)</td><td>21,32 $</td></tr>
+  <tr><td>52-Wochen-Spanne</td><td>15,73 $ – 31,76 $</td></tr>
+  <tr><td>Marktkapitalisierung</td><td>~11,0 Mrd. $</td></tr>
+  <tr><td>Dividende (Quartal)</td><td>0,01 $ (= 0,04 $/Jahr)</td></tr>
+  <tr><td>Laufende Rendite</td><td>~0,2 %</td></tr>
+  <tr><td>Adj. EPS 2025</td><td>~2,27 $</td></tr>
+  <tr><td>Adj. EPS Guidance 2026e</td><td>1,85 – 2,05 $ (Mitte ~1,95 $)</td></tr>
+  <tr><td>Net Debt (2025)</td><td>8,04 Mrd. $ (−31 % vs. 2024)</td></tr>
+  <tr><td>Forward-KGV (Basis 2026e)</td><td>~10–11×</td></tr>
+</table>
+
+<h2>2. Wie Baxter hier hineingeraten ist — das Fundament (kompakt)</h2>
+
+<p>
+  Drei Fakten, die ihr verstehen müsst, damit der Rest dieser Analyse einen Sinn ergibt:
+</p>
+
+<p>
+  <strong>Erstens: Der teure Fehler.</strong> 2021 kaufte Baxter den Klinik-Hardware-Hersteller Hillrom für rund 12 Milliarden Dollar — größtenteils auf Pump, direkt bevor die Zinsen explodierten. Die Nettoverschuldung sprang von gut 3 Milliarden auf über 15 Milliarden Dollar. Synergien blieben hinter dem teuren Schuldendienst zurück, und Baxter musste Milliarden an Firmenwert abschreiben. Das ist die Wurzel von allem.
+</p>
+
+<p>
+  <strong>Zweitens: Die Reaktion — der Vantive-Verkauf.</strong> Baxter hat seine Dialyse-Sparte unter der Marke Vantive für 3,8 Milliarden Dollar an den Finanzinvestor Carlyle verkauft (abgeschlossen Ende Januar 2025). Netto flossen daraus rund 3,4 Milliarden Dollar — zweckgebunden für den Schuldenabbau. Der Haken: Vantive war kein Anhängsel, sondern ein Segment mit über vier Milliarden Umsatz. Gleichzeitig kam die erste Dividendenkürzung: von 0,29 $ auf 0,17 $ pro Quartal.
+</p>
+
+<p>
+  <strong>Drittens: Die Zahlen nüchtern betrachtet.</strong> Der offizielle GAAP-Verlust 2025 von −1,75 $ je Aktie klingt nach Abgrund — ist aber fast vollständig Goodwill-Abschreibungen aus dem Hillrom-Desaster. Bereinigt hat Baxter rund 2,27 $ je Aktie verdient. Operativ ist das Unternehmen nicht pleite, aber profitabel rückläufig: Die Bruttomarge ist von rund 38–40 % auf nur noch 30 % gefallen, der <a href="/glossar/free-cashflow.html" style="color:#d4af37;">freie Cashflow</a> von 1,53 Mrd. $ (2021) auf 0,32 Mrd. $ (2025) eingebrochen — in vier Jahren ungefähr gefünftelt.
+</p>
+
+<!-- ADSENSE MID -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1212067635"
+data-ad-format="in-article"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- Newsletter CTA DE -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Dividendenkürzungen, Turnarounds, Sanierungsfälle — kompakt jeden Sonntag. Kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+
+<h2>3. Die 1-Cent-Kürzung — Verzweiflung oder Kalkül?</h2>
+
+<p>
+  Das Herzstück der ganzen Geschichte. Mit den Q3-2025-Zahlen kündigte Baxter an, die Quartalsdividende von 0,17 $ auf 0,01 $ zu senken. Von 17 auf einen Cent — das sind minus 94 %. Die erste Zahlung auf dem neuen Niveau lief Anfang Januar 2026. Gegen das alte Niveau von 0,29 $, das Baxter jahrelang gehalten hatte, sind das sogar minus 97 %. Die Jahresdividende beträgt jetzt noch vier Cent. Damit ist etwas zu Ende gegangen, das 55 Jahre gehalten hat.
+</p>
+
+<p>
+  Warum macht ein Management das? Die Antwort des Finanzchefs war erstaunlich nüchtern: Die Kürzung setzt mehr als 300 Millionen Dollar Cashflow pro Jahr frei, die jetzt in den beschleunigten Schuldenabbau fließen. Das ist die ganze Logik. Jeder freie Dollar geht zuerst in die Schulden, nicht zu den Aktionären.
+</p>
+
+<div class="risk-box">
+  <strong>Der ehrliche Befund:</strong> Den einen Cent behält Baxter nur, um formal überhaupt noch als Dividendenzahler registriert zu bleiben — das kostet aufs Jahr rund 20 Millionen Dollar und ist locker gedeckt. Es ist ein symbolischer Cent. Für Dividendeninvestoren ist die Dividende faktisch gestrichen. Null Komma zwei Prozent laufende Rendite schlägt nicht einmal Tagesgeld.
+</div>
+
+<p>
+  Aus Sicht der Unternehmenssanierung ist die Entscheidung aber richtig. Eine Dividende auf Pump zu zahlen, während man unter einem Schuldenberg ächzt, wäre dumm. Das Management priorisiert die Bilanz vor der Optik. Das ist unangenehm für Aktionäre, aber diszipliniert. Es verwandelt Baxter nur von einem Dividendenwert in etwas völlig anderes: eine reine Turnaround-Wette.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;">
+  <strong>Zum Nachlesen:</strong> <a href="/glossar/dividend-cut.html" style="color:#D4AF37;">Dividendenkürzung erklärt</a> — Wann ist eine Kürzung ein Warnsignal, wann ein bewusster Sanierungsschritt?
+</p>
+
+<h2>4. Wo steht Baxter jetzt 2026 — wie schnell sinkt die Schuld?</h2>
+
+<p>
+  Die Nettoverschuldung ist von 11,69 Milliarden Dollar (2024) auf 8,04 Milliarden Dollar (2025) gefallen — ein Rückgang von 31 Prozent in einem einzigen Jahr. Das ist fast exakt der Vantive-Erlös, der hier eingeschlagen hat. Die Strategie ist in der Bilanz schwarz auf weiß: Nierengeschäft verkauft, Geld in die Schulden.
+</p>
+
+<p>
+  Der große Einmaleffekt durch Vantive ist jetzt verbucht. Was ab hier den Schuldenabbau trägt, ist der laufende Cashflow — plus die mehr als 300 Millionen Dollar pro Jahr aus der Dividendenkürzung. Der Verschuldungshebel (Schulden im Verhältnis zum bereinigten operativen Gewinn) liegt heute bei rund dem Fünffachen. Das erklärte Ziel ist unter 3,5×. Das ist die Reise: von rund 5× runter auf unter 3,5× — und das ist realistisch ein Mehrjahres-Marsch von zwei bis drei Jahren.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Der Deleveraging-Pfad auf einen Blick:</strong>
+  <ul style="margin-top:10px">
+    <li><strong>Net Debt 2024:</strong> 11,69 Mrd. $ (Hebel ~5×)</li>
+    <li><strong>Net Debt 2025:</strong> 8,04 Mrd. $ (−31 %, Vantive-Einmaleffekt)</li>
+    <li><strong>Ab 2026:</strong> laufender Cashflow + 300+ Mio. $/Jahr aus Dividendenkürzung</li>
+    <li><strong>Ziel:</strong> Hebel unter 3,5× — realistisch frühestens 2027/2028</li>
+  </ul>
+</div>
+
+<h2>5. Die 2026-Guidance — warum der Gewinn erst fällt, bevor er steigt</h2>
+
+<p>
+  Jetzt kommt die Zahl, über die ihr nicht hinweglesen dürft. Baxter hat selbst gesagt, was es für 2026 erwartet: Der bereinigte Gewinn soll bei 1,85 bis 2,05 Dollar je Aktie liegen. Die Mitte davon: rund 1,95 Dollar. Zum Vergleich: 2025 waren es noch 2,27 Dollar. Das heißt, Baxter erwartet selbst einen Rückgang beim Gewinn. Die eigene Firma sagt: Es wird beim Ertrag erst mal noch schlechter.
+</p>
+
+<p>
+  Warum fällt der Gewinn, obwohl aufgeräumt wird? Zum Teil ist es Mathematik: Baxter hat mit Vantive ein Segment abgegeben, das hat Gewinn gekostet, der fehlt jetzt. Zum Teil ist es echter Druck: Die Marge ist noch unten, die Zinslast aus dem Schuldenberg knabbert weiter am Ergebnis. Genau dieser Bremsklotz löst sich aber, wenn der Schuldenabbau greift. Weniger Schulden, weniger Zinsen, mehr bleibt unten hängen.
+</p>
+
+<p>
+  Mein Take: 2026 ist ein Übergangsjahr. Kein Kursfeuerwerk zu erwarten. Die spannende Frage ist nicht, was dieses Jahr passiert, sondern ob danach die Kurve dreht.
+</p>
+
+<!-- InvestingPro Affiliate Box -->
+<div class="cta-box">
+  <h3 style="color:#d4af37;margin:0 0 10px;">Baxter-Fundamentaldaten tiefer analysieren</h3>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:.92rem;">
+    Für die <a href="/glossar/debt-ebitda.html" style="color:#d4af37;">Debt/EBITDA-Entwicklung</a>, die Margen-Trends und den Peer-Vergleich gegen Becton Dickinson und Medtronic nutze ich InvestingPro — Bewertung, finanzielle Gesundheit und Kennzahlenhistorie auf einen Blick. <strong>Anzeige.</strong>
+  </p>
+  <a class="cta-btn" href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="sponsored noopener noreferrer">
+    15 % Rabatt mit meinem Link sichern &rarr;
+  </a>
+</div>
+
+<h2>6. Katalysatoren versus Warnsignale — woran man Wende oder Falle erkennt</h2>
+
+<p>
+  Eine Turnaround-Wette geht man nur ein, wenn man genau weiß, woran man erkennt, dass sie aufgeht — und woran man erkennt, dass sie kippt.
+</p>
+
+<div class="scenario-grid">
+  <div class="scenario-card scenario-bull">
+    <strong style="color:#22c55e;">Katalysatoren (Bull)</strong>
+    <ul style="margin:10px 0 0;padding-left:18px;font-size:.9rem;">
+      <li>Hebel fällt nachhaltig unter 4×, Richtung 3,5×</li>
+      <li>Bruttomarge erholt sich Richtung 35 %</li>
+      <li>Adj. EPS wieder steigend (2027+)</li>
+      <li>Irgendwann: Aktienrückkäufe oder echte Dividende</li>
+    </ul>
+  </div>
+  <div class="scenario-card scenario-bear">
+    <strong style="color:#ef4444;">Warnsignale (Bear)</strong>
+    <ul style="margin:10px 0 0;padding-left:18px;font-size:.9rem;">
+      <li>Marge fällt weiter (&lt;28 %)</li>
+      <li>Guidance erneut gesenkt</li>
+      <li>Schuldenabbau stockt, Hebel bleibt ~5×</li>
+      <li>Rating fällt unter Investment-Grade</li>
+    </ul>
+  </div>
+</div>
+
+<p>
+  Diese vier Warnsignale sind meine Alarmglocken. Sehe ich davon zwei gleichzeitig, ist die These tot.
+</p>
+
+<h2>7. Bewertung — billig, aber aus gutem Grund</h2>
+
+<p>
+  Der Kurs steht aktuell bei rund 21,32 Dollar (Stand 1. Juli 2026). Auf Basis der bereinigten Gewinnerwartung für 2026 handelt Baxter zu einem Forward-KGV von rund 10 bis 11. Das ist deutlich unter dem Branchenschnitt:
+</p>
+
+<table class="metrics-table">
+  <tr><td>Baxter (BAX)</td><td>~10–11× — günstigstes MedTech im Vergleich</td></tr>
+  <tr><td>Becton Dickinson (BDX)</td><td>~13–14×</td></tr>
+  <tr><td>Medtronic (MDT)</td><td>~15×</td></tr>
+  <tr><td>GE HealthCare (GEHC)</td><td>noch höher (Wachstumspremium)</td></tr>
+</table>
+
+<p>
+  Baxter ist das billigste Pferd im ganzen MedTech-Stall. Aber billig ist nicht gleich günstig. Der Abschlag spiegelt exakt das wider, was wir gesehen haben: hoher Hebel, fallende Marge, schwaches Wachstum, gestrichene Dividende. Das ist kein Schnäppchen-Rabatt — das ist ein Risiko-Rabatt.
+</p>
+
+<div class="scenario-grid" style="grid-template-columns:repeat(3,1fr)">
+  <div class="scenario-card scenario-bull">
+    <strong style="color:#22c55e;">Bull-Szenario</strong>
+    <p style="font-size:.9rem;margin:8px 0 0;">Katalysatoren greifen → Re-Rating Richtung Peers → Kurs Richtung 26–30 $</p>
+  </div>
+  <div class="scenario-card scenario-base">
+    <strong style="color:#d4af37;">Base-Szenario</strong>
+    <p style="font-size:.9rem;margin:8px 0 0;">Langsames Deleveraging, Status quo → 21–24 $</p>
+  </div>
+  <div class="scenario-card scenario-bear">
+    <strong style="color:#ef4444;">Bear-Szenario</strong>
+    <p style="font-size:.9rem;margin:8px 0 0;">Warnsignale, Margendruck → 15–17 $ (nahe 52-Wo-Tief)</p>
+  </div>
+</div>
+
+<p style="font-size:.88rem;color:#9aa6c0;">Das ist ausdrücklich keine Kursprognose — sondern die Bandbreite der möglichen Szenarien.</p>
+
+<h2>8. Mein Forward-Take — Halten mit Verfallsdatum</h2>
+
+<p>
+  Fazit, ehrlich und ohne Schleife drum — ich sitze ja selbst auf dem Minus, und es geht mir nicht um gestern, sondern um die Frage: Was mache ich jetzt mit dieser Position?
+</p>
+
+<p>
+  Baxter ist heute keine Dividendenaktie mehr. Was übrig bleibt, ist eine Turnaround-Wette: billig auf rund 11-fachem bereinigten Gewinn, mit einem Management, das diszipliniert die Schulden abträgt — aber mit einem Ertrag, der 2026 erst noch fällt, und einem Hebel, der erst in zwei bis drei Jahren gesund wird.
+</p>
+
+<p>
+  Für die Value-Trap-Seite spricht: Diese 38 Prozent Minus sind kein Marktirrtum. Die Aktie ist gefallen, weil die Fundamentaldaten gefallen sind. Mein Stil sind hohe, gedeckte Dividenden, Hard Assets, acht Prozent aufwärts. Eine Null-Komma-zwei-Prozent-Sanierungswette passt da eigentlich nicht rein.
+</p>
+
+<p>
+  Für die Turnaround-Seite spricht: Das Management redet nicht, es handelt. Der Vantive-Verkauf und die brutale Dividendenkürzung beweisen, dass die Bilanz ernster genommen wird als die Optik. Die Schulden sinken sichtbar. Das Kerngeschäft ist defensiv — Infusionen und Klinikbetten braucht jedes Krankenhaus, egal was die Konjunktur macht. Auf 11-fachem Gewinn ist nach oben viel mehr Luft als nach unten Risiko, wenn der Schuldenabbau gelingt.
+</p>
+
+<div class="info-box">
+  <strong>Meine Linie:</strong> Ich halte — aber nicht mehr als Dividendenwert, sondern als bewusst umetikettierte Turnaround-Spekulation. Ich gebe ihr eine begrenzte Zeit, den Ertrag zu drehen, und beobachte genau die vier Warnsignale von oben. Sehe ich davon zwei gleichzeitig, ziehe ich den Schlussstrich. Was ich definitiv nicht mache: nachkaufen, nur weil sie billig aussieht. Eine fallende Marge nachzukaufen bedeutet, ins fallende Messer zu greifen.
+</div>
+
+<!-- ADSENSE BOTTOM -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1212067635"
+data-ad-format="in-article"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="related-articles">
+  <h3>Verwandte Analysen — Pharma &amp; Dividendenstrategie</h3>
+  <ul>
+    <li><a href="/blog/bayer-analyse-2026.html">Bayer Aktie 2026 — Turnaround nach Monsanto?</a></li>
+    <li><a href="/blog/10-high-yield-dividendenaktien-2026.html">10 High-Yield Dividendenaktien 2026</a></li>
+    <li><a href="/dividendenstrategie/">Dividendenstrategie — Cashflow-Fokus</a></li>
+    <li><a href="/tools/yield-on-cost-rechner.html">Yield on Cost Rechner — YOC berechnen</a></li>
+    <li><a href="/glossar/dividend-cut.html">Dividendenkürzung erklärt</a></li>
+    <li><a href="/glossar/nettoverschuldung.html">Nettoverschuldung erklärt</a></li>
+    <li><a href="/glossar/free-cashflow.html">Free Cashflow erklärt</a></li>
+    <li><a href="/kategorien/high-yield-aktien.html">High-Yield Aktien Hub</a></li>
+  </ul>
+</div>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;">
+  <strong>Tool:</strong> <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield on Cost Rechner</a> — berechne deinen YOC und sieh, wie weit Baxter von deiner Rendite-Schwelle entfernt ist.
+</p>
+
+</section>
+
+<!-- Author Box -->
+<div class="author-box" style="max-width:860px;margin:40px auto 0;padding:0 24px;">
+  <picture><source srcset="/marco.webp" type="image/webp"><img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem" class="author-img" width="64" height="64" loading="lazy"></picture>
+  <div class="author-info">
+    <span class="author-label">Autor</span>
+    <strong class="author-name">Marco Bozem</strong>
+    <p class="author-bio">Unabh&auml;ngiger Investor &amp; Finanz-Analyst mit Fokus auf Hard Assets, Dividenden und Cashflow-Strategien. Gr&uuml;nder von MB Capital Strategies. H&auml;lt Baxter International selbst im Depot (Scalable Capital, &ouml;ffentlich).</p>
+    <div class="author-links">
+      <a href="/ueber-marco-bozem/">&Uuml;ber Marco</a>
+      <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- Sources Box -->
+<div class="sources-box" style="max-width:860px;margin:16px auto 0;padding:0 24px 40px;">
+  <h4>Datenquellen &amp; Referenzen</h4>
+  <ul>
+    <li>Fundamentaldaten &amp; Kennzahlen: FMP (Financial Modeling Prep)</li>
+    <li>Offizielle Gesch&auml;ftsberichte: Baxter Investor Relations</li>
+    <li>SEC EDGAR (8-K / 10-K / Earnings Releases)</li>
+    <li>Tiefenanalyse &amp; Peer-Vergleich: <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="noopener sponsored noreferrer">InvestingPro</a> (Anzeige)</li>
+    <li>Marktpreise: Yahoo Finance &amp; FMP (Stand 1. Juli 2026)</li>
+  </ul>
+  <p class="sources-disclaimer">Keine Anlageberatung. Alle Angaben ohne Gew&auml;hr. Ich halte Baxter International selbst im Depot und bin daher nicht neutral. Bitte eigene Due Diligence durchf&uuml;hren, bevor ihr investiert.</p>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content &amp; Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener">English Site</a>
+      <a href="/newsletter.html">Newsletter abonnieren</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 MB Capital Strategies &middot; Marco Bozem</span>
+    <span>Keine Anlageberatung &middot; Alle Angaben ohne Gew&auml;hr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+<script src="/assets/js/glossar-linking.js" defer></script>
+</body>
+</html>
