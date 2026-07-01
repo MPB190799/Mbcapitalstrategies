@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+  <title>STAG Industrial 2026: Quartalsrekord — trotzdem kein Kauf</title>
+  <meta name="description" content="STAG Industrial Q1 2026: +20,9% Cash Rent Spread — Rekord seit IPO. Yield ~4,07% bei $38,06. Warum YOC unter 8%-Schwelle bleibt und was als Kaufzone gilt. Marcos Analyse.">
+  <meta name="author" content="Marco Bozem">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/stag-industrial-analyse-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/stag-industrial-analyse-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/stag-industrial-analysis-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/stag-industrial-analyse-2026.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="STAG Industrial 2026: Quartalsrekord — trotzdem kein Kauf">
+  <meta property="og:description" content="STAG Industrial Q1 2026: +20,9% Cash Rent Spread, Rekord in 14 Jahren. YOC ~4,07% bei $38,06 — unter Marcos 8%-Schwelle. Vollanalyse mit Peer-Vergleich & 3 Szenarien.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/stag-industrial-analyse-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="STAG Industrial 2026: Quartalsrekord — trotzdem kein Kauf">
+  <meta name="twitter:description" content="STAG Industrial Q1 2026: +20,9% Cash Rent Spread — Rekord seit IPO. YOC ~4,07% bei $38,06 — unter 8%-Schwelle. Marcos vollständige Analyse.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Critical inline CSS -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <!-- SEO SCHEMA — BlogPosting -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "STAG Industrial Analyse 2026 — +20,9% Cash Rent Spread, trotzdem kein Kauf",
+  "description": "STAG Industrial Q1 2026 Analyse: +20,9% Cash Rent Spread — Quartalsrekord seit IPO. Peer-Vergleich PLD/REXR/FR, drei Szenarien, YOC-Berechnung. Marcos Urteil: Watchlist, kein Kauf.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/stag-industrial-analyse-2026.html",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/marco.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "REIT Analyse",
+  "wordCount": 2050,
+  "keywords": [
+    "STAG Industrial Analyse 2026",
+    "Industrial REIT",
+    "Dividendenrendite",
+    "Yield on Cost",
+    "Cash Rent Spread",
+    "Prologis",
+    "Rexford Industrial",
+    "First Industrial",
+    "REIT Analyse",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "STAG Industrial Analyse 2026",
+      "item": "https://mbcapitalstrategies.com/blog/stag-industrial-analyse-2026.html"
+    }
+  ]
+}
+</script>
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist STAG Industrial und in welchen Märkten ist das Unternehmen aktiv?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "STAG Industrial (NYSE: STAG) ist ein US-Industrial-REIT mit Sitz in Boston. Das Unternehmen besitzt über 580 Gebäude mit rund 96 Millionen Quadratfuß Lagerfläche und einer Marktkapitalisierung von ca. 7,28 Milliarden Dollar (Stand Juli 2026). Die Besonderheit: Single-Tenant Net Lease in Sekundärmärkten wie Indianapolis, Greenville-Spartanburg und Louisville — also bewusst weg von teuren Küsten-A-Lagen. Diese Positionierung erklärt, warum STAG in Q1 2026 einen Cash Rent Spread von +20,9% erzielen konnte, während der LA-Spezialist Rexford -15,4% ausgewiesen hat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum hat STAG Industrial die monatliche Dividende auf quartalsweise umgestellt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seit dem 8. Januar 2026 zahlt STAG nicht mehr monatlich, sondern quartalsweise. Die Jahresdividende wurde dabei von 1,49 Dollar (2025) auf 1,55 Dollar (2026) erhöht — ein Plus von 4,03%. Der 15-jährige Dividendenerhöhungs-Track-Record bleibt erhalten. Das Management begründet die Umstellung mit dem Wunsch nach Industrie-Standard-Reporting. Die ehrliche Konsequenz: Wer STAG primär wegen monatlicher Cashflows gekauft hat, hat seinen ursprünglichen Kaufgrund verloren. Realty Income (O) und EPR Properties zahlen weiterhin monatlich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist STAG Industrial bei einem Kurs von etwa 38 Dollar ein Kauf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nicht nach Marcos 8%-YOC-Schwelle. Bei einem Kurs von 38,06 Dollar und einer Jahresdividende von 1,55 Dollar ergibt sich ein Yield on Cost von rund 4,07% — klar unter der 8%-Schwelle, die Marco als Qualitätsschwelle für Hard-Asset-Dividendenaktien anlegt. Interessant wird STAG bei einer Kurskorrektur auf 32 Dollar (YOC ~4,84%) oder bei Bestätigung der Datacenter-Adjacent-These in Q2 2026. Die Kaufzone liegt laut Marcos Einschätzung bei 32–34 Dollar. Keine Anlageberatung."
+      }
+    }
+  ]
+}
+</script>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .investing-link-box{background:linear-gradient(135deg,#151821,#1a1f2b);padding:22px 26px;border-radius:12px;border:2px solid rgba(212,175,55,.5);margin:30px 0;text-align:center}
+    .investing-link-box p{margin:8px 0 14px;color:#9aa6c0;font-size:.95rem}
+    .investing-link-box a.inv-btn{display:inline-block;padding:12px 22px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;font-size:1rem}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td,.metrics-table th{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table th{color:#d4af37;font-weight:700;text-align:left;background:#1a1f2b}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600}
+    .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .peer-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+    .peer-table th{background:#1a1f2b;color:#d4af37;padding:10px 12px;text-align:left;border-bottom:2px solid rgba(212,175,55,.3)}
+    .peer-table td{padding:9px 12px;border-bottom:1px solid rgba(212,175,55,.1);color:#e0e4ef}
+    .peer-table tr:nth-child(even){background:rgba(255,255,255,.02)}
+    .scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+    .scenario-card{padding:16px 18px;border-radius:10px;border:1px solid rgba(212,175,55,.25)}
+    .scenario-card.bull{border-color:#22c55e;background:rgba(34,197,94,.05)}
+    .scenario-card.base{border-color:#d4af37;background:rgba(212,175,55,.05)}
+    .scenario-card.bear{border-color:#ff6b6b;background:rgba(255,107,107,.05)}
+    .scenario-card h4{margin:0 0 8px;font-size:.95rem}
+    .scenario-card .price{font-size:1.4rem;font-weight:800;margin:4px 0}
+  </style>
+
+  <!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Themen-Menü öffnen">Themen ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>
+          <a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Podcast-Menü öffnen">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividenden-Journey</a>
+          <a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing &amp; Zyklen</a>
+          <hr>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime / Shipping</a>
+          <a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/investing-analysen.html">Investing.com</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream / Pipelines</a>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+    <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/investing-analysen.html">🔗 Investing.com</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs">
+  <a href="/">Start</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>STAG Industrial REIT-Analyse 2026</span>
+</nav>
+
+<section class="container">
+<!-- AEO Answer-First Block -->
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 24px;">
+  <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">STAG Industrial Analyse 2026:</strong> STAG Industrial (NYSE: STAG) ist ein US-Industrial-REIT der zweiten Liga — Sekundärmärkte, Single-Tenant Net Lease, 580+ Gebäude. Q1 2026: +20,9% Cash Rent Spread (Rekord in 14 Jahren Börsengeschichte), EPS-Surprise +33%. Aber: monatliche Dividende seit Januar 2026 gestrichen, YOC nur ~4,07% bei aktuellem Kurs (Stand 1. Juli 2026: $38,06) — weit unter Marcos 8%-Schwelle. Fazit: Watchlist statt Kauf.</p>
+</div>
+
+<h1>STAG Industrial 2026: +20,9% Mietsteigerung — trotzdem kein Kauf</h1>
+
+<div class="aeo-block" style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+  <p style="margin:0 0 10px"><strong style="color:#D4AF37">Ist STAG Industrial bei ~$38 ein Kauf?</strong><br>
+  Bei einem Kurs von $38,06 (Stand 1. Juli 2026) und einer Jahresdividende von $1,55 ergibt sich ein Yield on Cost von rund 4,07% — deutlich unter der 8%-Schwelle, die ich als Mindestanforderung für mein Hard-Asset-Portfolio anlege. Der +20,9% Cash Rent Spread Q1 2026 ist beeindruckend, aber ein Rekord in den Metriken macht noch keinen Kauf-Trigger. Keine Anlageberatung.</p>
+</div>
+
+<aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">🇺🇸 <strong style="color:#f5f6fa">English version:</strong> <a href="https://mbcapitalstrategiesgloabal.com/blog/stag-industrial-analysis-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Read this analysis in English</a> &nbsp;·&nbsp; <a href="https://mbcapitalstrategiesgloabal.com/" style="color:#d4af37">MB Capital Strategies Global</a></aside>
+
+<p style="font-size:.9rem;color:#9aa6c0">
+Veröffentlicht: 01.07.2026 &nbsp;·&nbsp; Kursdaten Stand: 01.07.2026 &nbsp;·&nbsp;
+Hinweis: Dieser Beitrag stellt <strong>keine Anlageberatung</strong> dar, sondern dient ausschließlich
+der Information und persönlichen Einordnung. Keine Kauf- oder Verkaufsempfehlung.
+</p>
+
+<!-- TOP AD -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<div class="info-box">
+📌 <strong>Kurzfassung:</strong> STAG Industrial hat in Q1 2026 den höchsten Cash Rent Spread seiner 14-jährigen Börsengeschichte gemeldet — plus 20,9%. Trotzdem ist STAG bei aktuellem Kurs kein Kauf für mein Portfolio. YOC unter 4,1%, monatliche Dividende gestrichen, Risk-Reward asymmetrisch ungünstig. Die Analyse zeigt, warum und ab welchem Kurs STAG interessant wird.
+</div>
+
+<h2>1. Q1 2026 — Was passiert ist</h2>
+
+<p>
+STAG Industrial ist ein US-Industrial-REIT mit Sitz in Boston: 96 Millionen Quadratfuß Lagerflächen, über 580 Gebäude, Marktkapitalisierung rund 7,28 Milliarden Dollar (Stand Juli 2026). Die Spezialisierung: Single-Tenant Net Lease in Sekundärmärkten. Ein Mieter pro Gebäude, keine Coastal-A-Lagen, sondern Greenville-Spartanburg, Indianapolis, Louisville. Die "Anti-Prologis"-These im Industrial-Sektor.
+</p>
+
+<p>Q1 2026 wurde am 28. April 2026 gemeldet. Die Headline-Zahlen:</p>
+
+<table class="metrics-table">
+  <tr><td>Core FFO pro Aktie</td><td><strong>$0,65</strong> — +6,6% gegenüber Q1 2025</td></tr>
+  <tr><td>EPS</td><td><strong>$0,32</strong> — Konsens lag bei $0,24 (33% Earnings-Surprise)</td></tr>
+  <tr><td>Revenue</td><td><strong>$224,21 Mio.</strong> — Beat um 3 Mio. Dollar</td></tr>
+  <tr><td>Same-Store Cash NOI</td><td><strong>+4,1%</strong></td></tr>
+  <tr><td>Operating Portfolio Occupancy</td><td><strong>96%</strong></td></tr>
+  <tr><td>Net Debt zu EBITDA</td><td><strong>5,0x</strong> — konservativ, stabil</td></tr>
+  <tr><td>Cash Rent Spread</td><td><strong>+20,9%</strong> auf 6 Mio. Quadratfuß neue Leases</td></tr>
+</table>
+
+<p style="font-size:0.82rem;color:#6b7a99;">Quellen: STAG IR-Pressemitteilung Q1 2026 (28.04.2026), SEC 8-K Filing, Earnings-Call-Transcript.</p>
+
+<p>
+Und jetzt die Zahl, die alle anderen Industrial-REITs in den Schatten stellt: <strong>Cash Rent Spread plus 20,9 Prozent</strong>. Der höchste Wert in STAGs 14-jähriger Börsenhistorie. Auf YouTube redet kaum jemand darüber — stattdessen klagen die meisten über Industrial-REITs als "tot".
+</p>
+
+<h2>2. Was +20,9% Cash Rent Spread wirklich bedeutet</h2>
+
+<p>
+"Leasing Spread" klingt nach Finanzbegriff ohne Substanz. Dabei ist es simpel: Wenn ein Mieter einen Vertrag von 2019 oder 2020 auslaufen lässt und neu unterschreibt, <strong>zahlt er heute 21% mehr — bar, sofort, pro Quadratfuß</strong>. Kein Rabatt, kein Sondereffekt, kein Straight-Line-Buchhaltungs-Trick. Pure Cash-Mietsteigerung.
+</p>
+
+<p>
+Das ist die direkte Inflation-Pass-Through-Power des Industrial-Sektors. Und genau hier zeigt sich, warum Adresse wichtiger ist als Produkt.
+</p>
+
+<p>
+<strong>Rexford Industrial — der LA-Spezialist — hat im selben Quartal einen Cash Leasing Spread von minus 15,4% gemeldet.</strong> Der Tireco-Sonder-Renewal hat es stark negativ gezogen (bereinigt um diesen einen Vertrag: -1,8%). Die teuren Coastal-Märkte in Südkalifornien sind im Stress. Vakanzen steigen, Mieter haben Verhandlungs-Leverage.
+</p>
+
+<p>
+STAG sitzt in Chicago, Greenville-Spartanburg und Minneapolis und macht plus 4,1% Same-Store Cash NOI. Das ist kein Zufall, sondern Strategie. Die Bevölkerung zieht seit Jahren in den Sun Belt. Logistik-Netzwerke folgen den Bewohnern. STAG war schon 2018 in den Märkten, in die alle anderen erst 2024 wollten.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>Tool:</strong> <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield-on-Cost-Rechner</a> — berechne deine persönliche Dividendenrendite auf den Einstandskurs, kostenlos &amp; sofort.</p>
+
+<h2>3. Der Datacenter-Pivot ohne Datacenter</h2>
+
+<p>
+STAG hat im Q1-Earnings-Call eine These aufgemacht, die niemand erwartet hatte: <strong>Acht Leases seit Anfang 2025. 1,6 Millionen Quadratfuß. Vertragsdauer über 8 Jahre. Leasing-Spreads rund 35 Prozent.</strong> Das sind Mieter, die Hyperscaler-Datacenter beliefern — Third-Party-Logistics-Firmen, Equipment-Hersteller für Meta, Amazon, Microsoft. Keine Datacenter selbst, sondern die Lager-Infrastruktur drumherum.
+</p>
+
+<p>
+Warum ist das relevant? Pure-Play Datacenter-REITs wie Digital Realty oder Equinix handeln zu 30 bis 50-fachen P/FFO wegen der "AI-Story". STAG profitiert vom gleichen Wachstumstrend — durch traditionelle Lagerhallen — zu rund 15-fachem P/FFO.
+</p>
+
+<p>
+Mein Take dazu: Das ist strategisch klug. Aber diese These hält nur, wenn die nächsten zwei Quartale sechs bis zehn weitere Datacenter-Adjacent-Leases bringen, mit Spreads weiter um 30 Prozent. Wenn das passiert, kann STAG vom 15-fachen P/FFO Richtung 18 bis 19-fach re-raten — das wäre zusätzliches Upside von 15 bis 20 Prozent.
+</p>
+
+<div class="risk-box">
+⚠️ <strong>Datacenter-Risiko:</strong> Wenn Meta, Amazon oder Microsoft AI-Capex 2027 drosseln — in der Branche wurde das Ende 2025 offen diskutiert — kollabiert diese These. Datacenter-Demand ist nicht linear, sondern hyperscale-zyklisch. Die Optionalität ist real, aber nicht einpreisen bevor Q2 2026 Zahlen vorliegen.
+</div>
+
+<h2>4. Die Dividenden-News, die fast alle übersehen haben</h2>
+
+<p>
+Jetzt zur wichtigsten Entwicklung, die in fast jeder STAG-Analyse fehlt: <strong>Seit dem 8. Januar 2026 zahlt STAG nicht mehr monatlich — sondern quartalsweise.</strong>
+</p>
+
+<p>13 Jahre lang war die monatliche Dividende STAGs größtes Marketing-Alleinstellungsmerkmal. Ein klarer USP gegenüber Realty Income, EPR Properties, Main Street Capital. Jetzt ist er weg.</p>
+
+<p>Die Zahlen:</p>
+<ul>
+  <li><strong>Jahresdividende 2025:</strong> $1,49 (monatlich $0,1242)</li>
+  <li><strong>Jahresdividende 2026:</strong> $1,55 (quartalsweise $0,3875)</li>
+  <li><strong>Erhöhung:</strong> +4,03%</li>
+  <li><strong>15-jähriger Dividendenerhöhungs-Track-Record:</strong> bleibt erhalten</li>
+  <li><strong>Ex-Datum letzte Dividende:</strong> 30.06.2026 | <strong>Zahltag:</strong> 15.07.2026</li>
+</ul>
+
+<p>
+STAG hat Industrie-Standard-Reporting gewollt. Die ehrliche Folge: <strong>Wer STAG primär wegen monatlicher Cashflows gekauft hat, hat seinen Kaufgrund verloren.</strong> Kein Drama, aber muss ausgesprochen werden.
+</p>
+
+<p>
+Mein Take: Diese Umstellung kostet STAG mittelfristig 50 bis 100 Basispunkte an Bewertungs-Premium gegenüber Realty Income. Aber der 15-Jahre-Track-Record bei den Erhöhungen ist die deutlich wichtigere Säule für YOC-Investoren. Die Frequenz ist Komfort. Die Kontinuität ist Substanz.
+</p>
+
+<!-- MID AD -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+data-ad-client="ca-pub-7097302643579933"
+data-ad-slot="1212067635"
+data-ad-format="in-article"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- Newsletter CTA DE -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+
+<h2>5. Yield-on-Cost: Warum ich nicht kaufe</h2>
+
+<p>
+Jetzt rechnen wir konkret. Mein Filter: YOC unter 8 Prozent fliegt aus dem Hard-Asset-Portfolio.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">YOC-Berechnung STAG Industrial (Stand 1. Juli 2026)</strong>
+  <ul style="margin-top:10px">
+    <li><strong>Aktueller Kurs:</strong> $38,06</li>
+    <li><strong>Jahresdividende:</strong> $1,55</li>
+    <li><strong>YOC = $1,55 / $38,06 × 100 = <span style="color:#ff6b6b;">~4,07%</span></strong></li>
+    <li>Klar unter der 8%-Schwelle</li>
+  </ul>
+</div>
+
+<p>
+4,07% YOC. Das ist kein Marco-Kauf zum aktuellen Preis. Ich muss das genauso klar aussprechen wie ich es bei einem Tanker mit 12% YOC anpreise.
+</p>
+
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>Glossar:</strong> <a href="/glossar/dividendenrendite.html" style="color:#D4AF37;">Dividendenrendite erklärt</a> — Was ist der Unterschied zwischen aktueller Dividendenrendite und Yield on Cost?</p>
+
+<p>Wann wäre STAG interessant? Zwei Szenarien:</p>
+
+<p><strong>Szenario 1 — Kurskorrektur:</strong> Wenn STAG auf 32 Dollar zurückfällt, ist YOC bei 4,84%. Auf 28 Dollar: 5,54%. Erst bei 19 bis 20 Dollar erreicht man 8% — das wäre ein Industrial-Crash und Bear-Case-Niveau.</p>
+
+<p><strong>Szenario 2 — Bestätigung der Datacenter-These:</strong> Wenn Q2 2026 Earnings (Ende Juli 2026) drei oder mehr neue Datacenter-Adjacent-Leases zeigen, könnte ich auch zu höherem Kurs eine kleine Position rechtfertigen — als Wachstums-Beimischung, nicht als YOC-Kandidat. Dann nehme ich bewusst niedrigere Start-Yield in Kauf für die Re-Rating-Story.</p>
+
+<p>Was ich definitiv nicht mache: zum Spot-Kurs einsteigen, weil die Q1-Schlagzeilen gut aussehen. Das ist Bauchgefühl, kein Plan.</p>
+
+<h2>6. Peer-Vergleich: STAG vs. PLD vs. REXR vs. FR</h2>
+
+<p>Schauen wir uns die gesamte Industrial-REIT-Familie an. Alle Q1 2026-Zahlen aus SEC 8-K Filings, verifiziert 27.05.2026:</p>
+
+<table class="peer-table">
+  <thead>
+    <tr>
+      <th>Kennzahl</th>
+      <th>STAG</th>
+      <th>PLD (Prologis)</th>
+      <th>REXR (Rexford)</th>
+      <th>FR (First Industrial)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Marktcap</td><td>~$7,28 Mrd</td><td>~$94 Mrd</td><td>~$7 Mrd</td><td>~$8 Mrd</td></tr>
+    <tr><td>P/FFO 2026</td><td><strong>~15x</strong></td><td>~24,5x</td><td>~15x</td><td>~19x</td></tr>
+    <tr><td>Dividendenrendite</td><td>~4,07%</td><td>~3,0%</td><td>~4,5%</td><td>~3,1%</td></tr>
+    <tr><td>Same-Store Cash NOI Q1 2026</td><td><strong>+4,1%</strong></td><td><strong>+8,8%</strong></td><td><strong>-0,4%</strong></td><td><strong>+8,7%</strong></td></tr>
+    <tr><td>Cash Leasing Spread Q1 2026</td><td><strong>+20,9%</strong></td><td>+16,8%</td><td>-15,4% (Tireco-Sonder)</td><td><strong>+32%</strong></td></tr>
+    <tr><td>Occupancy</td><td>96%</td><td>95,3%</td><td>—</td><td>—</td></tr>
+    <tr><td>Geographic Focus</td><td>US Sekundär</td><td>Global Class-A</td><td>Southern California</td><td>US Top-15</td></tr>
+  </tbody>
+</table>
+
+<p>Was sagt das?</p>
+
+<p><strong>Prologis</strong> ist der Premium-Player. 24-faches P/FFO. Höchste Qualität, Class-A-Lagen, niedrigste Yield. Q1 2026 war beeindruckend: +8,8% Same-Store Cash NOI, +16,8% Cash Rent Spread. Defensiv und qualitätsorientiert — aber entsprechend teuer.</p>
+
+<p><strong>Rexford</strong> ist das größte Warnsignal im Sektor. Cash Leasing Spreads auf minus 15,4% gedrückt — der schlechteste Wert im Industrial-Sektor. Same-Store Cash NOI minus 0,4%. Das ist eine Value-Trap im LA-Industrial-Stress. Nicht anfassen, außer man ist bereit, 12 bis 18 Monate Drawdown durchzustehen.</p>
+
+<p><strong>First Industrial</strong> überrascht positiv: +8,7% Same-Store Cash NOI, Cash Rental Rates +32%. Stark, aber entsprechend mit höherem Bewertungs-Multiple.</p>
+
+<p><strong>STAG</strong> liegt bei Same-Store Cash NOI +4,1% — moderat unter PLD und FR, aber klar im positiven Territorium. Beim Cash Spread +20,9% ist STAG besser als PLD (+16,8%) und deutlich besser als REXR (-15,4%). Das einzige in der Gruppe, das moderate Bewertung plus solide Wachstumsmetriken kombiniert. Aber — wie gesagt — zu $38,06 heute nicht für meine YOC-Disziplin.</p>
+
+<h2>7. Bull / Base / Bear — 12-Monats-Szenarien</h2>
+
+<div class="scenario-grid">
+  <div class="scenario-card bull">
+    <h4 style="color:#22c55e;">Bull-Case</h4>
+    <div class="price" style="color:#22c55e;">$50,40</div>
+    <p style="margin:0;font-size:.85rem;color:#cfd6e6;">+32% Kurs | Total Return inkl. Dividende: <strong>+36%</strong></p>
+    <p style="margin:6px 0 0;font-size:.8rem;color:#9aa6c0;">Datacenter-These bestätigt (8–10 neue Leases, +30% Spreads). Cap Rates komprimieren auf 6,5%. Multiple Re-Rating auf 18x P/FFO.</p>
+  </div>
+  <div class="scenario-card base">
+    <h4 style="color:#d4af37;">Base-Case</h4>
+    <div class="price" style="color:#d4af37;">$44,88</div>
+    <p style="margin:0;font-size:.85rem;color:#cfd6e6;">+18% Kurs | Total Return inkl. Dividende: <strong>+22%</strong></p>
+    <p style="margin:6px 0 0;font-size:.8rem;color:#9aa6c0;">Guidance gehalten. Cap Rates stabil. Multiple expandiert moderat auf 16,5x.</p>
+  </div>
+  <div class="scenario-card bear">
+    <h4 style="color:#ff6b6b;">Bear-Case</h4>
+    <div class="price" style="color:#ff6b6b;">$29,40</div>
+    <p style="margin:0;font-size:.85rem;color:#cfd6e6;">-23% Kurs | Total Return inkl. Dividende: <strong>-19%</strong></p>
+    <p style="margin:6px 0 0;font-size:.8rem;color:#9aa6c0;">US-Industrial-Rezession H2 2026. Occupancy fällt auf 93%. Multiple komprimiert auf 12x. FFO 2027 nur $2,45.</p>
+  </div>
+</div>
+
+<p>
+Wahrscheinlichkeitsverteilung subjektiv: Bull 25%, Base 55%, Bear 20%. Erwarteter Wert circa <strong>+17% Total Return</strong> auf 12 Monate (gerechnet auf den aktuellen Kurs von $38,06).
+</p>
+
+<p>
+Mein Take: Die Asymmetrie ist nicht überzeugend. +17% erwartet vs. -19% Worst-Case — das ist quasi symmetrisch, rund 1:1,1. Für einen REIT ohne YOC-Vorteil ist mir das zu wenig. Ich brauche echte Upside-Asymmetrie, bevor ich einsteige.
+</p>
+
+<h2>8. Fazit — Watchlist, nicht Buy</h2>
+
+<div class="info-box">
+🎯 <strong>Marcos Fazit:</strong> STAG Industrial ist eine sehr solide, gut geführte Industrial-REIT. 15 Jahre Dividendenerhöhungen. Beste Q1-Performance der Klasse beim Cash Spread. Strukturelle Positionierung in den richtigen Märkten. 5,0x Net Debt zu EBITDA — konservativ. Datacenter-Optionalität als Bonus-Kicker.<br><br>
+Aber: YOC rund 4,07% liegt klar unter der 8%-Schwelle. Risk-Reward nur symmetrisch (+17 vs. -19), keine überzeugende Upside-Asymmetrie. Monthly→Quarterly-USP weg. Bessere YOC-Kandidaten in der Watchlist (Tanker 10–12%, Coal-Plays 8–9%).
+</div>
+
+<p>Was ich konkret tun würde:</p>
+<ol>
+  <li><strong>Watchlist-Position #1</strong> für Industrial-REIT-Allokation — sobald Portfolio bei 100.000 Euro ist und ich Diversifikation brauche</li>
+  <li><strong>Limit-Order bei 32 Dollar</strong> — dort ergibt sich YOC über 4,8% plus 18–25% Upside-Spielraum bis Base-Case</li>
+  <li><strong>Trigger-Datum 28. Juli 2026</strong> — Q2 Earnings. Wenn dort 3+ neue Datacenter-Leases: von Watchlist auf Active-Buy</li>
+</ol>
+
+<p>
+Was ich definitiv nicht mache: zum aktuellen Kurs einsteigen, weil die Q1-Schlagzeilen gut aussehen.
+</p>
+
+<p>
+Wer auf monatliche US-REIT-Dividenden setzt: <a href="/blog/realty-income-analyse-2026.html" style="color:#D4AF37;">Realty Income (O)</a> macht das weiterhin. STAG ist diese Schiene seit Januar 2026 nicht mehr.
+</p>
+
+<div class="info-box">
+⚠️ <strong>Rechtlicher Hinweis:</strong>
+Dieser Artikel dient ausschließlich Informations- und Bildungszwecken.
+Er stellt keine Anlageberatung, Anlageempfehlung oder Aufforderung zum Kauf oder Verkauf
+von Wertpapieren dar. Alle Angaben ohne Gewähr. Bitte eigene Due Diligence durchführen.
+</div>
+
+<!-- Interner CTA: YOC-Rechner -->
+<div class="cta-box" style="border-left:4px solid #d4af37;margin:28px 0;">
+  <h3 style="margin:0 0 8px;color:#d4af37;">Deine persönliche Dividendenrendite berechnen</h3>
+  <p style="margin:0 0 12px;color:#cfd6e6;">Wie stark arbeitet dein eingesetztes Kapital wirklich? Der <strong>Yield-on-Cost-Rechner</strong> zeigt dir deine persönliche Rendite auf den Einstandskurs — kostenlos &amp; sofort.</p>
+  <a href="/tools/yield-on-cost-rechner.html" style="display:inline-block;background:#d4af37;color:#0f1115;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;">Zum YOC-Rechner &rarr;</a>
+</div>
+
+<!-- BOTTOM AD -->
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<!-- InvestingPro CTA -->
+<div class="cta-box">
+  <h3>Fundamentaldaten mit InvestingPro analysieren</h3>
+  <p>
+  Für STAG, Prologis, Realty Income &amp; alle REIT-Werte nutze ich
+  <strong>InvestingPro</strong> — FFO-Prognosen, Fair-Value-Modelle, Dividenden-Sicherheitscheck.
+  </p>
+  <a class="cta-btn" href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="sponsored noopener noreferrer">
+  15% Community-Bonus sichern &rarr;
+  </a>
+</div>
+
+<div class="related-articles">
+  <h3>Verwandte REIT-Analysen</h3>
+  <ul>
+    <li><a href="/blog/realty-income-analyse-2026.html">Realty Income (O) — monatliche Dividende, 5%+ Yield</a></li>
+    <li><a href="/blog/mpw-medical-properties-analyse-2026.html">MPW Medical Properties — Healthcare REIT Analyse</a></li>
+    <li><a href="/blog/mpw-reit-analyse-2026.html">MPW REIT 2026 — Dividende &amp; Schuldenstruktur</a></li>
+    <li><a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html">Zwangsdividenden: REITs, BDCs &amp; MLPs 2026</a></li>
+    <li><a href="/tools/yield-on-cost-rechner.html">Yield-on-Cost-Rechner — kostenlos &amp; sofort</a></li>
+    <li><a href="/glossar/dividendenrendite.html">Dividendenrendite erklärt — YOC vs. aktuelle Rendite</a></li>
+    <li><a href="/bestenlisten/top-5-high-yield-aktien-2026.html">Top 5 High-Yield Aktien 2026 — vollständiger Überblick</a></li>
+  </ul>
+</div>
+
+<!-- Author Box -->
+<div class="author-box" style="max-width:860px;margin:40px auto 0;">
+  <picture><source srcset="/marco.webp" type="image/webp"><img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem" class="author-img" width="64" height="64" loading="lazy"></picture>
+  <div class="author-info">
+    <span class="author-label">Autor</span>
+    <strong class="author-name">Marco Bozem</strong>
+    <p class="author-bio">Unabh&auml;ngiger Investor &amp; Finanz-Analyst mit Fokus auf Hard Assets, Rohstoffe und Cashflow-Strategien. Gr&uuml;nder von MB Capital Strategies.</p>
+    <div class="author-links">
+      <a href="/ueber-marco-bozem/">&Uuml;ber Marco</a>
+      <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- Sources Box -->
+<div class="sources-box" style="max-width:860px;margin:16px auto 0;">
+  <h4>Datenquellen &amp; Referenzen</h4>
+  <ul>
+    <li>STAG Industrial Q1 2026 IR-Pressemitteilung &amp; SEC 8-K (28.04.2026)</li>
+    <li>Prologis, Rexford, First Industrial Q1 2026 8-K Filings (verifiziert 27.05.2026)</li>
+    <li>Kursdaten: FMP / Yahoo Finance (Stand 01.07.2026)</li>
+    <li>Fundamentaldaten &amp; Fair-Value: <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="noopener sponsored">InvestingPro</a></li>
+    <li>Offizielle Gesch&auml;ftsberichte: STAG Investor Relations</li>
+  </ul>
+  <p class="sources-disclaimer">Keine Anlageberatung. Alle Angaben ohne Gew&auml;hr. Bitte eigene Due Diligence durchf&uuml;hren.</p>
+</div>
+
+<!-- Related Footer Links -->
+<p style="font-size:0.85rem;color:#9aa6c0;margin:16px 0;"><strong>Verwandte Artikel:</strong> <a href="/bestenlisten/top-5-high-yield-aktien-2026.html">Beste Dividendenaktien 2026 — vollständige Übersicht</a> · <a href="/kategorien/high-yield-aktien.html">High-Yield Aktien Hub</a></p>
+
+<p class="seo-internal-link" style="margin:1em 0"><a href="/kategorien/high-yield-aktien.html">Weitere Dividendenaktien-Analysen &rarr;</a></p>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content &amp; Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener noreferrer">English Site</a>
+      <a href="/newsletter.html">Newsletter abonnieren</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 MB Capital Strategies &middot; Marco Bozem</span>
+    <span>Keine Anlageberatung &middot; Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+<script src="/assets/js/glossar-linking.js" defer></script>
+</body>
+</html>
