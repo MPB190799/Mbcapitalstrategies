@@ -501,10 +501,13 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
 <!-- InvestingPro Sommer-Sale Top-Bar (default hidden, Inline-JS blendet im Juli-Fenster ein) -->
+<!-- CRO 2026-07-03 web-design-agent: mobile 2-Zeilen-Wrap (68px) schob den Hero-Newsletter-CTA
+     unter den Fold (Button-Box startete bei y=845 auf 390x844 Viewport, komplett unsichtbar ohne Scroll).
+     .ip-sale-date + .ip-sale-disclaimer jetzt gezielt ausblendbar via CSS-Klasse (siehe @media max-width:760px). -->
 <div class="ip-sale" style="display:none;background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff;z-index:90;position:relative">
-  <strong style="color:#d4af37;white-space:nowrap">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong> <span style="white-space:nowrap">&nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;</span>
+  <strong class="ip-sale-full" style="color:#d4af37;white-space:nowrap">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong><strong class="ip-sale-short" style="display:none;color:#d4af37;white-space:nowrap">InvestingPro-Sale: 60%+15%</strong> <span class="ip-sale-date" style="white-space:nowrap">&nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;</span>
   <a href="/investingpro-sommer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px;white-space:nowrap">60 %+15 % sichern →</a>
-  <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px;white-space:nowrap">*Affiliate-Link</span>
+  <span class="ip-sale-disclaimer" style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px;white-space:nowrap">*Affiliate-Link</span>
 </div>
 
 <div class="scroll-progress" id="scroll-progress"></div>
@@ -712,9 +715,20 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   /* CRO 2026-06-27 web-design-agent: tighten mobile hero spacing so CTA is above fold on 375x812.
      hero-sub margin-bottom: 48→28px (-20px), hero-eyebrow margin-bottom: 32→20px (-12px) = -32px total.
      Button "Sonntag-Brief" moves from y≈805 (7px below fold) to y≈773 (39px above fold). */
-  .hero-eyebrow-row{margin-bottom:20px}
-  .hero-sub{margin-bottom:28px}
-  .hero-trust{gap:18px;margin:20px 0;padding:18px 0}
+  /* CRO 2026-07-03 web-design-agent: InvestingPro-Sale-Bar (live seit 01.07., bis 31.07.) wrappt auf
+     Mobile in 2 Zeilen (68px statt ~42px) und frisst den obigen Puffer wieder auf — Newsletter-Button
+     landete bei y=845 auf 390x844 (komplett unter dem Fold, 0px sichtbar, live gemessen via Playwright).
+     Datum + Affiliate-Hinweis auf Mobile ausblenden -> Bar bleibt einzeilig (~42px), spart ~26px. */
+  .ip-sale{padding:6px 8px;white-space:nowrap}
+  .ip-sale-date,.ip-sale-disclaimer,.ip-sale-full{display:none!important}
+  .ip-sale-short{display:inline!important;font-size:0.74rem!important}
+  .ip-sale a{font-size:0.72rem!important;padding:3px 9px!important;margin-left:5px!important}
+  /* CRO 2026-07-03 web-design-agent (Teil 2): Sale-Bar-Kompaktierung allein reichte nicht (Button
+     noch bei y=820/47px hoch = nur zur Hälfte sichtbar auf 390x844, live gemessen). Zusätzlich Hero-
+     Innenabstände gestrafft -> Button vollständig sichtbar (y≈786-833, ~11px Puffer zum Fold). */
+  .hero-eyebrow-row{margin-bottom:10px}
+  .hero-sub{margin-bottom:8px}
+  .hero-trust{gap:18px;margin:6px 0;padding:2px 0}
   .hero-trust .trust-item{min-width:90px}
   .hero-ctas{gap:14px}
   .compass-backdrop{width:130vw;opacity:.22}
