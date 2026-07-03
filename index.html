@@ -32,15 +32,15 @@
   <link rel="preload" as="image" href="/assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 
-  <title>MB Capital Strategies — Hard Assets & Dividenden</title>
-  <meta name="description" content="MB Capital Strategies: Dividendenaktien-Analysen — Shipping, Mining, Energie, REITs. YOC ≥8% Aktien, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
+  <title>Dividendenaktien mit ≥8% YOC – Shipping, Mining, Energie</title>
+  <meta name="description" content="MB Capital Strategies: Dividendenaktien-Analysen mit YOC ≥8% — Shipping, Mining, Energie, REITs. Echtes Depot, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
   <link rel="canonical" href="https://mbcapitalstrategies.com/">
   <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/">
   <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/">
   <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/">
 
-  <meta property="og:title" content="MB Capital Strategies — Hard Assets & Dividenden">
-  <meta property="og:description" content="MB Capital Strategies: Dividendenaktien-Analysen — Shipping, Mining, Energie, REITs. YOC ≥8% Aktien, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
+  <meta property="og:title" content="Dividendenaktien mit ≥8% YOC – Shipping, Mining, Energie">
+  <meta property="og:description" content="MB Capital Strategies: Dividendenaktien-Analysen mit YOC ≥8% — Shipping, Mining, Energie, REITs. Echtes Depot, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
   <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="MB Capital Strategies">
@@ -48,7 +48,7 @@
   <meta property="og:url" content="https://mbcapitalstrategies.com/">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MB Capital Strategies — Hard Assets & Dividenden">
+  <meta name="twitter:title" content="Dividendenaktien mit ≥8% YOC – Shipping, Mining, Energie">
   <meta name="twitter:description" content="Dividenden-Analysen zu Energie, Shipping, Mining & Pipelines. Kostenlose Rechner, Depot-Einblicke & Cashflow-Strategien. Jetzt entdecken!">
   <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
   <meta name="twitter:creator" content="@MBCapitalStrat">
@@ -1647,6 +1647,11 @@ In deinem <em>Posteingang.</em></h2>
 
 <!-- InvestingPro Sale Self-Expiry: zeigt .ip-sale im Juli-Fenster, blendet .ip-evergreen aus -->
 <script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
+<!-- CRO-Fix 2026-07-03 web-design-agent: .header ist position:fixed;top:0 und ueberlappte die
+     Sale-Bar (ebenfalls oben, in-flow) sobald diese sichtbar war — Gold-Trennlinie der Sale-Bar
+     lief mitten durch Logo+Nav-Text (live auf Desktop verifiziert). Fix: Header wird per JS um die
+     tatsaechliche Sale-Bar-Hoehe nach unten versetzt, solange die Bar sichtbar ist. -->
+<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
 
 </body>
 </html>
