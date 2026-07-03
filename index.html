@@ -1428,8 +1428,19 @@ In deinem <em>Posteingang.</em></h2>
     pg.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
     header.classList.toggle('is-scrolled', h.scrollTop > 40);
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  // CRO-Fix 2026-07-03 web-design-agent: Progress-Bar zeigte auf frischem Seitenaufruf
+  // (scrollTop=0, kein User-Scroll) faelschlich ~17% Fuellstand. Ursache: die spaeter im
+  // Body stehenden Sale-Bar-/Header-Offset-Skripte veraendern die Seitenhoehe NACH diesem
+  // ersten onScroll()-Aufruf, was Chrome-Scroll-Anchoring einen Phantom-Scroll-Event ausloesen
+  // liess, den der bereits aktive Listener sofort in eine falsche Breite umrechnete. Fix:
+  // Listener + Initial-Sync erst binden, nachdem Sale-Bar/Header-Layout (Ende des Body,
+  // synchron VOR 'load') fertig eingehaengt ist.
+  const bindOnScroll = () => {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  };
+  if (document.readyState === 'complete') bindOnScroll();
+  else window.addEventListener('load', bindOnScroll, { once: true });
 
   // Theme toggle (persist in localStorage)
   const themeBtn = document.getElementById('theme-btn');
