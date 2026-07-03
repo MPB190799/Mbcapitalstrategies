@@ -762,7 +762,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
      hero, but that leaves --fg-muted (#a39885) text nearly illegible against the gold/brown compass
      behind it (low contrast, verified via Playwright 375x812 screenshot). Fix: local scrim/pill only
      behind the CTA text block, not the whole hero — keeps the compass visible elsewhere. */
-  .hero-inline-cta{background:rgba(8,8,16,.72);border-radius:8px;padding:10px 12px;backdrop-filter:blur(3px)}
+  .hero-inline-cta{background:rgba(8,8,16,.72)!important;border-radius:8px;padding:10px 12px;backdrop-filter:blur(3px);position:relative;z-index:2}
   .hero-inline-cta label{margin-bottom:6px!important}
   /* Touch-target min 44px for secondary text-link CTA — was ~23px tap area, failed on mobile */
   .btn-link{display:inline-flex;align-items:center;min-height:44px;padding-top:0;padding-bottom:0}
