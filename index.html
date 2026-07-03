@@ -276,6 +276,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 /* Hero */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
 .hero-inner{position:relative;z-index:2;display:block;max-width:1080px;margin:0 auto;width:100%}
+/* CRO 2026-07-03 web-design-agent: .compass-cardinals sits at z-index:5 (above hero-inner's z-index:2) —
+   on desktop (1440px) the "N · Energie" cardinal box visually clipped the hero-issue date text
+   ("28. Juni 2026" cut off mid-word behind the box), hiding a freshness/trust signal. Live-verified
+   via Playwright. Raise hero-inner above the decorative cardinal overlay so real content always wins. */
+.hero-inner{z-index:6}
 /* Zentrierte Hero-Komposition — Kompass dreht erkennbar DAHINTER (12.06.2026, Marco) */
 .hero-content{text-align:center;max-width:880px;margin:0 auto}
 .hero-issue{justify-content:center}
