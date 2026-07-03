@@ -742,6 +742,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .compass-cardinals a{padding:13px 10px;min-height:44px;box-sizing:border-box}
   /* CRO 2026-06-26 web-design-agent: 11px→13px — WCAG Lesbarkeit auf 390px viewport (DE-Parität EN e940ef0b) */
   .compass-cardinals a b{font-size:13px}
+  /* CRO 2026-07-03 web-design-agent: .cce (East, "Pipelines") is absolute-positioned at top:50% of the
+     hero section — on mobile viewports (measured 390x844) this lands directly on top of the
+     "8 kostenlose Rechner" stat text (live Playwright bbox overlap confirmed: cce y487-531 vs stat y444-513).
+     .ccs/.ccw (bottom:60px) risk the same collision on shorter mobile hero heights. All 3 sector links
+     already exist non-overlapping in the main nav "Themen" dropdown + footer + asset cards further down
+     the page, so hiding the redundant floating duplicates on mobile removes the bug with zero navigation
+     loss. .ccn (North, "Öl & Gas") stays — it sits at top:110px, clear of the stats row, no overlap. */
+  .compass-cardinals .cce,.compass-cardinals .ccs,.compass-cardinals .ccw{display:none}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
   /* Mobile newsletter form: stacked layout — prevents awkward mid-wrap on 375px */
   /* CRO 2026-06-26 web-design-agent: hero-inline-cta needs width:100% so the form fills the
