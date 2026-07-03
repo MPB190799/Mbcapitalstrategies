@@ -756,6 +756,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   /* Touch-target min 44px for newsletter subscribe button */
   .hero-inline-cta button{width:100%;justify-content:center;min-height:44px;padding-top:13px;padding-bottom:13px}
   .hero-inline-cta input[type="email"]{min-height:44px;padding-top:13px;padding-bottom:13px}
+  /* CRO 2026-07-03 web-design-agent: newsletter description + trust microcopy (Kein Spam/DOI/DSGVO)
+     sit directly over the compass image in the mobile hero — the 2026-06-27 mobile scrim fix made
+     the hero::before overlay fully transparent in the middle band (22%-74%) to avoid an almost-black
+     hero, but that leaves --fg-muted (#a39885) text nearly illegible against the gold/brown compass
+     behind it (low contrast, verified via Playwright 375x812 screenshot). Fix: local scrim/pill only
+     behind the CTA text block, not the whole hero — keeps the compass visible elsewhere. */
+  .hero-inline-cta{background:rgba(8,8,16,.55);border-radius:8px;padding:10px 12px;backdrop-filter:blur(2px)}
+  .hero-inline-cta label{margin-bottom:6px!important}
   /* Touch-target min 44px for secondary text-link CTA — was ~23px tap area, failed on mobile */
   .btn-link{display:inline-flex;align-items:center;min-height:44px;padding-top:0;padding-bottom:0}
   /* Touch-target min 44px for theme toggle button on mobile — was 34px */
