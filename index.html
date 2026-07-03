@@ -1617,6 +1617,12 @@ In deinem <em>Posteingang.</em></h2>
     var shown = false;
     function mbStickyShow(){
       if(shown) return;
+      // CRO-Fix 2026-07-03 web-design-agent: waehrend die Sale-Top-Bar aktiv ist, NICHT
+      // zusaetzlich die Bottom-Sticky-Bar zeigen -- sonst Gold-Bar-Sandwich (oben+unten),
+      // frisst auf Mobile zu viel Viewport und reizueberflutet (Marco-Regel: dezent, nie
+      // aufdringlich). Newsletter-CTA ist bereits above-the-fold im Hero praesent.
+      var saleBar = document.querySelector('.ip-sale');
+      if(saleBar && saleBar.style.display !== 'none' && saleBar.offsetHeight > 0) return;
       shown = true;
       bar.style.display = 'block';
       mbStickySetBodyPad();
