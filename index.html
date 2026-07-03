@@ -763,8 +763,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
   }
 }
+/* CRO 2026-07-03 web-design-agent: AdSense Auto-Ads darf NICHT im Hero/Above-the-Fold platzieren
+   (überlappte auf Mobile "8 kostenlose Rechner" mit In-Text-Ad-Badge, Marco-Regel "Anzeigen nie über Inhalt").
+   Offizieller Google-Opt-out per CSS, kein Konto-Zugriff/Auto-Ads-Toggle nötig: */
+.adsense-auto-ads-ignore{ google-auto-ads: ignore; }
 </style>
-<section class="hero" id="hero">
+<section class="hero adsense-auto-ads-ignore" id="hero">
   <div class="wrap hero-inner">
     <div class="hero-content">
       <div class="hero-issue" id="hero-issue-de">
@@ -1249,7 +1253,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 </section>
 
 <!-- ══════════ NEWSLETTER ══════════ -->
-<section class="contact" id="newsletter">
+<section class="contact adsense-auto-ads-ignore" id="newsletter">
   <div class="wrap">
     <div class="contact-grid reveal">
       <div>
