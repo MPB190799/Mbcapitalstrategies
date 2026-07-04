@@ -87,7 +87,7 @@ img { max-width: 100%; height: auto; }
 }
 .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .5px; }
-.brand-icon { color: var(--gold); font-size: 22px; }
+.brand-logo { display: block; border-radius: 50%; flex-shrink: 0; }
 .brand-name { font-size: 14px; }
 .site-nav { display: flex; gap: 22px; font-size: 14px; }
 .site-nav a { color: var(--text-2); }
