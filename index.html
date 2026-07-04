@@ -291,10 +291,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hero-content{text-align:center;max-width:880px;margin:0 auto}
 .hero-issue{justify-content:center}
 .hero-eyebrow-row{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:32px}
-.hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:40px;line-height:.98}
+/* CRO 2026-07-05 web-design-agent: hero-title/hero-sub margins trimmed (40->32 / 48->36) —
+   live Playwright bbox at common 1440x900 laptop viewport showed hero-ctas newsletter button
+   at y=849-896 (only 4px clearance) and its DOI/disclaimer line at y=900-918, fully below the
+   fold. Same root cause + same fix already validated on the EN site (2026-07-04, this file's
+   sister repo) where the CTA row was fully cut off — DE hadn't received the parity fix yet.
+   Trims ~20px total from hero vertical rhythm, no element removed. */
+.hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:32px;line-height:.98}
 .hero-title .w1{display:block}
 .hero-title .w2{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
-.hero-sub{max-width:48ch;margin-bottom:48px;margin-left:auto;margin-right:auto}
+.hero-sub{max-width:48ch;margin-bottom:36px;margin-left:auto;margin-right:auto}
 .hero-trust{justify-content:center}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 .hero-inline-cta{text-align:left}
