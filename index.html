@@ -1708,6 +1708,14 @@ In deinem <em>Posteingang.</em></h2>
 </script>
 <!-- AdSense nach LCP geladen — verhindert dass Google Funding Choices CMP Hero-Render blockiert -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<!-- CRO-Fix 2026-07-04 web-design-agent: Google Auto-Ads Bottom-Anchor-Overlay ueberdeckte auf
+     JEDEM Seitenaufruf reproduzierbar (Desktop+Mobile) die Above-the-Fold-Newsletter-CTA + den
+     Scroll-Cue-Pfeil mit einem ~270px hohen Fremdwerbe-Kasten — Verstoss gegen Marco-Regel
+     "Anzeigen dezent, nie aufdringlich, Leser nie reizueberfluten" (12.06.2026). Kein Eingriff in
+     AdSense-Kontoeinstellungen (Konto-Gate bleibt unangetastet) — offizieller, von Google
+     dokumentierter Seiten-Code-Opt-out fuer Anchor-Ads: overlays:{bottom:false}.
+     Quelle: https://support.google.com/adsense/answer/7478225 -->
+<script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7097302643579933", enable_page_level_ads: true, overlays: {bottom: false}});</script>
 
 <!-- InvestingPro Sale Self-Expiry: zeigt .ip-sale im Juli-Fenster, blendet .ip-evergreen aus -->
 <script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
