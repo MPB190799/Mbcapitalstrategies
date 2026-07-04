@@ -31,6 +31,12 @@
 <!-- LCP-Fix: Kompass-Bild (Hero-Hintergrund) frühzeitig laden — verhindert Late-Discovery-Verzögerung -->
   <link rel="preload" as="image" href="/assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+  <!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections (Philosophie, Asset-Grid,
+       Rechner-Grid, Zielgruppen, Insights, FAQ) starten mit opacity:0 und werden nur per JS
+       (IntersectionObserver) sichtbar. Falls JS blockiert/fehlschlägt/langsam ist, bleiben diese
+       Sektionen dauerhaft unsichtbar (Content-Verlust). Noscript-Fallback erzwingt volle Sichtbarkeit
+       ohne JS — betrifft 0% der normalen (JS-aktiven) Besucher, schliesst nur die Lücke. -->
+  <noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style></noscript>
 
   <title>Dividendenaktien mit ≥8% YOC – Shipping, Mining, Energie</title>
   <meta name="description" content="MB Capital Strategies: Dividendenaktien-Analysen mit YOC ≥8% — Shipping, Mining, Energie, REITs. Echtes Depot, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
