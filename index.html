@@ -766,8 +766,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
      .ccs/.ccw (bottom:60px) risk the same collision on shorter mobile hero heights. All 3 sector links
      already exist non-overlapping in the main nav "Themen" dropdown + footer + asset cards further down
      the page, so hiding the redundant floating duplicates on mobile removes the bug with zero navigation
-     loss. .ccn (North, "Öl & Gas") stays — it sits at top:110px, clear of the stats row, no overlap. */
-  .compass-cardinals .cce,.compass-cardinals .ccs,.compass-cardinals .ccw{display:none}
+     loss.
+     CRO 2026-07-04 web-design-agent: the 2026-07-03 comment claimed .ccn (North, "Öl & Gas", top:110px)
+     stays clear — RE-VERIFIED live via Playwright at both 390x844 and 375x667 and this is FALSE: the ccn
+     badge box visually overlaps the "Ausgabe №50 · 28. Juni 2026" issue-date trust line directly above the
+     H1 headline on every common mobile width (confirmed via screenshot crop, box sits right under/over the
+     date text). This crowds the two most important above-the-fold trust/dateline elements on mobile — the
+     exact same collision class as cce/ccs/ccw. Same zero-navigation-loss rationale applies (Öl & Gas /
+     Upstream already in nav "Themen" dropdown, footer "Energie & Upstream", and asset cards) — hide on
+     mobile too. */
+  .compass-cardinals .ccn,.compass-cardinals .cce,.compass-cardinals .ccs,.compass-cardinals .ccw{display:none}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
   /* Mobile newsletter form: stacked layout — prevents awkward mid-wrap on 375px */
   /* CRO 2026-06-26 web-design-agent: hero-inline-cta needs width:100% so the form fills the
