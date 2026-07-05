@@ -608,6 +608,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hero-trust .trust-item{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;min-width:120px}
 .hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
 .hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
+/* CRO 2026-07-05 web-design-agent: klickbare Trust-Stats -> interne Verlinkung sichtbar machen (Blog/Rechner) */
+a.trust-item{text-decoration:none;color:inherit;transition:transform var(--t-fast)}
+a.trust-item:hover{transform:translateY(-2px)}
+a.trust-item:hover .trust-num{color:var(--fg)}
+a.trust-item:hover .trust-lab{color:var(--accent)}
 .hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:8px}
 .btn-link{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-muted);position:relative;padding:6px 0;transition:color var(--t-fast)}
 .btn-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;opacity:.3;transition:opacity var(--t-fast)}
@@ -871,14 +876,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
       <!-- CRO 2026-06-28 web-design-agent: 190+→185+ — live count is 187 blog articles, "190+" war eine Überbehauptung (overclaim). 185+ ist konservativ korrekt und E-E-A-T-sicher. -->
       <div class="hero-trust" role="list" aria-label="Plattform-Kennzahlen">
-        <div class="trust-item" role="listitem">
+        <a class="trust-item" href="/blog/" role="listitem" aria-label="Alle Aktien-Analysen ansehen">
           <span class="trust-num">185+</span>
           <span class="trust-lab">Aktien-<br>analysen</span>
-        </div>
-        <div class="trust-item" role="listitem">
+        </a>
+        <a class="trust-item" href="/rechner/" role="listitem" aria-label="Kostenlose Dividenden-Rechner ansehen">
           <span class="trust-num">8</span>
           <span class="trust-lab">kostenlose<br>Rechner</span>
-        </div>
+        </a>
         <div class="trust-item" role="listitem">
           <span class="trust-num">YOC 6,93%</span>
           <span class="trust-lab">Echtdepot<br>2026</span>
