@@ -395,15 +395,25 @@
     if (!isBlogArticle) return;
     if (document.querySelector('.author-bio-inject')) return;
 
-    /* Try multiple selectors to find a good insertion point */
+    /* CRO 2026-07-05 web-design-agent: prefer inserting right after the
+       article's own <h1> instead of the breadcrumb. Previously the bio
+       card landed directly after the breadcrumb nav — i.e. BEFORE the
+       headline — pushing the actual article title (and LCP element)
+       below a 62px-photo + 5-link trust card on mobile. Confirmed live
+       via Playwright (rio-tinto-analyse-2026.html, 390x844): H1 was not
+       visible without scrolling. Byline-after-title is the standard,
+       expected reading order (title -> author -> body) and keeps the
+       headline the first above-the-fold content again. No CLS change
+       (element count/size identical, only insertion point moves). */
     var anchor = (
+      document.querySelector('.container h1') ||
+      document.querySelector('h1') ||
       document.querySelector('nav.breadcrumb') ||
       document.querySelector('nav.breadcrumbs') ||
       document.querySelector('.breadcrumb') ||
       document.querySelector('.breadcrumbs') ||
       document.querySelector('section.container') ||
       document.querySelector('.page-wrapper') ||
-      document.querySelector('.container h1') ||
       null
     );
 
