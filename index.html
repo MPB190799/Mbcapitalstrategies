@@ -704,6 +704,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 @media (min-width:1025px) and (max-height:980px){
   .compass-cardinals .ccn{display:none}
 }
+/* CRO 2026-07-05 web-design-agent: coverage gap found — the 2026-07-03/07-04 fixes only hid .ccn for
+   mobile (<=760px, own media query below) and short-desktop (>=1025px width AND <=980px height). The
+   761-1024px width band (tablets in landscape e.g. iPad 1024x768, narrow/split-view desktop browser
+   windows) had NO rule at all, so .ccn ("Öl & Gas") still renders there and visually overlaps the
+   "Ausgabe №… ·" issue-date trust line above the H1 — live-verified via Playwright/OpenClaw screenshot
+   at a narrow desktop viewport. Same zero-navigation-loss rationale as the existing fixes (sector link
+   already reachable via "Themen" nav dropdown, footer, and asset cards) — close the gap. */
+@media (min-width:761px) and (max-width:1024px){
+  .compass-cardinals .ccn{display:none}
+}
 .compass-cardinals .ccs:hover{transform:translateX(-50%) translateY(-3px) scale(1.04)}
 
 /* Signature Pill — bottom-right of hero (Marco-Bozem Brand Anchor) */
