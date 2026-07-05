@@ -203,6 +203,10 @@
                 '<a href="/midstream/">🛢️ Pipelines / Midstream</a>' +
                 '<a href="/mining-aktien/">⛏️ Mining Aktien</a>' +
                 '<a href="/upstream-aktien/">🛢️ Upstream Aktien</a>' +
+                '<a href="/wasser/">🌊 Wasser</a>' +
+                '<a href="/reits/">🏢 REITs</a>' +
+                '<a href="/pharma/">💊 Pharma</a>' +
+                '<a href="/defensiv/">🛡️ Defensiv</a>' +
                 '<a href="/dividendenstrategie/">💰 Dividendenstrategie</a>' +
                 '<hr>' +
                 '<a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>' +
@@ -262,6 +266,10 @@
           '<a href="/midstream/">🛢️ Midstream / Pipelines</a>' +
           '<a href="/mining-aktien/">⛏️ Mining Aktien</a>' +
           '<a href="/upstream-aktien/">🛢️ Upstream Aktien</a>' +
+          '<a href="/wasser/">🌊 Wasser</a>' +
+          '<a href="/reits/">🏢 REITs</a>' +
+          '<a href="/pharma/">💊 Pharma</a>' +
+          '<a href="/defensiv/">🛡️ Defensiv</a>' +
           '<a href="/dividendenstrategie/">💰 Dividendenstrategie</a>' +
           '<a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>' +
           '<a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>' +
