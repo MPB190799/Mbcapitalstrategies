@@ -59,4 +59,16 @@
     <priority>0.85</priority>
   </url>
 
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/inflationsrechner.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategies.com/tools/geldflussrechner.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

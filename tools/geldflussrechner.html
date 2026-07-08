@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Geldflussrechner: Einnahmen &amp; Ausgaben als Sankey-Diagramm</title>
+  <meta name="description" content="Kostenloser Geldflussrechner: Trage Einnahmen und Ausgaben ein und sieh deinen Cashflow live als Sankey-Diagramm. Haushaltsrechner mit Überschuss & Sparquote – ohne Anmeldung." />
+  <meta name="keywords" content="geldflussrechner, einnahmen ausgaben rechner, haushaltsrechner, sankey diagramm geld, budget rechner, sparquote berechnen" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/geldflussrechner.html" />
+    <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/geldflussrechner.html">
+    <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html">
+    <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/tools/geldflussrechner.html">
+
+  <meta property="og:title" content="Geldflussrechner: Einnahmen &amp; Ausgaben als Sankey-Diagramm" />
+  <meta property="og:description" content="Trage Einnahmen und Ausgaben ein und sieh deinen Cashflow live als Sankey-Diagramm. Überschuss & Sparquote sofort – kostenlos." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/geldflussrechner.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg" />
+  <meta property="og:image:alt" content="Geldflussrechner – Einnahmen und Ausgaben als Sankey-Diagramm | MB Capital Strategies" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Geldflussrechner: Einnahmen &amp; Ausgaben als Sankey-Diagramm" />
+  <meta name="twitter:description" content="Haushaltsrechner mit Sankey-Diagramm: Wohin läuft dein Geld und wie viel bleibt zum Investieren? Kostenlos, ohne Anmeldung." />
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg" />
+  <meta name="twitter:image:alt" content="Geldflussrechner – Einnahmen und Ausgaben als Sankey-Diagramm | MB Capital Strategies" />
+  <meta name="author" content="Marco Bozem" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Geldflussrechner",
+    "alternateName": "Einnahmen-Ausgaben-Rechner (Sankey)",
+    "url": "https://mbcapitalstrategies.com/tools/geldflussrechner.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "1.0",
+    "dateModified": "2026-07-08",
+    "featureList": "Einnahmen erfassen, Ausgaben erfassen, Sankey-Fluss-Diagramm, Überschuss, Defizit, Sparquote, lokale Speicherung",
+    "description": "Kostenloser Geldflussrechner: Einnahmen und Ausgaben eintragen und den monatlichen Cashflow live als Sankey-Diagramm sehen – inklusive Überschuss und Sparquote.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": { "@type": "Person", "name": "Marco Bozem", "jobTitle": "Unabhängiger Investor & Finanz-Analyst", "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295/", "https://www.youtube.com/@MBCapitalStrategies", "https://www.wikidata.org/wiki/Q138571853"] }
+  }
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #f5d76e;
+      --gold-dim: rgba(212,175,55,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #22c55e;
+      --red: #ef4444;
+      --blue: #60a5fa;
+      --border: rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
+
+    /* NAV */
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
+
+    /* HERO */
+    .hero { background: linear-gradient(160deg, #0f1008 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 620px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* CONTAINER */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* CALC CARD */
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
+
+    /* WIDGET (Sankey) — an Host-Seite angeglichen */
+    .flow-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+    @media(max-width:760px){.flow-kpis{grid-template-columns:repeat(2,1fr)}}
+    .flow-kpi{background:var(--dark-3);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+    .flow-kpi .lbl{font-size:0.68rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+    .flow-kpi .val{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400}
+    .flow-kpi.inc .val{color:var(--gold)} .flow-kpi.exp .val{color:var(--blue)}
+    .flow-kpi.sav .val{color:var(--green)} .flow-kpi.rate .val{color:var(--text)}
+    .flow-kpi.neg .val{color:var(--red)}
+    .flow-grid{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}
+    @media(max-width:820px){.flow-grid{grid-template-columns:1fr}}
+    .flow-panel{background:var(--dark-3);border:1px solid var(--border);border-radius:14px;padding:18px}
+    .flow-panel h3{font-size:0.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+    .flow-panel h3 .dot{width:8px;height:8px;border-radius:50%}
+    .dot.gold{background:var(--gold)} .dot.blue{background:var(--blue)}
+    .rows{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+    .row{display:grid;grid-template-columns:1fr 96px 30px;gap:8px;align-items:center}
+    .row input{background:var(--dark-4);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:9px 11px;width:100%}
+    .row input.amt{text-align:right}
+    .row input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,175,55,0.15)}
+    .row .del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:1.1rem;line-height:1;padding:4px;border-radius:6px}
+    .row .del:hover{color:var(--red);background:rgba(239,68,68,0.08)}
+    .addbtn{width:100%;background:var(--dark-4);border:1px dashed var(--border);color:var(--text-muted);font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;padding:10px;border-radius:8px;cursor:pointer}
+    .addbtn:hover{border-color:var(--gold);color:var(--gold)}
+    .subtotal{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:0.9rem}
+    .subtotal .gold{color:var(--gold)} .subtotal .blue{color:var(--blue)}
+    .flow-actions{display:flex;gap:8px;margin-top:16px}
+    .flow-actions button{flex:1;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;padding:9px;border-radius:8px;cursor:pointer;border:1px solid var(--border);background:var(--dark-4);color:var(--text-muted)}
+    .flow-actions button:hover{border-color:var(--gold);color:var(--gold)}
+    .flow-chartcard{background:var(--dark-3);border:1px solid var(--border);border-radius:14px;padding:18px;min-height:520px;position:relative;overflow:hidden}
+    .flow-chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+    .flow-chart-head h4{font-size:1rem;font-weight:600;color:var(--text)}
+    .flow-chart-head .hint{font-size:0.75rem;color:var(--text-dim)}
+    #flowChart{width:100%;position:relative}
+    .node text{font-family:'DM Sans',sans-serif;font-size:0.78rem;fill:var(--text);font-weight:500}
+    .node text.amt{fill:var(--text-muted);font-size:0.68rem}
+    .link{fill:none;transition:stroke-opacity .2s}
+    .link:hover{stroke-opacity:.75!important}
+    .empty{display:grid;place-items:center;height:440px;color:var(--text-dim);text-align:center;font-size:0.9rem}
+    .flow-disc{margin-top:1rem;font-size:0.78rem;color:var(--text-dim);border-top:1px solid var(--border);padding-top:0.75rem}
+
+    /* AFFILIATE */
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(212,175,55,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* CONTENT */
+    .section { margin: 3rem 0; max-width: 860px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .step-num { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--gold-dim); border: 1px solid rgba(212,175,55,0.35); color: var(--gold); font-family: 'DM Serif Display', serif; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; }
+    .step-content h4 { font-size: 0.98rem; font-weight: 600; color: var(--text); margin: 0.15rem 0 0.4rem; }
+    .step-content p { margin: 0; font-size: 0.9rem; }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 600px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    /* Tool Links */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* FOOTER */
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* WERBUNG — CLS-sicher + kennzeichnung */
+    .ad-slot { margin: 2.5rem auto; max-width: 720px; text-align: center; }
+    .ad-slot .ad-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+    .ad-slot ins.adsbygoogle { display: block; min-height: 100px; }
+    .ad-slot.ad-multiplex ins.adsbygoogle { min-height: 250px; }
+  </style>
+  <style>body{margin:0;background:#0E0F11;color:#E8E6E1}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;margin:0 0 .5em}section.container,main.container,.container{max-width:1080px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.css?v=3" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.css?v=3"></noscript>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+    gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Geldflussrechner · Einnahmen &amp; Ausgaben</div>
+  <h1>Dein Geldfluss auf einen Blick<br /><span>Einnahmen &amp; Ausgaben als Sankey-Diagramm</span></h1>
+  <p class="hero-sub">
+    Trage deine Einnahmen und Ausgaben ein – der <strong>Geldflussrechner</strong> zeichnet live ein
+    übersichtliches Fluss-Diagramm und zeigt dir Überschuss und Sparquote. Kostenlos, ohne Anmeldung.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">Lokal</span><span class="stat-lbl">im Browser</span></div>
+    <div class="stat"><span class="stat-val">Live</span><span class="stat-lbl">Diagramm</span></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">Geldflussrechner</div>
+
+    <div class="flow-kpis">
+      <div class="flow-kpi inc"><div class="lbl">Einnahmen</div><div class="val" id="kIn">0 €</div></div>
+      <div class="flow-kpi exp"><div class="lbl">Ausgaben</div><div class="val" id="kOut">0 €</div></div>
+      <div class="flow-kpi sav" id="kSavBox"><div class="lbl">Überschuss</div><div class="val" id="kSav">0 €</div></div>
+      <div class="flow-kpi rate"><div class="lbl">Sparquote</div><div class="val" id="kRate">–</div></div>
+    </div>
+
+    <div class="flow-grid">
+      <!-- INPUT -->
+      <div>
+        <div class="flow-panel">
+          <h3><span class="dot gold"></span><span>Einnahmen</span></h3>
+          <div class="rows" id="incRows"></div>
+          <button class="addbtn" id="addInc">+ Einnahme hinzufügen</button>
+          <div class="subtotal"><span>Summe</span><span class="gold" id="incSum">0 €</span></div>
+        </div>
+
+        <div class="flow-panel" style="margin-top:16px">
+          <h3><span class="dot blue"></span><span>Ausgaben</span></h3>
+          <div class="rows" id="expRows"></div>
+          <button class="addbtn" id="addExp">+ Ausgabe hinzufügen</button>
+          <div class="subtotal"><span>Summe</span><span class="blue" id="expSum">0 €</span></div>
+        </div>
+
+        <div class="flow-actions">
+          <button id="btnExample">Beispiel laden</button>
+          <button id="btnReset">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <!-- CHART -->
+      <div class="flow-chartcard">
+        <div class="flow-chart-head">
+          <h4>Geldfluss-Diagramm</h4>
+          <span class="hint">monatlich · in Euro</span>
+        </div>
+        <div id="flowChart"></div>
+      </div>
+    </div>
+    <p class="flow-disc"><strong>Hinweis:</strong> Dieses Tool dient ausschließlich zur eigenen Haushalts-Übersicht. Deine Eingaben bleiben lokal in deinem Browser (kein Server, keine Übertragung). Keine Anlage-, Steuer- oder Finanzberatung.</p>
+  </div>
+
+  <!-- ERKLÄR-ABSATZ -->
+  <section class="section">
+    <h2>Warum ein <span class="accent">Geldfluss-Diagramm</span> mehr zeigt als eine Tabelle</h2>
+    <p>
+      Ein klassischer Haushaltsrechner listet Zahlen untereinander. Ein <strong>Sankey-Diagramm</strong>
+      dagegen macht die Breite der Ströme sichtbar: Du siehst auf einen Blick, welcher Posten dein Budget
+      am stärksten auffrisst und wie viel am Ende als Überschuss übrig bleibt. Genau dieser Überschuss ist
+      die Grundlage für alles Weitere – denn nur was am Monatsende bleibt, kann investiert werden.
+    </p>
+    <p>
+      Der entscheidende Wert ist die <strong>Sparquote</strong> (Überschuss ÷ Einnahmen). Wer diese Quote
+      kennt und Schritt für Schritt erhöht, baut über die Jahre echtes Vermögen auf. Was aus dem freien
+      Cashflow werden kann, rechnest du danach mit dem
+      <a href="/tools/dividendenrechner.html">Dividendenrechner</a> oder dem
+      <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle-Freiheit-Rechner</a> durch.
+    </p>
+  </section>
+
+  <!-- SO FUNKTIONIERT'S -->
+  <section class="section">
+    <h2>So funktioniert der <span class="accent">Geldflussrechner</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Einnahmen eintragen</h4>
+          <p>Gehalt, Nebenjob, Dividenden – trage jede Einnahmequelle mit Bezeichnung und Betrag ein.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Ausgaben eintragen</h4>
+          <p>Miete, Lebensmittel, Mobilität, Versicherungen, Sparen – je feiner du aufteilst, desto klarer das Bild.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Fluss live ablesen</h4>
+          <p>Das Diagramm zeichnet sich sofort. Oben siehst du Einnahmen, Ausgaben, Überschuss und Sparquote.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Überschuss zum Investieren nutzen</h4>
+          <p>Der grüne Überschuss-Strom ist dein Investitions-Budget. Nutze „Beispiel laden“, um schnell zu starten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MID AD ===================== -->
+  <div class="ad-slot">
+    <div class="ad-label">Anzeige</div>
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7097302643579933"
+         data-ad-slot="1212067635"
+         data-ad-format="in-article"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Geldflussrechner &amp; Haushalt</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist ein Sankey-Diagramm für Geld?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Ein Sankey-Diagramm stellt Geldströme als Bänder dar, deren Breite dem Betrag entspricht.
+        Deine Einnahmen fließen in ein zentrales Budget, das sich von dort in die einzelnen Ausgaben
+        und den Überschuss aufteilt. So erkennst du sofort die größten Posten – anschaulicher als jede Tabelle.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie berechne ich meine Sparquote?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Sparquote = (Einnahmen − Ausgaben) ÷ Einnahmen × 100. Beispiel: 3.680 € Einnahmen,
+        2.720 € Ausgaben → 960 € Überschuss → Sparquote 26 %. Der Rechner ermittelt diesen Wert
+        automatisch, sobald du deine Zahlen eingibst.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Werden meine Daten irgendwo gespeichert?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Nein. Alle Eingaben bleiben ausschließlich <strong>lokal in deinem Browser</strong>
+        (Local Storage) – nichts wird an einen Server übertragen. Du kannst die Seite jederzeit schließen;
+        beim nächsten Besuch sind deine letzten Werte wieder da. Über „Zurücksetzen“ löschst du sie.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie viel sollte ich sparen bzw. investieren?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Das ist individuell und hängt von Einkommen, Lebenssituation und Zielen ab –
+        pauschale Empfehlungen wären unseriös. Der Rechner zeigt dir nur deine <em>tatsächliche</em>
+        Quote. Was du daraus machst, ist deine Entscheidung. <strong>Keine Anlageberatung.</strong>
+        Wie sich ein regelmäßig investierter Überschuss entwickeln kann, zeigt der
+        <a href="/tools/finanzielle-freiheit-rechner.html">Finanzielle-Freiheit-Rechner</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Rechnet das Tool monatlich oder jährlich?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Standardmäßig sind die Werte als <strong>monatliche</strong> Beträge gedacht (siehe Hinweis am Diagramm).
+        Du kannst aber genauso gut jährliche Zahlen eintragen – das Diagramm funktioniert unabhängig von der
+        Periode, solange du Einnahmen und Ausgaben im gleichen Rhythmus erfasst.
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKENWINKEL -->
+  <section class="section">
+    <h2>Vom Überschuss zum <span class="accent">Cashflow-Portfolio</span></h2>
+    <p>
+      Für mich ist der Geldfluss die erste Stufe jeder Vermögensstrategie: Erst wenn du weißt, wie viel
+      am Monatsende übrig bleibt, weißt du, wie viel du regelmäßig in dividendenstarke Sachwerte stecken kannst.
+      Aus Überschuss wird investiertes Kapital – und aus investiertem Kapital ein wachsender Dividenden-Cashflow.
+    </p>
+    <div class="example-box">
+      <span class="tag">📘 Der nächste Schritt</span>
+      <p>
+        Angenommen, dein Diagramm zeigt 600 € Überschuss pro Monat. Rechne mit dem
+        <a href="/tools/dividendenrechner.html" style="color:var(--gold)">Dividendenrechner</a> durch,
+        welchen Netto-Cashflow dieser Betrag über die Jahre erzeugen kann – so wird aus Budget-Disziplin
+        ein konkretes Ziel.
+      </p>
+    </div>
+    <p>
+      Das ist meine persönliche Herangehensweise, keine Empfehlung für deine Situation.
+      Renditen sind nie garantiert. <strong>Keine Anlageberatung.</strong>
+    </p>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Rechner</span></h2>
+    <p>Alle kostenlos – für deine Cashflow- und Vermögensplanung.</p>
+    <div class="tool-grid">
+      <a href="/tools/dividendenrechner.html" class="tool-link">💶 Dividendenrechner</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/inflationsrechner.html" class="tool-link">📉 Inflationsrechner</a>
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/shipping-cashflow-rechner.html" class="tool-link">🛳️ Shipping Cashflow</a>
+    </div>
+  </section>
+
+<!-- AUTHOR-BOX (E-E-A-T) -->
+<aside class="author-box" style="display:flex;gap:16px;align-items:flex-start;background:rgba(21,24,33,0.92);border:1px solid rgba(212,175,55,0.22);border-radius:12px;padding:20px;max-width:1100px;margin:32px auto;">
+  <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem - Gründer MB Capital Strategies" style="width:72px;height:72px;border-radius:50%;border:2px solid #d4af37;flex-shrink:0;object-fit:cover;" loading="lazy">
+  <div>
+    <h4 style="margin:0 0 6px;color:#d4af37;font-size:1rem;">Über den Autor</h4>
+    <p style="margin:0 0 8px;font-size:0.9em;color:#cbd5dd;line-height:1.55;"><strong>Marco Bozem</strong> ist unabhängiger Investor mit Fokus auf Hard Assets — Shipping, Mining, Energie & Pipelines. Seit 2015 baut er ein reales Dividendendepot auf, das er via Parqet öffentlich trackt. Für ihn ist der monatliche Überschuss die Grundlage jeder Investition. <a href="/ueber-marco-bozem/" style="color:#d4af37;">Mehr über Marco</a>.</p>
+    <p style="margin:0;font-size:0.85em;color:#9aa6c0;"><a href="https://www.linkedin.com/in/marco-bozem-182173295" rel="author noopener" target="_blank" style="color:#d4af37;">LinkedIn</a> · <a href="https://www.youtube.com/@mbcapitalstrategies" rel="author noopener" target="_blank" style="color:#d4af37;">YouTube</a> · <a href="/depot-strategie/" style="color:#d4af37;">Live-Depot</a></p>
+  </div>
+</aside>
+
+</main>
+
+<!-- MB-PREMIUM-CTA-V1 -->
+<div style="background:linear-gradient(135deg,rgba(212,175,55,0.10) 0%,rgba(212,175,55,0.04) 100%);border-top:1px solid rgba(212,175,55,0.35);border-bottom:1px solid rgba(212,175,55,0.35);padding:36px 20px;text-align:center;margin:0;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px;font-family:Outfit,sans-serif;">Premium · MB Earnings Insider</p>
+    <h3 style="color:#f5f6fa;font-size:1.4rem;font-weight:700;margin:0 0 10px;font-family:Outfit,sans-serif;line-height:1.3;">📊 Jeden Quartalsbericht deiner Aktien direkt im Postfach.</h3>
+    <p style="color:#cbd5dd;font-size:0.92rem;margin:0 0 16px;font-family:Outfit,sans-serif;line-height:1.5;">9 Sektoren · 30–100 Aktien pro Sektor · pro Earnings-Release eine deutsche Tiefenanalyse mit Charts, KPIs, CEO-Quotes &amp; Sektor-Peer-Vergleich.</p>
+    <p style="color:#9aa6c0;font-size:0.82rem;margin:0 0 18px;font-family:Outfit,sans-serif;">
+      <strong style="color:#d4af37;">ab 5 €/Monat</strong> · 30 Tage gratis testen · 1-Klick-Cancel · <strong style="color:#d4af37;">Promo INSIDER1</strong> spart 1 €
+    </p>
+    <a href="/newsletter/?utm_source=internal&amp;utm_medium=cta&amp;utm_campaign=geldflussrechner" style="display:inline-block;padding:13px 28px;background:#d4af37;color:#0f1115;font-weight:700;text-decoration:none;border-radius:6px;font-size:0.95rem;font-family:Outfit,sans-serif;letter-spacing:.02em;">
+      Premium-Newsletter ansehen →
+    </a>
+  </div>
+</div>
+<!-- /Premium Newsletter CTA -->
+
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-wrap" style="background:rgba(212,175,55,0.07);border-top:1px solid rgba(212,175,55,0.18);padding:40px 20px;text-align:center;">
+  <div style="max-width:520px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;font-family:Outfit,sans-serif;">Newsletter</p>
+    <h3 style="color:#f5f6fa;font-size:1.2rem;font-weight:700;margin:0 0 8px;font-family:Outfit,sans-serif;">📬 MB Capital Insider</h3>
+    <p style="color:#9aa6c0;font-size:0.87rem;margin:0 0 20px;font-family:Outfit,sans-serif;">Jeden Sonntag: Wochenrückblick &amp; Markt-Einschätzung — Shipping, Mining, Energie &amp; Pipelines. Direkt aus dem Depot.</p>
+    <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription" style="margin:0;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;">
+        <input type="email" name="EMAIL" placeholder="deine@email.de" required
+          style="flex:1;min-width:200px;max-width:270px;padding:11px 15px;border-radius:6px;
+                 border:1px solid rgba(212,175,55,0.35);background:#151821;color:#f5f6fa;
+                 font-size:0.88rem;font-family:Outfit,sans-serif;outline:none;">
+        <button type="submit"
+          style="padding:11px 22px;background:#d4af37;color:#0f1115;font-weight:700;
+                 border:none;border-radius:6px;cursor:pointer;font-size:0.88rem;
+                 font-family:Outfit,sans-serif;white-space:nowrap;">
+          Anmelden →
+        </button>
+      </div>
+      <label style="display:flex;align-items:flex-start;gap:8px;max-width:420px;margin:0 auto 6px;text-align:left;cursor:pointer;">
+        <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;accent-color:#d4af37;flex-shrink:0;">
+        <span style="color:#5a6480;font-size:0.74rem;font-family:Outfit,sans-serif;">
+          Ich akzeptiere die <a href="/datenschutz.html" style="color:#d4af37;text-decoration:none;">Datenschutzerklärung</a>
+          und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich.
+        </span>
+      </label>
+      <input type="hidden" name="email_address_check" value="">
+      <input type="hidden" name="locale" value="de">
+    </form>
+  </div>
+</div>
+<!-- ======================== END NEWSLETTER ======================== -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist ein Sankey-Diagramm für Geld?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein Sankey-Diagramm stellt Geldströme als Bänder dar, deren Breite dem Betrag entspricht. Deine Einnahmen fließen in ein zentrales Budget, das sich von dort in die einzelnen Ausgaben und den Überschuss aufteilt. So erkennst du sofort die größten Posten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie berechne ich meine Sparquote?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sparquote = (Einnahmen − Ausgaben) ÷ Einnahmen × 100. Beispiel: 3.680 € Einnahmen, 2.720 € Ausgaben → 960 € Überschuss → Sparquote 26 %. Der Geldflussrechner ermittelt diesen Wert automatisch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werden meine Daten irgendwo gespeichert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Alle Eingaben bleiben ausschließlich lokal in deinem Browser (Local Storage) – nichts wird an einen Server übertragen. Über 'Zurücksetzen' löschst du die Werte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viel sollte ich sparen bzw. investieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das ist individuell und hängt von Einkommen, Lebenssituation und Zielen ab. Der Rechner zeigt nur deine tatsächliche Sparquote. Keine Anlageberatung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rechnet das Tool monatlich oder jährlich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standardmäßig sind die Werte als monatliche Beträge gedacht. Du kannst aber auch jährliche Zahlen eintragen – das Diagramm funktioniert unabhängig von der Periode, solange Einnahmen und Ausgaben im gleichen Rhythmus erfasst werden."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
+}
+</script>
+
+<script>
+(function(){
+  const EUR = n => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n||0);
+  const $ = s => document.querySelector(s);
+
+  const EX = {
+    inc:[["Gehalt netto",3200],["Dividenden",180],["Nebenjob",300]],
+    exp:[["Miete",1050],["Lebensmittel",450],["Mobilität",220],["Versicherungen",160],["Freizeit",240],["Sparen/ETF",600]]
+  };
+
+  let inc=[{name:'',amt:''}];
+  let exp=[{name:'',amt:''}];
+
+  function save(){ try{localStorage.setItem('mbcs_flow',JSON.stringify({inc,exp}))}catch(e){} }
+  function load(){ try{const d=JSON.parse(localStorage.getItem('mbcs_flow'));if(d){inc=d.inc||inc;exp=d.exp||exp;}}catch(e){} }
+
+  function renderRows(){
+    const mk=(arr,host)=>{
+      host.innerHTML='';
+      arr.forEach((r,i)=>{
+        const div=document.createElement('div');div.className='row';
+        div.innerHTML=`<input type="text" placeholder="Bezeichnung" value="${(r.name||'').replace(/"/g,'&quot;')}">
+          <input class="amt" type="number" inputmode="decimal" min="0" placeholder="0" value="${r.amt}">
+          <button class="del" title="löschen">×</button>`;
+        const [n,a]=div.querySelectorAll('input');
+        n.oninput=e=>{arr[i].name=e.target.value;draw();save();};
+        a.oninput=e=>{arr[i].amt=e.target.value;draw();save();};
+        div.querySelector('.del').onclick=()=>{arr.splice(i,1);if(!arr.length)arr.push({name:'',amt:''});renderRows();draw();save();};
+        host.appendChild(div);
+      });
+    };
+    mk(inc,$('#incRows'));mk(exp,$('#expRows'));
+  }
+
+  function num(v){const n=parseFloat(v);return isFinite(n)&&n>0?n:0;}
+
+  function draw(){
+    if(typeof d3==='undefined' || typeof d3.sankey==='undefined'){ setTimeout(draw,120); return; }
+    const incF=inc.filter(r=>num(r.amt)>0).map(r=>({name:r.name||'Einnahmen',val:num(r.amt)}));
+    const expF=exp.filter(r=>num(r.amt)>0).map(r=>({name:r.name||'Ausgaben',val:num(r.amt)}));
+    const totIn=incF.reduce((s,r)=>s+r.val,0);
+    const totOut=expF.reduce((s,r)=>s+r.val,0);
+    const bal=totIn-totOut;
+
+    $('#kIn').textContent=EUR(totIn); $('#kOut').textContent=EUR(totOut);
+    $('#incSum').textContent=EUR(totIn); $('#expSum').textContent=EUR(totOut);
+    const savBox=$('#kSavBox');
+    $('#kSav').textContent=EUR(Math.abs(bal));
+    savBox.querySelector('.lbl').textContent = bal>=0? 'Überschuss' : 'Defizit';
+    savBox.classList.toggle('neg',bal<0); savBox.classList.toggle('sav',bal>=0);
+    $('#kRate').textContent = totIn>0 ? Math.round(bal/totIn*100)+' %' : '–';
+
+    const host=$('#flowChart');host.innerHTML='';
+    if(!incF.length){ host.innerHTML=`<div class="empty">Trage links Einnahmen und Ausgaben ein — dein Diagramm erscheint hier.</div>`; return; }
+
+    const nodes=[], links=[];
+    const idx={};
+    const add=(key,label,type)=>{ if(idx[key]==null){idx[key]=nodes.length;nodes.push({name:label,type});} return idx[key]; };
+    const B=add('__budget__','Budget','budget');
+    incF.forEach((r,i)=>{const n=add('i'+i,r.name,'inc');links.push({source:n,target:B,value:r.val,kind:'inc'});});
+    expF.forEach((r,i)=>{const n=add('e'+i,r.name,'exp');links.push({source:B,target:n,value:r.val,kind:'exp'});});
+    if(bal>0){const s=add('__surplus__','Überschuss','sav');links.push({source:B,target:s,value:bal,kind:'sav'});}
+    else if(bal<0){const d=add('__deficit__','Defizit','def');links.push({source:B,target:d,value:-bal,kind:'def'});}
+
+    const W=host.clientWidth||760, H=Math.max(440, (Math.max(incF.length,expF.length)+1)*54);
+    const svg=d3.select(host).append('svg').attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+    const defs=svg.append('defs');
+    const grad=(id,c1,c2)=>{const g=defs.append('linearGradient').attr('id',id).attr('x1','0%').attr('x2','100%');
+      g.append('stop').attr('offset','0%').attr('stop-color',c1).attr('stop-opacity',.55);
+      g.append('stop').attr('offset','100%').attr('stop-color',c2).attr('stop-opacity',.55);};
+    grad('g_inc','#D4AF37','#a88a2a'); grad('g_exp','#3b5bab','#60a5fa'); grad('g_sav','#16a34a','#22c55e'); grad('g_def','#b91c1c','#ef4444');
+
+    const sankey=d3.sankey().nodeWidth(16).nodePadding(16).extent([[4,10],[W-4,H-10]]);
+    const graph=sankey({nodes:nodes.map(d=>Object.assign({},d)),links:links.map(d=>Object.assign({},d))});
+
+    const nodeColor=d=>({inc:'#D4AF37',exp:'#60a5fa',sav:'#22c55e',def:'#ef4444',budget:'#c8cfe0'}[d.type]||'#c8cfe0');
+    const linkGrad=d=>`url(#g_${d.kind})`;
+
+    svg.append('g').selectAll('path').data(graph.links).join('path')
+      .attr('class','link').attr('d',d3.sankeyLinkHorizontal())
+      .attr('stroke',linkGrad).attr('stroke-width',d=>Math.max(1.2,d.width)).attr('stroke-opacity',.5);
+
+    const node=svg.append('g').selectAll('g').data(graph.nodes).join('g').attr('class','node');
+    node.append('rect')
+      .attr('x',d=>d.x0).attr('y',d=>d.y0).attr('height',d=>Math.max(2,d.y1-d.y0)).attr('width',d=>d.x1-d.x0)
+      .attr('rx',3).attr('fill',nodeColor).attr('fill-opacity',.9)
+      .attr('filter','drop-shadow(0 0 6px rgba(212,175,55,.15))');
+
+    node.append('text')
+      .attr('x',d=>d.x0<W/2? d.x1+8 : d.x0-8)
+      .attr('y',d=>(d.y0+d.y1)/2-4)
+      .attr('text-anchor',d=>d.x0<W/2?'start':'end')
+      .text(d=>d.name);
+    node.append('text').attr('class','amt')
+      .attr('x',d=>d.x0<W/2? d.x1+8 : d.x0-8)
+      .attr('y',d=>(d.y0+d.y1)/2+11)
+      .attr('text-anchor',d=>d.x0<W/2?'start':'end')
+      .text(d=>EUR(d.value));
+  }
+
+  $('#addInc').onclick=()=>{inc.push({name:'',amt:''});renderRows();save();};
+  $('#addExp').onclick=()=>{exp.push({name:'',amt:''});renderRows();save();};
+  $('#btnReset').onclick=()=>{inc=[{name:'',amt:''}];exp=[{name:'',amt:''}];renderRows();draw();save();};
+  $('#btnExample').onclick=()=>{
+    inc=EX.inc.map(([n,a])=>({name:n,amt:a})); exp=EX.exp.map(([n,a])=>({name:n,amt:a}));
+    renderRows();draw();save();};
+  window.addEventListener('resize',()=>draw());
+
+  load(); renderRows(); draw();
+})();
+</script>
+
+</body>
+</html>

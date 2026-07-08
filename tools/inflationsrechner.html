@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Inflationsrechner: Was ist mein Geld in X Jahren noch wert?</title>
+  <meta name="description" content="Inflationsrechner kostenlos: Kaufkraft berechnen und sehen, wie viel dein Bargeld durch Inflation verliert. Was ist mein Geld in 10 oder 20 Jahren noch wert? Sofort, ohne Anmeldung." />
+  <meta name="keywords" content="inflationsrechner, kaufkraft berechnen, kaufkraftverlust, was ist mein geld in x jahren noch wert, inflation kaufkraft, geldwertverlust berechnen" />
+  <link rel="canonical" href="https://mbcapitalstrategies.com/tools/inflationsrechner.html" />
+    <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/inflationsrechner.html">
+    <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html">
+    <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/tools/inflationsrechner.html">
+
+  <meta property="og:title" content="Inflationsrechner: Was ist mein Geld in X Jahren noch wert?" />
+  <meta property="og:description" content="Kaufkraft berechnen: Sieh sofort, wie viel dein Bargeld durch Inflation real verliert. Kostenlos, ohne Anmeldung." />
+  <meta property="og:url" content="https://mbcapitalstrategies.com/tools/inflationsrechner.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg" />
+  <meta property="og:image:alt" content="Inflationsrechner – Kaufkraftverlust von Bargeld berechnen | MB Capital Strategies" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Inflationsrechner: Was ist mein Geld in X Jahren noch wert?" />
+  <meta name="twitter:description" content="Kaufkraft berechnen: Wie viel Bargeld bleibt real übrig? Kostenloser Inflationsrechner, sofort & ohne Anmeldung." />
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg" />
+  <meta name="twitter:image:alt" content="Inflationsrechner – Kaufkraftverlust von Bargeld berechnen | MB Capital Strategies" />
+  <meta name="author" content="Marco Bozem" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Inflationsrechner",
+    "alternateName": "Kaufkraftrechner",
+    "url": "https://mbcapitalstrategies.com/tools/inflationsrechner.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "softwareVersion": "1.0",
+    "dateModified": "2026-07-08",
+    "featureList": "Betrag heute, Inflationsrate, Zeitraum, reale Kaufkraft, Kaufkraftverlust, optionaler Sachwert-Vergleich mit eigener Rendite-Annahme",
+    "description": "Kostenloser Inflationsrechner: Berechne den Kaufkraftverlust von Bargeld über mehrere Jahre und sieh, was dein Geld real noch wert ist.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": { "@type": "Person", "name": "Marco Bozem", "jobTitle": "Unabhängiger Investor & Finanz-Analyst", "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295/", "https://www.youtube.com/@MBCapitalStrategies", "https://www.wikidata.org/wiki/Q138571853"] }
+  }
+  </script>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
+
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #f5d76e;
+      --gold-dim: rgba(212,175,55,0.12);
+      --dark: #0E0F11;
+      --dark-2: #161719;
+      --dark-3: #1E2022;
+      --dark-4: #26292C;
+      --text: #E8E6E1;
+      --text-muted: #8A8880;
+      --text-dim: #5A5856;
+      --green: #4CAF7A;
+      --red: #ef4444;
+      --amber: #f5a623;
+      --border: rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--text); line-height: 1.7; font-size: 16px; }
+
+    /* NAV */
+    nav { background: rgba(14,15,17,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 1.5rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; height: 56px; flex-wrap: wrap; font-size: 0.85rem; }
+    nav a { color: var(--text-muted); text-decoration: none; padding: 0.3rem 0.6rem; border-radius: 6px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    nav a:hover { color: var(--gold); background: var(--gold-dim); }
+    nav a.home { color: var(--gold); font-weight: 500; }
+    .nav-sep { color: var(--text-dim); padding: 0 0.1rem; }
+
+    /* HERO */
+    .hero { background: linear-gradient(160deg, #0f1008 0%, var(--dark) 65%); border-bottom: 1px solid var(--border); padding: 3.5rem 1.5rem 2.5rem; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--gold-dim); border: 1px solid rgba(212,175,55,0.3); color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.25rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; color: var(--text); margin-bottom: 1rem; }
+    h1 span { color: var(--gold); }
+    .hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 1.75rem; }
+    .hero-stats { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--gold); display: block; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* CONTAINER */
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* CALC CARD */
+    .calc-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 2.5rem 0; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .calc-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; }
+
+    /* WIDGET (Inflation) — an Host-Seite angeglichen */
+    .infl-grid{display:grid;grid-template-columns:320px 1fr;gap:20px;align-items:start}
+    @media(max-width:760px){.infl-grid{grid-template-columns:1fr}}
+    .infl-panel{background:var(--dark-3);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .infl-panel h3{font-size:0.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:16px}
+    .infl-field{margin-bottom:16px}
+    .infl-field label{display:block;font-size:0.72rem;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+    .infl-inp{display:flex;align-items:center;background:var(--dark-4);border:1px solid var(--border);border-radius:9px;overflow:hidden}
+    .infl-inp input{flex:1;background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:1rem;padding:11px 12px;width:100%;-moz-appearance:textfield}
+    .infl-inp input::-webkit-outer-spin-button,.infl-inp input::-webkit-inner-spin-button{-webkit-appearance:none}
+    .infl-inp input:focus{outline:none}
+    .infl-inp:focus-within{border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,175,55,0.15)}
+    .infl-inp .unit{padding:0 12px;color:var(--text-dim);font-size:0.9rem;border-left:1px solid var(--border)}
+    .infl-slider{width:100%;margin-top:8px;accent-color:var(--gold)}
+    .infl-opt{display:flex;align-items:center;gap:8px;margin-top:4px;padding-top:14px;border-top:1px solid var(--border)}
+    .infl-opt input{accent-color:var(--gold);width:16px;height:16px}
+    .infl-opt label{font-size:0.85rem;color:var(--text-muted)}
+    .infl-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+    @media(max-width:560px){.infl-kpis{grid-template-columns:1fr}}
+    .infl-kpi{background:var(--dark-3);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+    .infl-kpi .lbl{font-size:0.68rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+    .infl-kpi .val{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400}
+    .infl-kpi.keep .val{color:var(--gold)} .infl-kpi.loss .val{color:var(--red)} .infl-kpi.pct .val{color:var(--amber)}
+    .infl-chartcard{background:var(--dark-3);border:1px solid var(--border);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+    .infl-chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+    .infl-chart-head h4{font-size:1rem;font-weight:600;color:var(--text)}
+    .infl-legend{display:flex;gap:16px;font-size:0.75rem;color:var(--text-muted);margin-top:4px;flex-wrap:wrap}
+    .infl-legend i{display:inline-block;width:20px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+    #inflChart svg text{font-size:0.7rem;fill:var(--text-dim)}
+    .infl-narr{margin-top:16px;background:var(--dark-2);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:10px;padding:16px 18px}
+    .infl-narr p{font-size:0.9rem;color:var(--text-muted);margin:0}
+    .infl-narr b{color:var(--gold)}
+    .infl-disc{margin-top:1rem;font-size:0.78rem;color:var(--text-dim);border-top:1px solid var(--border);padding-top:0.75rem}
+
+    /* AFFILIATE */
+    .affiliate-banner { background: linear-gradient(135deg, #1a1500 0%, var(--dark-2) 100%); border: 1px solid rgba(212,175,55,0.35); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2rem 0; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .affiliate-banner .icon { font-size: 2rem; flex-shrink: 0; }
+    .affiliate-banner .content { flex: 1; min-width: 200px; }
+    .affiliate-banner h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .affiliate-banner p { font-size: 0.85rem; color: var(--text-muted); }
+    .affiliate-banner a { display: inline-block; background: var(--gold); color: #0E0F11; text-decoration: none; font-weight: 600; font-size: 0.85rem; padding: 0.55rem 1.2rem; border-radius: 8px; white-space: nowrap; transition: background 0.2s; flex-shrink: 0; }
+    .affiliate-banner a:hover { background: var(--gold-light); }
+
+    /* CONTENT */
+    .section { margin: 3rem 0; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    h2 .accent { color: var(--gold); }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    p { color: var(--text-muted); margin-bottom: 0.75rem; }
+    p strong { color: var(--text); }
+
+    .example-box { background: var(--dark-2); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .example-box .tag { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; display: block; }
+    .example-box p { margin: 0; }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+    .step-num { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--gold-dim); border: 1px solid rgba(212,175,55,0.35); color: var(--gold); font-family: 'DM Serif Display', serif; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; }
+    .step-content h4 { font-size: 0.98rem; font-weight: 600; color: var(--text); margin: 0.15rem 0 0.4rem; }
+    .step-content p { margin: 0; font-size: 0.9rem; }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+    .faq-q { padding: 1rem 1.25rem; font-weight: 500; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; background: var(--dark-2); transition: background 0.2s; }
+    .faq-q:hover { background: var(--dark-3); }
+    .faq-q .arrow { color: var(--gold); transition: transform 0.3s; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.2s; padding: 0 1.25rem; color: var(--text-muted); background: var(--dark-2); font-size: 0.92rem; }
+    .faq-a.open { max-height: 600px; padding: 0.75rem 1.25rem 1.25rem; }
+    .faq-a a { color: var(--gold); }
+
+    /* Tool Links */
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.25rem 0; }
+    .tool-link { background: var(--dark-2); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; text-decoration: none; color: var(--text-muted); font-size: 0.88rem; transition: border-color 0.2s, color 0.2s, background 0.2s; display: flex; align-items: center; gap: 0.5rem; }
+    .tool-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    /* FOOTER */
+    footer { background: var(--dark-2); border-top: 1px solid var(--border); margin-top: 4rem; padding: 2rem 1.5rem; text-align: center; color: var(--text-dim); font-size: 0.82rem; }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* WERBUNG — CLS-sicher + kennzeichnung */
+    .ad-slot { margin: 2.5rem auto; max-width: 720px; text-align: center; }
+    .ad-slot .ad-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px; }
+    .ad-slot ins.adsbygoogle { display: block; min-height: 100px; }
+    .ad-slot.ad-multiplex ins.adsbygoogle { min-height: 250px; }
+  </style>
+  <style>body{margin:0;background:#0E0F11;color:#E8E6E1}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;margin:0 0 .5em}section.container,main.container,.container{max-width:960px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.css?v=3" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.css?v=3"></noscript>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+    gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Inflationsrechner · Kaufkraft berechnen</div>
+  <h1>Was ist mein Geld in X Jahren noch wert?<br /><span>Kaufkraftverlust durch Inflation berechnen</span></h1>
+  <p class="hero-sub">
+    Bargeld verliert jedes Jahr real an Wert. Dieser <strong>Inflationsrechner</strong> zeigt dir sofort,
+    wie viel Kaufkraft dein Geld über die Jahre einbüßt – kostenlos, ohne Anmeldung.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Kostenlos</span></div>
+    <div class="stat"><span class="stat-val">Real</span><span class="stat-lbl">Kaufkraft</span></div>
+    <div class="stat"><span class="stat-val">Sofort</span><span class="stat-lbl">Ergebnis</span></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- RECHNER -->
+  <div class="calc-card">
+    <div class="calc-title">Inflationsrechner</div>
+
+    <div class="infl-grid">
+      <div class="infl-panel">
+        <h3>Deine Angaben</h3>
+        <div class="infl-field"><label for="amt">Betrag heute</label>
+          <div class="infl-inp"><input id="amt" type="number" min="0" value="50000"><span class="unit">€</span></div></div>
+        <div class="infl-field"><label><span>Inflation p.a.</span> · <span id="inflVal">2,5 %</span></label>
+          <div class="infl-inp"><input id="infl" type="number" min="0" step="0.1" value="2.5"><span class="unit">%</span></div>
+          <input class="infl-slider" id="inflS" type="range" min="0" max="12" step="0.1" value="2.5"></div>
+        <div class="infl-field"><label><span>Zeitraum</span> · <span id="yrVal">20 Jahre</span></label>
+          <div class="infl-inp"><input id="years" type="number" min="1" max="60" value="20"><span class="unit">Jahre</span></div>
+          <input class="infl-slider" id="yearsS" type="range" min="1" max="50" step="1" value="20"></div>
+        <div class="infl-opt"><input type="checkbox" id="cmp"><label for="cmp">Sachwert-Vergleich (deine Annahme)</label></div>
+        <div class="infl-field" id="retField" style="display:none;margin-top:14px">
+          <label><span>Angenommene Rendite p.a. (deine Annahme)</span> · <span id="retVal">7 %</span></label>
+          <div class="infl-inp"><input id="ret" type="number" min="0" step="0.1" value="7"><span class="unit">%</span></div>
+          <input class="infl-slider" id="retS" type="range" min="0" max="15" step="0.1" value="7"></div>
+      </div>
+
+      <div>
+        <div class="infl-kpis">
+          <div class="infl-kpi keep"><div class="lbl">Reale Kaufkraft danach</div><div class="val" id="kKeep">–</div></div>
+          <div class="infl-kpi loss"><div class="lbl">Kaufkraft-Verlust</div><div class="val" id="kLoss">–</div></div>
+          <div class="infl-kpi pct"><div class="lbl">Verlust in %</div><div class="val" id="kPct">–</div></div>
+        </div>
+        <div class="infl-chartcard">
+          <div class="infl-chart-head"><div><h4>Kaufkraft im Zeitverlauf</h4>
+            <div class="infl-legend">
+              <span><i style="background:var(--red)"></i><span>Bargeld (real)</span></span>
+              <span id="legAsset" style="display:none"><i style="background:var(--gold)"></i><span>Sachwert (real, deine Annahme)</span></span>
+            </div></div></div>
+          <div id="inflChart"></div>
+        </div>
+        <div class="infl-narr"><p id="narr"></p></div>
+        <p class="infl-disc"><strong>Hinweis:</strong> Vereinfachte Modellrechnung mit konstanter Rate. Tatsächliche Inflation und Renditen schwanken. Die optionale Sachwert-Linie beruht ausschließlich auf <strong>deiner eigenen Annahme</strong> und ist kein Renditeversprechen. Keine Anlageberatung.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERKLÄR-ABSATZ -->
+  <section class="section">
+    <h2>Warum <span class="accent">Bargeld leise schrumpft</span></h2>
+    <p>
+      Inflation bedeutet: Für denselben Betrag bekommst du morgen weniger als heute.
+      Bei einer durchschnittlichen Inflationsrate von 2,5 % pro Jahr halbiert sich die
+      Kaufkraft deines Bargelds in rund 28 Jahren – ganz ohne dass sich der Kontostand ändert.
+      Der Rechner oben macht diesen realen Kaufkraftverlust sichtbar, brutto in Euro und in Prozent.
+    </p>
+    <p>
+      Genau deshalb ist mein Fokus auf <a href="/hard-asset-guide/">Sachwerte (Hard Assets)</a> und
+      <a href="/dividendenstrategie/">Dividenden</a>: Schiffe, Rohstoffe, Pipelines und dividendenstarke
+      Unternehmen erzeugen laufenden Cashflow, der mit der Inflation mitwachsen kann – Cash allein tut das nicht.
+    </p>
+  </section>
+
+  <!-- SO FUNKTIONIERT'S -->
+  <section class="section">
+    <h2>So funktioniert der <span class="accent">Inflationsrechner</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Betrag eingeben</h4>
+          <p>Trage den Betrag ein, den du heute in bar oder auf dem Konto hast – zum Beispiel 50.000 €.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Inflationsrate & Zeitraum wählen</h4>
+          <p>Stelle die erwartete jährliche Inflation ein (das EZB-Ziel liegt bei 2 %) und wähle den Zeitraum in Jahren.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Kaufkraftverlust ablesen</h4>
+          <p>Der Rechner zeigt sofort die reale Kaufkraft am Ende, den Verlust in Euro und in Prozent – plus Verlaufskurve.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Optional: Sachwert-Vergleich (deine Annahme)</h4>
+          <p>Aktiviere den Vergleich und gib eine <strong>selbst gewählte Rendite-Annahme</strong> ein.
+          Die zweite Linie ist ausdrücklich deine Annahme – kein Versprechen und keine erfundene Zahl.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MID AD ===================== -->
+  <div class="ad-slot">
+    <div class="ad-label">Anzeige</div>
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7097302643579933"
+         data-ad-slot="1212067635"
+         data-ad-format="in-article"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2><span class="accent">FAQ</span> – Inflationsrechner &amp; Kaufkraft</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Was ist mein Geld in 10 Jahren noch wert?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Das hängt von der Inflationsrate ab. Bei 2,5 % Inflation pro Jahr sind
+        50.000 € heute in 10 Jahren real nur noch rund 39.000 € wert – ein Kaufkraftverlust
+        von etwa 22 %. Bei 5 % Inflation bleiben sogar nur ca. 30.700 € real übrig.
+        Gib deine Zahlen oben ein, um es genau zu berechnen.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Wie berechnet man den Kaufkraftverlust?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Die reale Kaufkraft = Betrag ÷ (1 + Inflationsrate)<sup>Jahre</sup>.
+        Beispiel: 10.000 € bei 3 % Inflation über 15 Jahre = 10.000 ÷ 1,03<sup>15</sup> ≈ 6.419 € real.
+        Der Kaufkraftverlust ist die Differenz zum Ausgangsbetrag. Genau diese Formel nutzt der Rechner.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Welche Inflationsrate sollte ich einstellen?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Das langfristige Ziel der EZB liegt bei 2 %. Für eine realistische Planung rechne ich gern
+        mit einem Bereich von 2 bis 3 %, in Krisenphasen war die Inflation auch schon deutlich höher.
+        Rechne verschiedene Szenarien durch – der Slider oben macht das in Sekunden.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Schützt der Sachwert-Vergleich vor Inflation?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Der optionale Sachwert-Vergleich rechnet ausschließlich mit einer <strong>von dir selbst
+        eingegebenen Rendite-Annahme</strong> – das ist kein Versprechen und keine Prognose.
+        Historisch haben produktive Sachwerte mit Cashflow die Inflation oft geschlagen, aber
+        Renditen schwanken und können auch negativ sein. Der Rechner zeigt nur, wie sich <em>deine</em>
+        Annahme real auswirken würde. Keine Anlageberatung.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Warum halten Bargeld und Sparbuch nicht gegen Inflation?
+        <span class="arrow">▾</span>
+      </div>
+      <div class="faq-a">
+        Weil der Zins auf Cash und klassisches Sparen meist unter der Inflationsrate liegt –
+        real verlierst du dann Kaufkraft, auch wenn nominal ein kleiner Zins dazukommt.
+        Deshalb kombiniere ich Cash als Reserve mit dividendenstarken Sachwerten. Mehr dazu im
+        <a href="/hard-asset-guide/">Hard Asset Guide</a> und in der
+        <a href="/dividendenstrategie/">Dividendenstrategie</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKENWINKEL -->
+  <section class="section">
+    <h2>Inflation frisst Cash – <span class="accent">Sachwerte &amp; Dividenden halten dagegen</span></h2>
+    <p>
+      Der Rechner beantwortet nur die halbe Frage: wie viel du verlierst. Die andere Hälfte ist,
+      was du dagegen tun kannst. Meine Antwort seit 2015: statt Bargeld zu horten, investiere ich in
+      Hard Assets mit laufendem Cashflow – Shipping, Mining, Energie, Pipelines und REITs.
+    </p>
+    <div class="example-box">
+      <span class="tag">📘 Der Kern-Gedanke</span>
+      <p>
+        Eine Dividende, die jedes Jahr steigt, wirkt wie ein Inflationsausgleich auf dein Kapital.
+        Wer den erwarteten Dividenden-Cashflow durchrechnen will, nutzt dafür den
+        <a href="/tools/dividendenrechner.html" style="color:var(--gold)">Dividendenrechner</a> –
+        er zeigt Brutto- und Netto-Ausschüttung pro Monat, Quartal und Jahr.
+      </p>
+    </div>
+    <p>
+      Wichtig: Das ist meine persönliche Strategie, kein Rat für deine Situation. Renditen sind nie
+      garantiert, und was für mich passt, muss für dich nicht passen. <strong>Keine Anlageberatung.</strong>
+    </p>
+  </section>
+
+  <!-- WEITERE RECHNER -->
+  <section class="section">
+    <h2>Weitere <span class="accent">Rechner</span></h2>
+    <p>Alle kostenlos – für deine Cashflow- und Vermögensplanung.</p>
+    <div class="tool-grid">
+      <a href="/tools/dividendenrechner.html" class="tool-link">💶 Dividendenrechner</a>
+      <a href="/tools/yield-on-cost-rechner.html" class="tool-link">📊 Yield-on-Cost (YOC)</a>
+      <a href="/tools/finanzielle-freiheit-rechner.html" class="tool-link">🏁 Finanzielle Freiheit</a>
+      <a href="/tools/dividenden-wachstumsrechner.html" class="tool-link">🚀 Dividendenwachstum</a>
+      <a href="/tools/geldflussrechner.html" class="tool-link">🌊 Geldfluss-Rechner</a>
+      <a href="/tools/shipping-cashflow-rechner.html" class="tool-link">🛳️ Shipping Cashflow</a>
+    </div>
+  </section>
+
+<!-- AUTHOR-BOX (E-E-A-T) -->
+<aside class="author-box" style="display:flex;gap:16px;align-items:flex-start;background:rgba(21,24,33,0.92);border:1px solid rgba(212,175,55,0.22);border-radius:12px;padding:20px;max-width:1100px;margin:32px auto;">
+  <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem - Gründer MB Capital Strategies" style="width:72px;height:72px;border-radius:50%;border:2px solid #d4af37;flex-shrink:0;object-fit:cover;" loading="lazy">
+  <div>
+    <h4 style="margin:0 0 6px;color:#d4af37;font-size:1rem;">Über den Autor</h4>
+    <p style="margin:0 0 8px;font-size:0.9em;color:#cbd5dd;line-height:1.55;"><strong>Marco Bozem</strong> ist unabhängiger Investor mit Fokus auf Hard Assets — Shipping, Mining, Energie & Pipelines. Seit 2015 baut er ein reales Dividendendepot auf, das er via Parqet öffentlich trackt. Weil Bargeld real an Kaufkraft verliert, setzt er auf produktive Sachwerte mit Cashflow. <a href="/ueber-marco-bozem/" style="color:#d4af37;">Mehr über Marco</a>.</p>
+    <p style="margin:0;font-size:0.85em;color:#9aa6c0;"><a href="https://www.linkedin.com/in/marco-bozem-182173295" rel="author noopener" target="_blank" style="color:#d4af37;">LinkedIn</a> · <a href="https://www.youtube.com/@mbcapitalstrategies" rel="author noopener" target="_blank" style="color:#d4af37;">YouTube</a> · <a href="/depot-strategie/" style="color:#d4af37;">Live-Depot</a></p>
+  </div>
+</aside>
+
+</main>
+
+<!-- MB-PREMIUM-CTA-V1 -->
+<div style="background:linear-gradient(135deg,rgba(212,175,55,0.10) 0%,rgba(212,175,55,0.04) 100%);border-top:1px solid rgba(212,175,55,0.35);border-bottom:1px solid rgba(212,175,55,0.35);padding:36px 20px;text-align:center;margin:0;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px;font-family:Outfit,sans-serif;">Premium · MB Earnings Insider</p>
+    <h3 style="color:#f5f6fa;font-size:1.4rem;font-weight:700;margin:0 0 10px;font-family:Outfit,sans-serif;line-height:1.3;">📊 Jeden Quartalsbericht deiner Aktien direkt im Postfach.</h3>
+    <p style="color:#cbd5dd;font-size:0.92rem;margin:0 0 16px;font-family:Outfit,sans-serif;line-height:1.5;">9 Sektoren · 30–100 Aktien pro Sektor · pro Earnings-Release eine deutsche Tiefenanalyse mit Charts, KPIs, CEO-Quotes &amp; Sektor-Peer-Vergleich.</p>
+    <p style="color:#9aa6c0;font-size:0.82rem;margin:0 0 18px;font-family:Outfit,sans-serif;">
+      <strong style="color:#d4af37;">ab 5 €/Monat</strong> · 30 Tage gratis testen · 1-Klick-Cancel · <strong style="color:#d4af37;">Promo INSIDER1</strong> spart 1 €
+    </p>
+    <a href="/newsletter/?utm_source=internal&amp;utm_medium=cta&amp;utm_campaign=inflationsrechner" style="display:inline-block;padding:13px 28px;background:#d4af37;color:#0f1115;font-weight:700;text-decoration:none;border-radius:6px;font-size:0.95rem;font-family:Outfit,sans-serif;letter-spacing:.02em;">
+      Premium-Newsletter ansehen →
+    </a>
+  </div>
+</div>
+<!-- /Premium Newsletter CTA -->
+
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-wrap" style="background:rgba(212,175,55,0.07);border-top:1px solid rgba(212,175,55,0.18);padding:40px 20px;text-align:center;">
+  <div style="max-width:520px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;font-family:Outfit,sans-serif;">Newsletter</p>
+    <h3 style="color:#f5f6fa;font-size:1.2rem;font-weight:700;margin:0 0 8px;font-family:Outfit,sans-serif;">📬 MB Capital Insider</h3>
+    <p style="color:#9aa6c0;font-size:0.87rem;margin:0 0 20px;font-family:Outfit,sans-serif;">Jeden Sonntag: Wochenrückblick &amp; Markt-Einschätzung — Shipping, Mining, Energie &amp; Pipelines. Direkt aus dem Depot.</p>
+    <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription" style="margin:0;">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;">
+        <input type="email" name="EMAIL" placeholder="deine@email.de" required
+          style="flex:1;min-width:200px;max-width:270px;padding:11px 15px;border-radius:6px;
+                 border:1px solid rgba(212,175,55,0.35);background:#151821;color:#f5f6fa;
+                 font-size:0.88rem;font-family:Outfit,sans-serif;outline:none;">
+        <button type="submit"
+          style="padding:11px 22px;background:#d4af37;color:#0f1115;font-weight:700;
+                 border:none;border-radius:6px;cursor:pointer;font-size:0.88rem;
+                 font-family:Outfit,sans-serif;white-space:nowrap;">
+          Anmelden →
+        </button>
+      </div>
+      <label style="display:flex;align-items:flex-start;gap:8px;max-width:420px;margin:0 auto 6px;text-align:left;cursor:pointer;">
+        <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;accent-color:#d4af37;flex-shrink:0;">
+        <span style="color:#5a6480;font-size:0.74rem;font-family:Outfit,sans-serif;">
+          Ich akzeptiere die <a href="/datenschutz.html" style="color:#d4af37;text-decoration:none;">Datenschutzerklärung</a>
+          und möchte den MB Capital Insider erhalten. Abmeldung jederzeit möglich.
+        </span>
+      </label>
+      <input type="hidden" name="email_address_check" value="">
+      <input type="hidden" name="locale" value="de">
+    </form>
+  </div>
+</div>
+<!-- ======================== END NEWSLETTER ======================== -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesgloabal.com/" target="_blank" rel="noopener">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist mein Geld in 10 Jahren noch wert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das hängt von der Inflationsrate ab. Bei 2,5 % Inflation pro Jahr sind 50.000 € heute in 10 Jahren real nur noch rund 39.000 € wert – ein Kaufkraftverlust von etwa 22 %. Bei 5 % Inflation bleiben nur ca. 30.700 € real übrig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie berechnet man den Kaufkraftverlust?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reale Kaufkraft = Betrag ÷ (1 + Inflationsrate)^Jahre. Beispiel: 10.000 € bei 3 % Inflation über 15 Jahre = 10.000 ÷ 1,03^15 ≈ 6.419 € real. Der Kaufkraftverlust ist die Differenz zum Ausgangsbetrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Inflationsrate sollte ich einstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das langfristige Ziel der EZB liegt bei 2 %. Für eine realistische Planung rechnet man oft mit 2 bis 3 %, in Krisenphasen war die Inflation auch deutlich höher. Am besten mehrere Szenarien durchrechnen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Schützt der Sachwert-Vergleich vor Inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der optionale Sachwert-Vergleich rechnet ausschließlich mit einer selbst eingegebenen Rendite-Annahme – das ist kein Versprechen und keine Prognose. Renditen schwanken und können auch negativ sein. Keine Anlageberatung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum halten Bargeld und Sparbuch nicht gegen Inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil der Zins auf Cash und klassisches Sparen meist unter der Inflationsrate liegt – real verliert man dann Kaufkraft, auch wenn nominal ein kleiner Zins dazukommt."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+function toggleFaq(el) {
+  const ans = el.nextElementSibling;
+  const isOpen = ans.classList.contains("open");
+  document.querySelectorAll(".faq-a.open").forEach(a => a.classList.remove("open"));
+  document.querySelectorAll(".faq-q.open").forEach(q => q.classList.remove("open"));
+  if (!isOpen) { ans.classList.add("open"); el.classList.add("open"); }
+}
+</script>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s);
+  const nf=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  const pf=v=>new Intl.NumberFormat('de-DE',{maximumFractionDigits:1}).format(v);
+
+  function calc(){
+    if(typeof d3==='undefined'){ setTimeout(calc,120); return; }
+    const amt=+$('#amt').value||0, infl=+$('#infl').value||0, years=Math.max(1,+$('#years').value||1);
+    const cmp=$('#cmp').checked, ret=+$('#ret').value||0;
+    $('#inflVal').textContent=pf(infl)+' %'; $('#yrVal').textContent=years+' Jahre';
+    $('#retVal').textContent=pf(ret)+' %';
+    $('#retField').style.display=cmp?'block':'none'; $('#legAsset').style.display=cmp?'inline':'none';
+
+    const cash=[], asset=[];
+    for(let y=0;y<=years;y++){
+      cash.push(amt/Math.pow(1+infl/100,y));
+      asset.push(amt*Math.pow(1+ret/100,y)/Math.pow(1+infl/100,y));
+    }
+    const keep=cash[years], loss=amt-keep, pct=amt>0?loss/amt*100:0;
+    $('#kKeep').textContent=nf.format(keep);
+    $('#kLoss').textContent='−'+nf.format(loss);
+    $('#kPct').textContent='−'+pf(pct)+' %';
+
+    let html=`Aus <b>${nf.format(amt)}</b> Bargeld werden in <b>${years} Jahren</b> bei <b>${pf(infl)} %</b> Inflation real nur noch <b>${nf.format(keep)}</b> — ein Kaufkraft-Verlust von <b>${nf.format(loss)}</b>. Bargeld ist nicht sicher, es schrumpft nur leiser. Sachwerte mit laufendem Cashflow (Dividenden) sind die Antwort darauf.`;
+    if(cmp) html+=` Mit deiner Renditeannahme läge der reale Wert bei <b>${nf.format(asset[years])}</b> — der Abstand ist die Prämie fürs Investiertsein (deine Annahme, kein Versprechen).`;
+    $('#narr').innerHTML=html;
+
+    drawChart(cash,cmp?asset:null,years);
+  }
+
+  function drawChart(cash,asset,years){
+    const host=$('#inflChart');host.innerHTML='';
+    const W=host.clientWidth||760,H=340,m={t:14,r:18,b:26,l:64};
+    const svg=d3.select(host).append('svg').attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+    const defs=svg.append('defs');
+    const ag=defs.append('linearGradient').attr('id','ar').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',1);
+    ag.append('stop').attr('offset','0%').attr('stop-color','#ef4444').attr('stop-opacity',.35);
+    ag.append('stop').attr('offset','100%').attr('stop-color','#ef4444').attr('stop-opacity',0);
+
+    const x=d3.scaleLinear().domain([0,years]).range([m.l,W-m.r]);
+    const maxV=d3.max([...cash,...(asset||[0])]);
+    const y=d3.scaleLinear().domain([0,maxV*1.08]).range([H-m.b,m.t]);
+
+    const yt=y.ticks(5);
+    svg.append('g').selectAll('line').data(yt).join('line')
+      .attr('x1',m.l).attr('x2',W-m.r).attr('y1',d=>y(d)).attr('y2',d=>y(d))
+      .attr('stroke','#26292C').attr('stroke-width',1);
+    svg.append('g').selectAll('text').data(yt).join('text')
+      .attr('x',m.l-8).attr('y',d=>y(d)+4).attr('text-anchor','end').text(d=>nf.format(d).replace(/ ?€/,''));
+    const xt=x.ticks(Math.min(years,8));
+    svg.append('g').selectAll('text').data(xt).join('text')
+      .attr('x',d=>x(d)).attr('y',H-8).attr('text-anchor','middle').text(d=>d);
+
+    const area=d3.area().x((d,i)=>x(i)).y0(H-m.b).y1(d=>y(d)).curve(d3.curveMonotoneX);
+    const line=d3.line().x((d,i)=>x(i)).y(d=>y(d)).curve(d3.curveMonotoneX);
+
+    svg.append('path').datum(cash).attr('fill','url(#ar)').attr('d',area);
+    svg.append('path').datum(cash).attr('fill','none').attr('stroke','#ef4444').attr('stroke-width',2.5).attr('d',line);
+    if(asset){
+      svg.append('path').datum(asset).attr('fill','none').attr('stroke','#D4AF37').attr('stroke-width',2.5)
+        .attr('filter','drop-shadow(0 0 5px #d4af3766)').attr('d',line);
+      svg.append('circle').attr('cx',x(years)).attr('cy',y(asset[years])).attr('r',4).attr('fill','#D4AF37');
+    }
+    svg.append('circle').attr('cx',x(years)).attr('cy',y(cash[years])).attr('r',4).attr('fill','#ef4444');
+  }
+
+  ['amt','infl','years','ret'].forEach(id=>$('#'+id).addEventListener('input',()=>{sync(id);calc();}));
+  $('#inflS').addEventListener('input',e=>{$('#infl').value=e.target.value;calc();});
+  $('#yearsS').addEventListener('input',e=>{$('#years').value=e.target.value;calc();});
+  $('#retS').addEventListener('input',e=>{$('#ret').value=e.target.value;calc();});
+  $('#cmp').addEventListener('change',calc);
+  function sync(id){const map={infl:'inflS',years:'yearsS',ret:'retS'};if(map[id])$('#'+map[id]).value=$('#'+id).value;}
+  window.addEventListener('resize',calc);
+  calc();
+})();
+</script>
+
+</body>
+</html>
