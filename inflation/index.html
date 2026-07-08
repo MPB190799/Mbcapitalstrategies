@@ -422,6 +422,35 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+<!-- MB Capital Insider — Growth CTA (Pillar-Hub, CF Worker) -->
+<section id="nl-cta-inflation">
+  <div class="callout reveal" style="border-left:4px solid var(--gold, #D4AF37);">
+    <div class="kicker">📊 Wochenrückblick Hard Assets &amp; Dividenden — kostenlos</div>
+    <p style="font-size:15px;margin:8px 0 14px;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+        style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+      <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+        style="padding:11px 22px;background:var(--gold,#D4AF37);color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden →</button>
+    </div>
+    <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+    <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+  </div>
+</section>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+<!-- END Growth CTA -->
+
 <footer>
   MB Capital Strategies · Hard Assets &amp; Dividenden · Daten: Fed/FRED, BLS, Eurostat, NBER, EZB, BIZ<br>
   <a href="https://mbcapitalstrategies.com">mbcapitalstrategies.com</a> &nbsp;·&nbsp; Quellen vollständig im Video &amp; Begleitartikel
