@@ -1458,8 +1458,17 @@ table td .neutral  { color: var(--gold); font-weight: 700; }
   background: var(--gold-dim);
 }
 @media (max-width: 480px) {
-  .author-box { flex-direction: column; align-items: center; text-align: center; }
-  .author-box .author-links { justify-content: center; }
+  /* CRO-Fix 08.07.2026 (web-design-agent): stacked+centered layout pushed
+     ~280-320px of author-card below the H1 before any article content was
+     visible on mobile. Compact horizontal row cuts that to roughly half. */
+  .author-box { flex-direction: row; align-items: center; text-align: left; padding: 16px 18px; gap: 14px; }
+  .author-box .author-img, .author-box img { width: 44px; height: 44px; }
+  .author-box .author-info { gap: 2px; }
+  .author-box .author-info h4 { font-size: 0.85rem; margin: 0 0 2px; }
+  .author-box .author-info p { font-size: 0.78rem; line-height: 1.5; }
+  .author-box .author-bio { font-size: 0.78rem; margin: 2px 0 6px; }
+  .author-box .author-links { justify-content: flex-start; gap: 8px; }
+  .author-box .author-links a { font-size: 0.72rem; padding: 3px 10px; }
 }
 
 /* ============================================================
