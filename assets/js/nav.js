@@ -36,7 +36,16 @@
       + '.mbcs-mini-compass svg{width:100%;height:100%;animation:mbcsCompassSpin 90s linear infinite}'
       + '@keyframes mbcsCompassSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}'
       + '@media(max-width:640px){.mbcs-mini-compass{display:none}}'
-      + '@media(prefers-reduced-motion:reduce){.mbcs-corner-glow,.mbcs-mini-compass svg{animation:none}}';
+      + '@media(prefers-reduced-motion:reduce){.mbcs-corner-glow,.mbcs-mini-compass svg{animation:none}}'
+      /* CRO/CWV-Fix 2026-07-09 web-design-agent: Blog-Artikel setzen 2 adsbygoogle-<ins>-Bloecke
+         (Top + Mid) ohne reservierte Hoehe (Live-Audit rio-tinto-analyse-2026.html). Vor dem
+         Laden der Anzeige hat <ins> keine intrinsische Hoehe -> Text/CTA darunter springt nach
+         oben und dann wieder nach unten, sobald AdSense den Slot befuellt (CLS-Risiko).
+         :empty-Selektor reserviert nur, solange AdSense noch nichts eingefuegt hat -- sobald das
+         iframe drin ist, greift die Regel nicht mehr und es gibt keine visuelle Aenderung fuer
+         befuellte Slots. */
+      + 'ins.adsbygoogle:empty{min-height:250px;display:block}'
+      + '@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}';
     document.head.appendChild(style);
     document.addEventListener('DOMContentLoaded', function(){
       var a = document.createElement('div'); a.className = 'mbcs-corner-glow top-right';
