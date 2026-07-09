@@ -1,0 +1,34 @@
+{
+  "article": "depot-update-juni-2026.html",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "sources": [
+    "output/avatar-videos/depot-update-juni-2026-foundation.md (Parqet live, 30.06.2026)",
+    "output/avatar-videos/depot-juni-FINAL.meta.json (YouTube description, cross-verified)"
+  ],
+  "verified_facts": [
+    "Portfoliowert ~93.000 EUR (TR + Scalable, Stand 30.06.2026)",
+    "Monatsrendite -5,57% / -5.445 EUR unrealisiert",
+    "Dividende Juni brutto 1.142,75 EUR",
+    "Dividende Juni netto 801,84 EUR",
+    "Steuern 340,90 EUR",
+    "CMB.Tech 147,71 EUR brutto / 92,82 EUR netto",
+    "International Seaways 80,15 EUR brutto / 57,85 EUR netto",
+    "BW LPG 74,10 EUR brutto / 53,48 EUR netto",
+    "TORM 66,72 EUR brutto / 48,16 EUR netto",
+    "FLEX LNG 53,89 EUR brutto / 38,89 EUR netto",
+    "Kauf Allwyn/OPAP 24 St. a 14,19 EUR = 340 EUR (12.06.)",
+    "Kauf China Water Affairs 250 St. a 0,52 EUR = 130 EUR (24.06.)",
+    "Kauf freenet 8 St. a 23,64 EUR = 189 EUR (29.06.)",
+    "Kauf Farmland Partners 15 St. a 8,63 EUR = 129 EUR (30.06.)",
+    "Kauf Xtrackers S&P 500 Inverse ETF 45 St. a 4,98 EUR = 224 EUR (30.06.)"
+  ],
+  "compliance": {
+    "r23_earnings_gating": "pass - kein Q-Report-Detail, nur Dividenden-Headline",
+    "captrader_blackout": "pass - kein CapTrader erwaehnt",
+    "disclaimer_present": "pass",
+    "kwg32_disclaimer": "pass"
+  },
+  "date_verified": "2026-07-09",
+  "gate_result": "PASS"
+}
