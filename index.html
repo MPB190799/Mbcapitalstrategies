@@ -805,7 +805,12 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
      full hero width on 375px — without it, the outer flex item auto-sizes to content width
      and the button+input appear narrower than the viewport, reducing tap area and visual weight */
   .hero-inline-cta{width:100%}
-  .hero-inline-cta>div{flex-direction:column;align-items:stretch}
+  /* CRO-Fix 2026-07-09 web-design-agent: >div → form>div (descendant, not just direct-child) nach
+     Einführung des <form>-Wrappers (Enter-Submit-Fix) — der Flex-Row-<div> ist jetzt ein Kind von
+     <form>, nicht mehr direktes Kind von .hero-inline-cta. Ohne diese Anpassung würde die
+     Mobile-Stacked-Layout-Regel stillschweigend nicht mehr greifen (Selector-Bruch, kein Fehler). */
+  .hero-inline-cta form{display:block}
+  .hero-inline-cta form>div{flex-direction:column;align-items:stretch}
   /* BUG-FIX 2026-06-27 web-design-agent: inline-style flex:1 1 180px on input sets flex-basis=180px
      which becomes HEIGHT in column direction → input rendered 180px tall, CTA below fold.
      !important overrides inline-style specificity (1000) so the media-query rule wins. */
@@ -895,6 +900,20 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
       <div class="hero-ctas">
         <div class="hero-inline-cta" id="hero-inline-cta-de">
           <!-- CRO 2026-06-15 web-design-agent: Nutzen-Micro-Copy ergänzt — konkretes Versprechen statt reines DSGVO-Label -->
+          <!-- CRO-Fix 2026-07-09 web-design-agent: Live-Audit fand (a) Enter-Taste im E-Mail-Feld
+               submittete NICHT (kein <form>, nur onclick-Button) — Conversion-Lücke, v.a. mobil
+               wo Tastaturen ohne Formular-Kontext "Zeilenumbruch" statt "Los/Absenden" zeigen;
+               (b) Google Auto-Ads (enable_page_level_ads, s. Zeile ~1741) inserierte reproduzierbar
+               eine In-Page-Werbeeinheit ("Investitionen"-Pill) MITTEN in diesen Newsletter-CTA-Block
+               (Playwright a11y-tree, curl-Source zeigt: Element existiert NICHT im Server-HTML, wird
+               von Googles Auto-Ads-Klassifikator client-seitig injiziert) — Verstoss gegen Marco-Regel
+               "Anzeigen dezent, Leser nie reizueberfluten" (12.06.2026), da eine Fremdwerbung direkt
+               im primären Above-the-Fold-Conversion-Element auftaucht. Google dokumentiert Formular-
+               Auszeichnung als Signal, das In-Page-Auto-Ads von interaktiven Bereichen fernhält;
+               echte "Excluded areas"-Kontrolle liegt in den AdSense-Kontoeinstellungen (Konto-Gate,
+               separat an CEO/monetization-agent eskaliert). Dieser Fix behebt das Enter-Submit-Bug
+               ursächlich UND grenzt die Zone sauber als <form> ein — 0 visuelle Änderung, 0 CLS. -->
+          <form id="hero-form-de" onsubmit="mbHeroSubscribeDe();return false;">
           <label for="hero-email-de" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;opacity:.9;">Newsletter · jeden Sonntag · gratis</label>
           <!-- CRO 2026-06-26 web-design-agent: BHP mining hook expired 2026-06-28 → evergreen text.
                Self-expire JS removed (was changing p.textContent; now static = no JS execution overhead). -->
@@ -904,11 +923,12 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
               autocomplete="email"
               aria-label="E-Mail-Adresse für den kostenlosen Sonntags-Newsletter eingeben"
               style="padding:13px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 180px;font-family:var(--mono);box-sizing:border-box;">
-            <button onclick="mbHeroSubscribeDe()" data-cta="hero-de-index"
+            <button type="submit" data-cta="hero-de-index"
               style="padding:13px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Sonntag-Brief gratis abonnieren →</button>
           </div>
           <p id="hero-msg-de" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:var(--mono);"></p>
           <p style="font-size:0.72rem;color:var(--fg-muted);margin:4px 0 0;font-family:var(--mono);">Kein Spam · DOI-bestätigt · Abmeldung jederzeit · DSGVO-konform · <a href="/newsletter-sample.html" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4);" data-track="hero-newsletter-sample-link">Beispiel ansehen →</a></p>
+          </form>
         </div>
         <a href="/newsletter/" class="btn-link" style="white-space:nowrap;color:var(--accent);font-weight:600" title="MB Capital Premium Earnings-Newsletter — 5 Euro pro Monat">Premium 5€/Mo ✦ →</a>
         <a href="/blog/" class="btn-link">analysen ↗</a>
