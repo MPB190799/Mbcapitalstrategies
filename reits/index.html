@@ -346,6 +346,39 @@
 </div>
 
 <div style="max-width:900px;margin:10px auto 0;padding:0 16px"><div style="margin:0 0 18px;padding:16px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:8px"><p style="margin:0;font-size:.9rem;color:#D4AF37;font-weight:700;">Weiter im REIT-Cluster</p><p style="margin:8px 0 0;font-size:.875rem;color:#cfd6e6"><a href="/reits/etf-vergleich.html" style="color:#e0bd55;font-weight:600;">🏢 REIT-ETF Vergleich (UCITS)</a> · <a href="/defensiv/" style="color:#e0bd55;font-weight:600;">🛡️ Defensiv investieren</a></p><p style="margin:8px 0 0;font-size:.875rem;color:#cfd6e6">Einzeltitel-Analysen: <a href="/blog/ellington-financial-analyse-2026.html" style="color:#e0bd55;font-weight:600;">Ellington Financial</a> · <a href="/blog/realty-income-hyperscale-data-center-jv-2026.html" style="color:#e0bd55;font-weight:600;">Realty Income Hyperscale-JV</a> · <a href="/blog/agnc-investment-analyse-2026.html" style="color:#e0bd55;font-weight:600;">AGNC Investment (13% Yield)</a> · <a href="/blog/gladstone-land-analyse-2026.html" style="color:#e0bd55;font-weight:600;">Gladstone Land (Farmland-REIT)</a> · <a href="/blog/farmland-partners-analyse-2026.html" style="color:#e0bd55;font-weight:600;">Farmland Partners (Ackerland-REIT)</a> · <a href="/blog/arbor-realty-analyse-2026.html" style="color:#e0bd55;font-weight:600;">Arbor Realty (13% Dividende)</a> · <a href="/blog/cvs-health-analyse-2026.html" style="color:#e0bd55;font-weight:600;">CVS Health (Payout-Check)</a> · <a href="/blog/mpw-medical-properties-analyse-2026.html" style="color:#e0bd55;font-weight:600;">MPW Medical Properties (7,4% Yield)</a> · <a href="/blog/mpw-reit-analyse-2026.html" style="color:#e0bd55;font-weight:600;">MPW REIT-Tiefenanalyse</a> · <a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html" style="color:#e0bd55;font-weight:600;">Zwangsdividenden: REITs, BDCs &amp; MLPs erklärt</a></p></div></div>
+<!-- MB Capital Insider — Newsletter CTA (growth-funnel-agent, missing-pages sweep 09.07.2026) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:32px 0 0;font-family:inherit;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Marcos w&ouml;chentlicher Markt&uuml;berblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;" id="mb-mid-form-index">
+    <input type="email" id="mb-mid-email-index" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.88rem;">
+    <button onclick="mbBlogSubscribe('mb-mid-email-index','mb-mid-msg-index')" data-cta="newsletter-de-index"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.88rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg-index" style="color:#6b7a99;font-size:0.75rem;margin:4px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO. Double-Opt-In.</p>
+</div>
+<script>
+(function(){
+  if(typeof window.mbBlogSubscribe==="undefined"){
+    var EP="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
+    window.mbBlogSubscribe=function(eId,mId){
+      var el=document.getElementById(eId),msg=document.getElementById(mId);
+      var email=el?el.value.trim():"";
+      if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte eine gueltige E-Mail-Adresse eingeben.";}return;}
+      if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Wird angemeldet...";}
+      fetch(EP,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json();})
+      .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+      .catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Bitte spaeter nochmal versuchen.";}});
+    };
+  }
+})();
+</script>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-col"><h4>MB Capital Strategies</h4><a href="/">Startseite</a><a href="/ueber-marco-bozem/">Über Marco Bozem</a><a href="/depot-strategie/">Depot-Strategie</a><a href="/hard-asset-guide/">Hard Asset Guide</a></div>

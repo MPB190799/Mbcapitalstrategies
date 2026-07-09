@@ -231,5 +231,38 @@ Amortisationszeit: ~18 Monate
     <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:.88em;"><a href="/ueber-marco-bozem/" style="color:#d4af37;text-decoration:none;">Über Marco →</a><a href="https://www.youtube.com/@MBCapitalStrategies" target="_blank" rel="noopener" style="color:#9aa6c0;text-decoration:none;">YouTube</a></div>
   </div>
 </div>
+<!-- MB Capital Insider — Newsletter CTA (growth-funnel-agent, missing-pages sweep 09.07.2026) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:32px 0 0;font-family:inherit;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Marcos w&ouml;chentlicher Markt&uuml;berblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;" id="mb-mid-form-scrubber">
+    <input type="email" id="mb-mid-email-scrubber" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.88rem;">
+    <button onclick="mbBlogSubscribe('mb-mid-email-scrubber','mb-mid-msg-scrubber')" data-cta="newsletter-de-scrubber"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.88rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg-scrubber" style="color:#6b7a99;font-size:0.75rem;margin:4px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO. Double-Opt-In.</p>
+</div>
+<script>
+(function(){
+  if(typeof window.mbBlogSubscribe==="undefined"){
+    var EP="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
+    window.mbBlogSubscribe=function(eId,mId){
+      var el=document.getElementById(eId),msg=document.getElementById(mId);
+      var email=el?el.value.trim():"";
+      if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte eine gueltige E-Mail-Adresse eingeben.";}return;}
+      if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Wird angemeldet...";}
+      fetch(EP,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+      .then(function(r){return r.json();})
+      .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+      .catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Bitte spaeter nochmal versuchen.";}});
+    };
+  }
+})();
+</script>
 </body>
 </html>
