@@ -29,7 +29,14 @@
 <!-- LCP-Fix: Cormorant Garamond auf 3 Varianten reduziert (vorher 8) — spart ~180ms font-load -->
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direkt vorabrufen — eliminiert 1 Netzwerk-Runde (CSS→woff2) im kritischen Pfad (~100-200ms) -->
 <!-- LCP-Fix: Kompass-Bild (Hero-Hintergrund) frühzeitig laden — verhindert Late-Discovery-Verzögerung -->
-  <link rel="preload" as="image" href="/assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
+  <!-- LCP-Fix 2026-07-10 web-design-agent: Preload hatte kein imagesrcset/imagesizes — mobil lud
+       der Browser das volle 1024px compass-vintage.webp (90KB) vor, obwohl das <picture>-Element
+       darunter auf diesem Viewport tatsächlich compass-vintage-512.webp (36KB) rendert. Der
+       Preload holte also die FALSCHE Datei — verschwendete Bandbreite/Zeit im mobilen kritischen
+       Pfad und erzwang einen zweiten Fetch für das echte LCP-Bild. imagesrcset/imagesizes analog
+       zu den <picture>-Breakpoints ergänzt, damit der Preload immer trifft, was mobil/Tablet
+       tatsächlich rendert. -->
+  <link rel="preload" as="image" href="/assets/compass-vintage.webp" imagesrcset="/assets/compass-vintage-512.webp 512w, /assets/compass-vintage-768.webp 768w, /assets/compass-vintage.webp 1024w" imagesizes="(max-width: 768px) 512px, (max-width: 1200px) 768px, 1024px" type="image/webp" fetchpriority="high">
   <!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections (Philosophie, Asset-Grid,
        Rechner-Grid, Zielgruppen, Insights, FAQ) starten mit opacity:0 und werden nur per JS
        (IntersectionObserver) sichtbar. Falls JS blockiert/fehlschlägt/langsam ist, bleiben diese
