@@ -74,6 +74,27 @@
   var CONSENT_KEY = 'mbcs_consent_v1';
   var existingConsent = localStorage.getItem(CONSENT_KEY);
 
+  /* ── Microsoft Clarity — DSGVO consent-gated (Weg A, Marco 10.07.2026) ──
+     Clarity ist ein Session-Recorder (Cookies + Aufzeichnung) → einwilligungspflichtig.
+     Init erfolgt sofort, aber mit consent=false (kein Tracking bis Zustimmung).
+     Nach Akzeptieren: clarity('consent', true) — erst dann beginnt Aufzeichnung.
+     Projekt-ID: xka7tpglob (mbcapitalstrategies.com / DE-Site)
+     Guard: Snippet wird nur einmal injiziert (Dedup wie GA4-Guard).
+  ─────────────────────────────────────────────────────────────────────── */
+  if (!document.querySelector('script[src*="clarity.ms/tag"]')) {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,'clarity','script','xka7tpglob');
+  }
+  /* Consent-State beim Laden setzen — verhindert Tracking vor Nutzerzustimmung */
+  if (existingConsent === 'granted') {
+    window.clarity('consent', true);
+  } else {
+    window.clarity('consent', false);
+  }
+
   window.gtag('consent', 'default', {
     'ad_storage':         existingConsent === 'granted' ? 'granted' : 'denied',
     'analytics_storage':  existingConsent === 'granted' ? 'granted' : 'denied',
@@ -662,11 +683,14 @@
         'ad_user_data':       'granted',
         'ad_personalization': 'granted'
       });
+      /* Clarity: consent erteilt → Aufzeichnung freischalten */
+      if (window.clarity) { window.clarity('consent', true); }
       banner.remove();
     });
 
     document.getElementById('cookie-decline').addEventListener('click', function () {
       localStorage.setItem(CONSENT_KEY, 'denied');
+      /* Clarity: abgelehnt → bleibt denied (clarity('consent', false) bereits gesetzt) */
       banner.remove();
     });
   }
