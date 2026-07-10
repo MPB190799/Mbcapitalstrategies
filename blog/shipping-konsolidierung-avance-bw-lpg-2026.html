@@ -192,6 +192,8 @@
     ]
   }
   </script>
+<!-- CLS-Ad-Reservation-Sweep 2026-07-10 web-design-agent: inline min-height fallback -- nav.js injects the same rule but only after defer-script execution, which reflows already-laid-out ins.adsbygoogle elements (late shift). Inline <style> in <head> guarantees the reserved space exists at first paint, zero visual change for filled slots. -->
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
 </head>
 
 <body>

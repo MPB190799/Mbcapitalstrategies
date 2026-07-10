@@ -178,6 +178,8 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 
   <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
+<!-- CLS-Ad-Reservation-Sweep 2026-07-10 web-design-agent: inline min-height fallback -- nav.js injects the same rule but only after defer-script execution, which reflows already-laid-out ins.adsbygoogle elements (late shift). Inline <style> in <head> guarantees the reserved space exists at first paint, zero visual change for filled slots. -->
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
 </head>
 
 <body>
