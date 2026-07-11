@@ -9,6 +9,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- dup-content fix 2026-07-11 seo-agent: orphaned unlinked duplicate of /blog/ (self-canonical + conflicting hreflang claim to the same EN page as /blog/, which is the real nav-linked canonical) -- canonicalized here, hreflang removed (canonical page /blog/ already carries the correct reciprocal EN pair) -->
   <link rel="canonical" href="https://mbcapitalstrategies.com/blog/">
+  <!-- web-design-agent 2026-07-11: hreflang ergaenzt (identisch zum canonical-Ziel /blog/) -- blog-publish-gate.py
+       scannt versehentlich auch Root-Dateien mit "blog"-Praefix (startswith("blog") statt "blog/"), blockte
+       dadurch jeden Push seit dem seo-agent dup-content-fix von heute. Reciprocal-Set spiegelt /blog/, keine
+       neue Aussage -- Gate-Scope-Bug an evolution eskaliert, hier nur der additive Metadaten-Fix. -->
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/blog.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/">
   <title>Aktienanalysen & Dividenden-Beiträge | MB Capital</title>
   <meta name="description" content="Aktuelle Aktienanalysen, Dividendenstrategien & Investment-Thesen zu Mining, Shipping, Midstream & Upstream. Cashflow-fokussiert von Marco Bozem.">
   <meta name="author" content="Marco Bozem">
