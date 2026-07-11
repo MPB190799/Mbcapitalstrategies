@@ -1,0 +1,38 @@
+{
+  "article": "car-carrier-vs-tanker-bewertung-2026.html",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "sources": [
+    "output/marco-inbox/2026-07-11-valuation-HAUTO-nav-dcf.md (investment-banker-agent, IB-Niveau, R23-Klassifikation dokumentiert)",
+    "output/growth/substack-hauto-dsx-sa-rotation-2026-07-11.md (content-qa-geprueft 12/14 PASS, gleiche R23-Einordnung)",
+    "output/radar/triggers/2026-07-11-DSX-GNK-tender-outcome-pending.md (earnings-radar-agent, SEC EDGAR + FMP-News)",
+    "output/data/held-positions.json (SSOT Depot-Membership, Stand 11.07.2026)",
+    "WebSearch-Doppelcheck 11.07.2026: hoeghautoliners.com/fleet + Baird Maritime/Marine Log (Flottengroesse 34+12 Aurora, Ablieferung H1 2027 bestaetigt)",
+    "WebSearch-Doppelcheck 11.07.2026: Morningstar/StockAnalysis/companiesmarketcap (HAUTO Trailing-Yield-Range 12-16%, 12,1% FMP-TTM bei aktuellem Kurs konsistent mit Morningstar 12,35%)",
+    "WebSearch-Doppelcheck 11.07.2026: SEC EDGAR + TipRanks/StockTitan (Diana/Genco Tender-Deadline 10.07. verstrichen, kein Ergebnis-Filing bis Redaktionsschluss bestaetigt)"
+  ],
+  "verified_facts": [
+    "Hoegh Autoliners Flotte: 34 eigene PCTC + 12-Schiff Aurora-Neubauprogramm, ammoniak-ready, Ablieferung bis Mitte 2027",
+    "HAUTO Trailing-Dividendenrendite ~12% (fallend, an Quartalsgewinn gekoppelt)",
+    "HAUTO Depot-Position: 42 Stueck via Scalable, ~570 EUR (SSOT held-positions.json)",
+    "Diana Shipping Depot-Position: 267 Stueck TR+Scalable, ~484 EUR (SSOT held-positions.json)",
+    "Diana/Genco Tender-Offer-Deadline 10.07.2026 17:00 NYC verstrichen, kein Ergebnis-Filing bis 11.07. (SEC EDGAR 0 neue Filings)",
+    "Genco-Board-Warnung an Aktionaere 08.07.2026 (oeffentliche PR)",
+    "Groesste oeffentliche Depot-Position bleibt CMB.Tech (nicht in diesem Artikel als Zahl behauptet)"
+  ],
+  "excluded_premium_only": [
+    "Q1-2026 EPS $0,54 / Netto $103 Mio / Q-EBITDA $144,5 Mio (R23-Sperre, nur im internen IB-Memo)",
+    "NOK-Fair-Value-Range 90-175 NOK / DCF-Tabelle / WACC-Herleitung / P/NAV-Multiples (Premium-only lt. IB-Memo, bewusst nicht uebernommen)",
+    "Konkreter NOK-Aktienkurs (nicht zitiert, um Konsistenz mit freigegebenem Substack-Text zu wahren)"
+  ],
+  "compliance": {
+    "r23_earnings_gating": "pass - keine Q1-Report-Zahlen (EPS/Netto/EBITDA/Fair-Value-Range) uebernommen, nur Flottendaten + qualitative Trailing-Yield-Prozentzahl + Praemie-These",
+    "captrader_blackout": "pass - kein CapTrader erwaehnt, nur TR+Scalable",
+    "depot_membership_verified": "pass - HAUTO und Diana Shipping gegen held-positions.json SSOT geprueft (42 St./570EUR bzw. 267 St./484EUR)",
+    "no_speculation_dsx_gnk_outcome": "pass - nur 'Ausgang steht noch aus' kommuniziert, kein Ergebnis behauptet",
+    "disclaimer_present": "pass",
+    "fact_marktinterpretation_these_getrennt": "pass - FAKT/Marktinterpretation/THESE explizit im Fliesstext gekennzeichnet"
+  },
+  "date_verified": "2026-07-11",
+  "gate_result": "PASS"
+}
