@@ -768,7 +768,22 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
         <span class="w1">Dividenden aus</span>
         <span class="w2"><em>Hard Assets.</em></span>
       </h1>
-      <p class="lede hero-sub">
+      <!-- CRO-Fix 2026-07-12 web-design-agent: Live-Audit (Playwright a11y-tree + Screenshot) fand
+           Google Auto-Ads (enable_page_level_ads) injizierte client-seitig einen In-Page-Text-Link
+           ("Energie" -> href="#" + Icon, dotted underline) MITTEN in diesen Hero-Untertitel — die
+           wichtigste Markenaussage der gesamten DE-Startseite. Raw-Server-HTML zeigt KEIN <a>,
+           Element existiert nur im JS-gerenderten DOM (Google-Klassifikator). Der Zonen-Opt-out
+           ".adsense-auto-ads-ignore" (google-auto-ads:ignore) liegt bereits auf der Eltern-Section
+           #hero (Fixes 03.07./09.06.) — dies ist die DRITTE Rekurrenz derselben Auto-Ads-Verletzung
+           in derselben eigentlich ausgeschlossenen Zone → CSS-Opt-out wird von Google für dieses
+           In-Page-Ad-Format nachweislich nicht zuverlässig respektiert (bekannter Google-Beta-Bug,
+           siehe AdSense-Community-Reports). Zusätzliche direkte Class auf dem <p> selbst als
+           Verstärkung (0 visuelle Änderung, 0 CLS) + Eskalation an monetization-agent/CEO für den
+           eigentlichen Fix: "Excluded areas" im AdSense-Dashboard bzw. In-Page-Auto-Ads-Format für
+           die Hero-Zone Konto-seitig deaktivieren (Konto-Gate, kein Code-Fix kann das zuverlässig
+           lösen). Marco-Regel verletzt: "Anzeigen dezent, Leser nie reizüberfluten" — hier reißt
+           eine Fremdwerbung den Marken-Claim mitten im Satz auseinander. -->
+      <p class="lede hero-sub adsense-auto-ads-ignore">
         Unabhängige Analysen zu Cashflow aus Schifffahrt, Bergbau, Energie und Pipelines —
         aus einem realen Privatanleger-Depot. <strong style="color:var(--fg)">Keine Anlageberatung.</strong>
       </p>
