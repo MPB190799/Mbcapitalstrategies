@@ -144,79 +144,27 @@
 <noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
 
 <style>
-/* ===== MUSTERBERICHT-SEITE SPEZIFISCH ===== */
+/* ===== MUSTERBERICHT-SEITE SPEZIFISCH (Earnings-Insider-Style v2, 2026-07-12) ===== */
 
-.report-band {
-  background: #D4AF37;
-  color: #0a0a14;
-  text-align: center;
-  padding: 9px 16px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.4px;
+/* Scoped reset for the EI report block — does not bleed into nav/footer */
+.ei-report *{box-sizing:border-box;}
+.ei-report {
+  font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color:#f0f4ff;
+  line-height:1.6;
+  background:#080810;
+  max-width:640px;
+  margin:0 auto;
 }
-.report-header {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  padding: 30px 26px;
-  text-align: center;
-  border-bottom: 3px solid #D4AF37;
-  max-width: 760px;
-  margin: 0 auto;
+.ei-report a{color:#D4AF37;}
+.ei-report table{border-collapse:collapse;}
+
+/* .ei-pad = top-padding section wrapper */
+.ei-pad{padding:24px 28px 0;}
+@media(max-width:560px){
+  .ei-pad{padding:20px 16px 0;}
+  .ei-col{display:block !important;width:100% !important;padding:0 0 14px 0 !important;}
 }
-.report-header .brand { font-size: 1.15rem; font-weight: 700; color: #D4AF37; letter-spacing: 1px; }
-.report-header .product { font-size: 0.8rem; color: #9aa; margin-top: 3px; text-transform: uppercase; letter-spacing: 1px; }
-.report-header h1 { font-size: 1.5rem; color: #fff; margin-top: 14px; line-height: 1.3; }
-.report-header .sub { font-size: 0.85rem; color: #aaa; margin-top: 8px; }
-
-.report-body {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 0 32px;
-  background: #0a0a14;
-}
-
-.section { padding: 24px 26px; border-bottom: 1px solid #1e1e3a; }
-.h2 { font-size: 1.12rem; font-weight: 700; color: #D4AF37; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid #2a2a45; }
-p.rp { font-size: 0.93rem; color: #d2d2d8; margin-bottom: 10px; }
-
-.snap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-@media (max-width: 560px) { .snap-grid { grid-template-columns: repeat(2, 1fr); } }
-.snap { background: #111126; border: 1px solid #24243f; border-radius: 6px; padding: 12px 8px; text-align: center; }
-.snap .l { font-size: 0.62rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-.snap .v { font-size: 1.0rem; font-weight: 700; color: #fff; margin-top: 4px; }
-.snap .d { font-size: 0.7rem; margin-top: 2px; }
-
-.rp-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 6px 0 4px; }
-.rp-table th { background: #16162c; color: #b9b9c8; text-align: left; padding: 7px 9px; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.4px; }
-.rp-table td { padding: 7px 9px; border-bottom: 1px solid #17172c; color: #d0d0d8; }
-.rp-table td.num, .rp-table th.num { text-align: right; }
-.rp-table tr:last-child td { border-bottom: none; }
-
-.up { color: #4CAF50; } .dn { color: #ef5350; } .gold { color: #D4AF37; } .warn { color: #F5A623; }
-
-.box { border-radius: 0 6px 6px 0; padding: 14px 18px; margin: 14px 0; font-size: 0.9rem; }
-.box-gold { background: #14140f; border-left: 4px solid #D4AF37; }
-.box-red { background: #1a0f10; border-left: 4px solid #ef5350; }
-.box-green { background: #0f1a12; border-left: 4px solid #4CAF50; }
-.box b { color: #fff; }
-
-.tag { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 1px 7px; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
-.t-fakt { background: #14351e; color: #7ee29a; }
-.t-int { background: #2a2440; color: #c9bdf5; }
-.t-these { background: #3a2e12; color: #f0d27a; }
-
-.bar-wrap { background: #17172c; border-radius: 4px; height: 22px; margin: 3px 0; position: relative; overflow: hidden; }
-.bar { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 0.72rem; font-weight: 700; color: #0a0a14; white-space: nowrap; }
-
-.rp-cta { background: linear-gradient(135deg, #1a1a2e, #16213e); border: 1px solid #D4AF37; border-radius: 8px; padding: 22px; text-align: center; margin: 4px 0; }
-.rp-cta h3 { color: #D4AF37; font-size: 1.05rem; margin-bottom: 8px; }
-.rp-cta p { font-size: 0.86rem; color: #c8c8d4; margin-bottom: 14px; }
-.btn-gold-report { display: inline-block; background: #D4AF37; color: #0a0a14; font-weight: 700; padding: 11px 26px; text-decoration: none; border-radius: 5px; font-size: 0.9rem; }
-
-.rp-foot { background: #0f0f20; padding: 20px 26px; font-size: 0.72rem; color: #666; line-height: 1.7; }
-.rp-foot a { color: #888; }
-.src { font-size: 0.7rem; color: #555; }
-.verdict { font-size: 0.95rem; font-weight: 700; color: #D4AF37; margin-top: 8px; }
 
 /* Author box */
 .author-box-report {
@@ -316,210 +264,139 @@ p.rp { font-size: 0.93rem; color: #d2d2d8; margin-bottom: 10px; }
   <span>TORM Vollanalyse Q1 2026</span>
 </nav>
 
-<!-- ===== REPORT CONTENT ===== -->
+<!-- ===== REPORT CONTENT (Earnings-Insider-Style v2, 2026-07-12) ===== -->
 
-<div class="report-band">BEISPIEL-PREMIUMBERICHT · So sieht eine komplette Analyse im MB Earnings Insider aus</div>
+<div class="ei-report">
 
-<div class="report-header">
-  <div class="brand">MB CAPITAL STRATEGIES</div>
-  <div class="product">MB Earnings Insider · Premium</div>
-  <h1>TORM plc (TRMD) — die komplette Analyse</h1>
-  <div class="sub">Fundamental- &amp; Bewertungsanalyse · Berichtsperiode Q1 2026 · Stand 12.07.2026</div>
-</div>
-
-<div class="report-body">
-
-<!-- SNAPSHOT -->
-<div class="section">
-  <div class="snap-grid">
-    <div class="snap"><div class="l">Kurs (NASDAQ)</div><div class="v">$29,48</div><div class="d" style="color:#888;">10.07.2026</div></div>
-    <div class="snap"><div class="l">Market Cap</div><div class="v">$3,02 Mrd</div><div class="d" style="color:#888;">102,4 Mio Akt.</div></div>
-    <div class="snap"><div class="l">Fair-Value-Range</div><div class="v gold">$26–37</div><div class="d" style="color:#888;">fair, ~am NAV</div></div>
-    <div class="snap"><div class="l">Div-Rendite</div><div class="v">~7,2 %</div><div class="d warn">TTM, variabel</div></div>
+  <div style="background:#1a1408;border-bottom:1px solid #D4AF37;padding:10px 16px;text-align:center;">
+    <p style="margin:0;font-family:monospace;font-size:11px;letter-spacing:3px;color:#D4AF37;text-transform:uppercase;font-weight:700;">&#9612; Beispiel-Bericht &middot; So sieht der MB Earnings Insider aus &#9616;</p>
   </div>
-  <p class="rp" style="font-size:0.8rem;color:#aaa;margin-top:10px;">TORM ist ein reiner <b>Produktentanker-Reeder</b> und ein guter Kontrast zu einem diversifizierten Titel: konservativ finanziert, operativ hochwertige Gewinne — aber mit einer <b>variablen, an den Ratenzyklus gekoppelten</b> Ausschüttung. Genau diese Mechanik entscheidet über die Dividenden-Sicherheit.</p>
-</div>
 
-<!-- 1. PROFIL -->
-<div class="section">
-  <div class="h2">1 · Was ist TORM?</div>
-  <p class="rp"><span class="tag t-fakt">FAKT</span> TORM ist ein <b>reiner Produktentanker-Reeder</b> im „One-Company"-Modell — Befrachtung, technisches und kommerzielles Management in einer Einheit (kein Pool-Outsourcing). Flotte: <b>95 Schiffe</b> (Q1 2026), über bereits kontrahierte Zugänge wachsend auf <b>103</b>. Alle großen Klassen: <b>LR2</b> (bis ~115.000 dwt), <b>LR1</b> und <b>MR</b> (ab ~45.000 dwt). Transportiert raffinierte Ölprodukte (Benzin, Diesel, Kerosin, Naphtha).</p>
-  <div class="box box-gold"><span class="tag t-int">INTERPRETATION</span> Das One-Company-Modell ist TORMs Alleinstellungsmerkmal: mehr Rate-Kontrolle und operative Marge als reine Asset-Owner, dafür höhere Fixkostenbasis. Die Klassen-Diversifikation (LR2/LR1/MR) glättet klassenspezifische Zyklen. <b>Weicher Punkt:</b> TORM fährt eine der älteren Flotten im Peer-Set — daher der laufende Erneuerungs-Capex (siehe §4).</div>
-</div>
-
-<!-- 2. ERTRAG + QoE -->
-<div class="section">
-  <div class="h2">2 · Zahlen Q1 2026 — und ihre Qualität</div>
-  <table class="rp-table">
-    <tr><th>Kennzahl</th><th class="num">Q1 2026</th><th class="num">Q1 2025</th><th class="num">YoY</th></tr>
-    <tr><td>TCE-Einnahmen</td><td class="num">286 Mio $</td><td class="num">214 Mio $</td><td class="num up">+34 %</td></tr>
-    <tr><td>EBITDA</td><td class="num">201 Mio $</td><td class="num">136 Mio $</td><td class="num up">+48 %</td></tr>
-    <tr><td>Nettogewinn</td><td class="num">122 Mio $</td><td class="num">63 Mio $</td><td class="num up">+94 %</td></tr>
-    <tr><td>EPS (basic)</td><td class="num">1,21 $</td><td class="num">0,64 $</td><td class="num up">+89 %</td></tr>
-    <tr><td>Flotten-TCE Ø</td><td class="num gold">34.937 $/Tag</td><td class="num">26.807 $/Tag</td><td class="num up">+30 %</td></tr>
-    <tr><td>ROIC</td><td class="num">18,0 %</td><td class="num">10,3 %</td><td class="num up">—</td></tr>
-  </table>
-  <p class="rp" style="font-size:0.8rem;color:#999;">TCE nach Klasse Q1'26: LR2 <b style="color:#D4AF37;">41.062 $/Tag</b> · LR1 34.903 $ · MR 32.946 $. („TCE" = Umsatz minus Reise-/Bunkerkosten — die branchenübliche Steuerungsgröße, nicht der Bruttoumsatz.)</p>
-  <div class="box box-green"><span class="tag t-int">INTERPRETATION — Ertragsqualität</span> TORMs Gewinn ist <b>hochwertig und operativ</b> — er kommt aus TCE-Raten, NICHT aus Schiffsverkaufs-Buchgewinnen. Belege: <b>Income-Quality 1,57</b> (operativer Cashflow deutlich über dem Gewinn = geringe Accruals), ROIC 18 % rein operativ. Das ist der Unterschied zu Peers, deren Rekordquartale stark von Einmal-Verkaufsgewinnen leben. <b>Aber:</b> Der FY-Trend zeigt den Zyklus schonungslos — Nettogewinn FY2023 648 Mio → FY2024 612 Mio → <b>FY2025 nur noch 296 Mio $</b> (halbiert). Der Q1'26-Sprung ist ein erneuter Raten-Aufschwung, <b>kein struktureller Wachstumstrend</b>. TORM ist ein zyklischer Cash-Generator — die Bewertung muss über den Zyklus gemittelt werden, nicht am Peak-Quartal.</div>
-</div>
-
-<!-- 3. DIVIDENDE -->
-<div class="section">
-  <div class="h2">3 · Dividende &amp; Sicherheit — die ehrliche Antwort</div>
-  <p class="rp"><span class="tag t-fakt">FAKT</span> TORM schüttet <b>quartalsweise</b> über eine <b>Distribution-Policy</b> aus: verteilt wird die <b>Überschuss-Liquidität oberhalb einer Schwellen-Liquidität</b> (Liquiditätsbedarf je Schiff × Flotte) plus ein diskretionäres Board-Element. <b>Kein fixer Prozentsatz</b> — die Ausschüttung ist per Konstruktion variabel.</p>
-  <table class="rp-table">
-    <tr><th>Quartal</th><th class="num">DPS</th><th>Kontext</th></tr>
-    <tr><td>Q1 2026 <span style="color:#888;">(neu deklariert)</span></td><td class="num gold">0,70 $</td><td>58 % des Q1-Nettogewinns · Zahltag 11.06.</td></tr>
-    <tr><td>Q4 2025</td><td class="num">0,70 $</td><td><span style="color:#888;">in den letzten 12 M. bezahlt</span></td></tr>
-    <tr><td>Q3 2025</td><td class="num">0,62 $</td><td><span style="color:#888;">in den letzten 12 M. bezahlt</span></td></tr>
-    <tr><td>Q2 2025</td><td class="num dn">0,40 $</td><td>Tiefpunkt (Raten schwach)</td></tr>
-    <tr><td>Q1 2025</td><td class="num dn">0,40 $</td><td><span style="color:#888;">in den letzten 12 M. bezahlt</span></td></tr>
-    <tr style="background:#111126;"><td><b>Summe TTM (bezahlt)</b></td><td class="num gold"><b>2,12 $</b></td><td><b>= ~7,2 % Rendite</b></td></tr>
-    <tr><td>Peak 2024</td><td class="num">bis 1,80 $</td><td>Zyklus-Referenz (Hoch)</td></tr>
-  </table>
-  <div style="margin:12px 0;">
-    <div style="font-size:0.76rem;color:#aaa;margin-bottom:2px;">DPS-Spanne im Zyklus: von Peak 1,80 $ (Q3'24) …</div>
-    <div class="bar-wrap"><div class="bar" style="width:100%;background:#D4AF37;">Peak 1,80 $/Quartal</div></div>
-    <div style="font-size:0.76rem;color:#aaa;margin:6px 0 2px;">… bis Tief 0,40 $ (Q2'25) — <b style="color:#ef5350;">−78 % in wenigen Quartalen</b></div>
-    <div class="bar-wrap"><div class="bar" style="width:22%;background:#ef5350;min-width:90px;">Tief 0,40 $</div></div>
+  <div style="background:linear-gradient(135deg,#080810 0%,#0f0f1a 50%,#080810 100%);border-bottom:2px solid #D4AF37;padding:26px 28px 22px;text-align:center;">
+    <p style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;font-weight:700;margin:0;">SHIPPING &middot; PRODUKTENTANKER &middot; Earnings Insider</p>
+    <p style="font-size:11px;color:#6b7a99;margin:2px 0 0;letter-spacing:1px;">MB Capital Strategies</p>
+    <h2 style="font-size:26px;font-weight:800;color:#f0f4ff;margin:16px 0 4px;letter-spacing:-0.5px;">TORM: hochwertige Gewinne, Bilanz-Festung &mdash; variable Dividende</h2>
+    <p style="font-family:monospace;font-size:13px;color:#6b7a99;margin:6px 0 0;">TRMD &middot; Q1 2026 &middot; 31. M&auml;rz 2026</p>
   </div>
-  <table class="rp-table">
-    <tr><th>Sicherheits-Check</th><th class="num">Wert</th><th>Urteil</th></tr>
-    <tr><td>TTM-Rendite</td><td class="num">~7,2 %</td><td class="up">real, aber variabel</td></tr>
-    <tr><td>Payout (auf Nettogewinn)</td><td class="num">58 %</td><td class="up">komfortabel</td></tr>
-    <tr><td>Deckung durch freien Cashflow (TTM)</td><td class="num warn">~38 %</td><td class="warn">capex-getrieben</td></tr>
-  </table>
-  <div class="box box-gold"><span class="tag t-these">THESE</span> Die Dividende ist auf <b>Gewinn-Basis komfortabel (58 %)</b>, auf <b>Free-Cashflow-Basis im aktuellen Flotten-Erneuerungszyklus aber nicht gedeckt (~38 %)</b> — ausgeschüttet wird aus operativer Cash-Generierung + Excess-Liquidity, während gleichzeitig kräftig in neue Schiffe investiert wird. Das ist <b>kein Substanzverzehr</b> (TORM verschuldet sich dafür nicht), aber es entkräftet jede „FCF-gedeckt"-Erzählung. Und das Modell <b>fällt mechanisch mit den Raten</b>: −78 % Peak-to-Trough sind der Beweis. <b>Wer TORM als 9 %-Fixdividende modelliert, hat das Geschäftsmodell nicht verstanden</b> — es ist ein Zyklus-Renditehebel mit eingebauter Kapitaldisziplin, kein Anleihenersatz.</div>
-</div>
 
-<!-- 4. BILANZ -->
-<div class="section">
-  <div class="h2">4 · Bilanz — die eigentliche Stärke</div>
-  <table class="rp-table">
-    <tr><th>Kennzahl</th><th class="num">Wert</th><th>Einordnung</th></tr>
-    <tr><td>Net Debt</td><td class="num">885 Mio $</td><td>moderat</td></tr>
-    <tr><td><b>Net-Debt / EBITDA</b></td><td class="num up">1,37×</td><td class="up">konservativ (&lt;&lt; 4×)</td></tr>
-    <tr><td><b>Net Loan-to-Value</b></td><td class="num up">25,1 %</td><td class="up">niedriger Beleihungsauslauf</td></tr>
-    <tr><td>Zinsdeckung</td><td class="num up">5,36×</td><td class="up">solide</td></tr>
-    <tr><td>Current Ratio</td><td class="num">1,40×</td><td>ausreichend</td></tr>
-    <tr><td>Flotten-Marktwert</td><td class="num">3,62 Mrd $</td><td>stille Reserven</td></tr>
-  </table>
-  <div class="box box-green"><span class="tag t-int">INTERPRETATION</span> Hier liegt TORMs <b>entscheidende Absicherung</b>: Net-Debt/EBITDA von <b>1,37×</b> und ein Net-LTV von <b>25 %</b> sind für einen zyklischen Reeder klar <b>unterdurchschnittlich verschuldet</b>. In einem Raten-Abschwung erdrückt TORM keine Zinslast (Deckung 5,4×) und hat Spielraum für antizyklische Käufe. Der einzige weiche Punkt bleibt das <b>Flottenalter</b> → der laufende Capex (~462 Mio $ TTM) ist notwendige Erneuerung und drückt so lange auf den FCF, wie der Erneuerungszyklus läuft.</div>
-</div>
-
-<!-- 5. ZYKLUS -->
-<div class="section">
-  <div class="h2">5 · Zyklus &amp; Sektor</div>
-  <p class="rp"><span class="tag t-fakt">FAKT</span> Der Produktentanker-Markt ist seit 2022 im Aufschwung — Russland-Sanktionen (längere Routen) + Rotmeer-/Suez-Umleitungen ums Kap = strukturell <b>mehr Ton-Meilen</b>. Q2'26 ist bereits zu <b>57 % zu 71.494 $/Tag gebucht</b> (Guidance angehoben: EBITDA FY26 nun 800–1.100 Mio $).</p>
-  <div class="box box-red"><span class="tag t-these">THESE</span> TORM verdient aktuell <b>oberhalb der Mid-Cycle-Rate</b>. Die angehobene Guidance ist real, beschreibt aber einen <b>Peak-Zustand, keinen Normalzustand</b>. Das größte Risiko ist eine <b>Normalisierung der Handelsrouten</b> (Rotmeer wieder sicher / Sanktionslockerung): Ton-Meilen kollabieren schneller, als Schiffe verschrottet werden — dann fielen EBITDA UND Dividende gemeinsam. Die $71,5k-Q2-Raten sind ein zyklischer Spike, nicht der Trend.</div>
-</div>
-
-<!-- 6. BEWERTUNG -->
-<div class="section">
-  <div class="h2">6 · Was ist die Aktie wert?</div>
-  <table class="rp-table">
-    <tr><th>Methode</th><th class="num">Ergebnis</th><th>Aussage</th></tr>
-    <tr><td>NAV / Substanzwert</td><td class="num">~$29,7 / Aktie</td><td>P/NAV ~1,0 — am NAV</td></tr>
-    <tr><td>EV/EBITDA (TTM)</td><td class="num">~6,0×</td><td>Peer-Median</td></tr>
-    <tr><td>KGV (TTM)</td><td class="num">~8,3×</td><td>zyklus-typisch niedrig</td></tr>
-  </table>
-  <p class="rp" style="font-size:0.83rem;color:#bbb;margin-top:8px;">Anders als ein Titel mit Aufschlag zum Substanzwert handelt TORM <b>praktisch AUF seinem NAV</b> ($29,66) — der Substanzwert selbst ist der Boden und steigt mit den Schiffswerten (+16 % YoY). Auf die angehobene FY26-Guidance sinkt das Forward-EV/EBITDA auf 3,6–4,9× — günstig, WENN die Raten halten.</p>
-  <p class="rp" style="font-size:0.85rem;color:#d2d2d8;margin-top:12px;margin-bottom:4px;"><b>Szenarien (Kursziel-Spanne):</b></p>
-  <div style="margin:6px 0;">
-    <div class="bar-wrap" style="height:24px;"><div class="bar" style="width:45%;background:#ef5350;">Bear $19–23</div></div>
-    <div class="bar-wrap" style="height:24px;margin-top:4px;"><div class="bar" style="width:72%;background:#D4AF37;">Base $28–33</div></div>
-    <div class="bar-wrap" style="height:24px;margin-top:4px;"><div class="bar" style="width:88%;background:#4CAF50;">Bull $37</div></div>
+  <div class="ei-pad">
+    <div style="background:linear-gradient(135deg,#1a1408 0%,#0f0f1a 100%);border:1px solid #D4AF37;border-radius:12px;padding:20px 24px;text-align:center;">
+      <p style="margin:0 0 8px;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#D4AF37;font-weight:700;">Nettogewinn Q1</p>
+      <p style="margin:0;font-family:monospace;font-size:30px;font-weight:800;color:#f0f4ff;letter-spacing:-1px;">122 Mio $ <span style="font-size:17px;color:#22c55e;">+94 % YoY</span></p>
+      <p style="margin:6px 0 0;font-size:11px;color:#6b7a99;text-transform:uppercase;letter-spacing:2px;">rein operativ verdient (kein Verkaufsgewinn)</p>
+    </div>
   </div>
-  <p class="src">Treiber: Produktentanker-Raten · Rotmeer/Ton-Meilen · Orderbook/Angebot · Zins. Annahmen (WACC ~10,5 %, NAV-Basis, Mid-Cycle-Raten) sind explizit Annahmen, keine Fakten.</p>
-</div>
 
-<!-- 7. BULL BEAR -->
-<div class="section">
-  <div class="h2">7 · Bull vs. Bear auf einen Blick</div>
-  <div class="box box-green"><b>Bull:</b> ① FY26-Guidance kräftig angehoben (EBITDA 800–1.100 Mio $), Q2 zu 57 % @ $71,5k gesichert · ② Bilanz-Festung (1,37× / LTV 25 % / Zins 5,4×) → übersteht Abschwung, kann antizyklisch kaufen · ③ hochwertige, operative Gewinne (Income-Quality 1,57, ROIC 18 %) · ④ Ton-Meilen-Rückenwind + niedriges Orderbook.</div>
-  <div class="box box-red"><b>Bear:</b> ① variable Dividende, prozyklisch (−78 % Peak-to-Trough) — keine Fixrendite · ② FCF deckt Dividende nur ~38 % im Capex-Zyklus · ③ älteste Flotte im Peer-Set → Erneuerungs-Capex drückt FCF · ④ Peak-Cycle-Raten: eine Routen-Normalisierung senkt EBITDA + Dividende zugleich.</div>
-</div>
-
-<!-- FAZIT -->
-<div class="section">
-  <div class="h2">8 · Fazit</div>
-  <p class="rp">TORM ist ein <b>kapitaldiszipliniertes, konservativ finanziertes</b> Produktentanker-Unternehmen mit hochwertigen operativen Gewinnen und einer der stärksten Bilanzen im Sektor. Der Investment-Case steht und fällt mit dem <b>Ratenzyklus</b>: Die 7–9 % Rendite sind real, aber variabel und prozyklisch — und im aktuellen Capex-Zyklus nicht aus dem freien Cashflow gedeckt.</p>
-  <div class="verdict">Einordnung: Fair bewertet (~$26–37, Kurs $29,48 ≈ am NAV). Zyklischer Cash-Return mit eingebautem Bilanz-Airbag — kein Fixdividenden-Titel. Die YOC-≥8%-Schwelle ist aktuell erfüllt, aber ausdrücklich unter dem Vorbehalt der Variabilität.</div>
-  <p class="rp" style="font-size:0.8rem;color:#888;margin-top:10px;">FAKT = berichtete Zahl · INTERPRETATION = analytische Einordnung · THESE = zukunftsgerichtete Wette. Jede Zahl unten belegt.</p>
-</div>
-
-<!-- LEDGER -->
-<div class="section">
-  <div class="h2">Faktenlage &amp; Quellen (Auszug)</div>
-  <p class="rp" style="font-size:0.8rem;color:#aaa;">Jede harte Zahl gegen ≥ 2 unabhängige Quellen geprüft (FMP + TORM IR / SEC 6-K / StockTitan). Berichtsperiode Q1 2026. Aktienzahl 102,4 Mio über 4 Wege gegengecheckt (Marktkap.-, EPS-, Dividenden-Ableitung — konsistent, kein Datenfehler).</p>
-  <table class="rp-table">
-    <tr><th>Zahl</th><th class="num">Wert</th><th>Quellen</th></tr>
-    <tr><td>TCE / EBITDA / Nettogewinn</td><td class="num">286 / 201 / 122 Mio $</td><td>TORM IR + FMP</td></tr>
-    <tr><td>EPS basic / Flotten-TCE</td><td class="num">1,21 $ / 34.937 $/Tag</td><td>TORM IR + PRNewswire</td></tr>
-    <tr><td>DPS Q1'26 (58 % NI)</td><td class="num">0,70 $</td><td>TORM IR + FMP dividends</td></tr>
-    <tr><td>Net-Debt/EBITDA / Net LTV</td><td class="num">1,37× / 25,1 %</td><td>FMP + TORM IR</td></tr>
-    <tr><td>FY26-Guidance EBITDA</td><td class="num">800–1.100 Mio $</td><td>TORM IR + PRNewswire</td></tr>
-    <tr><td>NAV / P/NAV</td><td class="num">$29,7 / ~1,0×</td><td>TORM IR + eigene Rechnung</td></tr>
-  </table>
-  <p class="src">Quellen u. a.: TORM IR Q1-2026-Report/Dividend/Outlook · SEC Form 6-K · PRNewswire (302770620) · StockTitan. Kurs/Market-Cap: FMP-Feed 10.07.2026. „Älteste Flotte im Peer-Set" = externe Einordnung (Seeking Alpha), als Interpretation gekennzeichnet.</p>
-</div>
-
-<!-- CTA -->
-<div class="section">
-  <div class="rp-cta">
-    <h3>Das war ein Musterbericht.</h3>
-    <p>Ganz ehrlich: In meinen kostenlosen Videos und im Wochenrückblick schaffe ich immer nur die Schlagzeilen — zu jeder einzelnen Position und jeder Quartalszahl ein eigenes Video, das packe ich zeitlich nicht. Genau deshalb gibt es den <b>MB Earnings Insider</b>: Hier bekommst du genau diese Tiefe — Position für Position, jede Quartalszahl, Dividenden-Sicherheit, Bilanz und Bewertung, ehrlich und mit belegten Zahlen. Kein Verkaufsdruck — nur der Ort, wo die Analyse hinpasst, die in ein Video nicht reingeht.</p>
-    <a href="/insider/" class="btn-gold-report">MB Earnings Insider ansehen →</a>
-    <p style="font-size:0.76rem;color:#888;margin-top:12px;margin-bottom:0;">Ab 5 €/Monat · monatlich kündbar · Analysen 21 Tage exklusiv vor dem Blog.</p>
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Kurzfazit</p>
+    <ul style="margin:0;padding-left:20px;color:#c8cfe0;font-size:15px;line-height:1.65;"><li style="margin-bottom:7px;">Nettogewinn 122 Mio $ (+94 % YoY), EPS 1,21 $ &mdash; <strong>hochwertig und operativ</strong> (Income-Quality 1,57, ROIC 18 %), NICHT aus Schiffsverkäufen. Flotten-TCE 34.937 $/Tag (+30 %).</li><li style="margin-bottom:7px;"><strong>Bilanz-Festung:</strong> Net-Debt/EBITDA nur 1,37&times;, Net-LTV 25 %, Zinsdeckung 5,4&times; &mdash; konservativer als fast jeder Peer. Der eingebaute Airbag f&uuml;r den Abschwung.</li><li style="margin-bottom:7px;">Dividende 0,70 $ (58 % des Gewinns), ~7,2 % TTM &mdash; aber <strong>variabel und prozyklisch</strong>: fiel im Zyklus von 1,80 auf 0,40 $ (&minus;78 %). Kein Fixdividenden-Titel.</li></ul>
   </div>
-</div>
 
-<!-- DISCLAIMER -->
-<div class="rp-foot">
-  <p><b>Disclaimer:</b> Keine Anlageberatung. Dieser Musterbericht dient ausschließlich der Information und als Beispiel für das Premium-Format. Kein Inhalt stellt eine Kauf-/Verkaufsempfehlung dar. Marco hält TORM selbst im Depot und ist daher nicht neutral. Jeder handelt eigenverantwortlich und macht seine eigene Recherche. Tanker-Dividenden sind zyklisch und variabel. Verluste sind möglich.</p>
-  <p style="margin-top:8px;">© 2026 MB Capital Strategies · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></p>
-</div>
-
-<!-- AUTHOR BOX -->
-<div class="author-box-report">
-  <img src="/assets/marco-profile.jpg" alt="Marco Bozem — MB Capital Strategies" width="64" height="64" loading="lazy">
-  <div>
-    <p class="name">Marco Bozem</p>
-    <p class="role">Investor &amp; Analyst | Shipping, Mining, Energie | MB Capital Strategies</p>
-    <p class="bio">Marco analysiert seit Jahren Rohstoff- und Dividendenaktien mit Fokus auf Shipping, Mining und Energie. TORM ist Teil seines öffentlichen Depots. Alle Analysen basieren auf öffentlich verfügbaren Geschäftsberichten und eigener Einschätzung. <em>Keine Anlageberatung.</em></p>
+  <div class="ei-pad">
+    <div style="background:linear-gradient(135deg,#0a1a0e 0%,#0f0f1a 100%);border-left:4px solid #22c55e;border-radius:0 8px 8px 0;padding:14px 18px;">
+      <p style="margin:0 0 4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#22c55e;font-weight:700;">Earnings-Surprise &amp; Qualit&auml;t</p>
+      <p style="margin:0;color:#f0f4ff;font-size:14px;line-height:1.6;">EPS 1,21 $ vs. 0,64 $ im Q1/25 (+89 %). Der Gewinn ist <strong>operativ und sauber</strong> &mdash; Income-Quality 1,57 (operativer Cashflow deutlich &uuml;ber dem Gewinn = geringe Accruals), ROIC 18 %, keine Buchgewinn-Kosmetik. Das ist der Qualit&auml;tsunterschied zu Peers, deren Rekorde von Verkaufsgewinnen leben.</p>
+    </div>
   </div>
-</div>
 
-<!-- WEITERE MUSTERBERICHTE -->
-<div class="sample-hub">
-  <h3>Weitere Musterberichte</h3>
-  <ul>
-    <li>
-      <a href="/musterbericht-cmb-tech-vollanalyse.html">CMB.Tech (CMBT) Vollanalyse Q1 2026</a>
-      <span class="sample-desc">Diversifizierter Reeder nach Golden-Ocean-Merger — Ertragsqualität, Dividendenpolitik, Bilanz-Risiken</span>
-    </li>
-    <li>
-      <a href="/newsletter-sample.html">Muster-Newsletter: Shipping &amp; Mining Quartalszahlen</a>
-      <span class="sample-desc">CMB.Tech, TORM, BW LPG, Newmont — zwei Sektoren, die entscheidenden Zahlen eingeordnet</span>
-    </li>
-  </ul>
-</div>
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Analyst-Konsens &mdash; wo soll der Kurs hin?</p>
+    <table role="presentation" width="100%" style="background:#0f0f1a;border:1px solid #1e1e35;border-radius:12px;">
+      <tr style="border-bottom:1px solid #1e1e35;"><td style="padding:11px 14px;color:#6b7a99;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Aktueller Kurs</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">$29.48</td></tr>
+      <tr style="border-bottom:1px solid #1e1e35;"><td style="padding:11px 14px;color:#6b7a99;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Fair-Value-Range (eigene Bewertung)</td><td align="right" style="padding:11px 14px;color:#D4AF37;font-family:monospace;font-size:13px;font-weight:700;">$26&ndash;37</td></tr>
+      <tr><td style="padding:11px 14px;color:#6b7a99;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Einordnung</td><td align="right" style="padding:11px 14px;color:#c8cfe0;font-size:12px;">Fair &middot; P/NAV ~1,0 (am NAV) &middot; EV/EBITDA 6,0&times;</td></tr>
+    </table>
+  </div>
 
-<!-- RELATED LINKS -->
-<div class="related-report">
-  <h3>Weiter lesen: TORM &amp; Produktentanker</h3>
-  <ul>
-    <li><a href="/shipping/">→ Shipping-Aktien Hub: Alle Analysen, TCE-Rechner</a></li>
-    <li><a href="/bestenlisten/beste-tanker-aktien-2026.html">→ Die besten Tanker-Aktien 2026</a></li>
-    <li><a href="/blog/torm-dividende-analyse-2026.html">→ TORM Dividende 2026: $0,70/Quartal — lohnt sich TRMD?</a></li>
-    <li><a href="/blog/shipping-dividenden-doppelzahltag-juni-2026.html">→ Doppelzahltag 11. Juni: TORM $0,70 + FLEX LNG $0,75</a></li>
-    <li><a href="/blog/frontline-vs-scorpio-tankers-vergleich-2026.html">→ Frontline vs. Scorpio Tankers: Vergleich 2026</a></li>
-    <li><a href="/musterbericht-cmb-tech-vollanalyse.html">→ Zweiter Musterbericht: CMB.Tech (CMBT) Q1 2026 Vollanalyse</a></li>
-    <li><a href="/insider/">→ MB Earnings Insider: Vollzugang ab 5 €/Monat</a></li>
-  </ul>
-</div>
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Visueller &Uuml;berblick &middot; 8 Quartale</p>
+    <p style="margin:0 0 6px;color:#6b7a99;font-size:12px;">Umsatz (Mio $)</p><svg viewBox="0 0 520 150" width="100%" style="display:block;max-width:100%;height:auto;"><rect x="0" y="0" width="520" height="150" fill="#0f0f1a" rx="10"/><rect x="10.0" y="12.0" width="53.8" height="112.0" rx="3" fill="#D4AF37" opacity="0.5"/><text x="36.9" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q2&apos;24</text><text x="36.9" y="8.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">438</text><rect x="73.8" y="28.8" width="53.8" height="95.2" rx="3" fill="#D4AF37" opacity="0.5"/><text x="100.6" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q3&apos;24</text><text x="100.6" y="24.8" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">372</text><rect x="137.5" y="45.9" width="53.8" height="78.1" rx="3" fill="#D4AF37" opacity="0.5"/><text x="164.4" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q4&apos;24</text><text x="164.4" y="41.9" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">305</text><rect x="201.2" y="39.8" width="53.8" height="84.2" rx="3" fill="#D4AF37" opacity="0.5"/><text x="228.1" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q1&apos;25</text><text x="228.1" y="35.8" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">329</text><rect x="265.0" y="43.3" width="53.8" height="80.7" rx="3" fill="#D4AF37" opacity="0.5"/><text x="291.9" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q2&apos;25</text><text x="291.9" y="39.3" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">315</text><rect x="328.8" y="36.2" width="53.8" height="87.8" rx="3" fill="#D4AF37" opacity="0.5"/><text x="355.6" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q3&apos;25</text><text x="355.6" y="32.2" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">343</text><rect x="392.5" y="33.2" width="53.8" height="90.8" rx="3" fill="#D4AF37" opacity="0.5"/><text x="419.4" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q4&apos;25</text><text x="419.4" y="29.2" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">355</text><rect x="456.2" y="22.7" width="53.8" height="101.3" rx="3" fill="#D4AF37" opacity="1"/><text x="483.1" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q1&apos;26</text><text x="483.1" y="18.7" fill="#f0f4ff" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">396</text></svg>
+    <p style="margin:14px 0 6px;color:#6b7a99;font-size:12px;">EBITDA (Mio $)</p><svg viewBox="0 0 520 150" width="100%" style="display:block;max-width:100%;height:auto;"><rect x="0" y="0" width="520" height="150" fill="#0f0f1a" rx="10"/><rect x="10.0" y="12.0" width="53.8" height="112.0" rx="3" fill="#22c55e" opacity="0.5"/><text x="36.9" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q2&apos;24</text><text x="36.9" y="8.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">259</text><rect x="73.8" y="38.1" width="53.8" height="85.9" rx="3" fill="#22c55e" opacity="0.5"/><text x="100.6" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q3&apos;24</text><text x="100.6" y="34.1" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">199</text><rect x="137.5" y="62.4" width="53.8" height="61.6" rx="3" fill="#22c55e" opacity="0.5"/><text x="164.4" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q4&apos;24</text><text x="164.4" y="58.4" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">142</text><rect x="201.2" y="63.7" width="53.8" height="60.3" rx="3" fill="#22c55e" opacity="0.5"/><text x="228.1" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q1&apos;25</text><text x="228.1" y="59.7" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">139</text><rect x="265.0" y="67.6" width="53.8" height="56.4" rx="3" fill="#22c55e" opacity="0.5"/><text x="291.9" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q2&apos;25</text><text x="291.9" y="63.6" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">130</text><rect x="328.8" y="56.6" width="53.8" height="67.4" rx="3" fill="#22c55e" opacity="0.5"/><text x="355.6" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q3&apos;25</text><text x="355.6" y="52.6" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">156</text><rect x="392.5" y="54.8" width="53.8" height="69.2" rx="3" fill="#22c55e" opacity="0.5"/><text x="419.4" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q4&apos;25</text><text x="419.4" y="50.8" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">160</text><rect x="456.2" y="37.7" width="53.8" height="86.3" rx="3" fill="#D4AF37" opacity="1"/><text x="483.1" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q1&apos;26</text><text x="483.1" y="33.7" fill="#f0f4ff" font-size="9" text-anchor="middle" font-family="monospace" font-weight="600">200</text></svg>
+    <p style="margin:14px 0 6px;color:#6b7a99;font-size:12px;">EBITDA-Marge (%)</p><svg viewBox="0 0 520 150" width="100%" style="display:block;max-width:100%;height:auto;"><rect x="0" y="0" width="520" height="150" fill="#0f0f1a" rx="10"/><polygon points="14,124 14.0,14.0 84.3,49.2 154.6,91.2 224.9,117.2 295.1,124.0 365.4,98.7 435.7,100.5 506.0,67.8 506,124" fill="#D4AF37" opacity="0.10"/><polyline points="14.0,14.0 84.3,49.2 154.6,91.2 224.9,117.2 295.1,124.0 365.4,98.7 435.7,100.5 506.0,67.8" fill="none" stroke="#D4AF37" stroke-width="2"/><circle cx="14.0" cy="14.0" r="3" fill="#D4AF37"/><circle cx="84.3" cy="49.2" r="3" fill="#D4AF37"/><circle cx="154.6" cy="91.2" r="3" fill="#D4AF37"/><circle cx="224.9" cy="117.2" r="3" fill="#D4AF37"/><circle cx="295.1" cy="124.0" r="3" fill="#D4AF37"/><circle cx="365.4" cy="98.7" r="3" fill="#D4AF37"/><circle cx="435.7" cy="100.5" r="3" fill="#D4AF37"/><circle cx="506.0" cy="67.8" r="3" fill="#D4AF37"/><text x="14.0" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q2&apos;24</text><text x="84.3" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q3&apos;24</text><text x="154.6" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q4&apos;24</text><text x="224.9" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q1&apos;25</text><text x="295.1" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q2&apos;25</text><text x="365.4" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q3&apos;25</text><text x="435.7" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q4&apos;25</text><text x="506.0" y="138.0" fill="#6b7a99" font-size="9" text-anchor="middle" font-family="monospace">Q1&apos;26</text></svg>
+  </div>
 
-</div><!-- .report-body -->
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Die Zahlen &middot; Q1 2026</p>
+    <table role="presentation" width="100%" style="background:#0f0f1a;border:1px solid #1e1e35;border-radius:12px;">
+      <thead><tr style="background:#15152a;"><th align="left" style="padding:10px 14px;font-size:11px;color:#6b7a99;text-transform:uppercase;letter-spacing:1px;">KPI</th><th align="right" style="padding:10px 14px;font-size:11px;color:#6b7a99;text-transform:uppercase;letter-spacing:1px;">Aktuell</th><th align="right" style="padding:10px 14px;font-size:11px;color:#6b7a99;text-transform:uppercase;letter-spacing:1px;">YoY</th></tr></thead>
+      <tbody><tr style="border-top:1px solid #1e1e35;"><td style="padding:11px 14px;color:#c8cfe0;font-size:14px;">TCE-Einnahmen</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">286 Mio $</td><td align="right" style="padding:11px 14px;font-family:monospace;font-size:13px;font-weight:600;color:#22c55e;">+34 %</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:11px 14px;color:#c8cfe0;font-size:14px;">EBITDA</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">201 Mio $</td><td align="right" style="padding:11px 14px;font-family:monospace;font-size:13px;font-weight:600;color:#22c55e;">+48 %</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:11px 14px;color:#c8cfe0;font-size:14px;">Nettogewinn</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">122 Mio $</td><td align="right" style="padding:11px 14px;font-family:monospace;font-size:13px;font-weight:600;color:#22c55e;">+94 %</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:11px 14px;color:#c8cfe0;font-size:14px;">EPS (basic)</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">1,21 $</td><td align="right" style="padding:11px 14px;font-family:monospace;font-size:13px;font-weight:600;color:#22c55e;">+89 %</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:11px 14px;color:#c8cfe0;font-size:14px;">Flotten-TCE &Oslash;</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">34.937 $/Tag</td><td align="right" style="padding:11px 14px;font-family:monospace;font-size:13px;font-weight:600;color:#22c55e;">+30 %</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:11px 14px;color:#c8cfe0;font-size:14px;">ROIC</td><td align="right" style="padding:11px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">18,0 %</td><td align="right" style="padding:11px 14px;font-family:monospace;font-size:13px;font-weight:600;color:#22c55e;">+7,7 pp</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Operative Kennzahlen</p>
+    <table role="presentation" width="100%" style="background:#0f0f1a;border:1px solid #1e1e35;border-radius:12px;">
+      <tbody><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Flotte</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">95 &rarr; 103 Schiffe</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">kontrahierte Zug&auml;nge, Lieferung bis 2028</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">LR2 TCE Q1</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">41.062 $/Tag</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">st&auml;rkste Klasse</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">LR1 / MR TCE Q1</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">34.903 / 32.946 $/Tag</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">Klassen-Diversifikation gl&auml;ttet</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Q2&apos;26 gebucht</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">57 % @ 71.494 $/Tag</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">sehr stark &mdash; aber Peak-nah</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Modell</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">One-Company</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">integrierte Plattform, mehr Rate-Kontrolle</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Dividende &amp; Aussch&uuml;ttungssicherheit</p>
+    <table role="presentation" width="100%" style="background:#0f0f1a;border:1px solid #1e1e35;border-radius:12px;">
+      <tbody><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Dividende Q1&apos;26</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">0,70 $</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">58 % des Q1-Nettogewinns &middot; Zahltag 11.06.</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Rendite (TTM, 2,12 $)</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">~7,2 %</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">real, aber variabel</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Politik</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">Excess-Liquidity</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">kein Fixprozent &mdash; verteilt &Uuml;berschuss &uuml;ber Schwelle</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Spanne im Zyklus</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">1,80 &rarr; 0,40 $</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">&minus;78 % Peak-to-Trough (prozyklisch)</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">FCF-Deckung (TTM)</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">~38 %</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">capex-getrieben, kein Substanzverzehr</td></tr></tbody>
+    </table>
+    <div style="background:linear-gradient(135deg,#1a1408 0%,#0f0f1a 100%);border-left:4px solid #D4AF37;border-radius:0 8px 8px 0;padding:14px 18px;margin-top:12px;">
+      <p style="margin:0;color:#f0f4ff;font-size:14px;line-height:1.65;">Die Dividende ist auf Gewinnbasis komfortabel (58 %), auf Free-Cashflow-Basis im laufenden Flotten-Erneuerungszyklus aber nicht gedeckt (~38 %) &mdash; ausgesch&uuml;ttet wird aus Excess-Liquidity, w&auml;hrend in neue Schiffe investiert wird. Das ist kein Red Flag, entkr&auml;ftet aber jede &bdquo;FCF-gedeckt&ldquo;-Erz&auml;hlung. Und das Modell f&auml;llt mechanisch mit den Raten. Ein Zyklus-Renditehebel mit Kapitaldisziplin, kein Anleihenersatz.</p>
+    </div>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Bilanz &amp; Verschuldung</p>
+    <table role="presentation" width="100%" style="background:#0f0f1a;border:1px solid #1e1e35;border-radius:12px;">
+      <tbody><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Net Debt</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">885 Mio $</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">moderat</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Net-Debt/EBITDA</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">1,37&times;</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">&#10003; konservativ (weit unter 4&times;)</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Net Loan-to-Value</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">25,1 %</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">&#10003; niedriger Beleihungsauslauf</td></tr><tr style="border-top:1px solid #1e1e35;"><td style="padding:10px 14px;color:#c8cfe0;font-size:14px;">Zinsdeckung</td><td align="right" style="padding:10px 14px;color:#f0f4ff;font-family:monospace;font-size:13px;font-weight:600;">5,36&times;</td></tr><tr><td colspan="2" style="padding:0 14px 8px;color:#6b7a99;font-size:11px;font-style:italic;">solide &middot; Current Ratio 1,40</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Guidance / Ausblick</p>
+    <ul style="margin:0;padding-left:18px;color:#c8cfe0;font-size:14px;line-height:1.7;"><li style="margin-bottom:7px;"><strong style="color:#D4AF37;">FY2026 angehoben:</strong> EBITDA-Guidance nun 800&ndash;1.100 Mio $ (vorher 500&ndash;900), TCE 1.150&ndash;1.450 Mio $.</li><li style="margin-bottom:7px;"><strong style="color:#D4AF37;">Coverage:</strong> Q2 bereits zu 57 % @ 71.494 $/Tag gebucht &mdash; untermauert die obere Guidance-H&auml;lfte.</li><li style="margin-bottom:7px;"><strong style="color:#D4AF37;">Kosten:</strong> disziplinierte Struktur; laufender Erneuerungs-Capex (~462 Mio $ TTM) dr&uuml;ckt vor&uuml;bergehend den FCF.</li></ul>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Stimme aus dem Unternehmen</p>
+    <div style="background:#0f0f1a;border-left:3px solid #D4AF37;padding:13px 16px;border-radius:0 8px 8px 0;">
+      <p style="margin:0 0 6px;color:#f0f4ff;font-style:italic;font-size:14px;line-height:1.55;">&bdquo;TORM verteilt die &Uuml;berschuss-Liquidit&auml;t oberhalb einer definierten Schwellen-Liquidit&auml;t &mdash; die Aussch&uuml;ttung ist damit bewusst variabel und kapitaldiszipliniert, kein fixer Prozentsatz.&ldquo;</p>
+      <p style="margin:0;color:#6b7a99;font-size:11px;font-family:monospace;">&mdash; TORM Distribution-Policy &middot; Q1-2026-Mitteilung (sinngem&auml;&szlig;)</p>
+    </div>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Was ist die Aktie wert? &middot; Szenarien</p>
+    <svg viewBox="0 0 520 90" width="100%" style="display:block;max-width:100%;height:auto;"><rect x="0" y="0" width="520" height="90" fill="#0f0f1a" rx="10"/><rect x="247.9" y="10" width="49.2" height="16" rx="4" fill="#ef4444"/><text x="243.9" y="22" fill="#ef4444" font-size="10" text-anchor="end" font-weight="700">Bear</text><text x="303.2" y="22" fill="#c8cfe0" font-size="10" font-family="monospace">$19&ndash;23</text><rect x="358.7" y="36" width="61.6" height="16" rx="4" fill="#D4AF37"/><text x="354.7" y="48" fill="#D4AF37" font-size="10" text-anchor="end" font-weight="700">Base</text><text x="426.3" y="48" fill="#c8cfe0" font-size="10" font-family="monospace">$28&ndash;33</text><rect x="469.6" y="62" width="3.0" height="16" rx="4" fill="#22c55e"/><text x="465.6" y="74" fill="#22c55e" font-size="10" text-anchor="end" font-weight="700">Bull</text><text x="475.6" y="74" fill="#c8cfe0" font-size="10" font-family="monospace">$37&ndash;37</text><line x1="377.0" y1="6" x2="377.0" y2="84" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 3"/><text x="377.0" y="88" fill="#fff" font-size="9" text-anchor="middle" font-family="monospace">Kurs $29.48</text></svg>
+    <p style="margin:8px 0 0;color:#c8cfe0;font-size:14px;line-height:1.65;">TORM handelt praktisch AUF seinem Substanzwert: NAV ~$29,7/Aktie (P/NAV ~1,0), EV/EBITDA TTM ~6,0&times; (Peer-Median), KGV ~8,3&times;. Der NAV ist der Boden und steigt mit den Schiffswerten (+16 % YoY). Auf die angehobene FY26-Guidance sinkt das Forward-EV/EBITDA auf 3,6&ndash;4,9&times; &mdash; g&uuml;nstig, WENN die Raten halten.</p>
+  </div>
+
+  <div class="ei-pad">
+    <table role="presentation" width="100%"><tr>
+      <td class="ei-col" valign="top" width="50%" style="padding-right:8px;">
+        <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#ef4444;font-weight:600;margin:0 0 8px;">Risiken</p>
+        <ul style="margin:0;padding-left:18px;color:#c8cfe0;font-size:13px;line-height:1.6;"><li style="margin-bottom:7px;">Variable Dividende, prozyklisch (&minus;78 % Peak-to-Trough) &mdash; keine Fixrendite.</li><li style="margin-bottom:7px;">FCF deckt die Dividende nur ~38 % im Capex-Zyklus.</li><li style="margin-bottom:7px;">&Auml;lteste Flotte im Peer-Set &rarr; struktureller Erneuerungs-Capex dr&uuml;ckt FCF.</li><li style="margin-bottom:7px;">Peak-Cycle-Raten: eine Routen-Normalisierung senkt EBITDA + Dividende zugleich.</li></ul>
+      </td>
+      <td class="ei-col" valign="top" width="50%" style="padding-left:8px;">
+        <p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#22c55e;font-weight:600;margin:0 0 8px;">Chancen</p>
+        <ul style="margin:0;padding-left:18px;color:#c8cfe0;font-size:13px;line-height:1.6;"><li style="margin-bottom:7px;">FY26-Guidance kr&auml;ftig angehoben, Q2 zu 57 % @ 71.494 $ gesichert.</li><li style="margin-bottom:7px;">Bilanz-Festung (1,37&times; / LTV 25 % / Zins 5,4&times;) &rarr; &uuml;bersteht Abschwung, kann antizyklisch kaufen.</li><li style="margin-bottom:7px;">Hochwertige, operative Gewinne (Income-Quality 1,57, ROIC 18 %).</li><li style="margin-bottom:7px;">Ton-Meilen-R&uuml;ckenwind (Umleitungen) + niedriges Orderbook st&uuml;tzt Raten.</li></ul>
+      </td>
+    </tr></table>
+  </div>
+
+  <div class="ei-pad"><p style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:600;margin:0 0 12px;">Mein Take</p>
+    <div style="background:linear-gradient(135deg,#1a1408 0%,#0f0f1a 100%);border-left:4px solid #D4AF37;border-radius:0 8px 8px 0;padding:16px 20px;">
+      <p style="margin:0;color:#f0f4ff;font-size:15px;line-height:1.7;">Was du dir merken solltest: TORM ist ein <strong>kapitaldiszipliniertes, konservativ finanziertes</strong> Produktentanker-Unternehmen mit hochwertigen operativen Gewinnen und einer der st&auml;rksten Bilanzen im Sektor. Der Case steht und f&auml;llt mit dem Ratenzyklus: Die 7&ndash;9 % Rendite sind real, aber variabel und prozyklisch. Bei ~$29,48 fair, praktisch am NAV. Ein zyklischer Cash-Return mit eingebautem Bilanz-Airbag &mdash; kein Fixdividenden-Titel.</p>
+    </div>
+  </div>
+
+  <div class="ei-pad">
+    <div style="background:#0a0a14;border:1px dashed #1e1e35;border-radius:8px;padding:14px 16px;">
+      <p style="margin:0 0 6px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#6b7a99;font-weight:600;">Transparenz &amp; Disclaimer</p>
+      <p style="margin:0;color:#6b7a99;font-size:11px;line-height:1.6;">Diese Analyse ist <strong>keine Anlageberatung</strong>, sondern Bildungsinhalt zur Quartalsbericht-Einordnung. Marco Bozem h&auml;lt TRMD selbst im Depot und ist daher nicht neutral. Alle Kernzahlen aus Financial Modeling Prep + offizieller Unternehmensmitteilung, je &ge;2 Quellen verifiziert. Keine Kauf-/Verkaufsempfehlung. Vergangene Performance ist kein Indikator f&uuml;r die Zukunft.</p>
+    </div>
+  </div>
+
+  <div class="ei-pad" style="padding-top:28px;">
+    <div style="background:linear-gradient(135deg,#1a1408 0%,#0f0f1a 100%);border:2px solid #D4AF37;border-radius:12px;padding:22px 24px;text-align:center;">
+      <p style="margin:0 0 8px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#D4AF37;font-weight:700;">Das war ein Musterbericht</p>
+      <p style="margin:0 0 14px;color:#c8cfe0;font-size:14px;line-height:1.6;">Ganz ehrlich: In den kostenlosen Videos schaffe ich nur die Schlagzeilen &mdash; zu jeder Position t&auml;glich ein Video packe ich zeitlich nicht. Genau diese Tiefe &mdash; Position f&uuml;r Position, jede Quartalszahl, Dividenden-Sicherheit, Bilanz &amp; Bewertung &mdash; gibt es im <strong style="color:#f0f4ff;">MB Earnings Insider</strong>. Kein Verkaufsdruck.</p>
+      <a href="https://mbcapitalstrategies.com/newsletter/" style="display:inline-block;background:#D4AF37;color:#080810;padding:11px 26px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">MB Earnings Insider ansehen &rarr;</a>
+      <p style="margin:12px 0 0;color:#6b7a99;font-size:11px;">Ab 5 &euro;/Monat &middot; monatlich k&uuml;ndbar &middot; Analysen 21 Tage exklusiv vor dem Blog</p>
+    </div>
+  </div>
+
+  <div class="ei-pad" style="padding:30px 28px;border-top:1px solid #1e1e35;margin-top:24px;">
+    <p style="margin:0 0 8px;color:#6b7a99;font-size:11px;">Teil von <strong style="color:#D4AF37;">MB Earnings Insider</strong> &middot; Berichtsperiode Q1 2026 &middot; Beispiel, nicht versendet.</p>
+    <p style="margin:0;color:#6b7a99;font-size:11px;"><a href="https://mbcapitalstrategies.com/newsletter/" style="color:#6b7a99;">Newsletter</a> &middot; <a href="https://mbcapitalstrategies.com/impressum.html" style="color:#6b7a99;">Impressum</a> &middot; <a href="https://mbcapitalstrategies.com/datenschutz.html" style="color:#6b7a99;">Datenschutz</a></p>
+  </div>
+
+</div><!-- .ei-report -->
 
 <!-- NAV JS -->
 <script>
