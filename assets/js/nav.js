@@ -18,7 +18,7 @@
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
     /* Slim bundle: only Outfit + IBM Plex Mono — DM Serif/Cormorant removed (unused on blog/landing pages, added ~800ms font-parse overhead). */
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=optional';
     document.head.appendChild(fontLink);
   }
 
