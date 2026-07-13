@@ -86,14 +86,30 @@
      Nach Akzeptieren: clarity('consent', true) — erst dann beginnt Aufzeichnung.
      Projekt-ID: xka7tpglob (mbcapitalstrategies.com / DE-Site)
      Guard: Snippet wird nur einmal injiziert (Dedup wie GA4-Guard).
-  ─────────────────────────────────────────────────────────────────────── */
-  if (!document.querySelector('script[src*="clarity.ms/tag"]')) {
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window,document,'clarity','script','xka7tpglob');
-  }
+
+     CWV-Fix 2026-07-13 web-design-agent: Live-Lighthouse (mobil, Homepage + BHP-Blog)
+     zeigte LCP-Render-Delay von 85-91% der gesamten LCP-Zeit (7,6-7,1s von ~8-9s) —
+     das LCP-Element selbst laedt in <1s, malt aber erst Sekunden spaeter, weil der
+     Haupt-Thread mit Skript-Ausfuehrung blockiert ist. bootup-time wies clarity.js
+     mit 560-760ms Scripting aus, die JEDE Seite sofort beim nav.js-Start bezahlt —
+     noch bevor der Nutzer ueberhaupt zugestimmt hat. Der Consent-Queue-Stub
+     (c[a]=...) bleibt SOFORT aktiv (reine Funktionsdefinition, kein Netzwerk/Skript-
+     Kosten) — nur der eigentliche Tag-Fetch+Execute wird auf window 'load'
+     verschoben, also NACH dem kritischen Render-Pfad. Consent-Verhalten/Projekt-ID/
+     Dedup-Guard unveraendert, nur der Zeitpunkt des Nachladens. */
+  (function(c,l,a,r,i){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    function loadClarityTag(){
+      if (l.querySelector('script[src*="clarity.ms/tag"]')) return;
+      var t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }
+    if (document.readyState === 'complete') {
+      loadClarityTag();
+    } else {
+      window.addEventListener('load', loadClarityTag);
+    }
+  })(window,document,'clarity','script','xka7tpglob');
   /* Consent-State beim Laden setzen — verhindert Tracking vor Nutzerzustimmung */
   if (existingConsent === 'granted') {
     window.clarity('consent', true);
