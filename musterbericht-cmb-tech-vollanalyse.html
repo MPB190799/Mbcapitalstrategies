@@ -130,7 +130,8 @@
 
 <!-- Fonts: self-hosted (kein Google-CDN — DSGVO LG-München) -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
 <!-- Critical inline CSS for LCP -->
 <style>

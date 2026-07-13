@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- LCP-Fix 2026-07-10 web-design-agent: font preload+stylesheet moved to top of head (was at byte-offset ~37KB, after 5 JSON-LD blocks (7.7KB) + 3 inline style blocks (24.5KB) -- preload scanner discovered font CSS only after parsing ~32KB of head-bloat, adding round-trips on mobile. Zero visual/layout change, verified against LCP-fix-plan Massnahme 1. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
 <meta name="msvalidate.01" content="E450D869E83A84CC75BF896F78D3CCFF" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
