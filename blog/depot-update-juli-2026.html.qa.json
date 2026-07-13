@@ -1,0 +1,12 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-13T07:01:14.317Z",
+  "content_sha": "7a88d4b1f876f278",
+  "hard_scan": "PASS",
+  "note": "Depot-Update Juli 2026 DE: BlogPosting+VideoObject+FAQPage+BreadcrumbList schema, hreflang DE/EN, GA4 G-J1NWEPPKNE, Disclaimer, Newsletter-CTA DE-only, kein CapTrader, max 4 Affiliate-Links (erlaubt für Blog), Marco-Voice Stammtisch-Stil, R23-konform (Portfolio-Performance keine Report-Zahlen)"
+}
