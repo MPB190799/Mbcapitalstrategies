@@ -8,10 +8,16 @@
   'use strict';
 
   /* ── Non-blocking Font Loading ── */
-  /* Guard: skip if page already has Outfit loaded or preloaded (blog pages do this inline).
-     Prevents duplicate 4-family font bundle (was causing +2-4s LCP on blog pages). */
+  /* Guard: skip if page already has Outfit loaded/preloaded OR self-hosts it via /fonts/fonts.css
+     (DSGVO self-hosted-fonts policy, live on tools/*rechner*.html + most pages since 11.06.2026).
+     BUG FIX 13.07.2026: guard only checked href*="Outfit"/"outfit" — fonts.css doesn't contain that
+     string, so nav.js re-fetched Outfit AGAIN from Google's CDN on every self-hosted page. Root-Cause
+     for CLS=1.506 on dividenden-snowball-rechner.html (seo-agent Lighthouse-Audit 11.07.2026): a
+     SECOND font-swap on top of the self-hosted @font-face swap reflows header.hero visibly, plus an
+     unauthorized Google-CDN request the self-hosted policy exists specifically to avoid. */
   var hasOutfit = document.querySelector('link[href*="Outfit"]') ||
                   document.querySelector('link[href*="outfit"]') ||
+                  document.querySelector('link[href*="fonts.css"]') ||
                   document.querySelector('link[rel="preload"][as="style"][href*="Outfit"]') ||
                   document.querySelector('link[rel="preload"][as="font"][href*="outfit"]');
   if (!hasOutfit) {
