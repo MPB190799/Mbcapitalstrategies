@@ -526,6 +526,13 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   position:absolute;
   top:52%;left:50%;
   width:min(104vh,1060px);
+  /* CLS-Fix 2026-07-14 web-design-agent: 104vh recalculates when mobile browser chrome
+     (address bar) collapses/expands after load, resizing this element mid-session and
+     tripping ::before (inset:-6%) — reproducible 0.25 CLS score on Lighthouse mobile
+     runs (largest single layout shift on the homepage). 104svh = small viewport height,
+     stable regardless of chrome state. Unsupported browsers ignore the invalid unit and
+     keep the vh rule above (progressive enhancement, zero visual change on desktop). */
+  width:min(104svh,1060px);
   aspect-ratio:1/1;
   /* in 3D gekippt — schräger Blick statt frontal (Marco 12.06., verstärkt) */
   transform:translate(-50%,-50%) perspective(1700px) rotateX(var(--tilt,42deg)) rotate(var(--scroll-rot));
