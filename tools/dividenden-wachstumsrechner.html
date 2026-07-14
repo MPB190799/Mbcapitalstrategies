@@ -27,44 +27,103 @@
   <meta name="author" content="Marco Bozem" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Dividenden-Wachstumsrechner",
-    "url": "https://mbcapitalstrategies.com/tools/dividenden-wachstumsrechner.html",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript",
-    "softwareVersion": "2.0",
-    "featureList": "Aktuelle Jahresdividende, Dividendenwachstumsrate, Anlagedauer, Dividenden-Prognose, Wachstumstabelle, Cashflow-Entwicklung, Yield on Cost Projektion",
-    "description": "Kostenloser Rechner: Wie stark wächst dein Dividenden-Cashflow durch jährliche Dividendenerhöhungen?",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    },
-    "author": { "@type": "Person", "name": "Marco Bozem", "jobTitle": "Unabhängiger Investor & Finanz-Analyst", "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295/", "https://www.youtube.com/@MBCapitalStrategies", "https://www.wikidata.org/wiki/Q138571853"] }, "publisher": {"@type": "Organization", "@id": "https://mbcapitalstrategies.com/#organization", "name": "MB Capital Strategies", "url": "https://mbcapitalstrategies.com", "logo": {"@type": "ImageObject", "url": "https://mbcapitalstrategies.com/Logo.webp"}}
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Dividenden-Wachstumsrechner",
+  "url": "https://mbcapitalstrategies.com/tools/dividenden-wachstumsrechner.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "2.0",
+  "featureList": "Aktuelle Jahresdividende, Dividendenwachstumsrate, Anlagedauer, Dividenden-Prognose, Wachstumstabelle, Cashflow-Entwicklung, Yield on Cost Projektion",
+  "description": "Kostenloser Rechner: Wie stark wächst dein Dividenden-Cashflow durch jährliche Dividendenerhöhungen?",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "url": "https://mbcapitalstrategies.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    }
   }
-  </script>
+}
+</script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Dividendenwachstum berechnen",
-    "description": "Berechne in 4 Schritten, wie sich deine Dividende durch jährliches Dividendenwachstum (DGR) über Jahre entwickelt - mit Yield-on-Cost-Effekt.",
-    "totalTime": "PT2M",
-    "supply": [{"@type":"HowToSupply","name":"Aktueller Kaufpreis"},{"@type":"HowToSupply","name":"Aktuelle Dividende"},{"@type":"HowToSupply","name":"Jährliches Dividendenwachstum in %"}],
-    "tool": [{"@type":"HowToTool","name":"Dividendenwachstums-Rechner"}],
-    "step": [
-      {"@type":"HowToStep","position":1,"name":"Kaufpreis eintragen","text":"Trage den Kaufpreis pro Aktie ein. Bei Bestandsposition: dein Einstand. Geplant: aktueller Kurs."},
-      {"@type":"HowToStep","position":2,"name":"Aktuelle Dividende eingeben","text":"Trage die aktuelle Jahresdividende pro Aktie ein."},
-      {"@type":"HowToStep","position":3,"name":"Wachstumsrate wählen","text":"Setze die historische DGR. Realty Income: ~3%, ConocoPhillips: ~5%, MAIN Capital: ~4%."},
-      {"@type":"HowToStep","position":4,"name":"Yield-on-Cost-Verlauf auswerten","text":"Der Rechner zeigt, wie Dividende und YOC Jahr für Jahr wachsen. Eine 4%-Aktie mit 7% DGR erreicht nach 15 Jahren einen YOC von ~11%."}
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Dividendenwachstum berechnen",
+  "description": "Berechne in 4 Schritten, wie sich deine Dividende durch jährliches Dividendenwachstum (DGR) über Jahre entwickelt - mit Yield-on-Cost-Effekt.",
+  "totalTime": "PT2M",
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Aktueller Kaufpreis"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Aktuelle Dividende"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Jährliches Dividendenwachstum in %"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Dividendenwachstums-Rechner"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Kaufpreis eintragen",
+      "text": "Trage den Kaufpreis pro Aktie ein. Bei Bestandsposition: dein Einstand. Geplant: aktueller Kurs."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Aktuelle Dividende eingeben",
+      "text": "Trage die aktuelle Jahresdividende pro Aktie ein."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Wachstumsrate wählen",
+      "text": "Setze die historische DGR. Realty Income: ~3%, ConocoPhillips: ~5%, MAIN Capital: ~4%."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Yield-on-Cost-Verlauf auswerten",
+      "text": "Der Rechner zeigt, wie Dividende und YOC Jahr für Jahr wachsen. Eine 4%-Aktie mit 7% DGR erreicht nach 15 Jahren einen YOC von ~11%."
+    }
+  ]
+}
+</script>
 
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>

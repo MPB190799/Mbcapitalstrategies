@@ -30,47 +30,115 @@
 
   <!-- Schema: WebApplication -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Finanzielle Freiheit Rechner",
-    "alternateName": "Finanziell Frei Rechner",
-    "url": "https://mbcapitalstrategies.com/tools/finanzielle-freiheit-rechner.html",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript",
-    "softwareVersion": "2.0",
-    "featureList": "Startkapital, Monatliche Sparrate, Dividendenrendite, Dividendenwachstum, Monatliche Ausgaben, Abgeltungssteuer, Reinvest-Option, Zieljahr Finanzielle Freiheit, Cashflow-Tabelle",
-    "description": "Kostenloser Finanzielle Freiheit Rechner: Ab welchem Jahr decken deine Nettodividenden deine monatlichen Ausgaben? Mit Reinvest, Sparrate, Dividendenwachstum und Abgeltungssteuer.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    },
-    "author": { "@type": "Person", "name": "Marco Bozem", "jobTitle": "Unabhängiger Investor & Finanz-Analyst", "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295/", "https://www.youtube.com/@MBCapitalStrategies", "https://www.wikidata.org/wiki/Q138571853"] }, "publisher": {"@type": "Organization", "@id": "https://mbcapitalstrategies.com/#organization", "name": "MB Capital Strategies", "url": "https://mbcapitalstrategies.com", "logo": {"@type": "ImageObject", "url": "https://mbcapitalstrategies.com/Logo.webp"}}
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Finanzielle Freiheit Rechner",
+  "alternateName": "Finanziell Frei Rechner",
+  "url": "https://mbcapitalstrategies.com/tools/finanzielle-freiheit-rechner.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "2.0",
+  "featureList": "Startkapital, Monatliche Sparrate, Dividendenrendite, Dividendenwachstum, Monatliche Ausgaben, Abgeltungssteuer, Reinvest-Option, Zieljahr Finanzielle Freiheit, Cashflow-Tabelle",
+  "description": "Kostenloser Finanzielle Freiheit Rechner: Ab welchem Jahr decken deine Nettodividenden deine monatlichen Ausgaben? Mit Reinvest, Sparrate, Dividendenwachstum und Abgeltungssteuer.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "url": "https://mbcapitalstrategies.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    }
   }
-  </script>
+}
+</script>
 
   <!-- Schema: FAQ -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "Finanzielle Freiheit über Dividenden berechnen",
-    "description": "In 5 Schritten ausrechnen, wann deine Dividenden deine monatlichen Lebenshaltungskosten decken - inklusive Sparrate, Reinvest und Abgeltungssteuer.",
-    "totalTime": "PT3M",
-    "supply": [{"@type":"HowToSupply","name":"Startkapital"},{"@type":"HowToSupply","name":"Monatliche Sparrate"},{"@type":"HowToSupply","name":"Dividendenrendite"},{"@type":"HowToSupply","name":"Monatliche Ausgaben"}],
-    "tool": [{"@type":"HowToTool","name":"Finanzielle-Freiheit-Rechner"}],
-    "step": [
-      {"@type":"HowToStep","position":1,"name":"Aktuelle Ausgaben ermitteln","text":"Liste deine monatlichen Fixkosten ehrlich auf - Miete, Versicherungen, Lebensmittel, Mobilität, Freizeit. Das ist dein Cashflow-Ziel für die finanzielle Freiheit."},
-      {"@type":"HowToStep","position":2,"name":"Startkapital eintragen","text":"Trage dein aktuelles Investitionskapital ein. Auch 0 EUR ist ein gültiger Startpunkt."},
-      {"@type":"HowToStep","position":3,"name":"Sparrate festlegen","text":"Bestimme die monatliche Sparrate, die du in Dividendenaktien investierst. Realistisch sind 10-30% des Netto-Einkommens."},
-      {"@type":"HowToStep","position":4,"name":"Erwartete Rendite + Wachstum wählen","text":"Setze Dividendenrendite (typisch 6-8% bei Hard Assets) und jährliches Dividendenwachstum (3-7%). Konservativ rechnen schützt vor Enttäuschung."},
-      {"@type":"HowToStep","position":5,"name":"Zieljahr auswerten","text":"Der Rechner zeigt dir das Jahr, in dem deine Netto-Dividenden (nach 26,375% Abgeltungssteuer) deine monatlichen Ausgaben decken. Bei 50.000 EUR Startkapital, 800 EUR Sparrate und 7% Rendite typisch in 18-25 Jahren."}
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Finanzielle Freiheit über Dividenden berechnen",
+  "description": "In 5 Schritten ausrechnen, wann deine Dividenden deine monatlichen Lebenshaltungskosten decken - inklusive Sparrate, Reinvest und Abgeltungssteuer.",
+  "totalTime": "PT3M",
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Startkapital"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Monatliche Sparrate"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Dividendenrendite"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Monatliche Ausgaben"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Finanzielle-Freiheit-Rechner"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Aktuelle Ausgaben ermitteln",
+      "text": "Liste deine monatlichen Fixkosten ehrlich auf - Miete, Versicherungen, Lebensmittel, Mobilität, Freizeit. Das ist dein Cashflow-Ziel für die finanzielle Freiheit."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Startkapital eintragen",
+      "text": "Trage dein aktuelles Investitionskapital ein. Auch 0 EUR ist ein gültiger Startpunkt."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Sparrate festlegen",
+      "text": "Bestimme die monatliche Sparrate, die du in Dividendenaktien investierst. Realistisch sind 10-30% des Netto-Einkommens."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Erwartete Rendite + Wachstum wählen",
+      "text": "Setze Dividendenrendite (typisch 6-8% bei Hard Assets) und jährliches Dividendenwachstum (3-7%). Konservativ rechnen schützt vor Enttäuschung."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Zieljahr auswerten",
+      "text": "Der Rechner zeigt dir das Jahr, in dem deine Netto-Dividenden (nach 26,375% Abgeltungssteuer) deine monatlichen Ausgaben decken. Bei 50.000 EUR Startkapital, 800 EUR Sparrate und 7% Rendite typisch in 18-25 Jahren."
+    }
+  ]
+}
+</script>
 
   
 

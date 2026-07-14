@@ -31,28 +31,49 @@
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Yield on Cost Rechner – Einstandskurs Rechner",
-    "alternateName": "YOC Rechner",
-    "url": "https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript",
-    "softwareVersion": "2.1",
-    "dateModified": "2026-06-30",
-    "featureList": "Kaufkurs, Aktuelle Dividende, Wachstumsrate, Yield on Cost Berechnung, Jahres-Dividende, Monatlicher Cashflow, YOC-Projektion, Einstandsrendite",
-    "description": "Kostenloser Yield-on-Cost-Rechner (Einstandskurs Rechner) für Dividendeninvestoren – berechne deine persönliche Rendite auf den Kaufkurs, Cashflow monatlich & jährlich.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    },
-    "author": { "@type": "Person", "name": "Marco Bozem", "jobTitle": "Unabhängiger Investor & Finanz-Analyst", "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295/", "https://www.youtube.com/@MBCapitalStrategies", "https://www.wikidata.org/wiki/Q138571853"] }, "publisher": {"@type": "Organization", "@id": "https://mbcapitalstrategies.com/#organization", "name": "MB Capital Strategies", "url": "https://mbcapitalstrategies.com", "logo": {"@type": "ImageObject", "url": "https://mbcapitalstrategies.com/Logo.webp"}}
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Yield on Cost Rechner – Einstandskurs Rechner",
+  "alternateName": "YOC Rechner",
+  "url": "https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "2.1",
+  "dateModified": "2026-06-30",
+  "featureList": "Kaufkurs, Aktuelle Dividende, Wachstumsrate, Yield on Cost Berechnung, Jahres-Dividende, Monatlicher Cashflow, YOC-Projektion, Einstandsrendite",
+  "description": "Kostenloser Yield-on-Cost-Rechner (Einstandskurs Rechner) für Dividendeninvestoren – berechne deine persönliche Rendite auf den Kaufkurs, Cashflow monatlich & jährlich.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "url": "https://mbcapitalstrategies.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    }
   }
-  </script>
+}
+</script>
 
 
 
@@ -476,12 +497,29 @@
   "name": "Yield on Cost (YOC) berechnen — kostenloser Rechner",
   "description": "Berechne deine persönliche Dividendenrendite auf Basis deines Einstiegskurses. YOC zeigt, wie viel deine ursprüngliche Investition heute an Dividende abwirft.",
   "step": [
-    {"@type": "HowToStep", "text": "Kaufkurs deiner Aktie eingeben (Preis zum Kaufzeitpunkt)"},
-    {"@type": "HowToStep", "text": "Aktuelle Jahresdividende pro Aktie eingeben"},
-    {"@type": "HowToStep", "text": "YOC ablesen — automatisch berechnet als Dividende / Kaufkurs × 100"},
-    {"@type": "HowToStep", "text": "10-Jahres-Projektion mit Dividendenwachstum in der Tabelle ablesen"}
+    {
+      "@type": "HowToStep",
+      "text": "Kaufkurs deiner Aktie eingeben (Preis zum Kaufzeitpunkt)"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Aktuelle Jahresdividende pro Aktie eingeben"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "YOC ablesen — automatisch berechnet als Dividende / Kaufkurs × 100"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "10-Jahres-Projektion mit Dividendenwachstum in der Tabelle ablesen"
+    }
   ],
-  "tool": [{"@type": "HowToTool", "name": "YOC Rechner (kostenlos, ohne Anmeldung)"}]
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "YOC Rechner (kostenlos, ohne Anmeldung)"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">

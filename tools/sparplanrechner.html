@@ -28,50 +28,121 @@
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Sparplanrechner – ETF-Sparplan Rechner",
-    "alternateName": "ETF Sparplan Rechner",
-    "url": "https://mbcapitalstrategies.com/tools/sparplanrechner.html",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript",
-    "softwareVersion": "1.0",
-    "dateModified": "2026-06-22",
-    "featureList": "Monatliche Sparrate, Anlagedauer, Index-Auswahl (DAX, S&P 500, Nasdaq-100, MSCI World, EURO STOXX 50), Startkapital, jährliche Sparraten-Dynamik, Endkapital, Eingezahlt, Zinseszins-Gewinn, Jahres-Projektion",
-    "description": "Kostenloser Sparplanrechner für ETF-Sparpläne – berechne dein Endkapital aus monatlicher Sparrate, Anlagedauer und historischer Index-Durchschnittsrendite (DAX, S&P 500, Nasdaq-100, MSCI World).",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" },
-    "author": { "@type": "Person", "name": "Marco Bozem", "jobTitle": "Unabhängiger Investor & Finanz-Analyst", "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295/", "https://www.youtube.com/@MBCapitalStrategies", "https://www.wikidata.org/wiki/Q138571853"] }, "publisher": {"@type": "Organization", "@id": "https://mbcapitalstrategies.com/#organization", "name": "MB Capital Strategies", "url": "https://mbcapitalstrategies.com", "logo": {"@type": "ImageObject", "url": "https://mbcapitalstrategies.com/Logo.webp"}}
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "ETF-Sparplan berechnen — kostenloser Sparplanrechner",
-    "description": "Berechne, wie viel aus deinem monatlichen ETF-Sparplan über die Jahre durch Zinseszins wird.",
-    "step": [
-      {"@type": "HowToStep", "text": "Monatliche Sparrate eingeben (z.B. 250 €)"},
-      {"@type": "HowToStep", "text": "Anlagedauer in Jahren wählen (z.B. 25 Jahre)"},
-      {"@type": "HowToStep", "text": "Index auswählen (DAX, S&P 500, Nasdaq-100, MSCI World) — die historische Durchschnittsrendite wird vorgeschlagen und ist frei anpassbar"},
-      {"@type": "HowToStep", "text": "Endkapital, Einzahlung und Zinseszins-Gewinn ablesen"}
-    ],
-    "tool": [{"@type": "HowToTool", "name": "Sparplanrechner (kostenlos, ohne Anmeldung)"}]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"Wie funktioniert ein Sparplanrechner?","acceptedAnswer":{"@type":"Answer","text":"Ein Sparplanrechner verzinst deine monatliche Sparrate über die Anlagedauer mit einer angenommenen jährlichen Rendite und zeigt per Zinseszins, wie viel Endkapital entsteht. Du gibst Sparrate, Dauer und erwartete Rendite (z.B. historischer Durchschnitt von DAX, S&P 500 oder MSCI World) ein und erhältst Endkapital, Summe der Einzahlungen und den reinen Kursgewinn."}},
-      {"@type":"Question","name":"Welche Rendite sollte ich für DAX, S&P 500 oder MSCI World ansetzen?","acceptedAnswer":{"@type":"Answer","text":"Als langfristige historische Durchschnittswerte (nominal, inklusive reinvestierter Dividenden) werden grob angesetzt: MSCI World und DAX rund 7 % p.a., S&P 500 rund 8 % p.a., Nasdaq-100 rund 10 % p.a. (höher, aber schwankungsstärker), EURO STOXX 50 rund 6 % p.a. Das sind gerundete Vergangenheitswerte und keine Garantie für die Zukunft — rechne zur Sicherheit auch ein konservativeres Szenario."}},
-      {"@type":"Question","name":"Was bringt der Zinseszins beim Sparplan?","acceptedAnswer":{"@type":"Answer","text":"Beim Sparplan werden Kursgewinne und Dividenden im ETF wieder angelegt und verzinsen sich selbst weiter. Über lange Zeiträume übersteigt der Zinseszins-Gewinn oft die Summe deiner Einzahlungen — je länger die Laufzeit, desto stärker der Effekt."}},
-      {"@type":"Question","name":"ETF-Sparplan oder Einzelaktien?","acceptedAnswer":{"@type":"Answer","text":"Ein breiter Index-ETF-Sparplan (z.B. MSCI World) ist die solide Basis für den langfristigen Vermögensaufbau — breit gestreut, günstig, pflegeleicht. Wer darüber hinaus auf laufenden Cashflow setzt, kann mit ausgewählten Dividenden- und Hard-Asset-Aktien eine zusätzliche Ausschüttungs-Schicht aufbauen. Beides schließt sich nicht aus."}}
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sparplanrechner – ETF-Sparplan Rechner",
+  "alternateName": "ETF Sparplan Rechner",
+  "url": "https://mbcapitalstrategies.com/tools/sparplanrechner.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "1.0",
+  "dateModified": "2026-06-22",
+  "featureList": "Monatliche Sparrate, Anlagedauer, Index-Auswahl (DAX, S&P 500, Nasdaq-100, MSCI World, EURO STOXX 50), Startkapital, jährliche Sparraten-Dynamik, Endkapital, Eingezahlt, Zinseszins-Gewinn, Jahres-Projektion",
+  "description": "Kostenloser Sparplanrechner für ETF-Sparpläne – berechne dein Endkapital aus monatlicher Sparrate, Anlagedauer und historischer Index-Durchschnittsrendite (DAX, S&P 500, Nasdaq-100, MSCI World).",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
     ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "url": "https://mbcapitalstrategies.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    }
   }
-  </script>
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "ETF-Sparplan berechnen — kostenloser Sparplanrechner",
+  "description": "Berechne, wie viel aus deinem monatlichen ETF-Sparplan über die Jahre durch Zinseszins wird.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "text": "Monatliche Sparrate eingeben (z.B. 250 €)"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Anlagedauer in Jahren wählen (z.B. 25 Jahre)"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Index auswählen (DAX, S&P 500, Nasdaq-100, MSCI World) — die historische Durchschnittsrendite wird vorgeschlagen und ist frei anpassbar"
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Endkapital, Einzahlung und Zinseszins-Gewinn ablesen"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Sparplanrechner (kostenlos, ohne Anmeldung)"
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert ein Sparplanrechner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein Sparplanrechner verzinst deine monatliche Sparrate über die Anlagedauer mit einer angenommenen jährlichen Rendite und zeigt per Zinseszins, wie viel Endkapital entsteht. Du gibst Sparrate, Dauer und erwartete Rendite (z.B. historischer Durchschnitt von DAX, S&P 500 oder MSCI World) ein und erhältst Endkapital, Summe der Einzahlungen und den reinen Kursgewinn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Rendite sollte ich für DAX, S&P 500 oder MSCI World ansetzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Als langfristige historische Durchschnittswerte (nominal, inklusive reinvestierter Dividenden) werden grob angesetzt: MSCI World und DAX rund 7 % p.a., S&P 500 rund 8 % p.a., Nasdaq-100 rund 10 % p.a. (höher, aber schwankungsstärker), EURO STOXX 50 rund 6 % p.a. Das sind gerundete Vergangenheitswerte und keine Garantie für die Zukunft — rechne zur Sicherheit auch ein konservativeres Szenario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bringt der Zinseszins beim Sparplan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beim Sparplan werden Kursgewinne und Dividenden im ETF wieder angelegt und verzinsen sich selbst weiter. Über lange Zeiträume übersteigt der Zinseszins-Gewinn oft die Summe deiner Einzahlungen — je länger die Laufzeit, desto stärker der Effekt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ETF-Sparplan oder Einzelaktien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein breiter Index-ETF-Sparplan (z.B. MSCI World) ist die solide Basis für den langfristigen Vermögensaufbau — breit gestreut, günstig, pflegeleicht. Wer darüber hinaus auf laufenden Cashflow setzt, kann mit ausgewählten Dividenden- und Hard-Asset-Aktien eine zusätzliche Ausschüttungs-Schicht aufbauen. Beides schließt sich nicht aus."
+      }
+    }
+  ]
+}
+</script>
 
   <!-- ADSENSE -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>

@@ -31,64 +31,74 @@
 
   <!-- ✅ Autor + Organisation Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://mbcapitalstrategies.com/#marcobozem",
-        "name": "Marco Bozem",
-        "givenName": "Marco",
-        "familyName": "Bozem",
-        "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
-        "description": "Marco Bozem ist Gründer von MB Capital Strategies – einer Investment- und Finanzbildungsmarke mit Fokus auf Dividenden, Hard Assets und Cashflow.",
-        "url": "https://mbcapitalstrategies.com/",
-        "image": "https://mbcapitalstrategies.com/Logo.png",
-        "sameAs": [
-          "https://www.linkedin.com/in/marco-bozem-182173295/",
-          "https://www.youtube.com/@mbcapitalstrategies",
-          "https://de.investing.com/members/contributors/268748043/opinion",
-          "https://mbcapitalstrategies.com/"
-        ],
-        "worksFor": { "@id": "https://mbcapitalstrategies.com/#organization" }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://mbcapitalstrategies.com/#organization",
-        "name": "MB Capital Strategies",
-        "url": "https://mbcapitalstrategies.com/",
-        "logo": "https://mbcapitalstrategies.com/Logo.png",
-        "founder": { "@id": "https://mbcapitalstrategies.com/#marcobozem" },
-        "foundingDate": "2025",
-        "foundingLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Laufach",
-            "addressCountry": "DE"
-          }
-        },
-        "description": "MB Capital Strategies ist eine unabhängige Finanz- und Investmentplattform von Marco Bozem mit Fokus auf Dividendenstrategien, Cashflow-Analysen und High-Yield-Sektoren.",
-        "sameAs": [
-          "https://www.linkedin.com/in/marco-bozem-182173295/",
-          "https://www.youtube.com/@mbcapitalstrategies",
-          "https://de.investing.com/members/contributors/268748043/opinion",
-          "https://mbcapitalstrategies.com/"
-        ]
-      },
-      {
-        "@type": "Blog",
-        "@id": "https://mbcapitalstrategies.com/blog/index.html#blog",
-        "name": "MB Capital Strategies Blog",
-        "url": "https://mbcapitalstrategies.com/blog/index.html",
-        "description": "Aktuelle Aktienanalysen, Investment-Thesen & Strategien von MB Capital Strategies.",
-        "publisher": { "@id": "https://mbcapitalstrategies.com/#organization" },
-        "author": { "@id": "https://mbcapitalstrategies.com/#marcobozem" },
-        "inLanguage": "de"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mbcapitalstrategies.com/#marcobozem",
+      "name": "Marco Bozem",
+      "givenName": "Marco",
+      "familyName": "Bozem",
+      "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+      "description": "Marco Bozem ist Gründer von MB Capital Strategies – einer Investment- und Finanzbildungsmarke mit Fokus auf Dividenden, Hard Assets und Cashflow.",
+      "url": "https://mbcapitalstrategies.com/",
+      "image": "https://mbcapitalstrategies.com/Logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/marco-bozem-182173295/",
+        "https://www.youtube.com/@mbcapitalstrategies",
+        "https://de.investing.com/members/contributors/268748043/opinion",
+        "https://mbcapitalstrategies.com/",
+        "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+      ],
+      "worksFor": {
+        "@id": "https://mbcapitalstrategies.com/#organization"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://mbcapitalstrategies.com/#organization",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategies.com/",
+      "logo": "https://mbcapitalstrategies.com/Logo.png",
+      "founder": {
+        "@id": "https://mbcapitalstrategies.com/#marcobozem"
+      },
+      "foundingDate": "2025",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Laufach",
+          "addressCountry": "DE"
+        }
+      },
+      "description": "MB Capital Strategies ist eine unabhängige Finanz- und Investmentplattform von Marco Bozem mit Fokus auf Dividendenstrategien, Cashflow-Analysen und High-Yield-Sektoren.",
+      "sameAs": [
+        "https://www.linkedin.com/in/marco-bozem-182173295/",
+        "https://www.youtube.com/@mbcapitalstrategies",
+        "https://de.investing.com/members/contributors/268748043/opinion",
+        "https://mbcapitalstrategies.com/",
+        "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+      ]
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://mbcapitalstrategies.com/blog/index.html#blog",
+      "name": "MB Capital Strategies Blog",
+      "url": "https://mbcapitalstrategies.com/blog/index.html",
+      "description": "Aktuelle Aktienanalysen, Investment-Thesen & Strategien von MB Capital Strategies.",
+      "publisher": {
+        "@id": "https://mbcapitalstrategies.com/#organization"
+      },
+      "author": {
+        "@id": "https://mbcapitalstrategies.com/#marcobozem"
+      },
+      "inLanguage": "de"
+    }
+  ]
+}
+</script>
 
     <!-- Critical inline CSS for LCP text render (Batch 137) -->
 <style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container,main.container,.container{max-width:960px;margin:0 auto;padding:20px 16px}</style>

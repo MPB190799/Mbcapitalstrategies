@@ -6,6 +6,17 @@
   <meta http-equiv="refresh" content="0;url=https://mbcapitalstrategies.com/insider/">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://mbcapitalstrategies.com/insider/">
+  <script>
+    // UTM-Erhalt bei Redirect (Fix 14.07.2026): meta-refresh verliert Query-String,
+    // JS-Redirect haengt ihn an bevor er weiterleitet (YouTube-Bruecke braucht Attribution).
+    (function () {
+      var target = 'https://mbcapitalstrategies.com/insider/';
+      if (window.location.search) {
+        target += window.location.search;
+      }
+      window.location.replace(target);
+    })();
+  </script>
   <title>Aktien Newsletter Deutsch — MB Capital Insider (Gratis)</title>
   <meta name="description" content="Gratis Aktien-Newsletter auf Deutsch: Shipping, Mining, Energie & Dividenden-Analysen jeden Sonntag direkt ins Postfach. Jetzt kostenlos anmelden.">
   <meta property="og:title" content="Aktien Newsletter Deutsch — MB Capital Insider (Gratis)">
