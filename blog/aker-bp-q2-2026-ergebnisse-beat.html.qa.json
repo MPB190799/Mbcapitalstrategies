@@ -1,19 +1,23 @@
 {
-  "article": "aker-bp-q2-2026-ergebnisse-beat.html",
+  "score": 12,
+  "max": 14,
+  "compliance": "PASS",
   "lang": "de",
-  "ticker": "AKRBP.OL / AKRBF",
-  "generated_by": "blog-generator-subagent",
-  "generated_at": "2026-07-16T00:00:00Z",
-  "content_qa": {
-    "pass": true,
-    "score": "12/14",
-    "notes": "Marco-Voice-Ton, kein AI-Deutsch, Stammtisch-Ton mit Zahlen (Headline-Only gemaess R23), Fakt/These getrennt markiert (Meine Einordnung als eigene These), Disclaimer vorhanden, Autorenbox vorhanden."
-  },
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-16T15:18:09.556Z",
+  "content_sha": "4870d267cb3c065d",
+  "hard_scan": "PASS",
+  "note": "Aker BP Q2 2026 Headline-Only; R23 0 Verstoesse (forbidden numbers 1.15/0.9626/3.1B/521/380-400k/0.6615 absent); factcheck 2+ Quellen verifiziert",
   "factcheck": "pass",
   "numbers_verified_by": "claude",
-  "source": "earnings-radar 2026-07-16 (3-fach) + eigene WebSearch (2x) am 2026-07-16",
+  "independent_review_by": "content-qa-agent",
+  "independent_review_at": "2026-07-16",
+  "independent_review_note": "Unabhaengiges Gate (nicht mehr Selbst-Attest des blog-generator-subagent). Voice PASS (Marco-Ich-Perspektive, kein AI-Deutsch), R23 0 Verstoesse via r23-guard.py + STUFE-3d, alle Claims via eigener WebSearch gegen 2+ Quellen bestaetigt; die gemeldeten Report-Zahlen sind real (EPS $1.15 vs Konsens $0.9626, OCF $3.1 Mrd, Nettogewinn $521 Mio, Guidance 380-400 mboepd, Dividende $0.6615/Aktie) und im sichtbaren Text KORREKT ausgeschlossen; nur die erlaubte Dividenden-Wachstumspolitik (min 5%/Jahr, 2026 +5% ggue 2025) steht drin.",
+  "originally_generated_by": "blog-generator-subagent",
+  "source": "earnings-radar 2026-07-16 (3-fach) + eigene WebSearch (content-qa) am 2026-07-16",
   "verification": [
-    {"claim": "Aker BP Q2 2026 EPS Beat vs Konsens", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html", "gurufocus.com/news/8960354"]},
+    {"claim": "Aker BP Q2 2026 EPS Beat vs Konsens", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html", "gurufocus.com/news/8959059"]},
     {"claim": "Berichtstermin 15.07.2026", "verdict": "VERIFIED", "sources": ["prnewswire.com/news-releases/aker-bp-second-quarter-2026-results-302825976.html", "stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html"]},
     {"claim": "Dividende unveraendert bestaetigt, Politik min. 5% Wachstum p.a., 2026 +5% ggue. 2025", "verdict": "VERIFIED", "sources": ["tipranks.com/news/company-announcements/aker-bp-sets-second-quarter-2026-dividend-payout", "gurufocus.com/news/8959059"]},
     {"claim": "Record operativer Cashflow", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html", "gurufocus.com/news/8960354"]},
@@ -22,8 +26,8 @@
   ],
   "r23_gate": {
     "checked": true,
-    "tool": "scripts/r23-guard.py --files",
-    "result": "0 VERSTOESSE (verifiziert 2026-07-16 nach Fix: 'EPS-Beat' zu 'Gewinn-Beat' geaendert wegen HTML-attribut-Digit-Falsepositiv)"
+    "tool": "scripts/r23-guard.py --files + content-qa STUFE-3d",
+    "result": "0 VERSTOESSE (independent verify 2026-07-16)"
   },
-  "excluded_numbers_r23": ["EPS $1.15", "Konsens $0.9626", "operativer Cashflow $3.1 Mrd (nur qualitativ als Record erwaehnt)", "Nettogewinn $521 Mio", "Produktionsguidance 380000-400000 boe/d (nur qualitativ als angehoben+verengt)", "Dividende $0.6615/Aktie (nur Politik-Prozentsatz 5% als Guidance genannt, kein Quartalsbetrag)"]
+  "excluded_numbers_r23": ["EPS $1.15", "Konsens $0.9626", "operativer Cashflow $3.1 Mrd (nur qualitativ als Record)", "Nettogewinn $521 Mio", "Produktionsguidance 380000-400000 boe/d (nur qualitativ als angehoben+verengt)", "Dividende $0.6615/Aktie (nur Politik-Prozentsatz 5% als Guidance genannt)"]
 }
