@@ -427,8 +427,8 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 /* Cardinal hover → smooth glow transition (was instant jump — now 400ms ease) */
 .compass-backdrop::before{transition:opacity .4s ease,transform .4s ease}
 #hero.compass-cardinal-hover .compass-backdrop::before{opacity:1!important;transform:scale(1.16)!important}
-/* Gold particles — z-index:2 puts them ABOVE hero scrim (::before z-index:1), below content (z-index:6) */
-.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent);z-index:2;animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
+/* Gold particles — glow makes them read as embers, not dust (visual audit v1.5) */
+.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent-bright);box-shadow:0 0 6px 1px rgba(212,175,55,.8),0 0 14px 4px rgba(212,175,55,.35);z-index:2;animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
 @keyframes hpFloat{0%{opacity:0;transform:translateY(0) scale(0)}8%{opacity:var(--hp-o,.5);transform:translateY(-12px) scale(1)}90%{opacity:calc(var(--hp-o,.5)*.25);transform:translateY(var(--hp-h,-110px)) scale(.4)}100%{opacity:0;transform:translateY(var(--hp-h,-120px)) scale(0)}}
 @media(prefers-reduced-motion:reduce){.hero-particle,.compass-ring{display:none!important}}
 /* CTA button shimmer */
@@ -528,6 +528,16 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
     <button class="nav-hamburger" id="navHamburger" aria-label="Navigation öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<!-- CLS-Fix 2026-07-17 web-design-agent: die Sale-Bar-Sichtbarkeit (Self-Expiry) + der
+     Header-top-Offset-Sync liefen bisher als Scripte am Ende von <body> (~1300 Zeilen tiefer),
+     also NACHDEM Header+Hero bereits gemalt waren -- Live-CWV-Snapshot (17.07., mobil) zeigt
+     CLS 0.286 auf der DE-Startseite (Schwelle 0.1), groesster Einzel-Shift der Seite. Beide
+     Scripte direkt hinter </header> (vor jedem weiteren Content) ausfuehren loest Bar-Sichtbarkeit
+     + Header-Versatz auf, BEVOR der Browser den ersten sichtbaren Frame malt -- kein nachtraeglicher
+     Sprung mehr. Keine Verhaltensaenderung, nur Ausfuehrungszeitpunkt. -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
+<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
 
 <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
   <div class="mob-label">Navigation</div>
@@ -1858,13 +1868,9 @@ In deinem <em>Posteingang.</em></h2>
 })();
 </script>
 
-<!-- InvestingPro Sale Self-Expiry: zeigt .ip-sale im Juli-Fenster, blendet .ip-evergreen aus -->
-<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
-<!-- CRO-Fix 2026-07-03 web-design-agent: .header ist position:fixed;top:0 und ueberlappte die
-     Sale-Bar (ebenfalls oben, in-flow) sobald diese sichtbar war — Gold-Trennlinie der Sale-Bar
-     lief mitten durch Logo+Nav-Text (live auf Desktop verifiziert). Fix: Header wird per JS um die
-     tatsaechliche Sale-Bar-Hoehe nach unten versetzt, solange die Bar sichtbar ist. -->
-<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
+<!-- InvestingPro Sale Self-Expiry + Header-Offset-Sync: verschoben 2026-07-17 web-design-agent
+     nach direkt hinter </header> (siehe CLS-Fix-Kommentar dort) -- lief hier vorher NACH dem
+     ersten Paint und verursachte einen 0.286-CLS-Sprung (Lighthouse mobil, Schwelle 0.1). -->
 
 
 <!-- LCP-Fix 2026-07-10 web-design-agent: JSON-LD moved from <head> to end of <body> -- Schema.org does not require head placement, Google reads JSON-LD anywhere in DOM. Removes ~7.7KB from critical head-parse path (see LCP-fix-plan Massnahme 1). -->
