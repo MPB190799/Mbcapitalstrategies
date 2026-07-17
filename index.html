@@ -381,6 +381,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   /* Touch-targets P0: lang-switcher + theme-btn ≥44px on mobile (was ~22px / 34px) */
   .lang-flag{min-height:44px;min-width:44px;padding:0 12px;justify-content:center;box-sizing:border-box}
   .theme-btn{width:44px;height:44px}
+  /* CLS-Fix 2026-07-17 web-design-agent: Lighthouse mobile (live) attributed the ENTIRE
+     CLS=0.286 score to a single shift of .hero-content (boundingRect height=657px @ 372px
+     viewport). Root network trigger correlates with a web-font network request firing during
+     the async ad/consent bootstrap window (deferred AdSense+CMP load already in place per
+     LCP-Fix 2026-07-13) -- outside our control to eliminate the network event itself without
+     touching consent/ad scripts (compliance-sensitive, out of scope for a CSS fix). Reserving
+     the measured content height from first paint neutralizes the visible reflow regardless of
+     which async script triggers it. Buffer +40px for text-length variance (issue number/date).
+     Verify: scripts/fetch-cwv.py de_home CLS before/after. */
+  .hero-content{min-height:697px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
