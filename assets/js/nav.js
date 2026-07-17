@@ -487,7 +487,7 @@
     bio.className = 'author-box author-bio-inject';
     bio.innerHTML =
       '<a href="/ueber-marco-bozem/" style="flex-shrink:0;">' +
-        '<img src="/marco.jpg" alt="Marco Bozem – MB Capital Strategies"' +
+        '<img src="/marco.webp" alt="Marco Bozem – MB Capital Strategies"' +
           ' width="62" height="62" loading="lazy">' +
       '</a>' +
       '<div class="author-info">' +
