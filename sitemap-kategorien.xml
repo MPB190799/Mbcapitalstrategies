@@ -14,11 +14,6 @@
     <priority>0.95</priority>
   </url>
 
-  <url>
-    <loc>https://mbcapitalstrategies.com/shipping-aktien/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
 
   <url>
     <loc>https://mbcapitalstrategies.com/energie-aktien/</loc>
@@ -54,13 +49,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://mbcapitalstrategies.com/rohstoffe/kohle-superzyklus.html</loc>
-    <lastmod>2026-06-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
   <url>
     <loc>https://mbcapitalstrategies.com/rohstoffe/uran-superzyklus.html</loc>
     <lastmod>2026-05-14</lastmod>
