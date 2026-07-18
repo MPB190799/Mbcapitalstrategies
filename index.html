@@ -65,6 +65,37 @@
        ohne JS — betrifft 0% der normalen (JS-aktiven) Besucher, schliesst nur die Lücke. -->
   <noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style></noscript>
 
+  <!-- CRO/Resilience-Fix 2026-07-19 web-design-agent: Live-Audit (Playwright Full-Page-Screenshot)
+       zeigte riesige leere Schwarzflächen auf der Startseite — die .reveal/.sr-Observer-Registrierung
+       (Zeile ~1594, im grossen gemeinsamen Haupt-Script) wird NIE erreicht, falls IRGENDEINE frühere
+       Zeile in diesem Block einen Fehler wirft. Clarity DE meldet ScriptErrorCount bei 18,64% der
+       Sessions (11 betroffene Pageviews/59) — genau diese Fehlerklasse. GA4: Engagement-Rate nur
+       34,6% (DE)/29,4% (EN), sehr kurze Sessions — passt zum Muster "Seite wirkt leer -> Sofort-
+       Absprung". Der Noscript-Fallback oben deckt nur "JS komplett aus" ab, nicht "JS läuft, bricht
+       aber vorher ab". Fix: eigenständiges, fehlerisoliertes Script (eigenes try/catch, unabhängig
+       vom Hauptscript) registriert selbst einen Reveal-Observer UND erzwingt nach 2,5s harte
+       Sichtbarkeit für alles, was noch nicht sichtbar ist (Timeout-Failsafe). Im Normalfall gewinnt
+       der Haupt-Observer zuerst (0 visuelle Änderung) — reines Resilienz-Netz gegen Content-Verlust
+       bei Script-Fehlern anderswo auf der Seite. -->
+  <script>
+  (function(){
+    function reveal(el){ if(el) el.classList.add('is-visible','visible'); }
+    try {
+      if ('IntersectionObserver' in window) {
+        var fio = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if (e.isIntersecting) { reveal(e.target); fio.unobserve(e.target); } });
+        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+        document.addEventListener('DOMContentLoaded', function(){
+          try { document.querySelectorAll('.reveal, .sr').forEach(function(el){ fio.observe(el); }); } catch(e2) {}
+        });
+      }
+    } catch(err) {}
+    setTimeout(function(){
+      try { document.querySelectorAll('.reveal:not(.is-visible), .sr:not(.visible)').forEach(reveal); } catch(err) {}
+    }, 2500);
+  })();
+  </script>
+
   <title>Dividendenaktien mit ≥8% YOC – Shipping, Mining, Energie</title>
   <meta name="description" content="MB Capital Strategies: Dividendenaktien-Analysen mit YOC ≥8% — Shipping, Mining, Energie, REITs. Echtes Depot, kostenloser Sonntags-Newsletter. Von Marco Bozem.">
   <link rel="canonical" href="https://mbcapitalstrategies.com/">
