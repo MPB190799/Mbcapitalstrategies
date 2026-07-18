@@ -43,8 +43,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 .yt-lite .yt-play svg{width:28px;height:28px;fill:#fff}
 .yt-lite .yt-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.8rem;padding:18px 14px 10px;font-family:inherit}
 </style>
-<!-- Preload LCP image: YT thumbnail above-fold (web-design-agent 2026-06-11) -->
-<link rel="preload" as="image" href="https://img.youtube.com/vi/jhJB7qIfN3k/hqdefault.jpg" fetchpriority="high">
+<!-- LCP-Fix 2026-07-18 web-design-agent: YT-Thumbnail-Preload entfernt — Seite ist seit Batch-166 (11.06.) um Author-Box + 2 Info-Boxen gewachsen, Video-Thumb ist NICHT mehr above-the-fold (verifiziert Desktop 1440px + Mobile 390px: nur Text bis zur Kurzfassungs-Box sichtbar). Der erzwungene fetchpriority=high-Preload eines externen img.youtube.com-Assets konkurrierte um Bandbreite mit echten kritischen Ressourcen und war die wahrscheinliche Ursache für LCP=19s. -->
 <!-- Full stylesheet non-blocking (below-fold styles) -->
 <link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -349,7 +348,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
   <p>Hier findest du meine komplette Videoanalyse zu BHP:</p>
 
   <div class="yt-lite" data-id="jhJB7qIfN3k" data-title="BHP Aktie Analyse 2025 — Dividende, Kupfer &amp; Cashflow" role="button" tabindex="0" aria-label="Video abspielen: BHP Aktie Analyse 2025">
-    <img class="yt-thumb" src="https://img.youtube.com/vi/jhJB7qIfN3k/hqdefault.jpg" alt="BHP Aktie Analyse 2025 Thumbnail" width="480" height="360" fetchpriority="high" decoding="async">
+    <img class="yt-thumb" src="https://img.youtube.com/vi/jhJB7qIfN3k/hqdefault.jpg" alt="BHP Aktie Analyse 2025 Thumbnail" width="480" height="360" loading="lazy" decoding="async">
     <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
     <div class="yt-label">BHP Aktie Analyse 2025 — Dividende, Kupfer &amp; Cashflow</div>
   </div>
