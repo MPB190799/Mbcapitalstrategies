@@ -771,58 +771,58 @@
   </div>
 </div>
 <script>
-(function(){{
+(function(){
   var bar = document.getElementById('mb-sticky-cta');
 
-  function mbStickySetBodyPad(){{
-    if(!bar || bar.style.display === 'none') {{
+  function mbStickySetBodyPad(){
+    if(!bar || bar.style.display === 'none') {
       document.body.style.paddingBottom = '';
-    }} else {{
+    } else {
       document.body.style.paddingBottom = bar.offsetHeight + 'px';
-    }}
-  }}
+    }
+  }
 
-  window.mbStickyDismiss = function(){{
+  window.mbStickyDismiss = function(){
     bar.style.display = 'none';
     localStorage.setItem('mbctadismissed','1');
     document.body.style.paddingBottom = '';
     var cb = document.getElementById('cookie-banner');
     if(cb) cb.style.bottom = '0';
-  }};
+  };
 
-  if(localStorage.getItem("mbctadismissed")){{
+  if(localStorage.getItem("mbctadismissed")){
     bar.style.display = 'none';
-  }} else {{
-    document.addEventListener('DOMContentLoaded', function(){{
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
       mbStickySetBodyPad();
       var cb = document.getElementById('cookie-banner');
-      if(cb && bar && bar.style.display !== 'none'){{
+      if(cb && bar && bar.style.display !== 'none'){
         cb.style.bottom = bar.offsetHeight + 'px';
-      }}
-    }});
-    window.addEventListener('load', function(){{
+      }
+    });
+    window.addEventListener('load', function(){
       mbStickySetBodyPad();
       var cb = document.getElementById('cookie-banner');
-      if(cb && bar && bar.style.display !== 'none'){{
+      if(cb && bar && bar.style.display !== 'none'){
         cb.style.bottom = bar.offsetHeight + 'px';
-      }}
-    }});
+      }
+    });
     window.addEventListener('resize', mbStickySetBodyPad);
     mbStickySetBodyPad();
-  }}
+  }
 
   var ENDPOINT="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
-  window.mbStickySubscribe=function(){{
+  window.mbStickySubscribe=function(){
     var el=document.getElementById("mb-sticky-email"),msg=document.getElementById("mb-sticky-msg");
     var email=el?el.value.trim():"";
-    if(!email||!email.includes("@")){{if(msg){{msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte gueltige E-Mail eingeben.";}}return;}}
-    if(msg){{msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}}
-    fetch(ENDPOINT,{{method:"POST",headers:{{"Content-Type":"application/json"}},body:JSON.stringify({{email:email}})}})
-    .then(function(r){{return r.json();}})
-    .then(function(d){{if(msg){{msg.style.display="block";if(d.ok){{msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}}else{{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}}}}
-    ).catch(function(){{if(msg){{msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Spaeter nochmal versuchen.";}}}}); 
-  }};
-}})();
+    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte gueltige E-Mail eingeben.";}return;}
+    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}
+    fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json();})
+    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}
+    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Spaeter nochmal versuchen.";}}); 
+  };
+})();
 </script>
 
 <!-- AdSense nach LCP geladen — verhindert dass Google Funding Choices CMP Hero-Render blockiert -->
