@@ -1,0 +1,12 @@
+{
+  "score": 14,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-18T16:55:18.975Z",
+  "content_sha": "d3c336b66519bbe2",
+  "hard_scan": "PASS",
+  "note": "Kupfer-2035 DE Blog: 14/14 Voice PASS, Compliance PASS (CapTrader-Blackout gehalten, mbcapital3 DE korrekt), alle Fakten 2-Quellen-ledger-verifiziert (kupfer-macro-facts.json VERIFIED), r23-approved:marco, hreflang DE-EN korrekt, YT-Embed wTA8lfZBICg, Disclaimer 5x vorhanden, AdSense DE aktiv"
+}
