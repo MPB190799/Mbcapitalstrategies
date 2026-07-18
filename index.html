@@ -1477,17 +1477,14 @@ In deinem <em>Posteingang.</em></h2>
   </div>
 </section>
 
-<!-- ADSENSE-BOTTOM-MULTIPLEX -->
-<!-- CWV-Fix 2026-06-19 web-design-agent: autorelaxed-Format reserviert bei Nicht-Auslieferung einen
-     leeren Block (oft 250–600px Leerraum, sichtbar als schwarze Fläche im Seitenaudit).
-     min-height:0 + overflow:hidden verhindert CLS-Leerraum; Slot liefert bei Auslieferung weiter. -->
-<div style="margin:40px auto;max-width:1100px;padding:0 20px;min-height:0;overflow:hidden">
-<ins class="adsbygoogle" style="display:block;margin:32px auto"
-     data-ad-client="ca-pub-7097302643579933"
-     data-ad-slot="3778191657"
-     data-ad-format="autorelaxed"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+<!-- ADSENSE-BOTTOM-MULTIPLEX ENTFERNT 2026-07-18 web-design-agent (CRO/Trust-Fix):
+     "autorelaxed" Matched-Content-Format lieferte auf der Homepage (YMYL, direkt vor Footer,
+     hinter der §06 Newsletter-Funnel-Section) themenfremde "Mehr entdecken"-Links (u.a.
+     "Mexikanische Küche", "Übersetzungs-Tools") — verifiziert live via Playwright-Snapshot.
+     Verstoss gegen Werbe-Platzierung-Regel (CLAUDE.md, dezent/nie aufdringlich) auf der
+     wichtigsten Conversion-Seite der Domain. Rueckbau statt Symptome kaschieren (R "zurückbauen
+     + eskalieren"). In-article-Unit weiter oben (Slot 1212067635, nach §04 Audience) bleibt --
+     dort waren die Matched-Content-Themen fachlich relevant (Öl/Gas, Energie, Bergbau). -->
 
 </main>
 
