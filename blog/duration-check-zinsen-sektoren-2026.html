@@ -210,6 +210,37 @@
 <ins class="adsbygoogle" style="display:block;margin:24px 0" data-ad-client="ca-pub-7097302643579933" data-ad-slot="1212067635" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
+
+<!-- MB Capital Insider — Growth CTA (Blog-Mitte, CF Worker) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"blog-mid",method:"double-opt-in"});}}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+<!-- END Growth CTA -->
+
 <h2>Warum das Muster mal zündet — und mal nicht</h2>
 <p>Zinsen runter ist gut für Biotech, Zinsen hoch ist Gift — klingt simpel, ist es aber nicht. 2019 hat die Fed dreimal leicht gesenkt (die sogenannten Insurance Cuts). Ergebnis: Der XBI legte 32,56 Prozent aufs Jahr zu. Volltreffer. 2024 senkte die Fed im September zum ersten Mal wieder — nach derselben Logik hätte Biotech durchstarten müssen. Tatsächliches Ergebnis fürs Gesamtjahr: plus 1,01 Prozent. Ein kurzer Spike bei der Senkung, dann schloss der Index ungefähr dort, wo er das Jahr begonnen hatte, bei rund 100 Dollar.</p>
 <p>Der Unterschied ist Timing und Erwartung, nicht das Ereignis selbst. Das reale Muster: Biotech läuft in den Monaten VOR der ersten Zinssenkung am besten, wenn der Markt sie einpreist. Direkt danach kommt oft rund einen Monat lang eine Underperformance — Sell-the-News. Erst über die folgenden 6 bis 12 Monate legen typischerweise 20 bis 30 Prozent obendrauf. Und damit klar ist, dass der Zins nicht der einzige Hebel ist: 2025 lief der XBI plus 35 Prozent (plus 75 Prozent vom April-Tief aus) — komplett ohne eine einzige Zinssenkung. Andere Treiber hatten übernommen. Wer stur der Schlagzeile "Fed senkt" hinterherkauft, kauft damit oft genau den Sell-the-News-Moment. Das Muster zu kennen heißt, das Timing zu verstehen, nicht der Meldung hinterherzurennen.</p>
