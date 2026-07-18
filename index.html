@@ -799,6 +799,16 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   .hero-sub{margin-bottom:8px}
   .hero-trust{gap:18px;margin:6px 0;padding:2px 0}
   .hero-trust .trust-item{min-width:90px}
+  /* CRO 2026-07-18 web-design-agent: live Playwright audit (390x844) shows the readability-scrim
+     ellipse (.hero::before, centered on the H1 at 50%/50%) fades to near-0 by the time it reaches
+     the hero-trust row further down in the shorter mobile hero — "185+"/"8"/"YOC 6,93%" sit on the
+     brightest part of the compass face with only text-shadow (2026-07-05 fix) for contrast, no
+     background scrim. Extends the ellipse taller+lower on mobile only so the trust-stat row gets the
+     same dark backdrop the headline already has. Desktop untouched (ellipse there already clears the
+     trust row due to a taller hero). Zero layout/CLS impact — background-only. */
+  .hero::before{background:
+    radial-gradient(ellipse 60% 74% at 50% 46%,rgba(12,11,9,.86),rgba(12,11,9,.42) 60%,rgba(12,11,9,0) 88%),
+    linear-gradient(180deg,rgba(12,11,9,.55) 0%,transparent 18%,transparent 78%,var(--bg) 100%)}
   .hero-ctas{gap:14px}
   .compass-backdrop{width:130vw;opacity:.22}
   .compass-cardinals a small{display:none}
