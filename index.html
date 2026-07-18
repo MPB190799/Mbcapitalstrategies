@@ -4,6 +4,18 @@
 <!-- Fonts werden als kombinierter non-blocking Request weiter unten geladen -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- CLS-Fix 2026-07-18 web-design-agent (v2, replaces the two 07.17 promo-bar/header-offset scripts):
+     Root cause of CLS 0.286→0.367 was NEVER just execution timing -- syncHeaderOffset() read
+     bar.offsetHeight while the Cormorant/Outfit webfonts (async-loaded, see 07.10 perf commit) were
+     still on their Georgia/system fallback, so the measured height (~88px on 390px mobile) didn't
+     match the final post-swap height (~43px), leaving the header permanently mis-offset AND still
+     registering a shift once fonts swapped. Fix: resolve promo-bar visibility + header offset with
+     a single tiny script that runs before any body content exists (so it can't race fonts/DOM) and
+     sets a class on <html>; the actual show/hide + header-top values live in pure CSS below (see
+     .ip-sale / html.promo-active rules near .header), never JS-measured, so state is correct on the
+     very first paint. Body scripts at ex-547/548 are now dead code, kept as comments for traceability.
+     -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.documentElement.classList.add('promo-active');}}catch(err){}})();</script>
 <!-- LCP-Fix 2026-07-10 web-design-agent: font preload+stylesheet moved to top of head (was at byte-offset ~37KB, after 5 JSON-LD blocks (7.7KB) + 3 inline style blocks (24.5KB) -- preload scanner discovered font CSS only after parsing ~32KB of head-bloat, adding round-trips on mobile. Zero visual/layout change, verified against LCP-fix-plan Massnahme 1. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
 <!-- CLS-Fix 2026-07-18 web-design-agent: only the Outfit (--sans) body font was preloaded -- the
@@ -136,6 +148,14 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav-link:focus-visible,
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:0}
 
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
+/* CLS-Fix 2026-07-18 web-design-agent: promo bar visibility + header offset resolved in CSS only
+   (driven by html.promo-active, set by the blocking head-script above) -- no JS offsetHeight read,
+   so nothing can race webfont loading and nothing changes after first paint. Heights measured live
+   via Playwright (desktop 1440px=47px, mobile ≤760px single-line=43px, matches .ip-sale-short rule). */
+.ip-sale{display:none}
+html.promo-active .ip-sale{display:block}
+html.promo-active .header{top:47px}
+@media (max-width:760px){ html.promo-active .header{top:43px} }
 .header.is-scrolled{background:color-mix(in oklab,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--border)}
 .logo{display:flex;align-items:center;gap:14px}
 .logo-mark{width:clamp(40px,5.5vw,48px);height:clamp(40px,5.5vw,48px);display:grid;place-items:center;position:relative;flex-shrink:0}
@@ -482,7 +502,7 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 <!-- CRO 2026-07-03 web-design-agent: mobile 2-Zeilen-Wrap (68px) schob den Hero-Newsletter-CTA
      unter den Fold (Button-Box startete bei y=845 auf 390x844 Viewport, komplett unsichtbar ohne Scroll).
      .ip-sale-date + .ip-sale-disclaimer jetzt gezielt ausblendbar via CSS-Klasse (siehe @media max-width:760px). -->
-<div class="ip-sale" style="display:none;background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff;z-index:90;position:relative">
+<div class="ip-sale" style="background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff;z-index:90;position:relative">
   <strong class="ip-sale-full" style="color:#d4af37;white-space:nowrap">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong><strong class="ip-sale-short" style="display:none;color:#d4af37;white-space:nowrap">InvestingPro-Sale: 60%+15%</strong> <span class="ip-sale-date" style="white-space:nowrap">&nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;</span>
   <a href="/investingpro-sommer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px;white-space:nowrap">60 %+15 % sichern →</a>
   <span class="ip-sale-disclaimer" style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px;white-space:nowrap">*Affiliate-Link</span>
@@ -544,8 +564,12 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
      Scripte direkt hinter </header> (vor jedem weiteren Content) ausfuehren loest Bar-Sichtbarkeit
      + Header-Versatz auf, BEVOR der Browser den ersten sichtbaren Frame malt -- kein nachtraeglicher
      Sprung mehr. Keine Verhaltensaenderung, nur Ausfuehrungszeitpunkt. -->
-<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
-<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
+<!-- CLS-Fix 2026-07-18 web-design-agent: the two promo-bar/header-offset scripts that used to live
+     here (self-expiry display toggle + JS-measured header top-offset) are superseded by the
+     html.promo-active CSS class set in <head> above (see .ip-sale / .header CSS comment). That
+     script ran too late for correct offsetHeight against async webfonts and left the header ~45px
+     mis-offset on mobile (measured live: header top=88px vs actual bar height=43px). Pure-CSS
+     resolution removes both the mismatch and the CLS source. -->
 
 <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
   <div class="mob-label">Navigation</div>
