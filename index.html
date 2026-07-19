@@ -1179,12 +1179,19 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
      Regel knowledge/design-style-guide.md §Werbe-Platzierung. Homepage trägt 2 dezente Units. -->
 
 <!-- ══════════ ASSETS ══════════ -->
-<section id="assets">
+<section id="assets" data-no-google-auto-placements="true">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">§02 · Hard Assets</span>
       <h2 class="display section-title">Vier Sektoren. <em>Ein Prinzip.</em></h2>
     </div>
+    <!-- data-no-google-auto-placements 19.07.2026 web-design-agent: verifiziert via Playwright, dass
+         Googles Auto-Ads-"autorelaxed"-Matched-Content dynamisch client-seitig THEMENFREMDE Links
+         ("Mexikanische Küche", "Wörterbücher und Enzyklopädien") direkt INS <a class="asset">-Element
+         injizierte (verschachtelter interaktiver Inhalt, YMYL-Trust-Bruch auf der wichtigsten
+         Homepage-Sektion). Google-dokumentierter Exclusion-Mechanismus (support.google.com/adsense/answer/9183363)
+         schützt diesen Bereich vor jeglicher Auto-Ads-Platzierung, ohne die manuelle in-article-Unit
+         andernorts (Slot 1212067635) anzutasten. Gleiche Fehlerklasse wie der Bottom-Multiplex-Fix vom 18.07. -->
     <div class="assets-grid reveal">
       <a href="/shipping/" class="asset">
         <div>
