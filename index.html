@@ -845,6 +845,15 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   .hero-sub{margin-bottom:8px}
   .hero-trust{gap:18px;margin:6px 0;padding:2px 0}
   .hero-trust .trust-item{min-width:90px}
+  /* CRO 2026-07-19 web-design-agent: live Playwright audit (390x844) shows the "8 KOSTENLOSE
+     RECHNER" stat still unreadable — it sits directly over the brightest part of the compass
+     face/needle (near-white dial), where the 2026-07-05 text-shadow and 2026-07-18 scrim-ellipse
+     extension both fall short because that spot is simply too bright, independent of ellipse
+     position. Instead of chasing the moving compass brightness again, give .hero-trust itself a
+     flat semi-opaque backdrop on mobile — guarantees contrast for all 3 stats regardless of what
+     rotates behind them. No padding/margin change → zero height delta → zero CLS, and the
+     carefully-tuned above-the-fold newsletter-button spacing (07-03 fix) is untouched. */
+  .hero-trust{background:rgba(12,11,9,.62);border-radius:10px}
   /* CRO 2026-07-18 web-design-agent: live Playwright audit (390x844) shows the readability-scrim
      ellipse (.hero::before, centered on the H1 at 50%/50%) fades to near-0 by the time it reaches
      the hero-trust row further down in the shorter mobile hero — "185+"/"8"/"YOC 6,93%" sit on the
