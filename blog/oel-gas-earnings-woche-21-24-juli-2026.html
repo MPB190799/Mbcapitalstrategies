@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+
+  <title>Öl-Earnings-Woche 21.–24. Juli: 5 Berichte, Brent $86</title>
+  <meta name="description" content="Vår Energi, Equinor, TotalEnergies, Eni, PM & VZ berichten binnen 4 Tagen — Brent bei ~$86 durch Hormuz-Prämie. Kalender, Einordnung, worauf ich achte.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Marco Bozem">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/oel-gas-earnings-woche-21-24-juli-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/oel-gas-earnings-woche-21-24-juli-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/blog/oil-gas-earnings-week-july-21-24-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/oel-gas-earnings-woche-21-24-juli-2026.html">
+  <meta property="og:title" content="Öl-Earnings-Woche 21.–24. Juli: 5 Berichte, Brent $86">
+  <meta property="og:description" content="Vår Energi, Equinor, TotalEnergies, Eni, PM & VZ berichten binnen 4 Tagen — Brent bei ~$86 durch Hormuz-Prämie. Kalender, Einordnung, worauf ich achte.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-energy.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/oel-gas-earnings-woche-21-24-juli-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Öl-Earnings-Woche 21.–24. Juli: 5 Berichte, Brent $86">
+  <meta name="twitter:description" content="Vår Energi, Equinor, TotalEnergies, Eni, PM & VZ berichten binnen 4 Tagen — Brent bei ~$86 durch Hormuz-Prämie. Kalender, Einordnung, worauf ich achte.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-energy.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Critical inline CSS for LCP text render -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+      gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Öl- und Gas-Earnings-Woche 21.–24. Juli 2026: 5 Berichte, Brent bei $86 und die Hormuz-Prämie",
+  "description": "Vår Energi (21.07.), Philip Morris & Equinor (22.07.), TotalEnergies (23.07.), Eni & Verizon (24.07.) berichten binnen 4 Tagen — parallel läuft die DSX/GNK-Übernahmefrist aus. Kalender, Makro-Einordnung, worauf ich bei jedem Report achte.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/oel-gas-earnings-woche-21-24-juli-2026.html",
+  "datePublished": "2026-07-19",
+  "dateModified": "2026-07-19",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-energy.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "Upstream Öl & Gas",
+  "wordCount": 1290,
+  "keywords": [
+    "Earnings-Woche Juli 2026",
+    "Vår Energi Q2",
+    "Equinor Q2 2026",
+    "TotalEnergies Q2 2026",
+    "Eni Q2 2026",
+    "Hormuz Ölpreis",
+    "Brent Preisrallye",
+    "Diana Shipping Genco",
+    "Öl- und Gasaktien",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Öl- und Gas-Earnings-Woche 21.–24. Juli 2026",
+      "item": "https://mbcapitalstrategies.com/blog/oel-gas-earnings-woche-21-24-juli-2026.html"
+    }
+  ]
+}
+</script>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+    .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .update-badge{display:inline-block;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);color:#d4af37;font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:8px}
+    .calendar-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.92rem}
+    .calendar-table th{text-align:left;padding:10px 12px;color:#d4af37;border-bottom:2px solid rgba(212,175,55,.3);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+    .calendar-table td{padding:10px 12px;border-bottom:1px solid rgba(212,175,55,.1)}
+  </style>
+
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+  <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}[id^="google_anchor"],.gad-anchor-container{display:none!important}ins.adsbygoogle[data-anchor-shown="true"]{display:none!important}</style>
+</head>
+
+<body>
+
+<nav class="nav"></nav>
+
+<nav class="breadcrumbs">
+  <a href="/">Start</a> &rsaquo;
+  <a href="/blog/">Blog</a> &rsaquo;
+  <span>Öl-Earnings-Woche 21.–24. Juli 2026</span>
+</nav>
+
+<section class="container">
+
+<span class="update-badge">Vorschau &mdash; Stand 19.07.2026, 5 Berichte noch offen</span>
+
+<h1>Öl- und Gas-Earnings-Woche 21.&ndash;24. Juli 2026: 5 Berichte in 4 Tagen, Brent bei $86 und die Hormuz-Prämie</h1>
+
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:12px 0 24px;">
+  <p style="margin:0;color:#f0f4ff;font-size:0.97rem;line-height:1.7;"><strong style="color:#D4AF37;">Kurz &amp; klar:</strong> Zwischen Dienstag und Freitag legen Vår Energi, Philip Morris, Equinor, TotalEnergies, Eni und Verizon ihre Q2-Zahlen vor &mdash; drei davon sind Öl-&amp;-Gas-Positionen aus meinem Depot. Gleichzeitig läuft am 24.07. die Übernahmefrist von Diana Shipping für Genco Shipping aus. Brent notiert bei rund 86&nbsp;USD/Barrel, getragen von der Hormuz-Risikoprämie. Konkrete Zahlen zu den Berichten selbst nenne ich hier bewusst keine &mdash; die liegen zum Zeitpunkt dieses Artikels noch nicht vor.</p>
+</div>
+
+<p style="font-size:.9rem;color:#9aa6c0">
+Veröffentlicht: 19.07.2026 &nbsp;&middot;&nbsp; Marco Bozem, MB Capital Strategies &nbsp;&middot;&nbsp;
+Dieser Beitrag stellt <strong>keine Anlageberatung</strong> dar. Keine Kauf- oder Verkaufsempfehlung.
+</p>
+
+<!-- TOP AD -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="3778191657"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>1. Warum diese Woche für mein Öl-&amp;-Gas-Buch zählt</h2>
+
+<p>
+Fünf Quartalsberichte in vier Handelstagen, mitten in der heißesten Phase der Hormuz-Eskalation seit Wochen &mdash; das ist reiner Kalender-Zufall, aber ein interessanter. Vår Energi, Equinor, TotalEnergies und Eni sind vier der größten börsennotierten Öl-&amp;-Gas-Produzenten Europas, und drei davon (Vår Energi, Equinor, TotalEnergies) sind Positionen, die ich über Trade Republic und Scalable Capital öffentlich transparent im Depot halte. Dazwischen berichten mit Philip Morris und Verizon auch zwei Namen außerhalb meines Sektor-Fokus &mdash; die gehören einfach mit zur selben Kalenderwoche, nicht zu meiner These.
+</p>
+
+<p>
+Was diese Woche besonders macht: Die Berichte kommen nicht in einem ruhigen Marktumfeld, sondern während Brent nahe einem Ein-Monats-Hoch notiert. Wenn Upstream-Unternehmen ihre Bücher öffnen, während der Ölpreis selbst gerade eine geopolitische Risikoprämie einpreist, wird sichtbar, wie das Zusammenspiel aus operativem Geschäft und Makro-Umfeld tatsächlich funktioniert &mdash; unabhängig davon, wie die einzelnen Zahlen am Ende ausfallen.
+</p>
+
+<h2>2. Der Kalender &mdash; wer wann berichtet</h2>
+
+<table class="calendar-table">
+  <tr><th>Datum</th><th>Unternehmen</th><th>Ticker</th><th>Anmerkung</th></tr>
+  <tr><td>Di, 21.07.</td><td>Vår Energi</td><td>VAR.OL</td><td>07:00 CEST, Depot-Position</td></tr>
+  <tr><td>Mi, 22.07.</td><td>Philip Morris International</td><td>PM</td><td>vor Börsenöffnung US</td></tr>
+  <tr><td>Mi, 22.07.</td><td>Equinor</td><td>EQNR</td><td>Depot-Position</td></tr>
+  <tr><td>Do, 23.07.</td><td>TotalEnergies</td><td>TTE</td><td>Depot-Position</td></tr>
+  <tr><td>Fr, 24.07.</td><td>Eni</td><td>E</td><td>vor Börsenöffnung</td></tr>
+  <tr><td>Fr, 24.07.</td><td>Verizon</td><td>VZ</td><td>vor Börsenöffnung US</td></tr>
+  <tr><td>Fr, 24.07., 17:00 EST</td><td>Diana Shipping / Genco (Übernahmefrist)</td><td>DSX / GNK</td><td>kein Earnings, separates M&amp;A-Event</td></tr>
+</table>
+
+<p style="font-size:.82rem;color:#6b7a99;margin-top:-4px">Quellen: varenergi.no/en/investor/financial-calendar, Cision-Pressemitteilung Vår Energi, Unternehmens-IR-Termine PM/Equinor/TotalEnergies/Eni, Diana-Shipping-Pressemitteilung (Tender-Offer-Verlängerung).</p>
+
+<!-- MID AD -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="1212067635"
+     data-ad-format="in-article"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>3. Makro-Einordnung: Warum Brent bei ~86 USD steht</h2>
+
+<p>
+<strong>Fakt:</strong> Brent notierte am 17.07.2026 oberhalb von 85&nbsp;USD/Barrel und damit nahe einem Ein-Monats-Hoch &mdash; nach einem kurzen Rücksetzer von einem Spike bei knapp 88&nbsp;USD in der Woche zuvor. Der Preis liegt damit weiterhin deutlich über dem 50- und dem 200-Tage-Durchschnitt. Auslöser: Eine US-Sanktionsfrist für den Export iranischen Öls ist am 17.07. ausgelaufen, begleitet von einer reaktivierten US-Marine-Blockade nahe iranischer Häfen und Berichten über wechselseitige Angriffe. Der kommerzielle Schiffsverkehr durch die Straße von Hormuz ist laut mehreren Quellen weiterhin eingeschränkt. (Quellen: CNBC, 15.07.2026; Al Jazeera, 14.07.2026)
+</p>
+
+<p>
+<strong>These, keine Prognose:</strong> Solange die Blockade-Lage nicht entspannt, bleibt eine Risikoprämie im Ölpreis eingepreist &mdash; unabhängig davon, ob die tatsächliche Fördermenge kurzfristig beeinträchtigt ist. Für Upstream-Positionen wie Vår Energi, Equinor und TotalEnergies bedeutet ein strukturell höherer Ölpreis tendenziell mehr freien Cashflow, solange die operativen Kosten stabil bleiben. Das ist aber eine Einschätzung des Umfelds &mdash; keine Prognose der Quartalszahlen selbst, die zum Zeitpunkt dieses Artikels schlicht noch nicht vorliegen.
+</p>
+
+<div class="highlight-box">
+<strong style="color:#d4af37;">Was ich sauber trenne:</strong>
+<ul style="margin-top:10px">
+  <li><strong>Fakt:</strong> Brent-Niveau, Berichtstermine, Blockade-Lage &mdash; belegt, mit Quelle.</li>
+  <li><strong>These:</strong> Was ein höherer Ölpreis für den Cashflow der Positionen bedeuten könnte &mdash; meine Einschätzung, kein Analystenkonsens.</li>
+  <li><strong>Noch offen:</strong> Die tatsächlichen Q2-Zahlen &mdash; die kommen erst diese Woche, ich nehme hier nichts vorweg.</li>
+</ul>
+</div>
+
+<h2>4. Worauf ich bei jedem Report achte (nicht: was ich erwarte)</h2>
+
+<p>
+Ich nenne hier bewusst keine Schätzwerte &mdash; weder zu Gewinn noch zu Umsatz. Was mich stattdessen bei jedem der vier Öl-&amp;-Gas-Berichte interessiert, ist qualitativer Natur:
+</p>
+
+<p><strong>Vår Energi (21.07.):</strong> Wie entwickelt sich die Produktionsguidance nach der bereits veröffentlichten Trading-Update-Zahl für Q2? Bleibt die Dividendenpolitik (Anteil am operativen Cashflow) unverändert, oder gibt es eine Anpassung angesichts des höheren Ölpreisumfelds?</p>
+
+<p><strong>Equinor (22.07.):</strong> Kommentiert das Management explizit die Hormuz-Lage und mögliche Fördermengen-Effekte? Wie sieht die Guidance für die zweite Jahreshälfte aus?</p>
+
+<p><strong>TotalEnergies (23.07.):</strong> Bleibt die Balance zwischen Aktienrückkäufen und Dividende stabil? TotalEnergies hat in der Vergangenheit sein Rückkaufprogramm als flexiblen Hebel bei starkem Cashflow genutzt &mdash; interessant, ob das bei aktuellem Ölpreisniveau fortgesetzt wird.</p>
+
+<p><strong>Eni (24.07.):</strong> Als Mehrheitsaktionär von Vår Energi ist Eni indirekt doppelt relevant für mein Depot. Kommentare zum norwegischen Kontinentalschelf-Geschäft sind ein zusätzlicher Datenpunkt zu Vår Energi selbst.</p>
+
+<p>
+Bei Philip Morris und Verizon bin ich ehrlich: Das sind keine Positionen und kein Sektor, den ich tief verfolge. Sie stehen hier nur, weil sie zufällig in derselben Kalenderwoche berichten &mdash; wer eine breite Watchlist über den Öl-&amp;-Gas-Sektor hinaus führt, hat diese Woche schlicht ungewöhnlich viel auf dem Tisch.
+</p>
+
+<div class="risk-box">
+&#9888;&#65039; <strong>Was ich hier NICHT mache:</strong>
+<p style="margin:8px 0 0">Ich nenne keine Analystenschätzungen zu EPS, Umsatz oder Guidance-Zahlen &mdash; auch wenn die intern natürlich beobachtet werden. Konkrete Konsensuszahlen und die vollständige Analyse nach Veröffentlichung der Ergebnisse (Margen, Bilanz, Dividenden-Sicherheit) sind Inhalt des Premium-Newsletters, nicht des kostenlosen Blogs. Hier auf dem Blog gibt's nach den Zahlen jeweils nur die Schlagzeile plus Einordnung in einem Satz.</p>
+</div>
+
+<h2>5. Parallel dazu: Die DSX/GNK-Übernahmeschlacht läuft am 24.07. aus</h2>
+
+<p>
+Getrennt von den Earnings, aber in derselben Woche: Diana Shipping (DSX) hat seine Übernahmeofferte für Genco Shipping &amp; Trading (GNK) mehrfach verlängert &mdash; zuletzt bis zum 24.07.2026, 17:00 Uhr New Yorker Zeit. Diana bietet inzwischen 24,80&nbsp;USD in bar je Aktie, nachdem das ursprüngliche Angebot bei 23,50&nbsp;USD lag; zusätzlich liegt ein direktes Vorschlagspaket an den Genco-Vorstand im Wert von rechnerisch rund 27,34&nbsp;USD je Aktie vor (Bar-Komponente plus eine Diana-Aktie). Stand der letzten offiziellen Meldung: rund 30&nbsp;% der freien Genco-Aktien waren zu diesem Zeitpunkt bereits angedient.
+</p>
+
+<p>
+Für mich ist das kein Depot-Ereignis &mdash; ich halte weder DSX noch GNK &mdash; aber ein Beispiel dafür, wie viel M&amp;A-Bewegung aktuell im Bulker-Segment der Schifffahrt stattfindet. Konsolidierung unter Trockenfrachtreedern ist ein Thema, das ich im Shipping-Sektor grundsätzlich verfolge, auch wenn es diesmal nicht meine eigenen Positionen betrifft.
+</p>
+
+<h2>6. Was nach den Zahlen passiert</h2>
+
+<p>
+Nach jedem der vier Öl-&amp;-Gas-Berichte gibt's hier auf dem Blog jeweils die Schlagzeile: Dividende bestätigt/erhöht/gekürzt, Beat oder Miss (ja/nein), ein Einordnungssatz. Die vollständige Analyse &mdash; konkrete EPS- und Umsatzzahlen, Guidance-Details, Margen- und Bilanzbewertung, Dividenden-Sicherheits-Check &mdash; bleibt dem Premium-Newsletter vorbehalten. Das ist bewusst so: Detailanalysen zu Quartalszahlen sind seit Juni 2026 ein bezahltes Produkt, kein Gratis-Content mehr.
+</p>
+
+<h2>7. Mein Fazit vor der Woche</h2>
+
+<div class="info-box">
+&#127919; <strong>Mein Take (19.07.2026):</strong> Fünf Berichte in vier Tagen plus eine M&amp;A-Deadline im Bulker-Segment, während Brent nahe einem Ein-Monats-Hoch steht &mdash; das ist eine Woche, in der ich genau hinschaue, ohne im Voraus etwas hineinzuinterpretieren. Was zählt, ist nicht die Schlagzeile am Ende, sondern ob die operativen Trends (Produktion, Cashflow-Disziplin, Dividendenpolitik) intakt bleiben, wenn das Makro-Umfeld gerade so viel Aufmerksamkeit bekommt wie selten. Keine Anlageberatung, das ist meine persönliche Einordnung vor den Zahlen.
+</div>
+
+<div class="info-box" style="margin-top:28px">
+  <h3 style="margin:0 0 10px;color:#d4af37;">&#128200; InvestingPro für Earnings-Daten</h3>
+  <p style="margin:0 0 10px;color:#cfd6e6;">Für die Vorbereitung auf Earnings-Termine nutze ich InvestingPro &mdash; Konsensschätzungen, historische Beat/Miss-Quoten und Fair-Value-Modelle an einem Ort. Wer ähnlich recherchiert:</p>
+  <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="noopener noreferrer sponsored nofollow" style="display:inline-block;background:#d4af37;color:#0f1115;font-weight:700;padding:9px 20px;border-radius:6px;text-decoration:none;font-size:.9rem">InvestingPro testen (Affiliate*) &rarr;</a>
+  <p style="font-size:.75rem;color:#6b7a99;margin:8px 0 0">*Provision für mich ohne Mehrkosten für dich</p>
+</div>
+
+<div class="info-box" style="margin-top:20px">
+  <h3 style="margin:0 0 10px;color:#d4af37;">&#128202; Depot-Tracking mit Parqet</h3>
+  <p style="margin:0 0 10px;color:#cfd6e6;">Wie sich meine Öl-&amp;-Gas-Positionen (auch VAR, EQNR, TTE) über eine solche Earnings-Woche entwickeln, tracke ich mit Parqet. Wer sein eigenes Dividenden-Portfolio im Blick behalten will:</p>
+  <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="noopener noreferrer sponsored nofollow" style="display:inline-block;background:#d4af37;color:#0f1115;font-weight:700;padding:9px 20px;border-radius:6px;text-decoration:none;font-size:.9rem">Parqet kostenlos starten (Affiliate*) &rarr;</a>
+  <p style="font-size:.75rem;color:#6b7a99;margin:8px 0 0">*Provision für mich ohne Mehrkosten für dich</p>
+</div>
+
+<div class="info-box" style="margin-top:20px">
+&#9888;&#65039; <strong>Rechtlicher Hinweis:</strong>
+Dieser Artikel dient ausschließlich Informations- und Bildungszwecken. Er stellt keine Anlageberatung, Anlageempfehlung oder Aufforderung zum Kauf oder Verkauf von Wertpapieren dar. Die genannten Positionen (Vår Energi, Equinor, TotalEnergies) sind teilweise persönliche Holdings von Marco Bozem via Trade Republic und Scalable Capital &mdash; keine Kauf- oder Verkaufsempfehlung. Alle Angaben ohne Gewähr. Eigenverantwortlich handeln. Quellen: varenergi.no/en/investor/financial-calendar, Cision-Pressemitteilung Vår Energi, CNBC (15.07.2026), Al Jazeera (14.07.2026), Diana-Shipping-Pressemitteilung/GlobeNewswire (13.07.2026) &mdash; je mind. 2 Quellen pro Zahl geprüft.
+</div>
+
+<!-- MB Capital Insider — Growth CTA -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
+window.mbMidSubscribe=function(){
+  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"blog-mid",method:"double-opt-in"});}}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+};})();
+</script>
+<!-- END Growth CTA -->
+
+<div class="cta-box" style="border-left:4px solid #d4af37;margin:28px 0;">
+  <h3 style="margin:0 0 8px;color:#d4af37;">&#129518; Deine Dividendenrendite berechnen</h3>
+  <p style="margin:0 0 12px;color:#cfd6e6;">Egal ob Vår Energi, Equinor oder TotalEnergies &mdash; der YOC-Rechner zeigt sofort, wie sich dein eigener Einstandskurs auf die Rendite auswirkt.</p>
+  <a href="/tools/yield-on-cost-rechner.html" style="display:inline-block;background:#d4af37;color:#0f1115;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;">Zum YOC-Rechner &rarr;</a>
+</div>
+
+<div class="related-articles">
+  <h3>Verwandte Analysen &ndash; Upstream &amp; Earnings</h3>
+  <ul>
+    <li><a href="/blog/hormuz-eskalation-oel-earnings-woche-2026.html">Hormuz-Eskalation trifft Öl-Earnings-Woche</a></li>
+    <li><a href="/blog/var-energi-analyse-2026.html">Var Energi Analyse 2026 &ndash; 12&nbsp;% Dividende</a></li>
+    <li><a href="/blog/equinor-analyse-2026.html">Equinor Analyse 2026 &ndash; Norwegens Energieriese</a></li>
+    <li><a href="/blog/totalenergies-analyse-2026.html">TotalEnergies Analyse 2026</a></li>
+    <li><a href="/blog/eni-analyse-2026.html">Eni Analyse 2026 &ndash; Var Energis Mutterkonzern</a></li>
+    <li><a href="/blog/aker-bp-q2-2026-ergebnisse-beat.html">Aker BP Q2 2026 Ergebnisse</a></li>
+    <li><a href="/upstream-aktien/">Öl &amp; Gas Aktien 2026: Upstream-Hub &ndash; alle Analysen</a></li>
+    <li><a href="/bestenlisten/tankeraktien.html">Beste Tanker-Aktien 2026</a></li>
+    <li><a href="/tools/yield-on-cost-rechner.html">YOC-Rechner: Yield on Cost berechnen</a></li>
+    <li><a href="/rohstoff-superzyklus-master.html">Rohstoff-Superzyklus 2026</a></li>
+  </ul>
+</div>
+
+</section>
+
+<!-- MB Capital — Premium-Earnings-CTA -->
+<div style="background:linear-gradient(135deg,#0d0d1a,#1a1225);border:1px solid rgba(212,175,55,0.35);border-left:4px solid #D4AF37;border-radius:8px;padding:24px 28px;margin:32px 0;font-family:Outfit,sans-serif;max-width:940px;margin-left:auto;margin-right:auto;">
+  <p style="color:#D4AF37;font-size:0.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px;">MB Earnings Insider</p>
+  <h3 style="color:#f5f6fa;font-size:1.05rem;font-weight:700;margin:0 0 10px;">Quartalszahlen direkt am Earnings-Tag — mit Dividenden-Sicherheits-Check.</h3>
+  <p style="color:#9aa6c0;font-size:0.87rem;line-height:1.6;margin:0 0 16px;">Im Premium-Newsletter: Dividenden-Sicherheitscheck (FCF-Coverage, Payout-Ratio, Schuldenstand) für Marcos Depot-Positionen — direkt am Quartalstag, bevor der Markt einpreist. Ab 5 €/Monat, kündbar monatlich.</p>
+  <a href="/newsletter/?utm_source=blog&utm_medium=cta&utm_campaign=oel-gas-earnings-woche-21-24-juli-2026"
+     style="display:inline-block;padding:11px 24px;background:#D4AF37;color:#000;font-weight:700;border-radius:4px;text-decoration:none;font-size:0.88rem;">Earnings-Insider testen →</a>
+  <p style="color:#555;font-size:0.72rem;margin:10px 0 0;">Ab 5 €/Monat · Keine Anlageberatung · Abmeldung jederzeit</p>
+</div>
+<!-- END Premium-CTA -->
+
+<p style="margin:24px 0 8px;max-width:940px;margin-left:auto;margin-right:auto;font-size:.9rem;color:#9aa0b8;">Alle Analysen zum Thema: <a href="/upstream-aktien/index.html" style="color:#D4AF37;font-weight:600;">Upstream-Aktien →</a></p>
+<div class="author-box" style="max-width:860px;margin:40px auto 0;">
+  <picture><source srcset="/marco.webp" type="image/webp"><img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem" class="author-img" width="64" height="64" loading="lazy"></picture>
+  <div class="author-info">
+    <span class="author-label">Autor</span>
+    <strong class="author-name"><a href="/ueber-marco-bozem/" style="color:inherit;text-decoration:none;">Marco Bozem</a></strong>
+    <p class="author-bio">Unabh&auml;ngiger Investor &amp; Finanz-Analyst mit Fokus auf Hard Assets, Rohstoffe und Cashflow-Strategien. Gr&uuml;nder von MB Capital Strategies.</p>
+    <div class="author-links">
+      <a href="/ueber-marco-bozem/">&Uuml;ber Marco</a>
+      <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+  <h2 style="max-width:940px;margin-left:auto;margin-right:auto;">📌 Meine Tools & Empfehlungen</h2>
+  <div class="cta-box" style="max-width:940px;margin-left:auto;margin-right:auto;">
+    <a href="https://mbcapitalstrategies.com" target="_blank" rel="noopener noreferrer">🧭 MB Capital Toolbox</a>
+    <a href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43" target="_blank" rel="sponsored nofollow noopener noreferrer">💰 Broker Nr. 1 – Scalable Capital</a>
+    <a href="https://refnocode.trade.re/79z763g7" target="_blank" rel="sponsored nofollow noopener noreferrer">📱 Alternative – Trade Republic</a>
+    <a href="https://wise.com/invite/dic/marcopeterb2" target="_blank" rel="sponsored nofollow noopener noreferrer">💳 Multi-Währungskonto – Wise</a>
+    <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="sponsored nofollow noopener noreferrer">📊 Fundamentalanalyse – InvestingPro</a>
+    <a href="https://www.binance.com/en/referral/earn-together/refer-in-hotsummer/claim?hl=en&ref=GRO_20338_K06Q9&utm_medium=web_share_copy" target="_blank" rel="nofollow sponsored noopener noreferrer">🪙 Krypto – Binance</a>
+    <a href="https://www.coinbase.com/join/EBNNVAV?scr=referal-link" target="_blank" rel="nofollow sponsored noopener noreferrer">💎 Krypto – Coinbase</a>
+  </div>
+
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content &amp; Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a>
+      <a href="https://mbcapitalstrategiesglobal.com/" target="_blank" rel="noopener">English Site</a>
+      <a href="/insider/">Newsletter abonnieren</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 MB Capital Strategies &middot; Marco Bozem</span>
+    <span>Keine Anlageberatung &middot; Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+<script src="/assets/js/glossar-linking.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wann meldet Vår Energi seine Q2-2026-Zahlen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vår Energi (VAR.OL) veröffentlicht seine Q2-2026-Ergebnisse am 21.07.2026 um 07:00 CEST, gefolgt von einem Webcast mit Q&A um 10:00 CEST. Quelle: varenergi.no/en/investor/financial-calendar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Öl- und Gasunternehmen berichten in der Woche vom 21.–24. Juli 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In dieser Woche berichten Vår Energi (21.07.), Equinor (22.07.), TotalEnergies (23.07.) und Eni (24.07.) ihre Q2-2026-Zahlen. Zusätzlich legen in derselben Woche Philip Morris International (22.07.) und Verizon (24.07.) Berichte vor, die aber nicht dem Öl-&Gas-Sektor angehören."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum steht der Ölpreis Brent aktuell bei rund 86 USD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Brent notiert nahe einem Ein-Monats-Hoch, nachdem am 17.07.2026 eine US-Sanktionsfrist für iranisches Öl ausgelaufen ist. Begleitet wird das von einer reaktivierten US-Marine-Blockade nahe iranischer Häfen und eingeschränktem kommerziellen Schiffsverkehr durch die Straße von Hormuz. Die Risikoprämie treibt den Preis über den 50- und 200-Tage-Durchschnitt hinaus. Quelle: CNBC, Al Jazeera (14./15.07.2026)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann läuft die Übernahmefrist von Diana Shipping für Genco Shipping ab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Diana Shipping (DSX) hat sein Übernahmeangebot für Genco Shipping & Trading (GNK) bis zum 24.07.2026, 17:00 Uhr New Yorker Zeit, verlängert. Das Angebot liegt aktuell bei 24,80 USD in bar je Aktie. Das ist ein separates M&A-Ereignis, keine Quartalszahlen."
+      }
+    }
+  ]
+}
+</script>
+<p style="margin:1em 0;font-size:0.9rem;color:#c8cfe0;">Berechne dein Dividendenwachstum: <a href="/tools/dividenden-wachstumsrechner.html" style="color:#D4AF37;font-weight:600;">Kostenloser Dividenden-Wachstumsrechner →</a></p>
+<p style="margin:1em 0;font-size:0.9rem;color:#c8cfe0;">Deinen persönlichen YOC berechnen: <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;font-weight:600;">Kostenloser YOC-Rechner →</a></p>
+</body>
+</html>

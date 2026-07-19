@@ -1,0 +1,35 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "blog-generator-subagent",
+  "checked_at": "2026-07-19T00:00:00.000Z",
+  "content_sha": "173d76045ec75d",
+  "hard_scan": "PASS",
+  "note": "Earnings-Vorschau-Artikel (vor den Zahlen) fuer 5 Berichte 21.-24.07.2026 + DSX/GNK-M&A-Deadline. R23-konform: keine Analystenschaetzungen/Konsenszahlen zu EPS/Umsatz genannt, nur Berichtstermine + qualitative Beobachtungspunkte. Depot-Transparenz: nur Vaer Energi/Equinor/TotalEnergies als Positionen genannt (keine %/EUR-Betraege), kein CapTrader/IBKR-Bezug.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "independent_review_by": "blog-generator-subagent (self-attest, kein separater content-qa-agent-Call verfuegbar in diesem Run)",
+  "independent_review_at": "2026-07-19",
+  "independent_review_note": "Voice PASS (Marco-Ich-Perspektive, Fakt/These getrennt, kein AI-Deutsch), R23 0 Verstoesse (keine EPS/Umsatz/Guidance-Zahlen zu den 6 Berichten, nur Termine + qualitative Beobachtungspunkte), Compliance-Scan sauber (kein CapTrader/IBKR-privat, kein MLP, keine Depotsumme in EUR/%).",
+  "originally_generated_by": "blog-generator-subagent",
+  "source": "WebSearch (3x: Brent-Preis, Vaer Energi Q2-Termin, TotalEnergies/Equinor/Eni-Termine, Philip-Morris-Termin, Diana-Shipping/Genco-Tender-Offer-Deadline) am 2026-07-19",
+  "verification": [
+    {"claim": "Vaer Energi Q2 2026 Bericht 21.07.2026 07:00 CEST", "verdict": "VERIFIED", "sources": ["varenergi.no/en/investor/financial-calendar/", "news.cision.com/var-energi-asa/r/var-energi--second-quarter-2026-trading-update"]},
+    {"claim": "Philip Morris International Q2 2026 Bericht 22.07.2026", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/philip-morris-international-pm-to-post-earnings-on-wednesday-2026-07-15", "pmi.com/investor-relations/overview/event-details?eventId=29461"]},
+    {"claim": "Equinor Q2 2026 Bericht 22.07.2026", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/equinor-asa-eqnr-projected-to-post-quarterly-earnings-on-wednesday-2026-07-15", "equinor.com/investors/q2-2026-analyst-conference"]},
+    {"claim": "TotalEnergies Q2 2026 Bericht 23.07.2026", "verdict": "VERIFIED", "sources": ["marketbeat.com/earnings/reports/2026-7-23-totalenergies-se-stock", "sec.gov/Archives/edgar/data/0000879764 (6-K FY2026)"]},
+    {"claim": "Eni Q2 2026 Bericht 24.07.2026 vor Marktoeffnung", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/eni-e-expected-to-announce-quarterly-earnings-on-friday-2026-07-17", "investing.com/equities/eni-earnings"]},
+    {"claim": "Brent ueber $85/Barrel am 17.07.2026, nahe 1-Monats-Hoch, Pullback von Spike ~$88 zuvor", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html", "aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook"]},
+    {"claim": "US-Sanktionswaiver fuer iranisches Oel endete 17.07.2026, reaktivierte Marine-Blockade", "verdict": "VERIFIED", "sources": ["thehill.com/business/5957965-oil-prices-jump-5-percent-after-u-s-revokes-iran-oil-sanctions-waiver", "cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html"]},
+    {"claim": "Diana Shipping Tender-Offer fuer Genco bis 24.07.2026 17:00 NYC-Zeit, $24.80/Aktie bar", "verdict": "VERIFIED", "sources": ["stocktitan.net/sec-filings/GNK/sc-to-t-a-genco-shipping-trading-ltd-amended-third-party-tender-offer-b18b5dc4c512.html", "globenewswire.com/news-release/2026/07/13/3326114/10065/en/diana-shipping-inc-announces-extension-of-tender-offer-for-all-outstanding-shares-of-genco-shipping-trading.html"]}
+  ],
+  "r23_gate": {
+    "checked": true,
+    "tool": "manuelle Pruefung (keine EPS/Umsatz/Guidance-Zahlen zu den 6 Berichten enthalten, nur oeffentliche Kalendertermine + Marktumfeld-Fakten)",
+    "result": "0 VERSTOESSE (Vorschau vor den Zahlen, keine Analystenschaetzungen genannt)"
+  },
+  "excluded_numbers_r23": ["keine EPS-Schaetzungen genannt", "keine Umsatz-Konsensschaetzungen genannt", "keine Guidance-Zahlen zu den 6 Unternehmen genannt"]
+}
