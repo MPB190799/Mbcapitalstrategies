@@ -1793,7 +1793,14 @@ In deinem <em>Posteingang.</em></h2>
 </script>
 <script>
 /* MB Interactive v1.0 — web-design-agent 2026-07-17 */
+/* try/catch gehaertet 2026-07-19 web-design-agent: Clarity meldete ScriptErrorCount 24,24%
+   der DE-Sessions (3-Tage-Fenster) seit Einbau dieses + des Compass-v2.0-Blocks (17./18.07.) --
+   zeitliche Korrelation. Kein reproduzierbarer Stack-Trace isolierbar (Playwright-Konsole nur
+   "Y", keine Browser-Devtools-Zugriff), daher defensiv: ein Fehler in diesem rein dekorativen
+   Block darf nie als Uncaught Exception zaehlen/sichtbar werden. Verhalten unveraendert bei
+   Erfolg, stiller No-Op bei Fehler. */
 (()=>{
+try{
   const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   const touch=matchMedia('(pointer:coarse)').matches;
 
@@ -1878,6 +1885,7 @@ In deinem <em>Posteingang.</em></h2>
       c.addEventListener('mouseleave',()=>{c.style.transform='';});
     });
   }
+}catch(e){}
 })();
 </script>
 <!-- MB Capital Insider — Sticky Newsletter Bar v2.4 (touch-target 44px fix, 2026-06-07) -->
@@ -2238,7 +2246,10 @@ In deinem <em>Posteingang.</em></h2>
 </script>
 <script>
 /* Compass v2.0 — web-design-agent 2026-07-18 */
+/* try/catch gehaertet 2026-07-19 web-design-agent: siehe Kommentar bei MB Interactive v1.0 oben --
+   gleiche ScriptErrorCount-Korrelation, gleiche defensive Massnahme. */
 (()=>{
+try{
   if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   const touch = matchMedia('(pointer:coarse)').matches;
   const NS = 'http://www.w3.org/2000/svg';
@@ -2450,6 +2461,7 @@ In deinem <em>Posteingang.</em></h2>
     });
   },{threshold:.35});
   document.querySelectorAll('#philosophy,#assets,#insights,#newsletter').forEach(s=>secObs.observe(s));
+}catch(e){}
 })();
 </script>
 </body>
