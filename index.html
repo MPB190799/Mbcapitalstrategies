@@ -1990,9 +1990,14 @@ try{
     s.async = true;
     s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933";
     s.crossOrigin = "anonymous";
-    s.onload = function(){
-      (window.adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7097302643579933", enable_page_level_ads: true, overlays: {bottom: false}});
-    };
+    /* UX-Fix 2026-07-20 web-design-agent: Clarity meldete ScriptErrorCount=51,6% auf der
+       Startseite (16 von 31 Sessions) — TagError "Only one enable_page_level_ads allowed
+       per page". Root Cause: das <meta name="google-adsense-account"> (Zeile 40) aktiviert
+       Auto-Ads bereits selbst, sobald adsbygoogle.js laedt; der manuelle push mit
+       enable_page_level_ads:true darunter war ein zweiter Aktivierungsversuch = doppelt.
+       EN-Seite hat nur das Meta-Tag (kein manueller Push) und wirft den Fehler nicht — das
+       bestaetigt die Ursache. Fix: manuellen push entfernen, Meta-Tag uebernimmt Auto-Ads
+       allein. Keine Aenderung an Platzierung/Dichte/Anchor-Opt-out. */
     document.head.appendChild(s);
   }
   function schedule(){
