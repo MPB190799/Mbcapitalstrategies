@@ -928,10 +928,19 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 }
 /* CRO 2026-07-03 web-design-agent: AdSense Auto-Ads darf NICHT im Hero/Above-the-Fold platzieren
    (überlappte auf Mobile "8 kostenlose Rechner" mit In-Text-Ad-Badge, Marco-Regel "Anzeigen nie über Inhalt").
-   Offizieller Google-Opt-out per CSS, kein Konto-Zugriff/Auto-Ads-Toggle nötig: */
+   Offizieller Google-Opt-out per CSS, kein Konto-Zugriff/Auto-Ads-Toggle nötig:
+   KORREKTUR 20.07.2026 web-design-agent: `google-auto-ads: ignore` ist KEINE reale CSS-Property
+   (Browser ignorieren unbekannte Properties stillschweigend) — dieser "Opt-out" war seit 03.07. ein
+   No-Op. Live-Audit (Playwright, 20.07.) bestätigte den Bug: Auto-Ads-Matched-Content ("Ähnliche
+   Themen, die Sie interessieren könnten") erschien weiterhin direkt im Hero über dem Newsletter-Formular
+   (Desktop 1440px) trotz dieser Klasse. Der TATSÄCHLICH von Google dokumentierte Exclusion-Mechanismus
+   (support.google.com/adsense/answer/9183363, bereits erfolgreich für §02 Assets am 19.07. verifiziert,
+   Commit dae6147b) ist das HTML-Attribut data-no-google-auto-placements="true" auf dem Container —
+   jetzt zusätzlich auf #hero und #newsletter gesetzt (s.u.). CSS-Klasse bleibt als Dokumentations-Marker
+   stehen, ist aber nicht der wirksame Mechanismus. */
 .adsense-auto-ads-ignore{ google-auto-ads: ignore; }
 </style>
-<section class="hero adsense-auto-ads-ignore" id="hero">
+<section class="hero adsense-auto-ads-ignore" id="hero" data-no-google-auto-placements="true">
   <div class="wrap hero-inner">
     <div class="hero-content">
       <div class="hero-issue" id="hero-issue-de">
@@ -1455,7 +1464,7 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 </section>
 
 <!-- ══════════ NEWSLETTER ══════════ -->
-<section class="contact adsense-auto-ads-ignore" id="newsletter">
+<section class="contact adsense-auto-ads-ignore" id="newsletter" data-no-google-auto-placements="true">
   <div class="wrap">
     <div class="contact-grid reveal">
       <div>
