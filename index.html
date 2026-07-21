@@ -26,6 +26,13 @@
      Preloading the exact Latin-range regular (400) woff2 lets it race the Outfit file instead of
      loading after fonts.css parses, cutting the fallback-vs-webfont size delta window to ~0. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2" crossorigin>
+<!-- CLS-Fix 2026-07-21 web-design-agent: 07-18 preload only covered the NORMAL-style Cormorant
+     Garamond file. The hero's accent-colored ".w2 em" ("Hard Assets.") is italic -- a DIFFERENT
+     woff2 file (fonts.css: style italic, weight 400, Latin U+0000-00FF) that was still arriving
+     late via fonts.css only. Today's lab run (de-home-20260721.json) still shows CLS=0.289 (poor)
+     with layout-shifts pointing exactly at this: hero-content shift score 0.286, subItem "Web font
+     loaded" citing this same italic file for both .lede and the em. Preloading it closes that gap. -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
