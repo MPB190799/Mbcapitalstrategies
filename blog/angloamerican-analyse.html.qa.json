@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-de",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T02:57:58.250Z",
+  "content_sha": "2dc57656ae4842e1",
+  "hard_scan": "PASS",
+  "note": "Anglo American DE Blog: R16 Faktencheck 21.07.2026 (self-heal) - Teck-Merger-Shareholder-Approval 99% (Teck.com+Yahoo), Kupfer-Exposure >70% + Synergien ~800 Mio USD (Teck.com+SEC-Filing), Cash-Zufluss 5,3 Mrd USD Nickel+Kohle-Verkauf (angloamerican.com), Kupferpreis >9000 USD/t weiterhin unter Spot bestaetigt. Peer-Dividendenrenditen-Tabelle war STALE (Anglo 2,5-3,5% falsch, real ~0,5% nach Cut; Glencore 4-6% falsch, real ~2,5%) -- korrigiert auf aktuelle LSE-Yields (stockanalysis.com, 2 Quellen je Wert): Anglo ~0,5%, Glencore ~2,5%, BHP ~3%, Rio Tinto ~4%. Voice/Compliance PASS, CapTrader-Blackout gehalten, Disclaimer 3x vorhanden, Affiliate rel=sponsored korrekt.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
