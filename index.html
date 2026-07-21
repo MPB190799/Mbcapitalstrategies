@@ -942,6 +942,19 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
       linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
   }
 }
+/* CRO 2026-07-21 web-design-agent: Live-Playwright-Audit auf 375x667 (kurzer Mobile-Viewport, z.B.
+   iPhone SE/ältere Android-Geräte) zeigt den Newsletter-CTA VOLLSTÄNDIG unter dem Fold — alle bisherigen
+   Mobile-Fixes (06-26/06-27/07-03) wurden gegen 375x812/390x844 gemessen und optimiert, die kürzere
+   Viewport-Höhe war nicht abgedeckt. Gleiches Muster wie der bestehende Kurz-Viewport-Fix für Desktop
+   (@media min-width:1024px and max-height:820px oben) — nur additive Verkleinerung von Titel/Abständen,
+   keine Elemente entfernt, keine Strukturänderung. Ziel: CTA deutlich näher an den Fold heranholen,
+   ohne die bereits fein-tarierte 375x812/390x844-Optik zu berühren (separate max-height-Bedingung). */
+@media (max-width:760px) and (max-height:700px){
+  .hero-title{font-size:clamp(36px,8.4vw,56px);margin-bottom:14px}
+  .hero-eyebrow-row{margin-bottom:6px}
+  .hero-sub{margin-bottom:6px;font-size:.86rem}
+  .hero-trust{margin:4px 0;padding:0}
+}
 /* CRO 2026-07-03 web-design-agent: AdSense Auto-Ads darf NICHT im Hero/Above-the-Fold platzieren
    (überlappte auf Mobile "8 kostenlose Rechner" mit In-Text-Ad-Badge, Marco-Regel "Anzeigen nie über Inhalt").
    Offizieller Google-Opt-out per CSS, kein Konto-Zugriff/Auto-Ads-Toggle nötig:
