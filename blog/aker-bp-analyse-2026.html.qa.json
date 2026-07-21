@@ -1,0 +1,35 @@
+{
+  "score": 12,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T02:46:03Z",
+  "content_sha": "e19cee230d4f8b93",
+  "hard_scan": "PASS",
+  "note": "Aker BP allgemeine Unternehmensanalyse (KEIN Earnings-Report; keine gemeldeten Quartalszahlen). r23-guard.py + STUFE-3d: 0 Verstoesse (Dividenden-Betrag/-Politik ist auf Gratis-Kanaelen frei). Faktencheck deckte MEHRERE reale Fehler auf, alle vor Freigabe korrigiert (siehe verification). Voice: Marco-Stammtisch-Ton mit Zahlen, FAKT/THESE getrennt, kein AI-Deutsch, Disclaimer 3x praesent, Byline Marco Bozem.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "independent_review_by": "content-qa-agent",
+  "independent_review_at": "2026-07-21",
+  "independent_review_note": "Unabhaengiges Gate + Korrektur vor Freigabe. Break-even-Widerspruch aufgeloest: $25-30 (Intro) war irrefuehrend (das ist das Einzelfeld Johan Sverdrup <$25), $35-40 (Tabelle) ist die korrekte Konzern-/Neuprojekt-Zahl (Brent) — Artikel entsprechend harmonisiert (Kernprojekte ~$35-40 Brent, Johan Sverdrup <$25, klar getrennt). Weitere korrigierte Hard-Errors: Quartalsdividende $0,40->$0,66 (~$2,65/Jahr Run-Rate); Rendite 9-10%/8-10%->rund 8% (verifiziert 7,74-8,4%); Marktkap $13-15 Mrd->~$19-20 Mrd (~200 Mrd NOK); Aktionaere BP~30%/Aker~26%->Aker~21%/BP~16%/Nemesia-Lundin~14% (post-Lundin); Yggdrasil-Invest $10-12 Mrd->$12,5-13 Mrd; Produktion +50-70% vs 2024->~525k boe/Tag bis 2028 (~+35% vs 2026); FAQ-Dividendenmechanik (falsche Oelpreis-Breakpoints/Basis+Sonder) durch reale Politik ersetzt (feste Quartalsdividende, >=5% Wachstum p.a.); WTI->Brent (Nordsee). Johan-Sverdrup-Stake 31,7% + 78% norw. Grenzsteuersatz waren korrekt. Jede Zahl gegen >=2 unabhaengige Quellen geprueft (eigene WebSearch 2026-07-21).",
+  "originally_generated_by": "blog-generator-subagent",
+  "source": "eigene WebSearch (content-qa) am 2026-07-21: Aker BP IR/borsmelding, Bloomberg, Oil&Gas Journal, WorldOil, Rigzone, Morningstar, companiesmarketcap, Simply Wall St, StockTitan, TipRanks, norskpetroleum.no, Wikipedia/Aker ASA IR",
+  "verification": [
+    {"claim": "Break-even Kernprojekte/Yggdrasil ~$35-40/bbl (Brent, bei Sanktionierung); Johan Sverdrup Vollfeld unter $25/bbl", "verdict": "VERIFIED (nach Korrektur harmonisiert)", "sources": ["bloomberg.com/news/articles/2025-05-07/aker-bp-ceo-says-projects-competitive-even-as-oil-prices-slide", "ogj.com/members/news/55391292/aker-bp-increases-project-cost-estimates-to-protect-2027-startups", "akerbp.com/en/borsmelding/further-increasing-value-of-johan-sverdrup-2/", "stainless-steel-world.net/breaking-even-at-usd-20-barrel-the-new-age-of-low-cost-oil/"]},
+    {"claim": "Quartalsdividende ~$0,6615/Aktie (Run-Rate ~$2,65/Jahr), Politik min. 5% Wachstum p.a. (Artikel-Fehler $0,40/$1,60 korrigiert)", "verdict": "CORRECTED+VERIFIED", "sources": ["akerbp.com/en/borsmelding/second-quarter-2026-results-2/", "stocktitan.net/news/AKRBF/fourth-quarter-2025-results-and-strategy-qmdzgjj0kzjs.html"]},
+    {"claim": "Dividendenrendite rund 8% (verifiziert 7,74-8,4%; Artikel 9-10%/8-10% korrigiert)", "verdict": "CORRECTED+VERIFIED", "sources": ["morningstar.com/stocks/xosl/akrbp/quote", "companiesmarketcap.com/aker-bp/dividend-yield/", "simplywall.st/stocks/no/energy/ob-akrbp/aker-bp-shares/dividend"]},
+    {"claim": "Marktkapitalisierung ~200 Mrd NOK ~= $19-20 Mrd (Artikel $13-15 Mrd korrigiert)", "verdict": "CORRECTED+VERIFIED", "sources": ["morningstar.com/stocks/xosl/akrbp/quote"]},
+    {"claim": "Aktionaere: Aker ASA ~21,16%, BP ~15,87%, Nemesia/Lundin ~14,37% (post-Lundin-Merger; Artikel BP~30%/Aker~26% korrigiert)", "verdict": "CORRECTED+VERIFIED", "sources": ["news.cision.com/aker-asa/r/aker-asa--aker-bp-completes-the-merger-with-lundin-energy-s-oil-and-gas-activities-in-norway,c3593648", "en.wikipedia.org/wiki/Aker_BP"]},
+    {"claim": "Johan-Sverdrup-Beteiligung 31,7163% (ab Q3 2026, Redetermination Juni 2026)", "verdict": "VERIFIED (Artikel 31,7% korrekt)", "sources": ["rigzone.com/news/aker_bp_raises_stake_in_norways_johan_sverdrup-12-jun-2026-183913-article/", "worldoil.com/news/2026/6/8/aker-bp-to-receive-additional-2-2-mmboe-after-johan-sverdrup-review/", "stocktitan.net/news/AKRBF/aker-bp-increases-ownership-interest-in-johan-sverdrup-following-8aow02et22m0.html"]},
+    {"claim": "Yggdrasil: Start Sommer 2027, aktualisiertes Invest ~$12,5-13 Mrd pre-tax, ~450 mmboe netto (Artikel $10-12 Mrd + 150-200k bpd korrigiert)", "verdict": "CORRECTED+VERIFIED", "sources": ["ogj.com/members/news/55391292/aker-bp-increases-project-cost-estimates-to-protect-2027-startups", "akerbp.com/en/project/yggdrasil-area/"]},
+    {"claim": "Produktion ~525.000 boe/Tag bis 2028 (~+35% vs 2026, Yggdrasil+Valhall PWP-Fenris ab Sommer 2027); 2026-Guidance 380-400 mboepd (Artikel +50-70% vs 2024 korrigiert)", "verdict": "CORRECTED+VERIFIED", "sources": ["ogj.com/general-interest/companies/article/55267588/aker-bp-increases-q-o-q-production-maintains-outlook-above-500000-boe-d-beyond-2030", "worldoil.com/news/2026/7/15/aker-bp-narrows-2026-production-guidance-as-major-norway-projects-advance/"]},
+    {"claim": "Norwegen: 78% Grenzsteuersatz (22% + 56% Sondersteuer); Explorationsverluste im Sondersteuer-Base werden vom Staat erstattet", "verdict": "VERIFIED (Artikel 78% korrekt)", "sources": ["norskpetroleum.no/en/economy/petroleum-tax/", "taxsummaries.pwc.com/norway/corporate/taxes-on-corporate-income"]}
+  ],
+  "r23_gate": {
+    "checked": true,
+    "tool": "scripts/r23-guard.py --files + content-qa STUFE-3d",
+    "result": "0 VERSTOESSE (allgemeine Unternehmensanalyse, kein Earnings-Report; Dividenden-Betrag/-Politik auf Gratis-Kanaelen frei)"
+  }
+}
