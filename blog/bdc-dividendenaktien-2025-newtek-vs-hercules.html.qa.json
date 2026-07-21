@@ -1,0 +1,30 @@
+{
+  "score": 12,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T00:00:00Z",
+  "content_sha": "4addb83dda46c1d6",
+  "hard_scan": "PASS",
+  "note": "BDC-Vergleichsanalyse NewtekOne (NEWT) vs. Hercules Capital (HTGC) — allgemeine Educational-/Vergleichsanalyse, KEIN Earnings-Report (keine gemeldeten Quartalszahlen EPS/NII zitiert). R23/STUFE-3d: 0 Verstoesse. Faktencheck deckte einen materiellen Rendite-Fehler auf (NEWT), vor Freigabe korrigiert (siehe verification). Voice: Marco-Ton, FAKT/These getrennt, Disclaimer 3x praesent, Byline Marco Bozem, Affiliate-Offenlegung vorhanden. SEO-Tags: GA4 G-J1NWEPPKNE, twitter:card, hreflang x-default alle vorhanden; keine Platzhalter.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "independent_review_by": "content-qa-agent",
+  "independent_review_at": "2026-07-21",
+  "independent_review_note": "Unabhaengiges Gate + Korrektur vor Freigabe. Materieller Fehler: AEO-Block behauptete 'Beide zahlen 8-12% Dividende' — falsch fuer NewtekOne (NEWT), das seit dem Wandel zur Bank-Holding nur noch ~5-6% Rendite zahlt (Quartalsdividende $0,19 / ~$0,76 p.a., verifiziert 5,74-5,88%). Korrigiert im AEO-Block, in der Kennzahlen-Liste und im Intro. Zweite Korrektur: Hercules Capital (HTGC) wurde mit 'fast 10%' bzw. '~9-10%' zu niedrig angegeben — reale aktuelle Rendite ~10-12% (Basisdividende ~$1,60 p.a. plus Sonderausschuettungen, TTM inkl. Supplemental ~$1,88 = ~12%); auf ~10-12% korrigiert. Dritte Korrektur: allgemeine BDC-Sektor-Renditeaussage im FAQ von '10-14%' auf die belastbarere Spanne '8-13%' geglaettet. Jede Zahl gegen >=2 unabhaengige Quellen geprueft (eigene WebSearch 2026-07-21). Qualitative Aussagen (Geschaeftsmodell, Chancen/Risiken) unveraendert korrekt.",
+  "originally_generated_by": "blog-generator-subagent",
+  "source": "eigene WebSearch (content-qa) am 2026-07-21: stockanalysis.com, companiesmarketcap.com, marketbeat.com, gurufocus.com, macrotrends.net, simplywall.st, nasdaq.com, SEC EDGAR 8-K (HTGC/NEWT), investor.newtekbusinessservices.com",
+  "verification": [
+    {"claim": "NewtekOne (NEWT) Dividendenrendite aktuell ~5-6% (Quartalsdividende $0,19 / ~$0,76 p.a.); Artikel-Fehler 'Beide zahlen 8-12%' korrigiert", "verdict": "CORRECTED+VERIFIED", "sources": ["stockanalysis.com/stocks/newt/dividend/", "companiesmarketcap.com/newtek/dividend-yield/", "marketbeat.com/stocks/NASDAQ/NEWT/dividend/"]},
+    {"claim": "Hercules Capital (HTGC) Dividendenrendite aktuell ~10-12% (Basis ~$1,60 p.a. plus Sonderausschuettungen, TTM inkl. Supplemental ~$1,88 = ~12%); Artikel 'fast 10%'/'~9-10%' auf ~10-12% korrigiert", "verdict": "CORRECTED+VERIFIED", "sources": ["marketbeat.com/stocks/NYSE/HTGC/dividend/", "gurufocus.com/term/yield/HTGC", "macrotrends.net/stocks/charts/HTGC/hercules-capital/dividend-yield-history"]},
+    {"claim": "NewtekOne ist heute eine Bank-/Finanzholding (Wandel vom klassischen BDC) — Artikelaussage 'Transformation vom klassischen BDC zur Bank Holding' korrekt", "verdict": "VERIFIED", "sources": ["sec.gov/Archives/edgar/data/1587987/000162828026028891/pr_earningsreleaseq12026.htm", "investor.newtekbusinessservices.com/news-releases/news-release-details/newtekone-inc-declares-dividends-common-stock-and-series-b-0"]},
+    {"claim": "Allgemeine BDC-Sektor-Renditespanne — von '10-14%' auf belastbarere '8-13%' geglaettet (Educational, kein einzelwertbezogener Fakt)", "verdict": "CORRECTED (Praezisierung)", "sources": ["stockanalysis.com/stocks/htgc/dividend/", "simplywall.st/stocks/us/diversified-financials/nyse-htgc/hercules-capital/dividend"]}
+  ],
+  "r23_gate": {
+    "checked": true,
+    "tool": "content-qa STUFE-3d + Textpruefung",
+    "result": "0 VERSTOESSE (allgemeine BDC-Vergleichs-/Educational-Analyse, kein Earnings-Report; keine gemeldeten Quartalszahlen EPS/NII zitiert; Dividenden-Rendite/-Betrag auf Gratis-Kanaelen frei)"
+  }
+}
