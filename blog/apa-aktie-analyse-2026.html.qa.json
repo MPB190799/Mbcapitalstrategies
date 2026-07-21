@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-de",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T00:00:00.000Z",
+  "content_sha": "de505c67683ccb6d",
+  "hard_scan": "PASS",
+  "note": "APA Corporation DE Blog: R16 Faktencheck 21.07.2026 (self-heal) - Headline/Meta hatte veraltete KGV-5-Angabe (Widerspruch zur Body-Tabelle KGV 7-9x) -- korrigiert auf KGV ~8x (stockanalysis.com TTM 8,12x + WebSearch-Aggregat 7,93x TTM, 2 Quellen). FCF-Yield 12% bestaetigt (stockanalysis.com 12,03% TTM). Marktkapitalisierung war stale bei 8-10 Mrd. USD -- aktuell ca. 12-15 Mrd. USD (stockanalysis.com + companiesmarketcap.com/WebSearch-Aggregat). Nettoschulden war stale bei 6-7 Mrd. USD (Zeitpunkt kurz nach Callon-Uebernahme) -- aktuell ca. 4-4,5 Mrd. USD nach Schuldenabbau (stockanalysis.com Net-Debt-Angabe + APA-Q1-2026-Pressemitteilung/SEC-8-K, investor.apacorp.com), Net Debt/EBITDA entsprechend von 1,5-2,0x auf 1,0-1,3x korrigiert, Management-Zielwert <1,5x ist bereits erreicht (Text angepasst, kein 'aktuell ueber 1,5x' mehr). Dividendenrendite von 'ca. 2%' auf 'ca. 2,5-3%' korrigiert (WallStreetZen 3,65%/Koyfin-Aggregat 2,33% Forward, stockanalysis.com 2,87%, 2 Quellen) -- auch der widerspruechliche AEO-Intro-Block (frueher '4-5%') korrigiert. Alle Zahlen jetzt intern konsistent (Headline/AEO-Block/Bulletpoints/Tabelle/FAQ-Schema stimmen ueberein). Voice/Disclaimer/Affiliate/GA4/hreflang/twitter:card unveraendert PASS (bereits vor Fix i.O.).",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
