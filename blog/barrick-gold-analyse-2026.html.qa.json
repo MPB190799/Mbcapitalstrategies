@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T04:17:59.531Z",
+  "content_sha": "2581036b0886ddf9",
+  "hard_scan": "PASS",
+  "note": "R16 Re-Faktencheck 21.07.2026: Artikel enthielt veraltete Zahlen (Produktion 3,5-4 statt 2,90-3,25 Moz, AISC 1.150-1.350 statt 1.760-1.950 USD/oz, Dividende 0,10 statt 0,175 USD/Q, Ticker GOLD statt NYSE:B, Goldpreis-Kontext 2.200-2.500 statt ~4.000 USD/oz, KGV 18x statt ~10-11x) — alle Werte auf aktuelle 2026er Guidance/Marktdaten korrigiert, Marco-Voice/Struktur unveraendert. Blog-Regeln (kein R19, Affiliate<=4) unberuehrt.",
+  "factcheck": "pass",
+  "numbers_verified_by": "distribution-agent self-heal 2026-07-21: WebSearch 2 Quellen/Zahl (SEC 6-K/Barrick IR/GlobeNewswire/StockTitan/fullratio/Lightyear) — Produktion 2,90-3,25 Moz, AISC 1.760-1.950 USD/oz, Basisdividende 0,175 USD/Q (+40%), Goldpreis ~4.000 USD/oz, KGV ~10-11x, Marktkap ~64 Mrd USD; alle stale Werte (alte Ticker GOLD, alte AISC/Produktions-/Dividendenzahlen, altes Goldpreisniveau) im Artikel korrigiert"
+}
