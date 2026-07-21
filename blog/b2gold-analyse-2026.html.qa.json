@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-de",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T00:00:00.000Z",
+  "content_sha": "74ac8d04852dfed6",
+  "hard_scan": "PASS",
+  "note": "B2Gold DE Blog: R16 Faktencheck 21.07.2026 (self-heal, blog-publish-gate BLOCK -- factcheck-Marker fehlte). Artikel war massiv veraltet (offenbar aus einer Phase mit Gold ~2.300-2.400 USD/oz geschrieben, aktueller Goldpreis ~4.000 USD/oz, tradingeconomics.com/jmbullion, 21.07.2026). Kernzahlen korrigiert (2 Quellen je Zahl): (1) Dividende von 'ca. 5%' / '$0.04/Quartal' auf real $0,02/Quartal ($0,08/Jahr) / ca. 2% Rendite korrigiert (b2gold.com Q4/FY2025-Pressemitteilung + stockanalysis.com Dividend-Seite, beide 2,0-2,2% Yield). (2) AISC von '$1.050/oz' (Headline/Meta/AEO) bzw. '1.150-1.250 USD/oz' (Body) auf die echte 2026er-Guidance $2.400-2.580/oz korrigiert (b2gold.com FY2025/2026-Guidance-Pressemitteilung + SEC-6-K-Filing, beide identisch) -- B2Gold-AISC ist an den Goldpreis gekoppelt (+12 USD/oz je +100 USD/oz Gold, wegen gewinnabhaengiger Mali-Abgaben). (3) Goose-Mine AISC von 'unter 1.000 USD/oz' auf real 1.490-1.550 USD/oz korrigiert, Produktion von '280-300k oz' auf 2026er-Guidance ~250k oz (Durchschnitt ~300k oz/Jahr 2026-2031) (b2gold.com Goose-Update-Pressemitteilung + Yahoo-Finance-Spiegel derselben Meldung). (4) Vergleichstabelle B2Gold/Barrick/Newmont: AISC-Guidance 2026 auf 2.400-2.580 / 1.760-1.950 / ~1.680 korrigiert (barrick.com Q1-2026-Ergebnisse + SEC-6-K; newmont.com FY2025/2026-Guidance + Zacks/TradingView-Aggregat), Dividendenrenditen auf ~2,0-2,2% / ~1,7-1,9% / ~2,0-2,3% korrigiert (macrotrends.net + wisesheets.io/stockanalysis.com). (5) Kernthese angepasst: B2Gold hat NICHT mehr die hoechste Dividendenrendite der drei (Renditen liegen inzwischen nah beieinander), traegt aber weiterhin das hoechste geopolitische Risiko und die hoechste AISC -- Fazit-Absatz + Tabellen-Kommentar entsprechend umgeschrieben statt die alte (falsche) 'hoechste Yield der drei'-Aussage stehen zu lassen. dateModified auf 2026-07-21 aktualisiert. Voice/Disclaimer/Affiliate/GA4/hreflang/twitter:card unveraendert PASS.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
