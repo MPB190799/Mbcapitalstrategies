@@ -1,0 +1,44 @@
+{
+  "score": 12,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T02:24:50.178Z",
+  "content_sha": "1e4ef830a6ed8b39",
+  "hard_scan": "PASS",
+  "note": "36-Aktien-Nachkaufliste; 40 Renditen/KGVs gegen 2+ Quellen geprueft (34 im Toleranzband); korrigiert: FRO 8,5->4,6% KGV21, PPL 1,6->4,5%, PTAL 4,4->10%, EC 4,1->8%, GBDC/OBDC/MAIN KGV; EPD(MLP)->Kinder Morgan(C-Corp) wg Compliance; CapTrader-Anchor entfernt; R23 0 Verstoesse (Watchlist, keine Report-Zahlen)",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "independent_review_by": "content-qa-agent",
+  "independent_review_at": "2026-07-21",
+  "independent_review_note": "Unabhaengiges Gate. Voice PASS (Marco-Ich-Perspektive, kein AI-Deutsch). R23 0 Verstoesse via r23-guard.py + STUFE-3d (Watchlist, keine gemeldeten Report-Zahlen). Compliance: EPD (MLP, K-1) war als 'meine Favoriten' in Nachkauf-Watchlist = Verstoss -> ersetzt durch Kinder Morgan (C-Corp); CapTrader-Anchor-Text entfernt (Blackout R13). 40 Titel (Div.-Rendite + KGV) via Sonnet-Subagent gegen 2+ Quellen (stockanalysis/marketbeat/gurufocus/tradingeconomics u.a.); FRO+PPL zusaetzlich von Claude selbst per WebSearch gegengeprueft. 34/40 im Toleranzband bestaetigt, 6 grob/borderline falsche Werte korrigiert. Disclaimer + Affiliate-Offenlegung vorhanden.",
+  "source": "Sonnet-factcheck-subagent 2026-07-21 (40 Titel, 2+ Quellen) + eigene WebSearch content-qa (FRO, PPL) am 2026-07-21",
+  "corrections_applied": [
+    {"ticker": "FRO", "field": "yield+pe", "old": "8,5% / KGV ~9", "new": "4,6% / KGV ~21", "reason": "marketbeat + stockanalysis: $1,76 Jahresdiv = 4,6% TTM (GuruFocus-Forward 8,41% ist Einzelquelle/nicht repraesentativ); P/E real ~21-22"},
+    {"ticker": "PPL", "field": "yield", "old": "1,6%", "new": "4,5%", "reason": "marketbeat 4,38% + Motley Fool 4,7% + digrin 4,47%"},
+    {"ticker": "PTAL", "field": "yield+pe", "old": "4,4% / KGV ~11", "new": "~10% / KGV ~8", "reason": "digrin/morningstar 8,8-12,6% (variable Sonderdiv); alter Wert widersprach eigener Note 'extrem hohe Rendite'"},
+    {"ticker": "EC", "field": "yield+pe", "old": "4,1% / KGV ~12", "new": "~8% / KGV ~15", "reason": "stockanalysis/alphaspread 7,9-8,5% (hohe Sonderdiv)"},
+    {"ticker": "GBDC", "field": "pe", "old": "~17", "new": "~8", "reason": "stockanalysis/wallstreetzen ~8,15"},
+    {"ticker": "OBDC", "field": "pe", "old": "~16", "new": "~10", "reason": "stockanalysis forward-P/E ~9,9"},
+    {"ticker": "MAIN", "field": "pe", "old": "~11", "new": "~15", "reason": "stockanalysis/macrotrends ~14,9"},
+    {"ticker": "FRES", "field": "pe", "old": "~18", "new": "~24", "reason": "forward-P/E 24-26"},
+    {"ticker": "EPD", "field": "row-swap", "old": "Enterprise Products Partners (MLP)", "new": "Kinder Morgan (KMI, C-Corp) 3,7% / KGV ~24", "reason": "Compliance: MLP-Empfehlung in Nachkauf-Watchlist verboten (K-1); C-Corp-Ersatz"},
+    {"ticker": "-", "field": "metric-avg", "old": "Ø 7-8%", "new": "Ø 6-7%", "reason": "berechneter Durchschnitt ~6,6%"}
+  ],
+  "verification": [
+    {"claim": "Frontline (FRO) Div.-Rendite TTM", "value": "~4,6%", "verdict": "VERIFIED", "sources": ["marketbeat.com/stocks/NYSE/FRO/dividend/", "stockanalysis.com/stocks/fro/dividend/"]},
+    {"claim": "Pembina (PPL) Div.-Rendite", "value": "~4,5%", "verdict": "VERIFIED", "sources": ["marketbeat.com/stocks/TSE/PPL/dividend/", "fool.ca/2026/05/13/a-4-7-yield-pipeline-stock"]},
+    {"claim": "PetroTal (PTAL) Div.-Rendite", "value": "~8,8-12,6%", "verdict": "VERIFIED", "sources": ["digrin.com", "morningstar.com"]},
+    {"claim": "Total Gabon (EC) Div.-Rendite", "value": "~7,9-8,5%", "verdict": "VERIFIED", "sources": ["stockanalysis.com", "alphaspread.com"]},
+    {"claim": "Golub Capital (GBDC) KGV", "value": "~8", "verdict": "VERIFIED", "sources": ["stockanalysis.com", "wallstreetzen.com"]},
+    {"claim": "Kinder Morgan (KMI) Rendite+KGV (EPD-Ersatz)", "value": "3,7% / KGV ~24", "verdict": "VERIFIED", "sources": ["stockanalysis.com", "tikr.com"]},
+    {"claim": "Restliche 34 Titel Div.-Rendite/KGV im Toleranzband (±1,5pp / ±20% KGV)", "value": "bestaetigt", "verdict": "VERIFIED", "sources": ["stockanalysis.com", "marketbeat.com", "gurufocus.com", "tradingeconomics.com"]}
+  ],
+  "r23_gate": {
+    "checked": true,
+    "tool": "scripts/r23-guard.py --files + content-qa STUFE-3d",
+    "result": "0 VERSTOESSE (Watchlist, keine gemeldeten Quartals-/Report-Zahlen)"
+  }
+}
