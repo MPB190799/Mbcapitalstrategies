@@ -33,6 +33,15 @@
      with layout-shifts pointing exactly at this: hero-content shift score 0.286, subItem "Web font
      loaded" citing this same italic file for both .lede and the em. Preloading it closes that gap. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2" crossorigin>
+<!-- CLS-Fix 2026-07-21b web-design-agent: the two Cormorant preloads above only cover the hero H1.
+     Lighthouse's own layout-shifts audit (de-home-20260721.json / en-home-20260721.json) still cites
+     IBM Plex Mono files (--mono, used by .eyebrow "AUSGABE #53"/"ISSUE #53" + .hero-meta + ticker,
+     all rendered inside/above .hero-content) as an explicit "Web font loaded" cause of the remaining
+     shift -- this family had ZERO preload despite sitting in the hero's own reflow chain. Preloading
+     the Latin-range (U+0000-00FF) 400+500 weight files (500 = exact file Lighthouse cited for the
+     EN .lede shift) removes the last unaddressed font swap in the hero. No visual/layout change. -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
