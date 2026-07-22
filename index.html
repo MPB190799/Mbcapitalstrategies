@@ -843,6 +843,20 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   .hero-signature-pill{right:24px;bottom:24px}
 }
 @media (max-width:760px){
+  /* CRO-Fix 2026-07-22 web-design-agent: Live-Playwright-Audit (a11y-tree mit boxes, 390x844) fand
+     .hero-signature-pill ("Marco Bozem, Gründer" Trust-Badge) komplett AUSSERHALB des Viewports
+     gerendert (box x=390..563 bei 390px Breite) — 0px sichtbar, obwohl im DOM/Accessibility-Tree
+     vorhanden. Root Cause: .hero{display:flex} ist Row-Layout ohne flex-wrap; sobald die 760px-Regel
+     .hero-signature-pill{position:static} setzt (Zeile weiter unten), wird das Badge zum 2. Flex-Item
+     der Hero-Row und haengt rechts neben .hero-inner (welches bereits 100% Breite belegt) im
+     Off-Canvas-Bereich. EN-Pendant hat dasselbe Trust-Signal sichtbar oben im Hero platziert — DE
+     verlor es auf jedem Mobile-Geraet stillschweigend seit der position:static-Umstellung. Fix:
+     flex-wrap:wrap auf .hero, damit das Badge in eine neue Zeile NACH dem Hero-Content faellt statt
+     off-canvas zu verschwinden. Bewusst KEIN order:-1 (Badge nach oben vor die Headline) — das wuerde
+     die in 06-27/07-03 fein-tarierte Above-Fold-Position des Newsletter-CTA-Buttons (primaeres
+     Conversion-Element) durch zusaetzliche Hoehe erneut gefaehrden. Zero CLS auf bereits sichtbare
+     Above-Fold-Elemente, reine Sichtbar-Reparatur eines zuvor unsichtbaren Elements. */
+  .hero{flex-wrap:wrap}
   /* CRO 2026-06-27 web-design-agent: tighten mobile hero spacing so CTA is above fold on 375x812.
      hero-sub margin-bottom: 48→28px (-20px), hero-eyebrow margin-bottom: 32→20px (-12px) = -32px total.
      Button "Sonntag-Brief" moves from y≈805 (7px below fold) to y≈773 (39px above fold). */
