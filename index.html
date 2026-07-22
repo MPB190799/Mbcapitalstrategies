@@ -1093,11 +1093,19 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
     </div>
   </div>
 
+  <!-- LCP-Fix 2026-07-22 web-design-agent (CMO-Vormerkung 21.07., cwv-snapshot: DE-Home LCP 8,4s mobil):
+       Dieses 42x42px Signatur-Icon trug fetchpriority="high" -- identische Priorität wie das
+       1024x1024 Kompass-Hintergrundbild (echter LCP-Kandidat) und die 7 kritischen Font-Preloads
+       im <head>. Auf Mobilfunk-Bandbreite konkurrierten so 9 "high"-priorisierte Requests parallel
+       um die ersten Bytes, statt dass der Browser das tatsächliche LCP-Element bevorzugt laden kann.
+       fetchpriority entfernt (Browser-Default = "auto"), loading=eager/decoding=async beibehalten
+       (Bild bleibt sofort sichtbar, nur die Priorität sinkt) -- 0 visuelle Änderung, reduziert
+       Ressourcen-Konkurrenz im kritischen Pfad. -->
   <aside class="hero-signature-pill" aria-label="Marco Bozem, Gründer">
     <span class="sig-avatar">
       <picture>
         <source srcset="/marco.webp" type="image/webp">
-        <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem" width="42" height="42" fetchpriority="high">
+        <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem" width="42" height="42" loading="eager" decoding="async">
       </picture>
     </span>
     <span class="sig-text">
