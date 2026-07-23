@@ -42,8 +42,19 @@
      EN .lede shift) removes the last unaddressed font swap in the hero. No visual/layout change. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2" crossorigin>
-<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+<!-- CLS-Fix 2026-07-23 web-design-agent: four prior rounds (07-10/07-18/07-21/07-21b) preloaded the
+     hero-critical font BYTES but CLS stayed poor (0.286->0.289->0.197, re-measured today by seo-agent,
+     "Web font loaded" cited as cause every time). Root cause was never byte-arrival timing -- it's the
+     async preload-swap pattern below: fonts.css itself (the @font-face RULES) only gets applied once
+     its onload fires, which happens AFTER first paint. So the hero renders once with zero font-family
+     knowledge (raw UA default, not even the CSS fallback stack), then reflows again when fonts.css
+     applies, then again as each webfont file swaps in -- a compounding double-reflow the preloads above
+     could never fix because the rule application, not the download, was the late step. fonts.css is
+     29KB same-origin and its bytes are already inflight in parallel via the font preloads above, so
+     loading it as a normal blocking stylesheet costs a few ms of render delay but collapses the
+     "unstyled -> ruled -> swapped" chain into a single "ruled (fallback) -> swapped" step -- the
+     standard, much smaller font-display:swap reflow. No visual change, verified via Playwright. -->
+<link rel="stylesheet" href="/fonts/fonts.css">
 
 <meta name="msvalidate.01" content="E450D869E83A84CC75BF896F78D3CCFF" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
