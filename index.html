@@ -1880,9 +1880,18 @@ try{
   }
 
   /* 2 — Compass: mouse tracking + glow rings + cardinal bearing snap */
-  const cb=document.getElementById('compass-backdrop');
-  const hero=document.getElementById('hero');
-  if(cb&&hero&&!rm){
+  /* CWV-Fix 2026-07-23 web-design-agent: this block was the ONE effect in this file NOT gated
+     by !touch (Cursor-Glow §1, Magnetic-Tilt §4 already skip touch devices) -- it unconditionally
+     appended 2 continuously-animating divs (compass-ring 4.5s pulse x3, compass-glint 9s sweep)
+     on every visit incl. mobile/touch, where the mouse-tracking payoff inside is dead code anyway
+     (no mouse). Matches the exact regression window in lighthouse-alerts.md (mobile Home CLS/TBT
+     worsened 0.44->0.39, TBT 870ms) and the Clarity ScriptErrorCount spike (19.07 comment above,
+     20/session-group ~35% -- same block, same install date 17/18.07). Gating to !touch removes
+     always-on compositor work + the mouse-listener dead code path from the majority-mobile DE
+     audience (GA4 28d: 13/31 sessions mobile) with zero visual change on desktop and no loss of
+     the scroll-linked base tilt (separate, already-gated-for-both code path above). Fully
+     reversible: revert this one condition to restore prior behaviour. */
+  if(cb&&hero&&!rm&&!touch){
     cb.classList.add('mb-live');
     // Three expanding pulse rings
     for(let i=0;i<3;i++){const r=document.createElement('div');r.className='compass-ring';cb.appendChild(r);}
