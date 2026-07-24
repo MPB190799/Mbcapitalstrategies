@@ -264,7 +264,17 @@ html.promo-active .header{top:47px}
 .btn-ghost:hover{color:var(--bg);border-color:var(--fg)}
 
 /* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
+/* CLS-Fix 2026-07-24 web-design-agent: Live-Trace (Lighthouse mobile, 390x844) zeigte den kompletten
+   Layout-Shift-Score von 0.301 (page-Total) auf genau EINEN Trace-Event: hero-inner top 143->443 (+300px)
+   BEI GLEICHEM bottom (823px) — exaktes Muster einer 100vh-Neuberechnung, wenn die mobile Browser-UI
+   (Adressleiste) waehrend des Ladens ein-/ausklappt (klassischer "100vh CLS"-Bug, kein Font-/Bild-Swap —
+   fuenf vorherige Font-Preload-Runden (07-10/18/21/21b/23) haben das nie getroffen, weil die Ursache nie
+   ein Font war). Fix: min-height auf 100svh (small viewport height, CSS Media Queries Level 4) — bindet
+   die Hero-Hoehe an die KLEINSTMOEGLICHE Viewport-Hoehe (Browser-UI sichtbar), die sich waehrend des
+   Ladens nicht mehr aendert. 100vh bleibt als Fallback fuer Browser ohne svh-Support (Cascade-Reihenfolge:
+   letzte gueltige Deklaration gewinnt). Keine visuelle Aenderung in modernen Browsern nach UI-Settle,
+   nur der Zwischenzustand waehrend des Ladens verschwindet. */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
 .hero-inner{position:relative;z-index:2;display:block;max-width:1080px;margin:0 auto;width:100%}
 /* CRO 2026-07-03 web-design-agent: .compass-cardinals sits at z-index:5 (above hero-inner's z-index:2) —
    on desktop (1440px) the "N · Energie" cardinal box visually clipped the hero-issue date text
