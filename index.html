@@ -1097,19 +1097,20 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
                separat an CEO/monetization-agent eskaliert). Dieser Fix behebt das Enter-Submit-Bug
                ursächlich UND grenzt die Zone sauber als <form> ein — 0 visuelle Änderung, 0 CLS. -->
           <form id="hero-form-de" onsubmit="mbHeroSubscribeDe();return false;">
-          <label for="hero-email-de" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;opacity:.9;">Newsletter · jeden Sonntag · gratis</label>
+          <label for="hero-email-de" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;opacity:.9;">Gratis-PDF »Top 10 YOC ≥8%« + Sonntags-Insider</label>
           <!-- CRO 2026-06-26 web-design-agent: BHP mining hook expired 2026-06-28 → evergreen text.
                Self-expire JS removed (was changing p.textContent; now static = no JS execution overhead). -->
-          <p style="font-size:0.8rem;color:var(--fg-muted,#c8cfe0);margin:0 0 8px;font-family:var(--sans,Outfit,system-ui);line-height:1.45;max-width:38ch;">Tanker-Raten, Dividenden-Checks &amp; Markt-Lage — jede Woche kompakt von Marco. Keine Anlageberatung.</p>
+          <p style="font-size:0.8rem;color:var(--fg-muted,#c8cfe0);margin:0 0 8px;font-family:var(--sans,Outfit,system-ui);line-height:1.45;max-width:38ch;">Trag dich ein und lade <strong style="color:var(--accent);">sofort das Gratis-PDF „Top 10 Dividendenaktien mit YOC ≥8%"</strong> herunter — plus jeden Sonntag Tanker-Raten, Dividenden-Checks &amp; Markt-Lage kompakt von Marco. Keine Anlageberatung.</p>
           <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
             <input type="email" id="hero-email-de" placeholder="deine@email.de" required
               autocomplete="email"
               aria-label="E-Mail-Adresse für den kostenlosen Sonntags-Newsletter eingeben"
               style="padding:13px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 180px;font-family:var(--mono);box-sizing:border-box;">
             <button type="submit" data-cta="hero-de-index"
-              style="padding:13px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Sonntag-Brief gratis abonnieren →</button>
+              style="padding:13px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Gratis-PDF + Insider sichern →</button>
           </div>
           <p id="hero-msg-de" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:var(--mono);"></p>
+          <a id="hero-yoc-dl" href="/downloads/top-10-yoc-2026.pdf" download style="display:none;margin-top:8px;padding:11px 18px;background:#22c55e;color:#04120a;border-radius:4px;font-weight:700;font-size:0.8rem;font-family:var(--mono);text-decoration:none;align-items:center;gap:6px;">📄 Top-10-YOC-PDF herunterladen</a>
           <p style="font-size:0.72rem;color:var(--fg-muted);margin:4px 0 0;font-family:var(--mono);">Kein Spam · DOI-bestätigt · Abmeldung jederzeit · DSGVO-konform · <a href="/newsletter-sample.html" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4);" data-track="hero-newsletter-sample-link">Beispiel ansehen →</a></p>
           </form>
         </div>
@@ -1126,7 +1127,7 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
     if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:"hero-de"});}
     fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
     .then(function(r){return r.json();})
-    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen (Double-Opt-In).";if(el)el.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"hero-de",method:"double-opt-in"});}}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}
+    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent="Fast geschafft! Dein PDF liegt unten bereit ↓ — bitte bestaetige noch deine E-Mail (Double-Opt-In).";if(el)el.value="";var dl=document.getElementById("hero-yoc-dl");if(dl){dl.style.display="inline-flex";try{dl.click();}catch(e){}}if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"hero-de",method:"double-opt-in"});gtag("event","lead_magnet_download",{event_category:"engagement",event_label:"top-10-yoc-pdf"});}}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}
     ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler.";}});
   };
 })();
