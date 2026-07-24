@@ -73,6 +73,13 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://www.youtube.com">
+  <!-- LCP-Fix 2026-07-24 web-design-agent: preconnect fonts.gstatic.com — live Lighthouse (mobile, DE Home)
+       zeigte fonts.gstatic.com als längste Critical-Request-Chain (1838ms, Google CMP/Funding-Choices lädt
+       dort eine große Fremd-Font-Liste, Open Sans woff2 43KB inklusive) UND als Lighthouse-eigenen Top-Preconnect-
+       Kandidaten (est. 323ms LCP-Ersparnis). Kein Ad-Netzwerk-Domain (pagead2/doubleclick) -> löst NICHT den
+       CMP-Trigger-vor-Hero-Bug vom 15.06., der nur bei Ad-Script-Domains auftrat. Nur DNS+TLS-Handshake vorab,
+       kein Request-Vorzug. -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- LCP-Fix: Alle Fonts non-blocking laden (kein render-blocking) -->
 <!-- LCP-Fix: Cormorant Garamond auf 3 Varianten reduziert (vorher 8) — spart ~180ms font-load -->
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direkt vorabrufen — eliminiert 1 Netzwerk-Runde (CSS→woff2) im kritischen Pfad (~100-200ms) -->
