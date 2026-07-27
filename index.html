@@ -1460,11 +1460,8 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   </div>
 </section>
 
-<!-- AdSense in-article -->
-<div class="wrap" style="padding-top:8px;padding-bottom:40px">
-<ins class="adsbygoogle" style="display:block;text-align:center" data-ad-client="ca-pub-7097302643579933" data-ad-slot="1212067635" data-ad-format="in-article" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+<!-- AdSense in-article ENTFERNT 2026-07-27: Startseite = Tier C (ads-frei, s. Kommentar am Body-Ende).
+     Ohne geladene adsbygoogle.js waere das nur noch eine reservierte Leerflaeche (min-height 250px). -->
 
 <!-- ══════════ INSIGHTS ══════════ -->
 <section id="insights">
@@ -2079,32 +2076,17 @@ try{
      unveraendert — sie nutzen bereits das offizielle Queue-Pattern (`window.adsbygoogle=[]`+push),
      das unabhaengig vom Ladezeitpunkt der Haupt-Library funktioniert. Keine AdSense-Kontoaenderung,
      keine Aenderung an Platzierung/Dichte/Anchor-Opt-out (overlays:{bottom:false} bleibt bestehen). -->
-<script>
-(function(){
-  function loadAdsense(){
-    if (document.querySelector('script[src*="adsbygoogle.js"]')) return;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933";
-    s.crossOrigin = "anonymous";
-    /* UX-Fix 2026-07-20 web-design-agent: Clarity meldete ScriptErrorCount=51,6% auf der
-       Startseite (16 von 31 Sessions) — TagError "Only one enable_page_level_ads allowed
-       per page". Root Cause: das <meta name="google-adsense-account"> (Zeile 40) aktiviert
-       Auto-Ads bereits selbst, sobald adsbygoogle.js laedt; der manuelle push mit
-       enable_page_level_ads:true darunter war ein zweiter Aktivierungsversuch = doppelt.
-       EN-Seite hat nur das Meta-Tag (kein manueller Push) und wirft den Fehler nicht — das
-       bestaetigt die Ursache. Fix: manuellen push entfernen, Meta-Tag uebernimmt Auto-Ads
-       allein. Keine Aenderung an Platzierung/Dichte/Anchor-Opt-out. */
-    document.head.appendChild(s);
-  }
-  function schedule(){
-    if ("requestIdleCallback" in window) { requestIdleCallback(loadAdsense, {timeout: 1500}); }
-    else { setTimeout(loadAdsense, 200); }
-  }
-  if (document.readyState === "complete") { schedule(); }
-  else { window.addEventListener("load", schedule); }
-})();
-</script>
+<!-- AdSense-Loader ENTFERNT 2026-07-27 (Marco-Freigabe "mach komplett alles").
+     Die Startseite ist Tier C (Funnel-/Marken-Eingang, monetization-playbook.md §1) und traegt
+     damit KEIN Auto-Ads-Snippet. Ohne geladene adsbygoogle.js kann Googles Auto-Ads-Engine nichts
+     mehr in #hero / .tool-card injizieren — das ist der am 24.07. kausal per A/B bewiesene
+     Verursacher von CLS 0,301 auf der DE-Startseite (output/cwv-forensics/2026-07-24-cwv-
+     widerspruch-aufgeloest.md). Sechs Code-Versuche mit Markup-Attributen blieben wirkungslos,
+     weil Google sie ignoriert; das Weglassen der Library wirkt dagegen sicher.
+     Das <meta name="google-adsense-account"> bleibt stehen (Konto-Verifikation), es aktiviert
+     ohne die Library nichts. ALLE Content-Seiten (Tier B) behalten AdSense unveraendert.
+     Umsatz-Effekt: RPM 0,91 EUR bei sehr geringem Startseiten-Traffic = Cent-Bereich.
+     Revert: diesen Kommentar durch den Loader aus `git show 658da19d:index.html` ersetzen. -->
 
 <!-- InvestingPro Sale Self-Expiry + Header-Offset-Sync: verschoben 2026-07-17 web-design-agent
      nach direkt hinter </header> (siehe CLS-Fix-Kommentar dort) -- lief hier vorher NACH dem
