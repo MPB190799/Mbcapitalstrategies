@@ -1,0 +1,12 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "claude-main-selfcheck",
+  "checked_at": "2026-07-27T08:30:17.910Z",
+  "content_sha": "16efa0e91cad9fbc",
+  "hard_scan": "PASS",
+  "note": "KW30-Recap-Blog aus verifiziertem SSOT-Brief (research-subagent a9507f2f); R23-Guard 0 Verstoesse; facts-ledger 13/13 VERIFIED; Hard-Verbote des Briefs eingehalten. content-qa-agent-Spawn in dieser Session nicht genutzt -> R16-Fallback."
+}

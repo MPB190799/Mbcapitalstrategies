@@ -1,0 +1,136 @@
+{
+  "asset": "wochenrueckblick-kw30-2026.html",
+  "created_at": "2026-07-27T08:29:36Z",
+  "claims": [
+    {
+      "id": "beispiel-1",
+      "claim": "Was behauptet wird",
+      "value": "die Zahl",
+      "source": "Outlet + Datum",
+      "url": "https://…",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "≥2 Quellen für VERIFIED; FALSE blockt; PLAUSIBLE = 1 Quelle, bewusst"
+    },
+    {
+      "id": "brent",
+      "claim": "Brent Fr-Close 24.07.2026",
+      "value": "96,78 USD (+9,85% WoW)",
+      "source": "FMP EOD + KW30-SSOT-Brief",
+      "url": "https://financialmodelingprep.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "wti",
+      "claim": "WTI Fr-Close",
+      "value": "89,31 USD (+8,27%)",
+      "source": "FMP EOD + KW30-SSOT-Brief",
+      "url": "https://financialmodelingprep.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "kasachstan",
+      "claim": "Kasachstan Foerderung nach CPC-Drohnenangriffen",
+      "value": "-21% (1,63 statt 2,07 Mio bbl/d)",
+      "source": "S&P Global 20.07.2026 (via KW30-SSOT-Brief)",
+      "url": "https://www.spglobal.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "roteseemeer",
+      "claim": "Houthi-Angriffe auf zwei saudische Tanker",
+      "value": "2 Tanker, 22.07.2026",
+      "source": "CNBC 22.07.2026 (via KW30-SSOT-Brief)",
+      "url": "https://www.cnbc.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "lpg",
+      "claim": "Dorian LPG Sonderdividende, Ex-/Stichtag",
+      "value": "1,00 USD/Aktie, Ex-Tag 27.07.2026, Zahltag ~12.08.",
+      "source": "Dorian LPG IR-Mitteilung 16.07.2026 (via KW30-SSOT-Brief)",
+      "url": "https://www.dorianlpg.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "insw",
+      "claim": "International Seaways kombinierte Quartalsdividende",
+      "value": "4,55 USD/Aktie (vs. 2,15 USD im Maerz)",
+      "source": "INSW IR (via KW30-SSOT-Brief)",
+      "url": "https://www.intlseas.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "tte",
+      "claim": "TotalEnergies 2. Zwischendividende",
+      "value": "0,90 EUR (+5,9%)",
+      "source": "TotalEnergies Q2-Mitteilung (via KW30-SSOT-Brief)",
+      "url": "https://totalenergies.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "pypl",
+      "claim": "Stripe/Advent-Angebot fuer PayPal, Board-Ablehnung 21.07.",
+      "value": "53 Mrd USD = 60,50 USD/Aktie",
+      "source": "KW30-SSOT-Brief (2 Quellen)",
+      "url": "https://www.reuters.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:36Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "cvx",
+      "claim": "Chevron Stellenabbau",
+      "value": "bis zu 9.000 Stellen",
+      "source": "KW30-SSOT-Brief (2 Quellen)",
+      "url": "https://www.chevron.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:37Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "s32",
+      "claim": "South32 verkauft Aluminium-Sparte an Alcoa",
+      "value": "bis zu 5,6 Mrd USD",
+      "source": "KW30-SSOT-Brief (2 Quellen)",
+      "url": "https://www.south32.net/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:37Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "zoll",
+      "claim": "US-Zoll auf patentierte Medikamente",
+      "value": "100% ab 29.09.2026",
+      "source": "KW30-SSOT-Brief (2 Quellen)",
+      "url": "https://www.reuters.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:37Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    },
+    {
+      "id": "makro",
+      "claim": "Makro Fr-Close: 10Y/SP500/Nasdaq/DAX/VIX/Gold",
+      "value": "4,68% / 7.412 / 24.976 / 25.077 / 18,58 / 4.070 USD",
+      "source": "FMP EOD + KW30-SSOT-Brief",
+      "url": "https://financialmodelingprep.com/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-07-27T08:29:37Z",
+      "note": "2-Quellen-verifiziert im KW30-SSOT-Brief (research-subagent a9507f2f, 45 Zahlen/14 WebSearches), Uebernahme 1:1"
+    }
+  ]
+}

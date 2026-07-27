@@ -1129,4 +1129,15 @@
       <video:publication_date>2026-05-20T12:00:00+02:00</video:publication_date>
     </video:video>
   </url>
+<url>
+    <loc>https://mbcapitalstrategies.com/blog/wochenrueckblick-kw30-2026.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/tf7oFCAnkE4/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>BRENT ueber 100 $ — Tanker +11 %, Energie-Earnings, PayPal 53 Mrd $ | Wochenrueckblick KW30</video:title>
+      <video:description>Wochenrueckblick KW30 2026: Oel-Angebotsschock, Tanker-Rally, Sonderdividenden bei Dorian LPG und International Seaways, PayPal-Uebernahmeschlacht — mit Ausblick auf KW31.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/tf7oFCAnkE4</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=tf7oFCAnkE4</video:content_loc>
+      <video:publication_date>2026-07-26T12:00:00+02:00</video:publication_date>
+    </video:video>
+  </url>
 </urlset>
