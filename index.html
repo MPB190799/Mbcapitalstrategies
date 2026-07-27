@@ -1471,70 +1471,63 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
       <h2 class="display section-title">Aktuelle <em>Analysen.</em></h2>
       <!-- AEO/Freshness 2026-06-16 web-design-agent: explicit <time> for AI-Overview extraction + trust signal -->
       <!-- CRO 2026-06-21 web-design-agent: freshness date updated 20→21 Juni. -->
-      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Aktualisiert: <time datetime="2026-06-26">26. Juni 2026</time></p>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Aktualisiert: <time datetime="2026-07-27">27. Juli 2026</time></p>
     </div>
     <div class="insights-list reveal">
-      <!-- CRO 2026-06-26 web-design-agent: Triple-Ex-Date Highlight mit Self-Expire nach Ex-Tag (30.06.2026 EOD CEST).
-           Nach Ablauf: Gold-Highlight-Stil wird entfernt, "Heute"-Tag wird durch "Dividenden" ersetzt, "letzter Kauftag"-Text normalisiert.
-           JS entfernt NICHT das Element (verhindert CLS), nur visuellen Highlight-Stil. -->
-      <a id="triple-ex-insight-de" class="insight" href="/blog/ex-dividend-triple-30juni-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
-        <span class="insight-date">2026-06-26</span>
-        <span id="triple-ex-tag-de" class="insight-tag">Dividenden · Heute</span>
-        <span id="triple-ex-title-de" class="insight-title">Ex-Dividende 30.06.: O, TRP, TTE, Enagás — letzter Kauftag ist heute</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <script>(function(){try{var expire=Date.UTC(2026,5,30,21,59,59);if(Date.now()>expire){var el=document.getElementById('triple-ex-insight-de');if(el){el.style.borderLeft='';el.style.paddingLeft='';el.style.background='';}var tag=document.getElementById('triple-ex-tag-de');if(tag)tag.textContent='Dividenden';var ttl=document.getElementById('triple-ex-title-de');if(ttl)ttl.textContent='Ex-Dividende 30.06. abgelaufen: O, TRP, TTE, Enagás';}}catch(e){}})();</script>
-      <!-- CRO 2026-06-26 web-design-agent: BHP mining highlight expired 2026-06-27 → hardened to plain insight entry.
-           Self-expire JS removed (was stripping border/padding/bg on the link element; now static). -->
-      <a class="insight" href="/blog/bhp-jansen-writedown-mining-kapital-2026.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Mining</span>
-        <span class="insight-title">BHP schreibt $2,3 Mrd ab — was bedeutet das für Mining-Dividenden?</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <!-- CRO 2026-06-19 web-design-agent: FOMC expired highlight removed from static HTML (expired 2026-06-18). Self-expire scripts cleaned. Plain insight entry. -->
-      <a class="insight" href="/blog/fomc-juni-2026-hard-assets-zinsen.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">FOMC · 17. Juni</span>
-        <span class="insight-title">FOMC 17. Juni 2026 — Was die Zinsentscheidung für Shipping, REITs und Pipelines bedeutet</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <!-- CRO 2026-06-19 web-design-agent: Hormuz highlight hardened to permanent "Aktuell" state — Breaking expired 2026-06-17, Hormuz-Contrarian still top topic (today-strategy 2026-06-19). Self-expire script removed. -->
-      <a class="insight" href="/blog/hormuz-tankerrate-anstieg-shipping-aktien-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
-        <span class="insight-date">2026-06</span>
+      <!-- CRO 2026-07-27: Insights-Modul auf Juli-Bestand gebracht (stand auf 2026-06-26, 31 Tage alt; Top-Eintrag war ein abgelaufener Ex-Dividenden-Termin). Keine Self-Expire-Skripte mehr — datumsgebundene Highlights gehoeren nicht in ein Evergreen-Modul. -->
+      <a class="insight" href="/blog/wochenrueckblick-kw30-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+        <span class="insight-date">2026-07-27</span>
         <span class="insight-tag">Shipping · Aktuell</span>
-        <span class="insight-title">Hormuz-Krise: Tankerrate 2026 +24% an einem Tag — Shipping-Aktien jetzt?</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Wochenr&uuml;ckblick KW30 2026: Brent &uuml;ber 100 $ &mdash; Tanker &amp; Sonderdividenden</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <a class="insight" href="/blog/frontline-vs-scorpio-tankers-vergleich-2026.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Frontline vs Scorpio 2026: VLCC vs MR-Tanker — welche Dividende gewinnt?</span>
-        <span class="insight-arrow">→</span>
+      <a class="insight" href="/blog/chokepoint-oekonomie-hormus-bab-al-mandeb-oel-inflation-shipping-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+        <span class="insight-date">2026-07-23</span>
+        <span class="insight-tag">Makro · Deep Dive</span>
+        <span class="insight-title">Chokepoint-&Ouml;konomie: Hormus &amp; Bab al-Mandeb &mdash; &Ouml;l, Inflation, Shipping</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <a class="insight" href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Green Shipping 2026: EU-ETS-Gewinner & FuelEU-Verlierer — die neue Kostenrealität</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <a class="insight" href="/blog/rio-tinto-analyse-2026.html">
-        <span class="insight-date">2026-06</span>
+      <a class="insight" href="/blog/kumba-iron-ore-analyse-2026.html">
+        <span class="insight-date">2026-07-22</span>
         <span class="insight-tag">Mining</span>
-        <span class="insight-title">Rio Tinto 2026: 5–7 % Dividende + Kupfer-Superzyklus</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Kumba Iron Ore 2026: 12,8 % Dividende &mdash; Geschenk oder Falle?</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <a class="insight" href="/blog/whitehaven-coal-analyse-2026.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Energie</span>
-        <span class="insight-title">Whitehaven Coal 2026: 8% Rendite + Rohstoff-Upside?</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <a class="insight" href="/blog/fredriksen-vs-saverys-shipping-zwei-visionen-2026.html">
-        <span class="insight-date">2026-06</span>
+      <a class="insight" href="/blog/tankerzyklus-late-cycle-signale-2026.html">
+        <span class="insight-date">2026-07-21</span>
         <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Fredriksen vs. Saverys 2026: Zwei Shipping-Visionen im Duell</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Tankerzyklus 2026: Rekordraten &amp; die Late-Cycle-Signale</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="/blog/kupfer-2035-superzyklus-angebotsl%C3%BCcke.html">
+        <span class="insight-date">2026-07-18</span>
+        <span class="insight-tag">Mining</span>
+        <span class="insight-title">Kupfer 2035: Superzyklus &amp; 30 % Angebotsl&uuml;cke</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="/blog/depot-update-juli-2026.html">
+        <span class="insight-date">2026-07-13</span>
+        <span class="insight-tag">Depot</span>
+        <span class="insight-title">Shipping-Depot Juli 2026: 24.012 &euro; &mdash; +76,5 % Total Return</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="/blog/car-carrier-vs-tanker-bewertung-2026.html">
+        <span class="insight-date">2026-07-11</span>
+        <span class="insight-tag">Shipping</span>
+        <span class="insight-title">Car-Carrier-Pr&auml;mie vs. Tanker-Discount 2026</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="/blog/growthpoint-analyse-2026.html">
+        <span class="insight-date">2026-07-10</span>
+        <span class="insight-tag">REITs</span>
+        <span class="insight-title">Growthpoint: 10 % Dividende &amp; das Rand-Risiko</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="/blog/duration-check-zinsen-sektoren-2026.html">
+        <span class="insight-date">2026-07-09</span>
+        <span class="insight-tag">Zinsen</span>
+        <span class="insight-title">Zinsen &amp; Aktien: Der 3-Fragen-Check f&uuml;r REITs &amp; Shipping</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
       <a class="insight" href="/blog/">
         <span class="insight-date">Archiv</span>
