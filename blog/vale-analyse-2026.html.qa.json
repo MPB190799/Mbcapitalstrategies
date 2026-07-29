@@ -1,0 +1,14 @@
+{
+  "score": 14,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent-self-heal",
+  "checked_at": "2026-07-29T11:43:01.194Z",
+  "content_sha": "94e7f89d3b8888f8",
+  "hard_scan": "PASS",
+  "note": "Self-Heal 29.07.2026: kein QA-Report vorhanden (Content seit letztem QA am 27.07. veraendert, SHA fe938efb8b2f0479). Echte R16-Vollpruefung durchgefuehrt. STALE Zahlen gefunden+korrigiert: (1) Dividendenrendite durchgaengig als 6,7%/6-10%/8-12% dargestellt (Title/Meta/OG/Twitter/FAQ-Schema/Bewertungs-Absatz/Vergleichstabelle) -- aktuelle Rendite Sommer 2026 verifiziert bei ~5,4-5,6% (mehrere unabh. Quellen: gurufocus 5,63%, stockanalysis/macrotrends konsistent 5,4-5,6%); alle Nennungen auf ~5,5% korrigiert, Boomjahr-Kontext (6-10%/8-12%) als historische Einordnung erhalten. Effektive Nettorendite nach 10%-Quellensteuer von 'ca. 6%' auf 'ca. 5%' korrigiert (5,5% x 0,9). (2) KGV 'von ~6-7x' war irrefuehrend ohne Trailing/Forward-Unterscheidung -- verifiziert Trailing-KGV ~22-23x (Sonderbelastungen Samarco), Forward-KGV (Konsens) ~7-8x; Text auf Forward-KGV ~7-8x + Trailing-Hinweis praezisiert. (3) Samarco-Rechtsstreit als '5 Mrd. Settlement, zu 80% abgewickelt' war falsch -- das Definitiv-Settlement vom Okt. 2024 betraegt R70 Mrd. (~2,6 Mrd.), per Q1 2026 sind davon rund R4,7 Mrd. (~44%) ausgezahlt, nicht 80% -- korrigiert. (4) Meta-Description behauptete unbelegtes ' Mrd Buyback' -- einzige verifizierbare Zahl ist das Feb-2025-Programm ueber 120 Mio. Aktien (~3% des Grundkapitals), kein USD-Betrag in offiziellen Quellen auffindbar -- unbelegte Zahl entfernt, durch verifizierte '3% der Aktien' ersetzt. (5) 'Vale bietet die hoechste Brutto-Dividende' im Dreikampf-Vergleich stimmte nicht mehr, nachdem Vales Rendite auf ~5,5% korrigiert wurde (Rio Tinto Tabellenwert ~6% > Vale) -- Fazit-Absatz umformuliert (Renditen liegen dicht beieinander, Vale nach Quellensteuer sogar dahinter). Quellensteuer-Faktenlage (10% ab 2026, Law 15.270/2025, kein DBA-Ausgleich) UNVERAENDERT VERIFIZIERT korrekt. Zusaetzlich gefunden+behoben: Offenlegungspflicht fehlte komplett (Vale ist gehaltene Position lt. held-positions.json, 107 Stk. TR+Scalable) -- Offenlegungssatz in der Sources-Box ergaenzt (qa-gate hardScan bestand danach). dateModified 2026-07-27 -> 2026-07-29, sichtbares Datum im Artikel mitgezogen. Voice/Disclaimer/R19(n/a Blog)/R5(keine Depotsumme)/GA4/hreflang/Schema unveraendert PASS.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
