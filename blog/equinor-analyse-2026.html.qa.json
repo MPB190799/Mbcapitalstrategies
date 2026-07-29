@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-29T11:23:17.058Z",
+  "content_sha": "9fe5854dbce3b95d",
+  "hard_scan": "PASS",
+  "note": "Equinor Unternehmensanalyse (kein Earnings-Report, R23 n/a — 0 Verstoesse via r23-guard.py). Faktencheck (eigene WebSearch 2026-07-29) deckte massive interne Widersprueche auf: Titel/Meta/Video-Schema/AEO-Bloecke nannten parallel 9%/6-9%/4-5% Gesamtrendite + $8 Mrd./$5 Mrd. Buyback + $35 Breakeven vs. Body-Tabelle 5-7%/45-50 USD. Korrigiert+harmonisiert auf verifizierte Werte: Marktkap ~$95-96 Mrd. (war $65-70 Mrd., Quelle companiesmarketcap.com), Div. $0,39/Quartal Q2 2026 +>5%/Jahr-Ziel (stocktitan/fool Q2-Call), Buyback 2026 auf $3 Mrd. verdoppelt/Rahmen 2027 $2-4 Mrd. bei Oel $60-80 (oilprice.com, SEC 6-K), Breakeven nach Dividende ~$50/Barrel Konzernziel bis 2030 vs. Neuprojekte <$35-40/Barrel (offshore-mag.com, SEC 6-K Capital Markets Day), Forward-KGV ~8x vs. Sektor-Median ~11x (gurufocus.com). Fehlende MAR/ESMA-Offenlegung fuer gehaltene Position ergaenzt (Equinor in output/data/held-positions.json bestaetigt). Voice: Marco-Stammtisch-Ton, FAKT/THESE getrennt, Disclaimer 2x praesent, kein AI-Deutsch.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
