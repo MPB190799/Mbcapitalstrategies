@@ -674,7 +674,18 @@
         'background:transparent;color:#9aa6c0;' +
         'border:1px solid rgba(212,175,55,0.25);' +
       '}' +
-      '.cookie-btn-secondary:hover{color:#d4af37;border-color:#d4af37;}';
+      '.cookie-btn-secondary:hover{color:#d4af37;border-color:#d4af37;}' +
+      /* Mobile (390px-Referenz, 31.07.2026): der volle Banner (3 Zeilen Text+Buttons,
+         ~145px hoch) deckte die Hero-Newsletter-CTA komplett ab, bevor der Nutzer
+         ueberhaupt scrollen konnte (Above-the-Fold-Blocker auf der wichtigsten
+         Conversion-Flaeche der Startseite). Kompakter Text + engeres Padding
+         verkleinert die Ueberdeckung, ohne Hinweis/Link/Wahlfreiheit zu entfernen. */
+      '@media (max-width:480px){' +
+        '#cookie-banner{padding:10px 14px;}' +
+        '#cookie-banner-inner{gap:8px;}' +
+        '#cookie-banner-inner p{font-size:0.72rem;line-height:1.35;min-width:0;}' +
+        '.cookie-btn{padding:7px 12px;font-size:0.75rem;}' +
+      '}';
 
     document.head.appendChild(style);
 
