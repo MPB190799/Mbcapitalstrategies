@@ -80,6 +80,11 @@
        CMP-Trigger-vor-Hero-Bug vom 15.06., der nur bei Ad-Script-Domains auftrat. Nur DNS+TLS-Handshake vorab,
        kein Request-Vorzug. -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- CWV-Fix 2026-07-31 web-design-agent: Lighthouse "uses-rel-preconnect" (live DE-Home,
+       mobil) nennt www.clarity.ms als fehlenden Preconnect-Kandidaten (~219ms Ersparnis).
+       Microsoft Clarity ist kein Ad-/CMP-Netzwerk (anders als pagead2/doubleclick, siehe
+       06-15-Fix oben) -- kein Risiko, den CMP-vor-Hero-Bug erneut auszulösen. -->
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
 <!-- LCP-Fix: Alle Fonts non-blocking laden (kein render-blocking) -->
 <!-- LCP-Fix: Cormorant Garamond auf 3 Varianten reduziert (vorher 8) — spart ~180ms font-load -->
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direkt vorabrufen — eliminiert 1 Netzwerk-Runde (CSS→woff2) im kritischen Pfad (~100-200ms) -->
