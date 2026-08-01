@@ -1,0 +1,13 @@
+{
+  "score": 14,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "distribution-agent-selfcheck",
+  "checked_at": "2026-08-01T08:31:00.984Z",
+  "content_sha": "ae911e01a6a9cc15",
+  "hard_scan": "PASS",
+  "note": "R16 self-heal 01.08.2026: Dorian LPG Kurs 47,42 USD + 5 Dividenden-Records (27.07./18.05./09.02.2026, 17.11./12.08.2025) gegen FMP stable/dividends+quote live verifiziert; TTM-Summe 3,95 USD und Rendite 8,3% nachgerechnet und bestätigt; Deklarationsdatum 16.07.2026 gegen Businesswire-PR + 4 weitere Outlets (Gurufocus/StockTitan/Simply Wall St/MarketBeat) bestätigt (FMP-Feld weicht 1 Tag ab, PR ist autoritativ). Compliance: kein CapTrader/IBKR, keine MLP-Ticker, Disclaimer vorhanden.",
+  "factcheck": "pass"
+}
