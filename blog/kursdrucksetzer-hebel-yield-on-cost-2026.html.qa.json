@@ -1,13 +1,13 @@
 {
-  "score": 14,
+  "score": 13,
   "max": 14,
   "compliance": "PASS",
   "lang": "de",
   "platform": "blog",
-  "checker": "distribution-agent-selfcheck",
-  "checked_at": "2026-08-01T08:31:00.984Z",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-08-01T08:34:26.250Z",
   "content_sha": "ae911e01a6a9cc15",
   "hard_scan": "PASS",
-  "note": "R16 self-heal 01.08.2026: Dorian LPG Kurs 47,42 USD + 5 Dividenden-Records (27.07./18.05./09.02.2026, 17.11./12.08.2025) gegen FMP stable/dividends+quote live verifiziert; TTM-Summe 3,95 USD und Rendite 8,3% nachgerechnet und bestätigt; Deklarationsdatum 16.07.2026 gegen Businesswire-PR + 4 weitere Outlets (Gurufocus/StockTitan/Simply Wall St/MarketBeat) bestätigt (FMP-Feld weicht 1 Tag ab, PR ist autoritativ). Compliance: kein CapTrader/IBKR, keine MLP-Ticker, Disclaimer vorhanden.",
+  "note": "LPG Kurs/52W/Tages-% gegen FMP stable verifiziert (exit0); TTM 3,95 USD + 8,3% = FMP dividendPerShareTTM/dividendYieldTTM; Div-Historie (Record-Tage/Betraege/Zahltag) 1:1 FMP; 'irregular cash dividend' + 16.07.2026 + Record 27.07. + zahlbar 12.08. via Businesswire-PR + SEC 8-K lpg-20260716xex99d1; Depot-Mitgliedschaft LPG (scalable+tr, 91 Stk) aus held-positions.json 31.07.; Offenlegung + MAR-Stufe-2 im Text; R23 clean.",
   "factcheck": "pass"
 }
