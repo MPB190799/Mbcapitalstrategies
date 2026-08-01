@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#050508">
+
+  <title>Kursdrucksetzer-Hebel: YOC bei fallendem Kurs erhöhen</title>
+  <meta name="description" content="Warum ein fallender Kurs deinen Yield on Cost erhöhen kann — Formel, Rechenbeispiel, Dorian LPG als Praxisfall und die Value-Trap-Warnung.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Marco Bozem">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html">
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/blog/price-drop-lever-yield-on-cost-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html">
+
+  <meta property="og:title" content="Kursdrucksetzer-Hebel: YOC bei fallendem Kurs erhöhen">
+  <meta property="og:description" content="Warum ein fallender Kurs deinen Yield on Cost erhöhen kann — Formel, Rechenbeispiel, Dorian LPG als Praxisfall und die Value-Trap-Warnung.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kursdrucksetzer-Hebel: YOC bei fallendem Kurs erhöhen">
+  <meta name="twitter:description" content="Formel, Rechenbeispiel und die Value-Trap-Warnung: Wie ein fallender Kurs deinen Yield on Cost erhöht — mit Dorian LPG als echtem Praxisfall aus meinem Depot.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+<!-- Critical inline CSS for LCP text render -->
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}body{margin:0;background:#050508;color:#e8eaf0;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}.blog-main{max-width:900px;margin:0 auto;padding:0 16px}.article-header{padding:24px 0 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+<meta name="google-adsense-account" content="ca-pub-7097302643579933">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kursdrucksetzer-Hebel: Wie ein fallender Kurs bei einer Dividendenaktie deinen Yield on Cost erhöht",
+  "description": "Yield on Cost = Dividende geteilt durch deinen Einstandspreis, nicht durch den aktuellen Kurs. Formel, neutrales Rechenbeispiel, Dorian LPG als echter Praxisfall aus Marcos Depot und die Value-Trap-Warnung, wenn die Dividende selbst gefährdet ist.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "logo": {"@type": "ImageObject","url": "https://mbcapitalstrategies.com/assets/logo.png"}
+  },
+  "datePublished": "2026-08-01",
+  "dateModified": "2026-08-01",
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html",
+  "image": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+  "articleSection": "Dividendenstrategie",
+  "wordCount": 1150,
+  "keywords": [
+    "Yield on Cost erhöhen",
+    "Kursdrucksetzer",
+    "YOC Formel",
+    "Dorian LPG Dividende",
+    "Nachkauf fallender Kurs",
+    "Dividendenaktie Value Trap",
+    "Dividendensicherheit prüfen",
+    "Yield on Cost Rechner"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://mbcapitalstrategies.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mbcapitalstrategies.com/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Kursdrucksetzer-Hebel", "item": "https://mbcapitalstrategies.com/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Yield on Cost und der aktuellen Dividendenrendite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die aktuelle Dividendenrendite rechnet die Dividende gegen den heutigen Börsenkurs — sie ändert sich täglich, auch wenn du gar nichts tust. Yield on Cost (YOC) rechnet dieselbe Dividende gegen DEINEN persönlichen Einstandspreis. Dein YOC bewegt sich nur, wenn sich entweder die Dividende ändert oder du zu einem anderen Kurs nachkaufst — er ist eine Kennzahl über deine eigene Position, nicht über den Markt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum erhöht ein Nachkauf bei fallendem Kurs den Yield on Cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil dein Durchschnittseinstand sinkt, sobald du Aktien zu einem niedrigeren Kurs nachkaufst — und YOC wird genau gegen diesen Durchschnittseinstand gerechnet. Bleibt die Dividende pro Aktie gleich hoch (oder steigt sie sogar), teilst du dieselbe oder eine höhere Dividende durch einen kleineren Nenner. Das Ergebnis: dein persönlicher YOC steigt, unabhängig davon, wohin sich der Kurs danach weiterbewegt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann ist ein fallender Kurs bei einer Dividendenaktie eine Value-Trap statt einer Chance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Immer dann, wenn der Kurs fällt, WEIL sich die Dividendensicherheit selbst verschlechtert — sinkender Free Cashflow, steigende Ausschüttungsquote über die Ertragskraft hinaus, wachsende Nettoverschuldung. Dann kaufst du zwar günstiger nach, aber in eine Dividende hinein, die als Nächstes gekürzt wird — und dein rechnerisch hoher YOC bricht mit der nächsten Kürzung wieder ein. Die Prüfung von Payout-Ratio, Cashflow-Deckung und Verschuldung ist deshalb Pflicht vor jedem Nachkauf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist der Kursdrucksetzer-Hebel bei Shipping- und Rohstoffaktien besonders stark?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil viele Shipping- und Rohstoffwerte ein variables Dividendenmodell fahren, das an Fracht- oder Rohstoffpreise gekoppelt ist statt an eine feste Ausschüttungshöhe. Dreht der Zyklus nach oben, steigt neben deinem gesunkenen Einstand zusätzlich die Ausschüttung selbst — der YOC-Effekt wirkt dann doppelt. Dorian LPG etwa zahlt quartalsweise, deklariert die Höhe aber ausdrücklich als 'irregular cash dividend' — die Kadenz ist fix, der Betrag nicht. Das ist kein Fehler im System, sondern die Eigenschaft, die den doppelten Hebel möglich macht."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">MB Capital Strategies</a>
+    <nav>
+      <a href="/blog/">Blog</a>
+      <a href="/dividendenstrategie/">Dividenden</a>
+      <a href="/rechner/">Rechner</a>
+      <a href="/insider/">Newsletter</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-main" data-no-google-auto-placements="true">
+  <article>
+
+    <div class="breadcrumbs" style="max-width:860px;margin:20px auto 0;font-size:0.85rem;color:#888;">
+      <a href="/" style="color:#D4AF37;text-decoration:none;">Startseite</a> &rsaquo;
+      <a href="/blog/" style="color:#D4AF37;text-decoration:none;">Blog</a> &rsaquo;
+      Kursdrucksetzer-Hebel
+    </div>
+
+    <header class="article-header" style="max-width:860px;margin:28px auto 0;">
+      <div class="article-meta" style="color:#D4AF37;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">
+        DIVIDENDEN · YIELD ON COST · STRATEGIE
+      </div>
+      <h1>Kursdrucksetzer-Hebel: Wie ein fallender Kurs bei einer Dividendenaktie deinen Yield on Cost erhöht</h1>
+
+      <div class="aeo-block" style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+        <p style="margin:0"><strong style="color:#D4AF37">Kurze Antwort:</strong> Yield on Cost (YOC) rechnet die Dividende gegen deinen Einstandspreis, nicht gegen den aktuellen Kurs. Fällt der Kurs einer Dividendenaktie und du kaufst zu diesem günstigeren Kurs nach, sinkt dein Durchschnittseinstand — und bei gleichbleibender oder steigender Dividende steigt dadurch dein persönlicher YOC. Das funktioniert nur, solange die Dividende selbst nicht gefährdet ist. Fällt der Kurs, weil die Ausschüttung wackelt, ist es keine Chance, sondern eine Value-Trap.</p>
+      </div>
+
+      <p class="article-lead" style="font-size:1.1rem;color:#c8cfe0;line-height:1.7;margin:16px 0 0;">
+        Die meisten Investoren schauen bei einem fallenden Aktienkurs zuerst auf den Buchverlust. Bei einer Dividendenaktie lohnt sich ein zweiter Blick: auf deinen Yield on Cost. Ich zeige dir die Formel, ein neutrales Rechenbeispiel, warum der Hebel bei Shipping- und Rohstoffdividenden doppelt wirkt — und wo die Grenze zur Value-Trap liegt.
+      </p>
+      <div style="font-size:0.82rem;color:#7a8499;margin-top:12px;">
+        Von <a href="/ueber-marco-bozem/" style="color:#D4AF37;">Marco Bozem</a> · 1. August 2026 · 7 Min. Lesezeit
+      </div>
+    </header>
+
+    <div style="max-width:860px;margin:28px auto;">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="article-body" style="max-width:860px;margin:0 auto;">
+
+      <h2>Die Formel, die die meisten falsch im Kopf haben</h2>
+
+      <p>Wenn Leute "Dividendenrendite" sagen, meinen sie fast immer die <strong>aktuelle</strong> Rendite: Dividende geteilt durch den heutigen Börsenkurs. Diese Zahl bewegt sich jeden Tag, auch wenn du selbst nichts tust — steigt der Kurs, sinkt sie; fällt der Kurs, steigt sie. Sie beschreibt den Markt, nicht deine Position.</p>
+
+      <p><strong>Yield on Cost (YOC)</strong> ist etwas anderes. Die Formel:</p>
+
+      <div class="info-box" style="background:#1a1f2b;padding:16px 20px;border-left:4px solid #D4AF37;border-radius:6px;margin:24px 0;">
+        <strong style="color:#D4AF37;">YOC = Jährliche Dividende je Aktie ÷ Dein Einstandspreis je Aktie</strong>
+        <p style="margin:10px 0 0;color:#c8cfe0;line-height:1.7;">Nicht der heutige Kurs steht im Nenner — sondern das, was DU tatsächlich bezahlt hast. Dein YOC bewegt sich nur dann, wenn sich entweder die Dividende ändert oder du zu einem neuen Kurs nachkaufst.</p>
+      </div>
+
+      <p>Ein neutrales Rechenbeispiel, ohne Bezug zu einer echten Position: Du kaufst eine Aktie für 100 € und sie zahlt 6 € Dividende im Jahr. Dein YOC = 6 %. Fällt der Kurs auf 70 € und du kaufst zum gleichen Betrag nach, sinkt dein Durchschnittseinstand auf 85 € (Mittelwert aus 100 € und 70 €, bei gleicher Stückzahl je Kauf). Zahlt das Unternehmen weiterhin 6 € Dividende je Aktie, liegt dein neuer YOC bei rund 7,1 % (6 € ÷ 85 €) — obwohl sich am Unternehmen selbst nichts geändert hat. Der einzige Hebel war dein günstigerer Einstand.</p>
+
+      <h2>Der Kursdrucksetzer-Mechanismus</h2>
+
+      <p>Genau das ist der "Kursdrucksetzer-Hebel": Ein fallender Kurs bei einer Dividendenaktie ist für einen Nachkäufer erst einmal keine schlechte Nachricht, sondern eine Chance, den eigenen Durchschnittseinstand zu senken. Diszipliniert und gezielt nachkaufen statt in Panik zu verkaufen — das ist der ganze Trick, und er klingt einfacher, als er in der Praxis ist, weil ein fallender Kurs sich im Moment fast immer falsch anfühlt.</p>
+
+      <p>Wichtig ist die Reihenfolge: Erst prüfen, WARUM der Kurs fällt, dann erst über einen Nachkauf nachdenken. Fällt der Kurs, weil der Gesamtmarkt schwächelt oder eine Branche kurzfristig unter Druck steht, während die Dividendendeckung des einzelnen Unternehmens intakt bleibt, ist das der Fall, für den dieser Hebel gemacht ist. Fällt der Kurs, weil sich die fundamentale Lage des Unternehmens selbst verschlechtert, ist es etwas anderes — dazu gleich mehr.</p>
+
+      <h2>Der doppelte Hebel bei Shipping- und Rohstoffdividenden</h2>
+
+      <p>Bei klassischen Fixdividenden-Zahlern ist der Kursdrucksetzer-Hebel einseitig: Nur dein Einstand ändert sich, die Dividende bleibt, wie sie ist. Bei Shipping- und Rohstoffaktien mit <strong>variablem Dividendenmodell</strong> — die Ausschüttung folgt den Fracht- oder Rohstoffpreisen, nicht einem festen Quartalsversprechen — kann der Hebel doppelt wirken: Dein Einstand sinkt UND die Dividende selbst steigt, sobald sich der Zyklus dreht.</p>
+
+      <p>Dorian LPG (NYSE: LPG) ist ein gutes Beispiel für dieses Modell. Das Unternehmen zahlt faktisch quartalsweise — seit Anfang 2022 kein Quartal ohne Ausschüttung (eigene Auszählung der Dividendenhistorie, FMP, Stand 01.08.2026) —, deklariert die Höhe aber ausdrücklich als "irregular cash dividend": Die Kadenz ist stabil, nur der Betrag schwankt mit dem Zyklus, mal als reguläre, mal als "Special" gelabelte Zahlung. Genau diese Unregelmäßigkeit im Betrag ist die Eigenschaft, die den doppelten Hebel möglich macht.</p>
+
+      <div class="info-box" style="background:#1a1f2b;padding:16px 20px;border-left:4px solid #D4AF37;border-radius:6px;margin:24px 0;">
+        <strong style="color:#D4AF37;">FAKT — Dorian LPG, Stand 01.08.2026 (Quelle: FMP Live-Daten)</strong>
+        <ul style="margin:12px 0 0;padding-left:20px;color:#c8cfe0;line-height:2;">
+          <li>Aktueller Kurs: <strong>47,42 USD</strong> (FMP Live-Quote, 01.08.2026)</li>
+          <li>Zuletzt deklarierte Ausschüttung: <strong>1,00 USD/Aktie</strong>, Record-Tag 27.07.2026, bekanntgegeben 16.07.2026 (Unternehmensmitteilung), zahlbar 12.08.2026</li>
+        </ul>
+        <table style="width:100%;border-collapse:collapse;margin:14px 0 4px;font-size:0.88rem;">
+          <thead>
+            <tr style="border-bottom:1px solid #2a2a3e;">
+              <th style="text-align:left;padding:6px 8px;color:#D4AF37;">Record-Tag</th>
+              <th style="text-align:left;padding:6px 8px;color:#D4AF37;">Betrag</th>
+              <th style="text-align:left;padding:6px 8px;color:#D4AF37;">Label (FMP)</th>
+            </tr>
+          </thead>
+          <tbody style="color:#c8cfe0;">
+            <tr style="border-bottom:1px solid #1a1a2e;"><td style="padding:6px 8px;">27.07.2026</td><td style="padding:6px 8px;">1,00 USD</td><td style="padding:6px 8px;">—</td></tr>
+            <tr style="border-bottom:1px solid #1a1a2e;"><td style="padding:6px 8px;">18.05.2026</td><td style="padding:6px 8px;">1,00 USD</td><td style="padding:6px 8px;">Special</td></tr>
+            <tr style="border-bottom:1px solid #1a1a2e;"><td style="padding:6px 8px;">09.02.2026</td><td style="padding:6px 8px;">0,70 USD</td><td style="padding:6px 8px;">Special</td></tr>
+            <tr style="border-bottom:1px solid #1a1a2e;"><td style="padding:6px 8px;">17.11.2025</td><td style="padding:6px 8px;">0,65 USD</td><td style="padding:6px 8px;">Special</td></tr>
+            <tr><td style="padding:6px 8px;">12.08.2025</td><td style="padding:6px 8px;">0,60 USD</td><td style="padding:6px 8px;">Special</td></tr>
+          </tbody>
+        </table>
+        <p style="margin:10px 0 0;color:#9aa6c0;font-size:0.85rem;">Summe der letzten 12 Monate (5 Ausschüttungen, echtes TTM-Fenster): <strong style="color:#f0f4ff;">3,95 USD/Aktie</strong> (deckt sich mit FMPs eigenem TTM-Wert). Auf Basis dieser TTM-Summe und des aktuellen Kurses ergibt sich rechnerisch (3,95 ÷ 47,42) eine Rendite von rund <strong style="color:#f0f4ff;">8,3 %</strong> auf aktuellem Kursniveau.</p>
+      </div>
+
+      <p>Der Trend der letzten fünf Zahlungen — 0,60 USD → 0,65 USD → 0,70 USD → 1,00 USD → 1,00 USD — zeigt genau den doppelten Hebel: Die Ausschüttung ist über die letzten zwölf Monate gestiegen, während der Kurs zwischenzeitlich auch niedriger stand als heute. Wer in einer schwächeren Phase nachgekauft hat, sitzt heute auf einem niedrigeren Einstand UND einer inzwischen höheren Ausschüttung.</p>
+
+      <p>Ich habe genau das selbst gemacht: Bei Dorian LPG habe ich nachgekauft, als der Kurs gefallen ist, und dadurch meinen eigenen Yield on Cost langfristig deutlich erhöht. Das ist ein persönliches Beispiel für den Mechanismus, keine Kaufempfehlung — was für meinen Einstand gilt, gilt nicht automatisch für deinen.</p>
+
+      <p><em>Offenlegung: Ich halte Dorian LPG selbst im öffentlich einsehbaren Depot (Trade Republic / Scalable). Keine Anlageberatung.</em></p>
+
+      <h2>Die Warnung: Wann aus der Chance eine Value-Trap wird</h2>
+
+      <p>Der Kursdrucksetzer-Hebel funktioniert nur in eine Richtung sauber: wenn der Kurs fällt, aber die Dividendensicherheit intakt bleibt. Fällt der Kurs, WEIL sich die Dividendensicherheit selbst verschlechtert, kaufst du günstiger in ein Problem hinein — und die nächste Kürzung reißt deinen schön gerechneten YOC direkt wieder ein. Drei Dinge gehören deshalb IMMER vor einen Nachkauf, nicht danach:</p>
+
+      <ul style="color:#c8cfe0;line-height:2;padding-left:20px;">
+        <li><strong>Payout-Ratio:</strong> Schüttet das Unternehmen mehr aus, als es verdient? Eine dauerhaft über 100 % liegende Ausschüttungsquote ist ein Warnsignal, keine Momentaufnahme.</li>
+        <li><strong>Cashflow-Deckung:</strong> Trägt der freie Cashflow die Dividende — oder wird sie aus der Substanz oder über neue Schulden finanziert?</li>
+        <li><strong>Verschuldung:</strong> Steigt die Nettoverschuldung im Verhältnis zum EBITDA an, während der Kurs fällt? Das ist oft der erste Hinweis auf eine kommende Kürzung, lange bevor sie offiziell verkündet wird.</li>
+      </ul>
+
+      <p>Bei variablen Dividendenmodellen wie dem von Dorian LPG kommt eine zusätzliche Nuance dazu: Eine niedrigere Ausschüttung in einer schwachen Zyklusphase ist dort kein Warnsignal, sondern Teil des Systems — die Dividende ATMET mit dem Fracht- oder Rohstoffmarkt. Das ist etwas anderes als eine Kürzung bei einem Unternehmen, das eigentlich eine feste Dividende zugesagt hat und diese Zusage bricht.</p>
+
+      <h2>Praktisches Vorgehen</h2>
+
+      <p>Drei Schritte, bevor du bei einer fallenden Dividendenaktie nachkaufst:</p>
+
+      <ol style="color:#c8cfe0;line-height:2;padding-left:20px;">
+        <li><strong>Ursache klären:</strong> Marktweite Schwäche oder unternehmensspezifisches Problem? Nur Ersteres spricht für einen Nachkauf.</li>
+        <li><strong>Dividendensicherheit prüfen:</strong> Payout-Ratio, Cashflow-Deckung, Verschuldungstrend — alle drei, nicht nur eine davon.</li>
+        <li><strong>YOC vor und nach dem Nachkauf durchrechnen:</strong> Mit dem <a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield-on-Cost-Rechner</a> siehst du in Sekunden, wie stark ein Nachkauf zu einem bestimmten Kurs deinen Durchschnitts-YOC tatsächlich bewegt — statt es über den Daumen zu peilen.</li>
+      </ol>
+
+      <div style="margin:32px 0;padding:16px 20px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:4px;">
+        <p style="margin:0 0 8px;font-size:0.85rem;color:#D4AF37;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Weiterführend</p>
+        <ul style="margin:0;padding-left:18px;color:#c8cfe0;font-size:0.92rem;">
+          <li><a href="/dividendenstrategie/" style="color:#D4AF37;">Dividendenstrategie-Hub: YOC, Cashflow &amp; Depot-Aufbau</a></li>
+          <li><a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield-on-Cost-Rechner — deinen eigenen YOC berechnen</a></li>
+          <li><a href="/tools/dividenden-wachstumsrechner.html" style="color:#D4AF37;">Dividenden-Wachstumsrechner — Cashflow über Jahre simulieren</a></li>
+        </ul>
+      </div>
+
+      <h2 style="font-size:1.1rem;">Transparenz &amp; Methodik</h2>
+      <div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:16px 20px;margin:20px 0;font-size:0.85rem;color:#9aa6c0;line-height:1.8;">
+        <p style="margin:0 0 4px;">Verfasser: Marco Bozem, MB Capital Strategies (Privatanleger, Finanz-Publizist).</p>
+        <p style="margin:0 0 4px;">Eigene Position: Ich halte Dorian LPG im eigenen Depot (Stand Positionsdaten: 31.07.2026).</p>
+        <p style="margin:0 0 4px;">Methodik: Dividenden-Deckung und Ausschüttungsquote, Netto-Verschuldung/EBITDA, Bewertung im Peer-Vergleich des Sektors; Datenbasis: Geschäftsberichte und Marktdaten (FMP).</p>
+        <p style="margin:0 0 4px;">Anlagehorizont: mehrjährig (Hard Assets, Dividendenstrategie).</p>
+        <p style="margin:0 0 4px;">Aktualisierung: Ich greife Thesen bei Quartalszahlen und wesentlichen Ereignissen wieder auf, nicht nach festem Zeitplan.</p>
+        <p style="margin:0;">Risiko: Aktien können erheblich schwanken, ein Totalverlust ist möglich. Dies ist meine persönliche Einschätzung, keine Anlageberatung und keine Aufforderung zum Kauf oder Verkauf; deine persönliche Situation bleibt unberücksichtigt.</p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:6px;font-size:0.82rem;color:#8a92a8;line-height:1.6;">
+        <strong style="color:#a0a8b8;">Disclaimer:</strong> Keine Anlageberatung. Alle Inhalte dienen ausschließlich der Information und Unterhaltung. Eigenverantwortlich handeln.
+      </div>
+
+      <!-- Author Box -->
+      <div style="display:flex;gap:16px;align-items:flex-start;padding:20px;background:#0d1020;border-radius:8px;margin:24px 0;">
+        <img src="/assets/marco-profile.webp" alt="Marco Bozem — Unabhängiger Investor" width="64" height="64" style="border-radius:50%;flex-shrink:0;object-fit:cover;">
+        <div>
+          <p style="margin:0 0 4px;font-weight:700;color:#f0f4ff;">Marco Bozem</p>
+          <p style="margin:0;font-size:0.85rem;color:#9aa6c0;">Unabhängiger Investor mit Fokus auf Hard Assets &amp; Dividenden — Shipping, Mining, Energie, Pipelines, REITs.</p>
+        </div>
+      </div>
+
+      <div style="max-width:860px;margin:28px auto;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <h2>Meine Tools &amp; Empfehlungen</h2>
+      <div class="cta-box">
+        <a href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43" target="_blank" rel="sponsored nofollow noopener noreferrer">💰 Broker Nr. 1 – Scalable Capital</a>
+        <a href="https://refnocode.trade.re/79z763g7" target="_blank" rel="sponsored nofollow noopener noreferrer">📱 Alternative – Trade Republic</a>
+        <a href="https://www.investing-referral.com/mbcapital3/" target="_blank" rel="sponsored nofollow noopener noreferrer">📊 Fundamentalanalyse – InvestingPro</a>
+      </div>
+      <p style="margin:8px 0 0;font-size:0.78rem;color:#9aa6c0;">*Affiliate-Links. Provision ohne Mehrkosten für dich.</p>
+
+      <div class='related-articles'><h3>Verwandte Analysen</h3><ul>
+        <li><a href="/dividendenstrategie/" style="color:#D4AF37;">Dividendenstrategie-Hub — YOC, Cashflow &amp; Depot-Aufbau</a></li>
+        <li><a href="/tools/yield-on-cost-rechner.html" style="color:#D4AF37;">Yield-on-Cost-Rechner</a></li>
+        <li><a href="/shipping-aktien/" style="color:#D4AF37;">Shipping-Aktien Übersicht: Alle Tanker, LNG &amp; Bulk-Positionen</a></li>
+      </ul></div>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+      <a href="/insider/">Newsletter</a>
+    </div>
+    <div class="footer-col">
+      <h4>Analysen</h4>
+      <a href="/bestenlisten/">Bestenlisten</a>
+      <a href="/blog/">Blog</a>
+      <a href="/rechner/">Finanzrechner</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="https://mbcapitalstrategiesglobal.com/" target="_blank" rel="noopener">English Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+
+</body>
+</html>
