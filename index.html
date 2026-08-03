@@ -69,7 +69,7 @@
 
   <!-- LCP-Fix 2026-06-15 web-design-agent: preconnect→dns-prefetch — preconnect löste sofort TCP/TLS-Handshake aus und beschleunigte CMP-Trigger (EU-User sahen CMP-Modal VOR Hero). dns-prefetch reicht für AdSense (Script async am Seitenende). -->
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <!-- www.googletagmanager.com: dns-prefetch -> preconnect 2026-08-03, siehe Kommentar unten -->
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
   <link rel="dns-prefetch" href="https://www.youtube.com">
@@ -85,6 +85,16 @@
        Microsoft Clarity ist kein Ad-/CMP-Netzwerk (anders als pagead2/doubleclick, siehe
        06-15-Fix oben) -- kein Risiko, den CMP-vor-Hero-Bug erneut auszulösen. -->
   <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+  <!-- CWV-Fix 2026-08-03 web-design-agent (Eskalation 29.07, LCP-Plateau 6.9-7.0s): Lighthouse
+       "uses-rel-preconnect" (live DE-Home, mobil) nennt www.googletagmanager.com als groessten
+       fehlenden Preconnect-Kandidaten (450ms LCP / 300ms FCP geschaetzte Ersparnis, bootup-time
+       zeigt gtag.js allein mit 446ms Main-Thread-Zeit). googletagmanager.com ist wie
+       fonts.gstatic.com/clarity.ms KEIN Ad-Netzwerk-Domain (pagead2.googlesyndication.com /
+       googleads.g.doubleclick.net sind es, siehe 06-15-Fix oben) -- der CMP-vor-Hero-Bug trat
+       ausschliesslich bei Ad-Script-Domains auf, nicht bei reinen Analytics-Domains. gtag.js
+       selbst laedt weiterhin async, nur DNS+TLS werden vorab aufgebaut. Verifiziert per
+       Playwright-Screenshot (390px): kein CMP-Modal vor Hero, keine visuelle Aenderung. -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 <!-- LCP-Fix: Alle Fonts non-blocking laden (kein render-blocking) -->
 <!-- LCP-Fix: Cormorant Garamond auf 3 Varianten reduziert (vorher 8) — spart ~180ms font-load -->
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direkt vorabrufen — eliminiert 1 Netzwerk-Runde (CSS→woff2) im kritischen Pfad (~100-200ms) -->
