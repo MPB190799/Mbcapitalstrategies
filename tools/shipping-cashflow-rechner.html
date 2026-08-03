@@ -135,7 +135,55 @@ footer.footer a { color:#d4af37; text-decoration:none; }
   ]
 }
 </script>
-
+<!-- Batch-QW-20260803b: FAQPage ergaenzt (Marco-Direktive 03.08.2026) — 5 echte Fragen aus dem sichtbaren FAQ-Block, verbatim -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist die TCE-Rate und wie unterscheidet sie sich von der Dayrate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Dayrate ist der Bruttoertrag pro Tag, den ein Schiff in der Charterfahrt erzielt. Die TCE (Time Charter Equivalent) ist die bereinigte Version: Hafenkosten und Bunkeröl-Kosten aus dem Spotmarkt werden abgezogen. Dadurch ist die TCE der sauberere Vergleichswert zwischen verschiedenen Charter-Typen und Routen. Im Time-Charter-Markt entspricht die Dayrate oft schon der TCE."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was gehört zum OPEX einer Reederei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OPEX (Operating Expenditure) umfasst alle laufenden Betriebskosten pro Schiff: Besatzungskosten, Schiffswartung, Versicherung, Flottenmanagement und Verwaltungskosten. Der OPEX ist gleichzeitig der Break-even: Liegt die TCE darunter, fährt das Schiff mit Verlust. Typische OPEX-Werte: 6.000–9.000 USD/Tag (MR Tanker), 8.000–12.000 USD/Tag (VLCC), 10.000–16.000 USD/Tag (LNG-Carrier)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Payout Ratio bei Shipping-Aktien und was ist realistisch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Payout Ratio gibt an, welcher Anteil des Free Cashflows als Dividende ausgeschüttet wird. Tanker-Reedereien wie DHT Holdings, Nordic American Tankers oder Frontline zahlen oft 70–100% des FCF aus. Das macht hohe Dividendenrenditen möglich, bedeutet aber auch: Bei sinkenden Frachtraten sinkt die Dividende sofort. Ein Payout Ratio unter 75% gilt als nachhaltig – darüber wird es zyklisch riskant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie berechne ich die Flotten-Auslastung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Auslastung (Beschäftigungsgrad) gibt an, wie viele Tage im Jahr das Schiff wirklich Einnahmen erzielt. Auch bei hoher Nachfrage gibt es Trockendock-Tage, Wartezeiten und Positionierungsfahrten. Realistische Werte: 90–95% bei Time-Charter-Flotten, 85–92% bei Spot-fokussierten Flotten. Im Rechner kannst du verschiedene Szenarien durchrechnen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich diesen Rechner auch für LNG-Carrier und Bulker nutzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – die Berechnungslogik ist für alle Schiffstypen identisch. Für LNG-Carrier sind typische TCE-Werte 50.000–120.000 USD/Tag in Hochphasen, für Capesize Bulker 15.000–40.000 USD/Tag. Passe einfach TCE, OPEX und Flottenanzahl an die jeweilige Reederei an."
+      }
+    }
+  ]
+}
+</script>
 
   <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
   <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
