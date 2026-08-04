@@ -675,16 +675,26 @@
         'border:1px solid rgba(212,175,55,0.25);' +
       '}' +
       '.cookie-btn-secondary:hover{color:#d4af37;border-color:#d4af37;}' +
-      /* Mobile (390px-Referenz, 31.07.2026): der volle Banner (3 Zeilen Text+Buttons,
-         ~145px hoch) deckte die Hero-Newsletter-CTA komplett ab, bevor der Nutzer
-         ueberhaupt scrollen konnte (Above-the-Fold-Blocker auf der wichtigsten
-         Conversion-Flaeche der Startseite). Kompakter Text + engeres Padding
-         verkleinert die Ueberdeckung, ohne Hinweis/Link/Wahlfreiheit zu entfernen. */
+      /* Mobile (390px-Referenz, 31.07.2026, NACHGEBESSERT 04.08.2026): der volle
+         Banner deckte die Hero-Newsletter-CTA (E-Mail-Feld + Submit-Button, die
+         wichtigste Conversion-Flaeche der Startseite) weiterhin komplett ab, wie
+         am 04.08. live per Playwright-Screenshot auf 390px bestaetigt (der
+         31.07.-Fix reduzierte die Ueberdeckung, loeste sie aber nicht: der lange
+         3-Satz-Text plus Button-Reihe blieb ueber ~110-150px hoch). Fix jetzt:
+         eigener, deutlich kuerzerer 1-Zeiler NUR fuer <=480px (per CSS-Toggle,
+         kein Kuerzen des Datenschutz-Inhalts noetig — die Langfassung bleibt via
+         Link erreichbar), dazu enger Zeilenabstand + kleinere Buttons. Ziel: der
+         Banner nimmt spuerbar weniger Vertikalflaeche ein, ohne Hinweis, Opt-out
+         oder DSGVO-Pflichtangaben zu entfernen. */
+      '.cookie-text-full{display:inline;}' +
+      '.cookie-text-short{display:none;}' +
       '@media (max-width:480px){' +
-        '#cookie-banner{padding:10px 14px;}' +
-        '#cookie-banner-inner{gap:8px;}' +
-        '#cookie-banner-inner p{font-size:0.72rem;line-height:1.35;min-width:0;}' +
-        '.cookie-btn{padding:7px 12px;font-size:0.75rem;}' +
+        '#cookie-banner{padding:9px 12px;}' +
+        '#cookie-banner-inner{gap:6px;}' +
+        '#cookie-banner-inner p{font-size:0.72rem;line-height:1.3;min-width:0;}' +
+        '.cookie-text-full{display:none;}' +
+        '.cookie-text-short{display:inline;}' +
+        '.cookie-btn{padding:6px 11px;font-size:0.72rem;}' +
       '}';
 
     document.head.appendChild(style);
@@ -696,9 +706,15 @@
     banner.innerHTML =
       '<div id="cookie-banner-inner">' +
         '<p>' +
-          'Diese Website verwendet Cookies für Werbeanzeigen (Google AdSense), ' +
-          'eingebettete YouTube-Videos und Affiliate-Links. ' +
-          'Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.' +
+          '<span class="cookie-text-full">' +
+            'Diese Website verwendet Cookies für Werbeanzeigen (Google AdSense), ' +
+            'eingebettete YouTube-Videos und Affiliate-Links. ' +
+            'Mehr dazu in der <a href="/datenschutz.html">Datenschutzerklärung</a>.' +
+          '</span>' +
+          '<span class="cookie-text-short">' +
+            'Cookies für Werbung, Videos & Affiliate-Links. ' +
+            '<a href="/datenschutz.html">Mehr dazu</a>.' +
+          '</span>' +
         '</p>' +
         '<div id="cookie-buttons">' +
           '<button id="cookie-accept" class="cookie-btn cookie-btn-primary">Alle akzeptieren</button>' +
