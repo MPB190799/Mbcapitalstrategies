@@ -10,8 +10,12 @@ permissions:
   pages: write
   id-token: write
 
+# Gruppenname bewusst NICHT "pages": am 06.08.2026 fror Lauf 31122784430 GitHub-seitig in
+# status=waiting ein (Abbruch UND force-cancel antworteten mit HTTP 502) und blockierte damit die
+# Gruppe "pages" — die DE-Seite lieferte 57 Stunden lang nichts mehr aus, 22 Commits hingen fest.
+# Ein umbenannter Gruppenname umgeht den eingefrorenen Lauf, ohne die Serialisierung aufzugeben.
 concurrency:
-  group: pages
+  group: pages-deploy
   cancel-in-progress: false
 
 jobs:
