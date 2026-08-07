@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- r23-approved: marco -->
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<meta charset="UTF-8">
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#050508">
+<meta name="google-adsense-account" content="ca-pub-7097302643579933">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <title>Link REIT Analyse 2026: 32% Abschlag, 6,5% Dividende</title>
+  <meta name="description" content="Link REIT (0823.HK): 32% unter Buchwert, 6,5% Dividende — DPU fällt zum zweiten Mal in Folge. Cap Rate, Bilanz-Check, Sydney-Verkauf, Marcos Position.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Marco Bozem">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/link-reit-0823-analyse-2026.html">
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/link-reit-0823-analyse-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/link-reit-0823-analyse-2026.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Link REIT Analyse 2026: 32% Abschlag, 6,5% Dividende">
+  <meta property="og:description" content="Link REIT (0823.HK): 32% unter Buchwert, 6,5% Dividende — DPU fällt zum zweiten Mal in Folge. Cap Rate, Bilanz-Check, Sydney-Verkauf, Marcos Position.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/link-reit-0823-analyse-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Link REIT Analyse 2026: 32% Abschlag, 6,5% Dividende">
+  <meta name="twitter:description" content="Link REIT (0823.HK): 32% unter Buchwert, 6,5% Dividende — DPU fällt zum zweiten Mal in Folge. Cap Rate, Bilanz-Check, Sydney-Verkauf, Marcos Position.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Link REIT Analyse 2026: 32% unter Buchwert — ist die 6,5%-Dividende in Gefahr?",
+  "description": "Link REIT (HKEX 0823 / OTC LKREF) Analyse 2026: DPU fällt zum zweiten Halbjahr in Folge (-6,9%), 32%-NAV-Abschlag über Cap-Rate-Rechnung eingeordnet, Bilanz-Check (Gearing, Net-Debt/EBITDA, Ausschüttungsdeckung, Rating), Sydney-Kapitalrecycling, HKD-Peg-Risiko für Euro-Anleger, Downside-Szenario bis 2029 und Marcos eigene, offen einsehbare Position.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategies.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://mbcapitalstrategiesglobal.com/"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategies.com/blog/link-reit-0823-analyse-2026.html",
+  "datePublished": "2026-08-04",
+  "dateModified": "2026-08-04",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategies.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "de",
+  "articleSection": "REIT-Analyse",
+  "wordCount": 1300,
+  "keywords": [
+    "Link REIT Analyse 2026",
+    "0823.HK",
+    "Hongkong REIT",
+    "REIT Dividende",
+    "NAV Abschlag",
+    "Cap Rate",
+    "Kapitalrecycling",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Link REIT Analyse 2026",
+      "item": "https://mbcapitalstrategies.com/blog/link-reit-0823-analyse-2026.html"
+    }
+  ]
+}
+</script>
+
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .news-box{background:#0f1822;padding:18px;border:1px solid rgba(212,175,55,.25);border-radius:10px;margin:22px 0}
+    .news-box h3{color:#d4af37;margin-top:0}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:28px 0}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    .metric-card{background:#1a1f2b;border:1px solid rgba(212,175,55,.22);border-radius:12px;padding:20px;text-align:center}
+    .metric-value{display:block;color:#d4af37;font-size:1.8rem;font-weight:800}
+    .metric-label{display:block;color:#9aa6c0;font-size:.82rem;margin-top:4px}
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:24px 0}
+    .author-box{display:flex;align-items:center;gap:16px;background:#1a1f2b;border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:18px 22px;margin:32px 0}
+    .author-box img{width:60px;height:60px;border-radius:50%;border:2px solid #d4af37;object-fit:cover}
+    .author-box-text strong{color:#d4af37;font-size:.95rem}
+    .author-box-text p{color:#9aa6c0;font-size:.82rem;margin:4px 0 0}
+  </style>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  var mbcsExistingConsent = (function(){ try { return localStorage.getItem('mbcs_consent_v1'); } catch(e) { return null; } })();
+    gtag('consent', 'default', {
+    'ad_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'analytics_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_user_data': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_personalization': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied')
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Link REIT — meine 6,5% Dividende, 32% unter Buchwert. In Gefahr?",
+  "description": "Link REIT (0823.HK) handelt mit 32% Abschlag zum Buchwert und wirft rund 6,5% Dividende ab — aber die Ausschüttung schrumpft das zweite Halbjahr in Folge. Analyse von DPU, NAV-Abschlag, Bilanz, Sydney-Verkauf, HKD-Peg-Risiko und Marcos eigener Position.",
+  "thumbnailUrl": "https://img.youtube.com/vi/sxRjR6NtCLE/maxresdefault.jpg",
+  "uploadDate": "2026-08-04",
+  "embedUrl": "https://www.youtube.com/embed/sxRjR6NtCLE",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://mbcapitalstrategiesglobal.com/"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ist die 6,5%-Dividende von Link REIT in Gefahr?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kurzfristig nein im Sinne von Ausfall: Die Ausschüttung ist voll aus dem operativen Cashflow gedeckt (1,01x nach Zinsen) und alle drei Ratingagenturen (Moody's A2, S&P A, Fitch A) bestätigen ein stabiles Investment-Grade-Rating. Sie ist aber nicht stabil in der Höhe — der DPU fiel im letzten Geschäftsjahr um 6,9% und damit das zweite Halbjahr in Folge, getrieben von negativen Mietanpassungen in Hongkong (-8,2%) und Mainland China (-14,3%)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum handelt Link REIT 32% unter seinem Buchwert (NAV)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Gutachter weisen keine einzelne Portfolio-Cap-Rate aus, sondern Spannen je Segment (Hongkong-Retail 3,7-4,9%, Parkhäuser 3,1-5,0%, Mainland-Retail 5,0-5,5%, Stand 31.03.2026); wertgewichtet ergibt das im Schnitt rund 4,5%. Der Markt preist über den Aktienkurs implizit rund 5,8% ein — ein Abstand von etwa 135 Basispunkten. Das entspricht rechnerisch einer vom Markt erwarteten Abwertung der Immobilien um rund 22,9%. Ein Teil davon ist durch die fallenden Mieten in Hongkong und China berechtigt, ein Teil ist genereller Sektor-Pessimismus gegenüber allem mit China-Bezug."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet der Sydney-Verkauf von Link REIT für Aktionäre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Link hat am 22.07.2026 50% an einem Bürogebäude in Sydney (100 Market Street) für rund AUD 226 Mio zum Buchwert verkauft, Exit-Yield 6,5%. Der Erlös fließt in Anteilsrückkäufe und die Reinvestition ins Kern-Retail-Geschäft. Das ist der zweite Auslandsverkauf eines Nicht-Kern-Objekts seit April 2026 (zuvor Swing By @ Thomson Plaza in Singapur, über Buchwert verkauft) und bestätigt die Buchwerte am Markt — löst aber auch einen Zielkonflikt aus: Rückkäufe stützen die Ausschüttung, verbrauchen aber den ohnehin dünnen Puffer bei Net Debt/EBITDA (5,6x gegen die S&P-Schwelle von 6,0x)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wirkt sich der Hongkong-Dollar-Peg auf Link REIT für Euro-Anleger aus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Hongkong-Dollar ist seit über 40 Jahren fest an den US-Dollar gekoppelt (Band 7,75-7,85). Das Wechselkursrisiko zwischen HKD und USD ist damit praktisch null. Für einen Euro-Anleger bedeutet das aber, dass Link REIT faktisch ein Dollar-Investment ist — der eigentliche Währungshebel ist EUR/USD, nicht HKD/USD. Ein schwächerer Dollar mindert die Rendite in Euro, selbst wenn Kurs und Dividende in Hongkong-Dollar unverändert bleiben."
+      }
+    }
+  ]
+}
+</script>
+
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+  <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}[id^="google_anchor"],.gad-anchor-container{display:none!important}ins.adsbygoogle[data-anchor-shown="true"]{display:none!important}</style>
+</head>
+
+<body>
+
+<nav class="nav"></nav>
+
+<nav class="breadcrumbs">
+  <a href="/">Startseite</a> &rsaquo;
+  <a href="/blog/">Blog</a> &rsaquo;
+  <a href="/reits/">REITs</a> &rsaquo;
+  <span>Link REIT Analyse 2026</span>
+</nav>
+
+<section class="article-hero">
+  <div class="inner">
+    <span class="section-label">REIT-Analyse &middot; REIT #12</span>
+    <h1>Link REIT: 32% unter Buchwert — ist die 6,5%-Dividende in Gefahr?</h1>
+
+  <p style="color:#9aa6c0;font-size:0.85rem;margin:0 0 18px;">Analyse-Datum: 04.08.2026 &middot; Datenstand: Geschäftsjahr FY25/26 der Link REIT (Zahlen veröffentlicht 28.05.2026) &middot; nächster Bericht ~November 2026. Diese Analyse ist Marcos eigene, selbst produzierte Video-Einordnung — keine automatisierte Earnings-Radar-Auswertung.</p>
+
+  <!-- AEO: Answer-First Block — KI-Zitierung + Featured Snippet -->
+  <div class="answer-first" style="background:linear-gradient(135deg,#0d1127 0%,#0a1020 100%);border:1px solid #D4AF37;border-left:4px solid #D4AF37;border-radius:8px;padding:20px 24px;margin:24px 0;position:relative;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+      <span style="color:#D4AF37;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;">Kurze Antwort</span>
+    </div>
+    <p style="color:#e8eaf0;font-size:1rem;line-height:1.65;margin:0;">Link REIT (HKEX 0823) ist Asiens größter REIT — Kurs 32,2% unter NAV, Distribution-Yield ~6,5%. Die Bilanz ist stark (Net Gearing 23,9%, A-Rating bei allen drei Agenturen), die Ausschüttung ist aus dem Cashflow gedeckt, fällt aber seit zwei Halbjahren in Folge (-6,9% im GJ25/26), weil die Mieten in Hongkong und China negativ nachverhandelt werden. Signal: BEOBACHTEN, für Bestandshalter HALTEN. Keine Anlageberatung.</p>
+  </div>
+
+    <div class="article-meta">
+      <span>4. August 2026</span>
+      <span>Marco Bozem</span>
+      <span>Link REIT (0823.HK)</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+<p>Asiens größter REIT handelt gerade 32% unter seinem eigenen Buchwert — und wirft dabei rund 6,5% Dividende ab. Ich halte Link REIT (HKEX 0823, OTC LKREF) selbst, im offen einsehbaren Depot. Und die Frage, die sich bei so einem Abschlag stellt, ist simpel: Ist die Dividende in Gefahr, oder ist das ein Geschenk? Ich gehe die Bilanz, den Abschlag, den Währungs-Haken und meine eigene Position durch.</p>
+
+<div class="yt-lite" data-id="sxRjR6NtCLE" data-title="Link REIT — meine 6,5% Dividende, 32% unter Buchwert. In Gefahr?" role="button" tabindex="0" aria-label="Video abspielen: Link REIT — meine 6,5% Dividende, 32% unter Buchwert. In Gefahr?">
+    <img class="yt-thumb" src="https://img.youtube.com/vi/sxRjR6NtCLE/hqdefault.jpg" alt="Link REIT — meine 6,5% Dividende, 32% unter Buchwert. In Gefahr? Thumbnail" width="480" height="360" loading="lazy" decoding="async">
+    <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="yt-label">Link REIT — meine 6,5% Dividende, 32% unter Buchwert. In Gefahr?</div>
+</div>
+
+<div class="metrics-grid">
+  <div class="metric-card">
+    <span class="metric-value">32,2%</span>
+    <span class="metric-label">Abschlag zum Buchwert (NAV)</span>
+  </div>
+  <div class="metric-card">
+    <span class="metric-value">6,5%</span>
+    <span class="metric-label">Distribution-Yield</span>
+  </div>
+  <div class="metric-card">
+    <span class="metric-value">23,9%</span>
+    <span class="metric-label">Net Gearing (Limit 50%)</span>
+  </div>
+  <div class="metric-card">
+    <span class="metric-value">5,6&times;</span>
+    <span class="metric-label">Net Debt/EBITDA (S&amp;P-Limit 6,0&times;)</span>
+  </div>
+</div>
+
+<h2>1. Was ist Link REIT eigentlich?</h2>
+
+<p>Link REIT ist mit einem Portfolio von rund HKD 216 Mrd der größte gelistete REIT Asiens. Das Herzstück ist genau das, was bei Hard Assets zählt: langweilige, defensive Nahversorgung. Rund 73% des Portfoliowerts liegen in Hongkong (159,0 von 216 Mrd HKD), und davon stecken über 96% in Kern-Retail-Malls und Parkhäusern — Lebensmittel, Apotheken, Ärzte, das größte Parkhaus-Portfolio der Stadt. Die Vermietungsquote im Hongkonger Kerngeschäft liegt bei 97,8%, mitten in einer schwachen Konjunktur. Dazu kommen kleinere Beine in Mainland China (Peking, Greater Bay Area, Yangtze-Delta), Australien, Singapur und London. Die eigentliche Aktie ist im Kern eine Wette auf Hongkonger Nahversorgung, der Rest ist Beiwerk mit Extra-Risiko. Link berichtet nur halbjährlich, kein Quartals-Klein-Klein.</p>
+<!-- MID AD -->
+<ins class="adsbygoogle" style="display:block;margin:24px 0"
+     data-ad-client="ca-pub-7097302643579933"
+     data-ad-slot="1212067635"
+     data-ad-format="in-article"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+<h2>2. Das Kernproblem: der DPU fällt</h2>
+
+<p>Die Ausschüttung pro Anteil (DPU) lag im abgeschlossenen Geschäftsjahr FY25/26 bei 253,61 HK-Cents — minus 6,9% gegenüber dem Vorjahr (272,34 Cents). Das ist das <strong>zweite Halbjahr in Folge</strong>, in dem die Ausschüttung sinkt: die Halbjahres-Serie lautet 137,45 → 126,88 → 126,73 HK-Cents. Im Geschäftsjahr davor war die Ausschüttung noch um 3,7% gestiegen.</p>
+
+<p>Der Grund liegt in negativen Mietanpassungen (Rental Reversion): Wenn ein alter Mietvertrag ausläuft, unterschreibt der Mieter aktuell zu einer niedrigeren Miete — in Hongkong -8,2%, in Mainland China -14,3%. Wichtig: Die Läden sind voll (97,8% Occupancy), die Mieter bleiben. Sie zahlen nur weniger pro Quadratmeter. Das ist ein Ertragsproblem, kein Leerstandsproblem — aber solange die Reversion negativ bleibt, sinkt die Ausschüttung weiter.</p>
+
+<h2>3. Der 32%-Abschlag zum Buchwert — was steckt dahinter?</h2>
+
+<p>Kurs 39,14 HKD (Schlusskurs 04.08.2026) gegen NAV/Anteil von 57,75 HKD ergibt einen Abschlag von 32,2% (P/B 0,68). Rechnet man das über die Mietrendite (Cap Rate) durch, wird der Abschlag greifbar: Die Gutachter weisen keine einzelne Portfolio-Cap-Rate aus, sondern Spannen je Segment — Hongkong-Retail 3,7–4,9%, Parkhäuser 3,1–5,0%, Mainland-Retail 5,0–5,5%, Singapur 4,1–4,5% (Stand 31.03.2026). Gewichtet man diese Spannen mit den Segmentwerten, komme ich im Schnitt auf rund 4,5% — meine eigene Rechnung, keine Unternehmensangabe. Die Börse preist über den Kursabschlag implizit rund 5,8% ein, ein Abstand von etwa 135 Basispunkten. Übersetzt heißt das: Der Markt hält die Bücher um rund 22,9% für zu hoch — das ist die Lücke zwischen Börsenwert und NAV, gemessen am Portfoliowert von 216 Mrd HKD.</p>
+
+<p>Einen echten Preisbeweis gibt es dafür bisher nur teilweise: Link hat in den letzten vier Monaten zwei Nicht-Kern-Objekte im Ausland verkauft — eins zum Buchwert, eins darüber (dazu gleich mehr). Für die Hongkonger Malls, wo mehr als die Hälfte des Portfolios steckt, steht dieser Beweis noch aus. Der Abschlag ist damit teilweise berechtigt (fallende Mieten), teilweise Sektor-Pessimismus gegenüber allem mit China-Bezug — eine Value-Situation mit echtem Risiko, kein geschenktes Schnäppchen.</p>
+
+<h2>4. Bilanz-Check: Ist die Dividende sicher?</h2>
+
+<p>Die Bilanz ist der stärkste Teil der Aktie — mit einer wichtigen Einschränkung. Net Gearing liegt bei 23,9% gegen ein Sektor-Limit von 50%, das sind rund 26 Prozentpunkte Luft. Die Fremdkapitalkosten sinken (3,44% von 3,58%). Die Zinsdeckung ist unproblematisch: Link meldet 5,1x, meine eigene, vorsichtigere Nachrechnung kommt auf 4,79x (von FMP mit 4,80x bestätigt) — beide weit über der Ratingschwelle von über 3,0x.</p>
+
+<p>Die eigentlich enge Kennzahl liegt woanders: Net Debt/EBITDA steht bei 5,6x (Vorjahr 4,9x) gegen S&amp;Ps A-Rating-Schwelle von unter 6,0x — nur noch 0,4x Puffer, bei einem Verschlechterungstempo von rund 0,7x pro Jahr. Das Gearing hat viel Luft, der Ratingpuffer nicht.</p>
+
+<p>Bei der Ausschüttungsdeckung lohnt der genaue Blick: Auf Trust-Deed-Basis liegt sie bei exakt 100% (6.577 von 6.577 Mio HKD) — das ist aber keine Sicherheitsaussage, sondern eine Definition, weil ein REIT ausschüttet, was übrig bleibt, und das stünde auch bei halbiertem Ergebnis bei 100%. Aussagekräftiger: Der operative Cashflow nach Zinsen deckt die Ausschüttung mit 1,01x (meine eigene Rechnung aus dem Geschäftsbericht) — gedeckt, aber ohne Puffer. Nach vollem Capex sind es nur 0,72x, wobei der Capex überwiegend Wachstumsprojekte betrifft, keine Instandhaltung. Alle drei Ratingagenturen bestätigen Investment-Grade mit stabilem Ausblick: Moody's A2, S&amp;P A, Fitch A — laut Link unverändert gegenüber der Vorperiode.</p>
+
+<h2>5. Frisch: Kapitalrecycling — der Sydney-Verkauf</h2>
+
+<p>Am 22.07.2026 hat Link 50% an einem Bürogebäude in Sydney (100 Market Street) für rund AUD 226 Mio verkauft — zum Bewertungsniveau von Ende Mai 2026, Exit-Yield 6,5%. Closing wird für Q3 2026 erwartet, der Erlös fließt in Anteilsrückkäufe und die Reinvestition ins asiatische Kern-Retail-Geschäft. Es ist der zweite Verkauf eines Nicht-Kern-Auslandsobjekts seit April 2026: Zuvor ging Swing By @ Thomson Plaza in <strong>Singapur</strong> für S$ 250 Mio über Buchwert weg.</p>
+
+<p>Zwei echte Transaktionen bestätigen damit die Bücher — zumindest für Nicht-Kern-Objekte im Ausland. Und es steckt ein Zielkonflikt darin: Rückkäufe stützen den DPU (weniger Anteile, gleiche Ausschüttungssumme), verbrauchen aber genau den Ratingpuffer, den Link bei Net Debt/EBITDA kaum noch hat. Schuldenabbau würde das Rating stärken, ließe die Ausschüttung aber weiter fallen. Beides gleichzeitig geht bei 0,4x Restluft nicht — der Halbjahresbericht im November 2026 zeigt, welchen Weg das Management gewählt hat.</p>
+
+<h2>6. Fälligkeiten und der Zins-Hebel</h2>
+
+<p>48,3% der gesamten Schuld (56,7 Mrd HKD) werden bis zum 31.03.2028 fällig — fast die halbe Bilanz in zwei Jahren. Die verfügbare Liquidität (12,2 Mrd HKD) deckt die im laufenden Fälligkeitsjahr 2026/27 anstehenden 11,8 Mrd mit 1,03x — ausreichend, aber knapp. Das ist zugleich der größte Bull-Punkt: Sinken die HKD-Zinsen weiter, refinanziert Link fast die halbe Schuld billiger. Dreht der Zinspfad, trifft es dieselbe Hälfte umgekehrt.</p>
+
+<h2>7. Die Dividende im Peer-Vergleich</h2>
+
+<p>6,5% klingt ordentlich, ist im Sektor aber die <strong>niedrigste</strong> Rendite: Fortune REIT zahlt rund 7,8% (letzte zwölf Monate), Sunlight rund 7,7% bei einer für das laufende Jahr erwarteten Ausschüttung von 6,7-6,8%, Yuexiu rund 7,6% — keiner der Peers ist zweistellig. Link ist der Blue-Chip der Gruppe: niedrigste Verschuldung, breiteste Streuung, tiefstes Portfolio — dafür auch die niedrigste Rendite. Wer maximale Rendite will, kauft nicht Link; wer den defensivsten Hongkong-REIT mit Abschlag will, schon.</p>
+
+<h2>8. Der Währungs-Haken für Euro-Anleger</h2>
+
+<p>Der Hongkong-Dollar ist seit über 40 Jahren an den US-Dollar gekoppelt, in einem engen Band zwischen 7,75 und 7,85. Das HKD/USD-Risiko ist damit praktisch null. Für uns als Euro-Anleger ist das aber nicht das Ende der Geschichte: Wer Link REIT hält, hält faktisch ein Dollar-Investment. Der eigentliche Währungshebel ist EUR/USD — fällt der Dollar gegenüber dem Euro, sinkt die Position in Euro gerechnet, selbst wenn Kurs und Dividende in Hongkong-Dollar unverändert bleiben.</p>
+
+<h2>9. Skin in the Game: meine echte Position</h2>
+
+<p>Ich halte Link REIT selbst, im öffentlich einsehbaren Scalable-Depot. <strong>Offenlegung: Ich halte Link REIT selbst im öffentlich einsehbaren Depot (Trade Republic / Scalable). Keine Anlageberatung.</strong></p>
+
+<div class="metrics-grid">
+  <div class="metric-card">
+    <span class="metric-value">53 Stück</span>
+    <span class="metric-label">Ø-Einstand 4,4547 €</span>
+  </div>
+  <div class="metric-card">
+    <span class="metric-value">238,08 €</span>
+    <span class="metric-label">Gesamtkosten (inkl. 1,98 € Gebühren)</span>
+  </div>
+  <div class="metric-card">
+    <span class="metric-value">&minus;9,12 €</span>
+    <span class="metric-label">Kurs-P&amp;L (&minus;3,83%)</span>
+  </div>
+  <div class="metric-card">
+    <span class="metric-value">&minus;1,96 €</span>
+    <span class="metric-label">Gesamtergebnis (&minus;0,83%), ~17 Monate</span>
+  </div>
+</div>
+
+<p>Eingesetzt habe ich 236,10 € plus 1,98 € Ordergebühren, macht 238,08 € Gesamtkosten. Wert am 04.08.2026: 228,96 €, Kurs-Minus 9,12 € (-3,83%). Dividende netto kumuliert 7,16 € (brutto 9,92 €, Steuern 2,76 €) — in meinem Parqet-Konto steht wegen einer bekannten, bewusst nicht gelöschten Doppelbuchung fälschlich 9,67 €; die korrekte Zahl ist 7,16 €. Unterm Strich stehe ich nach rund 17 Monaten bei -1,96 € (-0,83%).</p>
+
+<p>30 der 53 Anteile habe ich am 22.07.2026 nachgekauft. Mein Grund: gute Aktie, Geschäft stabil, Potenzial da, Dividende passt — dazu der praktische Punkt, dass 100 € Startergröße im Depot kaum wirksam ist. Das war keine Wette auf eine Kurswende. Weiteres Aufstocken ist an drei Trigger gebunden: die Hongkonger Mietanpassung dreht ins Positive, echte HK-Zinssenkungen kommen im Cashflow an, oder die Rückkäufe aus dem Sydney-Erlös werden sichtbar. Mein Yield on Cost liegt bei ~6-6,5% brutto, netto rund 4,54% nach deutscher Abgeltungsteuer — ausdrücklich unter meiner eigenen 8%-Qualitätsschwelle, kein YOC-Star.</p>
+
+<h2>10. Downside-Szenario bis 2029</h2>
+
+<p>Wichtig: Link selbst will den DPU im kommenden Geschäftsjahr stabil halten. Die folgende Rechnung ist meine eigene Modellrechnung, keine Unternehmensprognose. Fällt die Ausschüttung drei Jahre lang um 3% pro Jahr, sinkt der DPU bis 2029 auf 231 HK-Cents (YOC brutto 5,8%). Beim Tempo des letzten Jahres (-7% p.a.) stehen 2029 noch 204 Cents (YOC brutto 5,1%). Die Deckung bliebe in jedem Szenario bei 100% — bei diesem REIT gibt es kein plötzliches "Cut-Ereignis", nur einen Trend nach unten.</p>
+
+<h2>11. Fazit &amp; Signal</h2>
+
+<p>Mein Signal: <strong>BEOBACHTEN — für Bestandshalter HALTEN.</strong> Link REIT ist kein Value-Trap: Die Bilanz ist überwiegend stark, alle drei Ratingagenturen bestätigen Investment-Grade, die Dividende wird gezahlt und ist aus dem Cash gedeckt. Es ist aber auch kein geschenktes Schnäppchen — der Abschlag ist teilweise durch fallende Mieten berechtigt, und der Ratingpuffer bei Net Debt/EBITDA ist dünn geworden. Die ehrliche Formel lautet: 6,5% Dividende mit Abwärtsdruck, nicht 6,5% für immer. Ich stocke meine eigene Position nicht weiter auf, bevor sich die Mietwende zeigt.</p>
+
+<p style="margin:24px 0;padding:12px 16px;background:#1a1a2e;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;">Weiterführend: <a href="/reits/" style="color:#d4af37;">REITs 2026: Pflicht-Ausschüttung, Yield &amp; Auswahl im Überblick</a></p>
+
+<div class="author-box">
+  <picture><source srcset="/marco.webp" type="image/webp"><img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem – MB Capital Strategies" width="60" height="60" loading="lazy"></picture>
+  <div class="author-box-text">
+    <strong>Marco Bozem – MB Capital Strategies</strong>
+    <p>Investor mit Fokus auf Hard Assets, Dividenden &amp; Cashflow. Shipping, Mining, Energie, Pipelines, REITs. Eigenes High-Yield-Depot, monatliche Depot-Updates auf YouTube.</p>
+  </div>
+</div>
+
+<div class="info-box">
+  <strong>Rechtlicher Hinweis:</strong> Dieser Artikel dient ausschließlich Informations- und Bildungszwecken. Er stellt keine Anlageberatung, Anlageempfehlung oder Aufforderung zum Kauf oder Verkauf von Wertpapieren dar. Alle Angaben ohne Gewähr.
+</div>
+
+<div class="related-articles">
+  <h3>Verwandte Artikel &amp; Analysen</h3>
+  <ul>
+    <li><a href="/blog/mpw-reit-analyse-2026.html">MPW Analyse 2026: 7,4% Dividende nach Cut — Comeback?</a></li>
+    <li><a href="/blog/farmland-partners-reit09-dividende-2026.html">Farmland Partners (FPI) Analyse 2026</a></li>
+    <li><a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html">Zwangsdividenden: REITs, BDCs &amp; MLPs erklärt</a></li>
+    <li><a href="/blog/realty-income-analyse-2026.html">Realty Income (O) 2026 — REIT-Analyse &amp; Monats-Dividende</a></li>
+    <li><a href="/reits/">REITs 2026: Pflicht-Ausschüttung, Yield &amp; Auswahl im Überblick</a></li>
+  </ul>
+</div>
+
+<!-- MB Capital Insider — Growth CTA Mid-Article (CF Worker) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenrückblick Hard Assets &amp; Dividenden — kostenlos</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" autocomplete="email" id="mb-mid-de2-email" placeholder="deine@email.de" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidDe2Subscribe()" data-cta="newsletter-de2-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
+  </div>
+  <p id="mb-mid-de2-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+</div>
+<script>(function(){if(window._mbMidDe2Def)return;window._mbMidDe2Def=true;window.mbMidDe2Subscribe=function(){var e=document.getElementById("mb-mid-de2-email"),m=document.getElementById("mb-mid-de2-msg");var email=e?e.value.trim():"";if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})}).then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}}).catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});};})();</script>
+<!-- END Growth CTA Mid -->
+
+<div class="cta-box" style="margin:28px 0;padding:16px 20px 20px;background:#0d1117;border-radius:6px;border-left:4px solid #d4af37;">
+  <p class="ad-disclosure" style="margin:0 0 10px;font-size:0.82rem;color:#9aa6c0;">Anzeige &middot; Affiliate-Links: Ich erhalte eine Provision, für dich ohne Mehrkosten.</p>
+  <a href="https://mbcapitalstrategies.com" target="_blank" rel="noopener noreferrer">🧭 MB Capital Toolbox</a>
+  <a href="https://de.scalable.capital/trading-aff?utm_medium=affiliate&utm_source=qualityclick&utm_campaign=broker&utm_term=921&c_id=QC5f486e726d74q6a7X47c52744b5f4c6a76647f63757e5a7f43" target="_blank" rel="sponsored nofollow noopener noreferrer">💰 Broker Nr. 1 – Scalable Capital</a>
+  <a href="https://refnocode.trade.re/79z763g7" target="_blank" rel="sponsored nofollow noopener noreferrer">📱 Alternative – Trade Republic</a>
+  <a href="https://www.investing-referral.com/mbcapital3?sub1=YTDescDE" target="_blank" rel="sponsored nofollow noopener noreferrer">📊 Fundamentalanalyse – InvestingPro (bis zu 15% Rabatt)</a>
+</div>
+
+<!-- MAR-Empfehlungsblock (scripts/mar-block.py --name "Link REIT" --format lang --affiliate) -->
+<div class="info-box" style="background:#0f1116;border-left:4px solid #D4AF37;">
+<pre style="white-space:pre-wrap;font-family:inherit;color:#cfd6e6;font-size:0.86rem;margin:0;line-height:1.6;">── Transparenz &amp; Methodik ──────────────────────────────
+Verfasser: Marco Bozem, MB Capital Strategies (Privatanleger, Finanz-Publizist).
+Stand: 04.08.2026.
+Eigene Position: Ich halte Link REIT im eigenen, öffentlich einsehbaren Depot (Trade Republic / Scalable). Über Links in diesem Beitrag erhalte ich ggf. eine Provision (Werbung).
+Methodik: Dividenden-Deckung und Ausschüttungsquote, Netto-Verschuldung/EBITDA, Cap Rate vs. implizite Marktrendite, Peer-Vergleich im Sektor. Datenbasis: HKEX-Pflichtveröffentlichungen und Marktdaten.
+Anlagehorizont: mehrjährig (Hard Assets, Dividendenstrategie).
+Aktualisierung: Ich greife die These bei Quartalszahlen und wesentlichen Ereignissen wieder auf, nicht nach festem Zeitplan — nächster Anlass ist der Halbjahresbericht im November 2026.
+Risiko: Kurse können erheblich schwanken, ein Totalverlust ist möglich. Dies ist meine persönliche Einschätzung, keine Anlageberatung und keine Aufforderung zum Kauf oder Verkauf; deine persönliche Situation bleibt unberücksichtigt.
+────────────────────────────────────────────────────────</pre>
+</div>
+
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+      <a href="/geopolitik/">Geopolitik</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content &amp; Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a><a href="/impressum.html">Kontakt</a>
+      <a href="https://mbcapitalstrategiesglobal.com/" target="_blank" rel="noopener">English Site</a>
+      <a href="/insider/">Newsletter abonnieren</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 MB Capital Strategies &middot; Marco Bozem</span>
+    <span>Keine Anlageberatung &middot; Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+<script src="/assets/js/nav.min.js" defer></script>
+<script src="/assets/js/glossar-linking.js" defer></script>
+
+<!-- YouTube Lite Facade Init -->
+<script>
+(function(){
+  function initYtLite(el){
+    el.addEventListener('click',function activate(){
+      el.removeEventListener('click',activate);
+      var id=el.dataset.id;
+      if(!id)return;
+      var iframe=document.createElement('iframe');
+      iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+      iframe.title=el.dataset.title||'YouTube Video';
+      iframe.allow='autoplay;encrypted-media;picture-in-picture';
+      iframe.allowFullscreen=true;
+      el.innerHTML='';
+      el.appendChild(iframe);
+      el.style.cursor='default';
+    });
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){el.click();}});
+  }
+  document.querySelectorAll('.yt-lite[data-id]').forEach(initYtLite);
+})();
+</script>
+
+</body>
+</html>

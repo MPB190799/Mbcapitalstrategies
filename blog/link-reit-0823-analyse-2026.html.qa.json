@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-08-07T12:41:12.288Z",
+  "content_sha": "63b5320c11daf0e0",
+  "hard_scan": "PASS",
+  "note": "Link REIT 0823.HK Vollpruefung 07.08.2026. Primaerquellen: Link REIT FY25/26 Ergebnisrelease + Analystenpraesentation 27.05.2026 (DPU 253,61 -6,9% vs 272,34; Reversion HK -8,2%/CN -14,3%; Occupancy 97,8%; Net Gearing 23,9% VJ 21,5%; Debt 56,7 Mrd; Kosten 3,44% von 3,58%; Coverage 5,1x; NetDebt/EBITDA 5,6x VJ 4,9x; Liquiditaet 12,2 Mrd; Faelligkeiten 27,4 Mrd bis 31.03.2028 = 48,3%; NAV 57,75; Portfolio 216 Mrd; Ratings A2/A/A). Kurs via FMP Tier-1 (38,60 HKD 07.08. vs 39,14 HKD Stand 04.08., 1,4% - datiert gekennzeichnet). Depot via Parqet Tier-1 (53 Stk, 4,4547 EUR). Sydney A226 Mio zu CBRE-Bewertung Ende Mai, Exit-Yield 6,5% (MarketScreener/Mingtiandi/Morningstar); Thomson Plaza S250 Mio ueber Buchwert (linkreit/Reitsweek). KORRIGIERT: (1) '>90% Portfolio HK Retail+Parkhaeuser' war falsch = 73% HK gesamt, widersprach eigener Aussage; (2) Cap Rate 4,85% als Gutachterangabe unbelegt - Gutachten weisen Spannen aus, wertgewichtet ~4,5%, impliziert ~5,8%/135bp, als eigene Rechnung gekennzeichnet; (3) NetDebt/EBITDA 5,58x/VJ 5,08x -> 5,6x/4,9x laut Praesentation, Puffer 0,4x, Tempo 0,7x p.a.; (4) Peer-Renditen Obergrenzen 8,1%/8,32% unbelegt -> auf belegte Werte gesetzt. R23: r23-approved marco + 68 Tage nach Zahlen, Transparenzkopf+MAR-Block vorhanden. R5/R13 sauber, Offenlegung im Text, Affiliate gekennzeichnet, rel=sponsored.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
