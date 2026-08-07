@@ -247,11 +247,12 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  var mbcsExistingConsent = (function(){ try { return localStorage.getItem('mbcs_consent_v1'); } catch(e) { return null; } })();
     gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
+    'ad_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'analytics_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_user_data': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_personalization': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied')
   });
   gtag('config', 'G-J1NWEPPKNE');
 </script>

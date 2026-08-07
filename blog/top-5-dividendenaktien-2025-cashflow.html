@@ -36,7 +36,8 @@
 <link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':'denied','analytics_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'});gtag('config','G-J1NWEPPKNE');</script>
+  var mbcsExistingConsent = (function(){ try { return localStorage.getItem('mbcs_consent_v1'); } catch(e) { return null; } })();
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':(mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),'analytics_storage':(mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),'ad_user_data':(mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),'ad_personalization':(mbcsExistingConsent === 'granted' ? 'granted' : 'denied')});gtag('config','G-J1NWEPPKNE');</script>
 
   <script type="application/ld+json">
 {

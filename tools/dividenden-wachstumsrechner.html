@@ -297,11 +297,12 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  var mbcsExistingConsent = (function(){ try { return localStorage.getItem('mbcs_consent_v1'); } catch(e) { return null; } })();
     gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
+    'ad_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'analytics_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_user_data': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_personalization': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied')
   });
   gtag('config', 'G-J1NWEPPKNE');
 </script>
