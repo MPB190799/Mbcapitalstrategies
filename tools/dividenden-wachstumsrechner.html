@@ -826,6 +826,24 @@
 </div>
 <!-- /Premium Newsletter CTA -->
 
+
+<!-- MB-PREMIUM-CTA-V1 -->
+<!-- Premium Newsletter CTA (sector-contextual) -->
+<div style="background:linear-gradient(135deg,rgba(212,175,55,0.10) 0%,rgba(212,175,55,0.04) 100%);border-top:1px solid rgba(212,175,55,0.35);border-bottom:1px solid rgba(212,175,55,0.35);padding:36px 20px;text-align:center;margin:0;">
+  <div style="max-width:680px;margin:0 auto;">
+    <p style="color:#d4af37;font-size:0.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px;font-family:Outfit,sans-serif;">Premium · MB Earnings Insider</p>
+    <h3 style="color:#f5f6fa;font-size:1.4rem;font-weight:700;margin:0 0 10px;font-family:Outfit,sans-serif;line-height:1.3;">📊 Jeden Quartalsbericht deiner Aktien direkt im Postfach.</h3>
+    <p style="color:#cbd5dd;font-size:0.92rem;margin:0 0 16px;font-family:Outfit,sans-serif;line-height:1.5;">9 Sektoren · 30–100 Aktien pro Sektor · pro Earnings-Release eine deutsche Tiefenanalyse mit Charts, KPIs, CEO-Quotes &amp; Sektor-Peer-Vergleich.</p>
+    <p style="color:#9aa6c0;font-size:0.82rem;margin:0 0 18px;font-family:Outfit,sans-serif;">
+      <strong style="color:#d4af37;">ab 5 €/Monat</strong> · 30 Tage gratis testen · 1-Klick-Cancel · <strong style="color:#d4af37;">Promo INSIDER1</strong> spart 1 €
+    </p>
+    <a href="/newsletter/?utm_source=internal&amp;utm_medium=cta&amp;utm_campaign=dividenden-wachstum" style="display:inline-block;padding:13px 28px;background:#d4af37;color:#0f1115;font-weight:700;text-decoration:none;border-radius:6px;font-size:0.95rem;font-family:Outfit,sans-serif;letter-spacing:.02em;">
+      Premium-Newsletter ansehen →
+    </a>
+  </div>
+</div>
+<!-- /Premium Newsletter CTA -->
+
 <!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
 <div class="mb-newsletter-wrap" style="background:rgba(212,175,55,0.07);border-top:1px solid rgba(212,175,55,0.18);padding:40px 20px;text-align:center;">
   <div style="max-width:520px;margin:0 auto;">
@@ -1102,6 +1120,41 @@ document.addEventListener("keydown", e => { if (e.key === "Enter") calcGrowth();
 </script>
 
 
+
+
+<!-- MB-PREMIUM-RESULT-CTA-V1 -->
+<script>
+/* Premium-Hinweis im Moment des Ergebnisses (siehe add_result_cta.py).
+   Haengt sich an die Ergebnis-Box statt an calculate() — funktioniert damit
+   unabhaengig davon, wie die jeweilige Rechner-Seite ihr Ergebnis rendert. */
+(function () {
+  var box = document.getElementById("results");
+  if (!box) return;
+  var CTA_ID = "mb-premium-result-cta";
+
+  function inject() {
+    if (document.getElementById(CTA_ID)) return;      // schon drin -> keine Schleife
+    if (!box.textContent.trim()) return;              // noch kein Ergebnis gerechnet
+    var d = document.createElement("div");
+    d.id = CTA_ID;
+    d.style.cssText = "margin-top:14px;padding:14px 16px;border-top:1px solid rgba(212,175,55,0.30);" +
+      "background:rgba(212,175,55,0.06);border-radius:0 0 6px 6px;text-align:left;font-family:Outfit,sans-serif;";
+    d.innerHTML =
+      '<p style="margin:0 0 8px;font-size:0.88rem;color:#cbd5dd;line-height:1.5;">' +
+      'Die Zahl steht — die Frage ist, ob die Dividende sie auch trägt. ' +
+      'Im <strong style="color:#d4af37;">MB Earnings Insider</strong> prüfe ich jeden Quartalsbericht ' +
+      'deiner Sektoren auf Ausschüttungsdeckung, Cashflow und Verschuldung.</p>' +
+      '<a href="/newsletter/?utm_source=internal&utm_medium=result-cta&utm_campaign=rechner" ' +
+      'style="display:inline-block;padding:9px 18px;background:#d4af37;color:#0f1115;font-weight:700;' +
+      'text-decoration:none;border-radius:5px;font-size:0.86rem;letter-spacing:.02em;">' +
+      'Ab 5 &euro;/Monat ansehen &mdash; 30 Tage gratis &rarr;</a>';
+    box.appendChild(d);
+  }
+
+  new MutationObserver(inject).observe(box, { childList: true, subtree: true });
+  inject();
+})();
+</script>
 
 </body>
 </html>

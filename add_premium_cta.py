@@ -9,6 +9,11 @@ MARKER = "<!-- MB-PREMIUM-CTA-V1 -->"
 
 PAGES = {
     "tools/dividendenrechner.html":            ("alle", "Dividenden-Aktien"),
+    # 07.08.2026: beide standen ohne Premium-CTA da, zusammen 630 GSC-Impressionen/28d
+    # (rechner/ 332, wachstumsrechner 298) — der zweitstaerkste Trafficblock der Seite
+    # zeigte den bezahlten Newsletter ueberhaupt nicht an.
+    "rechner/index.html":                      ("alle", "Dividenden-Rechner"),
+    "tools/dividenden-wachstumsrechner.html":  ("alle", "Dividenden-Wachstum"),
     "tools/yield-on-cost-rechner.html":        ("alle", "Dividenden-Aktien"),
     "tools/dividenden-snowball-rechner.html":  ("alle", "Dividenden-Aktien"),
     "tools/dividenden-reinvest-rechner.html":  ("alle", "Dividenden-Aktien"),
@@ -53,13 +58,13 @@ def build_cta(ctx_key: str, page_topic: str) -> str:
 <!-- Premium Newsletter CTA (sector-contextual) -->
 <div style="background:linear-gradient(135deg,rgba(212,175,55,0.10) 0%,rgba(212,175,55,0.04) 100%);border-top:1px solid rgba(212,175,55,0.35);border-bottom:1px solid rgba(212,175,55,0.35);padding:36px 20px;text-align:center;margin:0;">
   <div style="max-width:680px;margin:0 auto;">
-    <p style="color:#d4af37;font-size:0.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px;font-family:Montserrat,sans-serif;">Premium · MB Earnings Insider</p>
-    <h3 style="color:#f5f6fa;font-size:1.4rem;font-weight:700;margin:0 0 10px;font-family:Montserrat,sans-serif;line-height:1.3;">📊 {ctx["headline"]}</h3>
-    <p style="color:#cbd5dd;font-size:0.92rem;margin:0 0 16px;font-family:Montserrat,sans-serif;line-height:1.5;">{ctx["subline"]}</p>
-    <p style="color:#9aa6c0;font-size:0.82rem;margin:0 0 18px;font-family:Montserrat,sans-serif;">
+    <p style="color:#d4af37;font-size:0.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px;font-family:Outfit,sans-serif;">Premium · MB Earnings Insider</p>
+    <h3 style="color:#f5f6fa;font-size:1.4rem;font-weight:700;margin:0 0 10px;font-family:Outfit,sans-serif;line-height:1.3;">📊 {ctx["headline"]}</h3>
+    <p style="color:#cbd5dd;font-size:0.92rem;margin:0 0 16px;font-family:Outfit,sans-serif;line-height:1.5;">{ctx["subline"]}</p>
+    <p style="color:#9aa6c0;font-size:0.82rem;margin:0 0 18px;font-family:Outfit,sans-serif;">
       <strong style="color:#d4af37;">ab 5 €/Monat</strong> · 30 Tage gratis testen · 1-Klick-Cancel · <strong style="color:#d4af37;">Promo INSIDER1</strong> spart 1 €
     </p>
-    <a href="/newsletter/?utm_source=internal&amp;utm_medium=cta&amp;utm_campaign={page_topic}" style="display:inline-block;padding:13px 28px;background:#d4af37;color:#0f1115;font-weight:700;text-decoration:none;border-radius:6px;font-size:0.95rem;font-family:Montserrat,sans-serif;letter-spacing:.02em;">
+    <a href="/newsletter/?utm_source=internal&amp;utm_medium=cta&amp;utm_campaign={page_topic}" style="display:inline-block;padding:13px 28px;background:#d4af37;color:#0f1115;font-weight:700;text-decoration:none;border-radius:6px;font-size:0.95rem;font-family:Outfit,sans-serif;letter-spacing:.02em;">
       Premium-Newsletter ansehen →
     </a>
   </div>

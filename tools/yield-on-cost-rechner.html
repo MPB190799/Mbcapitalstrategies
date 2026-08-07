@@ -1434,5 +1434,40 @@
 </footer>
 <script src="/assets/js/nav.min.js" defer></script>
 
+
+<!-- MB-PREMIUM-RESULT-CTA-V1 -->
+<script>
+/* Premium-Hinweis im Moment des Ergebnisses (siehe add_result_cta.py).
+   Haengt sich an die Ergebnis-Box statt an calculate() — funktioniert damit
+   unabhaengig davon, wie die jeweilige Rechner-Seite ihr Ergebnis rendert. */
+(function () {
+  var box = document.getElementById("result");
+  if (!box) return;
+  var CTA_ID = "mb-premium-result-cta";
+
+  function inject() {
+    if (document.getElementById(CTA_ID)) return;      // schon drin -> keine Schleife
+    if (!box.textContent.trim()) return;              // noch kein Ergebnis gerechnet
+    var d = document.createElement("div");
+    d.id = CTA_ID;
+    d.style.cssText = "margin-top:14px;padding:14px 16px;border-top:1px solid rgba(212,175,55,0.30);" +
+      "background:rgba(212,175,55,0.06);border-radius:0 0 6px 6px;text-align:left;font-family:Outfit,sans-serif;";
+    d.innerHTML =
+      '<p style="margin:0 0 8px;font-size:0.88rem;color:#cbd5dd;line-height:1.5;">' +
+      'Die Zahl steht — die Frage ist, ob die Dividende sie auch trägt. ' +
+      'Im <strong style="color:#d4af37;">MB Earnings Insider</strong> prüfe ich jeden Quartalsbericht ' +
+      'deiner Sektoren auf Ausschüttungsdeckung, Cashflow und Verschuldung.</p>' +
+      '<a href="/newsletter/?utm_source=internal&utm_medium=result-cta&utm_campaign=rechner" ' +
+      'style="display:inline-block;padding:9px 18px;background:#d4af37;color:#0f1115;font-weight:700;' +
+      'text-decoration:none;border-radius:5px;font-size:0.86rem;letter-spacing:.02em;">' +
+      'Ab 5 &euro;/Monat ansehen &mdash; 30 Tage gratis &rarr;</a>';
+    box.appendChild(d);
+  }
+
+  new MutationObserver(inject).observe(box, { childList: true, subtree: true });
+  inject();
+})();
+</script>
+
 </body>
 </html>
