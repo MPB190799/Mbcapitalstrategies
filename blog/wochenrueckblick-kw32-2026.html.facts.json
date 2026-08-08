@@ -1,0 +1,242 @@
+{
+  "asset": "wochenrueckblick-kw32-2026.html",
+  "created_at": "2026-08-08T00:00:00Z",
+  "source_ssot": "output/avatar-videos/kw32-research-verified.md (research-subagent, FMP + WebSearch, jede Zahl mit 2 Quellen belegt) + output/avatar-videos/script-kw32-v1.md",
+  "note": "Alle Claims unten sind 1:1 aus der verifizierten Faktenbasis uebernommen, nicht neu recherchiert. Die 2-Quellen-Verifikation liegt in kw32-research-verified.md (Quelle 1 + Quelle 2 je Zeile).",
+  "claims": [
+    {
+      "id": "jobsbericht-juli",
+      "claim": "US-Nonfarm-Payrolls Juli 2026",
+      "value": "-23.000 Stellen (erwartet +83.000 bis +95.000)",
+      "source": "CNBC 07.08.2026 + Fortune 07.08.2026 (via kw32-research-verified.md §4.1)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "revisionen-mai-juni",
+      "claim": "Nachtraegliche Revision Mai/Juni",
+      "value": "-103.000 Stellen zusammen",
+      "source": "Fortune 07.08.2026 + Staffing Industry Analysts 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "arbeitslosenquote",
+      "claim": "US-Arbeitslosenquote + Erwerbsquote",
+      "value": "4,2% -> 4,1%; Erwerbsquote 61,4% (niedrigster Stand seit >5 Jahren); Erwerbspersonenpotenzial -264.000",
+      "source": "CNBC/Fortune 07.08.2026 (BLS Employment Situation Release 07.08.2026)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "brent-wow",
+      "claim": "Brent WoW 31.07.-07.08.2026",
+      "value": "87,93 $ -> ~82-83 $, -5 bis -7% (Spanne wegen 1,3% Quellenabweichung FMP/TradingEconomics)",
+      "source": "FMP historical-price-eod 07.08.2026 17:41 UTC + TradingEconomics 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "gold-wow",
+      "claim": "Gold WoW",
+      "value": "4.045,17 $ -> 4.335,71 $, +7,18% (Spot); Gegenprobe Future +7,08%, GLD-ETF +7,05%",
+      "source": "FMP XAUUSD/GCUSD + FMP GLD, abgerufen 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "vix",
+      "claim": "VIX WoW",
+      "value": "15,99 -> 14,94, -6,57%",
+      "source": "FMP ^VIX + FMP quote Live-Timestamp 2026-08-07T17:42:16Z",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "us10y",
+      "claim": "US 10J-Rendite WoW",
+      "value": "4,740% -> 4,653%, -8,7 Basispunkte",
+      "source": "FMP ^TNX + Reuters/Yahoo Finance 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "sp500-dax",
+      "claim": "S&P 500 / DAX WoW",
+      "value": "S&P 500 7.489,72 -> 7.747,45 (+3,44%); DAX 25.700 -> 26.307 (+2,36%)",
+      "source": "FMP ^GSPC/^GDAXI, abgerufen 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "dollar-index",
+      "claim": "DXY WoW",
+      "value": "99,80 -> 99,42, -0,38%; Gegenprobe DXUSD -0,37%",
+      "source": "FMP DX-Y.NYB + FMP DXUSD",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "bdi",
+      "claim": "Baltic Dry Index (Fenster 31.07.-06.08., abweichend)",
+      "value": "2.732 -> 3.057, +11,90%",
+      "source": "handybulk.com Tagesberichte + Reuters/TradingEconomics (BDI 3.063 am 05.08., 'highest since June 3')",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "sektorrotation",
+      "claim": "Sektor-ETF WoW ggue. S&P 500 (+3,44%)",
+      "value": "XLK +6,92% / XLB +4,86% / XLU -1,22% / XLE -2,69% (schwaechster Sektor)",
+      "source": "FMP historical-price-eod (SPDR Select Sector ETFs) + FMP sector-performance-snapshot 06.08.2026 (Richtung-Gegenprobe)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "rohstoff-spreizung",
+      "claim": "Metalle/Bergbau vs. Energie, 5 Handelstage",
+      "value": "XME +14,37% / URA +14,33% / COPX +11,86% / SLV +9,27% / GLD +7,05% vs. XLE -2,69% = 17pp Spread",
+      "source": "FMP historical-price-eod, Fenster 31.07.-07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "hormuz-status",
+      "claim": "Straße von Hormus Status + Verkehr",
+      "value": "Tag 159 (06.08.2026) faktisch geschlossen; KW32 Mo-Do nur 33 Durchfahrten (vs. 50 Vorwoche), Donnerstag nur 4 Schiffe; Normalwert 73-88/Tag",
+      "source": "straits.live Live-Tracker + Lloyd's List Intelligence Brief 05.08.2026 + usnews.com/al-monitor.com 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "hormuz-angriff",
+      "claim": "Beschuss Bulker omanische Route",
+      "value": "Minoan Pioneer, 03.08.2026 ~22:00 Uhr, Maschinenraum getroffen, Blackout+Brand, 1 Vermisster",
+      "source": "maritime-executive.com, abgerufen 08.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "opec-plus",
+      "claim": "OPEC+ Foerdererhoehung September",
+      "value": "+188.000 b/d fuer September, beschlossen 02.08.2026, Rueckname der freiwilligen Kuerzungen (~3,5 Mio b/d) abgeschlossen",
+      "source": "CNBC 02.08.2026 + OPEC-Pressemitteilung 02.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "spacex-telekom",
+      "claim": "SpaceX Mobilfunknetz-Ankuendigung + Kursreaktion",
+      "value": "65 MHz Spektrum von EchoStar; AT&T/Verizon/T-Mobile je >-4% nachbörslich, 05.08.2026",
+      "source": "Quartz 05.08.2026 + Yahoo Finance 05.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "thungela-eps",
+      "claim": "Thungela Trading Statement H1 2026",
+      "value": "EPS +457% bis +475%; HEPS (bereinigt) +140% bis +158%; Differenz ~1,0 Mrd Rand Buchgewinn aus Kleinkopje-Verkauf",
+      "source": "Mining Weekly 07.08.2026 + Miningmx/Investegate RNS 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "realty-income-rating",
+      "claim": "Realty Income Fitch-Rating",
+      "value": "'A' Long-Term Issuer Default Rating, Ausblick stabil, 03.08.2026; erster Net-Lease-REIT, 4. US-REIT mit A-Rating",
+      "source": "Realty Income IR-PM 03.08.2026 + PR Newswire 03.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "star-bulk-div",
+      "claim": "Star Bulk Quartalsdividende",
+      "value": "0,90 $/Aktie, 22. Zahlung in Folge seit 2021, Stichtag 21.08., zahlbar ~03.09.2026",
+      "source": "GlobeNewswire 05.08.2026 + TipRanks/StockTitan 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "genco-div",
+      "claim": "Genco Shipping Quartalsdividende",
+      "value": "0,80 $/Aktie, vom Unternehmen als Rekord bezeichnet, Stichtag 17.08., zahlbar ~24.08.2026",
+      "source": "Genco IR-Mitteilung 05.08.2026 + SEC 8-K Ex-99.1",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z",
+      "note": "Kursierende Steigerungszahl '+128,6%' bewusst NICHT verwendet (nur 1 Quelle, siehe kw32-research-verified.md N4)"
+    },
+    {
+      "id": "adm-div",
+      "claim": "Archer Daniels Midland Dividende",
+      "value": "0,52 $/Aktie, 379. Quartalsdividende in Folge, 53 Jahre Dividendenwachstum, Stichtag 19.08., zahlbar 09.09.2026",
+      "source": "ADM-IR 'ADM Declares Cash Dividend' + Investing.com/Barchart",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "kimbell-div",
+      "claim": "Kimbell Royalty Partners Ausschuettung",
+      "value": "0,47 $/Anteil, 75% des ausschuettungsfaehigen Cashflows, Stichtag 17.08., zahlbar 24.08.2026",
+      "source": "PR Newswire 'Kimbell Royalty Partners Announces Record Second Quarter 2026 Results' + StockTitan",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "bp-woodside",
+      "claim": "BP kauft Woodside-Anteil Calypso",
+      "value": "BP uebernimmt 70%-Anteil, steigt auf 100% + Betriebsfuehrung, 06.08.2026, Kaufpreis nicht veroeffentlicht",
+      "source": "BP-Pressemitteilung 06.08.2026 + WorldOil 06.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "ecopetrol-brava",
+      "claim": "Ecopetrol Brava-Energia-Uebernahme",
+      "value": "~25% (116.110.717 Aktien, 23,00 Real/Aktie) per Tender gesichert, Ziel ~51% Stimmrechte, Abrechnung 17.08.2026",
+      "source": "Ecopetrol-PM/PR Newswire 05.08.2026 + SEC Form 6-K",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "harbour-energy",
+      "claim": "Harbour Energy Rueckkauf",
+      "value": "Bis 250 Mio $ Rueckkaufprogramm, 06.08.2026, Aktie in London bis +7,9%",
+      "source": "Harbour-Energy-RNS via Investegate 06.08.2026 + Bloomberg 06.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "line5-michigan",
+      "claim": "Michigan Supreme Court Line-5-Urteil",
+      "value": "Tunnelgenehmigung aufgehoben, Rueckverweisung an Public Service Commission, Urteil 31.07./01.08.2026",
+      "source": "US News/AP + E&E News by Politico, abgerufen 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "porsche-se",
+      "claim": "Porsche SE Halbjahresverlust",
+      "value": "2,22 Mrd Euro Verlust nach Steuern, Abschreibung 3,0 Mrd Euro auf VW-Beteiligung + 0,2 Mrd auf Porsche AG",
+      "source": "Handelsblatt 07.08.2026 + ad-hoc-news.de/auto-motor-und-sport.de 07.08.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "bayer-glyphosat",
+      "claim": "Bayer/Monsanto Glyphosat-Vergleichsanhoerung verschoben",
+      "value": "Verschiebung auf 14.09.2026, Antrag 04.08.2026, Vergleich bis 7,25 Mrd $ ueber bis zu 21 Jahre",
+      "source": "Bloomberg Law 05.08.2026 + Bayer-IR-Seite 'Managing the Roundup Litigation'",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "depot-zugehoerigkeit",
+      "claim": "Gehaltene Positionen unter den genannten Werten (TR+Scalable, R13)",
+      "value": "Star Bulk, Genco, ADM, Kimbell Royalty, Realty Income, Thungela, BP, Ecopetrol, Woodside, Harbour Energy, Enbridge, Porsche SE, Bayer, Dorian LPG, Verizon, AT&T = gehalten; T-Mobile, SpaceX = nicht gehalten",
+      "source": "output/data/held-positions.json (Tier-1) + kw32-research-verified.md §8.2 (Parqet-Snapshot 07.08.2026 01:27 CEST, Stichtag 06.08.2026)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-08T00:00:00Z",
+      "note": "Korrektur ggue. script-kw32-v1.md: Kimbell Royalty ist laut Parqet-Snapshot UND held-positions.json gehalten (0,11%) -- das Video-Skript hatte Kimbell faelschlich als nicht gehalten gelistet. In diesem Blog korrigiert, von qa-gate.js::scanDisclosure mechanisch gegen Tier-1 bestaetigt."
+    }
+  ]
+}
