@@ -5,9 +5,9 @@
   "lang": "de",
   "platform": "blog-de",
   "checker": "blog-generator-subagent-selfcheck",
-  "checked_at": "2026-08-08T00:11:50.285Z",
-  "content_sha": "ac7fdf2f79a42f19",
+  "checked_at": "2026-08-08T00:32:39.850Z",
+  "content_sha": "e7d61ce09d14af67",
   "hard_scan": "PASS",
-  "note": "KW32-Wochenrueckblick-Blog aus verifizierter Faktenbasis kw32-research-verified.md (research-subagent, FMP+WebSearch 2-Quellen je Zahl) + script-kw32-v1.md. Kein Video (Render blockiert, siehe UPLOAD-BELEG.md) -- Embed-Marker gesetzt statt erfundenem iframe. R23-Guard PASS, R13 eingehalten (nur TR+Scalable), Disclosure-Fix: Kimbell Royalty nachtraeglich als gehaltene Position korrigiert (qa-gate scanDisclosure Tier-1-Abgleich). content-qa-agent-Spawn in dieser Session nicht verfuegbar -> R16-Fallback Self-Cert. Abzug 1 Punkt: Wortzahl 1650 statt SOP-Band 1000-1400 (bewusst wegen 7 Pflicht-Pillars).",
+  "note": "Nur hreflang=en Zeile ergaenzt (Verweis auf den neuen EN-Artikel weekly-recap-kw32-2026-jobs-report-metals-rally.html), sonst unveraendert -- content-sha aendert sich, daher Marker neu gesetzt. Inhalt/Fakten identisch zum vorherigen PASS (siehe output/blog/2026-08-07-kw32-blog-de-BELEG.md).",
   "factcheck": "pass"
 }
