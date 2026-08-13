@@ -75,6 +75,20 @@ footer.footer a { color:#d4af37; text-decoration:none; }
   box-sizing:border-box;
 }
 .input-group input:focus { outline:none; border-color:#d4af37; }
+.input-group select {
+  width:100%;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #333;
+  background:#0f1115;
+  color:#fff;
+  font-size:1rem;
+  box-sizing:border-box;
+  appearance:auto;
+}
+.input-group select:focus { outline:none; border-color:#d4af37; }
+.szenario-hinweis { color:#9aa6c0; font-size:0.78rem; margin:6px 0 0; }
+.szenario-partner { color:#d4af37; font-size:0.78rem; margin:4px 0 0; font-weight:600; }
 .calc-btn {
   width:100%;
   padding:14px;
@@ -305,6 +319,34 @@ data-full-width-responsive="true"></ins>
 <!-- RECHNER -->
 <div class="rechner-box">
   <h2>⚓ Shipping Cashflow Rechner</h2>
+
+  <!-- FLOTTEN-SZENARIEN ────────────────────────────────────────────────────────
+       Neutrale Segment-Schätzwerte zum Ausprobieren. Gebrandete Emittenten-Presets
+       (mit Logo + "Werbung"-Kennzeichnung + Positionsoffenlegung) kommen NUR über
+       einen freigegebenen Eintrag im Sponsoring-Register — sponsor_id bleibt bis
+       dahin leer. Ein benanntes Preset ohne Deal wäre eine behauptete Partnerschaft.
+       Doku: knowledge/emittenten-werbung-playbook.md (mb-evolution) -->
+  <div class="input-group">
+    <label for="szenarioSelect">Flotten-Szenario laden (optional)</label>
+    <select id="szenarioSelect" onchange="ladeSzenario()">
+      <option value="">— eigene Werte eingeben —</option>
+    </select>
+    <p id="szenarioHinweis" class="szenario-hinweis" style="display:none;"></p>
+    <p id="szenarioPartner" class="szenario-partner" style="display:none;"></p>
+  </div>
+  <script id="fleetSzenarien" type="application/json">
+  [
+    {"id":"eco-vlcc","label":"Eco-VLCC-Rohöltanker (Segment-Schätzwerte)","sponsor_id":null,
+     "hinweis":"Schätzwerte für einen modernen Eco-VLCC im Mittelzyklus, abgeleitet aus öffentlichen Quartalsberichten großer Tanker-Reedereien (Stand 08/2026). Keine Unternehmensdaten — eigene Zahlen überschreiben jederzeit.",
+     "werte":{"tce":45000,"opex":8000,"ships":20,"util":92,"payout":70}},
+    {"id":"mr-produktentanker","label":"MR-Produktentanker (Segment-Schätzwerte)","sponsor_id":null,
+     "hinweis":"Schätzwerte für eine MR-Produktentanker-Flotte, abgeleitet aus öffentlichen Quartalsberichten (Stand 08/2026). Keine Unternehmensdaten.",
+     "werte":{"tce":25000,"opex":7000,"ships":30,"util":94,"payout":70}},
+    {"id":"kamsarmax-bulker","label":"Kamsarmax-Dry-Bulker (Segment-Schätzwerte)","sponsor_id":null,
+     "hinweis":"Schätzwerte für eine Kamsarmax-Bulker-Flotte, abgeleitet aus öffentlichen Quartalsberichten (Stand 08/2026). Keine Unternehmensdaten.",
+     "werte":{"tce":14000,"opex":6000,"ships":25,"util":95,"payout":60}}
+  ]
+  </script>
 
   <div class="input-group">
     <label for="tceInput">TCE / Tagesrate (USD)</label>
@@ -664,6 +706,48 @@ This free <strong>Shipping Cashflow Calculator</strong> helps investors analyze 
 <script src="/assets/js/nav.min.js" defer></script>
 
 <script>
+/* ── Flotten-Szenarien (Presets) ─────────────────────────────────────────────
+   Liest das Inline-JSON, fuellt das Dropdown und beim Auswaehlen die Felder.
+   sponsor_id gefuellt => Partner-Zeile MIT Werbekennzeichnung wird eingeblendet
+   (passiert nur, wenn ein freigegebener Deal das JSON erweitert hat). */
+function fleetSzenarien(){
+  try { return JSON.parse(document.getElementById('fleetSzenarien').textContent) || []; }
+  catch(e){ return []; }
+}
+(function initSzenarien(){
+  const sel = document.getElementById('szenarioSelect');
+  if(!sel) return;
+  fleetSzenarien().forEach(function(s){
+    const o = document.createElement('option');
+    o.value = s.id; o.textContent = s.label;
+    sel.appendChild(o);
+  });
+})();
+function ladeSzenario(){
+  const sel = document.getElementById('szenarioSelect');
+  const hinweis = document.getElementById('szenarioHinweis');
+  const partner = document.getElementById('szenarioPartner');
+  const s = fleetSzenarien().find(function(x){ return x.id === sel.value; });
+  if(!s){ hinweis.style.display='none'; partner.style.display='none'; return; }
+  const w = s.werte || {};
+  if(w.tce != null)    document.getElementById('tceInput').value = w.tce;
+  if(w.opex != null)   document.getElementById('opexInput').value = w.opex;
+  if(w.ships != null)  document.getElementById('shipsInput').value = w.ships;
+  if(w.util != null)   document.getElementById('utilInput').value = w.util;
+  if(w.payout != null) document.getElementById('payoutInput').value = w.payout;
+  if(w.shares != null) document.getElementById('sharesInput').value = w.shares;
+  hinweis.textContent = s.hinweis || '';
+  hinweis.style.display = s.hinweis ? 'block' : 'none';
+  if(s.sponsor_id && s.partner_label){
+    partner.textContent = 'Werbung — Flottendaten bereitgestellt von ' + s.partner_label
+      + (s.position_offengelegt ? ' · Ich halte diese Aktie, Offenlegung: /werbung.html' : '');
+    partner.style.display = 'block';
+  } else {
+    partner.style.display = 'none';
+  }
+  calcShipping();
+}
+
 function calcShipping(){
   const tceVal = Number(document.getElementById('tceInput').value);
   const opexVal = Number(document.getElementById('opexInput').value);
