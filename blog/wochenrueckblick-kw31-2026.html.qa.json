@@ -1,0 +1,20 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-de",
+  "checker": "blog-generator-subagent-selfcheck",
+  "checked_at": "2026-08-13T21:02:02.539Z",
+  "content_sha": "af689242ffc61cdc",
+  "hard_scan": "PASS",
+  "note": "R16-Fallback-Selbstzertifizierung (kein Task/Agent-Tool in dieser Session verfuegbar). Nachtrag Content-Coverage-Luecke KW31 (Paperclip MBC-3, a-20260813T204646Z-distributionagent). Facts-Ledger 23 Claims (facts-ledger.py OK). R23-konform: keine absoluten EPS/Umsatz/Nettogewinn-Zahlen der Q2-Berichte (Sperrfrist 21 Tage noch nicht erreicht), nur qualitative Charakterisierung + Dividenden/Rueckkauf-Betraege + operative Ratendaten (beides R23-frei). MAR-Empfehlungsblock: kein Kursziel/Empfehlung zu Einzelwerten, nur Markueberblick + R6-Disclaimer + R13/Offenlegung -- daher kein separater mar-block.py-Lauf noetig.",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "ledger": "wochenrueckblick-kw31-2026.html.facts.json",
+    "allow_plausible": false,
+    "max_age_days": 14
+  },
+  "numbers_verified_by": "claude"
+}

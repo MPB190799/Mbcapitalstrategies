@@ -1,0 +1,223 @@
+{
+  "asset": "wochenrueckblick-kw31-2026.html",
+  "created_at": "2026-08-13T00:00:00Z",
+  "source_ssot": "output/newsletter/kw31-newsletter-draft.html + output/newsletter/kw31-newsletter-draft.html.facts.json (newsletter-fmp-verify, FMP Live-Markt-SSOT, Snapshot 2026-08-01) + output/newsletter/data/kw31-week-data.json (FMP-EOD Freitag-Close-vs-Freitag-Close) + frische WebSearch-Verifikation fuer die narrativen BP-Nordsee- und Fed-Fakten (nicht im Newsletter-Ledger enthalten, dort nur Ticker-Snapshots)",
+  "note": "Alle Makro-/Sektor-/Ticker-Zahlen sind 1:1 aus dem verifizierten KW31-Newsletter-Material uebernommen (2-Quellen-Methodik dort dokumentiert im Footer: Kurse FMP-EOD, Fed CNBC+U.S.Bank, Hormus straits.live+Wikipedia-Chronik, Firmen-Ereignisse Unternehmensmitteilung+Fachpresse). BP-Nordsee-Details und Fed-Abstimmungsergebnis zusaetzlich per WebSearch mit je 2 unabhaengigen Quellen frisch verifiziert, da diese narrativen Fakten nicht im Newsletter-Ticker-Ledger stehen.",
+  "claims": [
+    {
+      "id": "bp-nordsee-verkaufsprozess",
+      "claim": "BP startet formalen Verkaufsprozess fuer UK-Nordsee-Geschaeft",
+      "value": "31.07.2026, funf Hubs (Andrew, ETAP, Glen Lyon, Clair, Clair Ridge), Clair = groesstes Oelfeld des brit. Kontinentalschelfs, ~1.100 Mitarbeiter, Prozess laeuft noch (nicht verkauft)",
+      "source": "worldoil.com 31.07.2026 ('bp launches sale process for UK North Sea upstream business') + Forbes 31.07.2026 ('BP Puts North Sea Business Up For Sale After 60 Years Of Production') + bp.com Pressemitteilung",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "https://www.worldoil.com/news/2026/7/31/bp-launches-sale-process-for-uk-north-sea-upstream-business/"
+    },
+    {
+      "id": "bp-nordsee-erloes",
+      "claim": "Geschaetzter Verkaufserloes",
+      "value": "1,75-3 Mrd. $ Spanne, Rystad Energy Schaetzung rund 2,6 Mrd. $",
+      "source": "Offshore Magazine 31.07.2026 + WebSearch-Zusammenfassung Rystad Energy Schaetzung (mehrfach zitiert u.a. Discovery Alert, Energy Live News 31.07.2026)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "note": "Bandbreite bewusst statt Einzelzahl, da Quellen 1,75-3,3 Mrd $ vs. 2,6 Mrd $ (Rystad) leicht abweichen",
+      "url": "https://www.offshore-mag.com/regional-reports/north-sea-europe/news/55395021/bp-launches-sale-of-uk-north-sea-business-as-portfolio-focus-shifts-elsewhere"
+    },
+    {
+      "id": "bp-nordsee-60-jahre",
+      "claim": "60 Jahre Foerderung enden mit dem Verkaufsprozess",
+      "value": "BP verkauft nach 60 Jahren Nordsee-Produktion",
+      "source": "Forbes 31.07.2026 ('BP Puts North Sea Business Up For Sale After 60 Years Of Production') + RTE.ie 31.07.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "https://www.forbes.com/sites/gauravsharma/2026/07/31/bp-puts-north-sea-assets-up-for-sale-after-60-years-of-production/"
+    },
+    {
+      "id": "fed-entscheid-kw31",
+      "claim": "FOMC-Entscheid 29.07.2026: Leitzins gehalten, 3 Gegenstimmen fuer Erhoehung",
+      "value": "3,50-3,75% gehalten (5. Sitzung in Folge unveraendert); Beth Hammack, Neel Kashkari, Lorie Logan stimmten fuer +25bp; erstes Mal seit September 2016 dass 3 Mitglieder geschlossen fuer Erhoehung dissentierten",
+      "source": "CNBC 29.07.2026 ('Fed rate decision July 2026: Divided Fed holds interest rates steady') + CBS News 29.07.2026 ('Federal Reserve holds interest rates steady, but 3 officials vote for hike') + federalreserve.gov FOMC-Statement 29.07.2026",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"
+    },
+    {
+      "id": "macro-wow-kw31",
+      "claim": "Makro-Kennzahlen WoW (Freitag 24.07. gegen Freitag 31.07.2026)",
+      "value": "Brent 90,15$ (-6,85%), WTI 86,80$ (-2,81%), Gold 4.107$ (+0,89%), VIX 15,99 (-13,94%), S&P500 7.489,72 (+1,05%), DAX 25.700 (+2,49%), US10Y 4,74% (+1,28%), DXY 99,80 (-1,64%)",
+      "source": "output/newsletter/data/kw31-week-data.json (FMP-EOD, generated_at 2026-08-01T09:55:02) -- direkter FMP-Datenfeed, Methodik identisch zu wochenrueckblick-kw30/kw32",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/data/kw31-week-data.json"
+    },
+    {
+      "id": "brent-intraweek-spanne",
+      "claim": "Brent Intraweek-Spanne 23.-31.07.2026",
+      "value": "23.07. ~100,69$, Dienstag 29.07. ~84,09$, Freitagsschluss 90,15$ -- rund 16$ Spanne in 7 Handelstagen",
+      "source": "output/newsletter/kw31-newsletter-draft.html (FMP-EOD Tagesreihe, im Newsletter-Footer als 'Kurse und WoW-Veraenderungen FMP-EOD' gegengeprueft)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "hormuz-status-kw31",
+      "claim": "Strasse von Hormus Status Ende Juli 2026",
+      "value": "weiterhin gesperrt, 153. Tag (Stand 23.07.); am 23.07. rund 10 Schiffe Durchfahrt vs. Normalbetrieb ~88/Tag; Versicherungsdeckung seit 5. Maerz gekuendigt",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle straits.live Live-Tracker + Wikipedia-Chronik, im Newsletter-Footer dokumentiert, geprueft 01.08.)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "shell-quartal",
+      "claim": "Shell Q2 2026 Ergebnis-Charakterisierung",
+      "value": "bestes Quartal seit rund vier Jahren (seit Q2 2022); Rueckkauf 3,0 Mrd $, 19. Quartal in Folge mit mind. 3 Mrd $ Rueckkauf. KEINE absolute Gewinn-$-Zahl verwendet (R23-Gating, Sperrfrist 21 Tage noch nicht erreicht)",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle Unternehmensmitteilung 30.07. + SEC Form 6-K, im Footer dokumentiert)",
+      "verdict": "VERIFIED",
+      "note": "R23-konform: nur qualitative Einordnung + Rueckkauf-Betrag (Kapitalrueckfluss = frei), keine EPS/Umsatz/Nettogewinn-Zahl",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "chevron-quartal",
+      "claim": "Chevron Q2 2026 Ergebnis-Charakterisierung",
+      "value": "bestes Quartal seit rund sechs Jahren, Erwartungen deutlich uebertroffen, Foerdererrekord USA, Hess-Synergien 1,5 Mrd $ ein halbes Jahr frueher als geplant erreicht. KEINE absolute EPS-/Gewinn-Zahl verwendet",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle BusinessWire 31.07. + Earnings-Call-Transkript, im Footer dokumentiert)",
+      "verdict": "VERIFIED",
+      "note": "R23-konform: Beat/Miss qualitativ (frei laut R23-Tabelle), keine EPS-Zahl",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "totalenergies-eni-div",
+      "claim": "TotalEnergies + ENI Dividenden/Rueckkauf-Erhoehung",
+      "value": "TotalEnergies Zwischendividende +5,9%, Rueckkaeufe auf 1,5 Mrd $ erhoeht; ENI Dividende 1,10 EUR/Aktie bestaetigt (+5%), Rueckkaufprogramm +20% auf 3,4 Mrd EUR, Sonderdividende fuer Oktober angekuendigt",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle TotalEnergies SEC 6-K + Call-Transkript; ENI Unternehmensmitteilung 29.07. + Rigzone, im Footer dokumentiert)",
+      "verdict": "VERIFIED",
+      "note": "Dividenden-Betraege + Rueckkauf-Volumina sind laut R23-Tabelle explizit frei (Dividende bestaetigt/erhoeht + Betrag)",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "diana-genco-tender",
+      "claim": "Diana Shipping Uebernahmeangebot fuer Genco laeuft aus, nicht verlaengert",
+      "value": "27,34$/Aktie (24,80$ bar + 1 Diana-Aktie), Angebot lief 24.07. aus, nur 31,6% der Anteile angedient, Genco-Board hatte einstimmig abgelehnt (unter Substanzwert), Diana verlaengerte nicht, Diana-Aktie +8,0% WoW",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle Diana/Genco Unternehmensmitteilungen beider Seiten, 27.07., im Footer dokumentiert) + FMP-Kurs DSX +8,00% (facts.json newsletter-fmp-verify)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html.facts.json"
+    },
+    {
+      "id": "dorian-lpg-raten",
+      "claim": "Dorian LPG Charterraten-Auslastung Q2/Juli 2026",
+      "value": "99% der Kalendertage im Quartal bis Ende Juni zu Raten >68.000$/Tag verchartert; Juli 34% der Tage >100.000$/Tag",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle SEC 8-K + StockTitan, im Footer dokumentiert)",
+      "verdict": "VERIFIED",
+      "note": "Operative Ratendaten = R23-frei (Auslastung/Ratenumfeld explizit in der frei-Spalte)",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "rio-tinto-dividende",
+      "claim": "Rio Tinto Zwischendividende H1 2026",
+      "value": "211,0 US-Cent/Aktie, +43%, hoechster Stand seit vier Jahren, 3,4 Mrd $ Gesamtausschuettung",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle Rio Tinto H1-Mitteilung 29.07. + MarketIndex, im Footer dokumentiert)",
+      "verdict": "VERIFIED",
+      "note": "Dividenden-Betrag + Prozentsatz = R23-frei",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "anglogold-newmont",
+      "claim": "AngloGold + Newmont Cashflow-Disziplin trotz Preisdruck",
+      "value": "AngloGold: freier Cashflow deutlich gesteigert, Jahresprognose trotz temporaerer Betriebsunterbrechung bestaetigt; Newmont: Rekord-Cashflow trotz im Quartal ruecklaeufigem Goldpreis. KEINE absolute $-Zahl verwendet",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Newsletter-Text, allgemein durch Footer-Quellenblock gedeckt)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "whitehaven-coal",
+      "claim": "Whitehaven Coal Jahresbericht vs. Kursreaktion",
+      "value": "FY26 Foerderung 40,3 Mio. Tonnen (+3%), oberes Ende der 37-41-Mt-Prognose; Aktie dennoch -9,94% WoW wegen schwachem Kokskohlepreis, nicht wegen operativer Leistung",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle Mining.com + Mining Weekly, 28.07., im Footer dokumentiert) + FMP-Kurs WHC.AX -9,94% (facts.json newsletter-fmp-verify)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html.facts.json"
+    },
+    {
+      "id": "sektor-rotation-kw31",
+      "claim": "Sektor-ETF WoW Versorger/REITs/Finanzen",
+      "value": "XLU (Versorger) -4,19% (schwaechster Sektor), XLRE (REITs) -1,92%, XLF (Finanzen) +1,12% (staerkster Sektor)",
+      "source": "output/newsletter/data/kw31-week-data.json (FMP-EOD Sektor-ETFs)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/data/kw31-week-data.json"
+    },
+    {
+      "id": "dominion-beat",
+      "claim": "Dominion Energy Q2 uebertraf Erwartungen, Sektor zog Aktie trotzdem mit",
+      "value": "operativer Beat gegen Konsens (4. Beat in Folge laut Newsletter), Aktie dennoch WoW im Minus durch Versorger-Sektorrotation",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Newsletter-Text)",
+      "verdict": "VERIFIED",
+      "note": "Nur Beat/Miss qualitativ genannt (frei), keine EPS-Zahl",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "dividenden-liste-kw31",
+      "claim": "Dividenden-Ankuendigungen der Woche (MPLX, Ares Capital, Arbor Realty, Dorian LPG)",
+      "value": "MPLX 1,0765$/Anteil unveraendert, Forward-Rendite 9,21%, Record 07.08./Zahltag 14.08.; Ares Capital 0,48$/Aktie, Record 15.09./Zahltag 30.09.; Arbor Realty 0,17$/Aktie unveraendert trotz GAAP-Quartalsverlust; Dorian LPG reguläre Quartalsdividende, Record Montag, Zahltag 12.08.",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Div-Tabelle, Quellen im Footer: SEC 8-K + StockTitan etc.)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "novo-nordisk-zeus",
+      "claim": "Novo Nordisk ZEUS-Studie gescheitert",
+      "value": "Ziltivekimab hemmte Entzuendungsweg, reduzierte schwere Herz-Kreislauf-Ereignisse aber nicht gegenueber Placebo (HR 0,99, 95%-KI 0,88-1,11, >6.300 Patienten); bereinigter Gewinnausblick 2026 bleibt bestehen, HERMES/ARTEMIS-Folgestudien laufen weiter (Ergebnisse H1 2027)",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle Novo Nordisk Unternehmensmitteilung 31.07. + STAT News, im Footer dokumentiert)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "altria-q2",
+      "claim": "Altria Q2 2026: Umsatz ueber Erwartung, Prognose angehoben, Aktie dennoch im Minus",
+      "value": "Umsatz deutlich ueber Konsens, Jahresprognose angehoben, Aktie -6,41% WoW wegen ruecklaeufigem Zigarettenabsatz. KEINE absolute EPS-Zahl verwendet",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Quelle Altria Q2-Praesentation 30.07. + Zacks, im Footer dokumentiert) + FMP-Kurs MO -6,41% (facts.json newsletter-fmp-verify)",
+      "verdict": "VERIFIED",
+      "note": "Nur Richtung/Guidance-Ton + Beat/Miss qualitativ (frei), keine EPS-/Umsatz-Zahl",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html.facts.json"
+    },
+    {
+      "id": "ecopetrol-brava",
+      "claim": "Ecopetrol Uebernahmeangebot Brava Energia wieder aufgenommen",
+      "value": "Angebot fuer rund 25% an Brava Energia wieder aufgenommen, Auktion 5. August 2026",
+      "source": "output/newsletter/kw31-newsletter-draft.html (Newsletter-Kalenderabschnitt)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/newsletter/kw31-newsletter-draft.html"
+    },
+    {
+      "id": "depot-zugehoerigkeit-kw31",
+      "claim": "Gehaltene Positionen unter den im Artikel genannten Werten (TR+Scalable, R13)",
+      "value": "BP, Shell, Chevron, TotalEnergies, ENI, Diana Shipping, Genco Shipping, Dorian LPG, International Seaways, Rio Tinto, AngloGold Ashanti, Newmont, Whitehaven Coal, Dominion Energy, Altria, Novo Nordisk, Ares Capital, Arbor Realty = gehalten; MPLX = nicht gehalten",
+      "source": "output/data/held-positions.json (Tier-1, as_of 2026-08-13, abgeleitet aus mbfm-brokers.json Parqet TR+Scalable)",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T21:01:54Z",
+      "url": "file://output/data/held-positions.json"
+    },
+    {
+      "id": "video-existenz-kw31",
+      "claim": "YouTube-Video zu KW31 existiert und ist live",
+      "value": "TxrLm1QeBRg, Titel 'BP stellt die NORDSEE zum Verkauf — wer kauft 60 Jahre Förderung? | Wochenrückblick KW31', hochgeladen 2026-08-02T08:11:18, video-QA score 13/14 PASS, factcheck pass (checker claude-selfcheck)",
+      "source": "output/config/yt-publish-ledger.json",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-13T00:00:00Z",
+      "url": "file://output/config/yt-publish-ledger.json"
+    }
+  ]
+}
