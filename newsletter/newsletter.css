@@ -652,6 +652,19 @@ h3 { font-size: 18px; margin: 12px 0 8px; font-weight: 600; }
 @media (max-width: 720px) {
   .site-nav { display: none; }
   .compare-table { font-size: 13px; }
-  .hero { padding: 64px 0 48px; }
+  .hero { padding: 40px 0 32px; }
   .section { padding: 56px 0; }
+  /* CRO-Fix 2026-08-14 web-design-agent (Live-Audit 390x844): primaerer CTA-Block
+     (.hero-cta "Newsletter abonnieren") lag auf Mobile durchgaengig unterhalb des
+     ersten Viewports -- kicker+h1(3 Zeilen)+lead(3 Zeilen)+2 Zusatzabsaetze mussten
+     erst weggescrollt werden, bevor ueberhaupt ein CTA sichtbar war (Geld-Seite,
+     Rang 2 Nordstern). Die zwei Zusatzabsaetze (Preisvergleich, Liefergeschwindigkeit)
+     bleiben Desktop volltextlich erhalten (kein Content-Verlust, keine Faktenaenderung)
+     und werden nur auf Mobile ausgeblendet + kompakter Hero-Innenabstand, damit
+     H1 -> Lead -> CTA-Buttons ohne Scroll in den ersten 844px Platz finden. Kein
+     neuer Text, keine neue Behauptung -> kein R16-Gate noetig. */
+  .hero-price-line, .hero-speed-line { display: none; }
+  .hero .lead { margin: 0 0 18px; font-size: 16px; }
+  h1 { margin: 0 0 14px; }
+  .kicker { margin: 0 0 10px; }
 }
