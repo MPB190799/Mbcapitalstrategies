@@ -571,9 +571,10 @@ mb-newsletter-wrap" style="background:rgba(212,175,55,0.07);border-top:1px solid
       var email=el?el.value.trim():"";
       if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte eine gueltige E-Mail-Adresse eingeben.";}return;}
       if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Wird angemeldet...";}
+      if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:mId});}
       fetch(EP,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
       .then(function(r){return r.json();})
-      .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
+      .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(el)el.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:mId,method:"double-opt-in"});}}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
       .catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Bitte spaeter nochmal versuchen.";}});
     };
   }
