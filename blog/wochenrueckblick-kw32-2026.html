@@ -105,6 +105,22 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Wochenrückblick KW32: Vier Dividenden aus den Nachzüglern — ein Kreditmarkt, der nicht mitfeierte",
+  "description": "Marcos Wochenrückblick KW32 2026: US-Arbeitsmarktbericht dreht die Zinserwartung, Metalle & Bergbau +14,4 % gegen Öl −2,7 %, vier Dividendenmeldungen ausgerechnet aus den Nachzüglern der Woche (Star Bulk, Genco, Archer Daniels Midland).",
+  "thumbnailUrl": "https://img.youtube.com/vi/Znd0Qoz2os8/maxresdefault.jpg",
+  "uploadDate": "2026-08-14",
+  "embedUrl": "https://www.youtube.com/embed/Znd0Qoz2os8",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies"
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "MB Capital Strategies", "item": "https://mbcapitalstrategies.com/"},
@@ -197,6 +213,16 @@
       </div>
 
       <div class="article-body">
+
+        <h2>Video: Der komplette KW32-Rückblick</h2>
+
+        <p>Alle Stories der Woche in der ausführlichen Fassung — Jobsbericht, Sektorrotation, Öl vs. Metalle und die Dividenden-News der Nachzügler.</p>
+
+        <div class="yt-lite" data-id="Znd0Qoz2os8" data-title="Wochenrückblick KW32: Vier Dividenden aus den Nachzüglern — ein Kreditmarkt, der nicht mitfeierte" role="button" tabindex="0" aria-label="Video abspielen: Wochenrückblick KW32 2026">
+          <img class="yt-thumb" src="https://img.youtube.com/vi/Znd0Qoz2os8/hqdefault.jpg" alt="Wochenrückblick KW32 2026 — Vier Dividenden aus den Nachzüglern" width="480" height="360" loading="lazy" decoding="async">
+          <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="yt-label">Wochenrückblick KW32: Vier Dividenden aus den Nachzüglern — ein Kreditmarkt, der nicht mitfeierte</div>
+        </div>
 
         <h2>Der Auslöser: ein Jobsbericht, der acht Kennzahlen gleichzeitig drehte</h2>
 
@@ -403,5 +429,23 @@
 
 <script src="/assets/js/nav.min.js" defer></script>
 <script src="/assets/js/glossar-linking.js" defer></script>
+<script>
+(function(){
+  function initYtLite(el){
+    el.addEventListener('click',function activate(){
+      el.removeEventListener('click',activate);
+      var id=el.dataset.id;if(!id)return;
+      var iframe=document.createElement('iframe');
+      iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+      iframe.title=el.dataset.title||'YouTube Video';
+      iframe.allow='autoplay;encrypted-media;picture-in-picture';
+      iframe.allowFullscreen=true;
+      el.innerHTML='';el.appendChild(iframe);el.style.cursor='default';
+    });
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){el.click();}});
+  }
+  document.querySelectorAll('.yt-lite[data-id]').forEach(initYtLite);
+})();
+</script>
 </body>
 </html>
