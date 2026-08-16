@@ -5,10 +5,10 @@
   "lang": "de",
   "platform": "blog-de",
   "checker": "blog-generator-subagent-selfcheck",
-  "checked_at": "2026-08-16T03:56:47.237Z",
-  "content_sha": "2c2c9e87bdd3929f",
+  "checked_at": "2026-08-16T03:59:49.797Z",
+  "content_sha": "4426f7d7a18c3f9e",
   "hard_scan": "PASS",
-  "note": "R16-Fallback-Selbstzertifizierung (kein Task/Agent-Tool in dieser Session verfuegbar). Voice: Fakt/These durchgaengig getrennt. Format: BlogPosting+VideoObject+BreadcrumbList+FAQPage JSON-LD, hreflang reziprok (EN-Ziel vorab gesetzt, EN folgt Tag 3), x-default->DE, twitter:card+GA4 vorhanden, og/twitter-title identisch mit <title>. Compliance: R23 eingehalten (Wallenius-EBITDA-Guidance + Thungela-EPS-Spanne bewusst ohne Zahl), Offenlegung im Text korrigiert gegen held-positions.json Tier-1 (231-Positionen-Depot, fast alle genannten Werte sind Nebenpositionen -- urspruengliche Fassung hatte 14 Namen faelschlich als nicht gehalten gelistet, qa-gate::scanDepotMembership hat das mechanisch abgefangen), Disclaimer vollstaendig, 2 Affiliate-Links mit Kontextbezug, 8 interne Links inkl. 2 Hub-Rueckverlinkungen. -1 Punkt: Wortzahl (~2050) ueber 1000-1400-Band, vertretbar per Ereignisdichte-Ausnahme (12 Einzelereignisse+Makro-Dashboard ohne Sektorrotation), aber nicht ideal fuer Lesbarkeit.",
+  "note": "R16-Fallback-Selbstzertifizierung (kein Task/Agent-Tool verfuegbar). Re-Emit nach zwei Fixes: (1) Depot-Offenlegung gegen held-positions.json Tier-1 korrigiert (17 statt 3 gehaltene Werte, qa-gate::scanDepotMembership-Fund), (2) R23-False-Positive behoben -- H2-Ueberschrift 'gesenkte Prognose</h2>' matchte die Ziffer '2' aus dem HTML-Tag als vermeintliche Guidance-Zahl (r23-guard.py Hard-Pattern), Ueberschrift umformuliert zu 'schwaecherer Ausblick', Inhalt/Aussage unveraendert -- Artikel enthielt nie eine konkrete Guidance-Zahl. Voice/Format/Compliance sonst wie zuvor: R16-Doppel-Gate, R23 qualitativ-frei, hreflang/twitter/GA4/JSON-LD vollstaendig. -1 Punkt: Wortzahl (~2050) ueber 1000-1400-Band, vertretbar per Ereignisdichte-Ausnahme.",
   "factcheck": "pass",
   "factcheck_ledger": {
     "checked": true,
