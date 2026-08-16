@@ -1,0 +1,20 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-de",
+  "checker": "blog-generator-subagent-selfcheck",
+  "checked_at": "2026-08-16T03:56:47.237Z",
+  "content_sha": "2c2c9e87bdd3929f",
+  "hard_scan": "PASS",
+  "note": "R16-Fallback-Selbstzertifizierung (kein Task/Agent-Tool in dieser Session verfuegbar). Voice: Fakt/These durchgaengig getrennt. Format: BlogPosting+VideoObject+BreadcrumbList+FAQPage JSON-LD, hreflang reziprok (EN-Ziel vorab gesetzt, EN folgt Tag 3), x-default->DE, twitter:card+GA4 vorhanden, og/twitter-title identisch mit <title>. Compliance: R23 eingehalten (Wallenius-EBITDA-Guidance + Thungela-EPS-Spanne bewusst ohne Zahl), Offenlegung im Text korrigiert gegen held-positions.json Tier-1 (231-Positionen-Depot, fast alle genannten Werte sind Nebenpositionen -- urspruengliche Fassung hatte 14 Namen faelschlich als nicht gehalten gelistet, qa-gate::scanDepotMembership hat das mechanisch abgefangen), Disclaimer vollstaendig, 2 Affiliate-Links mit Kontextbezug, 8 interne Links inkl. 2 Hub-Rueckverlinkungen. -1 Punkt: Wortzahl (~2050) ueber 1000-1400-Band, vertretbar per Ereignisdichte-Ausnahme (12 Einzelereignisse+Makro-Dashboard ohne Sektorrotation), aber nicht ideal fuer Lesbarkeit.",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "ledger": "wochenrueckblick-kw33-2026.html.facts.json",
+    "allow_plausible": false,
+    "max_age_days": 14
+  },
+  "numbers_verified_by": "claude"
+}

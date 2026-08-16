@@ -1,0 +1,251 @@
+{
+  "asset": "wochenrueckblick-kw33-2026.html",
+  "created_at": "2026-08-16T00:00:00Z",
+  "source_ssot": "output/avatar-videos/kw33-research-verified.md (research-subagent, FRED + WebSearch + SEC-Filings, jede Zahl mit 2 Quellen belegt) + output/avatar-videos/script-kw33-v1.md",
+  "note": "Alle Claims unten sind 1:1 aus der verifizierten Faktenbasis uebernommen, nicht neu recherchiert. Die 2-Quellen-Verifikation liegt in kw33-research-verified.md (Quelle 1 + Quelle 2 je Zeile). FMP-Marktdaten-API war diese Woche ausgefallen (fmp-quota-state.json 'erschoepft'), deshalb FRED als Tier-1-Ersatz -- Fenster teils Mi/Do statt Fr, im Artikel an jeder Kachel ausgewiesen.",
+  "claims": [
+    {
+      "id": "hormuz-adnoc-angriff",
+      "claim": "Angriff auf zwei ADNOC-Schiffe in der Strasse von Hormus",
+      "value": "Nacht zum 14.08.2026, keine Verletzten laut WAM, VAE machen Iran verantwortlich, Verstoss gegen UN-Resolution 2817",
+      "source": "dpa via onvista 14.08.2026 + t-online/Handelsblatt 14.08.2026",
+      "url": "https://www.onvista.de/news/2026/08-14-roundup-angriff-auf-schiffe-lage-am-golf-weiter-angespannt-0-10-26542992",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "hormuz-frist-17-08",
+      "claim": "60-Tage-Waffenruhe USA/Iran laeuft Montag 17.08.2026 aus",
+      "value": "MOU unterzeichnet 17.06.2026, 60 Tage spaeter = 17.08.2026",
+      "source": "UK House of Commons Library CBP-10637 + US Congress.gov/CRS IN12678 + Yeni Safak 12.08.2026",
+      "url": "file://output/avatar-videos/kw33-research-verified.md#4.1",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "Korrektur 15.08.2026 ggue. urspruenglich falschem Sa-15.08.-Datum (einzelne, nicht ausreichend belegte dpa-Republikation)"
+    },
+    {
+      "id": "brent-wow",
+      "claim": "Brent WoW 07.-11.08.2026",
+      "value": "87,62 $ -> 93,26 $ (Di), +6,44%; seit Montag rund 3$ teurer",
+      "source": "FRED DCOILBRENTEU (EIA) + dpa/wiwo/onvista 14.08.2026",
+      "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "bdi-wow",
+      "claim": "Baltic Dry Index WoW 07.-13.08.2026",
+      "value": "3.089 -> 2.844, -7,93%",
+      "source": "handybulk.com Baltic-Exchange-Tagesberichte, Kette lueckenlos 07.-13.08.2026",
+      "url": "https://www.handybulk.com/baltic-exchange-report/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "capesize-wow",
+      "claim": "Capesize-Tageseinnahmen WoW",
+      "value": "46.512 $/Tag -> 40.528 $/Tag, -12,86%",
+      "source": "handybulk/Baltic Exchange Tagesberichte 07.08.+13.08.2026",
+      "url": "https://www.handybulk.com/baltic-exchange-report/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "sp500-nasdaq-wow",
+      "claim": "S&P 500 / Nasdaq WoW",
+      "value": "S&P 500 7.757,64 -> 7.798,99 (Do), +0,53%; Nasdaq 26.690,62 -> 26.803,03 (Do), +0,42%",
+      "source": "FRED SP500/NASDAQCOM + Zacks/Yahoo 'Stock Market News for Aug 14, 2026'",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-14-103100309.html",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "us10y-wow",
+      "claim": "US 10-Jahres-Rendite WoW",
+      "value": "4,65% -> 4,68% (Mi), +3 Basispunkte",
+      "source": "FRED DGS10 (US-Treasury H.15)",
+      "url": "https://fred.stlouisfed.org/series/DGS10",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "dax-wow",
+      "claim": "DAX WoW + Allzeithoch",
+      "value": "26.235,80 -> 26.440,31, +0,78%; Allzeithoch Mi 12.08. bei 26.573,50",
+      "source": "finanzen.net Kurshistorie DAX + dpa-AFX via onvista 14.08.2026",
+      "url": "https://www.onvista.de/news/2026/08-14-roundup-aktien-frankfurt-schluss-dax-gewinne-reichen-nicht-fuer-rekord-0-10-26543308",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "kursierende '4% Wochenplus'-Angabe explizit gegen Kurshistorie geprueft und widerlegt, nicht verwendet"
+    },
+    {
+      "id": "ppi-juli",
+      "claim": "US-Erzeugerpreise Juli 2026",
+      "value": "unveraendert ggue. Juni (-0,1%), Konsens war +0,1%; dritter weicher Datenpunkt nach Arbeitsmarkt 07.08. und CPI 12.08.",
+      "source": "Zacks via Yahoo Finance 14.08.2026",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-14-103100309.html",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "wochenvergleich-datenpunkte",
+      "claim": "Ein weicher Datenpunkt (Vorwoche) vs. zwei weitere (diese Woche)",
+      "value": "KW32: 1 Datenpunkt -> +3,4% Wochenplus S&P 500; KW33: 2 weitere Datenpunkte -> nur +0,53%",
+      "source": "kw33-research-verified.md MARKT-Einordnung gegen kw32-Vorwochenwert (verifiziert im KW32-Dossier)",
+      "url": "file://output/avatar-videos/kw33-research-verified.md#4.2",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "zim-hapag-golden-share",
+      "claim": "Israels Golden Share blockiert ZIM/Hapag-Lloyd-Deal",
+      "value": "Deal 16.02.2026, 35,00$/Aktie, ~4,2 Mrd $; Sitzung 8 Regierungsstellen auf 09.09.2026 verschoben; ZIM-Aktie -2,6% an einem Tag",
+      "source": "Seeking Alpha News 14.08.2026 + Ynet/Calcalist/The Loadstar 14.08.2026",
+      "url": "https://seekingalpha.com/news/4629669-israel-seen-likely-to-reject-4_2b-hapag-lloyd-deal-for-zim",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "diana-starbulk-genco",
+      "claim": "Diana Shipping/Star Bulk loesen Genco-16-Schiffe-Deal auf, Diana-Angebot bleibt",
+      "value": "Aufloesung 10.08.2026 (Deal vom 06.03.2026); Diana-Angebot 24,80$ bar (bereinigt um 0,80$ Div.) + 1 Diana-Aktie (2,54$); Finanzierung 1,411 Mrd $ ueber 6 Banken, ohne Finanzierungsbedingung",
+      "source": "GlobeNewswire-Originalmitteilung 10.08.2026 + SEC Form 6-K Star Bulk via StockTitan",
+      "url": "https://www.globenewswire.com/news-release/2026/08/10/3342356/10065/en/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "riotinto-tomago",
+      "claim": "Rio Tinto/Tomago-Aluminiumhuette gesichert bis 2038",
+      "value": "10-Jahres-PPA bis 2038, ab 2033 100% erneuerbar; -7,1 Mio t CO2/Jahr; ~40% der australischen Aluminiumproduktion; ~3,6 Mrd AUD oeffentlich+privat",
+      "source": "Rio-Tinto-Pressemitteilung + Businesswire 12.08.2026",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-welcomes-agreement-to-secure-long-term-future-of-tomago-aluminium",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "western-gateway-pipeline",
+      "claim": "Phillips 66/Kinder Morgan/HF Sinclair FID Western-Gateway-Pipeline",
+      "value": "11.08.2026, ~1.300 Meilen, ~5 Mrd $ Unternehmenswert, Anteile 49,9/35,1/15,0%, Cashflow ab 2029",
+      "source": "Inspectioneering 11.08.2026 + Oil & Gas Journal",
+      "url": "https://www.inspectioneering.com/news/2026-08-11/12144/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "realty-income-anleihe",
+      "claim": "Realty Income Wandelanleihe aufgestockt + Rechenzentren-JV",
+      "value": "875 Mio $ (geplant 750 Mio $), 11.08.2026, Rueckkauf ~3 Mio Aktien; 6 Mrd $ Rechenzentren-JV; Investitionsziel 2026 auf 10 Mrd $ angehoben",
+      "source": "TipRanks Company Announcements 14.08.2026 + Motley Fool Earnings-Call-Transkript",
+      "url": "https://www.tipranks.com/news/company-announcements/realty-income-upsizes-convertible-notes-offering-to-875-million",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "konkrete AFFO-Guidance-Zahl (4,44-4,45$) bewusst NICHT im Artikel verwendet, R23-PREMIUM"
+    },
+    {
+      "id": "wallenius-guidance-bestaetigt",
+      "claim": "Wallenius Wilhelmsen Prognose bestaetigt, nicht angehoben",
+      "value": "Dez 2025 Ausblick hoeher -> Q1 2026 gesenkt (Nahost-Treibstoffkosten) -> Q2 2026 (13.08.) bestaetigt, nicht angehoben; Nettogewinn gefallen trotz Umsatzplus",
+      "source": "Wallenius-Wilhelmsen-Boersenmitteilung + Heavy Lift PFI 13.08.2026",
+      "url": "https://www.heavyliftpfi.com/shipping/2026/08/13/wallenius-wilhelmsen-q2-figures-see-revenues-up-but-net-profit-down/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "konkrete EBITDA-Guidance-Zahlen bewusst NICHT im Artikel verwendet, R23"
+    },
+    {
+      "id": "wallenius-dividende",
+      "claim": "Wallenius Wilhelmsen H1-Dividende + Sonderdividende",
+      "value": "0,61$/Aktie (50% des Nettogewinns) + 100 Mio $ Sonderdividende",
+      "source": "WW-IR 'demonstrates strength in Q2'",
+      "url": "https://www.walleniuswilhelmsen.com/news/wallenius-wilhelmsen-demonstrates-strength-in-q2",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "insw-rekord-dividende",
+      "claim": "International Seaways Rekord-Quartalsdividende",
+      "value": "5,05$/Aktie, groesste Quartalsdividende der Firmengeschichte, zahlbar September 2026; 3. Quartal in Folge mit >=85% Ausschuettungsquote; 12,61$ in 12 Monaten = 21% Rendite (Unternehmensangabe)",
+      "source": "SEC Form 8-K Ex-99.1 International Seaways + INSW-IR-Mitteilung",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001679049/000110465926093033/tm2622617d1_ex99-1.htm",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "Meldung datiert 06.08.2026 (KW32), Zahltag faellt in KW33/September, deshalb hier aufgegriffen"
+    },
+    {
+      "id": "sherritt-glencore",
+      "claim": "Glencore-Konsortium bietet fuer Sherritt International",
+      "value": "12 kanadische Cent/Aktie, ohne Fremdfinanzierungsbedingung, eingereicht 26.06.2026, bekannt 10.08.2026, konkurrierendes Angebot",
+      "source": "Bloomberg 10.08.2026 + MINING.COM",
+      "url": "https://www.mining.com/us-investor-group-taps-glencore-in-bid-for-sherritt/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "blue-owl-anleihe",
+      "claim": "Blue Owl Finance Anleihe",
+      "value": "750 Mio $, 6,750% Kupon, faellig 2036, bepreist 11.08.2026, Rueckfuehrung Kreditlinie; AUM 319 Mrd $ (30.06.2026)",
+      "source": "Investing.com 'Blue Owl prices $750 million senior notes' + TipRanks/TradingView",
+      "url": "https://www.investing.com/news/company-news/blue-owl-prices-750-million-senior-notes-offering-at-675-93CH-4852932",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "Entitaetsverwechslung mit Blue Owl Capital Corp (OBDC) im Roh-Dump geprueft und ausgeschlossen"
+    },
+    {
+      "id": "porthedland-streik",
+      "claim": "Erster geschuetzter Arbeitskampf seit >25 Jahren in Port Hedland",
+      "value": "~150 Beteiligte, ~16 verzoegerte Ladungen; Hafen 571,6 Mio t Eisenerz GJ bis Juni 2026, ~75% der Pilbara-Exporte; BHP meldet minimale Auswirkungen",
+      "source": "Bloomberg 08.08.2026 + Reuters via WSAU 07.08.2026",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-08/union-workers-strike-at-bhp-s-port-hedland-iron-ore-export-hub",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "flowers-foods-kuerzung",
+      "claim": "Flowers Foods Dividendenkuerzung (Kontext-Beispiel, nicht KW33)",
+      "value": "halbiert auf 0,125$/Quartal (0,50$/Jahr), beendet 24 Jahre Steigerungsserie, spart ~100 Mio $/Jahr, Nettoschulden ~1,8 Mrd $; Meldung vom 21.05.2026, explizit NICHT diese Woche",
+      "source": "SEC Form 8-K Ex-99.1 Flowers Foods + Yahoo/Zacks",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001128928/000119312526234421/flo-ex99_1.htm",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "im Artikel ausdruecklich als 'nicht diese Woche' gekennzeichnet, Beispiel aus diesem Jahr"
+    },
+    {
+      "id": "thungela-ausblick-kw34",
+      "claim": "Thungela Resources Halbjahreszahlen Termin",
+      "value": "vollstaendige Zahlen fuer 6 Monate bis 30.06.2026 am Montag 17.08.2026, Praesentation 12:00 SAST -- Gewinnsprung selbst (+457-475%) ist KW32-Meldung, nicht KW33",
+      "source": "Thungela-IR/SENS-Ankuendigung + Investegate-RNS",
+      "url": "https://www.thungela.com/investors/sens/2026/",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z",
+      "note": "Guidance-EPS-Spanne bewusst NICHT im Artikel verwendet, R23-PREMIUM"
+    },
+    {
+      "id": "bhp-gesamtjahreszahlen-kw34",
+      "claim": "BHP Gesamtjahreszahlen Termin",
+      "value": "Dienstag 18.08.2026",
+      "source": "kw33-research-verified.md Ausblick KW34",
+      "url": "file://output/avatar-videos/kw33-research-verified.md#11",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "depot-zugehoerigkeit",
+      "claim": "Gehaltene Positionen unter den genannten Werten (TR+Scalable, R13)",
+      "value": "GEHALTEN (231-Positionen-Depot, alle als Nebenpositionen): International Seaways, Cosan ADR, Thungela Resources, ZIM, Hapag-Lloyd, Diana Shipping, Star Bulk Carriers, Genco Shipping & Trading, Rio Tinto, Kinder Morgan, Phillips 66, Realty Income, Glencore PLC, Blue Owl Capital, BHP, Wallenius Wilhelmsen Logistics, Flowers Foods. NICHT gehalten: HF Sinclair, Sherritt.",
+      "source": "output/data/held-positions.json (Tier-1, autoritativ fuer Depot-Mitgliedschaft), Stand 2026-08-16",
+      "url": "file://output/data/held-positions.json",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T03:55:10Z",
+      "note": "KORRIGIERT ggue. urspruenglicher Fassung, die auf kw33-research-verified.md §8.2 basierte -- jene Tabelle listete 14 der 17 tatsaechlich gehaltenen Namen faelschlich als 'nicht gehalten'. qa-gate.js::scanDisclosure hat den Fehler beim Emit-Versuch mechanisch gegen held-positions.json abgefangen (vgl. gleicher Fehlertyp bei Kimbell Royalty im KW32-Blog). Ursache vermutlich: Research-Dossier pruefte nur gegen eine engere/gefilterte Parqet-Ansicht (parqet-holdings-raw.json Stand 14.08.), nicht gegen die vollstaendige 231-Positionen-Liste von held-positions.json (Stand 16.08., frischer)."
+    },
+    {
+      "id": "depot-yoc",
+      "claim": "Anteil Depot-Positionen mit YOC >= 8%",
+      "value": "29,4% aller Einzelpositionen (68 von 231) mit Brutto-YOC >= 8%, Portfolio-YOC 7,29% brutto",
+      "source": "output/data/depot-cockpit.json, Stand 14.08.2026",
+      "url": "file://output/data/depot-cockpit.json",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-08-16T00:00:00Z"
+    }
+  ]
+}
