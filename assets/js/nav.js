@@ -267,6 +267,13 @@
                 '<a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>' +
                 '<a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>' +
                 '<a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>' +
+                // Nachschlagen (17.08.2026): Glossar und Toolbox standen NUR im Mobil-Menue —
+                // am Desktop waren beide Seiten aus der Navigation nicht erreichbar. Sie landen
+                // hier statt als eigene Top-Level-Links, weil .nav-links bei 1440 px bereits
+                // 23 px ueber .nav-inner hinausragt: zwei weitere Punkte oben wuerden umbrechen.
+                '<hr>' +
+                '<a href="/glossar/">📗 Glossar</a>' +
+                '<a href="/toolbox.html">🧰 Toolbox</a>' +
               '</div>' +
             '</div>' +
             '<div class="dropdown">' +
