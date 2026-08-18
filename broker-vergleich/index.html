@@ -609,19 +609,6 @@
 
 <script src="/assets/js/nav.min.js" defer></script>
 
-<!-- Affiliate-Click-Tracking -->
-<script>
-document.querySelectorAll('a[href*="financeads.net"], a[href*="trade.re"], a[href*="scalable.capital/trading-aff"]').forEach(function(link) {
-  link.addEventListener('click', function() {
-    if (typeof gtag === 'function') {
-      gtag('event', 'affiliate_click', {
-        event_category: 'monetization',
-        event_label: link.href.split('?')[0]
-      });
-    }
-  });
-});
-</script>
 
 <!-- InvestingPro Sale Bar Activation -->
 <script>
