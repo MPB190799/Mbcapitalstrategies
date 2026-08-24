@@ -1,0 +1,18 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "checker": "distribution-agent-selfcheck",
+  "checked_at": "2026-08-24T10:14:22.938Z",
+  "content_sha": "94c7870761df2e40",
+  "hard_scan": "PASS",
+  "note": "KW34 Blog DE: Zahlen aus research/kw34-hormus-oil-rally.md (FRED DCOILBRENTEU, EIA WPSR), ADNOC+UKMTO SEVERE multi-sourced, 75 Zahlungen/295€ aus YT-Video-Titel 'Depot Update Juli', R13 ok, Disclaimer vorhanden, Voice: analytisch direkt",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": false,
+    "basis": "output/research/kw34-hormus-oil-rally.md + YT-Videos 2026-08-23, Redub ohne Zahlaenderung",
+    "note": "abgeleitetes Artefakt — Beleg liegt beim benannten Original, hier nicht nachgeprueft"
+  }
+}
