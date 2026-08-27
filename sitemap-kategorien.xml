@@ -1,74 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Core Pillars -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/dividendenstrategie/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.00</priority>
-  </url>
-
-  <url>
-    <loc>https://mbcapitalstrategies.com/mining-aktien/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-
-  <url>
-    <loc>https://mbcapitalstrategies.com/energie-aktien/</loc>
-    <lastmod>2026-06-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://mbcapitalstrategies.com/marktupdates/</loc>
-    <lastmod>2026-06-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Supporting Category / Hub -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/kategorien/high-yield-aktien.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://mbcapitalstrategies.com/kategorien/rohstoff-superzyklus-2025-2030.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Rohstoff-Einzelseiten -->
-  <url>
-    <loc>https://mbcapitalstrategies.com/rohstoffe/kupfer-superzyklus.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://mbcapitalstrategies.com/rohstoffe/uran-superzyklus.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://mbcapitalstrategies.com/rohstoffe/nickel-superzyklus.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://mbcapitalstrategies.com/rohstoffe/zink-superzyklus.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-
+  <url><loc>https://mbcapitalstrategies.com/glossar/aisc-mining.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/baltic-dry-index.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/bdc.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/buchwert-je-aktie.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/capex.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/cashflow-cover.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/cashflow-marge.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/charterraten.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/chokepoint.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/dayrate.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/debt-ebitda.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/dividend-cut.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/dividend-yield.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/dividenden-aristokraten.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/dividendenwachstum.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/ebit.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/ebitda.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/free-cashflow.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/hard-assets.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/index.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/kgv.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/kriegsrisikopraemie.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/lng.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/midstream.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/mlp.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/nettoverschuldung.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/payout-ratio.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/scrubber.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/shipping-cluster.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/special-dividend.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/spotmarkt.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/superzyklus.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/tanker.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/tce-rate.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/time-charter.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/ton-meilen-nachfrage.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/upstream.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/vlcc.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/vlgc.html</loc><lastmod>2026-08-26</lastmod></url>
+  <url><loc>https://mbcapitalstrategies.com/glossar/yield-on-cost.html</loc><lastmod>2026-08-26</lastmod></url>
 </urlset>
