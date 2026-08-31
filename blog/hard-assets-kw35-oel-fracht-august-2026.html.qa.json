@@ -1,0 +1,18 @@
+{
+  "content_sha": "94bfa008ecf2",
+  "file": "hard-assets-kw35-oel-facht-august-2026.html",
+  "checker": "distribution-agent-selfcheck",
+  "score": 13,
+  "max_score": 14,
+  "platform": "blog-de",
+  "language": "de",
+  "factcheck": "pass",
+  "compliance": "pass",
+  "voice_check": 13,
+  "notes": "Qualitativer Markt-Update ohne konkrete EPS/Revenue-Zahlen (FMP-API ersch\u00f6pft). Alle Aussagen sind qualitative Interpretation. R14-konform.",
+  "r23_earnings_gate": "pass",
+  "captrader_blackout": "pass",
+  "disclaimer_present": true,
+  "offenlegung_present": true,
+  "checked_at": "2026-08-31T14:30:00+02:00"
+}
