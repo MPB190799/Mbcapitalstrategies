@@ -1,0 +1,44 @@
+#:schema node_modules/wrangler/config-schema.json
+# MB Capital Strategies · Community Worker
+name = "mbc-community"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+workers_dev = true            # Test-URL: https://mbc-community.<subdomain>.workers.dev
+
+# --- Datenbank ---------------------------------------------------------
+# Anlegen:  wrangler d1 create mbc-community   -> database_id hier eintragen
+[[d1_databases]]
+binding = "DB"
+database_name = "mbc-community"
+database_id = "HIER_DIE_ID_AUS_WRANGLER_D1_CREATE"
+
+# --- Öffentliche Variablen --------------------------------------------
+[vars]
+SITE_ORIGIN = "https://mbcapitalstrategies.com"
+COOKIE_DOMAIN = ".mbcapitalstrategies.com"
+TURNSTILE_SITEKEY = ""        # öffentlicher Turnstile-Key (kein Secret)
+BREVO_LIST_ID = ""            # Listen-ID des Wochen-Insider
+MAIL_FROM = "noreply@mbcapitalstrategies.com"
+RATE_PER_HOUR = "5"
+RATE_COOLDOWN = "15"
+MAX_NEW_PER_IP = "8"
+WORDFILTER = ""               # zusätzliche Wörter, kommagetrennt
+
+# --- Secrets (NICHT hier eintragen) ------------------------------------
+#   wrangler secret put AUTH_SECRET        # zufälliger 48-Zeichen-String
+#   wrangler secret put TURNSTILE_SECRET
+#   wrangler secret put BREVO_API_KEY
+#   wrangler secret put ADMIN_TOKEN        # zufälliger 32-Zeichen-String
+
+# --- Route auf der Hauptdomain ----------------------------------------
+# Voraussetzung: mbcapitalstrategies.com liegt als Zone bei Cloudflare
+# und die A-Records auf GitHub Pages sind proxied (orange).
+# Danach hier auskommentieren und deployen:
+# routes = [
+#   { pattern = "mbcapitalstrategies.com/community*",     zone_name = "mbcapitalstrategies.com" },
+#   { pattern = "mbcapitalstrategies.com/api/community/*", zone_name = "mbcapitalstrategies.com" }
+# ]
+
+# --- Aufräum-Job: abgelaufene Magic-Links löschen ----------------------
+[triggers]
+crons = ["17 4 * * *"]
