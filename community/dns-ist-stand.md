@@ -91,3 +91,35 @@ Aktuell trägt die Zustellbarkeit allein die DKIM-Signatur. Das reicht für DMAR
 
 Zwischen Schritt 4 und 5 antworten alte und neue Nameserver parallel. Solange die
 Records identisch sind, merkt kein Besucher etwas — genau deshalb kommt Schritt 2 vor 4.
+
+---
+
+# Stand NACH dem Umzug — 01.09.2026
+
+Zone bei Cloudflare **aktiv** seit 01.09.2026, 11:19 UTC. Nameserver: `aida.ns.cloudflare.com`, `tosana.ns.cloudflare.com`.
+
+## Was sich geaendert hat
+
+| Was | Vorher | Jetzt |
+|---|---|---|
+| MX | 5x `eforward*.registrar-servers.com` (Namecheap) | 3x `route1/2/3.mx.cloudflare.net` (Cloudflare Email Routing) |
+| SPF | `v=spf1 include:spf.efwd.registrar-servers.com ~all` | `v=spf1 include:_spf.mx.cloudflare.net include:spf.brevo.com ~all` |
+| DKIM | brevo1/brevo2 | brevo1/brevo2 **plus** `cf2024-1._domainkey` (von Email Routing) |
+| Always Use HTTPS | aus (http lieferte 200) | an (http -> 301 auf https) |
+| SSL-Modus | — | Full |
+| Worker-Routen | keine | `mbcapitalstrategies.com/community*`, `/api/community/*` -> `mbc-community` |
+
+Grund fuer den MX-Wechsel: Namecheaps kostenlose Weiterleitung funktioniert laut deren
+Dokumentation nur mit Namecheap-Nameservern. Nach dem Umzug war sie tot — die alten
+MX-Einträge nahmen Mails an und verwarfen sie still.
+
+Die geloeschten eforward-MX liegen als JSON-Sicherung in `backup/dns-vor-mx-loeschung.json`
+(Cloud-Arbeitsverzeichnis der Sitzung, nicht im Repo).
+
+## Wichtig fuer die Zukunft
+
+- **Nur ein SPF-Eintrag pro Domain.** Zwei machen die Pruefung ungueltig, nicht doppelt sicher.
+  Neue Versender gehoeren als weiteres `include:` in die bestehende Zeile.
+- **MX niemals proxied.** Cloudflare laesst es zu, die Zustellung bricht aber.
+- SSL-Modus bleibt **Full**. Nicht Flexible (Redirect-Schleife mit GitHub Pages),
+  nicht Full Strict (bricht, sobald GitHubs Zertifikat rolliert).
