@@ -41,8 +41,13 @@ WORDFILTER = ""               # zusÃ¤tzliche WÃ¶rter, kommagetrennt
 # Voraussetzung: mbcapitalstrategies.com liegt als Zone bei Cloudflare
 # und die A-Records auf GitHub Pages sind proxied (orange).
 # Danach hier auskommentieren und deployen:
+# ACHTUNG, teuer gelernt am 01.09.2026: "/community*" ist zu gierig. Der Stern
+# frisst auch /community-diskussionen/ - die Hub-Seite lag im Repo, wurde von
+# GitHub Pages ausgeliefert und war trotzdem 404, weil der Worker sie abfing.
+# Deshalb der exakte Pfad UND der Unterbaum, nicht der Praefix-Stern.
 # routes = [
-#   { pattern = "mbcapitalstrategies.com/community*",     zone_name = "mbcapitalstrategies.com" },
+#   { pattern = "mbcapitalstrategies.com/community",       zone_name = "mbcapitalstrategies.com" },
+#   { pattern = "mbcapitalstrategies.com/community/*",     zone_name = "mbcapitalstrategies.com" },
 #   { pattern = "mbcapitalstrategies.com/api/community/*", zone_name = "mbcapitalstrategies.com" }
 # ]
 
