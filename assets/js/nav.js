@@ -216,12 +216,12 @@
     wave.className = 'bg-wave';
     wave.innerHTML =
       '<svg viewBox="0 0 2400 1200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">' +
-        '<path d="M0,600 C200,300 400,900 600,600 C800,300 1000,900 1200,600 C1400,300 1600,900 1800,600 C2000,300 2200,900 2400,600" fill="none" stroke="url(#wg1)" stroke-width="1.5" opacity=".7"/>' +
-        '<path d="M0,500 C200,250 400,750 600,500 C800,250 1000,750 1200,500 C1400,250 1600,750 1800,500 C2000,250 2200,750 2400,500" fill="none" stroke="url(#wg1)" stroke-width="1" opacity=".3"/>' +
+        '<path d="M0,600 C200,300 400,900 600,600 C800,300 1000,900 1200,600 C1400,300 1600,900 1800,600 C2000,300 2200,900 2400,600" fill="none" vector-effect="non-scaling-stroke" stroke="url(#wg1)" stroke-width="1.8" opacity=".7"/>' +
+        '<path d="M0,500 C200,250 400,750 600,500 C800,250 1000,750 1200,500 C1400,250 1600,750 1800,500 C2000,250 2200,750 2400,500" fill="none" vector-effect="non-scaling-stroke" stroke="url(#wg1)" stroke-width="1.3" opacity=".3"/>' +
         '<defs><linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d4af37" stop-opacity="0"/><stop offset="30%" stop-color="#d4af37" stop-opacity=".6"/><stop offset="50%" stop-color="#f0d060" stop-opacity="1"/><stop offset="70%" stop-color="#d4af37" stop-opacity=".6"/><stop offset="100%" stop-color="#d4af37" stop-opacity="0"/></linearGradient></defs>' +
       '</svg>' +
       '<svg viewBox="0 0 2400 1200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">' +
-        '<path d="M0,700 C250,400 500,1000 750,700 C1000,400 1250,1000 1500,700 C1750,400 2000,1000 2250,700 C2400,550 2400,700 2400,700" fill="none" stroke="url(#wg2)" stroke-width="1.2" opacity=".6"/>' +
+        '<path d="M0,700 C250,400 500,1000 750,700 C1000,400 1250,1000 1500,700 C1750,400 2000,1000 2250,700 C2400,550 2400,700 2400,700" fill="none" vector-effect="non-scaling-stroke" stroke="url(#wg2)" stroke-width="1.5" opacity=".6"/>' +
         '<defs><linearGradient id="wg2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#e8c95a" stop-opacity="0"/><stop offset="40%" stop-color="#d4af37" stop-opacity=".8"/><stop offset="60%" stop-color="#f0d060" stop-opacity=".8"/><stop offset="100%" stop-color="#d4af37" stop-opacity="0"/></linearGradient></defs>' +
       '</svg>';
     document.body.insertBefore(wave, document.body.firstChild);

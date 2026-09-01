@@ -95,7 +95,7 @@ body::before {
 
 /* ── Gold Wave Lines (injected by nav.js) ── */
 .bg-wave{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.bg-wave svg{position:absolute;width:200%;height:100%;top:0;left:-50%}
+.bg-wave svg{position:absolute;width:200%;height:100%;top:0;left:-50%;will-change:transform;transform:translateZ(0);backface-visibility:hidden}
 .bg-wave svg:first-child{animation:_wf 14s linear infinite}
 .bg-wave svg:last-child{animation:_wf2 18s linear infinite;opacity:.5}
 @keyframes _wf{0%{transform:translateX(-25%)}100%{transform:translateX(0)}}
@@ -2325,3 +2325,5 @@ ins.adsbygoogle[data-anchor-shown="true"],
   height: 100%;
   border: 0;
 }
+@media (prefers-reduced-motion:reduce){.bg-wave svg{animation:none!important}}
+@media (max-width:768px){.bg-wave{display:none}}
