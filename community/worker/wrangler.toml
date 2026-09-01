@@ -16,7 +16,7 @@ database_id = "4916b45a-9519-43c9-bd37-809f0d18e20c"
 [vars]
 SITE_ORIGIN = "https://mbcapitalstrategies.com"
 COOKIE_DOMAIN = ".mbcapitalstrategies.com"
-TURNSTILE_SITEKEY = ""        # Ã¶ffentlicher Turnstile-Key (kein Secret)
+TURNSTILE_SITEKEY = "0x4AAAAAAEjpeCsv9pUIZnpy"        # Ã¶ffentlicher Turnstile-Key (kein Secret)
 BREVO_LIST_ID = ""            # Listen-ID des Wochen-Insider
 MAIL_FROM = "noreply@mbcapitalstrategies.com"
 RATE_PER_HOUR = "5"

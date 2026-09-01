@@ -606,11 +606,30 @@ function body2html(t){var s=esc(t);
 /* --- Turnstile ------------------------------------------------ */
 function mountTurnstile(el,cb){
   if(!window.MBC.turnstile){cb('');return;}
+  var done=false;
   var tick=setInterval(function(){
-    if(!window.turnstile)return; clearInterval(tick);
-    tsWidget=window.turnstile.render(el,{sitekey:window.MBC.turnstile,theme:'dark',size:'flexible',callback:cb});
+    if(!window.turnstile)return;
+    clearInterval(tick); done=true;
+    try{
+      tsWidget=window.turnstile.render(el,{
+        sitekey:window.MBC.turnstile, theme:'dark', size:'flexible',
+        callback:cb,
+        'error-callback':function(){ blocked('Der Bot-Check meldet einen Fehler.'); },
+        'expired-callback':function(){ gate.token=''; if(tsWidget)window.turnstile.reset(tsWidget); }
+      });
+    }catch(e){ blocked('Der Bot-Check liess sich nicht starten.'); }
   },160);
-  setTimeout(function(){clearInterval(tick)},12000);
+  // Skript laedt nicht (Adblocker, Firmennetz, Ausfall) -> nicht stumm haengen lassen
+  setTimeout(function(){
+    if(done)return; clearInterval(tick);
+    blocked('Der Bot-Check konnte nicht geladen werden.');
+  },9000);
+}
+function blocked(grund){
+  gate.blocked=true;
+  msg(grund+' Meist blockiert ein Adblocker oder ein Firmennetz die Adresse '+
+      'challenges.cloudflare.com. Nimm den Blocker fuer diese Seite kurz raus oder '+
+      'probier einen anderen Browser \u2014 danach die Seite neu laden.','err');
 }
 
 /* --- Onboarding / Compose ------------------------------------- */
@@ -676,14 +695,16 @@ function renderGate(){
     $('#nm').addEventListener('keydown',function(e){if(e.key==='Enter')join()});
   }
 }
-var gate={token:''};
+var gate={token:'',blocked:false};
 
 function showMail(){var tm=$('#tabMail');me=null;renderGate();if($('#tabMail'))$('#tabMail').click();}
 
 function join(){
   var name=($('#nm')||{}).value||'';
   if(name.trim().length<2){msg('Bitte einen Namen mit mindestens 2 Zeichen.','err');return;}
-  if(window.MBC.turnstile&&!gate.token){msg('Kurz warten — der Bot-Check läuft noch.','err');return;}
+  if(window.MBC.turnstile&&!gate.token){
+    if(gate.blocked){msg('Ohne Bot-Check geht es leider nicht weiter \u2014 siehe Hinweis oben.','err');return;}
+    msg('Der Bot-Check l\u00e4uft noch \u2014 zwei Sekunden, dann nochmal.','err');return;}
   api('/session',{method:'POST',body:JSON.stringify({name:name,turnstile:gate.token})})
     .then(function(j){me=j.user;renderGate();msg('Willkommen, '+j.user.name+'.','ok');load(true);})
     .catch(function(e){msg(e.message,'err');if(window.turnstile&&tsWidget)window.turnstile.reset(tsWidget);});
