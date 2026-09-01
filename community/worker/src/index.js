@@ -26,6 +26,7 @@ import {
   sniffImage, stripJpegMetadata, imageKey, IMG_MAX_BYTES, IMG_MAX_PER_DAY
 } from './lib.js';
 import { renderHub, renderThread, renderRules, renderCategory, renderRecap, renderRecapIndex, CATEGORIES } from './render.js';
+import { buildDraft } from './export.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -708,6 +709,48 @@ async function admin(route, request, env, url) {
       await log('open-thread', slug);
       return json({ ok: true, slug, id });
     }
+    case 'export': {
+      // Entwurf für einen Blogartikel: entweder aus einem Thema oder aus
+      // den markierten Beiträgen eines Monats.
+      const slug = url.searchParams.get('thread');
+      const ym = url.searchParams.get('monat');
+      let thread = null, posts = [];
+
+      if (slug) {
+        thread = await env.DB.prepare('SELECT * FROM threads WHERE slug=?1').bind(slug).first();
+        if (!thread) return bad('Thema nicht gefunden.', 404);
+        const r = await env.DB.prepare(`
+          SELECT p.id,p.body,p.created_at,p.image_key,p.featured_note,u.name
+            FROM posts p JOIN users u ON u.id=p.user_id
+           WHERE p.thread_id=?1 AND p.hidden=0
+           ORDER BY p.id ASC LIMIT 100`).bind(thread.id).all();
+        posts = r.results || [];
+      } else if (/^\d{4}-(0[1-9]|1[0-2])$/.test(ym || '')) {
+        const start = Math.floor(Date.parse(ym + '-01T00:00:00Z') / 1000);
+        const [yy, mm] = ym.split('-').map(Number);
+        const end = Math.floor(Date.UTC(mm === 12 ? yy + 1 : yy, mm === 12 ? 0 : mm, 1) / 1000);
+        const r = await env.DB.prepare(`
+          SELECT p.id,p.body,p.created_at,p.image_key,p.featured_note,u.name
+            FROM posts p JOIN users u ON u.id=p.user_id
+           WHERE p.featured=1 AND p.hidden=0 AND p.created_at>=?1 AND p.created_at<?2
+           ORDER BY p.created_at ASC LIMIT 60`).bind(start, end).all();
+        posts = r.results || [];
+      } else {
+        return bad('Bitte ?thread=<slug> oder ?monat=JJJJ-MM angeben.');
+      }
+
+      if (!posts.length) return bad('Keine Beiträge gefunden.', 404);
+
+      const md = buildDraft({ thread, ym, posts, env });
+      const name = (slug || ym) + '-entwurf.md';
+      return new Response(md, {
+        headers: {
+          'content-type': 'text/markdown; charset=utf-8',
+          'content-disposition': `attachment; filename="${name}"`,
+          'cache-control': 'no-store'
+        }
+      });
+    }
     case 'cleanup': // Abgelaufene Magic-Links entfernen
       await env.DB.prepare('DELETE FROM magic_links WHERE expires_at < ?1').bind(t - 86400).run();
       return json({ ok: true });
@@ -766,6 +809,17 @@ input,textarea,select{background:#0c0b09;border:1px solid var(--border);color:va
     <button onclick="openThread()">Thema eröffnen</button>
   </div>
 
+  <h2>Entwurf für einen Blogartikel ziehen</h2>
+  <div class="row" style="display:block">
+    <input id="exThread" placeholder="Thema-Slug, z. B. torm-haelt-die-dividende-...">
+    <button onclick="exp('thread')">Aus Thema</button>
+    <span class="meta" style="margin:0 10px">oder</span>
+    <input id="exMonat" placeholder="JJJJ-MM, z. B. 2026-09" style="margin-top:8px">
+    <button onclick="exp('monat')">Aus Monats-Rückblick</button>
+    <div class="meta" style="margin-top:10px">Lädt eine .md herunter: Zitate, deine Einordnungen,
+      automatisch markierte Behauptungen zum Prüfen und eine Checkliste vor dem Veröffentlichen.</div>
+  </div>
+
   <h2>Offene Meldungen</h2><div id="reports"></div>
   <div class="grid">
     <div><h2>Letzte Beiträge</h2><div id="posts"></div></div>
@@ -819,6 +873,18 @@ function load(){
         '<button class="danger" onclick="if(confirm(\'Alle Beiträge ausblenden?\'))act(\'purge-user\',{id:\''+u.id+'\'})">Purge</button>')+'</div></div>';
     }).join('');
   }).catch(function(e){alert('Login fehlgeschlagen: '+e.message)});
+}
+function exp(art){
+  var v = document.getElementById(art==='thread'?'exThread':'exMonat').value.trim();
+  if(!v){alert('Bitte '+(art==='thread'?'einen Thema-Slug':'einen Monat JJJJ-MM')+' eintragen.');return}
+  fetch('/api/community/admin/export?'+art+'='+encodeURIComponent(v),{headers:{'authorization':'Bearer '+T}})
+    .then(function(r){if(!r.ok)return r.json().then(function(j){throw new Error(j.error||'HTTP '+r.status)});return r.blob()})
+    .then(function(b){
+      var a=document.createElement('a');
+      a.href=URL.createObjectURL(b); a.download=v+'-entwurf.md';
+      document.body.appendChild(a); a.click(); a.remove();
+    })
+    .catch(function(e){alert(e.message)});
 }
 function feat(id, vorhanden){
   var n = prompt(vorhanden
