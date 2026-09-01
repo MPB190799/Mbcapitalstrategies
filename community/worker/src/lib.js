@@ -78,8 +78,16 @@ export async function readCookie(env, request) {
   return safeEqual(sig, expect) ? uid : null;
 }
 
-export function cookieHeader(env, value, maxAge = COOKIE_MAX_AGE) {
-  const domain = env.COOKIE_DOMAIN ? `; Domain=${env.COOKIE_DOMAIN}` : '';
+export function cookieHeader(env, value, maxAge = COOKIE_MAX_AGE, request = null) {
+  // Domain nur setzen, wenn der aufrufende Host auch wirklich darunter liegt.
+  // Sonst verwirft der Browser das Cookie kommentarlos — genau das passiert
+  // auf der workers.dev-Vorschau, wenn COOKIE_DOMAIN auf die Hauptdomain zeigt.
+  let domain = '';
+  if (env.COOKIE_DOMAIN) {
+    const base = env.COOKIE_DOMAIN.replace(/^\./, '');
+    const host = request ? new URL(request.url).hostname : '';
+    if (host === base || host.endsWith('.' + base)) domain = `; Domain=${env.COOKIE_DOMAIN}`;
+  }
   return `${COOKIE_NAME}=${encodeURIComponent(value)}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax${domain}`;
 }
 
@@ -87,7 +95,15 @@ export function cookieHeader(env, value, maxAge = COOKIE_MAX_AGE) {
  * Turnstile (unsichtbares Captcha, kostenlos)
  * ------------------------------------------------------------------ */
 export async function verifyTurnstile(env, token, request) {
-  if (!env.TURNSTILE_SECRET) return true; // lokale Entwicklung ohne Secret
+  // Kein Key und kein Secret = Turnstile ist bewusst nicht eingerichtet (Vorschau,
+  // lokale Entwicklung) -> durchlassen.
+  if (!env.TURNSTILE_SECRET && !env.TURNSTILE_SITEKEY) return true;
+  // Sitekey gesetzt, Secret vergessen: NICHT stillschweigend durchwinken.
+  // Sonst sieht die Seite geschuetzt aus, ist es aber nicht.
+  if (!env.TURNSTILE_SECRET) {
+    console.error('turnstile-misconfig: SITEKEY gesetzt, SECRET fehlt');
+    return false;
+  }
   if (!token) return false;
   const body = new FormData();
   body.append('secret', env.TURNSTILE_SECRET);

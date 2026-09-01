@@ -233,7 +233,7 @@ async function magicLogin(request, env, url) {
   const cookie = await signCookie(env, user.id);
   return new Response(null, {
     status: 302,
-    headers: { location: '/community/?willkommen=1', 'set-cookie': cookieHeader(env, cookie) }
+    headers: { location: '/community/?willkommen=1', 'set-cookie': cookieHeader(env, cookie, undefined, request) }
   });
 }
 
@@ -337,7 +337,7 @@ async function api(route, request, env, url, ctx) {
 
     const cookie = await signCookie(env, id);
     return json({ ok: true, user: { id, name, role: 'guest', email: null } },
-      { headers: { 'set-cookie': cookieHeader(env, cookie) } });
+      { headers: { 'set-cookie': cookieHeader(env, cookie, undefined, request) } });
   }
 
   /* ---------- POST /magic ---------- */
