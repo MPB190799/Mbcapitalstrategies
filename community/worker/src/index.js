@@ -25,7 +25,7 @@ import {
   sendMagicLink, brevoSubscribe, esc, COOKIE_NAME,
   sniffImage, stripJpegMetadata, imageKey, IMG_MAX_BYTES, IMG_MAX_PER_DAY
 } from './lib.js';
-import { renderHub, renderThread, renderRules, renderCategory, CATEGORIES } from './render.js';
+import { renderHub, renderThread, renderRules, renderCategory, renderRecap, renderRecapIndex, CATEGORIES } from './render.js';
 
 export default {
   async fetch(request, env, ctx) {
@@ -46,6 +46,8 @@ export default {
       if (p === '/community/admin') return html(ADMIN_HTML, { headers: { 'x-robots-tag': 'noindex, nofollow' } });
       if (p === '/community/sitemap.xml') return sitemap(env);
       if (p.startsWith('/community/img/')) return serveImage(env, p.slice(15), ctx);
+      if (p === '/community/rueckblick') return pageRecapIndex(env);
+      if (p.startsWith('/community/rueckblick/')) return pageRecap(env, p.slice(22));
       if (p === '/community/login') return magicLogin(request, env, url);
       if (p.startsWith('/community/t/')) return pageThread(request, env, decodeURIComponent(p.slice(13)));
       if (p.startsWith('/community/kategorie/')) return pageCategory(request, env, p.slice(21));
@@ -169,6 +171,46 @@ async function pageCategory(request, env, key) {
   return html(renderCategory({ cat, threads: threads.results || [], env }), { headers: cacheHdr(300) });
 }
 
+
+/* ================================================================== *
+ * Monatsrückblick
+ * ================================================================== */
+async function pageRecap(env, ym) {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(ym)) return notFound(env);
+  const start = Math.floor(Date.parse(ym + '-01T00:00:00Z') / 1000);
+  const [y, m] = ym.split('-').map(Number);
+  const end = Math.floor(Date.UTC(m === 12 ? y + 1 : y, m === 12 ? 0 : m, 1) / 1000);
+
+  const [posts, stats] = await Promise.all([
+    env.DB.prepare(`
+      SELECT p.id,p.body,p.created_at,p.image_key,p.featured_note,u.name,t.slug AS thread_slug,t.title AS thread_title
+        FROM posts p
+        JOIN users u ON u.id = p.user_id
+        LEFT JOIN threads t ON t.id = p.thread_id
+       WHERE p.featured = 1 AND p.hidden = 0 AND p.created_at >= ?1 AND p.created_at < ?2
+       ORDER BY p.created_at ASC LIMIT 40`).bind(start, end).all(),
+    env.DB.prepare(`
+      SELECT
+        (SELECT COUNT(*) FROM posts WHERE hidden=0 AND created_at>=?1 AND created_at<?2) AS posts,
+        (SELECT COUNT(DISTINCT user_id) FROM posts WHERE hidden=0 AND created_at>=?1 AND created_at<?2) AS users,
+        (SELECT COUNT(DISTINCT thread_id) FROM posts WHERE hidden=0 AND thread_id IS NOT NULL
+           AND created_at>=?1 AND created_at<?2) AS threads`).bind(start, end).first()
+  ]);
+
+  return html(renderRecap({
+    ym, posts: posts.results || [],
+    stats: stats || { posts: 0, users: 0, threads: 0 }, env
+  }), { headers: cacheHdr(900) });
+}
+
+async function pageRecapIndex(env) {
+  const rows = await env.DB.prepare(`
+    SELECT strftime('%Y-%m', created_at, 'unixepoch') AS ym, COUNT(*) AS n
+      FROM posts WHERE featured = 1 AND hidden = 0
+     GROUP BY ym ORDER BY ym DESC LIMIT 60`).all();
+  return html(renderRecapIndex({ months: rows.results || [], env }), { headers: cacheHdr(900) });
+}
+
 function notFound(env) {
   return html(`<!doctype html><meta charset="utf-8"><title>Nicht gefunden</title>
     <body style="background:#0c0b09;color:#f1ecdf;font-family:system-ui;padding:70px;text-align:center">
@@ -191,6 +233,13 @@ async function sitemap(env) {
     `<url><loc>${site}/community/</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>`,
     `<url><loc>${site}/community/regeln</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>`,
     ...CATEGORIES.map(c => `<url><loc>${site}/community/kategorie/${c.key}</loc><changefreq>daily</changefreq><priority>0.5</priority></url>`),
+    ...(await (async () => {
+      const ms = await env.DB.prepare(`
+        SELECT strftime('%Y-%m', created_at, 'unixepoch') AS ym, COUNT(*) AS n, MAX(created_at) AS last
+          FROM posts WHERE featured=1 AND hidden=0 GROUP BY ym HAVING n >= 3 ORDER BY ym DESC LIMIT 60`).all();
+      return (ms.results || []).map(m =>
+        `<url><loc>${site}/community/rueckblick/${m.ym}</loc><lastmod>${iso(m.last)}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>`);
+    })()),
     ...(rows.results || []).map(t =>
       `<url><loc>${site}/community/t/${esc(t.slug)}</loc><lastmod>${iso(t.last_post_at)}</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>`)
   ].join('');
@@ -584,7 +633,7 @@ async function admin(route, request, env, url) {
         env.DB.prepare(`SELECT r.id,r.post_id,r.reason,r.created_at,p.body,u.name
                           FROM reports r JOIN posts p ON p.id=r.post_id JOIN users u ON u.id=p.user_id
                          WHERE r.resolved_at IS NULL ORDER BY r.id DESC LIMIT 50`).all(),
-        env.DB.prepare(`SELECT p.id,p.body,p.created_at,p.hidden,u.name,u.id AS uid
+        env.DB.prepare(`SELECT p.id,p.body,p.created_at,p.hidden,p.featured,p.featured_note,p.image_key,u.name,u.id AS uid
                           FROM posts p JOIN users u ON u.id=p.user_id
                          ORDER BY p.id DESC LIMIT 50`).all(),
         env.DB.prepare(`SELECT id,name,email,role,post_count,banned_until,created_at
@@ -626,6 +675,10 @@ async function admin(route, request, env, url) {
     case 'hide-thread':
       await env.DB.prepare('UPDATE threads SET hidden=?1 WHERE id=?2').bind(b.on === false ? 0 : 1, b.id).run();
       await log('hide-thread', b.id); return json({ ok: true });
+    case 'feature':
+      await env.DB.prepare('UPDATE posts SET featured=?1, featured_note=?2 WHERE id=?3')
+        .bind(b.on ? 1 : 0, b.on ? (String(b.note || '').slice(0, 600) || null) : null, b.id).run();
+      await log('feature', b.id, b.on ? 'in Rückblick' : 'entfernt'); return json({ ok: true });
     case 'resolve-report':
       await env.DB.prepare('UPDATE reports SET resolved_at=?1, action=?2 WHERE id=?3')
         .bind(t, String(b.action || 'geprüft'), b.id).run();
@@ -743,8 +796,16 @@ function load(){
 
     document.getElementById('posts').innerHTML=j.posts.map(function(p){
       return '<div class="row '+(p.hidden?'hidden':'')+'"><div class="b">'+esc(p.body).slice(0,300)+
-        '<div class="meta" style="margin-top:6px">'+esc(p.name)+' · '+dt(p.created_at)+' · #'+p.id+(p.hidden?' · AUSGEBLENDET':'')+'</div></div>'+
-        '<div>'+(p.hidden?'<button onclick="act(\'show-post\',{id:'+p.id+'})">Zeigen</button>':
+        (p.image_key?' <span class="tag">Bild</span>':'')+
+        (p.featured_note?'<div style="margin-top:8px;padding-left:10px;border-left:2px solid var(--gold);color:var(--gold)">'+esc(p.featured_note)+'</div>':'')+
+        '<div class="meta" style="margin-top:6px">'+esc(p.name)+' · '+dt(p.created_at)+' · #'+p.id+
+        (p.hidden?' · AUSGEBLENDET':'')+(p.featured?' · IM RÜCKBLICK':'')+'</div></div>'+
+        '<div>'+
+        (p.featured
+          ? '<button onclick="feat('+p.id+',true)">Einordnung ändern</button> '+
+            '<button onclick="act(\'feature\',{id:'+p.id+',on:false})">Aus Rückblick</button> '
+          : '<button onclick="feat('+p.id+',false)">In Rückblick</button> ')+
+        (p.hidden?'<button onclick="act(\'show-post\',{id:'+p.id+'})">Zeigen</button>':
         '<button class="danger" onclick="act(\'hide-post\',{id:'+p.id+'})">Ausblenden</button>')+'</div></div>';
     }).join('');
 
@@ -758,6 +819,13 @@ function load(){
         '<button class="danger" onclick="if(confirm(\'Alle Beiträge ausblenden?\'))act(\'purge-user\',{id:\''+u.id+'\'})">Purge</button>')+'</div></div>';
     }).join('');
   }).catch(function(e){alert('Login fehlgeschlagen: '+e.message)});
+}
+function feat(id, vorhanden){
+  var n = prompt(vorhanden
+    ? 'Einordnung ändern (leer lassen = nur zitieren):'
+    : 'Deine Einordnung in ein, zwei Sätzen — Kontext, Zahl, Gegenargument.\nLeer lassen, wenn das Zitat für sich steht:');
+  if (n === null) return;                 // Abbrechen
+  act('feature', { id: id, on: true, note: n.trim() });
 }
 function openThread(){
   act('open-thread',{title:document.getElementById('ntTitle').value,intro:document.getElementById('ntIntro').value,

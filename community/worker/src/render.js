@@ -118,6 +118,18 @@ button,input,textarea,select{font:inherit;color:inherit}
 .p-body{font-size:15px;line-height:1.65;color:var(--fg);word-wrap:break-word;overflow-wrap:anywhere}
 .p-body p{margin-bottom:10px}
 .p-body a{color:var(--accent);border-bottom:1px solid var(--border-strong)}
+.quote{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--accent);padding:22px 24px;margin-bottom:14px}
+.quote .q-body{font-size:16px;line-height:1.7;color:var(--fg)}
+.quote .q-body a{color:var(--accent)}
+.quote .q-meta{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+.quote cite{font-style:normal;color:var(--accent);font-weight:600}
+.quote .q-meta a{color:var(--fg-muted);border-bottom:1px solid var(--border)}
+.quote .q-meta a:hover{color:var(--accent)}
+.q-note{margin-top:16px;padding:14px 16px;background:var(--surface-2);border-left:2px solid var(--accent);font-size:15px;line-height:1.65;color:var(--fg)}
+.q-note-label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.notice{background:var(--surface-2);border:1px solid var(--border);padding:16px 18px;margin-bottom:26px;font-size:13px;line-height:1.65;color:var(--fg-muted)}
+.notice strong{color:var(--fg)}
 .p-img{margin-top:12px;max-width:520px;border:1px solid var(--border);background:var(--surface-2);display:block}
 .p-img img{width:100%;height:auto;display:block;cursor:zoom-in}
 .p-img figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);padding:6px 9px;border-top:1px solid var(--border)}
@@ -553,7 +565,9 @@ export function renderRules(env) {
     ['5 · Keine Kursmanipulation', 'Kein koordiniertes Pushen, keine Pump-and-Dump-Aufrufe, keine Falschinformationen zu Unternehmen. Das ist nicht nur unerwünscht, sondern strafbar.'],
     ['6 · Ein Name, ein Mensch', 'Keine Doppel-Identitäten, keine Imitation von Marco, Moderatoren oder realen Personen.'],
     ['7 · Meldungen', 'Jeder Beitrag lässt sich melden. Gemeldete Inhalte werden zeitnah geprüft; rechtswidrige Inhalte werden entfernt. Beschwerden über eine Entscheidung gehen per Mail an den Betreiber (siehe Impressum).'],
-    ['8 · Daten', 'Gespeichert werden Name, Beitrag, Zeitstempel und ein gesalzener Hash deiner IP-Adresse (kein Klartext). Bei Registrierung zusätzlich deine E-Mail. Löschung jederzeit per Mail. Details in der Datenschutzerklärung.']
+    ['8 · Daten', 'Gespeichert werden Name, Beitrag, Zeitstempel und ein gesalzener Hash deiner IP-Adresse (kein Klartext). Bei Registrierung zusätzlich deine E-Mail. Löschung jederzeit per Mail. Details in der Datenschutzerklärung.'],
+    ['9 · Zitate im Monatsrückblick', 'Beiträge, die die Diskussion weiterbringen, können mit deinem Anzeigenamen im monatlichen Community-Rückblick auf dieser Website zitiert werden — unverändert und mit Link zum ursprünglichen Thema. Eine Einordnung des Betreibers steht ggf. daneben, klar als solche gekennzeichnet. Wenn du das für einen bestimmten Beitrag oder generell nicht möchtest, schreib eine kurze Mail; dann wird er entfernt.'],
+    ['10 · Bilder', 'Ein Bild pro Beitrag, maximal 3 MB, nur JPEG, PNG, GIF oder WebP. Hochladen kann, wer seinen Namen per E-Mail bestätigt hat. Lade nur Bilder hoch, die du selbst erstellt hast oder verwenden darfst — Grafiken aus kostenpflichtigen Berichten gehören nicht dazu. Aus JPEGs werden Standort- und Gerätedaten automatisch entfernt.']
   ].map(([h, p]) => `<div class="card" style="margin-bottom:14px"><h3 style="font-family:var(--serif);font-size:24px;font-weight:400;margin-bottom:8px">${h}</h3><p style="color:var(--fg-muted);font-size:15px;line-height:1.65">${p}</p></div>`).join('')}
   <a class="btn btn-ghost" style="margin-top:22px" href="/community/">← Zurück zur Community</a>
 </div>`;
@@ -883,3 +897,104 @@ setInterval(poll,15000);
 document.addEventListener('visibilitychange',function(){if(!document.hidden)poll()});
 })();
 `;
+
+/* ------------------------------------------------------------------ *
+ * Monatsrückblick
+ * Bewusst als Zitatsammlung gestaltet, nicht als Artikel: jede Aussage
+ * bleibt sichtbar dem Verfasser zugeordnet. Ein Fließtext, der fremde
+ * Aussagen in eigener Stimme referiert, wäre etwas anderes — auch
+ * haftungsrechtlich.
+ * ------------------------------------------------------------------ */
+const MONATE = ['Januar','Februar','März','April','Mai','Juni',
+                'Juli','August','September','Oktober','November','Dezember'];
+
+export function monthLabel(ym) {
+  const [y, m] = ym.split('-');
+  return `${MONATE[Number(m) - 1]} ${y}`;
+}
+
+export function renderRecap({ ym, posts, stats, env }) {
+  const site = env.SITE_ORIGIN || 'https://mbcapitalstrategies.com';
+  const canonical = `${site}/community/rueckblick/${ym}`;
+  const label = monthLabel(ym);
+  const iso = ts => new Date(ts * 1000).toISOString();
+
+  const items = posts.map(p => `
+  <blockquote class="quote">
+    <div class="q-body">${renderBody(p.body)}</div>
+    ${p.image_key ? `<figure class="p-img"><img src="/community/img/${esc(p.image_key)}" alt="Von ${esc(p.name)} geteiltes Bild" loading="lazy"></figure>` : ''}
+    ${p.featured_note ? `<div class="q-note"><span class="q-note-label">Marco dazu</span>${renderBody(p.featured_note)}</div>` : ''}
+    <footer class="q-meta">
+      <cite>${esc(p.name)}</cite>
+      <time datetime="${iso(p.created_at)}">${new Date(p.created_at * 1000).toLocaleDateString('de-DE', { day: '2-digit', month: 'long' })}</time>
+      ${p.thread_slug ? `<a href="/community/t/${esc(p.thread_slug)}">in „${esc(p.thread_title || 'Thema')}" weiterlesen</a>`
+                      : '<a href="/community/">im Live-Feed</a>'}
+    </footer>
+  </blockquote>`).join('');
+
+  const body = `
+<div class="wrap"><nav class="crumb"><a href="${site}/">Start</a> / <a href="/community/">Community</a> /
+  <a href="/community/rueckblick">Rückblick</a> / ${esc(label)}</nav></div>
+
+<section class="t-hero"><div class="wrap">
+  <span class="eyebrow">Community-Rückblick</span>
+  <h1>${esc(label)}</h1>
+  <p class="lede">Beiträge aus der Community, die im Gespräch etwas bewegt haben — mit meiner
+     Einordnung dazu, wo sie etwas beiträgt. Wer tiefer einsteigen will, folgt dem Link ins Thema.</p>
+  <div class="t-meta">
+    <span>${stats.posts} Beiträge im Monat</span>
+    <span>${stats.users} Köpfe</span>
+    <span>${stats.threads} Themen aktiv</span>
+    <span>${posts.length} hervorgehoben</span>
+  </div>
+</div></section>
+
+<div class="wrap" style="padding:44px 0 90px;max-width:880px">
+  <div class="notice">
+    <strong>Zitate und Einordnung sind getrennt.</strong> Die zitierten Beiträge stammen von Mitgliedern der
+    Community und geben deren persönliche Meinung wieder — nicht die des Betreibers; sie sind nicht auf
+    Richtigkeit geprüft. Als „Marco dazu" gekennzeichnete Absätze sind meine eigene Einordnung.
+    Nichts davon ist eine Anlageberatung oder Kauf- bzw. Verkaufsempfehlung.
+  </div>
+
+  ${items || '<div class="card empty"><div class="display">Für diesen Monat ist noch nichts hervorgehoben.</div></div>'}
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px">
+    <a class="btn btn-ghost" href="/community/rueckblick">← Alle Monate</a>
+    <a class="btn btn-ghost" href="/community/">Zur Community</a>
+  </div>
+</div>`;
+
+  return layout({
+    title: `Community-Rückblick ${label} — MB Capital Strategies`,
+    desc: `Ausgewählte Beiträge aus der MB Capital Community im ${label}: Shipping, Mining, Energie und Dividenden aus Sicht privater Anleger.`,
+    canonical, body, env,
+    // Unter drei Zitaten ist die Seite zu dünn, um sie indexieren zu lassen.
+    noindex: posts.length < 3
+  });
+}
+
+export function renderRecapIndex({ months, env }) {
+  const site = env.SITE_ORIGIN || 'https://mbcapitalstrategies.com';
+  const list = months.length ? months.map(m => `
+  <a class="card thread" href="/community/rueckblick/${m.ym}">
+    <div class="t-top"><span>Rückblick</span></div>
+    <h3>${esc(monthLabel(m.ym))}</h3>
+    <div class="t-meta"><span>${m.n} hervorgehobene Beiträge</span></div>
+  </a>`).join('') : '<div class="card empty"><div class="display">Noch kein Rückblick.</div><p>Der erste entsteht, sobald Beiträge markiert sind.</p></div>';
+
+  const body = `
+<div class="wrap"><nav class="crumb"><a href="${site}/">Start</a> / <a href="/community/">Community</a> / Rückblick</nav></div>
+<section class="t-hero"><div class="wrap">
+  <span class="eyebrow">Archiv</span><h1>Community-Rückblick</h1>
+  <p class="lede">Monat für Monat: die Beiträge, die im Gespräch etwas bewegt haben.</p>
+</div></section>
+<div class="wrap" style="padding:40px 0 90px;max-width:880px">${list}
+<a class="btn btn-ghost" style="margin-top:22px" href="/community/">← Zur Community</a></div>`;
+
+  return layout({
+    title: 'Community-Rückblick — MB Capital Strategies',
+    desc: 'Monatliche Rückblicke auf die Diskussionen in der MB Capital Community.',
+    canonical: `${site}/community/rueckblick`, body, env, noindex: months.length === 0
+  });
+}
