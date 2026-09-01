@@ -709,6 +709,48 @@ async function admin(route, request, env, url) {
       await log('open-thread', slug);
       return json({ ok: true, slug, id });
     }
+    case 'reife': {
+      // Kennzahlen je Thema fuer die Reifepruefung der Flotte.
+      // Bewusst nur lesend und ohne Beitragsinhalte: das Skript draussen soll
+      // entscheiden koennen, ohne den ganzen Text zu uebertragen.
+      const th = await env.DB.prepare(
+        `SELECT id,slug,title,category,created_at,pinned,locked
+           FROM threads WHERE hidden=0 ORDER BY id DESC LIMIT 200`).all();
+      const threads = th.results || [];
+      if (!threads.length) return json({ ok: true, threads: [] });
+
+      const ps = await env.DB.prepare(
+        `SELECT thread_id,user_id,body,image_key FROM posts
+          WHERE hidden=0 ORDER BY id ASC LIMIT 5000`).all();
+
+      const agg = new Map();
+      for (const row of ps.results || []) {
+        let a = agg.get(row.thread_id);
+        if (!a) { a = { posts: 0, woerter: 0, bilder: 0, autoren: new Set() }; agg.set(row.thread_id, a); }
+        a.posts += 1;
+        a.autoren.add(row.user_id);
+        if (row.image_key) a.bilder += 1;
+        const w = String(row.body || '').trim().split(/\s+/).filter(Boolean).length;
+        a.woerter += w;
+      }
+
+      const out = threads.map(t => {
+        const a = agg.get(t.id) || { posts: 0, woerter: 0, bilder: 0, autoren: new Set() };
+        return {
+          slug: t.slug,
+          titel: t.title,
+          kategorie: t.category,
+          erstellt: t.created_at,
+          gepinnt: !!t.pinned,
+          gesperrt: !!t.locked,
+          beitraege: a.posts,
+          teilnehmer: a.autoren.size,
+          woerter: a.woerter,
+          bilder: a.bilder
+        };
+      });
+      return json({ ok: true, threads: out });
+    }
     case 'export': {
       // Entwurf für einen Blogartikel: entweder aus einem Thema oder aus
       // den markierten Beiträgen eines Monats.

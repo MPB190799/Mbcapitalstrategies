@@ -292,6 +292,7 @@
             '</div>' +
             '<a href="/blog/">Blog</a>' +
             '<a href="/community/">Community</a>' +
+            '<a href="/community-diskussionen/">Diskussionen</a>' +
             '<a href="/investing-analysen.html">Investing.com</a>' +
             '<a href="/rechner/" class="nav-highlight">Rechner</a>' +
             '<div class="dropdown">' +
@@ -315,6 +316,7 @@
           '<a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>' +
           '<a href="/blog/">📰 Blog</a>' +
           '<a href="/community/">💬 Community</a>' +
+          '<a href="/community-diskussionen/">🧠 Diskussionen</a>' +
           '<a href="/rechner/">🧮 Alle Rechner</a>' +
           '<a href="/investing-analysen.html">🔗 Investing.com</a>' +
           '<a href="/toolbox.html">🧰 Toolbox</a>' +
