@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /community/admin
 Disallow: /draft/
 Disallow: /tmp/
 Disallow: /private/
@@ -77,3 +78,4 @@ Sitemap: https://mbcapitalstrategies.com/sitemap-investing.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-kategorien.xml
 Sitemap: https://mbcapitalstrategies.com/glossar-sitemap.xml
 Sitemap: https://mbcapitalstrategies.com/sitemap-video.xml
+Sitemap: https://mbcapitalstrategies.com/community/sitemap.xml
