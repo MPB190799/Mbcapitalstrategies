@@ -3,7 +3,8 @@
 MB Capital Strategies — Community-Anbindung an die statische Seite.
 
 Setzt idempotent:
-  1. Community-Link in die gemeinsame Navigation (assets/js/nav.js, Desktop + Mobil)
+  1. Community-Link in die gemeinsame Navigation — nav.js UND nav.min.js.
+     Ausgeliefert wird nav.min.js; nav.js allein zu patchen bewirkt nichts.
   2. Community-Link in die Inline-Navigation von index.html
   3. robots.txt: Sitemap-Eintrag + Disallow für /community/admin
   4. sitemap.xml: Verweis auf die Community-Sitemap (falls Sitemap-Index)
@@ -54,6 +55,36 @@ def patch_navjs():
         return
     f.write_text(s, encoding="utf-8")
     report("assets/js/nav.js", True, "Desktop + Mobil")
+
+
+# --------------------------------------------------------- 1b nav.min.js
+def patch_navmin():
+    """Die AUSGELIEFERTE Navigation.
+
+    01.09.2026: patch-site.py hatte nur nav.js gesetzt — und keine einzige der
+    272 Seiten laedt nav.js. Sie laden nav.min.js. Der Community-Tab war
+    deshalb wochenlang auf genau einer Seite sichtbar (index.html, eigene
+    Inline-Nav), obwohl die Community selbst laengst lief. Ein Schritt, der
+    die Datei patcht, die niemand ausliefert, meldet Erfolg und bewirkt nichts.
+    """
+    f = ROOT / "assets" / "js" / "nav.min.js"
+    if not f.exists():
+        report("assets/js/nav.min.js", False, "nicht gefunden")
+        return
+    s = f.read_text(encoding="utf-8")
+    if "/community/" in s:
+        report("assets/js/nav.min.js", False, "Link schon vorhanden")
+        return
+    desktop = '<a href="/blog/">Blog</a>'
+    mobil = '<a href="/blog/">📰 Blog</a>'
+    if desktop not in s or mobil not in s:
+        report("assets/js/nav.min.js", False,
+               "Ankerpunkte nicht gefunden — Minifikat neu bauen")
+        return
+    s = s.replace(desktop, desktop + '<a href="/community/">Community</a>', 1)
+    s = s.replace(mobil, mobil + '<a href="/community/">💬 Community</a>', 1)
+    f.write_text(s, encoding="utf-8")
+    report("assets/js/nav.min.js", True, "Desktop + Mobil")
 
 
 # ------------------------------------------------------------- 2 index.html
@@ -121,6 +152,7 @@ if __name__ == "__main__":
     if not (ROOT / "index.html").exists():
         sys.exit(f"Repo-Wurzel nicht gefunden (erwartet: {ROOT})")
     patch_navjs()
+    patch_navmin()
     patch_index()
     patch_robots()
     patch_sitemap()
