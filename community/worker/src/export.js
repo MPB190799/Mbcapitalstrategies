@@ -63,6 +63,20 @@ export function buildDraft({ thread, ym, posts, env }) {
   L.push('---');
   L.push('');
 
+  // Einschätzung, ob sich das Ausarbeiten überhaupt lohnt. Zwei magere
+  // Beiträge ergeben keinen Artikel — dann lieber weiter sammeln.
+  const urteil = woerter < 150
+    ? `**Noch zu dünn.** ${woerter} Wörter Rohmaterial aus ${posts.length} `
+      + `${posts.length === 1 ? 'Beitrag' : 'Beiträgen'}. Für 1000–1400 Wörter Artikel müsstest du fast alles `
+      + 'selbst schreiben — dann brauchst du die Diskussion nicht als Aufhänger. Sammeln und später erneut ziehen.'
+    : woerter < 400
+      ? `**Knapp, aber machbar.** ${woerter} Wörter aus ${posts.length} Beiträgen von ${koepfe.length} Köpfen. `
+        + 'Trägt, wenn mindestens ein Wortwechsel wirklich Substanz hat. Sonst noch warten.'
+      : `**Gute Grundlage.** ${woerter} Wörter aus ${posts.length} Beiträgen von ${koepfe.length} Köpfen. `
+        + 'Reicht als Gerüst; deine Einordnung macht daraus den Artikel.';
+  L.push('> ' + urteil);
+  L.push('');
+
   L.push(`# ${titel}`);
   L.push('');
   L.push('> **TODO Intro (ca. 100 Wörter):** Warum dieser Artikel? Was war der Auslöser in der');
