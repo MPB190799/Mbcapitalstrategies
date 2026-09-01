@@ -22,7 +22,8 @@
 import {
   now, uuid, json, bad, html, cleanName, slugify, spamCheck, rateLimit,
   signCookie, readCookie, cookieHeader, verifyTurnstile, ipHash, sha256,
-  sendMagicLink, brevoSubscribe, esc, COOKIE_NAME
+  sendMagicLink, brevoSubscribe, esc, COOKIE_NAME,
+  sniffImage, stripJpegMetadata, imageKey, IMG_MAX_BYTES, IMG_MAX_PER_DAY
 } from './lib.js';
 import { renderHub, renderThread, renderRules, renderCategory, CATEGORIES } from './render.js';
 
@@ -44,6 +45,7 @@ export default {
       if (p === '/community/regeln') return html(renderRules(env), { headers: cacheHdr(600) });
       if (p === '/community/admin') return html(ADMIN_HTML, { headers: { 'x-robots-tag': 'noindex, nofollow' } });
       if (p === '/community/sitemap.xml') return sitemap(env);
+      if (p.startsWith('/community/img/')) return serveImage(env, p.slice(15), ctx);
       if (p === '/community/login') return magicLogin(request, env, url);
       if (p.startsWith('/community/t/')) return pageThread(request, env, decodeURIComponent(p.slice(13)));
       if (p.startsWith('/community/kategorie/')) return pageCategory(request, env, p.slice(21));
@@ -69,6 +71,17 @@ export default {
       await env.DB.prepare(
         `DELETE FROM users WHERE post_count = 0 AND email IS NULL AND role='guest' AND created_at < ?1`
       ).bind(t - 86400 * 60).run();
+      // Hochgeladene Bilder, die nach 24 h an keinem Beitrag hängen: löschen.
+      // Sonst sammelt sich Speicher an, den niemand je sieht.
+      if (env.IMG) {
+        const orphans = await env.DB.prepare(
+          'SELECT key FROM uploads WHERE post_id IS NULL AND created_at < ?1 LIMIT 200'
+        ).bind(t - 86400).all();
+        for (const o of (orphans.results || [])) {
+          await env.IMG.delete(o.key);
+          await env.DB.prepare('DELETE FROM uploads WHERE key=?1').bind(o.key).run();
+        }
+      }
     })());
   }
 };
@@ -137,7 +150,7 @@ async function pageThread(request, env, slug) {
   if (!thread) return notFound(env);
 
   const posts = await env.DB.prepare(`
-    SELECT p.id,p.body,p.created_at,u.name,u.role FROM posts p
+    SELECT p.id,p.body,p.created_at,p.image_key,u.name,u.role FROM posts p
     JOIN users u ON u.id=p.user_id
     WHERE p.thread_id=?1 AND p.hidden=0
     ORDER BY p.id ASC LIMIT 200`).bind(thread.id).all();
@@ -282,7 +295,7 @@ async function api(route, request, env, url, ctx) {
     if (before) where.push(`p.id < ?${binds.push(before)}`);
 
     const rows = await env.DB.prepare(`
-      SELECT p.id,p.body,p.created_at,p.thread_id,u.name,u.role,
+      SELECT p.id,p.body,p.created_at,p.thread_id,p.image_key,u.name,u.role,
              t.slug AS thread_slug, t.title AS thread_title
         FROM posts p
         JOIN users u ON u.id = p.user_id
@@ -390,12 +403,26 @@ async function api(route, request, env, url, ctx) {
       if (thread.locked) return bad('Dieses Thema ist geschlossen.', 403);
     }
 
+    // Bild nur annehmen, wenn es diesem Nutzer gehört und noch frei ist.
+    let imgKey = null;
+    if (b.image) {
+      const up = await env.DB.prepare(
+        'SELECT key,user_id,post_id FROM uploads WHERE key=?1'
+      ).bind(String(b.image)).first();
+      if (!up || up.user_id !== user.id) return bad('Das Bild wurde nicht gefunden.');
+      if (up.post_id) return bad('Dieses Bild hängt schon an einem Beitrag.');
+      imgKey = up.key;
+    }
+
     const t = now(), ih = await ipHash(env, request);
     const res = await env.DB.prepare(
-      'INSERT INTO posts (thread_id,user_id,body,created_at,ip_hash) VALUES (?1,?2,?3,?4,?5)'
-    ).bind(threadId, user.id, check.text, t, ih).run();
+      'INSERT INTO posts (thread_id,user_id,body,created_at,ip_hash,image_key) VALUES (?1,?2,?3,?4,?5,?6)'
+    ).bind(threadId, user.id, check.text, t, ih, imgKey).run();
 
     const id = res.meta.last_row_id;
+    if (imgKey) {
+      await env.DB.prepare('UPDATE uploads SET post_id=?1 WHERE key=?2').bind(id, imgKey).run();
+    }
     await env.DB.batch([
       env.DB.prepare('UPDATE users SET post_count=post_count+1,last_seen_at=?1 WHERE id=?2').bind(t, user.id),
       ...(threadId ? [env.DB.prepare('UPDATE threads SET post_count=post_count+1,last_post_at=?1 WHERE id=?2').bind(t, threadId)] : [])
@@ -403,7 +430,7 @@ async function api(route, request, env, url, ctx) {
 
     return json({
       ok: true,
-      post: { id, body: check.text, created_at: t, name: user.name, role: user.role, thread_id: threadId }
+      post: { id, body: check.text, created_at: t, name: user.name, role: user.role, thread_id: threadId, image_key: imgKey }
     });
   }
 
@@ -442,6 +469,47 @@ async function api(route, request, env, url, ctx) {
     return json({ ok: true, thread: { id, slug, title } });
   }
 
+  /* ---------- POST /upload ---------- */
+  if (route === 'upload' && method === 'POST') {
+    if (!env.IMG) return bad('Bild-Uploads sind nicht eingerichtet.', 501);
+    if (!user) return bad('Bitte zuerst einen Namen wählen.', 401);
+    if (isBanned(user)) return bad('Du kannst derzeit nichts hochladen.', 403);
+    // Bilder nur für Registrierte: wer ein Bild hochlädt, hinterlässt eine
+    // bestätigte E-Mail. Das ist der wirksamste Schutz gegen Missbrauch und
+    // gibt im Ernstfall einen Ansprechpartner.
+    if (env.UPLOAD_REQUIRES_EMAIL !== '0' && !user.email) {
+      return bad('Bilder kannst du hochladen, sobald du deinen Namen per E-Mail gesichert hast — einmalig, ohne Passwort.', 403, { needsEmail: true });
+    }
+
+    const day = await env.DB.prepare('SELECT COUNT(*) AS c FROM uploads WHERE user_id=?1 AND created_at>?2')
+      .bind(user.id, now() - 86400).first();
+    if (day && day.c >= Number(env.IMG_MAX_PER_DAY || IMG_MAX_PER_DAY)) {
+      return bad(`Maximal ${env.IMG_MAX_PER_DAY || IMG_MAX_PER_DAY} Bilder pro Tag.`, 429);
+    }
+
+    const ct = request.headers.get('content-type') || '';
+    if (!ct.startsWith('multipart/form-data')) return bad('Ungültiges Format.');
+    let file;
+    try {
+      const form = await request.formData();
+      file = form.get('image');
+    } catch { return bad('Datei konnte nicht gelesen werden.'); }
+    if (!file || typeof file.arrayBuffer !== 'function') return bad('Keine Datei erhalten.');
+    if (file.size > IMG_MAX_BYTES) return bad('Das Bild ist zu groß (maximal 3 MB).');
+
+    let buf = await file.arrayBuffer();
+    const kind = sniffImage(buf);
+    if (!kind) return bad('Nur JPEG, PNG, GIF oder WebP — und die Datei muss wirklich ein Bild sein.');
+    if (kind.mime === 'image/jpeg') buf = stripJpegMetadata(buf);
+
+    const key = imageKey(kind.ext);
+    await env.IMG.put(key, buf, { metadata: { mime: kind.mime, u: user.id } });
+    await env.DB.prepare('INSERT INTO uploads (key,user_id,mime,bytes,created_at) VALUES (?1,?2,?3,?4,?5)')
+      .bind(key, user.id, kind.mime, buf.byteLength, now()).run();
+
+    return json({ ok: true, key, url: `/community/img/${key}` });
+  }
+
   /* ---------- POST /report ---------- */
   if (route === 'report' && method === 'POST') {
     const b = await body(request);
@@ -455,6 +523,37 @@ async function api(route, request, env, url, ctx) {
   }
 
   return bad('Unbekannter Endpunkt.', 404);
+}
+
+
+/* ================================================================== *
+ * Bilder ausliefern (aus KV, mit Edge-Cache davor)
+ * ================================================================== */
+async function serveImage(env, key, ctx) {
+  if (!/^[0-9a-f]{32}\.(jpg|png|gif|webp)$/.test(key)) return new Response('Not found', { status: 404 });
+  if (!env.IMG) return new Response('Not found', { status: 404 });
+
+  const cache = caches.default;
+  const cacheKey = new Request(`https://img.local/${key}`);
+  const hit = await cache.match(cacheKey);
+  if (hit) return hit;
+
+  const obj = await env.IMG.getWithMetadata(key, { type: 'arrayBuffer' });
+  if (!obj || !obj.value) return new Response('Not found', { status: 404 });
+
+  const res = new Response(obj.value, {
+    headers: {
+      'content-type': (obj.metadata && obj.metadata.mime) || 'application/octet-stream',
+      // Schluessel ist zufaellig und unveraenderlich -> aggressiv cachen,
+      // das haelt die KV-Leseoperationen im Gratis-Kontingent.
+      'cache-control': 'public, max-age=31536000, immutable',
+      'x-content-type-options': 'nosniff',
+      'content-security-policy': "default-src 'none'; img-src 'self'; sandbox",
+      'content-disposition': 'inline'
+    }
+  });
+  if (ctx) ctx.waitUntil(cache.put(cacheKey, res.clone()));
+  return res;
 }
 
 function publicUser(u) {
@@ -493,9 +592,18 @@ async function admin(route, request, env, url) {
       ]);
       return json({ ok: true, reports: reports.results, posts: recent.results, users: users.results });
     }
-    case 'hide-post':
+    case 'hide-post': {
+      // Bild sofort aus dem Speicher entfernen — ein ausgeblendeter Beitrag,
+      // dessen Bild unter der direkten Adresse weiter abrufbar bleibt, ist
+      // keine Moderation.
+      const row = await env.DB.prepare('SELECT image_key FROM posts WHERE id=?1').bind(b.id).first();
+      if (row && row.image_key && env.IMG) {
+        await env.IMG.delete(row.image_key);
+        await env.DB.prepare('UPDATE uploads SET hidden=1 WHERE key=?1').bind(row.image_key).run();
+      }
       await env.DB.prepare('UPDATE posts SET hidden=1 WHERE id=?1').bind(b.id).run();
       await log('hide-post', b.id, b.note); return json({ ok: true });
+    }
     case 'show-post':
       await env.DB.prepare('UPDATE posts SET hidden=0 WHERE id=?1').bind(b.id).run();
       await log('show-post', b.id); return json({ ok: true });

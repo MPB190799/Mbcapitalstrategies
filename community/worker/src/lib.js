@@ -315,3 +315,64 @@ export function renderBody(text) {
   s = s.replace(/(^|\s)\$([A-Z]{1,6})\b/g, '$1<span class="tick">$$$2</span>');
   return s.replace(/\n{2,}/g, '</p><p>').replace(/\n/g, '<br>');
 }
+
+/* ------------------------------------------------------------------ *
+ * Bild-Anhänge
+ * ------------------------------------------------------------------ */
+export const IMG_MAX_BYTES = 3 * 1024 * 1024;   // 3 MB
+export const IMG_MAX_PER_DAY = 5;
+
+/**
+ * Dateityp am Inhalt erkennen, nicht am gemeldeten MIME-Typ.
+ * Ein Angreifer kann "image/png" behaupten und HTML schicken — der Browser
+ * würde es beim Ausliefern als HTML interpretieren (XSS über die eigene Domain).
+ * Deshalb: nur was die Magic Bytes bestätigen, wird gespeichert.
+ */
+export function sniffImage(buf) {
+  const b = new Uint8Array(buf);
+  if (b.length < 12) return null;
+  const is = (off, ...sig) => sig.every((v, i) => b[off + i] === v);
+
+  if (is(0, 0xff, 0xd8, 0xff)) return { mime: 'image/jpeg', ext: 'jpg' };
+  if (is(0, 0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a)) return { mime: 'image/png', ext: 'png' };
+  if (is(0, 0x47, 0x49, 0x46, 0x38) && (b[4] === 0x37 || b[4] === 0x39) && b[5] === 0x61)
+    return { mime: 'image/gif', ext: 'gif' };
+  if (is(0, 0x52, 0x49, 0x46, 0x46) && is(8, 0x57, 0x45, 0x42, 0x50))
+    return { mime: 'image/webp', ext: 'webp' };
+  return null;
+}
+
+/**
+ * EXIF aus JPEG entfernen. Handy-Fotos tragen dort GPS-Koordinaten,
+ * Aufnahmezeit und Gerätenamen — das gehört nicht in eine öffentliche
+ * Community, und niemand rechnet damit.
+ * Entfernt APP1–APP15 (EXIF, XMP, IPTC) und Kommentare; JFIF (APP0) bleibt.
+ */
+export function stripJpegMetadata(buf) {
+  const b = new Uint8Array(buf);
+  if (!(b[0] === 0xff && b[1] === 0xd8)) return buf;
+  const out = [0xff, 0xd8];
+  let i = 2;
+  while (i < b.length - 1) {
+    if (b[i] !== 0xff) break;                       // kaputte Struktur -> Original behalten
+    const marker = b[i + 1];
+    if (marker === 0xd9) { out.push(0xff, 0xd9); i += 2; break; }
+    if (marker === 0xda) {                          // Bilddaten: Rest 1:1 übernehmen
+      for (let k = i; k < b.length; k++) out.push(b[k]);
+      i = b.length; break;
+    }
+    const len = (b[i + 2] << 8) | b[i + 3];
+    if (len < 2 || i + 2 + len > b.length) break;
+    const drop = (marker >= 0xe1 && marker <= 0xef) || marker === 0xfe; // APPn>0 + COM
+    if (!drop) for (let k = i; k < i + 2 + len; k++) out.push(b[k]);
+    i += 2 + len;
+  }
+  return i >= b.length || out.length > 4 ? new Uint8Array(out).buffer : buf;
+}
+
+/** Zufälliger, nicht erratbarer Schlüssel. */
+export function imageKey(ext) {
+  const r = new Uint8Array(16);
+  crypto.getRandomValues(r);
+  return [...r].map(x => x.toString(16).padStart(2, '0')).join('') + '.' + ext;
+}

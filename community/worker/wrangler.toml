@@ -13,6 +13,11 @@ database_name = "mbc-community"
 database_id = "4916b45a-9519-43c9-bd37-809f0d18e20c"
 
 # --- Ã–ffentliche Variablen --------------------------------------------
+
+[[kv_namespaces]]
+binding = "IMG"
+id = "ec7591fe0bbf4ea79ad3dafb700539f0"
+
 [vars]
 SITE_ORIGIN = "https://mbcapitalstrategies.com"
 COOKIE_DOMAIN = ".mbcapitalstrategies.com"
@@ -22,6 +27,8 @@ MAIL_FROM = "newsletter@mbcapitalstrategies.com"
 RATE_PER_HOUR = "5"
 RATE_COOLDOWN = "15"
 MAX_NEW_PER_IP = "8"
+IMG_MAX_PER_DAY = "5"
+UPLOAD_REQUIRES_EMAIL = "1"
 WORDFILTER = ""               # zusÃ¤tzliche WÃ¶rter, kommagetrennt
 
 # --- Secrets (NICHT hier eintragen) ------------------------------------

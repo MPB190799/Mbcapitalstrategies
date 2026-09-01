@@ -118,6 +118,18 @@ button,input,textarea,select{font:inherit;color:inherit}
 .p-body{font-size:15px;line-height:1.65;color:var(--fg);word-wrap:break-word;overflow-wrap:anywhere}
 .p-body p{margin-bottom:10px}
 .p-body a{color:var(--accent);border-bottom:1px solid var(--border-strong)}
+.p-img{margin-top:12px;max-width:520px;border:1px solid var(--border);background:var(--surface-2);display:block}
+.p-img img{width:100%;height:auto;display:block;cursor:zoom-in}
+.p-img figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);padding:6px 9px;border-top:1px solid var(--border)}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,8,10,.94);display:grid;place-items:center;padding:26px;cursor:zoom-out}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.att{display:flex;align-items:center;gap:10px;margin-top:10px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim)}
+.att button{background:none;border:0;color:inherit;cursor:pointer;padding:0}
+.att button:hover{color:var(--accent)}
+.att .thumb{width:40px;height:40px;object-fit:cover;border:1px solid var(--border-strong)}
+.clip{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid var(--border-strong);cursor:pointer;color:var(--fg-muted);transition:all var(--t-fast)}
+.clip:hover{border-color:var(--accent);color:var(--accent)}
+.clip input{display:none}
 .tick{font-family:var(--mono);font-size:.9em;color:var(--accent);letter-spacing:.02em}
 .p-act{margin-top:8px;display:flex;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);opacity:0;transition:opacity var(--t-fast)}
 .post:hover .p-act,.post:focus-within .p-act{opacity:1}
@@ -419,6 +431,7 @@ export function renderThread({ thread, posts, env, turnstileKey }) {
         <time class="p-time" datetime="${iso(p.created_at)}">${esc(ago(p.created_at))}</time>
       </div>
       <div class="p-body"><p>${renderBody(p.body)}</p></div>
+      ${p.image_key ? `<figure class="p-img"><img src="/community/img/${esc(p.image_key)}" alt="Von ${esc(p.name)} geteiltes Bild" loading="lazy" decoding="async"><figcaption>Bild von ${esc(p.name)}</figcaption></figure>` : ''}
       <div class="p-act">
         <button data-report="${p.id}">Melden</button>
         <a href="#p${p.id}">Permalink</a>
@@ -640,8 +653,16 @@ function renderGate(){
     g.innerHTML=
      '<div class="compose">'+
        '<textarea id="txt" maxlength="2000" placeholder="'+(window.MBC.thread?'Deine Antwort …':'Was beschäftigt dich am Markt?')+'"></textarea>'+
+       '<div id="attWrap"></div>'+
        '<div class="compose-bar">'+
-         '<span class="counter" id="cnt">0 / 2000</span>'+
+         '<div style="display:flex;gap:12px;align-items:center">'+
+           '<label class="clip" title="Chart oder Bild anhängen (max. 3 MB)">'+
+             '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">'+
+             '<path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>'+
+             '<span>Bild</span><input type="file" id="pic" accept="image/jpeg,image/png,image/gif,image/webp">'+
+           '</label>'+
+           '<span class="counter" id="cnt">0 / 2000</span>'+
+         '</div>'+
          '<div style="display:flex;gap:10px;align-items:center">'+
            '<span class="counter">'+esc(me.name)+(me.role==='admin'?' · Betreiber':'')+(me.email?'':' · Gast')+'</span>'+
            '<button class="btn btn-solid btn-sm" id="send">Senden</button>'+
@@ -655,6 +676,7 @@ function renderGate(){
       cnt.className='counter'+(txt.value.length>1900?' warn':'')});
     txt.addEventListener('keydown',function(e){if((e.metaKey||e.ctrlKey)&&e.key==='Enter')send()});
     $('#send').addEventListener('click',send);
+    var pic=$('#pic'); if(pic)pic.addEventListener('change',pickImage);
     var up=$('#upgrade'); if(up)up.addEventListener('click',function(e){e.preventDefault();showMail()});
   } else {
     g.innerHTML=
@@ -721,12 +743,40 @@ function joinMail(){
 
 function send(){
   if(busy)return; var txt=$('#txt'); var v=(txt.value||'').trim();
-  if(!v){txt.focus();return;}
+  if(!v&&!pending){txt.focus();return;}
+  if(!v&&pending){msg('Schreib zwei Worte dazu — ein Bild ohne Einordnung hilft niemandem.','err');return;}
   busy=true; $('#send').disabled=true;
-  api('/post',{method:'POST',body:JSON.stringify({body:v,thread:window.MBC.thread})})
-    .then(function(j){txt.value='';$('#cnt').textContent='0 / 2000';prepend([j.post]);msg('','');msgEl.className='msg';})
+  api('/post',{method:'POST',body:JSON.stringify({body:v,thread:window.MBC.thread,image:pending})})
+    .then(function(j){txt.value='';$('#cnt').textContent='0 / 2000';pending=null;
+      var w=$('#attWrap'); if(w)w.innerHTML='';
+      prepend([j.post]);msg('','');msgEl.className='msg';})
     .catch(function(e){msg(e.message,'err')})
     .then(function(){busy=false;$('#send').disabled=false;});
+}
+
+/* --- Bild anhaengen -------------------------------------------- */
+var pending=null;
+function pickImage(e){
+  var f=e.target.files&&e.target.files[0]; if(!f)return;
+  e.target.value='';
+  if(f.size>3*1024*1024){msg('Das Bild ist zu groß — maximal 3 MB. Ein Screenshot als JPG statt PNG spart meist genug.','err');return;}
+  if(!/^image\/(jpeg|png|gif|webp)$/.test(f.type)){msg('Nur JPEG, PNG, GIF oder WebP.','err');return;}
+  var wrap=$('#attWrap'); if(!wrap)return;
+  wrap.innerHTML='<div class="att"><span>Wird hochgeladen …</span></div>';
+  var fd=new FormData(); fd.append('image',f);
+  fetch(API+'/upload',{method:'POST',credentials:'same-origin',body:fd})
+    .then(function(r){return r.json().then(function(j){if(!r.ok)throw Object.assign(new Error(j.error||'Fehler'),{needsEmail:j.needsEmail});return j})})
+    .then(function(j){
+      pending=j.key;
+      wrap.innerHTML='<div class="att"><img class="thumb" src="'+j.url+'" alt=""><span>Bild angehängt</span>'+
+        '<button id="attDel">Entfernen</button></div>';
+      $('#attDel').onclick=function(){pending=null;wrap.innerHTML='';};
+    })
+    .catch(function(err){
+      wrap.innerHTML='';
+      msg(err.message,'err');
+      if(err.needsEmail)setTimeout(showMail,1400);
+    });
 }
 
 /* --- Feed ------------------------------------------------------ */
@@ -737,6 +787,7 @@ function postHtml(p){
       (p.role==='admin'?'<span class="badge-mb">Betreiber</span>':'')+
       '<time class="p-time" datetime="'+new Date(p.created_at*1000).toISOString()+'">'+ago(p.created_at)+'</time></div>'+
     '<div class="p-body"><p>'+body2html(p.body)+'</p></div>'+
+    (p.image_key?'<figure class="p-img"><img src="/community/img/'+esc(p.image_key)+'" alt="Von '+esc(p.name)+' geteiltes Bild" loading="lazy"><figcaption>Bild von '+esc(p.name)+'</figcaption></figure>':'')+
     '<div class="p-act"><button data-report="'+p.id+'">Melden</button>'+
       (p.thread_slug&&!window.MBC.thread?'<a href="/community/t/'+p.thread_slug+'">im Thema '+esc(p.thread_title||'')+'</a>':'')+
     '</div></div></article>';
@@ -775,6 +826,17 @@ function poll(){
     if(fresh.length)prepend(fresh);
   }).catch(function(){});
 }
+
+/* --- Bild gross anzeigen --------------------------------------- */
+document.addEventListener('click',function(e){
+  var im=e.target.closest('.p-img img'); if(!im)return;
+  var lb=document.createElement('div'); lb.className='lightbox';
+  lb.innerHTML='<img src="'+im.getAttribute('src')+'" alt="">';
+  lb.addEventListener('click',function(){lb.remove()});
+  document.addEventListener('keydown',function esc(ev){
+    if(ev.key==='Escape'){lb.remove();document.removeEventListener('keydown',esc)}});
+  document.body.appendChild(lb);
+});
 
 /* --- Melden / Ältere laden ------------------------------------ */
 document.addEventListener('click',function(e){
