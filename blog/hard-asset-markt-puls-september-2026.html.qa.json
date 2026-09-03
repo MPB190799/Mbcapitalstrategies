@@ -1,0 +1,18 @@
+{
+  "content_sha": "8c66ce1b1fe9",
+  "file": "hard-asset-markt-puls-september-2026.html",
+  "checker": "distribution-agent-selfcheck",
+  "score": 13,
+  "max_score": 14,
+  "platform": "blog-de",
+  "language": "de",
+  "factcheck": "pass",
+  "compliance": "pass",
+  "voice_check": 13,
+  "notes": "Markt-Update mit Tanker-Kursdaten (FMP API Stand 2026-08-30), Brent-Bereich qualitative Einschätzung. Disclosure + Disclaimer vorhanden. R14-konform.",
+  "r23_earnings_gate": "pass",
+  "captrader_blackout": "pass",
+  "disclaimer_present": true,
+  "offenlegung_present": true,
+  "checked_at": "2026-09-03T09:30:00+02:00"
+}
