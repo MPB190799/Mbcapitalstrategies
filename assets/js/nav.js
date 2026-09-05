@@ -276,7 +276,7 @@
                 // 23 px ueber .nav-inner hinausragt: zwei weitere Punkte oben wuerden umbrechen.
                 '<hr>' +
                 '<a href="/glossar/">📗 Glossar</a>' +
-                '<a href="/toolbox.html">🧰 Toolbox</a>' +
+                '<a href="/investing-analysen.html">🔗 Investing.com</a>' +
               '</div>' +
             '</div>' +
             '<div class="dropdown">' +
@@ -296,7 +296,7 @@
             '<a href="/blog/">Blog</a>' +
             '<a href="/community/">Community</a>' +
             '<a href="/community-diskussionen/">Diskussionen</a>' +
-            '<a href="/investing-analysen.html">Investing.com</a>' +
+            '<a href="/toolbox.html" class="nav-highlight">🧰 Toolbox</a>' +
             '<a href="/rechner/" class="nav-highlight">Rechner</a>' +
             '<div class="dropdown">' +
               '<button class="dropdown-btn" aria-haspopup="true">Newsletter &#x25be;</button>' +
@@ -321,8 +321,8 @@
           '<a href="/community/">💬 Community</a>' +
           '<a href="/community-diskussionen/">🧠 Diskussionen</a>' +
           '<a href="/rechner/">🧮 Alle Rechner</a>' +
+          '<a href="/toolbox.html">🧰 Toolbox — Tools &amp; Empfehlungen</a>' +
           '<a href="/investing-analysen.html">🔗 Investing.com</a>' +
-          '<a href="/toolbox.html">🧰 Toolbox</a>' +
           '<a href="/glossar/">📗 Glossar</a>' +
           '<div class="mob-label">Newsletter</div>' +
           '<a href="/insider/">📬 Kostenloser Wochen-Insider</a>' +
