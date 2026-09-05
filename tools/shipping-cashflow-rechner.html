@@ -346,7 +346,10 @@ data-full-width-responsive="true"></ins>
      "werte":{"tce":25000,"opex":7000,"ships":30,"util":94,"payout":70}},
     {"id":"kamsarmax-bulker","label":"Kamsarmax-Dry-Bulker (Segment-Schätzwerte)","sponsor_id":null,
      "hinweis":"Schätzwerte für eine Kamsarmax-Bulker-Flotte, abgeleitet aus öffentlichen Quartalsberichten (Stand 08/2026). Keine Unternehmensdaten.",
-     "werte":{"tce":14000,"opex":6000,"ships":25,"util":95,"payout":60}}
+     "werte":{"tce":14000,"opex":6000,"ships":25,"util":95,"payout":60}},
+    {"id":"demo-mb-capital-flotte","label":"★ Beispiel-Preset: „MB Capital Flotte" (fiktiv)","sponsor_id":null,"demo":true,
+     "hinweis":"Fiktive Beispielflotte — kein echtes Unternehmen, keine echten Flottendaten. Sie zeigt, wie ein Co-Branding-Preset für Emittenten aussieht: Ihre Flotte als Auswahl im Rechner, mit Ihren Zahlen, gepflegt bei jeder Änderung. Formate und Preise: mbcapitalstrategies.com/werbung.html",
+     "werte":{"tce":30000,"opex":7500,"ships":12,"util":93,"payout":75,"shares":60000000}}
   ]
   </script>
 
@@ -771,7 +774,11 @@ function ladeSzenario(){
   if(w.shares != null) document.getElementById('sharesInput').value = w.shares;
   hinweis.textContent = s.hinweis || '';
   hinweis.style.display = s.hinweis ? 'block' : 'none';
-  if(s.sponsor_id && s.partner_label){
+  if(s.demo){
+    partner.textContent = 'Beispiel-Ansicht (fiktiv): Bei einem echten Partner-Preset stünde hier '
+      + '„Werbung — Flottendaten bereitgestellt von <Ihr Unternehmen>" samt Positionsoffenlegung.';
+    partner.style.display = 'block';
+  } else if(s.sponsor_id && s.partner_label){
     partner.textContent = 'Werbung — Flottendaten bereitgestellt von ' + s.partner_label
       + (s.position_offengelegt ? ' · Ich halte diese Aktie, Offenlegung: /werbung.html' : '');
     partner.style.display = 'block';
