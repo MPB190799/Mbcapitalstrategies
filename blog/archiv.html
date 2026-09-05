@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- LCP-Fix: Kritische Fonts preloaden -->
+<meta charset="UTF-8">
+  <!-- Favicon / Brand Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#050508">
+
+  <!-- AdSense: wird nach LCP geladen (Script am Body-Ende) — kein CMP-Block auf Hero -->
+
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles (web-design-agent batch-167, LCP fix) -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+.nav-mobile{display:none}@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}.nav-mobile.open{display:flex;flex-direction:column;background:rgba(5,5,8,.97);padding:16px 20px;gap:10px}.nav-mobile a{color:#cfd6e6;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);display:block}.nav-mobile .mob-label{color:#d4af37;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:10px 0 4px}}
+</style>
+<!-- LCP-Fix 2026-06-12: pagead2 preconnect removed (was triggering CMP early, blocking FCP). dns-prefetch below is sufficient. -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://mbcapitalstrategies.com/blog/archiv.html" />
+    <!-- AB-CHALLENGER (active 2026-06-27): Dividenden Blog 2026: Shipping, Mining & Hard-Asset-Analysen -->
+  <title>Blog-Archiv: alle Analysen von MB Capital Strategies</title>
+  <meta name="description" content="Vollstaendiges Archiv aller Beitraege von Marco Bozem: Aktienanalysen, Wochenrueckblicke und Hard-Asset-Strategien, nach Jahr sortiert.">
+  <meta name="author" content="Marco Bozem">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog-Archiv: alle Analysen von MB Capital Strategies">
+  <meta property="og:description" content="Vollstaendiges Archiv aller Beitraege von Marco Bozem: Aktienanalysen, Wochenrueckblicke und Hard-Asset-Strategien, nach Jahr sortiert.">
+  <meta property="og:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta property="og:image:alt" content="Dividenden Blog 2026: Shipping, Mining & Hard-Asset-Analysen | MB Capital Strategies">
+  <meta property="og:url" content="https://mbcapitalstrategies.com/blog/archiv.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="MB Capital Strategies">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog-Archiv: alle Analysen von MB Capital Strategies">
+  <meta name="twitter:description" content="Vollstaendiges Archiv aller Beitraege von Marco Bozem: Aktienanalysen, Wochenrueckblicke und Hard-Asset-Strategien, nach Jahr sortiert.">
+  <meta name="twitter:image" content="https://mbcapitalstrategies.com/assets/og-dividenden.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+  <meta name="twitter:image:alt" content="Blog: Dividenden, Hard Assets &amp; Aktienanalysen | MB Capital Strategies">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "MB Capital Strategies Blog",
+  "url": "https://mbcapitalstrategies.com/blog/",
+  "description": "Aktienanalysen, Rohstoffe, Shipping, Dividenden & Hard Assets von Marco Bozem.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person",
+    "name": "Marco Bozem",
+    "jobTitle": "Unabhängiger Investor & Finanz-Analyst",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  }
+}
+</script>
+
+  <!-- Premium Design System -->
+  <!-- Critical inline CSS for LCP text render (Batch 137) -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J1NWEPPKNE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  var mbcsExistingConsent = (function(){ try { return localStorage.getItem('mbcs_consent_v1'); } catch(e) { return null; } })();
+    gtag('consent', 'default', {
+    'ad_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'analytics_storage': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_user_data': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied'),
+    'ad_personalization': (mbcsExistingConsent === 'granted' ? 'granted' : 'denied')
+  });
+  gtag('config', 'G-J1NWEPPKNE');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Blog: Dividenden, Hard Assets &amp; Aktienanalysen | MB Capital",
+  "description": "Aktienanalysen, Dividendenstrategien & Hard-Asset-Reports von Marco Bozem: Mining, Shipping, Energie, BDCs & Rohstoff-Zyklen – fundiert & datenbasiert.",
+  "thumbnailUrl": "https://img.youtube.com/vi/Mmdlhudobww/maxresdefault.jpg",
+  "uploadDate": "2026-01-01",
+  "embedUrl": "https://www.youtube.com/embed/Mmdlhudobww",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "url": "https://mbcapitalstrategies.com",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://mbcapitalstrategiesglobal.com/"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mbcapitalstrategies.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategies.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Blog: Dividenden, Hard Assets &amp; Aktienanalysen | MB Capital",
+      "item": "https://mbcapitalstrategies.com/blog/index.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog – Dividenden, Hard Assets & Aktienanalysen",
+  "description": "Alle Aktienanalysen, Wochenrückblicke und Depot-Updates von Marco Bozem — Shipping, Mining, Energie, REITs & Dividendenaktien.",
+  "url": "https://mbcapitalstrategies.com/blog/index.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://mbcapitalstrategies.com/ueber-marco-bozem/#person",
+    "name": "Marco Bozem",
+    "url": "https://mbcapitalstrategies.com/ueber-marco-bozem/",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategies.com/#organization",
+    "name": "MB Capital Strategies",
+    "url": "https://mbcapitalstrategies.com",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://mbcapitalstrategiesglobal.com/"
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was schreibt der MB Capital Strategies Blog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der MB Capital Blog deckt Analyse zu Dividenden-Aktien, Shipping, Mining und Energie ab. Fokus: Hard Assets, Tanker-Aktien, Rohstoff-Superzyklus, praktische Rechner und echte Portfolio-Einblicke von Marco Bozem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Aktien werden im MB Capital Blog analysiert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schwerpunkte: Shipping (TORM, CMB.Tech, FLEX LNG, Hafnia), Mining (BHP, Glencore, Thungela), Upstream-Öl (Harbour Energy, Cardinal Energy, InPlay Oil) und Dividenden-Infrastruktur (Enbridge, TORM, Realty Income)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Blog kostenlos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, alle Blog-Analysen sind kostenlos. Detaillierte Quartalszahlen und Depot-Updates gibt es im Premium-Newsletter. Der Blog ist die öffentliche Wissensbasis — ohne Login, ohne Paywall."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie oft erscheinen neue Beiträge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neue Analysen erscheinen mehrmals wöchentlich, besonders zu Earnings-Saisons und bei relevanten Nachrichten zu Shipping, Mining oder Energie. Wochenrückblicke erscheinen jeden Sonntag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer schreibt den MB Capital Blog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marco Bozem — Investor mit Fokus auf Hard Assets und Dividenden. Seit Jahren im Shipping- und Mining-Sektor investiert. Alle Analysen basieren auf öffentlich verfügbaren Daten; keine Anlageberatung."
+      }
+    }
+  ]
+}
+</script>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+  <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+<!-- CLS-Ad-Reservation-Sweep 2026-07-10 web-design-agent: inline min-height fallback -- nav.js injects the same rule but only after defer-script execution, which reflows already-laid-out ins.adsbygoogle elements (late shift). Inline <style> in <head> guarantees the reserved space exists at first paint, zero visual change for filled slots. -->
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}[id^="google_anchor"],.gad-anchor-container{display:none!important}ins.adsbygoogle[data-anchor-shown="true"]{display:none!important}</style>
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/archiv.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/blog-archive.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/archiv.html">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     PREMIUM NAVIGATION
+═══════════════════════════════════════════════════════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="/">Startseite</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Themen-Menü öffnen">Themen ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">🚢 Shipping</a>
+          <a href="/midstream/">🛢️ Pipelines / Midstream</a>
+          <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+          <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+          <hr>
+          <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+          <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+          <hr>
+          <a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>
+          <a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>
+          <a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Podcast-Menü öffnen">Podcast ▾</button>
+        <div class="dropdown-content">
+          <a href="/podcast/">🎧 Alle Podcasts</a>
+          <hr>
+          <a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>
+          <a href="/podcast/mein-weg-zur-dividendenstrategie-2025.html">💰 Dividenden-Journey</a>
+          <a href="/podcast/timing-ist-alles-dividendenstrategie-podcast-2025.html">⏱️ Timing & Zyklen</a>
+          <hr>
+          <a href="/podcast/maritime-investments-schifffahrtsaktien-2025.html">🚢 Maritime / Shipping</a>
+          <a href="/podcast/bdc-aktien-erklaert-2025.html">🏦 BDC Aktien</a>
+          <a href="/podcast/mining-serie-high-dividend-ressourcen-2025-2028.html">⛏️ Mining Serie</a>
+        </div>
+      </div>
+
+      <a href="/blog/" class="nav-highlight">Blog</a>
+      <a href="/rechner/">Rechner</a>
+      <a href="/investing-analysen.html">Investing.com</a>
+
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/glossar/">Glossar</a>
+      <a href="/finanzbildung.html">Finanzbildung</a>
+      <a href="/werbung.html">Partner</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Startseite</a>
+    <a href="/depot-strategie/">Depot-Strategie</a>
+    <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    <div class="mob-label">Themen</div>
+    <a href="/shipping/">🚢 Shipping</a>
+    <a href="/midstream/">🛢️ Midstream / Pipelines</a>
+    <a href="/mining-aktien/">⛏️ Mining Aktien</a>
+    <a href="/upstream-aktien/">🛢️ Upstream Aktien</a>
+    <a href="/kategorien/high-yield-aktien.html">💰 High-Yield Aktien</a>
+    <a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/podcast/">🎙️ Podcast</a>
+    <a href="/rechner/">📊 Rechner</a>
+    <a href="/investing-analysen.html">🔗 Investing.com</a>
+
+    <a href="/toolbox.html">🧰 Toolbox</a>
+    <a href="/glossar/">📗 Glossar</a>
+    <a href="/werbung.html">🤝 Werbung &amp; Partner</a>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <!-- ═══════════════════════════════════════════════════════
+       PAGE HEADER
+  ═══════════════════════════════════════════════════════ -->
+    <section class="page-header reveal">
+    <span class="section-label">Blog-Archiv: alle Analysen von MB Capital Strategies</span>
+    <h1>Blog-Archiv — alle Beiträge</h1>
+    <p>Jeder Beitrag, den ich je veröffentlicht habe, nach Jahr sortiert. Die <a href="/blog/" style="color:#d4af37">Blog-Übersicht</a> zeigt eine Auswahl nach Themen — hier steht wirklich alles.</p>
+    <p style="margin:10px 0 0;font-size:.9rem;color:#8a92a8">235 Beiträge</p>
+  </section>
+  <section class="reveal" style="margin:0 0 40px">
+    <h2 style="margin:0 0 14px;font-size:clamp(1.3rem,2.2vw,1.7rem);color:#d4af37">2026 <span style="font-size:.62em;color:#8a92a8;font-weight:400">163 Beiträge</span></h2>
+    <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">03.09.2026</span><a href="/blog/hard-asset-markt-puls-september-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hard Asset Markt-Puls September 2026 — Shipping, Energie &amp; Mining im Check</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">24.08.2026</span><a href="/blog/wochenrueckblick-kw34-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW34 Rückblick: Brent +5,5%, Gold +2,5%</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.08.2026</span><a href="/blog/wochenrueckblick-kw33-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW33: Öl +6 %, Frachtraten −8 %</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">13.08.2026</span><a href="/blog/wochenrueckblick-kw31-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW31 Rückblick: BP verkauft Nordsee nach 60 Jahren</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.08.2026</span><a href="/blog/wochenrueckblick-kw32-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW32: Metalle +14 %, Öl runter — Gold-Rally</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">04.08.2026</span><a href="/blog/link-reit-0823-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Link REIT Analyse 2026: 32% Abschlag, 6,5% Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.08.2026</span><a href="/blog/kursdrucksetzer-hebel-yield-on-cost-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kursdrucksetzer-Hebel: YOC bei fallendem Kurs erhöhen</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">27.07.2026</span><a href="/blog/wochenrueckblick-kw30-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW30 Rückblick: Brent &gt;100$, Tanker, Sonderdivi</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.07.2026</span><a href="/blog/chokepoint-oekonomie-hormus-bab-al-mandeb-oel-inflation-shipping-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Chokepoint-Ökonomie: Hormus &amp; Bab al-Mandeb 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">22.07.2026</span><a href="/blog/kumba-iron-ore-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kumba Iron Ore 2026: 12,8% Dividende — Geschenk oder Falle?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">21.07.2026</span><a href="/blog/tankerzyklus-late-cycle-signale-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Tankerzyklus 2026: Rekordraten &amp; Late-Cycle-Signal</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.07.2026</span><a href="/blog/wochenrueckblick-kw29-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW29 2026: 127.000$/Tag — Tanker explodieren</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">19.07.2026</span><a href="/blog/oel-gas-earnings-woche-21-24-juli-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Öl-Earnings-Woche 21.–24. Juli: 5 Berichte, Brent $86</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">18.07.2026</span><a href="/blog/kupfer-2035-superzyklus-angebotslücke.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kupfer 2035: Superzyklus &amp; 30 % Angebotslücke</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">17.07.2026</span><a href="/blog/hormuz-eskalation-oel-earnings-woche-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hormuz-Eskalation trifft Öl-Earnings-Woche: Brent bei $84,73</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.07.2026</span><a href="/blog/aker-bp-q2-2026-ergebnisse-beat.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Aker BP Q2 2026: Beat, Dividende bestätigt</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">13.07.2026</span><a href="/blog/depot-update-juli-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Shipping-Depot Juli 2026: 24.012 €</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.07.2026</span><a href="/blog/wochenrueckblick-kw28-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW28: Brent +5,6%, BDI +8,3% — Shipping</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.07.2026</span><a href="/blog/wochenrueckblick-kw27-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW27 2026: Shipping-M&amp;A-Welle &amp; DAX-Rekord</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">11.07.2026</span><a href="/blog/car-carrier-vs-tanker-bewertung-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Car-Carrier-Prämie vs. Tanker-Discount 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.07.2026</span><a href="/blog/growthpoint-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Growthpoint-Aktie: 10% Dividende &amp; das Rand-Risiko</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">09.07.2026</span><a href="/blog/duration-check-zinsen-sektoren-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Zinsen &amp; Aktien: Der 3-Fragen-Check für REITs &amp; Shipping</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">09.07.2026</span><a href="/blog/depot-update-juni-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update Juni 2026: 1.142 € Dividende trotz −5,6 % Kurs</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">03.07.2026</span><a href="/blog/farmland-partners-reit09-dividende-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Farmland Partners (FPI): 3,6% Div — trotzdem kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.07.2026</span><a href="/blog/equinor-transocean-milliarden-deal-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Equinor baut aus: 1-Mrd-Dollar-Deal mit Transocean</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/stag-industrial-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">STAG Industrial 2026: Quartalsrekord — trotzdem kein Kauf</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/realty-income-hyperscale-data-center-jv-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Realty Income: 6-Mrd-Data-Center-JV mit Cloud Capital (O)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/pfizer-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Pfizer Aktie 2026: 7,1% Dividende – Value Trap?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/omega-healthcare-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Omega Healthcare (OHI): 6 Jahre 0% Erhöhung — Gefahr?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/iipr-innovative-industrial-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">IIPR Aktie: 12% Dividende gedeckt? Cannabis-REIT</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/gladstone-land-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Gladstone Land 2026: 6,6% Rendite, Kurs -29%</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/farmland-partners-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Farmland Partners (FPI): NAV-Discount — Einstieg?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/ellington-financial-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Ellington Financial (EFC): 11,5 % Dividende — mein Take</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/cvs-health-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">CVS Health: 190% Payout — kommt der Dividenden-Cut?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/baxter-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Baxter Aktie 2026: 94% Divi-Kürzung — Turnaround?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/arbor-realty-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Arbor Realty (ABR): 13% Dividende — was steckt dahinter?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2026</span><a href="/blog/agnc-investment-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">AGNC Investment 2026: 13% Yield — was die Dividende kostet</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">29.06.2026</span><a href="/blog/thungela-kohle-zyklus-kw27-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Thungela (TGA): Kohle-Zyklus 2026 im KW27-Check</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">29.06.2026</span><a href="/blog/hard-assets-kw35-oel-fracht-august-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hard Assets KW35: Öl stabil, Frachtraten im Dip</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">28.06.2026</span><a href="/blog/wochenrueckblick-kw26-2026-hormuz-tanker.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW26 2026: Hormuz öffnet — Tanker-Depot −8 %</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">27.06.2026</span><a href="/blog/mining-kapitalallokation-superzyklus-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Mining-Kapitalallokation 2026: BHP, Rio Tinto &amp; Vale</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">26.06.2026</span><a href="/blog/ex-dividend-triple-30juni-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Ex-Dividende 30.06.2026: O, TRP, TTE — letzter Kauftag</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">21.06.2026</span><a href="/blog/uran-superzyklus-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Uran 2026: 70 neue Reaktoren + Kazatomprom kürzt — Chance?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.06.2026</span><a href="/blog/bhp-jansen-writedown-mining-kapital-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BHP Jansen-Abschreibung 2,3 Mrd. USD: Kupfer-Chance 2026?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">19.06.2026</span><a href="/blog/wochenrueckblick-kw25-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW25 2026: Hormuz + Depot-Update</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">19.06.2026</span><a href="/blog/hormuz-contrarian-tanker-cashflow-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hormuz: CMBT &amp; TORM Dividenden sicher — Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">18.06.2026</span><a href="/blog/fomc-juni-2026-nach-entscheid-hard-assets.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">FOMC Juni 2026: Hard Assets, Shipping &amp; REITs — mein Fazit</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.06.2026</span><a href="/blog/shipping-zyklus-hormuz-strukturelle-knappheit-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Shipping-Zyklus 2026: Hormuz + Flottenüberalterung erklärt</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.06.2026</span><a href="/blog/hormuz-tankerrate-anstieg-shipping-aktien-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hormuz +24% Tankerrate 2026: TORM, CMB.Tech, Dorian LPG</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">14.06.2026</span><a href="/blog/wochenrueckblick-kw24-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW24 Rückblick: Öl −6%, Tanker steigen, Depot</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.06.2026</span><a href="/blog/fomc-juni-2026-zinsen-hold-dividenden.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">FOMC Juni 2026: Fed hält — Gut für Hard-Asset-Dividenden?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.06.2026</span><a href="/blog/fomc-juni-2026-hard-assets-zinsen.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">FOMC Juni 2026: Fed hält 3,5% — Shipping, REITs &amp; Pipelines</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">11.06.2026</span><a href="/blog/ezb-zinsentscheid-juni-2026-hard-assets.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">EZB hebt auf 2,25% — Hard-Asset-Aktien im Vorteil 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.06.2026</span><a href="/blog/shipping-dividenden-ex-date-juni-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Shipping Ex-Dates Juni 2026: BWLPG + FRO Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">07.06.2026</span><a href="/blog/wochenrueckblick-kw23-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW23: CMB.Tech $0,64 Dividende + TORM $0,70 + OPEC+</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">07.06.2026</span><a href="/blog/ex-date-mechanik-shipping-dividenden-juni-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Ex-Date Mechanik: Kursverlust am Ex-Tag — kein Warnsignal</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">06.06.2026</span><a href="/blog/opec-juni-2026-tanker-aktien.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">OPEC+ erhöht Produktion: Sinkende Tanker-Dividenden 2026?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.06.2026</span><a href="/blog/torm-dividende-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">TORM Dividende 2026: $0,70/Quartal — FCF deckt sie (Analyse)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.06.2026</span><a href="/blog/shipping-dividenden-doppelzahltag-juni-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Doppelzahltag 11. Juni: TORM + FLEX LNG Dividenden Juni 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">04.06.2026</span><a href="/blog/cmb-tech-ex-dividende-juni-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">CMB.Tech: $0,64 Dividende — Was nach dem Ex-Tag passiert</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">03.06.2026</span><a href="/blog/flex-lng-q1-2026-analyse-dividende.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">FLEX LNG 2026: 9% Dividende — lohnt sich die Aktie noch?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.06.2026</span><a href="/blog/sell-in-may-mythos-oder-signal-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Sell in May 2026: Daten aus 108 Märkten — Mythos?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.06.2026</span><a href="/blog/bw-lpg-q1-2026-ergebnis-recap.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BW LPG Q1 2026: $0,67 Dividende, Q2-Ausblick $81k/Tag</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.06.2026</span><a href="/blog/bw-lpg-q1-2026-quartalszahlen-dividende.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BW LPG Q1 2026: $0,67 Dividende &amp; Cash-Flow-Check</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.06.2026</span><a href="/blog/bester-aktien-newsletter-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Bester Aktien Newsletter Deutsch 2026: Dividenden &amp; Shipping</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.06.2026</span><a href="/blog/bw-lpg-q1-2026-earnings-preview.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BW LPG Q1 2026: $0,67 Dividende + VLGC $55.500 TCE</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">31.05.2026</span><a href="/blog/wochenrueckblick-kw22-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW22 2026: BW LPG $940M + HAUTO kr4,55 — Shipping-Fazit</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">29.05.2026</span><a href="/blog/hafnia-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hafnia (HAFNI) 2026: 8% Dividende — Besser als TORM?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">29.05.2026</span><a href="/blog/anglogold-dividend-turbo-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">AngloGold Ashanti 2026: Rekord-FCF &amp; 8% Dividende (AU)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">24.05.2026</span><a href="/blog/wochenrueckblick-kw21-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">ZIM Übernahme $35/Aktie + INSW $4,55 Sonderdivid. — KW21</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">14.05.2026</span><a href="/blog/bayer-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Bayer Aktie 2026: Q1-Beat, €35–€60 Kursziel — kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.05.2026</span><a href="/blog/baltic-dry-index-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Baltic Dry Index 2026: Kaufsignal für Bulker-Dividenden?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">09.05.2026</span><a href="/blog/wochenrueckblick-kw19-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW19 2026: Hard Assets &amp; Depot-Update</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">07.05.2026</span><a href="/blog/depot-update-april-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update April 2026: 358€ Dividenden + Hard-Asset-Aufbau</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.05.2026</span><a href="/blog/fredriksen-vs-saverys-shipping-zwei-visionen-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Fredriksen vs. Saverys 2026: Zwei Shipping-Visionen im Duell</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">04.05.2026</span><a href="/blog/wochenrueckblick-kw18-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Öl $110 + Tanker ATH: Rohstoff-Wochenrückblick KW18 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">04.05.2026</span><a href="/blog/shipping-konsolidierung-welle-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Shipping M&amp;A 2026: Hafnia/TORM, Hapag/ZIM — Dividende?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">04.05.2026</span><a href="/blog/novo-nordisk-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Novo Nordisk 2026: -54% Crash — KGV 11x, kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">04.05.2026</span><a href="/blog/mpw-reit-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">MPW Analyse 2026: 7,4% Dividende nach Cut — Comeback?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.05.2026</span><a href="/blog/realty-income-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Realty Income 2026: 5,2% Yield + Apollo-Deal — Analyse (O)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.04.2026</span><a href="/blog/mpw-medical-properties-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Medical Properties MPW 2026: 7,4% Dividende — Comeback?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">29.04.2026</span><a href="/blog/upstream-finale-26-aktien-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">26 Öl-Aktien: Welche 5 sind 2026 einen Kauf wert? (9%+ Div)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">28.04.2026</span><a href="/blog/wochenrueckblick-kw17-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">FOMC + Earnings-Tsunami | Wochenrückblick KW17 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">22.04.2026</span><a href="/blog/horizon-oil-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Horizon Oil HZN 2026: 12% Dividende — Yield Trap?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">21.04.2026</span><a href="/blog/wochenrueckblick-kw16-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW16 2026: Öl -10%, S&amp;P 7.000 ATH</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.04.2026</span><a href="/blog/10-high-yield-dividendenaktien-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">10 High-Yield Dividendenaktien 2026: 10%+ wirklich sicher?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.04.2026</span><a href="/blog/zwangsdividenden-reits-bdc-mlp-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Zwangsdividenden 2026: REITs, BDCs &amp; MLPs zahlen per Gesetz</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">13.04.2026</span><a href="/blog/wochenrueckblick-kw15-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">VLCC $400k/Tag &amp; CPI 3,3% — KW15 2026 Marktanalyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.04.2026</span><a href="/blog/serica-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Serica Energy (SQZ) 2026: 6% Dividende trotz 165% Steuer</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.04.2026</span><a href="/blog/riley-exploration-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Riley Exploration REPX 2026: KGV 4,6 &amp; 43% NAV-Abschlag</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.04.2026</span><a href="/blog/inplay-oil-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">InPlay Oil IPO: 8% Monatsdividende aus Alberta 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">12.04.2026</span><a href="/blog/depot-update-maerz-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update März 2026: Dividendenaktien &amp; Nachkäufe</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">11.04.2026</span><a href="/blog/finanzfeuer-talk-april-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Finanzfeuer Talk April 2026: Hard Assets outperformen</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.04.2026</span><a href="/blog/totalenergies-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">TotalEnergies TTE 2026: 5% Dividende + LNG-Wachstum</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.04.2026</span><a href="/blog/rohstoff-zyklus-kaufzeitpunkt-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Rohstoff Superzyklus 2026: Jetzt kaufen? Öl, Mining, Gas</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">09.04.2026</span><a href="/blog/hoegh-autoliners-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Höegh Autoliners HAUTO 2026: 15% Yield, KGV 5 — kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">06.04.2026</span><a href="/blog/wochenrueckblick-kw14-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Gold $3.450 ATH + Tanker-Raten ATH: Markt KW14 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.04.2026</span><a href="/blog/36-aktien-nachkaufen-watchlist-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Dividendenaktien Nachkaufliste 2026: 36 Picks YOC ≥6%</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.04.2026</span><a href="/blog/suedzucker-ethanol-oelpreis-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Südzucker 2026: +6% durch Ölpreis-Ethanol-Effekt — Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.04.2026</span><a href="/blog/riley-exploration-permian-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Riley Exploration REPX 2026: 4,5% Dividende — kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.03.2026</span><a href="/blog/finanzfeuer-talk-maerz-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Öl +30% &amp; Gold $3.000 März 2026 — Finanzfeuer Talk</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.03.2026</span><a href="/blog/wochenrueckblick-kw13-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Brent 112$ &amp; Hormuz-Krise: KW13 2026 Tanker-Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">27.03.2026</span><a href="/blog/total-gabon-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Total Gabon 2026: 8,5% Dividende — TTE-Tochter Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">25.03.2026</span><a href="/blog/dno-asa-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">DNO ASA Aktie: 9,5% Dividende, günstigster Nordsee-Öl</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">24.03.2026</span><a href="/blog/conocophillips-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">ConocoPhillips 2026: 17J Reserven &amp; 4,5% Dividende — Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.03.2026</span><a href="/blog/wochenrueckblick-kw12-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Marktausblick KW12 2026: Brent $108, Iran &amp; Tanker-Signal</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">22.03.2026</span><a href="/blog/energean-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Energean 2026: 10% Dividende + Mittelmeer-Gas — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.03.2026</span><a href="/blog/chevron-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Chevron CVX: 4% Dividende, 39 Wachstumsjahre — kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">19.03.2026</span><a href="/blog/petrotal-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">PetroTal Aktie (TAL): 9% Dividende &amp; 70% NAV-Rabatt 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">17.03.2026</span><a href="/blog/var-energi-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Var Energi (VAR) 2026: 12% Dividende — Nordsee kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.03.2026</span><a href="/blog/wochenrueckblick-kw11-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Öl über 100$ &amp; Gold 5.000$ KW11 2026 — Superzyklus?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.03.2026</span><a href="/blog/glencore-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Glencore 2026: KGV 7, 6% Dividende — Kupfer-Boom-Profiteur?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">11.03.2026</span><a href="/blog/harbour-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Harbour Energy HBR: 18% FCF-Yield — Kaufen oder meiden?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">09.03.2026</span><a href="/blog/wochenrueckblick-kw10-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW10 2026: Brent $80+, Iran &amp; Shipping</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.03.2026</span><a href="/blog/frontline-vs-scorpio-tankers-vergleich-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Tanker Aktien 2026: Frontline vs Scorpio Vergleich</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.03.2026</span><a href="/blog/coterra-vs-devon-energie-vergleich-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Coterra vs Devon Energy 2026: Welcher US-Upstream gewinnt?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.03.2026</span><a href="/blog/tanker-charterraten-sanktionen-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Charterraten Produktentanker 2026: MR $22k, LR2 $35k/Tag</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.03.2026</span><a href="/blog/barrick-gold-vs-newmont-vergleich-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Barrick Gold vs Newmont 2026: AISC, Free Cash Flow &amp; Dividendenvolumen im Check</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.03.2026</span><a href="/blog/bhp-vs-rio-tinto-vergleich-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BHP vs Rio Tinto: Kupfer, Dividende &amp; Cashflow 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">03.03.2026</span><a href="/blog/ecopetrol-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Ecopetrol (EC) 2026: 16% Dividende, KGV 8 — lohnt sich EC?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.03.2026</span><a href="/blog/wochenrueckblick-kw09-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wochenrückblick KW9 2026: Iran-Krise, Brent &amp; Tanker-Signal</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.03.2026</span><a href="/blog/oelreserven-venezuela-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Venezuela Ölreserven 2026: 303 Mrd. Barrel, nur 900k bpd</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.03.2026</span><a href="/blog/kredit-hebeln-zyklus-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kredit für Hard Assets 2026: Hebeln im Rohstoff-Zyklus?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.03.2026</span><a href="/blog/depot-update-februar-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update Feb 2026: +8,96% Dividenden-Depot</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">25.02.2026</span><a href="/blog/petrobras-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Petrobras Aktie 2026: KGV 4, 8% Dividende — günstig?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">25.02.2026</span><a href="/blog/newmont-update-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Newmont 2026: $3,1 Mrd FCF, -10% Gold — zu teuer?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">25.02.2026</span><a href="/blog/debitum-investments-realitaetscheck-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Debitum Investments: 15% P2P seriös? Ehrlicher Test</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.02.2026</span><a href="/blog/markt-news-container-kupfer-februar-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Markt-News Februar 2026: Kupfer-Rally &amp; Container-Mega-Deal</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.02.2026</span><a href="/blog/marktbericht-kw08-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">KW08 2026: Container-Deal, Kupfer-Rally &amp; Dividenden-Check</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">17.02.2026</span><a href="/blog/shipping-konsolidierung-avance-bw-lpg-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Shipping-Konsolidierung 2026: CMB.Tech, BW LPG, Avance Gas</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.02.2026</span><a href="/blog/marktbericht-kw07-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Devon/Coterra Fusion &amp; CPI: Marktbericht KW07 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.02.2026</span><a href="/blog/devon-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Devon Energy 2026: 10% FCF-Yield + variable Dividende (DVN)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.02.2026</span><a href="/blog/markt-news-cpi-devon-ctra-februar-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">CPI + Devon/CTRA-Deal + Hapag-ZIM: Markt-News Feb 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">14.02.2026</span><a href="/blog/eni-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">ENI Aktie 2026: 6-8% Dividende, KGV 7, LNG-Wachstum</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">13.02.2026</span><a href="/blog/panoro-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Panoro Energy (PEN) 2026: 18% FCF-Yield &amp; 7% Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">13.02.2026</span><a href="/blog/cardinal-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Cardinal Energy (CJ) 2026: 6-7% Dividende monatlich + KGV 5x</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.02.2026</span><a href="/blog/repsol-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Repsol Aktie 2026: 10% Dividende + Buyback | KGV 5</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.02.2026</span><a href="/blog/marktbericht-kw05-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">OPEC-Entscheidung &amp; Dividenden: Marktbericht KW05 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.02.2026</span><a href="/blog/coterra-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Coterra Energy 2026: 4% Dividende + $2,5B Buyback</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.02.2026</span><a href="/blog/aker-bp-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Aker BP: 8% Dividende, $35 Breakeven — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.02.2026</span><a href="/blog/apa-aktie-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">APA Corporation 2026: KGV 8 &amp; 12% FCF — Öl-Schnäppchen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.02.2026</span><a href="/blog/south32-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">South32 Aktie 2026: Kupfer-Wachstum + 4% Dividende — Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.02.2026</span><a href="/blog/finanzfeuer-talk-4-hard-assets-vs-tech.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Hard Assets vs. Tech-Aktien: Welcher Sektor gewinnt 2026?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.02.2026</span><a href="/blog/depot-update-januar-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot Januar 2026: 208 € Dividenden + Portfolio-Meilenstein</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.01.2026</span><a href="/blog/omv-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">OMV Aktie 2026: 6% Dividende, KGV 8, ADNOC-Support</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.01.2026</span><a href="/blog/equinor-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Equinor (EQNR) 2026: ~7% Rendite — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">27.01.2026</span><a href="/blog/woodside-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Woodside Energy 2026: 8% LNG-Dividende — Kauffall?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/mining-aktien-ueberblick-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Mining Aktien 2026: Gold, Kupfer &amp; Kohle kaufen? 22 Analysen</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/jiangxi-copper-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Jiangxi Copper (358.HK) 2026: 3% Div + Kupfer-Boom</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/indo-tambangraya-megah-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Indo Tambangraya Megah 2026: 12%+ Kohle-Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/gerdau-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Gerdau (GGB) 2026: 7% Dividende + KGV 5x — kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/fresnillo-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Fresnillo 2026: Lohnt sich der Silber-Cashflow?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/exxaro-resources-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Exxaro Resources 2026: 9%+ Dividende, Kohle-Cashflow (EXX)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/central-asia-metals-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Central Asia Metals (CAML): 7% Dividende — Kupfer &amp; Zink</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/barrick-gold-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Barrick Gold Analyse 2026: Dividende, Kupfer &amp; Bewertung</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/b2gold-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">B2Gold (BTG) 2026: ~2% Dividende + Mali-Risiko — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">23.01.2026</span><a href="/blog/anglogold-ashanti-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">AngloGold Ashanti Analyse 2026: Gold, Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">22.01.2026</span><a href="/blog/valterra-platinum-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Valterra Platinum (VLTA) 2026: 8% Dividende im PGM-Tief</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">22.01.2026</span><a href="/blog/suncoke-energy-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">SunCoke Energy 2026: 6% Dividende &amp; Met-Kohle-Cashflow</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.01.2026</span><a href="/blog/finanzfeuer-talk-3-januar-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Finanzfeuer Talk 3: Hard Assets, Gold &amp; Geopolitik 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.01.2026</span><a href="/blog/quellensteuer-kanada-australien.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Australien Quellensteuer auf Dividenden zurückholen</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.01.2026</span><a href="/blog/anglogold-ashanti-analysis-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">AngloGold Ashanti (AU) 2026: $1.800/oz Marge — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.01.2026</span><a href="/blog/oneok-analysis-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">ONEOK 2026: 5,5% Dividende &amp; Midstream-Pipeline-Cashflow</a></li>
+    </ul>
+  </section>
+  <section class="reveal" style="margin:0 0 40px">
+    <h2 style="margin:0 0 14px;font-size:clamp(1.3rem,2.2vw,1.7rem);color:#d4af37">2025 <span style="font-size:.62em;color:#8a92a8;font-weight:400">72 Beiträge</span></h2>
+    <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">31.12.2025</span><a href="/blog/depot-update-dezember-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Dividenden-Depot Dezember 2025: 76.965€ — Jahresabschluss</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">22.12.2025</span><a href="/blog/parqet-wrapped-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Jahresrückblick 2025: High-Yield &amp; Cashflow-Bilanz</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.12.2025</span><a href="/blog/pipeline-serie-finale-vergleich-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Enbridge vs Pembina vs TC Energy: Welche 7% Pipeline?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.12.2025</span><a href="/blog/yancoal-australia-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Yancoal (YAL) 2026: 11% Dividende, KGV unter 4 — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.12.2025</span><a href="/blog/shipping-zyklus-sanktionen-frachtraten.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Tankeraktien 2026: Sanktionen &amp; Frachtraten — TORM, CMB.Tech</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.12.2025</span><a href="/blog/kazatomprom-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kazatomprom 2026: 43% Uran-Monopol — Kasachstan-Risiko?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.12.2025</span><a href="/blog/angloamerican-analyse.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Anglo American Aktie 2026: Kupfer-Turnaround + Dividende?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.12.2025</span><a href="/blog/mein-weg-zur-finanziellen-freiheit.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Finanzielle Freiheit aufbauen: Dividenden-Strategie 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.12.2025</span><a href="/blog/pipeline-serie-teil3-enbridge-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Enbridge (ENB) 2026: 6,5% Dividende — Nordamerikas Pipeline</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.12.2025</span><a href="/blog/pipeline-serie-teil2-tc-energy-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">TC Energy (TRP) 2026: 5% Dividende, Pipelines &amp; LNG-Wachstum</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.12.2025</span><a href="/blog/wise-airalo-vietnam-erfahrungen.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Wise &amp; Airalo Vietnam: Günstig zahlen &amp; eSIM — Stand 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.12.2025</span><a href="/blog/vale-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Vale 2026: ~5,5% Dividende + Kupfer-Wachstum — Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.12.2025</span><a href="/blog/rio-tinto-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Rio Tinto Dividende &amp; Quellensteuer: YOC + Kupferzyklus</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.12.2025</span><a href="/blog/fortescue-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Fortescue FMG 2026: 7% Dividende + Eisenerz-Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.12.2025</span><a href="/blog/bhp-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BHP Aktie 2026: 3,5% Dividende, Kupfer — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.12.2025</span><a href="/blog/alle-finanzrechner.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">YOC-Rechner + Dividendenrechner 2026 — 7 Tools kostenlos</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.12.2025</span><a href="/blog/pipeline-serie-teil1-pembina-pipeline-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Pembina Pipeline 2026: 5,5% Dividende — Kanada Midstream</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">02.12.2025</span><a href="/blog/green-shipping-2026-groesste-transformation-der-schifffahrt-seit-50-jahren.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Green Shipping 2026: ETS-Kosten + ECO-Flotten-Gewinner</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.12.2025</span><a href="/blog/shipping-cashflow-rechner.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">TCE-Rechner 2026: Shipping Cashflow &amp; Break-Even Tool</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.11.2025</span><a href="/blog/depot-update-november-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update Nov 2025: 74.600€ — High-Yield Dividenden</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.11.2025</span><a href="/blog/rohstoff-superzyklus-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Rohstoff Superzyklus 2026: Jetzt kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.11.2025</span><a href="/blog/hidden-champions-shipping-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Reederei-Aktien Dividende 2026: 3 Hidden Champions mit 8%+</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.11.2025</span><a href="/blog/newmont-mining-serie-12.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Newmont Aktie 2026: 4% Dividende + Rekord-FCF — kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.11.2025</span><a href="/blog/oneok.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">ONEOK Aktie 2026: 5% Dividende &amp; Pipeline-Wachstum</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.11.2025</span><a href="/blog/kazatomprom-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kazatomprom 2026: Uran-Aktie mit 7%+ Dividende — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">08.11.2025</span><a href="/blog/shipping-tanker-mixedfleet-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Tanker-Aktien 2026: Hafnia, DHT &amp; Ardmore — 7–15% Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.11.2025</span><a href="/blog/shipping-6-aktien-depot-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">6 Schifffahrtsaktien 2026: 12% Dividende | Tanker &amp; LNG</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.11.2025</span><a href="/blog/bdc-duell-2025-crescent-vs-blue-owl.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BDC-Duell 2026: Crescent vs Blue Owl — 12% Yield</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.11.2025</span><a href="/blog/bdc-erklaert-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BDC Aktien: 8–12% Dividende — ARCC, MAIN, OFS lohnend?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">31.10.2025</span><a href="/blog/depot-update-oktober-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update Oktober 2025: 160€ Dividenden — Hard Assets</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">25.10.2025</span><a href="/blog/dividendenaktien-5-stabil-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">5 Dividendenaktien 2026: 6-12% Cashflow trotz Krise</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.10.2025</span><a href="/blog/krypto-depot-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Krypto-Depot 2025: BTC +158%, XRP +199%, BNB +129%</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.10.2025</span><a href="/blog/dividendenaktien-10prozent-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">10 Dividendenaktien 10%+ Rendite: Shipping &amp; Mining 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.10.2025</span><a href="/blog/shipping-3-aktien-lng-tanker-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">FLEX LNG, TORM, BW LPG: 3 Shipping mit 10%+</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.10.2025</span><a href="/blog/bdc-dividendenaktien-2025-newtek-vs-hercules.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BDC Dividendenaktien 2026: Newtek vs Hercules — 12% Rendite?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">10.10.2025</span><a href="/blog/shipping-3-aktien-10prozent-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">3 Schifffahrtsaktien 10%+ Dividende — Tanker &amp; Bulk 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.10.2025</span><a href="/blog/whitehaven-coal-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Whitehaven Coal 2026: YOC ≥8% möglich? Analyse &amp; Risiken</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.10.2025</span><a href="/blog/finanzfeuer-talk-2-dividenden-vs-growth.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Dividenden vs. Growth: Finanzfeuer Talk #2 — Was gewinnt?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.10.2025</span><a href="/blog/10-high-yield-dividendenaktien-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">10 Dividendenaktien mit 10%+ Yield 2026 — Meine Top-Picks</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">30.09.2025</span><a href="/blog/depot-update-september-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update September 2025: 650€ Dividenden — Rekordmonat</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">25.09.2025</span><a href="/blog/thungela-resources-analyse-2026.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Thungela (TGA) 2026: 15% Dividende — Kauf oder Verkauf?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.09.2025</span><a href="/blog/pembina-pipeline-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Pembina Pipeline 2026: 5,5% Dividende + LNG Canada</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.09.2025</span><a href="/blog/kinder-morgan-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Kinder Morgan KMI: 4% Dividende + LNG-Capex 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.09.2025</span><a href="/blog/anglogold-ashanti-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">AngloGold Ashanti AU 2026: Goldaktie Analyse + Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.09.2025</span><a href="/blog/5-stabile-aktien-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">5 Stabile Dividendenaktien 2026: 6–10% Cashflow &amp; Rendite</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">31.08.2025</span><a href="/blog/depot-update-august-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update August 2025: 153€ Dividenden</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.08.2025</span><a href="/blog/fresnillo-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Fresnillo 2026: Silber-Dividende &amp; Cashflow — FRES Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.08.2025</span><a href="/blog/barrick-mining-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Barrick Gold Aktie 2026: Tier-1 Gold &amp; Kupfer Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.08.2025</span><a href="/blog/5-stabile-dividendenaktien-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">5 Stabile Dividendenaktien 2026: 6-9% Yield</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">31.07.2025</span><a href="/blog/depot-update-juli-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Depot-Update Juli 2025: 383€ Dividenden + YOC-Analyse Depot</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.07.2025</span><a href="/blog/newmont-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Newmont 2026: Goldaktie trotz Produktionsrückgang kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.07.2025</span><a href="/blog/schifffahrts-aktien-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Schifffahrtsaktien 2026: Top 5 mit 10–15% Dividende</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.06.2025</span><a href="/blog/thungela-resources-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Thungela Resources 2026: Ist die 15%-Dividende nachhaltig?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">05.06.2025</span><a href="/blog/top-5-dividendenaktien-2025-cashflow.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Meine 5 Top-Dividendenaktien 2025 — Cashflow für dein Depot</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.06.2025</span><a href="/blog/oneok-aktie-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">ONEOK Aktie 2026: 5% Dividende &amp; KI-Gas-Midstream</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.05.2025</span><a href="/blog/yancoal-australia-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Yancoal Australia 2026: 15%+ Dividende — Kohle-Cashflow</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.05.2025</span><a href="/blog/fortescue-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Fortescue 2026: Eisenerz &amp; 8%+ Dividende — FMG Analyse</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">03.05.2025</span><a href="/blog/7-aktien-870-euro-dividende-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">7 Aktien mit 870 € Dividende — Depot-Einblick 2025</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.05.2025</span><a href="/blog/rio-tinto-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Rio Tinto Aktie 2026: Dividende, Kupfer &amp; Cashflow</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.05.2025</span><a href="/blog/pipeline-aktien-vergleich-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Pipeline Aktien 2026: Top 5 Vergleich — Dividende bis 7%</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">21.04.2025</span><a href="/blog/3-dividendenaktien-eingebrochen-kauf-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">3 Dividendenaktien eingebrochen — Contrarian-Kauf</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.04.2025</span><a href="/blog/glencore-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Glencore 2026: Kupfer, Kohle &amp; 8% Dividende — Kaufen?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">20.04.2025</span><a href="/blog/golden-ocean-enagas-vale-top3-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">3 High-Yield Aktien: Golden Ocean, Enagás, Vale</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">18.04.2025</span><a href="/blog/3-aktien-800-euro-dividende-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">3 Aktien mit 800 € Dividende 2025 — Depot-Cashflow</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">17.04.2025</span><a href="/blog/16-prozent-dividendenrendite-chance-oder-totalverlust-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">16,7% Dividendenrendite: Chance oder Falle? (Archiv 2025)</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">16.04.2025</span><a href="/blog/3-aktien-monatliche-dividende-cashflow-setup-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">3 Aktien mit monatlicher Dividende — Cashflow-Setup</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.04.2025</span><a href="/blog/whitehaven-coal-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Whitehaven Coal 2026: Kokskohle-Dividende &amp; Upside</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.04.2025</span><a href="/blog/lng-tanker-dividende-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">3 LNG- &amp; Tanker-Aktien mit 10% Dividende 2026</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">15.03.2025</span><a href="/blog/vale-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Vale 2026: Eisenerz-Dividende, Quellensteuer &amp; Kupfer-Bonus</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.03.2025</span><a href="/blog/bdc-newtek-vs-hercules-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Newtek vs Hercules Capital 2026: Welcher BDC zahlt mehr?</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.01.2025</span><a href="/blog/meine-toolbox-broker-tools-plattformen-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">Broker &amp; Tools 2026: Scalable, InvestingPro &amp; Co.</a></li>
+      <li style="display:flex;gap:12px;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.06);padding:7px 0"><span style="font-family:ui-monospace,monospace;font-size:.78rem;color:#8a92a8;flex:0 0 auto;min-width:92px">01.01.2025</span><a href="/blog/bhp-analyse-2025.html" style="color:#f0f1f5;text-decoration:none;font-size:.98rem">BHP Aktie 2026: 5,5% Dividende + Jansen-Schock — kaufen?</a></li>
+    </ul>
+  </section>
+  <p style="margin:32px 0 60px"><a href="/blog/" style="color:#d4af37">← Zurück zur Blog-Übersicht</a></p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Startseite</a>
+      <a href="/ueber-marco-bozem/">Über Marco Bozem</a>
+      <a href="/depot-strategie/">Depot-Strategie</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+    </div>
+    <div class="footer-col">
+      <h4>Sektoren</h4>
+      <a href="/mining-aktien/">Mining Aktien</a>
+      <a href="/shipping/">Shipping Aktien</a>
+      <a href="/dividendenstrategie/">Dividendenstrategie</a>
+      <a href="/midstream/">Midstream</a>
+      <a href="/rohstoff-superzyklus-master.html">Rohstoff Superzyklus</a>
+      <a href="/geopolitik/">Geopolitik</a>
+    </div>
+    <div class="footer-col">
+      <h4>Content & Tools</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/podcast/">Podcast</a>
+      <a href="/toolbox.html">Toolbox</a>
+      <a href="/rechner/">Finanzrechner</a>
+      <a href="/glossar/">Glossar</a>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/vertrag-widerrufen.html">Vertrag widerrufen</a><a href="/disclaimer.html">Disclaimer</a><a href="/affiliate-offenlegung.html">Affiliate-Offenlegung</a><a href="/impressum.html">Kontakt</a>
+      <a href="https://mbcapitalstrategiesglobal.com/" target="_blank" rel="noopener">English Site</a>
+      <a href="/insider/">Newsletter abonnieren</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
+    <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
+  </div>
+</footer>
+
+<script src="/assets/js/nav.min.js" defer></script>
+
+<!-- AdSense nach LCP — verhindert CMP-Blockierung des Hero-Renders (LCP-Fix) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<!-- YouTube Lite Facade Init (web-design-agent batch-167) -->
+<script>
+(function(){
+  function initYtLite(el){
+    el.addEventListener('click',function activate(){
+      el.removeEventListener('click',activate);
+      var id=el.dataset.id;
+      if(!id)return;
+      var iframe=document.createElement('iframe');
+      iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+      iframe.title=el.dataset.title||'YouTube Video';
+      iframe.allow='autoplay;encrypted-media;picture-in-picture';
+      iframe.allowFullscreen=true;
+      el.innerHTML='';
+      el.appendChild(iframe);
+      el.style.cursor='default';
+    });
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){el.click();}});
+  }
+  document.querySelectorAll('.yt-lite[data-id]').forEach(initYtLite);
+})();
+</script>
+
+
+<div class="author-box" style="display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="/marco.webp" alt="Marco Bozem — MB Capital Strategies" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividenden, Shipping | MB Capital Strategies</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco analysiert seit Jahren Rohstoff- und Dividendenaktien mit Fokus auf Shipping, Mining und Energie. Alle Analysen basieren auf öffentlich verfügbaren Geschäftsberichten und eigener Einschätzung. <em>Keine Anlageberatung.</em></p>
+  </div>
+</div>
+</body>
+</html>

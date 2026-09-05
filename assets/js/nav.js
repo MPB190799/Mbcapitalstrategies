@@ -275,6 +275,7 @@
                 // hier statt als eigene Top-Level-Links, weil .nav-links bei 1440 px bereits
                 // 23 px ueber .nav-inner hinausragt: zwei weitere Punkte oben wuerden umbrechen.
                 '<hr>' +
+                '<a href="/blog/archiv.html">🗂️ Blog-Archiv</a>' +
                 '<a href="/glossar/">📗 Glossar</a>' +
                 '<a href="/investing-analysen.html">🔗 Investing.com</a>' +
               '</div>' +
@@ -318,6 +319,7 @@
           '<a href="/depot-strategie/">📊 Depot-Strategie</a>' +
           '<a href="/hard-asset-guide/">🧱 Hard Asset Guide</a>' +
           '<a href="/blog/">📰 Blog</a>' +
+          '<a href="/blog/archiv.html">🗂️ Blog-Archiv</a>' +
           '<a href="/community/">💬 Community</a>' +
           '<a href="/community-diskussionen/">🧠 Diskussionen</a>' +
           '<a href="/rechner/">🧮 Alle Rechner</a>' +
