@@ -267,6 +267,9 @@
                 '<a href="/bestenlisten/beste-lng-aktien-2026.html">🔥 Beste LNG-Aktien 2026</a>' +
                 '<a href="/bestenlisten/beste-tanker-aktien-2026.html">🚢 Beste Tanker-Aktien 2026</a>' +
                 '<a href="/bestenlisten/top-5-high-yield-aktien-2026.html">💸 Top 5 High-Yield 2026</a>' +
+                '<a href="/bestenlisten/">🏆 Alle Bestenlisten</a>' +
+                '<hr>' +
+                '<a href="/bestenlisten/geld-auf-reisen-2026.html">✈️ Geld auf Reisen 2026</a>' +
                 // Nachschlagen (17.08.2026): Glossar und Toolbox standen NUR im Mobil-Menue —
                 // am Desktop waren beide Seiten aus der Navigation nicht erreichbar. Sie landen
                 // hier statt als eigene Top-Level-Links, weil .nav-links bei 1440 px bereits
@@ -336,6 +339,9 @@
           '<a href="/dividendenstrategie/">💰 Dividendenstrategie</a>' +
           '<a href="/kategorien/high-yield-aktien.html">🏦 High-Yield &amp; BDC</a>' +
           '<a href="/rohstoff-superzyklus-master.html">🌋 Rohstoff Superzyklus</a>' +
+          '<div class="mob-label">Bestenlisten &amp; Reise</div>' +
+          '<a href="/bestenlisten/">🏆 Alle Bestenlisten</a>' +
+          '<a href="/bestenlisten/geld-auf-reisen-2026.html">✈️ Geld auf Reisen 2026</a>' +
           '<div class="mob-label">Podcast</div>' +
           '<a href="/podcast/">🎧 Alle Podcasts</a>' +
           '<a href="/podcast/der-finanzfeuer-talk.html">🔥 Finanzfeuer Talk</a>' +
