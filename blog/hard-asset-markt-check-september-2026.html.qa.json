@@ -1,0 +1,12 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-de",
+  "checker": "distribution-agent-selfcheck",
+  "checked_at": "2026-09-07T08:04:34.165Z",
+  "content_sha": "29d75f03df976f45",
+  "hard_scan": "PASS",
+  "note": "Standalone Markt-Update — FRED Tier-1 Daten, Offenlegung im Text, kein CapTrader, R23 nicht anwendbar, GA4+hreflang+x-default+twitter-card+FAQ Schema enthalten"
+}
