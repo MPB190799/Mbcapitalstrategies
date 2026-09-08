@@ -405,6 +405,22 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen loading="lazy"></iframe>
     </div>
+
+<!-- CRO 2026-09-08 web-design-agent: "Nächste Schritte"-CTA-Block nach YouTube-Embed.
+     Rationale: /shipping-aktien/ hat Bounce-Rate ~93% (GA4 28d, Kommentar Zeile 392).
+     Besucher sehen Hook + Video, verlassen dann die Seite — kein zweiter Conversion-Anker.
+     Dieser Block bietet 3 klare Pfade (Bestenliste, Rechner, Newsletter) als Mid-Content-CTA.
+     Kein neues Form-Feld, keine CLS-Risiken, responsive flex-wrap für Mobile ≤390px. -->
+<div style="background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.22);border-radius:14px;padding:24px 20px;margin:30px auto 10px;max-width:980px;text-align:center;">
+  <p style="color:#d4af37;font-size:0.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 6px;">Nächste Schritte</p>
+  <p style="color:#cfd6e6;font-size:0.92rem;margin:0 0 16px;line-height:1.5;">Welchen Teil des Shipping-Marktes möchtest du vertiefen?</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+    <a href="/bestenlisten/beste-tanker-aktien-2026.html" class="btn" style="padding:10px 20px;font-size:0.9rem;">🚢 Top Tanker-Aktien</a>
+    <a href="/tools/shipping-cashflow-rechner.html" class="btn btn-secondary" style="padding:10px 20px;font-size:0.9rem;">🧮 Cashflow berechnen</a>
+    <a href="#newsletter" class="btn btn-secondary" style="padding:10px 20px;font-size:0.9rem;">📬 Newsletter (kostenlos)</a>
+  </div>
+</div>
+
   </section>
 
   <section class="section">
