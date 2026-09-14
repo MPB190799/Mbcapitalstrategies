@@ -267,6 +267,13 @@
         height: 68px;
       }
     }
+
+    /* A11y: Skip-Link (Tastatur-Navigation) */
+    .skip-link{position:absolute;top:-40px;left:0;background:#D4AF37;color:#050608;padding:8px 16px;z-index:9999;font-weight:700;transition:top .2s;text-decoration:none}
+    .skip-link:focus{top:0}
+
+    /* A11y: Fokus-Stile fuer Tastaturnutzer */
+    a:focus-visible,button:focus-visible,.cta:focus-visible,.dropdown-btn:focus-visible,.nav-links a:focus-visible{outline:2px solid #D4AF37;outline-offset:3px;border-radius:2px}
   </style>
 
   <!-- JSON-LD: Person / E-E-A-T -->
@@ -345,6 +352,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
 <!-- ===== STANDARD NAV ===== -->
 <header class="nav">
   <div class="nav-inner">
@@ -422,7 +431,7 @@
 <link rel="preload" as="style" href="/blog/styles.css?v=3" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/blog/styles.css?v=3"></noscript>
 
-<main data-no-google-auto-placements="true">
+<main id="main-content" data-no-google-auto-placements="true">
 
   <!-- Banner mit deinem OG-Bild -->
   <section class="invest-banner">

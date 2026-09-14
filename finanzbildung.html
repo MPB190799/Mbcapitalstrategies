@@ -276,6 +276,13 @@ body{background:var(--fb-bg);}
   .fb-price-grid{grid-template-columns:1fr;}
   .fb-block-head{flex-direction:row;}
 }
+
+/* A11y: Skip-Link (Tastatur-Navigation) */
+.skip-link{position:absolute;top:-40px;left:0;background:#D4AF37;color:#080810;padding:8px 16px;z-index:9999;font-weight:700;transition:top .2s;text-decoration:none}
+.skip-link:focus{top:0}
+
+/* A11y: Fokus-Stile fuer Tastaturnutzer */
+a:focus-visible,button:focus-visible,.fb-btn:focus-visible,.fb-btn-ghost:focus-visible{outline:2px solid #D4AF37;outline-offset:3px;border-radius:2px}
 </style>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
   <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -297,9 +304,12 @@ body{background:var(--fb-bg);}
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
 <nav class="nav"></nav>
 
 <!-- ===== HERO (B2B) ===== -->
+<main id="main-content" role="main">
 <header class="fb-hero">
   <div class="fb-wrap">
     <span class="fb-eyebrow">Für Unternehmen · Mitarbeiter-Benefit</span>
@@ -775,6 +785,7 @@ body{background:var(--fb-bg);}
     <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
   </div>
 </footer>
+</main>
 
 <script src="/assets/js/nav.min.js" defer></script>
 <script>

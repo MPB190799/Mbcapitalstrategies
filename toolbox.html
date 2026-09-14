@@ -182,6 +182,14 @@
     }
     footer a { color:#d4af37; text-decoration:none; }
     footer a:hover { text-decoration:underline; }
+
+    /* A11y: Skip-Link (Tastatur-Navigation) */
+    .skip-link{position:absolute;top:-40px;left:0;background:#D4AF37;color:#0f1115;padding:8px 16px;z-index:9999;font-weight:700;transition:top .2s;text-decoration:none}
+    .skip-link:focus{top:0}
+
+    /* A11y: Fokus-Stile fuer Tastaturnutzer */
+    a:focus-visible,button:focus-visible,.btn:focus-visible,.dropdown-btn:focus-visible,.nav-links a:focus-visible,.card:hover{outline-offset:3px;border-radius:2px}
+    a:focus-visible,button:focus-visible,.btn:focus-visible,.dropdown-btn:focus-visible,.nav-links a:focus-visible{outline:2px solid #D4AF37}
   </style>
 
   <!-- SEO SCHEMA -->
@@ -278,6 +286,8 @@
 
 <body>
 
+<a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
 <!-- InvestingPro Sommer-Sale Top-Bar (default hidden) -->
 <div class="ip-sale" style="display:none;background:linear-gradient(90deg,#0c1a08 0%,#0f1a06 50%,#0c1a08 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f4ff">
   <strong style="color:#d4af37">InvestingPro Sommer-Sale: 60 % + 15 % Rabatt</strong> &nbsp;·&nbsp; Nur 1.–31. Juli &nbsp;
@@ -362,6 +372,8 @@
 </header>
 
 <!-- HERO -->
+<main id="main-content" role="main">
+
 <section class="hero">
   <h1>🧰 Meine Toolbox für Dividenden-Investoren</h1>
 <aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6"><strong style="color:#f5f6fa">English version:</strong> <a href="https://mbcapitalstrategiesglobal.com/pages/toolbox.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Read this analysis in English</a> &nbsp;·&nbsp; <a href="https://mbcapitalstrategiesglobal.com/" style="color:#d4af37">MB Capital Strategies Global</a></aside>
@@ -793,6 +805,8 @@
     <span>Keine Anlageberatung · Alle Angaben ohne Gewähr</span>
   </div>
 </footer>
+
+</main>
 <script src="/assets/js/nav.min.js" defer></script>
 
 <!-- InvestingPro Sale Self-Expiry -->
