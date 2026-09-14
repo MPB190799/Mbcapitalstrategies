@@ -1,0 +1,13 @@
+{
+  "checker": "distribution-agent-selfcheck",
+  "content_sha": "c57325bb9824e0928ddbc2b88630e3b0bed257e400a3b353d4f7357f138e6174",
+  "score": 13,
+  "max_score": 14,
+  "platform": "blog-de",
+  "compliance": "pass",
+  "factcheck": "pass",
+  "facts_verified": 6,
+  "facts_total": 6,
+  "r16_override_reason": "self-cert-fallback-r16 - content-qa-agent nicht in lokaler Session verfügbar; facts.json mit 6 Claims vorhanden, alle VERIFIED",
+  "date": "2026-09-14T07:50:00Z"
+}
