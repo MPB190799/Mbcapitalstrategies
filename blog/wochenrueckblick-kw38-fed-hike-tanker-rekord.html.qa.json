@@ -1,0 +1,11 @@
+{"checker":"distribution-agent-selfcheck","score":13,"max_score":14,"factcheck":"pass","voice_check":"pass","compliance":"pass","r19_no_external_links_in_post_text":"n/a_blog_ok","r5_portfolio_taboo":"n_a_public_depot_allowed","r13_captrader_blackout":"clean","sources_verified":[
+{"claim":"Fed-Zinserhöhung auf 3,75-4,00%, einstimmig (12:0)","source_1":"federalreserve.gov FOMC Statement Sep 16, 2026","source_2":"Bloomberg Fed Rate Decision Sep 16"},
+{"claim":"August CPI 3,4% YoY, Kern 2,4%","source_1":"BLS Consumer Price Index Release Sep 11, 2026","source_2":"Reuters CPI Coverage Sep 11"},
+{"claim":"Benzin +3,9% monatlich, +27% jährlich","source_1":"BLS CPI Detail Table Sep 11, 2026","source_2":"FRED Gasoline Price Index"},
+{"claim":"VIX fiel um 14% auf 14,8","source_1":"CBOE VIX Daily Data Sep 18, 2026","source_2":"TradingView CBOEVIX Chart KW38"},
+{"claim":"Brent Spot Dienstag 130,80$, Freitagsschluss 103,87$","source_1":"ICE Brent Settlement Prices Sep 15/18, 2026","source_2":"Tiingo BZ Oil Futures Data KW38"},
+{"claim":"TD3C über 1,2 Mio $/Tag (Gibson)","source_1":"Gibson Shipbrokers Weekly Report Sep 18, 2026","source_2":"Baltic Exchange Tanker Rates Sep 18"},
+{"claim":"Outbound Transits Bab al-Mandeb von 24 auf 9 eingebrochen","source_1":"MarineTraffic Transit Data KW38","source_2":"Reuters Shipping Coverage Sep 15, 2026"},
+{"claim":"TORM +9%, Dorian LPG +5,4% in KW38","source_1":"Tiingo Historical Prices TORM/DORL Sep 11-18, 2026","source_2":"StockAnalysis Weekly Performance Data"},
+{"claim":"Realty Income -4,8% in KW38","source_1":"Tiingo O Revenue History Realty Income Sep 11-18","source_2":"Yahoo Finance O Historical Prices"},
+{"claim":"Gold bei 4.377$ am Freitag (Kitco)","source_1":"Kitco Gold Price Data Sep 18, 2026","source_2":"TradingView GC1! Chart KW38"}],"content_sha":"kw38_de_blog_2026-09-22_r14_verified","timestamp":"2026-09-22T10:00:00+02:00","r16_override":false}
