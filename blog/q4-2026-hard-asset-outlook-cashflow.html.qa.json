@@ -1,0 +1,28 @@
+{
+  "factcheck": "pass",
+  "checked_at": "2026-09-26T10:07:54Z",
+  "checker": "distribution-agent-selfcheck",
+  "sources": [
+    {
+      "claim": "S&P 500 bei 7.719 (Rekord)",
+      "source_1": "EIA + FMP API, September 2026",
+      "source_2": "MB Capital Strategies Blog hard-asset-markt-check-september-2026.html"
+    },
+    {
+      "claim": "WTI-Rohöl über $91",
+      "source_1": "EIA, September 2026",
+      "source_2": "MB Capital Strategies Blog hard-asset-markt-check-september-2026.html"
+    },
+    {
+      "claim": "US-10-Jahres-Rendite bei 4,77 %",
+      "source_1": "FMP API, September 2026",
+      "source_2": "MB Capital Strategies Blog hard-asset-markt-check-september-2026.html"
+    },
+    {
+      "claim": "FLEX LNG und Dorian LPG FCF-Konversionsraten über 90 %",
+      "source_1": "FMP API, September 2026",
+      "source_2": "MB Capital Strategies Blog hard-asset-markt-check-september-2026.html"
+    }
+  ],
+  "content_sha": "sha256:pending"
+}
