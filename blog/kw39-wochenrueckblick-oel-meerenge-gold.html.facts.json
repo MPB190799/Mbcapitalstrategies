@@ -1,0 +1,106 @@
+{
+  "spec_file": "blog/kw39-wochenrueckblick-oel-meerenge-gold.html",
+  "checked_by": "distribution-agent (KW39-Standalone-Lauf 28.09.2026)",
+  "checked_at": "2026-09-28T11:00:00+02:00",
+  "claims": [
+    {
+      "id": "sp500-friday-close",
+      "claim": "S&P 500 Freitagsschluss 7.743,41 (+1,2% WoW)",
+      "value": "7743.41",
+      "source": "Yahoo Finance Chart-API ^GSPC + FRED SP500 (identisch verifiziert)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "dow-friday-close",
+      "claim": "Dow Jones Freitagsschluss 51.828,62 (+0,3% WoW)",
+      "value": "51828.62",
+      "source": "Yahoo Finance Chart-API ^DJI + FRED DJIA (identisch verifiziert)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "brent-friday-close",
+      "claim": "Brent-Futures Freitagsschluss 97,47 $/Fass (-8,6% WoW)",
+      "value": "97.47",
+      "source": "Yahoo Finance Chart-API BZ=F + FRED DCOILBRENTEU Spot (Richtung bestaetigt)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "wti-friday-close",
+      "claim": "WTI-Futures Freitagsschluss 92,44 $/Fass (-7,8% WoW)",
+      "value": "92.44",
+      "source": "Yahoo Finance Chart-API CL=F + FRED DCOILWTICO (Richtung bestaetigt)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "gold-spot-friday",
+      "claim": "Gold Spot 4.284-4.320 $ (-2,4% WoW)",
+      "value": "4284.20",
+      "source": "Yahoo Finance GC=F Fr 4.320,50$ + Kitco Spot-Bid 25.09. 4.284,20$",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "us10y-yield",
+      "claim": "US 10Y Rendite 5,18% (Do 5,16 \u2192 Fr 5,18)",
+      "value": "5.18",
+      "source": "Yahoo Finance ^TNX + FRED DGS10 (identisch) + Kitco-Headline '5,2% yields'",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "gold-ath-distance",
+      "claim": "Gold ATH 5.589,38$ am 28.01.2026; aktueller Abstand rund 23%",
+      "value": "5589.38",
+      "source": "Kitco + Yahoo GC=F Chart-Daten; eigene Rechnung -23,3%",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "frontline-dividend",
+      "claim": "Frontline Dividende 3,41$ (2,61 Sonder + 0,80 regul\u00e4r), Zahltag Mo 28.09.",
+      "value": "3.41",
+      "source": "stockanalysis.com Tabelle + Yahoo div-Event Summe deckungsgleich",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "epm-dividend",
+      "claim": "EPM Dividende 0,12$, ex Mo 21.09., Zahltag Mi 30.09.",
+      "value": "0.12",
+      "source": "stockanalysis.com/stocks/EPM/dividend/ + Yahoo div-Event + GlobeNewswire 10.09.",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "backwardation-spread",
+      "claim": "Backwardation ~17$ (Spot 114,89$ vs Futures 97,47$)",
+      "value": "17",
+      "source": "FRED DCOILBRENTEU Spot + Yahoo BZ=F Futures",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "fed-rate-level",
+      "claim": "Fed-Zinsstand 3,75-4,00% (Hike vom 16.09.)",
+      "value": "3.75",
+      "source": "FED offizielle Bekanntgabe; WebSearch 'Cut auf 4,00-4,25%' im Dossier verworfen als falsch",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    }
+  ]
+}
