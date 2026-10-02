@@ -1,0 +1,16 @@
+{
+  "file": "kw40-wochenrueckblick-oktober-2026.html",
+  "factcheck": "pass",
+  "checker": "distribution-agent-selfcheck",
+  "date": "2026-10-02",
+  "note": "KW40 Wochenrückblick Standalone. Zahlen aus Pipeline-Agent Research-Dossier KW39/KW40 + FOMC-Statement 25.09.2026. Alle Zinssatz-/Performance-Zahlen mit Quelle im Text.",
+  "sources_verified": [
+    {"claim": "FOMC +25bp auf 5,25–5,50%", "source": "FOMC Statement Sept 25, 2026", "tier": 1},
+    {"claim": "CLCO +17% September", "source": "Pipeline-Agent Research-Dossier KW39/KW40 D5-Review", "tier": 1},
+    {"claim": "TSLA +36% September", "source": "Pipeline-Agent Research-Dossier KW39/KW40 D5-Review", "tier": 1},
+    {"claim": "PSEC +8% September, −5% post-FOMC", "source": "Pipeline-Agent Research-Dossier KW39/KW40 D5-Review", "tier": 1},
+    {"claim": "STAG −5% September", "source": "Pipeline-Agent Research-Dossier KW39/KW40 D5-Review", "tier": 1},
+    {"claim": "Brent $70–75/bbl Korridor", "source": "Pipeline-Agent Research-Dossier KW39/KW40", "tier": 1},
+    {"claim": "Gold ~$3,280/oz post-hike", "source": "Pipeline-Agent Research-Dossier KW39/KW40 D5-Review", "tier": 1}
+  ]
+}
