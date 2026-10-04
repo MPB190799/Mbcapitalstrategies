@@ -444,37 +444,18 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
      data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-    <!-- MB Capital Insider — Growth CTA (Blog-Mitte, CF Worker) -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Wochenr&#xFC;ckblick Hard Assets &amp; Dividenden &mdash; kostenlos</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marcos wöchentlicher Marktüberblick: Shipping, Mining, Energie, REITs. Jeden Sonntag, kein Spam, abmeldbar.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" autocomplete="email" id="mb-mid-email" placeholder="deine@email.de" required
-      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
-    <button onclick="mbMidSubscribe()" data-cta="newsletter-de-mid"
-      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Anmelden &rarr;</button>
-  </div>
-  <p id="mb-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Keine Anlageberatung. Abmeldung jederzeit. DSGVO-konform. Double-Opt-In.</p>
+    <!-- MB Newsletter Inline CTA — Blog-Artikel Mitte (sibforms, 05.10.2026) -->
+<div style="background:#1a1a2e;border-left:4px solid #c9a84c;padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+<p style="margin:0 0 8px;color:#e0e0e0;font-size:15px;line-height:1.5;">
+<strong>📧 Weekly Review per E-Mail</strong> — Jeden Sonntag die wichtigsten Dividenden-Entscheidungen der Woche, direkt ins Postfach. Kostenlos, abbestellbar in 2 Klicks.
+</p>
+<form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpv1loSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription" style="display:flex;gap:8px;flex-wrap:wrap;">
+<input type="email" name="EMAIL" placeholder="deine@email.de" required style="padding:10px 14px;border:1px solid #333;border-radius:6px;background:#0d0d1a;color:#e0e0e0;font-size:14px;min-width:220px;">
+<button type="submit" style="padding:10px 18px;background:#c9a84c;color:#1a1a2e;border:none;border-radius:6px;font-weight:bold;font-size:14px;cursor:pointer;">Newsletter abonnieren</button>
+</form>
+<p style="margin:8px 0 0;color:#888;font-size:11px;">Kein Spam. Jederzeit abbestellbar. <a href="/datenschutz.html" style="color:#c9a84c;">Datenschutz</a></p>
 </div>
-<script>
-(function(){if(window._mbMidSubDefined)return;window._mbMidSubDefined=true;
-window.mbMidSubscribe=function(){
-  var e=document.getElementById("mb-mid-email"),m=document.getElementById("mb-mid-msg");
-  var email=e?e.value.trim():"";
-  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
-  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
-  if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:"blog-mid"});}
-  // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
-  window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"blog-mid",method:"double-opt-in"});}}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
-  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
-};})();
-</script>
-<!-- END Growth CTA -->
+<!-- Ende MB Newsletter CTA -->
 
 <h2>⚓ Die drei High-Yield-Aktien im Überblick</h2>
     <ul>
