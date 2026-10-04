@@ -383,7 +383,8 @@
         var email=el?el.value.trim():"";
         if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Bitte gültige E-Mail eingeben.";}return;}
         if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}
-        fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+        // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
         .then(function(r){return r.json();})
         .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestätigen (Double-Opt-In).";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Nochmal versuchen.";}}}
         ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler.";}});

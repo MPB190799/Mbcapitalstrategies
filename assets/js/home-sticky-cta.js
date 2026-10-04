@@ -43,7 +43,7 @@
     window.addEventListener('resize', mbStickySetBodyPad);
   }
 
-  var ENDPOINT="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
+  /* Worker entfernt 2026-10-04 */ var ENDPOINT = '/insider/'
   window.mbStickySubscribe=function(){
     var el=document.getElementById("mb-sticky-email"),msg=document.getElementById("mb-sticky-msg");
     var email=el?el.value.trim():"";

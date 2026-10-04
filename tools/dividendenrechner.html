@@ -1564,8 +1564,8 @@ function divNlSubscribe() {
   var msg = document.getElementById('div-nl-msg');
   if (!email || !email.includes('@')) { if (msg) msg.textContent = 'Bitte gültige E-Mail eingeben.'; return; }
   if (msg) msg.textContent = '...';
-  fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',
-    { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: 'tools-dividendenrechner' }) })
+  // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{ method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: 'tools-dividendenrechner' }) })
     .then(function(r) {
       if (msg) msg.textContent = r.ok ? 'Danke! Bitte E-Mail bestätigen.' : 'Fehler — bitte auf mbcapitalstrategies.com/insider/ anmelden.';
       if (r.ok) { localStorage.setItem('div_nl_subscribed', '1'); var b = document.getElementById('div-nl-cta').querySelector('button'); if (b) b.disabled = true; }

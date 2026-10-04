@@ -264,7 +264,8 @@ window.mbMidSubscribe=function(){
   if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
   if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
   if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:"blog-mid"});}
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
   .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"blog-mid",method:"double-opt-in"});}}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
   .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
 };})();
@@ -430,7 +431,8 @@ window.mbMidSubscribe=function(){
           var email=document.getElementById('cmbt-nl-email').value.trim();
           var msg=document.getElementById('cmbt-nl-msg');
           if(!email||!email.includes('@')){msg.textContent='Bitte gültige E-Mail eingeben.';msg.style.display='block';return;}
-          fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{
+          // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{
             method:'POST',headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email:email,source:'blog-cmbt-ex-div-jun26'})
           }).then(function(r){

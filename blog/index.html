@@ -535,7 +535,8 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
         return;
       }
       if (msg) { msg.style.display='block'; msg.style.color='#d4af37'; msg.textContent='Anmeldung...'; }
-      fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe', {
+      // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email: email, source: 'blog-index-cta'})

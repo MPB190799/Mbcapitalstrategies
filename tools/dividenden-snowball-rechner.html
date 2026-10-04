@@ -943,8 +943,8 @@ function snowballNlSubscribe() {
   var msg = document.getElementById("snowball-nl-msg");
   if (!email || !email.includes("@")) { if (msg) msg.textContent = "Bitte gueltige E-Mail eingeben."; return; }
   if (msg) msg.textContent = "...";
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",
-    {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({email: email, source: "tools-dividenden-snowball"})})
+  // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({email: email, source: "tools-dividenden-snowball"})})
     .then(function(r) {
       if (r.ok) {
         if (msg) msg.textContent = "Danke! Bitte kurz die Bestaetigung per E-Mail pruefen.";

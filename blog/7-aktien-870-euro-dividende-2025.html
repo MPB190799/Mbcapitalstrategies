@@ -256,7 +256,7 @@
 <script>
 (function(){
   if(typeof window.mbBlogSubscribe==="undefined"){
-    var EP="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
+    /* Worker entfernt 2026-10-04 */ var EP = '/insider/'
     window.mbBlogSubscribe=function(eId,mId){
       var el=document.getElementById(eId),msg=document.getElementById(mId);
       var email=el?el.value.trim():"";

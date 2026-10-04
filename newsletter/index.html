@@ -644,7 +644,8 @@
           return;
         }
         if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung läuft...";}
-        fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{
+        // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify({email:email})

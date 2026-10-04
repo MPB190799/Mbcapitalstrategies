@@ -280,7 +280,8 @@ window.mbMidSubscribe=function(){
   if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte eine gueltige E-Mail eingeben.";}return;}
   if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
   if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:"blog-mid"});}
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
   .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"blog-mid",method:"double-opt-in"});}}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
   .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
 };})();
@@ -456,7 +457,8 @@ window.mbMidSubscribe=function(){
     <p style="color:#5a6480;font-size:0.72rem;margin:0;">Keine Anlageberatung. DSGVO-konform. Double-Opt-In.</p>
   </div>
 </div>
-<script>(function(){if(window._mbOpecDef)return;window._mbOpecDef=true;window.mbOpecSubscribe=function(){var e=document.getElementById('opec-nl-email'),m=document.getElementById('opec-nl-msg'),email=e?e.value.trim():'';if(!email||!email.includes('@')){if(m)m.textContent='Bitte eine gültige E-Mail eingeben.';return;}if(m)m.textContent='Wird angemeldet...';fetch('https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'blog-opec-jun26'})}).then(function(r){return r.json();}).then(function(d){if(m)m.textContent=d.ok?'Fast geschafft! Bitte E-Mail bestätigen.':'Fehler — bitte direkt auf /insider/ anmelden.';}).catch(function(){if(m)m.textContent='Verbindungsfehler.';});};})();</script>
+<script>(function(){if(window._mbOpecDef)return;window._mbOpecDef=true;window.mbOpecSubscribe=function(){var e=document.getElementById('opec-nl-email'),m=document.getElementById('opec-nl-msg'),email=e?e.value.trim():'';if(!email||!email.includes('@')){if(m)m.textContent='Bitte eine gültige E-Mail eingeben.';return;}if(m)m.textContent='Wird angemeldet...';// Worker entfernt 2026-10-04 — Brevo Form auf /insider/
+  window.location.href = '/insider/'{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'blog-opec-jun26'})}).then(function(r){return r.json();}).then(function(d){if(m)m.textContent=d.ok?'Fast geschafft! Bitte E-Mail bestätigen.':'Fehler — bitte direkt auf /insider/ anmelden.';}).catch(function(){if(m)m.textContent='Verbindungsfehler.';});};})();</script>
 
 <!-- Premium Dual-Block -->
 <div style="background:linear-gradient(135deg,#0d0d1a,#1a1225);border:1px solid rgba(212,175,55,0.35);border-left:4px solid #D4AF37;border-radius:8px;padding:24px 28px;margin:16px 0 32px;font-family:Outfit,sans-serif;">
