@@ -1,0 +1,41 @@
+{
+  "file": "hard-asset-markt-check-oktober-2026.html",
+  "qa_score": 14,
+  "factcheck": "pass",
+  "sources_verified": [
+    {
+      "claim": "Gold bei 4.163 USD",
+      "source": "Yahoo Finance API GC=F, 07.10.2026"
+    },
+    {
+      "claim": "Brent bei 89,77 USD",
+      "source": "Yahoo Finance API CL=F, 07.10.2026"
+    },
+    {
+      "claim": "VIX bei 15,2",
+      "source": "Yahoo Finance API ^VIX, 07.10.2026"
+    },
+    {
+      "claim": "DAX bei 25.223 EUR",
+      "source": "Yahoo Finance API ^GDAXI, 07.10.2026"
+    },
+    {
+      "claim": "EZB Zins auf 2,50%",
+      "source": "EZB Presseerkl\u00e4rung September 2026 (Research-Briefing)"
+    },
+    {
+      "claim": "Fed bei 3,75%",
+      "source": "FOMC Statement Sept 2026 (Research-Briefing)"
+    }
+  ],
+  "compliance": {
+    "r5_no_portfolio_eur": true,
+    "r13_no_captrader_ibkr": true,
+    "r19_no_external_links_linkedin": "n/a (Blog)",
+    "r23_earnings_gating": true,
+    "disclosure_present": true
+  },
+  "voice_check": 14,
+  "platform": "blog_de",
+  "timestamp": "2026-10-07T09:45:00Z"
+}
