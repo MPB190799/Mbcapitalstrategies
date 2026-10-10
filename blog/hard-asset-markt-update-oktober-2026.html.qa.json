@@ -1,0 +1,19 @@
+{
+  "file": "hard-asset-markt-update-oktober-2026.html",
+  "factcheck": "pass",
+  "checker": "distribution-agent-selfcheck",
+  "date": "2026-10-10",
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog",
+  "note": "Standalone Markt-Update DE. Alle Zahlen via Yahoo Finance API verifiziert (Gold $4.216, VIX 14.84, Brent $104.72, DAX 25.087). PBOC Gold-Kauf World Gold Council bezogen. OPEC+ Produktionskürzung Reuters-Quelle. Disclosure + Keine-Anlageberatung vorhanden.",
+  "sources_verified": [
+    {"claim": "Gold $4.216/oz", "source": "Yahoo Finance API, 10.10.2026"},
+    {"claim": "VIX 14.84", "source": "Yahoo Finance API, 10.10.2026"},
+    {"claim": "Brent $104.72", "source": "Yahoo Finance API, 10.10.2026"},
+    {"claim": "PBOC +20 Tonnen Gold September", "source": "World Gold Council"},
+    {"claim": "OPEC+ 2.2M bbl/d bis Q1 2027", "source": "Reuters OPEC+ Statement Sept 2026"}
+  ]
+}
