@@ -9,9 +9,7 @@
     if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung...";}
     if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:"contact-de"});}
     // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
-    window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-    .then(function(r){return r.json();})
-    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen (Double-Opt-In).";if(el)el.value="";if(cb)cb.checked=false;if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"contact-de",method:"double-opt-in"});}}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}}
-    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Spaeter nochmal versuchen.";}});
+    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Wechsel zum Anmeldeformular...";}
+    window.location.href = '/insider/?ref=homepage-contact&email=' + encodeURIComponent(email);
   };
 })();

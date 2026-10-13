@@ -490,6 +490,18 @@
     }
   })();
 </script>
+<script>
+/* Autofill email from URL param (?email=...) — prevents double-entry for homepage redirect */
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var emailFromUrl = params.get('email');
+  if(emailFromUrl) {
+    document.querySelectorAll('input[name="EMAIL"]').forEach(function(inp){
+      inp.value = decodeURIComponent(emailFromUrl);
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
