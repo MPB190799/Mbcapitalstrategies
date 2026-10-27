@@ -1101,6 +1101,17 @@ article table,
   }
 }
 
+@media (pointer: coarse) {
+  .nav-link, .dropdown-btn, .filter-btn, .cookie-btn,
+  .page-content a, .article-body a, details summary {
+    min-height: 44px;
+  }
+  .filter-btn, .cookie-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 table, .data-table {
   width: 100%;
   border-collapse: collapse;

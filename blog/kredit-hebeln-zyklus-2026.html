@@ -151,37 +151,7 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
   ]
 }
 </script>
-<script type="application/ld\+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Kredit hebeln im Rohstoff-Zyklus 2026 — Marcos Urteil",
-  "description": "Kredit hebeln im Rohstoff-Zyklus: Wann macht Leverage Sinn, wann ist es Spekulation? Marcos persönliche Strategie mit konkreten Beispielen aus dem Depot.",
-  "thumbnailUrl": "https://img.youtube.com/vi/p80jyyWcxG8/maxresdefault.jpg",
-  "uploadDate": "2026-03-01",
-  "embedUrl": "https://www.youtube.com/embed/p80jyyWcxG8",
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://mbcapitalstrategies.com/#organization",
-    "name": "MB Capital Strategies",
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q138571853",
-      "https://www.youtube.com/@MBCapitalStrategies",
-      "https://www.linkedin.com/in/marco-bozem-182173295",
-      "https://www.linkedin.com/company/mb-capital-strategies/",
-      "https://medium.com/@mbcapitalstrategies",
-      "https://www.reddit.com/r/MBCapitalStrategies/",
-      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
-      "https://www.xing.com/profile/Marco_Bozem",
-      "https://de.investing.com/members/contributors/268748043/opinion",
-      "https://odysee.com/@mbcapitalstrategies:5",
-      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
-      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
-      "https://www.youtube.com/@mbcapitalstrategies",
-      "https://mbcapitalstrategiesglobal.com/"
-    ]
-  },
-  "content<script type="application/ld\+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "VideoObject",
@@ -213,10 +183,6 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
     ]
   },
   "contentUrl": "https://www.youtube.com/watch?v=p80jyyWcxG8"
-}
-</script>  "https://mbcapitalstrategiesglobal.com/"
-    ]
-  }
 }
 </script>
   <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
@@ -286,9 +252,7 @@ window.mbMidSubscribe=function(){
   if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
   if(typeof gtag==="function"){gtag("event","newsletter_cta_click",{event_category:"engagement",event_label:"blog-mid"});}
   // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
-  window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! Bitte E-Mail bestaetigen.";if(e)e.value="";if(typeof gtag==="function"){gtag("event","newsletter_signup",{event_category:"engagement",event_label:"blog-mid",method:"double-opt-in"});}}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Bitte nochmal versuchen.";}}})
-  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Verbindungsfehler.";}});
+  window.location.href = '/insider/?email=' + encodeURIComponent(email);
 };})();
 </script>
 <!-- END Growth CTA -->
