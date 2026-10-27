@@ -1379,18 +1379,7 @@
     if (!email || !email.includes('@')) { if (msg) msg.textContent = 'Bitte gueltige E-Mail eingeben.'; return; }
     if (msg) msg.textContent = '...';
     // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
-  window.location.href = '/insider/'{method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email: email, source: 'tools-yoc-rechner'})})
-      .then(function(r) {
-        if (r.ok) {
-          if (msg) msg.textContent = 'Danke! Bitte kurz die Bestaetigung per E-Mail pruefen.';
-          localStorage.setItem('yoc_nl_subscribed', '1');
-          var btn = document.getElementById('yoc-nl-cta').querySelector('button');
-          if (btn) btn.disabled = true;
-        } else {
-          if (msg) msg.textContent = 'Fehler — bitte direkt auf mbcapitalstrategies.com/insider/ anmelden.';
-        }
-      })
-      .catch(function() { if (msg) msg.textContent = 'Verbindungsfehler. Bitte direkt anmelden.'; });
+  window.location.href = '/insider/?email=' + encodeURIComponent(email);
   }
 
   function toggleFaq(el) {

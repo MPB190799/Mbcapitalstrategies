@@ -645,29 +645,7 @@
         }
         if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Anmeldung läuft...";}
         // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
-  window.location.href = '/insider/'{
-          method:"POST",
-          headers:{"Content-Type":"application/json"},
-          body:JSON.stringify({email:email})
-        })
-        .then(function(r){return r.json();})
-        .then(function(d){
-          if(msg){
-            msg.style.display="block";
-            if(d.ok){
-              msg.style.color="#22c55e";
-              msg.textContent=d.msg||"Fast geschafft! Bitte bestätige deine E-Mail (Double-Opt-In).";
-              if(el)el.value="";
-              if(cb)cb.checked=false;
-            } else {
-              msg.style.color="#ef4444";
-              msg.textContent=d.msg||"Fehler beim Anmelden. Bitte nochmal versuchen.";
-            }
-          }
-        })
-        .catch(function(){
-          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Verbindungsfehler. Bitte später nochmal versuchen.";}
-        });
+  window.location.href = '/insider/?email=' + encodeURIComponent(email);
       };
     })();
     </script>

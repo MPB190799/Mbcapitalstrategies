@@ -205,9 +205,8 @@
     if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Bitte gültige E-Mail eingeben.";}return;}
     if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Wird angemeldet...";}
     // Worker entfernt 2026-10-04 — Brevo Form auf /insider/
-  window.location.href = '/insider/'{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-    .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Fast geschafft! E-Mail bestätigen.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Fehler. Nochmal versuchen.";}}})};}
-  )();
+    window.location.href = '/insider/?email=' + encodeURIComponent(email);
+  };})();
   </script>
 
   <h2>Dorian LPG: US-gelistete VLGC-Aktie im Depot-Kontext</h2>
