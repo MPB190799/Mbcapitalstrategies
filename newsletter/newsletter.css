@@ -98,7 +98,51 @@ img { max-width: 100%; height: auto; }
   padding: 96px 0 64px;
   border-bottom: 1px solid var(--line);
   background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.06) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
 }
+.hero .container { position: relative; z-index: 2; }
+
+/* ── Kompass-Backdrop + 3D (2026-11-02, Angleichung an Startseite) ──────────
+   Statisches compass-vintage.webp = Poster/Fallback. Bei WebGL uebernimmt
+   /assets/js/compass-3d.js (Startseiten-Modul) und setzt .is-3d — der Kompass
+   wird dann fixiert und folgt derselben Scroll-Choreografie wie die Startseite.
+   Lesbarkeit: Scrim ueber dem Kompass, Inhalte darueber, Folge-Sektionen z-index 1. */
+.compass-backdrop {
+  position: absolute; top: 50%; left: 50%;
+  width: min(88svh, 860px);
+  aspect-ratio: 1/1;
+  transform: translate(-50%,-50%);
+  z-index: 0; opacity: .55;
+  pointer-events: none;
+  filter: drop-shadow(0 40px 70px rgba(0,0,0,.6)) drop-shadow(0 0 70px rgba(212,175,55,.18));
+}
+.compass-backdrop .compass-img { width: 100%; height: 100%; display: block; animation: nlCompassSpin 90s linear infinite; transform-origin: 50% 50%; }
+@keyframes nlCompassSpin { to { transform: rotate(360deg); } }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse 62% 78% at 40% 48%, rgba(8,8,16,.92), rgba(8,8,16,.55) 62%, rgba(8,8,16,.15) 100%);
+}
+.compass-backdrop.is-3d { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 1; }
+.compass-backdrop.is-3d .compass-img { opacity: 0; animation: none; transition: opacity .7s ease .1s; }
+canvas.compass-3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none; }
+.compass-3d-live main section:not(.hero), .compass-3d-live footer { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .compass-backdrop .compass-img { animation: none; }
+  .compass-backdrop.is-3d .compass-img { transition: none; }
+}
+@media (max-width: 760px) {
+  .compass-backdrop { width: 120vw; opacity: .3; }
+}
+
+/* Hero-Typografie an Startseite angeglichen: Cormorant-Serif statt Outfit */
+.hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.hero h1 span { font-style: italic; font-weight: 500; }
+
 .kicker {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px; letter-spacing: 4px;
