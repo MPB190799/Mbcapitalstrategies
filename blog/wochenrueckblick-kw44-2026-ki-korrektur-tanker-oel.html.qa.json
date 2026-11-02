@@ -1,0 +1,11 @@
+{
+  "file": "blog/wochenrueckblick-kw44-2026-ki-korrektur-tanker-oel.html",
+  "factcheck": "pass",
+  "sources_checked": [
+    "content-qa Verdict KW44 Fassung 2/3 (facts-ledger 42/42 VERIFIED, 31.10.2026) — mb-evolution qa/content/2026-10-31_kw44-v1_script-und-radar_verdict.md",
+    "ECB Original (Zinsentscheid 29.10.2026) — https://www.ecb.europa.eu/",
+    "FMP/Yahoo EOD-Pulls KW44 (Sektor-ETFs, Mover, Indizes) — Doppelpull-Verifikation im QA-Verdict"
+  ],
+  "checked_by": "kimi-work (Basis: content-qa-agent Verdict 31.10.2026, PASS 14/14)",
+  "date": "2026-11-02"
+}
