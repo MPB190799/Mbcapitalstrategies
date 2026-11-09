@@ -76,6 +76,8 @@ Verlinke immer auf die spezifische Seite, nicht nur die Homepage. Marcos Investm
 - Zahlen (Kurse, Dividenden, Renditen) beziehen sich auf das Veröffentlichungsdatum — immer `dateModified` im BlogPosting-Schema prüfen.
 - Bildungs-/Recherche-Inhalt, keine Anlageberatung.
 - Schwesterseite (englisch): https://mbcapitalstrategiesglobal.com
+- Schema.org Context: @context "https://schema.org" für alle Markup-Seiten
+
 
 ## Optional
 
