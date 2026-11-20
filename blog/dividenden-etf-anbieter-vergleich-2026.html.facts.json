@@ -1,0 +1,80 @@
+{
+ "asset": "/home/mbcap/websites/DE-Seite/blog/dividenden-etf-anbieter-vergleich-2026.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "tr-1eur",
+   "claim": "Trade Republic: 1 € Fremdkostenpauschale pro Sparplan-Ausführung",
+   "value": "1 €/Ausführung",
+   "source": "Quelle 1: Trade Republic Preisverzeichnis/Preisseite (traderepublic.com); Quelle 2: extraETF Broker-Vergleich (extraetf.com)",
+   "url": "https://www.traderepublic.com/de-de/prices",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "tr-universe",
+   "claim": "Trade Republic: Sparpläne ab 1 €, Ausführung über LS Exchange (täglich), ~7.500 ETFs sparplanfähig",
+   "value": "ab 1 € · ~7.500 ETFs",
+   "source": "Quelle 1: Trade Republic Website (traderepublic.com/de-de); Quelle 2: extraETF/Finanztip Broker-Vergleiche 2025/2026",
+   "url": "https://www.traderepublic.com/de-de",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "sc-free-250",
+   "claim": "Scalable Capital: ETF-Sparplan 0 € ab 250 € Ausführungsbetrag; darunter 0,99 € (Free-Tarif)",
+   "value": "0 € ab 250 € / 0,99 €",
+   "source": "Quelle 1: Scalable Capital Preismodell (scalable.capital); Quelle 2: extraETF Sparplan-Vergleich (extraetf.com)",
+   "url": "https://de.scalable.capital/de/preise",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "sc-zuschlag",
+   "claim": "Scalable: bei bestimmten iShares-/Xtrackers-ETFs zusätzlich 0,99 € Fremdkostenpauschale je Ausführung",
+   "value": "+0,99 €",
+   "source": "Quelle 1: Scalable Capital Preismodell (scalable.capital); Quelle 2: extraETF Sparplan-Kostenvergleich 2025/2026",
+   "url": "https://de.scalable.capital/de/preise",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "sc-prime",
+   "claim": "Scalable PRIME/PRIME+: Sparpläne unabhängig von der Höhe kostenlos",
+   "value": "PRIME = 0 € alle",
+   "source": "Quelle 1: Scalable Capital Tarifseiten (scalable.capital); Quelle 2: Broker-Vergleichsportale (extraETF/Finanztip)",
+   "url": "https://de.scalable.capital/de/preise",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "sc-universe",
+   "claim": "Scalable Sparplan-Universum rund 6.000 ETFs (Vergleichsportale)",
+   "value": "~6.000 ETFs",
+   "source": "Quelle 1: extraETF Broker-Datenbank (extraetf.com); Quelle 2: Finanztip Broker-Vergleich (finanztip.de)",
+   "url": "https://www.extraetf.com/broker-vergleich",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "ing-190",
+   "claim": "ING: 1,90 € Sparplan-Ausführungsgebühr inkl. MwSt., Agentschafts-/fremde Kosten werden abgezogen (effektiv oft ~1,24 €)",
+   "value": "1,90 € (eff. ~1,24 €)",
+   "source": "Quelle 1: ING Preisverzeichnis/Sparplan-Seiten (ing.de); Quelle 2: aktien-sparplan-vergleich.de / extraETF",
+   "url": "https://www.ing.de/preise/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "ing-1100",
+   "claim": "ING: rund 1.100 ETFs ausgewählter Anbieter mit kostenlosen Sparplänen",
+   "value": "~1.100 ETFs",
+   "source": "Quelle 1: ING Sparplan-Website (ing.de); Quelle 2: extraETF Sparplan-Übersicht",
+   "url": "https://www.ing.de/sparplan/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}

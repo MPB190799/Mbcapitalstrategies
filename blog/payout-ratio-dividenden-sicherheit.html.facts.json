@@ -1,0 +1,53 @@
+{
+ "asset": "/home/mbcap/websites/DE-Seite/blog/payout-ratio-dividenden-sicherheit.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "reit-90",
+   "claim": "US-REITs müssen >=90 % des REIT-steuerpflichtigen Einkommens ausschütten (IRC §857(a))",
+   "value": ">=90 %",
+   "source": "Quelle 1: IRS / 26 U.S.C. §857(a) (irs.gov, law.cornell.edu); Quelle 2: Nareit REIT-Tax-Regeln (nareit.org)",
+   "url": "https://www.law.cornell.edu/uscode/text/26/857",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "reit-excise-4",
+   "claim": "REITs: strengere Verteilungsvorgabe, deren Verletzung eine 4-%-Excise-Steuer auslöst (IRC §857(b)/(c))",
+   "value": "4 % Excise",
+   "source": "Quelle 1: 26 U.S.C. §857 (law.cornell.edu/irs.gov); Quelle 2: Nareit Distribution Requirements Übersicht",
+   "url": "https://www.law.cornell.edu/uscode/text/26/857",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "reit-ffo",
+   "claim": "REIT-Bewertung üblicherweise über FFO/AFFO statt GAAP-EPS (Abschreibungs-Struktur)",
+   "value": "FFO/AFFO",
+   "source": "Quelle 1: Nareit FFO-Definition (nareit.org); Quelle 2: SEC-REIT-Reporting-Kontext (sec.gov/Investor.gov)",
+   "url": "https://www.reit.com/investing/reit-basics/reit-faqs",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "torm-policy",
+   "claim": "TORM zahlt variable Quartalsdividende aus bereinigtem Nettoergebnis (~70–75 %, in starken Quartalen mehr) — recycelt aus QA-geprüftem TORM-Artikel",
+   "value": "~70–75 % variabel",
+   "source": "Quelle 1: TORM Dividend Policy (ir.torm.com); Quelle 2: /blog/torm-dividende-analyse-2026.html (QA-Beleg im DE-Repo)",
+   "url": "https://ir.torm.com/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "aristocrats-25",
+   "claim": "S&P 500 Dividend Aristocrats: Aufnahmekriterium 25+ Jahre Dividendensteigerungen in Folge",
+   "value": "25+ Jahre",
+   "source": "Quelle 1: S&P DJI Index Methodology (spglobal.com/spdji); Quelle 2: Investopedia/Konzeptdokumentation",
+   "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500-dividend-aristocrats/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "asset": "/home/mbcap/websites/DE-Seite/blog/quellensteuer-auslandsdividenden-2026.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "ca-wht-25",
+   "claim": "Kanada: Basis-Quellensteuer 25 % auf Dividenden an Nichtansässige (Part XIII Income Tax Act)",
+   "value": "25 %",
+   "source": "Quelle 1: CRA Non-resident tax (canada.ca) — Non-resident withholding on dividends; Quelle 2: DBA Deutschland–Kanada (2001), Art. 10 (BZSt-Abkommenssammlung)",
+   "url": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-needs-of-non-residents-investors-outside-canada/non-resident-tax.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "ca-dba-15",
+   "claim": "Kanada–Deutschland DBA: 15 % auf Portfolio-Dividenden, 5 % bei >=10 % Stimmrechtsanteil",
+   "value": "15 % / 5 %",
+   "source": "Quelle 1: DBA Deutschland–Kanada Art. 10 (BZSt); Quelle 2: CRA Treaty-Anleitung / NR301-Guide (canada.ca)",
+   "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/nr301.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "ca-nr301",
+   "claim": "Formular NR301 ist die Erklärung zum Abkommen-Anspruch gegenüber dem Zahlstellen-Händler",
+   "value": "NR301",
+   "source": "Quelle 1: CRA Form NR301 (canada.ca); Quelle 2: Broker-Steuerleitfäden (Interactive Brokers Non-Resident-Withholding-Guide)",
+   "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/nr301.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "ca-2161",
+   "claim": "Überhang-Quellensteuer Kanada holbar über Abkommen-Verfahren nach Section 216.1 bei der CRA",
+   "value": "Sec. 216.1",
+   "source": "Quelle 1: CRA — Section 216.1 treaty-based return (canada.ca); Quelle 2: DBA-Kontext in Art.-10-Leitfäden (BZSt)",
+   "url": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-earning-self-employment-income/tax-obligations-non-residents-real-estate-income.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "au-wht-30",
+   "claim": "Australien: 30 % Quellensteuer auf unfranked Dividenden, franked Dividenden 0 %",
+   "value": "30 % / 0 %",
+   "source": "Quelle 1: ATO — Dividend withholding tax on unfranked amounts (ato.gov.au); Quelle 2: DBA Deutschland–Australien (1984, geändert) Quellensteuer-Sätze (BZSt)",
+   "url": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-and-non-residents",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "au-dba-15",
+   "claim": "DBA Deutschland–Australien: 15 % auf unfranked Dividenden für deutsche Ansässige",
+   "value": "15 %",
+   "source": "Quelle 1: DBA Deutschland–Australien Art. 10 (BZSt); Quelle 2: ATO foreign resident withholding guidance",
+   "url": "https://www.ato.gov.au/tax-rates-and-codes/tax-rates-foreign-and-non-residents",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "bm-wht-0",
+   "claim": "Bermuda: keine Quellensteuer auf Dividenden (auch Zinsen/Royalties 0 %)",
+   "value": "0 %",
+   "source": "Quelle 1: PwC Worldwide Tax Summaries — Bermuda corporate withholding taxes (taxsummaries.pwc.com); Quelle 2: Deloitte Tax @ Bermuda overview (dits.deloitte.com)",
+   "url": "https://taxsummaries.pwc.com/bermuda/corporate/withholding-taxes",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "bm-cit-15",
+   "claim": "Bermuda: 15 % Corporate Income Tax für große MNE-Gruppen ab 01.01.2025 (OECD Pillar Two) — Gewinnebene, keine Quellensteuer",
+   "value": "15 % ab 2025",
+   "source": "Quelle 1: PwC Worldwide Tax Summaries — Bermuda corporate income tax; Quelle 2: OECD Pillar Two Model Rules / Bermuda CIT Act 2023 Kontext (oecd.org)",
+   "url": "https://taxsummaries.pwc.com/bermuda/corporate/income-determination",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "de-sparerpausch",
+   "claim": "Sparerpauschbetrag in Deutschland 1.000 €/Jahr (2.000 € bei Zusammenveranlagung), seit 2023",
+   "value": "1.000 €",
+   "source": "Quelle 1: EStG §20 Abs. 9 (gesetze-im-internet.de); Quelle 2: BMF-Hinweise zur Abgeltungsteuer (bmf.bund.de) / Broker-Steuerleitfäden",
+   "url": "https://www.gesetze-im-internet.de/estg/__20.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "de-abgeltung-26375",
+   "claim": "Abgeltungsteuer 25 % + Solidaritätszuschlag 5,5 % auf die KapESt = effektiv 26,375 %",
+   "value": "26,375 %",
+   "source": "Quelle 1: EStG §32d (gesetze-im-internet.de) + SolZG 5,5 %; Quelle 2: Broker-Steuerleitfäden (Scalable/Trade Republic Steuer-FAQ)",
+   "url": "https://www.gesetze-im-internet.de/estg/__32d.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "de-anrechnung-15",
+   "claim": "Deutsche Anrechnung ausländischer Quellensteuer auf die Abgeltungsteuer maximal bis 15 % (§32d Abs. 5 EStG)",
+   "value": "max. 15 %",
+   "source": "Quelle 1: EStG §32d Abs. 5 (gesetze-im-internet.de); Quelle 2: BZSt-Anrechnungsbescheinigung-Verfahren (bzst.de)",
+   "url": "https://www.gesetze-im-internet.de/estg/__32d.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}

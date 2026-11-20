@@ -1,0 +1,80 @@
+{
+ "asset": "/home/mbcap/websites/DE-Seite/blog/sonderdividende-explained-2026.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "thu-special-h1-25",
+   "claim": "Thungela: Brutto-Sonderdividende ZAR 35,00 je Aktie mit H1-2025-Zahlen (Aug 2025), ~6,4 Mrd. ZAR gesamt",
+   "value": "ZAR 35,00 (~6,4 Mrd. ZAR)",
+   "source": "Quelle 1: Thungela H1-2025-Ergebnisse (thungela.com / Sens-Announcement); Quelle 2: Medienberichte zur H1-2025-Ausschüttung (Mining Weekly/Reuters-Kontext)",
+   "url": "https://www.thungela.com/investors/results-reports.aspx",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "thu-interim-5",
+   "claim": "Thungela: reguläre Interim-Dividende H1 2025 ZAR 5,00 je Aktie; Gesamt-2025-Ausschüttung ZAR 56,7",
+   "value": "ZAR 5,00 / 56,7",
+   "source": "Quelle 1: Thungela H1-2025-Ergebnisse; Quelle 2: FY-2025-Ausschüttungsberichterstattung (Mining Weekly)",
+   "url": "https://www.thungela.com/investors/results-reports.aspx",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "thu-pause",
+   "claim": "Thungela-CFO Deon Smith signalisierte mögliche Dividenden-Pause vor Rebuild-Zyklus",
+   "value": "Pause-Signal",
+   "source": "Quelle 1: CFO-Kommentar zu H1-2025 (Thungela-Konferenz/Presse); Quelle 2: Medienberichte Aug 2025",
+   "url": "https://www.thungela.com/investors/results-reports.aspx",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "thu-selloff",
+   "claim": "Thungela-Aktie verlor 2025 zuvor ~40 % nach Guidelines-Schnitt (Produktion 23–24 Mt statt 26 Mt, Transnet-Engpässe)",
+   "value": "~40 % / 23–24 Mt",
+   "source": "Quelle 1: Thungela Guidance-Update 2025; Quelle 2: Medienberichte zum Kursrutsch (Mining Weekly/Reuters-Kontext)",
+   "url": "https://www.thungela.com/investors/results-reports.aspx",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "zim-q2-25",
+   "claim": "ZIM Q2 2025: Umsatz 2,014 Mrd. $ (+8 % YoY), bereinigtes EBITDA 727 Mio. $, Nettoverlust 51 Mio. $",
+   "value": "$2.014 Mrd / $727 Mio / -$51 Mio",
+   "source": "Quelle 1: ZIM Q2-2025-Ergebnismitteilung (ir.zim.com); Quelle 2: Medienberichte 25.08.2025 (Hellenic Shipping News/Splash247-Kontext)",
+   "url": "https://ir.zim.com/financial-information/quarterly-results/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "zim-extra-151",
+   "claim": "ZIM: Extra-Dividende ~181 Mio. $ ($1,51 je Aktie) aus Verkauf von 4 Neo-Panamax-Schiffen (~580 Mio. $ Brutto), zahlbar bis 25.09.2025; reguläre Q2-Dividende $0,504 (~60 Mio. $)",
+   "value": "$1,51 + $0,504",
+   "source": "Quelle 1: ZIM Q2-2025-Dividenden-Pressemitteilung (ir.zim.com); Quelle 2: Medienberichte zur Extra-Dividende Aug 2025",
+   "url": "https://ir.zim.com/financial-information/quarterly-results/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "zim-mar-25",
+   "claim": "ZIM: Extra-Dividende ~171 Mio. $ im März 2025, ebenfalls aus Schiffsverkäufen",
+   "value": "~171 Mio. $",
+   "source": "Quelle 1: ZIM Q4-2024/Dividenden-PM (ir.zim.com); Quelle 2: Medienberichte März 2025",
+   "url": "https://ir.zim.com/financial-information/quarterly-results/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "torm-variable",
+   "claim": "TORM: variable Dividendenpolitik — Ausschüttung als fester Prozentsatz des bereinigten Nettogewinns (~70–75 %, recycelt aus QA-geprüftem TORM-Artikel)",
+   "value": "~70–75 % variabel",
+   "source": "Quelle 1: TORM Dividend Policy (ir.torm.com); Quelle 2: veröffentlichter Artikel /blog/torm-dividende-analyse-2026.html (QA-Beleg im DE-Repo)",
+   "url": "https://ir.torm.com/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}
