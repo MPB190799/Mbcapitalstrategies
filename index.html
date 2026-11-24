@@ -105,7 +105,11 @@
        Pfad und erzwang einen zweiten Fetch für das echte LCP-Bild. imagesrcset/imagesizes analog
        zu den <picture>-Breakpoints ergänzt, damit der Preload immer trifft, was mobil/Tablet
        tatsächlich rendert. -->
-  <link rel="preload" as="image" href="/assets/compass-vintage.webp" imagesrcset="/assets/compass-vintage-512.webp 512w, /assets/compass-vintage-768.webp 768w, /assets/compass-vintage.webp 1024w" imagesizes="(max-width: 768px) 512px, (max-width: 1200px) 768px, 1024px" type="image/webp" fetchpriority="high">
+  <!-- 2026-11-24: Vorab-Laden je Bildschirmbreite GENAU wie im <picture> darunter. Vorher waehlte das Handy ueber imagesizes x Pixeldichte
+     das 1024er-Bild (90 KB) vorab und lud zusaetzlich das 512er aus dem <picture> - doppelter Abruf, spaetes Hauptbild. -->
+<link rel="preload" as="image" href="/assets/compass-vintage-512.webp" media="(max-width:768px)" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/compass-vintage-768.webp" media="(min-width:769px) and (max-width:1200px)" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/compass-vintage.webp" media="(min-width:1201px)" type="image/webp" fetchpriority="high">
   <!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections (Philosophie, Asset-Grid,
        Rechner-Grid, Zielgruppen, Insights, FAQ) starten mit opacity:0 und werden nur per JS
        (IntersectionObserver) sichtbar. Falls JS blockiert/fehlschlägt/langsam ist, bleiben diese
