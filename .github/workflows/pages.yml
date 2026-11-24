@@ -32,6 +32,19 @@ jobs:
         with:
           path: .
 
+      # 2026-11-24: Etwa jeder zehnte Lauf scheiterte mit "No artifacts named github-pages were found" - das gerade
+      # hochgeladene Paket war fuer den naechsten Schritt noch nicht sichtbar. Die Aenderung blieb dann bis zum
+      # naechsten Push offline. Deshalb: ein zweiter Versuch nach 30 Sekunden.
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Warten vor dem zweiten Versuch
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (zweiter Versuch)
+        id: deployment2
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
